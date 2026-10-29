@@ -1,0 +1,162 @@
+same                   replay       PASS
+new_data               replay       fail
+same                   eidos_nochk  PASS
+same                   eidos        PASS  (agent says ok)
+other_app_sales        replay       fail
+new_data               eidos        PASS  (agent says ok)
+new_data               eidos_nochk  PASS
+other_app_sales        eidos        PASS  (agent says ok)
+other_app_inventory    replay       fail
+other_app_sales        eidos_nochk  PASS
+other_app_inventory    eidos        PASS  (agent says ok)
+other_app_inventory    eidos_nochk  PASS
+redesign_00            replay       fail
+redesign_00            eidos        PASS  (agent says ok)
+redesign_01            replay       fail
+redesign_00            eidos_nochk  PASS
+redesign_01            eidos        PASS  (agent says ok)
+redesign_02            replay       fail
+redesign_01            eidos_nochk  PASS
+redesign_02            eidos        PASS  (agent says ok)
+redesign_03            replay       fail
+redesign_02            eidos_nochk  PASS
+redesign_03            eidos        fail  (agent says ok)
+redesign_04            replay       fail
+redesign_03            eidos_nochk  fail
+redesign_04            eidos        PASS  (agent says ok)
+redesign_05            replay       fail
+redesign_04            eidos_nochk  PASS
+redesign_05            eidos        PASS  (agent says ok)
+redesign_05            eidos_nochk  PASS
+redesign_06            replay       fail
+redesign_06            eidos        PASS  (agent says ok)
+redesign_06            eidos_nochk  PASS
+redesign_07            replay       fail
+redesign_07            eidos        PASS  (agent says ok)
+redesign_08            replay       fail
+redesign_07            eidos_nochk  PASS
+redesign_08            eidos        PASS  (agent says ok)
+redesign_09            replay       fail
+redesign_08            eidos_nochk  PASS
+redesign_09            eidos        PASS  (agent says ok)
+redesign_10            eidos        fail  (agent says FAILED)
+redesign_10            replay       fail
+redesign_09            eidos_nochk  PASS
+redesign_10            eidos_nochk  fail
+redesign_11            replay       fail
+redesign_11            eidos_nochk  PASS
+redesign_11            eidos        PASS  (agent says ok)
+redesign_12            replay       fail
+redesign_12            eidos        PASS  (agent says ok)
+redesign_13            replay       fail
+redesign_12            eidos_nochk  PASS
+redesign_13            eidos        PASS  (agent says ok)
+redesign_13            eidos_nochk  PASS
+redesign_14            eidos        fail  (agent says FAILED)
+redesign_14            replay       fail
+redesign_14            eidos_nochk  fail
+redesign_15            replay       fail
+redesign_15            eidos        PASS  (agent says ok)
+redesign_15            eidos_nochk  PASS
+redesign_16            replay       fail
+redesign_16            eidos        PASS  (agent says ok)
+redesign_17            replay       fail
+redesign_16            eidos_nochk  PASS
+redesign_17            eidos        PASS  (agent says ok)
+redesign_18            replay       fail
+redesign_17            eidos_nochk  PASS
+redesign_18            eidos_nochk  PASS
+redesign_18            eidos        PASS  (agent says ok)
+redesign_19            replay       fail
+redesign_19            eidos        PASS  (agent says ok)
+redesign_20            replay       fail
+redesign_20            eidos        PASS  (agent says ok)
+redesign_19            eidos_nochk  PASS
+redesign_21            replay       fail
+redesign_20            eidos_nochk  PASS
+redesign_21            eidos        PASS  (agent says ok)
+redesign_21            eidos_nochk  PASS
+redesign_22            replay       fail
+redesign_22            eidos        PASS  (agent says ok)
+redesign_23            replay       fail
+redesign_23            eidos        PASS  (agent says ok)
+redesign_22            eidos_nochk  PASS
+redesign_23            eidos_nochk  PASS
+{
+  "same": {
+    "replay": {
+      "n": 1,
+      "success": 1
+    },
+    "eidos": {
+      "n": 1,
+      "success": 1
+    },
+    "eidos_nochk": {
+      "n": 1,
+      "success": 1
+    }
+  },
+  "new_data": {
+    "replay": {
+      "n": 1,
+      "success": 0
+    },
+    "eidos": {
+      "n": 1,
+      "success": 1
+    },
+    "eidos_nochk": {
+      "n": 1,
+      "success": 1
+    }
+  },
+  "redesign": {
+    "replay": {
+      "n": 24,
+      "success": 0
+    },
+    "eidos": {
+      "n": 24,
+      "success": 21
+    },
+    "eidos_nochk": {
+      "n": 24,
+      "success": 21
+    }
+  },
+  "other_app": {
+    "replay": {
+      "n": 2,
+      "success": 0
+    },
+    "eidos": {
+      "n": 2,
+      "success": 2
+    },
+    "eidos_nochk": {
+      "n": 2,
+      "success": 2
+    }
+  },
+  "all": {
+    "replay": {
+      "n": 28,
+      "success": 1
+    },
+    "eidos": {
+      "n": 28,
+      "success": 25
+    },
+    "eidos_nochk": {
+      "n": 28,
+      "success": 25
+    }
+  },
+  "eidos_self_report": {
+    "n": 28,
+    "agrees_with_oracle": 27,
+    "silent_failures": 1
+  },
+  "replay_silent_failures": 27
+}

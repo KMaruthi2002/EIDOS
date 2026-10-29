@@ -1,0 +1,306 @@
+{
+  "url": "http://localhost:8765/gridline.html?theme=light&side=0&colw=110&rowh=32&order=4,3,0,1,2&data=sales",
+  "baseline": "replay",
+  "oracle_state": {
+    "app": "A",
+    "cells": [
+      [
+        {
+          "v": "Revenue",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Units",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Region",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Month",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Product",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "3600",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "120",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "North",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Jan",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Lamp",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "9000",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "45",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "South",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Jan",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Desk",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "8400",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "210",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "East",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Feb",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Chair",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "2850",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "95",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "West",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Feb",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Lamp",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "12000",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "60",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "North",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Mar",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Desk",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "7200",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "180",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "South",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Mar",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Chair",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "4200",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "140",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "East",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Apr",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Lamp",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "Total",
+          "bold": true,
+          "fill": null
+        },
+        {
+          "v": "30",
+          "bold": true,
+          "fill": null
+        },
+        {
+          "v": "West",
+          "bold": true,
+          "fill": null
+        },
+        {
+          "v": "Apr",
+          "bold": true,
+          "fill": null
+        },
+        {
+          "v": "=SUM(E2:E11)",
+          "bold": true,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "10000",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "250",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "North",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "May",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Chair",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "2250",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "75",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "South",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "May",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Lamp",
+          "bold": false,
+          "fill": null
+        }
+      ]
+    ]
+  }
+}

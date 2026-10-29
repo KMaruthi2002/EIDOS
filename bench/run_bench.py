@@ -33,12 +33,15 @@ from eidos.score import score_totals                    # noqa: E402
 BASE = sys.argv[1] if len(sys.argv) > 1 else "http://localhost:8765"
 SKILL = ROOT / "runs" / "tutorial_totals"
 N_REDESIGNS = int(sys.argv[2]) if len(sys.argv) > 2 else 12
+N_INTERRUPTIONS = int(sys.argv[4]) if len(sys.argv) > 4 else 12
 # Seed 7 is the development set (used while fixing bugs). Headline numbers
 # come from a held-out seed that was never looked at during development.
 SEED = int(sys.argv[3]) if len(sys.argv) > 3 else 7
 # History: seed 2026 was the first held-out set (results frozen in
 # runs/bench_test_v1 before the fixes it revealed); seed 4242 is the current one.
-SPLIT = "dev" if SEED == 7 else ("test" if SEED == 4242 else f"seed{SEED}")
+# seed 4242 was round 2 (runs/bench_test_v2, before the interruption condition
+# and contract repair existed); seed 9001 is the final held-out set.
+SPLIT = "dev" if SEED == 7 else ("test" if SEED == 9001 else f"seed{SEED}")
 OUT = ROOT / "runs" / f"bench_{SPLIT}"
 
 DATA = {
@@ -69,6 +72,22 @@ def conditions():
         qs = "&".join(f"{k}={v}" for k, v in q.items())
         out.append({"id": f"redesign_{i:02d}", "group": "redesign", "app": "A",
                     "url": f"{BASE}/gridline.html?{qs}&data={data}", "data": data, "mutation": q})
+    # Interruptions: a "What's new" dialog opens at a random moment mid-task and
+    # blocks input until dismissed. Half on App B, half on App A (some redesigned).
+    irng = random.Random(SEED + 1)
+    for i in range(N_INTERRUPTIONS):
+        delay = round(irng.uniform(1.2, 10.0), 1)
+        data = irng.choice(["sales", "inventory"])
+        if i % 2:
+            url = f"{BASE}/tabula.html?popup={delay}&data={data}"
+            app = "B"
+        else:
+            order = list(range(5)); irng.shuffle(order)
+            extra = irng.choice(["", f"&theme=dark&side=120&order={','.join(map(str, order))}"])
+            url = f"{BASE}/gridline.html?popup={delay}&data={data}{extra}"
+            app = "A"
+        out.append({"id": f"interrupt_{i:02d}", "group": "interruption", "app": app, "url": url,
+                    "data": data, "popup_at": delay})
     return out
 
 
@@ -109,7 +128,7 @@ async def main():
                                   for c in conds for s in ("replay", "eidos", "eidos_nochk")])
     OUT.mkdir(parents=True, exist_ok=True)
     summary = {}
-    for g in ("same", "new_data", "redesign", "other_app", "all"):
+    for g in ("same", "new_data", "redesign", "other_app", "interruption", "all"):
         for s in ("replay", "eidos", "eidos_nochk"):
             sel = [r for r in rows if r["system"] == s and (g == "all" or r["group"] == g)]
             summary.setdefault(g, {})[s] = {"n": len(sel), "success": sum(r["success"] for r in sel)}

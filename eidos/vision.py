@@ -405,3 +405,24 @@ def changed_box(before, after, thresh: int = 28):
         return None
     x, y, w, h = cv2.boundingRect(pts)
     return int(x), int(y), int(w), int(h)
+
+
+def band_change(before, after, x0, x1, y, h, table_top, table_bottom, thresh: int = 28):
+    """How a change is distributed over a table.
+
+    Returns (cover, outside): the share of the row band's width that changed,
+    and the share of the rest of the table that changed. A selected row
+    gives high cover and near-zero outside; a dialog or backdrop over the
+    screen changes the rest of the table too.
+    """
+    a = cv2.cvtColor(to_bgr(before), cv2.COLOR_BGR2GRAY)
+    b = cv2.cvtColor(to_bgr(after), cv2.COLOR_BGR2GRAY)
+    m = cv2.absdiff(a, b) > thresh
+    x0, x1 = int(max(0, x0)), int(min(m.shape[1], x1))
+    y0, y1 = int(max(0, y - h / 2)), int(min(m.shape[0], y + h / 2))
+    band = m[y0:y1, x0:x1]
+    cover = float(band.any(axis=0).mean()) if band.size else 0.0
+    t0, t1 = int(max(0, table_top)), int(min(m.shape[0], table_bottom))
+    rest = np.concatenate([m[t0:y0, x0:x1].ravel(), m[y1:t1, x0:x1].ravel()])
+    outside = float(rest.mean()) if rest.size else 0.0
+    return cover, outside

@@ -149,132 +149,152 @@ async def run_program(program: dict, url: str, out_dir: Path, inputs: dict | Non
                     return table.grid.first_empty_row_y
                 raise LookupError(ref)
 
-            try:
-                if st["do"] in ("enter_text", "enter_formula"):
-                    y = row_y(tgt["row"])
-                    anchors[st["id"]] = y
-                    col_name = bind(tgt["column"], inputs)
-                    role = "first_column" if st["do"] == "enter_text" else "last_column"
-                    c = table.col(col_name, role)
-                    if V.similar(table.names[c], col_name) < 0.8:
-                        col_name = table.names[c]      # resolved by role, not by name
-                    x = table.x(c)
-                    log.grounding.append({"how": "screen reading (OCR) of headers and data extent",
-                                          "column": table.names[c], "row_y": round(y), "point": [round(x), round(y)]})
-                    if st["do"] == "enter_text":
-                        text = bind(st["text"], inputs)
-                    else:
-                        f = st["formula"]
-                        L = table.letter(table.col(bind(f["column"], inputs), "last_column"))
-                        text = f"={f['fn']}({L}{table.first_data_row_number}:{L}{table.last_data_row_number})"
-                        log.grounding.append({"how": "rewrote the formula for this screen",
-                                              "learned": st.get("learned_from"), "now": text})
-                    await glide(x, y)
-                    await page.mouse.click(x, y)
-                    await page.wait_for_timeout(200)
-                    await page.mouse.move(x + 34, y + 46, steps=6)
-                    await page.keyboard.type(text, delay=70)
-                    await page.keyboard.press("Enter")
-                    await page.wait_for_timeout(450)
-                    post = await shot()
-                    box = table.cell_box(c, y)
-                    seen = V.ocr_region(post, box)
-                    # Independent evidence: the header directly above the cell we wrote must
-                    # be the column the step intended. Reading back our own cell alone would
-                    # only confirm that we wrote somewhere.
-                    l, r = table.bounds[c]
-                    hy = table.grid.header_y
-                    hdr_seen = V.ocr_region(post, (int(l + 2), int(hy - table.grid.row_h * 0.45),
-                                                   int(r - l - 3), int(table.grid.row_h * 0.9)))
-                    col_ok = V.similar(hdr_seen, col_name) >= 0.8
-                    log.checks.append({"contract": f"header above the cell reads '{col_name}'",
-                                       "saw": hdr_seen, "pass": col_ok})
-                    if st["do"] == "enter_text":
-                        ok = V.similar(seen, text) >= 0.8
-                        log.checks.append({"contract": f"cell shows '{text}'", "saw": seen, "pass": ok})
-                    else:
-                        vals = []
-                        for ry in table.grid.data_rows_y:
-                            n = V.parse_number(V.ocr_region(post, table.cell_box(c, ry)))
-                            if n is not None:
-                                vals.append(n)
-                        expected = sum(vals)
-                        got = V.parse_number(seen)
-                        ok = got is not None and abs(got - expected) < 0.5
-                        log.checks.append({"contract": f"cell shows the {f['fn']} of the {table.names[c]} column read off the screen",
-                                           "expected": expected, "saw": seen, "pass": ok})
-                    log.passed = (ok and col_ok) or not use_contracts
-                elif st["do"] == "select_row":
-                    y = row_y(tgt["row"])
-                    x1, x2 = table.x(0), table.x(len(table.bounds) - 1)
-                    log.grounding.append({"how": "table edges from gridlines", "from": [round(x1), round(y)], "to": [round(x2), round(y)]})
-                    await glide(x1, y)
-                    await page.mouse.down()
-                    await page.mouse.move(x2, y, steps=26)
-                    await page.mouse.up()
-                    await page.wait_for_timeout(350)
-                    post = await shot()
-                    ch = V.changed_box(pre, post)
-                    width = table.bounds[-1][1] - table.bounds[0][0]
-                    ok = bool(ch) and ch[2] >= 0.8 * width
-                    l0 = table.bounds[0][0]
-                    selection_box = (int(l0 + 2), int(y - table.grid.row_h * 0.45), int(width - 4), int(table.grid.row_h * 0.9))
-                    log.checks.append({"contract": "selection highlight covers the whole row", "changed_box": ch, "pass": ok})
-                    log.passed = ok or not use_contracts
-                elif st["do"] == "apply_format":
-                    g = st["ground"]
-                    before = V.ink_ratio(pre, selection_box)
-                    tries = []
-                    if g.get("look") and skill_dir:
-                        tries.append(("look", g["look"]))
-                    from . import meta
-                    if meta.live() and g.get("concept"):
-                        tries.append(("concept", g["concept"]))
-                    tries += [("alt", a) for a in g.get("alternatives", [])]
-                    ok = False
-                    for kind, val in tries:
-                        if kind == "look":
-                            found = V.find_template(pre, str(skill_dir / val))
-                            if not found:
-                                log.grounding.append({"how": "match the control's look from the tutorial", "found": False})
-                                continue
-                            fx, fy, score, method = found
-                            log.grounding.append({"how": "match the control's look from the tutorial", "found": True,
-                                                  "method": method, "point": [round(fx), round(fy)], "score": round(score, 2)})
-                            await glide(fx, fy)
-                            await page.mouse.click(fx, fy)
-                        elif kind == "concept":
-                            boxes = await meta.sam_find(pre, val)
-                            if not boxes:
-                                log.grounding.append({"how": "SAM 3.1 concept search", "concept": val, "found": False})
-                                continue
-                            x1, y1, x2, y2 = boxes[0]["box"]
-                            fx, fy = (x1 + x2) / 2, (y1 + y2) / 2
-                            log.grounding.append({"how": "SAM 3.1 concept search", "concept": val, "found": True,
-                                                  "point": [round(fx), round(fy)]})
-                            await glide(fx, fy)
-                            await page.mouse.click(fx, fy)
+            attempts = 2 if use_contracts else 1
+            for attempt in range(attempts):
+                if attempt:
+                    # Repair: the step did not produce what the contract asks for.
+                    # Dismiss anything in the way, look again, and redo the step.
+                    log.grounding.append({"how": "repair: contract failed, pressed Escape and retried the step"})
+                    # Once to close whatever is in the way, once more to cancel a
+                    # half-finished edit it may have interrupted.
+                    for _ in range(2):
+                        await page.keyboard.press("Escape")
+                        await page.wait_for_timeout(250)
+                    pre = await shot()
+                try:
+                    if st["do"] in ("enter_text", "enter_formula"):
+                        y = row_y(tgt["row"])
+                        anchors[st["id"]] = y
+                        col_name = bind(tgt["column"], inputs)
+                        role = "first_column" if st["do"] == "enter_text" else "last_column"
+                        c = table.col(col_name, role)
+                        if V.similar(table.names[c], col_name) < 0.8:
+                            col_name = table.names[c]      # resolved by role, not by name
+                        x = table.x(c)
+                        log.grounding.append({"how": "screen reading (OCR) of headers and data extent",
+                                              "column": table.names[c], "row_y": round(y), "point": [round(x), round(y)]})
+                        if st["do"] == "enter_text":
+                            text = bind(st["text"], inputs)
                         else:
-                            keys = val.split(":", 1)[1]
-                            log.grounding.append({"how": "same intent, different route", "shortcut": keys})
-                            await page.keyboard.press(keys)
-                        await page.wait_for_timeout(400)
+                            f = st["formula"]
+                            L = table.letter(table.col(bind(f["column"], inputs), "last_column"))
+                            text = f"={f['fn']}({L}{table.first_data_row_number}:{L}{table.last_data_row_number})"
+                            log.grounding.append({"how": "rewrote the formula for this screen",
+                                                  "learned": st.get("learned_from"), "now": text})
+                        await glide(x, y)
+                        await page.mouse.click(x, y)
+                        await page.wait_for_timeout(200)
+                        await page.mouse.move(x + 34, y + 46, steps=6)
+                        await page.keyboard.type(text, delay=70)
+                        await page.keyboard.press("Enter")
+                        await page.wait_for_timeout(450)
                         post = await shot()
-                        after = V.ink_ratio(post, selection_box)
-                        ok = after > before * 1.12
-                        log.checks.append({"contract": "text in the selected row got heavier (bold)",
-                                           "ink_before": round(before, 4), "ink_after": round(after, 4), "pass": ok})
-                        if ok or not use_contracts:
-                            break
-                        # Undo a wrong action before trying the next route.
-                        if after < before * 0.95 or after > before * 1.02:
-                            await page.keyboard.press("Control+z")
-                            await page.wait_for_timeout(250)
-                    log.passed = ok or not use_contracts
-            except LookupError as e:
-                # Could not perceive what the step needs: a failed contract, not a crash.
-                log.checks.append({"contract": "perceive the target on this screen", "error": str(e), "pass": False})
-                log.passed = False
+                        box = table.cell_box(c, y)
+                        seen = V.ocr_region(post, box)
+                        # Independent evidence: the header directly above the cell we wrote must
+                        # be the column the step intended. Reading back our own cell alone would
+                        # only confirm that we wrote somewhere.
+                        l, r = table.bounds[c]
+                        hy = table.grid.header_y
+                        hdr_seen = V.ocr_region(post, (int(l + 2), int(hy - table.grid.row_h * 0.45),
+                                                       int(r - l - 3), int(table.grid.row_h * 0.9)))
+                        col_ok = V.similar(hdr_seen, col_name) >= 0.8
+                        log.checks.append({"contract": f"header above the cell reads '{col_name}'",
+                                           "saw": hdr_seen, "pass": col_ok})
+                        if st["do"] == "enter_text":
+                            ok = V.similar(seen, text) >= 0.8
+                            log.checks.append({"contract": f"cell shows '{text}'", "saw": seen, "pass": ok})
+                        else:
+                            vals = []
+                            for ry in table.grid.data_rows_y:
+                                n = V.parse_number(V.ocr_region(post, table.cell_box(c, ry)))
+                                if n is not None:
+                                    vals.append(n)
+                            expected = sum(vals)
+                            got = V.parse_number(seen)
+                            ok = got is not None and abs(got - expected) < 0.5
+                            log.checks.append({"contract": f"cell shows the {f['fn']} of the {table.names[c]} column read off the screen",
+                                               "expected": expected, "saw": seen, "pass": ok})
+                        log.passed = (ok and col_ok) or not use_contracts
+                    elif st["do"] == "select_row":
+                        y = row_y(tgt["row"])
+                        x1, x2 = table.x(0), table.x(len(table.bounds) - 1)
+                        log.grounding.append({"how": "table edges from gridlines", "from": [round(x1), round(y)], "to": [round(x2), round(y)]})
+                        await glide(x1, y)
+                        await page.mouse.down()
+                        await page.mouse.move(x2, y, steps=26)
+                        await page.mouse.up()
+                        await page.wait_for_timeout(350)
+                        post = await shot()
+                        ch = V.changed_box(pre, post)
+                        width = table.bounds[-1][1] - table.bounds[0][0]
+                        # The change must span the row and stay on the row: a dialog or
+                        # backdrop that changes the whole screen does not count.
+                        cover, outside = V.band_change(
+                            pre, post, table.bounds[0][0], table.bounds[-1][1], y, table.grid.row_h,
+                            table.grid.header_y - table.grid.row_h, table.grid.first_empty_row_y + table.grid.row_h * 4)
+                        ok = cover >= 0.8 and outside < 0.03
+                        l0 = table.bounds[0][0]
+                        selection_box = (int(l0 + 2), int(y - table.grid.row_h * 0.45), int(width - 4), int(table.grid.row_h * 0.9))
+                        log.checks.append({"contract": "selection highlight covers the whole row, and only that row",
+                                           "row_covered": round(cover, 2), "rest_of_table_changed": round(outside, 3), "pass": ok})
+                        log.passed = ok or not use_contracts
+                    elif st["do"] == "apply_format":
+                        g = st["ground"]
+                        before = V.ink_ratio(pre, selection_box)
+                        tries = []
+                        if g.get("look") and skill_dir:
+                            tries.append(("look", g["look"]))
+                        from . import meta
+                        if meta.live() and g.get("concept"):
+                            tries.append(("concept", g["concept"]))
+                        tries += [("alt", a) for a in g.get("alternatives", [])]
+                        ok = False
+                        for kind, val in tries:
+                            if kind == "look":
+                                found = V.find_template(pre, str(skill_dir / val))
+                                if not found:
+                                    log.grounding.append({"how": "match the control's look from the tutorial", "found": False})
+                                    continue
+                                fx, fy, score, method = found
+                                log.grounding.append({"how": "match the control's look from the tutorial", "found": True,
+                                                      "method": method, "point": [round(fx), round(fy)], "score": round(score, 2)})
+                                await glide(fx, fy)
+                                await page.mouse.click(fx, fy)
+                            elif kind == "concept":
+                                boxes = await meta.sam_find(pre, val)
+                                if not boxes:
+                                    log.grounding.append({"how": "SAM 3.1 concept search", "concept": val, "found": False})
+                                    continue
+                                x1, y1, x2, y2 = boxes[0]["box"]
+                                fx, fy = (x1 + x2) / 2, (y1 + y2) / 2
+                                log.grounding.append({"how": "SAM 3.1 concept search", "concept": val, "found": True,
+                                                      "point": [round(fx), round(fy)]})
+                                await glide(fx, fy)
+                                await page.mouse.click(fx, fy)
+                            else:
+                                keys = val.split(":", 1)[1]
+                                log.grounding.append({"how": "same intent, different route", "shortcut": keys})
+                                await page.keyboard.press(keys)
+                            await page.wait_for_timeout(400)
+                            post = await shot()
+                            after = V.ink_ratio(post, selection_box)
+                            ok = after > before * 1.12
+                            log.checks.append({"contract": "text in the selected row got heavier (bold)",
+                                               "ink_before": round(before, 4), "ink_after": round(after, 4), "pass": ok})
+                            if ok or not use_contracts:
+                                break
+                            # Undo a wrong action before trying the next route.
+                            if after < before * 0.95 or after > before * 1.02:
+                                await page.keyboard.press("Control+z")
+                                await page.wait_for_timeout(250)
+                        log.passed = ok or not use_contracts
+                except LookupError as e:
+                    # Could not perceive what the step needs: a failed contract, not a crash.
+                    log.checks.append({"contract": "perceive the target on this screen", "error": str(e), "pass": False})
+                    log.passed = False
+                if log.passed:
+                    break
             log.t_end = round(time.monotonic() - t0, 2)
             post_name = f"run_step{st['id']}_post.png"
             cv2.imwrite(str(out_dir / post_name), await shot())

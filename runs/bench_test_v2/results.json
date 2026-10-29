@@ -1,0 +1,1914 @@
+{
+  "split": "test",
+  "seed": 4242,
+  "conditions": [
+    {
+      "id": "same",
+      "group": "same",
+      "app": "A",
+      "url": "http://localhost:8765/gridline.html",
+      "data": "sales"
+    },
+    {
+      "id": "new_data",
+      "group": "new_data",
+      "app": "A",
+      "url": "http://localhost:8765/gridline.html?data=inventory",
+      "data": "inventory"
+    },
+    {
+      "id": "other_app_sales",
+      "group": "other_app",
+      "app": "B",
+      "url": "http://localhost:8765/tabula.html",
+      "data": "sales"
+    },
+    {
+      "id": "other_app_inventory",
+      "group": "other_app",
+      "app": "B",
+      "url": "http://localhost:8765/tabula.html?data=inventory",
+      "data": "inventory"
+    },
+    {
+      "id": "redesign_00",
+      "group": "redesign",
+      "app": "A",
+      "url": "http://localhost:8765/gridline.html?theme=light&side=180&colw=130&rowh=25&order=2,4,0,1,3&data=inventory",
+      "data": "inventory",
+      "mutation": {
+        "theme": "light",
+        "side": 180,
+        "colw": 130,
+        "rowh": 25,
+        "order": "2,4,0,1,3"
+      }
+    },
+    {
+      "id": "redesign_01",
+      "group": "redesign",
+      "app": "A",
+      "url": "http://localhost:8765/gridline.html?theme=light&side=0&colw=90&rowh=25&order=1,2,4,3,0&data=sales",
+      "data": "sales",
+      "mutation": {
+        "theme": "light",
+        "side": 0,
+        "colw": 90,
+        "rowh": 25,
+        "order": "1,2,4,3,0"
+      }
+    },
+    {
+      "id": "redesign_02",
+      "group": "redesign",
+      "app": "A",
+      "url": "http://localhost:8765/gridline.html?theme=dark&side=120&colw=150&rowh=22&order=4,3,0,2,1&data=inventory",
+      "data": "inventory",
+      "mutation": {
+        "theme": "dark",
+        "side": 120,
+        "colw": 150,
+        "rowh": 22,
+        "order": "4,3,0,2,1"
+      }
+    },
+    {
+      "id": "redesign_03",
+      "group": "redesign",
+      "app": "A",
+      "url": "http://localhost:8765/gridline.html?theme=light&side=180&colw=150&rowh=32&order=4,3,1,0,2&data=inventory",
+      "data": "inventory",
+      "mutation": {
+        "theme": "light",
+        "side": 180,
+        "colw": 150,
+        "rowh": 32,
+        "order": "4,3,1,0,2"
+      }
+    },
+    {
+      "id": "redesign_04",
+      "group": "redesign",
+      "app": "A",
+      "url": "http://localhost:8765/gridline.html?theme=light&side=240&colw=90&rowh=32&order=0,4,3,1,2&data=inventory",
+      "data": "inventory",
+      "mutation": {
+        "theme": "light",
+        "side": 240,
+        "colw": 90,
+        "rowh": 32,
+        "order": "0,4,3,1,2"
+      }
+    },
+    {
+      "id": "redesign_05",
+      "group": "redesign",
+      "app": "A",
+      "url": "http://localhost:8765/gridline.html?theme=light&side=0&colw=90&rowh=32&order=0,2,3,4,1&data=inventory",
+      "data": "inventory",
+      "mutation": {
+        "theme": "light",
+        "side": 0,
+        "colw": 90,
+        "rowh": 32,
+        "order": "0,2,3,4,1"
+      }
+    },
+    {
+      "id": "redesign_06",
+      "group": "redesign",
+      "app": "A",
+      "url": "http://localhost:8765/gridline.html?theme=dark&side=0&colw=150&rowh=32&order=2,1,0,4,3&data=inventory",
+      "data": "inventory",
+      "mutation": {
+        "theme": "dark",
+        "side": 0,
+        "colw": 150,
+        "rowh": 32,
+        "order": "2,1,0,4,3"
+      }
+    },
+    {
+      "id": "redesign_07",
+      "group": "redesign",
+      "app": "A",
+      "url": "http://localhost:8765/gridline.html?theme=light&side=0&colw=130&rowh=22&order=2,0,3,4,1&data=sales",
+      "data": "sales",
+      "mutation": {
+        "theme": "light",
+        "side": 0,
+        "colw": 130,
+        "rowh": 22,
+        "order": "2,0,3,4,1"
+      }
+    },
+    {
+      "id": "redesign_08",
+      "group": "redesign",
+      "app": "A",
+      "url": "http://localhost:8765/gridline.html?theme=light&side=120&colw=130&rowh=32&order=1,2,4,3,0&data=inventory",
+      "data": "inventory",
+      "mutation": {
+        "theme": "light",
+        "side": 120,
+        "colw": 130,
+        "rowh": 32,
+        "order": "1,2,4,3,0"
+      }
+    },
+    {
+      "id": "redesign_09",
+      "group": "redesign",
+      "app": "A",
+      "url": "http://localhost:8765/gridline.html?theme=dark&side=240&colw=90&rowh=32&order=2,0,4,3,1&data=sales",
+      "data": "sales",
+      "mutation": {
+        "theme": "dark",
+        "side": 240,
+        "colw": 90,
+        "rowh": 32,
+        "order": "2,0,4,3,1"
+      }
+    },
+    {
+      "id": "redesign_10",
+      "group": "redesign",
+      "app": "A",
+      "url": "http://localhost:8765/gridline.html?theme=light&side=0&colw=110&rowh=22&order=0,2,4,1,3&data=sales",
+      "data": "sales",
+      "mutation": {
+        "theme": "light",
+        "side": 0,
+        "colw": 110,
+        "rowh": 22,
+        "order": "0,2,4,1,3"
+      }
+    },
+    {
+      "id": "redesign_11",
+      "group": "redesign",
+      "app": "A",
+      "url": "http://localhost:8765/gridline.html?theme=dark&side=120&colw=110&rowh=28&order=3,4,2,0,1&data=inventory",
+      "data": "inventory",
+      "mutation": {
+        "theme": "dark",
+        "side": 120,
+        "colw": 110,
+        "rowh": 28,
+        "order": "3,4,2,0,1"
+      }
+    },
+    {
+      "id": "redesign_12",
+      "group": "redesign",
+      "app": "A",
+      "url": "http://localhost:8765/gridline.html?theme=light&side=240&colw=90&rowh=28&order=4,3,0,2,1&data=inventory",
+      "data": "inventory",
+      "mutation": {
+        "theme": "light",
+        "side": 240,
+        "colw": 90,
+        "rowh": 28,
+        "order": "4,3,0,2,1"
+      }
+    },
+    {
+      "id": "redesign_13",
+      "group": "redesign",
+      "app": "A",
+      "url": "http://localhost:8765/gridline.html?theme=dark&side=120&colw=90&rowh=25&order=4,3,0,2,1&data=sales",
+      "data": "sales",
+      "mutation": {
+        "theme": "dark",
+        "side": 120,
+        "colw": 90,
+        "rowh": 25,
+        "order": "4,3,0,2,1"
+      }
+    },
+    {
+      "id": "redesign_14",
+      "group": "redesign",
+      "app": "A",
+      "url": "http://localhost:8765/gridline.html?theme=light&side=120&colw=130&rowh=32&order=1,3,0,2,4&data=sales",
+      "data": "sales",
+      "mutation": {
+        "theme": "light",
+        "side": 120,
+        "colw": 130,
+        "rowh": 32,
+        "order": "1,3,0,2,4"
+      }
+    },
+    {
+      "id": "redesign_15",
+      "group": "redesign",
+      "app": "A",
+      "url": "http://localhost:8765/gridline.html?theme=light&side=120&colw=150&rowh=22&order=2,3,0,1,4&data=sales",
+      "data": "sales",
+      "mutation": {
+        "theme": "light",
+        "side": 120,
+        "colw": 150,
+        "rowh": 22,
+        "order": "2,3,0,1,4"
+      }
+    },
+    {
+      "id": "redesign_16",
+      "group": "redesign",
+      "app": "A",
+      "url": "http://localhost:8765/gridline.html?theme=dark&side=180&colw=150&rowh=32&order=0,4,3,2,1&data=sales",
+      "data": "sales",
+      "mutation": {
+        "theme": "dark",
+        "side": 180,
+        "colw": 150,
+        "rowh": 32,
+        "order": "0,4,3,2,1"
+      }
+    },
+    {
+      "id": "redesign_17",
+      "group": "redesign",
+      "app": "A",
+      "url": "http://localhost:8765/gridline.html?theme=dark&side=180&colw=150&rowh=32&order=4,3,0,1,2&data=sales",
+      "data": "sales",
+      "mutation": {
+        "theme": "dark",
+        "side": 180,
+        "colw": 150,
+        "rowh": 32,
+        "order": "4,3,0,1,2"
+      }
+    },
+    {
+      "id": "redesign_18",
+      "group": "redesign",
+      "app": "A",
+      "url": "http://localhost:8765/gridline.html?theme=dark&side=120&colw=130&rowh=32&order=0,2,3,4,1&data=sales",
+      "data": "sales",
+      "mutation": {
+        "theme": "dark",
+        "side": 120,
+        "colw": 130,
+        "rowh": 32,
+        "order": "0,2,3,4,1"
+      }
+    },
+    {
+      "id": "redesign_19",
+      "group": "redesign",
+      "app": "A",
+      "url": "http://localhost:8765/gridline.html?theme=light&side=0&colw=110&rowh=32&order=4,3,0,1,2&data=sales",
+      "data": "sales",
+      "mutation": {
+        "theme": "light",
+        "side": 0,
+        "colw": 110,
+        "rowh": 32,
+        "order": "4,3,0,1,2"
+      }
+    },
+    {
+      "id": "redesign_20",
+      "group": "redesign",
+      "app": "A",
+      "url": "http://localhost:8765/gridline.html?theme=light&side=0&colw=90&rowh=25&order=1,0,2,4,3&data=sales",
+      "data": "sales",
+      "mutation": {
+        "theme": "light",
+        "side": 0,
+        "colw": 90,
+        "rowh": 25,
+        "order": "1,0,2,4,3"
+      }
+    },
+    {
+      "id": "redesign_21",
+      "group": "redesign",
+      "app": "A",
+      "url": "http://localhost:8765/gridline.html?theme=light&side=240&colw=90&rowh=32&order=3,2,0,4,1&data=inventory",
+      "data": "inventory",
+      "mutation": {
+        "theme": "light",
+        "side": 240,
+        "colw": 90,
+        "rowh": 32,
+        "order": "3,2,0,4,1"
+      }
+    },
+    {
+      "id": "redesign_22",
+      "group": "redesign",
+      "app": "A",
+      "url": "http://localhost:8765/gridline.html?theme=light&side=240&colw=90&rowh=22&order=4,0,3,2,1&data=sales",
+      "data": "sales",
+      "mutation": {
+        "theme": "light",
+        "side": 240,
+        "colw": 90,
+        "rowh": 22,
+        "order": "4,0,3,2,1"
+      }
+    },
+    {
+      "id": "redesign_23",
+      "group": "redesign",
+      "app": "A",
+      "url": "http://localhost:8765/gridline.html?theme=light&side=120&colw=150&rowh=32&order=0,2,4,1,3&data=inventory",
+      "data": "inventory",
+      "mutation": {
+        "theme": "light",
+        "side": 120,
+        "colw": 150,
+        "rowh": 32,
+        "order": "0,2,4,1,3"
+      }
+    }
+  ],
+  "rows": [
+    {
+      "condition": "same",
+      "group": "same",
+      "app": "A",
+      "system": "replay",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(E2:E11)",
+        "expected": 65500.0,
+        "got": 65500.0
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "same",
+      "group": "same",
+      "app": "A",
+      "system": "eidos",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(E2:E11)",
+        "expected": 65500.0,
+        "got": 65500.0
+      },
+      "self_report": true,
+      "error": null
+    },
+    {
+      "condition": "same",
+      "group": "same",
+      "app": "A",
+      "system": "eidos_nochk",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(E2:E11)",
+        "expected": 65500.0,
+        "got": 65500.0
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "new_data",
+      "group": "new_data",
+      "app": "A",
+      "system": "replay",
+      "success": false,
+      "detail": {
+        "success": false,
+        "label_ok": false,
+        "sum_ok": false,
+        "bold_ok": false,
+        "formula": "",
+        "expected": 30930.0,
+        "got": null
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "new_data",
+      "group": "new_data",
+      "app": "A",
+      "system": "eidos",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(E2:E9)",
+        "expected": 30930.0,
+        "got": 30930.0
+      },
+      "self_report": true,
+      "error": null
+    },
+    {
+      "condition": "new_data",
+      "group": "new_data",
+      "app": "A",
+      "system": "eidos_nochk",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(E2:E9)",
+        "expected": 30930.0,
+        "got": 30930.0
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "other_app_sales",
+      "group": "other_app",
+      "app": "B",
+      "system": "replay",
+      "success": false,
+      "detail": {
+        "success": false,
+        "label_ok": true,
+        "sum_ok": false,
+        "bold_ok": false,
+        "formula": "=SUM(E2:E11)",
+        "expected": 65500.0,
+        "got": 61900.0
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "other_app_sales",
+      "group": "other_app",
+      "app": "B",
+      "system": "eidos",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(E1:E10)",
+        "expected": 65500.0,
+        "got": 65500.0
+      },
+      "self_report": true,
+      "error": null
+    },
+    {
+      "condition": "other_app_sales",
+      "group": "other_app",
+      "app": "B",
+      "system": "eidos_nochk",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(E1:E10)",
+        "expected": 65500.0,
+        "got": 65500.0
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "other_app_inventory",
+      "group": "other_app",
+      "app": "B",
+      "system": "replay",
+      "success": false,
+      "detail": {
+        "success": false,
+        "label_ok": false,
+        "sum_ok": false,
+        "bold_ok": false,
+        "formula": "",
+        "expected": 30930.0,
+        "got": null
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "other_app_inventory",
+      "group": "other_app",
+      "app": "B",
+      "system": "eidos",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(E1:E8)",
+        "expected": 30930.0,
+        "got": 30930.0
+      },
+      "self_report": true,
+      "error": null
+    },
+    {
+      "condition": "other_app_inventory",
+      "group": "other_app",
+      "app": "B",
+      "system": "eidos_nochk",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(E1:E8)",
+        "expected": 30930.0,
+        "got": 30930.0
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_00",
+      "group": "redesign",
+      "app": "A",
+      "system": "replay",
+      "success": false,
+      "detail": {
+        "success": false,
+        "label_ok": false,
+        "sum_ok": false,
+        "bold_ok": false,
+        "formula": "",
+        "expected": 30930.0,
+        "got": null
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_00",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(B2:B9)",
+        "expected": 30930.0,
+        "got": 30930.0
+      },
+      "self_report": true,
+      "error": null
+    },
+    {
+      "condition": "redesign_00",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos_nochk",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(B2:B9)",
+        "expected": 30930.0,
+        "got": 30930.0
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_01",
+      "group": "redesign",
+      "app": "A",
+      "system": "replay",
+      "success": false,
+      "detail": {
+        "success": false,
+        "label_ok": false,
+        "sum_ok": false,
+        "bold_ok": false,
+        "formula": "",
+        "expected": 65500.0,
+        "got": null
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_01",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(C2:C11)",
+        "expected": 65500.0,
+        "got": 65500.0
+      },
+      "self_report": true,
+      "error": null
+    },
+    {
+      "condition": "redesign_01",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos_nochk",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(C2:C11)",
+        "expected": 65500.0,
+        "got": 65500.0
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_02",
+      "group": "redesign",
+      "app": "A",
+      "system": "replay",
+      "success": false,
+      "detail": {
+        "success": false,
+        "label_ok": false,
+        "sum_ok": false,
+        "bold_ok": false,
+        "formula": "",
+        "expected": 30930.0,
+        "got": null
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_02",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(A2:A9)",
+        "expected": 30930.0,
+        "got": 30930.0
+      },
+      "self_report": true,
+      "error": null
+    },
+    {
+      "condition": "redesign_02",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos_nochk",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(A2:A9)",
+        "expected": 30930.0,
+        "got": 30930.0
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_03",
+      "group": "redesign",
+      "app": "A",
+      "system": "replay",
+      "success": false,
+      "detail": {
+        "success": false,
+        "why": "no totals row",
+        "expected": 30930.0
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_03",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(A2:A9)",
+        "expected": 30930.0,
+        "got": 30930.0
+      },
+      "self_report": true,
+      "error": null
+    },
+    {
+      "condition": "redesign_03",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos_nochk",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(A2:A9)",
+        "expected": 30930.0,
+        "got": 30930.0
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_04",
+      "group": "redesign",
+      "app": "A",
+      "system": "replay",
+      "success": false,
+      "detail": {
+        "success": false,
+        "why": "no totals row",
+        "expected": 30930.0
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_04",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(B2:B9)",
+        "expected": 30930.0,
+        "got": 30930.0
+      },
+      "self_report": true,
+      "error": null
+    },
+    {
+      "condition": "redesign_04",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos_nochk",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(B2:B9)",
+        "expected": 30930.0,
+        "got": 30930.0
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_05",
+      "group": "redesign",
+      "app": "A",
+      "system": "replay",
+      "success": false,
+      "detail": {
+        "success": false,
+        "label_ok": true,
+        "sum_ok": false,
+        "bold_ok": true,
+        "formula": "600",
+        "expected": 30330.0,
+        "got": null
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_05",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(D2:D9)",
+        "expected": 30930.0,
+        "got": 30930.0
+      },
+      "self_report": true,
+      "error": null
+    },
+    {
+      "condition": "redesign_05",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos_nochk",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(D2:D9)",
+        "expected": 30930.0,
+        "got": 30930.0
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_06",
+      "group": "redesign",
+      "app": "A",
+      "system": "replay",
+      "success": false,
+      "detail": {
+        "success": false,
+        "why": "no totals row",
+        "expected": 30330.0
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_06",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(D2:D9)",
+        "expected": 30930.0,
+        "got": 30930.0
+      },
+      "self_report": true,
+      "error": null
+    },
+    {
+      "condition": "redesign_06",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos_nochk",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(D2:D9)",
+        "expected": 30930.0,
+        "got": 30930.0
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_07",
+      "group": "redesign",
+      "app": "A",
+      "system": "replay",
+      "success": false,
+      "detail": {
+        "success": false,
+        "label_ok": false,
+        "sum_ok": false,
+        "bold_ok": false,
+        "formula": "",
+        "expected": 65500.0,
+        "got": null
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_07",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(D2:D11)",
+        "expected": 65500.0,
+        "got": 65500.0
+      },
+      "self_report": true,
+      "error": null
+    },
+    {
+      "condition": "redesign_07",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos_nochk",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(D2:D11)",
+        "expected": 65500.0,
+        "got": 65500.0
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_08",
+      "group": "redesign",
+      "app": "A",
+      "system": "replay",
+      "success": false,
+      "detail": {
+        "success": false,
+        "why": "no totals row",
+        "expected": 30330.0
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_08",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(C2:C9)",
+        "expected": 30930.0,
+        "got": 30930.0
+      },
+      "self_report": true,
+      "error": null
+    },
+    {
+      "condition": "redesign_08",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos_nochk",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(C2:C9)",
+        "expected": 30930.0,
+        "got": 30930.0
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_09",
+      "group": "redesign",
+      "app": "A",
+      "system": "replay",
+      "success": false,
+      "detail": {
+        "success": false,
+        "why": "no totals row",
+        "expected": 59500.0
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_09",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(C2:C11)",
+        "expected": 65500.0,
+        "got": 65500.0
+      },
+      "self_report": true,
+      "error": null
+    },
+    {
+      "condition": "redesign_09",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos_nochk",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(C2:C11)",
+        "expected": 65500.0,
+        "got": 65500.0
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_10",
+      "group": "redesign",
+      "app": "A",
+      "system": "replay",
+      "success": false,
+      "detail": {
+        "success": false,
+        "label_ok": false,
+        "sum_ok": false,
+        "bold_ok": false,
+        "formula": "",
+        "expected": 65500.0,
+        "got": null
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_10",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(C2:C11)",
+        "expected": 65500.0,
+        "got": 65500.0
+      },
+      "self_report": true,
+      "error": null
+    },
+    {
+      "condition": "redesign_10",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos_nochk",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(C2:C11)",
+        "expected": 65500.0,
+        "got": 65500.0
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_11",
+      "group": "redesign",
+      "app": "A",
+      "system": "replay",
+      "success": false,
+      "detail": {
+        "success": false,
+        "label_ok": false,
+        "sum_ok": false,
+        "bold_ok": false,
+        "formula": "",
+        "expected": 30930.0,
+        "got": null
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_11",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(B2:B9)",
+        "expected": 30930.0,
+        "got": 30930.0
+      },
+      "self_report": true,
+      "error": null
+    },
+    {
+      "condition": "redesign_11",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos_nochk",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(B2:B9)",
+        "expected": 30930.0,
+        "got": 30930.0
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_12",
+      "group": "redesign",
+      "app": "A",
+      "system": "replay",
+      "success": false,
+      "detail": {
+        "success": false,
+        "label_ok": false,
+        "sum_ok": false,
+        "bold_ok": false,
+        "formula": "",
+        "expected": 30930.0,
+        "got": null
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_12",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(A2:A9)",
+        "expected": 30930.0,
+        "got": 30930.0
+      },
+      "self_report": true,
+      "error": null
+    },
+    {
+      "condition": "redesign_12",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos_nochk",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(A2:A9)",
+        "expected": 30930.0,
+        "got": 30930.0
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_13",
+      "group": "redesign",
+      "app": "A",
+      "system": "replay",
+      "success": false,
+      "detail": {
+        "success": false,
+        "label_ok": false,
+        "sum_ok": false,
+        "bold_ok": false,
+        "formula": "",
+        "expected": 65500.0,
+        "got": null
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_13",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(A2:A11)",
+        "expected": 65500.0,
+        "got": 65500.0
+      },
+      "self_report": true,
+      "error": null
+    },
+    {
+      "condition": "redesign_13",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos_nochk",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(A2:A11)",
+        "expected": 65500.0,
+        "got": 65500.0
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_14",
+      "group": "redesign",
+      "app": "A",
+      "system": "replay",
+      "success": false,
+      "detail": {
+        "success": false,
+        "why": "no totals row",
+        "expected": 65500.0
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_14",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(E2:E11)",
+        "expected": 65500.0,
+        "got": 65500.0
+      },
+      "self_report": true,
+      "error": null
+    },
+    {
+      "condition": "redesign_14",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos_nochk",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(E2:E11)",
+        "expected": 65500.0,
+        "got": 65500.0
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_15",
+      "group": "redesign",
+      "app": "A",
+      "system": "replay",
+      "success": false,
+      "detail": {
+        "success": false,
+        "label_ok": false,
+        "sum_ok": false,
+        "bold_ok": false,
+        "formula": "",
+        "expected": 65500.0,
+        "got": null
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_15",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(E2:E11)",
+        "expected": 65500.0,
+        "got": 65500.0
+      },
+      "self_report": true,
+      "error": null
+    },
+    {
+      "condition": "redesign_15",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos_nochk",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(E2:E11)",
+        "expected": 65500.0,
+        "got": 65500.0
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_16",
+      "group": "redesign",
+      "app": "A",
+      "system": "replay",
+      "success": false,
+      "detail": {
+        "success": false,
+        "why": "no totals row",
+        "expected": 65500.0
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_16",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(B2:B11)",
+        "expected": 65500.0,
+        "got": 65500.0
+      },
+      "self_report": true,
+      "error": null
+    },
+    {
+      "condition": "redesign_16",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos_nochk",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(B2:B11)",
+        "expected": 65500.0,
+        "got": 65500.0
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_17",
+      "group": "redesign",
+      "app": "A",
+      "system": "replay",
+      "success": false,
+      "detail": {
+        "success": false,
+        "why": "no totals row",
+        "expected": 65500.0
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_17",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(A2:A11)",
+        "expected": 65500.0,
+        "got": 65500.0
+      },
+      "self_report": true,
+      "error": null
+    },
+    {
+      "condition": "redesign_17",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos_nochk",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(A2:A11)",
+        "expected": 65500.0,
+        "got": 65500.0
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_18",
+      "group": "redesign",
+      "app": "A",
+      "system": "replay",
+      "success": false,
+      "detail": {
+        "success": false,
+        "why": "no totals row",
+        "expected": 65500.0
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_18",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(D2:D11)",
+        "expected": 65500.0,
+        "got": 65500.0
+      },
+      "self_report": true,
+      "error": null
+    },
+    {
+      "condition": "redesign_18",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos_nochk",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(D2:D11)",
+        "expected": 65500.0,
+        "got": 65500.0
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_19",
+      "group": "redesign",
+      "app": "A",
+      "system": "replay",
+      "success": false,
+      "detail": {
+        "success": false,
+        "why": "no totals row",
+        "expected": 59500.0
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_19",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(A2:A11)",
+        "expected": 65500.0,
+        "got": 65500.0
+      },
+      "self_report": true,
+      "error": null
+    },
+    {
+      "condition": "redesign_19",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos_nochk",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(A2:A11)",
+        "expected": 65500.0,
+        "got": 65500.0
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_20",
+      "group": "redesign",
+      "app": "A",
+      "system": "replay",
+      "success": false,
+      "detail": {
+        "success": false,
+        "label_ok": false,
+        "sum_ok": false,
+        "bold_ok": false,
+        "formula": "",
+        "expected": 65500.0,
+        "got": null
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_20",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(D2:D11)",
+        "expected": 65500.0,
+        "got": 65500.0
+      },
+      "self_report": true,
+      "error": null
+    },
+    {
+      "condition": "redesign_20",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos_nochk",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(D2:D11)",
+        "expected": 65500.0,
+        "got": 65500.0
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_21",
+      "group": "redesign",
+      "app": "A",
+      "system": "replay",
+      "success": false,
+      "detail": {
+        "success": false,
+        "why": "no totals row",
+        "expected": 30930.0
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_21",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(D2:D9)",
+        "expected": 30930.0,
+        "got": 30930.0
+      },
+      "self_report": true,
+      "error": null
+    },
+    {
+      "condition": "redesign_21",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos_nochk",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(D2:D9)",
+        "expected": 30930.0,
+        "got": 30930.0
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_22",
+      "group": "redesign",
+      "app": "A",
+      "system": "replay",
+      "success": false,
+      "detail": {
+        "success": false,
+        "label_ok": false,
+        "sum_ok": false,
+        "bold_ok": false,
+        "formula": "",
+        "expected": 65500.0,
+        "got": null
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_22",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(A2:A11)",
+        "expected": 65500.0,
+        "got": 65500.0
+      },
+      "self_report": true,
+      "error": null
+    },
+    {
+      "condition": "redesign_22",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos_nochk",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(A2:A11)",
+        "expected": 65500.0,
+        "got": 65500.0
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_23",
+      "group": "redesign",
+      "app": "A",
+      "system": "replay",
+      "success": false,
+      "detail": {
+        "success": false,
+        "why": "no totals row",
+        "expected": 30330.0
+      },
+      "self_report": null,
+      "error": null
+    },
+    {
+      "condition": "redesign_23",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(C2:C9)",
+        "expected": 30930.0,
+        "got": 30930.0
+      },
+      "self_report": true,
+      "error": null
+    },
+    {
+      "condition": "redesign_23",
+      "group": "redesign",
+      "app": "A",
+      "system": "eidos_nochk",
+      "success": true,
+      "detail": {
+        "success": true,
+        "label_ok": true,
+        "sum_ok": true,
+        "bold_ok": true,
+        "formula": "=SUM(C2:C9)",
+        "expected": 30930.0,
+        "got": 30930.0
+      },
+      "self_report": null,
+      "error": null
+    }
+  ],
+  "summary": {
+    "same": {
+      "replay": {
+        "n": 1,
+        "success": 1
+      },
+      "eidos": {
+        "n": 1,
+        "success": 1
+      },
+      "eidos_nochk": {
+        "n": 1,
+        "success": 1
+      }
+    },
+    "new_data": {
+      "replay": {
+        "n": 1,
+        "success": 0
+      },
+      "eidos": {
+        "n": 1,
+        "success": 1
+      },
+      "eidos_nochk": {
+        "n": 1,
+        "success": 1
+      }
+    },
+    "redesign": {
+      "replay": {
+        "n": 24,
+        "success": 0
+      },
+      "eidos": {
+        "n": 24,
+        "success": 24
+      },
+      "eidos_nochk": {
+        "n": 24,
+        "success": 24
+      }
+    },
+    "other_app": {
+      "replay": {
+        "n": 2,
+        "success": 0
+      },
+      "eidos": {
+        "n": 2,
+        "success": 2
+      },
+      "eidos_nochk": {
+        "n": 2,
+        "success": 2
+      }
+    },
+    "all": {
+      "replay": {
+        "n": 28,
+        "success": 1
+      },
+      "eidos": {
+        "n": 28,
+        "success": 28
+      },
+      "eidos_nochk": {
+        "n": 28,
+        "success": 28
+      }
+    },
+    "eidos_self_report": {
+      "n": 28,
+      "agrees_with_oracle": 28,
+      "silent_failures": 0
+    },
+    "replay_silent_failures": 27
+  }
+}

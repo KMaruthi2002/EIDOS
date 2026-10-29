@@ -26,6 +26,8 @@ CASES = [
      "data": ("Region", "Revenue")},
     {"id": "other_app", "title": "A different app (Jspreadsheet)", "url": f"{BASE}/tabula.html",
      "data": ("Region", "Revenue")},
+    {"id": "interrupt", "title": "A \"What's new\" dialog pops up mid-task and blocks input",
+     "url": f"{BASE}/tabula.html?popup=4.0", "data": ("Region", "Revenue"), "baseline": "nochk"},
 ]
 
 
@@ -37,10 +39,17 @@ async def main():
         label_col, sum_col = c["data"]
         e = await run_program(program, c["url"], OUT / c["id"] / "eidos", inputs={"sum_column": sum_col, "label_column": label_col},
                               skill_dir=SKILL)
-        r = await replay(trace, c["url"], OUT / c["id"] / "replay")
+        if c.get("baseline") == "nochk":
+            # Here the interesting comparison is EIDOS without its checks.
+            r = await run_program(program, c["url"], OUT / c["id"] / "replay",
+                                  inputs={"sum_column": sum_col, "label_column": label_col},
+                                  skill_dir=SKILL, use_contracts=False)
+        else:
+            r = await replay(trace, c["url"], OUT / c["id"] / "replay")
         se = score_totals(e["oracle_state"], "Total", label_col, sum_col)
         sr = score_totals(r["oracle_state"], "Total", label_col, sum_col)
-        index.append({**{k: c[k] for k in ("id", "title", "url")}, "eidos": se, "replay": sr,
+        index.append({**{k: c[k] for k in ("id", "title", "url")}, "baseline": c.get("baseline", "replay"),
+                      "baseline_self_report": r.get("all_contracts_passed"), "eidos": se, "replay": sr,
                       "eidos_self_report": e["all_contracts_passed"]})
         print(c["id"], "eidos", se["success"], "replay", sr["success"], flush=True)
     (OUT / "index.json").write_text(json.dumps(index, indent=2))

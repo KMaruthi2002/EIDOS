@@ -1,0 +1,188 @@
+same                   replay       PASS
+same                   eidos_nochk  PASS
+same                   eidos        PASS  (agent says ok)
+new_data               replay       fail
+new_data               eidos        PASS  (agent says ok)
+new_data               eidos_nochk  PASS
+other_app_sales        replay       fail
+other_app_inventory    replay       fail
+other_app_sales        eidos_nochk  PASS
+other_app_sales        eidos        PASS  (agent says ok)
+redesign_00            replay       fail
+other_app_inventory    eidos        PASS  (agent says ok)
+other_app_inventory    eidos_nochk  PASS
+redesign_01            replay       fail
+redesign_00            eidos        PASS  (agent says ok)
+redesign_00            eidos_nochk  PASS
+redesign_02            replay       fail
+redesign_01            eidos        PASS  (agent says ok)
+redesign_01            eidos_nochk  PASS
+redesign_03            replay       fail
+redesign_02            eidos        PASS  (agent says ok)
+redesign_02            eidos_nochk  PASS
+redesign_04            replay       fail
+redesign_03            eidos        PASS  (agent says ok)
+redesign_03            eidos_nochk  PASS
+redesign_05            replay       fail
+redesign_04            eidos        PASS  (agent says ok)
+redesign_04            eidos_nochk  PASS
+redesign_06            replay       fail
+redesign_05            eidos        PASS  (agent says ok)
+redesign_05            eidos_nochk  PASS
+redesign_07            replay       fail
+redesign_06            eidos        PASS  (agent says ok)
+redesign_06            eidos_nochk  PASS
+redesign_08            replay       fail
+redesign_07            eidos        PASS  (agent says ok)
+redesign_07            eidos_nochk  PASS
+redesign_09            replay       fail
+redesign_08            eidos        PASS  (agent says ok)
+redesign_08            eidos_nochk  PASS
+redesign_10            replay       fail
+redesign_09            eidos        PASS  (agent says ok)
+redesign_09            eidos_nochk  PASS
+redesign_10            eidos        PASS  (agent says ok)
+redesign_10            eidos_nochk  PASS
+redesign_11            replay       fail
+redesign_12            replay       fail
+redesign_11            eidos        PASS  (agent says ok)
+redesign_11            eidos_nochk  PASS
+redesign_12            eidos        PASS  (agent says ok)
+redesign_13            replay       fail
+redesign_12            eidos_nochk  PASS
+redesign_13            eidos        PASS  (agent says ok)
+redesign_14            replay       fail
+redesign_13            eidos_nochk  PASS
+redesign_15            replay       fail
+redesign_14            eidos        PASS  (agent says ok)
+redesign_14            eidos_nochk  PASS
+interrupt_00           replay       fail
+redesign_15            eidos        PASS  (agent says ok)
+redesign_15            eidos_nochk  PASS
+interrupt_01           replay       fail
+interrupt_00           eidos_nochk  fail
+interrupt_00           eidos        PASS  (agent says ok)
+interrupt_02           replay       fail
+interrupt_01           eidos_nochk  fail
+interrupt_01           eidos        PASS  (agent says ok)
+interrupt_03           replay       fail
+interrupt_02           eidos_nochk  fail
+interrupt_02           eidos        PASS  (agent says ok)
+interrupt_04           replay       fail
+interrupt_03           eidos_nochk  fail
+interrupt_03           eidos        PASS  (agent says ok)
+interrupt_05           replay       fail
+interrupt_04           eidos_nochk  fail
+interrupt_04           eidos        PASS  (agent says ok)
+interrupt_06           replay       fail
+interrupt_05           eidos_nochk  fail
+interrupt_05           eidos        PASS  (agent says ok)
+interrupt_06           eidos_nochk  fail
+interrupt_07           replay       fail
+interrupt_06           eidos        PASS  (agent says ok)
+interrupt_07           eidos_nochk  fail
+interrupt_08           replay       fail
+interrupt_07           eidos        PASS  (agent says ok)
+interrupt_09           replay       fail
+interrupt_08           eidos_nochk  fail
+interrupt_08           eidos        PASS  (agent says ok)
+interrupt_10           replay       fail
+interrupt_09           eidos_nochk  fail
+interrupt_09           eidos        PASS  (agent says ok)
+interrupt_11           replay       fail
+interrupt_10           eidos_nochk  fail
+interrupt_10           eidos        PASS  (agent says ok)
+interrupt_11           eidos_nochk  fail
+interrupt_11           eidos        PASS  (agent says ok)
+{
+  "same": {
+    "replay": {
+      "n": 1,
+      "success": 1
+    },
+    "eidos": {
+      "n": 1,
+      "success": 1
+    },
+    "eidos_nochk": {
+      "n": 1,
+      "success": 1
+    }
+  },
+  "new_data": {
+    "replay": {
+      "n": 1,
+      "success": 0
+    },
+    "eidos": {
+      "n": 1,
+      "success": 1
+    },
+    "eidos_nochk": {
+      "n": 1,
+      "success": 1
+    }
+  },
+  "redesign": {
+    "replay": {
+      "n": 16,
+      "success": 0
+    },
+    "eidos": {
+      "n": 16,
+      "success": 16
+    },
+    "eidos_nochk": {
+      "n": 16,
+      "success": 16
+    }
+  },
+  "other_app": {
+    "replay": {
+      "n": 2,
+      "success": 0
+    },
+    "eidos": {
+      "n": 2,
+      "success": 2
+    },
+    "eidos_nochk": {
+      "n": 2,
+      "success": 2
+    }
+  },
+  "interruption": {
+    "replay": {
+      "n": 12,
+      "success": 0
+    },
+    "eidos": {
+      "n": 12,
+      "success": 12
+    },
+    "eidos_nochk": {
+      "n": 12,
+      "success": 0
+    }
+  },
+  "all": {
+    "replay": {
+      "n": 32,
+      "success": 1
+    },
+    "eidos": {
+      "n": 32,
+      "success": 32
+    },
+    "eidos_nochk": {
+      "n": 32,
+      "success": 20
+    }
+  },
+  "eidos_self_report": {
+    "n": 32,
+    "agrees_with_oracle": 32,
+    "silent_failures": 0
+  },
+  "replay_silent_failures": 31
+}

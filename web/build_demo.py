@@ -40,7 +40,7 @@ def main():
         c["eidos_report"] = rep
 
     bench = {}
-    for split in ("dev", "test", "test_v1"):
+    for split in ("dev", "test", "test_v1", "test_v2"):
         f = RUNS / f"bench_{split}" / "results.json"
         if f.exists():
             r = json.loads(f.read_text())

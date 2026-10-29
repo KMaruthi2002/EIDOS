@@ -1,0 +1,355 @@
+{
+  "url": "http://localhost:8765/gridline.html?theme=dark&side=0&colw=90&rowh=28&order=3,1,0,2,4&data=inventory",
+  "inputs": {
+    "label": "Total",
+    "label_column": "Warehouse",
+    "sum_column": "Value"
+  },
+  "use_contracts": true,
+  "steps": [
+    {
+      "id": 1,
+      "intent": "Write Total in the Warehouse column of the first empty row below the data",
+      "action": "enter_text",
+      "grounding": [
+        {
+          "how": "screen reading (OCR) of headers and data extent",
+          "column": "Warehouse",
+          "row_y": 370,
+          "point": [
+            285,
+            370
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "contract": "header above the cell reads 'Warehouse'",
+          "saw": "Warehouse",
+          "pass": true
+        },
+        {
+          "contract": "cell shows 'Total'",
+          "saw": "Total",
+          "pass": true
+        }
+      ],
+      "passed": true,
+      "t_start": 3.4,
+      "t_end": 7.52,
+      "shot_pre": "run_step1_pre.png",
+      "shot_post": "run_step1_post.png"
+    },
+    {
+      "id": 2,
+      "intent": "Sum the Value column over all data rows, in the same row",
+      "action": "enter_formula",
+      "grounding": [
+        {
+          "how": "screen reading (OCR) of headers and data extent",
+          "column": "Value",
+          "row_y": 370,
+          "point": [
+            465,
+            370
+          ]
+        },
+        {
+          "how": "repair: contract failed, pressed Escape and retried the step"
+        },
+        {
+          "how": "screen reading (OCR) of headers and data extent",
+          "column": "Value",
+          "row_y": 370,
+          "point": [
+            465,
+            370
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "contract": "perceive the target on this screen",
+          "error": "could not read the row numbers",
+          "pass": false
+        },
+        {
+          "contract": "perceive the target on this screen",
+          "error": "could not read the row numbers",
+          "pass": false
+        }
+      ],
+      "passed": false,
+      "t_start": 7.59,
+      "t_end": 8.37,
+      "shot_pre": "run_step2_pre.png",
+      "shot_post": "run_step2_post.png"
+    }
+  ],
+  "all_contracts_passed": false,
+  "oracle_state": {
+    "app": "A",
+    "cells": [
+      [
+        {
+          "v": "Stock",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Week",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Warehouse",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Item",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Value",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "900",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "W1",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Newark",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Bolts",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "450",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "40",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "W1",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Austin",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Panels",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "8800",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "310",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "W2",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Denver",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Cables",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "1240",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "25",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "W2",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Newark",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Panels",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "5500",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "1200",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "W3",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Austin",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Bolts",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "600",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "55",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "W3",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Denver",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Panels",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "12100",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "410",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "W4",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Newark",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Cables",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "1640",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "150",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "W4",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Austin",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Cables",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "600",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Total",
+          "bold": false,
+          "fill": null
+        }
+      ]
+    ]
+  }
+}

@@ -1,0 +1,271 @@
+{
+  "url": "http://localhost:8765/gridline.html?theme=light&side=180&colw=130&rowh=25&order=2,4,0,1,3&data=inventory",
+  "baseline": "replay",
+  "oracle_state": {
+    "app": "A",
+    "cells": [
+      [
+        {
+          "v": "Item",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Value",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Warehouse",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Week",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Stock",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "Bolts",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "450",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Newark",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "W1",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "900",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "Panels",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "8800",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Austin",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "W1",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "40",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "Cables",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "1240",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Denver",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "W2",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "310",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "Panels",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "5500",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Newark",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "W2",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "25",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "Bolts",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "600",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Austin",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "W3",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "1200",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "Panels",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "12100",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Denver",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "W3",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "55",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "Cables",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "1640",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Newark",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "W4",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "410",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "Cables",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "600",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Austin",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "W4",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "150",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [],
+      [],
+      [
+        {
+          "v": "",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "=SUM(E2:E11)",
+          "bold": false,
+          "fill": null
+        }
+      ]
+    ]
+  }
+}

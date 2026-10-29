@@ -1,0 +1,478 @@
+{
+  "url": "http://localhost:8765/gridline.html?theme=dark&side=120&colw=130&rowh=32&order=0,2,3,4,1&data=sales",
+  "inputs": {
+    "label": "Total",
+    "label_column": "Region",
+    "sum_column": "Revenue"
+  },
+  "use_contracts": false,
+  "steps": [
+    {
+      "id": 1,
+      "intent": "Write Total in the Region column of the first empty row below the data",
+      "action": "enter_text",
+      "grounding": [
+        {
+          "how": "screen reading (OCR) of headers and data extent",
+          "column": "Region",
+          "row_y": 477,
+          "point": [
+            245,
+            477
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "contract": "header above the cell reads 'Region'",
+          "saw": "Region",
+          "pass": true
+        },
+        {
+          "contract": "cell shows 'Total'",
+          "saw": "Total",
+          "pass": true
+        }
+      ],
+      "passed": true,
+      "t_start": 5.38,
+      "t_end": 7.33,
+      "shot_pre": "run_step1_pre.png",
+      "shot_post": "run_step1_post.png"
+    },
+    {
+      "id": 2,
+      "intent": "Sum the Revenue column over all data rows, in the same row",
+      "action": "enter_formula",
+      "grounding": [
+        {
+          "how": "screen reading (OCR) of headers and data extent",
+          "column": "Revenue",
+          "row_y": 477,
+          "point": [
+            635,
+            477
+          ]
+        },
+        {
+          "how": "rewrote the formula for this screen",
+          "learned": "=SUM(E2:E11)",
+          "now": "=SUM(D2:D11)"
+        }
+      ],
+      "checks": [
+        {
+          "contract": "header above the cell reads 'Revenue'",
+          "saw": "Revenue",
+          "pass": true
+        },
+        {
+          "contract": "cell shows the SUM of the Revenue column read off the screen",
+          "expected": 65500.0,
+          "saw": "65500",
+          "pass": true
+        }
+      ],
+      "passed": true,
+      "t_start": 7.41,
+      "t_end": 11.67,
+      "shot_pre": "run_step2_pre.png",
+      "shot_post": "run_step2_post.png"
+    },
+    {
+      "id": 3,
+      "intent": "Select that row across the whole table",
+      "action": "select_row",
+      "grounding": [
+        {
+          "how": "table edges from gridlines",
+          "from": [
+            245,
+            477
+          ],
+          "to": [
+            765,
+            477
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "contract": "selection highlight covers the whole row",
+          "changed_box": [
+            179,
+            47,
+            656,
+            482
+          ],
+          "pass": true
+        }
+      ],
+      "passed": true,
+      "t_start": 11.76,
+      "t_end": 13.51,
+      "shot_pre": "run_step3_pre.png",
+      "shot_post": "run_step3_post.png"
+    },
+    {
+      "id": 4,
+      "intent": "Make the selected row bold",
+      "action": "apply_format",
+      "grounding": [
+        {
+          "how": "match the control's look from the tutorial",
+          "found": true,
+          "method": "intensity",
+          "point": [
+            508,
+            60
+          ],
+          "score": 1.0
+        }
+      ],
+      "checks": [
+        {
+          "contract": "text in the selected row got heavier (bold)",
+          "ink_before": 0.0082,
+          "ink_after": 0.0127,
+          "pass": true
+        }
+      ],
+      "passed": true,
+      "t_start": 13.62,
+      "t_end": 14.73,
+      "shot_pre": "run_step4_pre.png",
+      "shot_post": "run_step4_post.png"
+    }
+  ],
+  "all_contracts_passed": true,
+  "oracle_state": {
+    "app": "A",
+    "cells": [
+      [
+        {
+          "v": "Region",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Product",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Units",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Revenue",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Month",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "North",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Lamp",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "120",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "3600",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Jan",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "South",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Desk",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "45",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "9000",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Jan",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "East",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Chair",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "210",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "8400",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Feb",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "West",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Lamp",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "95",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "2850",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Feb",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "North",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Desk",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "60",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "12000",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Mar",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "South",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Chair",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "180",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "7200",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Mar",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "East",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Lamp",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "140",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "4200",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Apr",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "West",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Desk",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "30",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "6000",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Apr",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "North",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Chair",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "250",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "10000",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "May",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "South",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Lamp",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "75",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "2250",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "May",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "Total",
+          "bold": true,
+          "fill": null
+        },
+        {
+          "v": "",
+          "bold": true,
+          "fill": null
+        },
+        {
+          "v": "",
+          "bold": true,
+          "fill": null
+        },
+        {
+          "v": "=SUM(D2:D11)",
+          "bold": true,
+          "fill": null
+        },
+        {
+          "v": "",
+          "bold": true,
+          "fill": null
+        }
+      ]
+    ]
+  }
+}

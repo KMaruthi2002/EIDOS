@@ -1,0 +1,424 @@
+{
+  "url": "http://localhost:8765/gridline.html?theme=dark&side=120&colw=150&rowh=22&order=4,3,0,2,1&data=inventory",
+  "inputs": {
+    "label": "Total",
+    "label_column": "Warehouse",
+    "sum_column": "Value"
+  },
+  "use_contracts": true,
+  "steps": [
+    {
+      "id": 1,
+      "intent": "Write Total in the Warehouse column of the first empty row below the data",
+      "action": "enter_text",
+      "grounding": [
+        {
+          "how": "screen reading (OCR) of headers and data extent",
+          "column": "Warehouse",
+          "row_y": 308,
+          "point": [
+            555,
+            308
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "contract": "header above the cell reads 'Warehouse'",
+          "saw": "Warehouse",
+          "pass": true
+        },
+        {
+          "contract": "cell shows 'Total'",
+          "saw": "Total",
+          "pass": true
+        }
+      ],
+      "passed": true,
+      "t_start": 3.45,
+      "t_end": 5.57,
+      "shot_pre": "run_step1_pre.png",
+      "shot_post": "run_step1_post.png"
+    },
+    {
+      "id": 2,
+      "intent": "Sum the Value column over all data rows, in the same row",
+      "action": "enter_formula",
+      "grounding": [
+        {
+          "how": "screen reading (OCR) of headers and data extent",
+          "column": "Value",
+          "row_y": 308,
+          "point": [
+            254,
+            308
+          ]
+        },
+        {
+          "how": "rewrote the formula for this screen",
+          "learned": "=SUM(E2:E11)",
+          "now": "=SUM(A2:A9)"
+        }
+      ],
+      "checks": [
+        {
+          "contract": "header above the cell reads 'Value'",
+          "saw": "Value",
+          "pass": true
+        },
+        {
+          "contract": "cell shows the SUM of the Value column read off the screen",
+          "expected": 30930.0,
+          "saw": "30930",
+          "pass": true
+        }
+      ],
+      "passed": true,
+      "t_start": 8.05,
+      "t_end": 11.14,
+      "shot_pre": "run_step2_pre.png",
+      "shot_post": "run_step2_post.png"
+    },
+    {
+      "id": 3,
+      "intent": "Select that row across the whole table",
+      "action": "select_row",
+      "grounding": [
+        {
+          "how": "table edges from gridlines",
+          "from": [
+            254,
+            308
+          ],
+          "to": [
+            855,
+            308
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "contract": "selection highlight covers the whole row",
+          "changed_box": [
+            179,
+            47,
+            756,
+            298
+          ],
+          "pass": true
+        }
+      ],
+      "passed": true,
+      "t_start": 11.19,
+      "t_end": 12.73,
+      "shot_pre": "run_step3_pre.png",
+      "shot_post": "run_step3_post.png"
+    },
+    {
+      "id": 4,
+      "intent": "Make the selected row bold",
+      "action": "apply_format",
+      "grounding": [
+        {
+          "how": "match the control's look from the tutorial",
+          "found": true,
+          "method": "intensity",
+          "point": [
+            508,
+            60
+          ],
+          "score": 1.0
+        }
+      ],
+      "checks": [
+        {
+          "contract": "text in the selected row got heavier (bold)",
+          "ink_before": 0.0108,
+          "ink_after": 0.0162,
+          "pass": true
+        }
+      ],
+      "passed": true,
+      "t_start": 12.8,
+      "t_end": 14.75,
+      "shot_pre": "run_step4_pre.png",
+      "shot_post": "run_step4_post.png"
+    }
+  ],
+  "all_contracts_passed": true,
+  "oracle_state": {
+    "app": "A",
+    "cells": [
+      [
+        {
+          "v": "Value",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Stock",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Warehouse",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Item",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Week",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "450",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "900",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Newark",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Bolts",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "W1",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "8800",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "40",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Austin",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Panels",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "W1",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "1240",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "310",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Denver",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Cables",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "W2",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "5500",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "25",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Newark",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Panels",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "W2",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "600",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "1200",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Austin",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Bolts",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "W3",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "12100",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "55",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Denver",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Panels",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "W3",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "1640",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "410",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Newark",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Cables",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "W4",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "600",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "150",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Austin",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "Cables",
+          "bold": false,
+          "fill": null
+        },
+        {
+          "v": "W4",
+          "bold": false,
+          "fill": null
+        }
+      ],
+      [
+        {
+          "v": "=SUM(A2:A9)",
+          "bold": true,
+          "fill": null
+        },
+        {
+          "v": "",
+          "bold": true,
+          "fill": null
+        },
+        {
+          "v": "Total",
+          "bold": true,
+          "fill": null
+        },
+        {
+          "v": "",
+          "bold": true,
+          "fill": null
+        },
+        {
+          "v": "",
+          "bold": true,
+          "fill": null
+        }
+      ]
+    ]
+  }
+}

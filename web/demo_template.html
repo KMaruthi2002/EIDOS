@@ -219,7 +219,7 @@ footer { padding-block: 40px 60px; color: var(--muted); font-size: .9rem; border
     <p class="cond-title" id="cond-title"></p>
     <div class="duel">
       <div class="lane">
-        <div class="lane-head"><h3>Copying the clicks</h3><span class="verdict" id="v-replay"></span></div>
+        <div class="lane-head"><h3 id="baseline-title">Copying the clicks</h3><span class="verdict" id="v-replay"></span></div>
         <div class="stage"><video id="vid-replay" muted playsinline preload="auto" controls aria-label="Replay baseline run"></video></div>
         <p class="oracle" id="o-replay"></p>
       </div>
@@ -367,7 +367,7 @@ document.querySelectorAll(".step-row").forEach(r => r.addEventListener("click", 
 
 /* ---------------- run anywhere ---------------- */
 const runs = DATA.showcase;
-const segNames = { same: "Same app", new_data: "New data", redesign: "Redesigned app", other_app: "Different app" };
+const segNames = { same: "Same app", new_data: "New data", redesign: "Redesigned app", other_app: "Different app", interrupt: "Interrupted" };
 let current = runs.find(r => r.id === "redesign") || runs[0];
 $("#seg").innerHTML = runs.map(r => `<button type="button" data-id="${r.id}" aria-pressed="${r.id === current.id}">${segNames[r.id] || r.id}</button>`).join("");
 const vr = $("#vid-replay"), ve = $("#vid-eidos");
@@ -387,6 +387,7 @@ function renderChecks(t) {
     const active = t != null && t >= s.t_start - 0.2 && t < s.t_end;
     const chk = s.checks[s.checks.length - 1] || {};
     const how = s.grounding.map(g => {
+      if (g.how && g.how.startsWith("repair")) return "<strong>contract failed, so it pressed Escape and redid the step</strong>";
       if (g.now) return `formula rewritten for this screen: <code>${esc(g.learned)}</code> became <code>${esc(g.now)}</code>`;
       if (g.column) return `found the ${esc(g.column)} column by reading the screen`;
       if (g.shortcut) return `used ${esc(g.shortcut.replace("Control", "Ctrl"))} instead`;
@@ -409,7 +410,9 @@ function show(id) {
   vr.poster = `assets/runs/${id}_replay_end.jpg`; ve.poster = `assets/runs/${id}_eidos_end.jpg`;
   vr.src = `assets/runs/${id}_replay.mp4`; ve.src = `assets/runs/${id}_eidos.mp4`;
   verdict($("#v-replay"), current.replay.success); verdict($("#v-eidos"), current.eidos.success);
-  $("#o-replay").textContent = oracleText(current.replay);
+  const nochk = current.baseline === "nochk";
+  $("#baseline-title").textContent = nochk ? "EIDOS with checks off" : "Copying the clicks";
+  $("#o-replay").textContent = oracleText(current.replay) + (nochk && current.baseline_self_report ? " Its own verdict: \u201cdone\u201d. It never noticed the dialog swallowed its input." : "");
   $("#o-eidos").textContent = oracleText(current.eidos) + (current.eidos_self_report ? " EIDOS's own verdict: all contracts passed." : " EIDOS's own verdict: a contract failed, so it stopped.");
   renderChecks(null);
 }
@@ -424,7 +427,7 @@ show(current.id);
 /* ---------------- results ---------------- */
 const B = DATA.bench;
 function pct(x) { return x.n ? Math.round(100 * x.success / x.n) : 0; }
-const groups = [["same", "Same app, same data"], ["new_data", "New data"], ["redesign", "Redesigned app"], ["other_app", "Different app"], ["all", "All conditions"]];
+const groups = [["same", "Same app, same data"], ["new_data", "New data"], ["redesign", "Redesigned app"], ["other_app", "Different app"], ["interruption", "Interrupted mid-task"], ["all", "All conditions"]];
 const sysNames = { replay: "Copy the clicks", eidos_nochk: "EIDOS, checks off", eidos: "EIDOS" };
 $("#bars").innerHTML = groups.map(([g, name]) => {
   const row = B.test.summary[g];
@@ -434,16 +437,18 @@ $("#bars").innerHTML = groups.map(([g, name]) => {
   </div>`;
 }).join("");
 const sr = B.test.summary.eidos_self_report;
-const nk = B.test.summary.all.eidos_nochk;
-$("#bench-lede").innerHTML = `One tutorial, compiled once, then run under ${B.test.summary.all.eidos.n} conditions it never saw: new data, ${B.test.summary.redesign.eidos.n} randomly generated redesigns of App A (dark theme, sidebars, resized cells, shuffled columns), and a second app. The redesigns come from a held-out seed that was never looked at during development. Success is judged from each app's internal state.`;
+const S = B.test.summary;
+const nk = S.all.eidos_nochk;
+const it = S.interruption;
+$("#bench-lede").innerHTML = `One tutorial, compiled once, then run under ${S.all.eidos.n} conditions it never saw: new data, ${S.redesign.eidos.n} randomly generated redesigns of App A (dark theme, sidebars, resized cells, shuffled columns), a second app, and ${it ? it.eidos.n : 0} runs where a dialog pops up mid-task and blocks input. Everything comes from a held-out seed that was never looked at during development. Success is judged from each app's internal state.`;
 let hist = "";
-if (B.test_v1) {
-  const v = B.test_v1.summary;
-  hist = `<p class="oracle">Round 1 of held-out testing (seed ${B.test_v1.seed}) scored EIDOS ${v.all.eidos.success}/${v.all.eidos.n} with ${v.eidos_self_report.silent_failures} silent failure: on narrow columns it wrote the label one column off, and its check only read back the cell it had chosen. That led to an independent check (the header above the cell must be the intended column) and a gridline fix. Those results are kept as they were; the numbers above are from a fresh seed.</p>`;
+const rounds = [B.test_v1 && ["1", B.test_v1], B.test_v2 && ["2", B.test_v2]].filter(Boolean);
+if (rounds.length) {
+  hist = `<p class="oracle">Earlier held-out rounds are kept as they were. ${rounds.map(([k, r]) => `Round ${k} (seed ${r.seed}): EIDOS ${r.summary.all.eidos.success}/${r.summary.all.eidos.n}, ${r.summary.eidos_self_report.silent_failures} silent failure${r.summary.eidos_self_report.silent_failures === 1 ? "" : "s"}.`).join(" ")} Round 1 found a silent failure (a label written one column off, with a check that only read back its own cell), which led to the independent header check. Round 2 showed checks-off doing as well as EIDOS, which led to the interruption condition and contract-driven repair.</p>`;
 }
 $("#note").innerHTML = `<div class="big">${sr.agrees_with_oracle}/${sr.n}</div>
-  <p>runs where EIDOS's own verdict matched the truth. When a contract fails, EIDOS stops and says so. Copying the clicks never knows: it failed silently ${B.test.summary.replay_silent_failures} times.</p>
-  <p>With checks switched off, EIDOS succeeded ${nk.success}/${nk.n} times. In this pilot the contracts mostly change what the agent knows, not how often it succeeds: without them, a failed run looks exactly like a good one.</p>
+  <p>runs where EIDOS's own verdict matched the truth. Copying the clicks never knows: it failed silently ${S.replay_silent_failures} times.</p>
+  ${it ? `<p>When a dialog interrupts the task, the contracts are what save the run: EIDOS notices a step did not land, dismisses the dialog and redoes it, finishing ${it.eidos.success}/${it.eidos.n}. With checks off it finished ${it.eidos_nochk.success}/${it.eidos_nochk.n} while reporting success.</p>` : ""}
   ${hist}
   <p class="oracle">Development set (used while fixing bugs): EIDOS ${B.dev.summary.all.eidos.success}/${B.dev.summary.all.eidos.n}, copying the clicks ${B.dev.summary.all.replay.success}/${B.dev.summary.all.replay.n}. Pilot scale: one task family, two apps.</p>`;
 </script>

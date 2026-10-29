@@ -4,7 +4,7 @@ __pycache__/
 .env
 .venv/
 uploads/
-runs/
+
 # per-run screenshots are large; reports and results are kept
 runs/**/run_step*.png
 runs/bench_dev_prev/

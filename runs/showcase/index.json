@@ -1,0 +1,124 @@
+[
+  {
+    "id": "same",
+    "title": "Same app, same data",
+    "url": "http://localhost:8765/gridline.html",
+    "baseline": "replay",
+    "baseline_self_report": null,
+    "eidos": {
+      "success": true,
+      "label_ok": true,
+      "sum_ok": true,
+      "bold_ok": true,
+      "formula": "=SUM(E2:E11)",
+      "expected": 65500.0,
+      "got": 65500.0
+    },
+    "replay": {
+      "success": true,
+      "label_ok": true,
+      "sum_ok": true,
+      "bold_ok": true,
+      "formula": "=SUM(E2:E11)",
+      "expected": 65500.0,
+      "got": 65500.0
+    },
+    "eidos_self_report": true
+  },
+  {
+    "id": "new_data",
+    "title": "New data the video never showed",
+    "url": "http://localhost:8765/gridline.html?data=inventory",
+    "baseline": "replay",
+    "baseline_self_report": null,
+    "eidos": {
+      "success": true,
+      "label_ok": true,
+      "sum_ok": true,
+      "bold_ok": true,
+      "formula": "=SUM(E2:E9)",
+      "expected": 30930.0,
+      "got": 30930.0
+    },
+    "replay": {
+      "success": false,
+      "label_ok": false,
+      "sum_ok": false,
+      "bold_ok": false,
+      "formula": "",
+      "expected": 30930.0,
+      "got": null
+    },
+    "eidos_self_report": true
+  },
+  {
+    "id": "redesign",
+    "title": "App redesigned: dark theme, sidebar, bigger cells, columns shuffled",
+    "url": "http://localhost:8765/gridline.html?theme=dark&side=180&colw=140&rowh=32&order=4,0,1,2,3",
+    "baseline": "replay",
+    "baseline_self_report": null,
+    "eidos": {
+      "success": true,
+      "label_ok": true,
+      "sum_ok": true,
+      "bold_ok": true,
+      "formula": "=SUM(A2:A11)",
+      "expected": 65500.0,
+      "got": 65500.0
+    },
+    "replay": {
+      "success": false,
+      "why": "no totals row",
+      "expected": 65500.0
+    },
+    "eidos_self_report": true
+  },
+  {
+    "id": "other_app",
+    "title": "A different app (Jspreadsheet)",
+    "url": "http://localhost:8765/tabula.html",
+    "baseline": "replay",
+    "baseline_self_report": null,
+    "eidos": {
+      "success": true,
+      "label_ok": true,
+      "sum_ok": true,
+      "bold_ok": true,
+      "formula": "=SUM(E1:E10)",
+      "expected": 65500.0,
+      "got": 65500.0
+    },
+    "replay": {
+      "success": false,
+      "label_ok": true,
+      "sum_ok": false,
+      "bold_ok": false,
+      "formula": "=SUM(E2:E11)",
+      "expected": 65500.0,
+      "got": 61900.0
+    },
+    "eidos_self_report": true
+  },
+  {
+    "id": "interrupt",
+    "title": "A \"What's new\" dialog pops up mid-task and blocks input",
+    "url": "http://localhost:8765/tabula.html?popup=4.0",
+    "baseline": "nochk",
+    "baseline_self_report": true,
+    "eidos": {
+      "success": true,
+      "label_ok": true,
+      "sum_ok": true,
+      "bold_ok": true,
+      "formula": "=SUM(E1:E10)",
+      "expected": 65500.0,
+      "got": 65500.0
+    },
+    "replay": {
+      "success": false,
+      "why": "no totals row",
+      "expected": 65500.0
+    },
+    "eidos_self_report": true
+  }
+]

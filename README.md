@@ -40,14 +40,28 @@ One tutorial (App A, sales data) is compiled once, then run under conditions the
 - **new data**: a different dataset and size
 - **redesign**: randomly generated redesigns of App A (dark theme, sidebar, resized cells, shuffled columns)
 - **other app**: App B, a different spreadsheet library with a different toolbar, layout, and row numbering
+- **interruption**: a "What's new" dialog opens at a random moment and blocks input until dismissed
 
 Systems: **replay** (repeat the tutorial's exact clicks and keys), **EIDOS**, and **EIDOS with checks off** (ablation). Success is judged from each app's internal state, which the agent never sees.
 
-RESULTS_TABLE
+| Condition | Runs | Copy the clicks | EIDOS, checks off | EIDOS |
+|---|---|---|---|---|
+| Same app, same data | 1 | 1/1 | 1/1 | 1/1 |
+| New data | 1 | 0/1 | 1/1 | 1/1 |
+| Redesigned app | 24 | 0/24 | 23/24 | 23/24 |
+| Different app | 2 | 0/2 | 2/2 | 2/2 |
+| Interrupted mid-task | 16 | 2/16 | 0/16 | 14/16 |
+| **All** | 44 | 3/44 | 27/44 | 41/44 |
 
-**Protocol.** Seed 7 is the development set, used while fixing bugs. Held-out round 1 (seed 2026) found a silent failure: on narrow columns EIDOS wrote the label one column off, and its check only read back the cell it had chosen. That led to an independent header check and a gridline fix. Round 1 results are kept unchanged in `runs/bench_test_v1/`. The headline numbers come from a fresh seed (4242) run once after those fixes.
+EIDOS's own verdict matched the truth on **44/44** runs (0 silent failures). All of its failures were reported by EIDOS itself. Copying the clicks failed silently 41 times. Held-out seed 9001, results in `runs/bench_test/`.
 
-**What the ablation shows.** Turning the checks off barely changes the success rate here. The contracts' main effect in this pilot is that the agent *knows* when it failed: without them, a failed run looks exactly like a good one.
+**Protocol.** Seed 7 is the development set, used while fixing bugs. Each held-out round was run once and its results kept unchanged:
+
+- Round 1 (seed 2026, `runs/bench_test_v1/`): EIDOS 25/28 with 1 silent failure. On narrow columns it wrote the label one column off, and its check only read back the cell it had chosen. This led to an independent check (the header above the cell must be the intended column) and a gridline fix.
+- Round 2 (seed 4242, `runs/bench_test_v2/`): EIDOS 28/28, but checks-off also 28/28, so nothing yet showed the contracts making a run succeed. This led to the interruption condition and contract-driven repair (a failed contract makes EIDOS dismiss what is in the way and redo the step).
+- Final (seed 9001, `runs/bench_test/`): the table above.
+
+**What the ablation shows.** On redesigns and new apps, checks-off does about as well as EIDOS: there, the gains come from the intent program. The contracts matter when something goes wrong mid-run: with a dialog interrupting the task, EIDOS finished 14/16 and checks-off 0/16, while reporting success every time.
 
 **Scope.** This is a pilot: one task family (add a totals row), two open-source spreadsheet apps ([x-spreadsheet](https://github.com/myliang/x-spreadsheet) and [Jspreadsheet CE](https://github.com/jspreadsheet/ce), both MIT), recorded tutorials with a visible click highlight. The next step is more task families and real third-party tutorial videos with the live Meta models.
 

@@ -1,0 +1,149 @@
+{
+  "eidos": "0.1",
+  "name": "Add a totals row",
+  "learned_from": "tutorial_totals.mp4",
+  "source_screen": {
+    "headers": [
+      "Region",
+      "Month",
+      "Product",
+      "Units",
+      "Revenue"
+    ],
+    "data_rows": 10,
+    "row_numbers": [
+      "2",
+      "11"
+    ],
+    "col_pitch": 111.25,
+    "row_h": 24.75
+  },
+  "inputs": {
+    "label": "Total",
+    "label_column": "Region",
+    "sum_column": "Revenue"
+  },
+  "steps": [
+    {
+      "do": "enter_text",
+      "intent": "Write {label} in the {label_column} column of the first empty row below the data",
+      "target": {
+        "row": "first_empty_after_data",
+        "column": "{label_column}"
+      },
+      "text": "{label}",
+      "learned_from": "Total",
+      "contract": {
+        "cell_shows_text": "{label}"
+      },
+      "id": 1,
+      "video_time": [
+        2.47,
+        5.4
+      ],
+      "evidence": {
+        "pre": "step1_pre.png",
+        "post": "step1_post.png",
+        "changed_box": [
+          36,
+          50,
+          539,
+          381
+        ]
+      }
+    },
+    {
+      "do": "enter_formula",
+      "intent": "Sum the {sum_column} column over all data rows, in the same row",
+      "target": {
+        "row": "same_as:1",
+        "column": "{sum_column}"
+      },
+      "formula": {
+        "fn": "SUM",
+        "column": "{sum_column}",
+        "rows": "all_data_rows"
+      },
+      "learned_from": "=SUM(E2:E11)",
+      "contract": {
+        "cell_shows_number": {
+          "fn": "SUM",
+          "column": "{sum_column}",
+          "rows": "all_data_rows"
+        }
+      },
+      "id": 2,
+      "video_time": [
+        5.4,
+        9.0
+      ],
+      "evidence": {
+        "pre": "step2_pre.png",
+        "post": "step2_post.png",
+        "changed_box": [
+          59,
+          256,
+          556,
+          175
+        ]
+      }
+    },
+    {
+      "do": "select_row",
+      "intent": "Select that row across the whole table",
+      "target": {
+        "row": "same_as:1",
+        "from": "first_column",
+        "to": "last_column"
+      },
+      "contract": {
+        "selection_covers_row": true
+      },
+      "id": 3,
+      "video_time": [
+        9.0,
+        11.0
+      ],
+      "evidence": {
+        "pre": "step3_pre.png",
+        "post": "step3_post.png",
+        "changed_box": [
+          59,
+          47,
+          556,
+          384
+        ]
+      }
+    },
+    {
+      "do": "apply_format",
+      "intent": "Make the selected row bold",
+      "format": "bold",
+      "ground": {
+        "look": "step4_control.png",
+        "concept": "bold text formatting button",
+        "alternatives": [
+          "shortcut:Control+b"
+        ]
+      },
+      "contract": {
+        "selection_text_heavier": true
+      },
+      "id": 4,
+      "video_time": [
+        11.0,
+        13.68
+      ],
+      "evidence": {
+        "pre": "step4_pre.png",
+        "post": "step4_post.png",
+        "changed_box": [
+          64,
+          53,
+          702,
+          442
+        ]
+      }
+    }
+  ]
+}
