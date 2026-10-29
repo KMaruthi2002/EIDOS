@@ -9,3 +9,5 @@ uploads/
 runs/**/run_step*.png
 runs/bench_dev_prev/
 web/demo/
+physical/menagerie/
+physical/runs/
