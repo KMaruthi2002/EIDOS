@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Everyday apps</title>
+<!--
+  Everyday target apps for the EIDOS benchmark: mail, calendar, expenses, settings.
+  Two distinct designs (skin=A | B) and redesign parameters:
+    task=mail|calendar|expense|settings  skin=A|B
+    theme=dark  nav=left|right|top  order=2,0,1 (field order)  scale=1.15
+    btn=top|bottom (where the submit button sits)  labels=left|top  data=N (seed for list contents)
+    popup=SECONDS (interrupting dialog, from ../popup.js)
+  window.__eidosState() is the scoring oracle. The agent never reads it.
+-->
+<style>
+:root { --bg:#f4f6f9; --surface:#fff; --ink:#18212c; --muted:#5b6876; --line:#c9d2dc; --accent:#2457e6; --accentInk:#fff; --soft:#e8eefc; --font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+body.B { --bg:#f7f4ef; --surface:#fffdf9; --ink:#2a2118; --muted:#76695a; --line:#d6cbbd; --accent:#0f7a5c; --soft:#e3f1ec; --font: Georgia, "DejaVu Serif", serif; }
+body.dark { --bg:#11161d; --surface:#1a222c; --ink:#e6edf5; --muted:#9aa8b8; --line:#43505f; --soft:#22314a; }
+body.B.dark { --bg:#15120e; --surface:#211c16; --ink:#f1e9dd; --muted:#b5a690; --line:#54493b; --soft:#1d3a31; --accent:#2fae86; }
+* { box-sizing: border-box; }
+html { font-size: calc(15px * var(--scale, 1)); }
+body { margin:0; background:var(--bg); color:var(--ink); font-family:var(--font); height:100vh; display:flex; overflow:hidden; }
+body.navtop { flex-direction:column; } body.navright { flex-direction:row-reverse; }
+nav { background:var(--surface); border-right:1px solid var(--line); width:210px; padding:18px 12px; display:flex; flex-direction:column; gap:4px; flex:none; }
+body.navright nav { border-right:0; border-left:1px solid var(--line); }
+body.navtop nav { width:auto; flex-direction:row; align-items:center; border-right:0; border-bottom:1px solid var(--line); padding:10px 18px; gap:6px; }
+.brand { font-weight:800; font-size:1.15rem; padding:4px 10px 14px; }
+body.navtop .brand { padding:0 18px 0 0; }
+body.B .brand { font-style:italic; letter-spacing:.01em; }
+.nav-item { padding:8px 10px; border-radius:8px; cursor:pointer; color:var(--ink); }
+.nav-item.on { background:var(--soft); color:var(--accent); font-weight:700; }
+main { flex:1; padding:22px 30px; overflow:auto; position:relative; }
+.head { display:flex; align-items:center; gap:16px; margin-bottom:16px; }
+.head h1 { margin:0; font-size:1.45rem; flex:1; }
+body.B .head { flex-direction:row-reverse; } body.B .head h1 { text-align:right; }
+button { font:inherit; cursor:pointer; }
+.primary { background:var(--accent); color:var(--accentInk); border:0; border-radius:9px; padding:9px 18px; font-weight:700; font-size:1rem; }
+body.B .primary { border-radius:99px; padding:9px 22px; }
+.list { background:var(--surface); border:1px solid var(--line); border-radius:12px; }
+.item { display:grid; grid-template-columns: 200px 1fr 130px; gap:12px; padding:11px 16px; border-bottom:1px solid var(--line); }
+.item:last-child { border-bottom:0; }
+.item .a { font-weight:700; } .item .c { color:var(--muted); text-align:right; }
+.form { background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:20px 24px; max-width:640px; display:flex; flex-direction:column; gap:14px; }
+body.B .form.modal { position:absolute; left:50%; top:70px; transform:translateX(-50%); width:560px; box-shadow:0 20px 60px rgba(0,0,0,.25); z-index:5; }
+.shade { position:absolute; inset:0; background:rgba(20,15,10,.25); z-index:4; }
+.form h2 { margin:0; font-size:1.15rem; }
+.formhead { display:flex; align-items:center; gap:12px; } .formhead h2 { flex:1; }
+.field { display:grid; grid-template-columns:130px 1fr; align-items:center; gap:12px; }
+body.labelstop .field { grid-template-columns:1fr; gap:5px; align-items:start; }
+.field label { color:var(--muted); font-weight:600; }
+body.B .field label { text-transform:uppercase; letter-spacing:.06em; font-size:.85rem; }
+.input { border:1.5px solid var(--line); background:var(--surface); color:var(--ink); border-radius:8px; padding:8px 11px; font:inherit; font-size:1rem; width:100%; min-height:2.4rem; }
+body.B .input { border-radius:12px; border-width:2px; }
+textarea.input { min-height:5.2rem; resize:none; }
+.input:focus { outline:2px solid var(--accent); outline-offset:1px; }
+.select { position:relative; display:flex; justify-content:space-between; align-items:center; cursor:pointer; user-select:none; }
+.select .ph { color:var(--muted); }
+.opts { position:absolute; left:-1.5px; right:-1.5px; top:calc(100% + 4px); background:var(--surface); border:1.5px solid var(--line); border-radius:8px; z-index:9; box-shadow:0 8px 24px rgba(0,0,0,.18); }
+.opt { padding:8px 11px; } .opt:hover { background:var(--soft); }
+.toggle-row { display:flex; align-items:center; justify-content:space-between; padding:12px 0; border-bottom:1px solid var(--line); gap:20px; }
+body.B .toggle-row { flex-direction:row-reverse; justify-content:flex-end; }
+.toggle-row .t { font-weight:600; } .toggle-row .d { color:var(--muted); font-size:.9rem; }
+.switch { width:46px; height:26px; border-radius:99px; background:#9aa6b4; position:relative; cursor:pointer; flex:none; transition:background .15s; }
+body.dark .switch { background:#4a5665; }
+.switch::after { content:""; position:absolute; left:3px; top:3px; width:20px; height:20px; border-radius:50%; background:#fff; transition:left .15s; }
+body .switch.on { background:var(--accent); } .switch.on::after { left:23px; }
+.toast { position:fixed; bottom:26px; left:50%; transform:translateX(-50%); background:#1e2a37; color:#fff; padding:11px 20px; border-radius:10px; font-weight:600; z-index:50; }
+body.B .toast { bottom:auto; top:20px; background:#0f5c46; }
+.actions { display:flex; justify-content:flex-end; gap:10px; }
+body.B .actions { justify-content:flex-start; }
+.ghost { background:transparent; border:1.5px solid var(--line); color:var(--ink); border-radius:9px; padding:8px 14px; }
+</style>
+</head>
+<body>
+<script>
+(() => {
+const q = new URLSearchParams(location.search);
+const task = q.get("task") || "mail", skin = q.get("skin") === "B" ? "B" : "A";
+const nav = q.get("nav") || (skin === "B" ? "top" : "left");
+const labels = q.get("labels") || (skin === "B" ? "top" : "left");
+const btn = q.get("btn") || (skin === "B" ? "top" : "bottom");
+const seed = parseInt(q.get("data") || "1", 10);
+document.body.classList.add(skin, "nav" + nav, "labels" + labels);
+if (q.get("theme") === "dark") document.body.classList.add("dark");
+if (q.get("scale")) document.documentElement.style.setProperty("--scale", q.get("scale"));
+let rs = seed * 9301 + 49297; const rnd = () => (rs = (rs * 9301 + 49297) % 233280) / 233280;
+const pick = (a) => a[Math.floor(rnd() * a.length)];
+
+const PEOPLE = ["Priya Nair", "Tom Becker", "Lena Ortiz", "Sam Okafor", "Mia Chen", "Jonas Weber", "Ava Rossi", "Noah Kim"];
+const T = {
+  mail: { name: skin === "A" ? "Postwise" : "Letterbox", navs: ["Inbox", "Sent", "Drafts", "Archive"], title: "Inbox", open: "Compose", formTitle: "New message",
+    fields: [{ k: "to", l: "To" }, { k: "subject", l: "Subject" }, { k: "message", l: "Message", area: 1 }], submit: "Send", toast: "Message sent", after: "Sent",
+    seedList: () => Array.from({ length: 6 }, () => [pick(PEOPLE), pick(["Quarterly numbers", "Lunch on Friday?", "Contract draft", "Flight details", "Re: onboarding", "Invoice 2291", "Team photo"]), pick(["9:14 AM", "Yesterday", "Mon", "Oct 21"])]),
+    row: (r) => ["To: " + r.to, r.subject, "Just now"] },
+  calendar: { name: skin === "A" ? "Daybook" : "Quarter", navs: ["Agenda", "Week", "Month"], title: "Agenda", open: "New event", formTitle: "New event",
+    fields: [{ k: "title", l: "Title" }, { k: "date", l: "Date" }, { k: "time", l: "Time", opts: ["8:30 AM", "9:00 AM", "10:00 AM", "11:30 AM", "1:00 PM", "2:30 PM", "4:00 PM"] }, { k: "location", l: "Location" }],
+    submit: "Save", toast: "Event saved", after: "Agenda",
+    seedList: () => Array.from({ length: 5 }, () => [pick(["Design review", "1:1 with Tom", "Gym", "Standup", "Dentist", "Book club"]), pick(["Room 4B", "Zoom", "Main St", "Cafe Lumen"]), pick(["Nov 3, 9:00 AM", "Nov 4, 1:00 PM", "Nov 6, 4:00 PM", "Nov 7, 8:30 AM"])]),
+    row: (r) => [r.title, r.location, r.date + ", " + r.time] },
+  expense: { name: skin === "A" ? "Tally" : "Ledgerly", navs: ["My expenses", "Approvals", "Reports"], title: "My expenses", open: "New expense", formTitle: "New expense",
+    fields: [{ k: "merchant", l: "Merchant" }, { k: "amount", l: "Amount" }, { k: "category", l: "Category", opts: ["Travel", "Meals", "Office supplies", "Software", "Training"] }],
+    submit: "Submit", toast: "Expense submitted", after: "My expenses",
+    seedList: () => Array.from({ length: 6 }, () => [pick(["Uber", "Delta", "Staples", "Figma", "Blue Bottle", "Hilton", "Coursera"]), pick(["Travel", "Meals", "Office supplies", "Software"]), "$" + (Math.round(rnd() * 40000) / 100).toFixed(2)]),
+    row: (r) => [r.merchant, r.category, "$" + String(r.amount).replace(/^\$/, "")] },
+  settings: { name: skin === "A" ? "Account" : "Profile Hub", navs: ["Profile", "Security", "Notifications", "Billing"], title: "Profile" },
+};
+const cfg = T[task];
+const state = { task, records: [], settings: { "Two-factor sign-in": false, "Sign-in alerts": false, "Remember this device": true, "Recovery email": "" }, saves: 0 };
+window.__eidosState = () => JSON.parse(JSON.stringify(state));
+const listData = cfg.seedList ? cfg.seedList() : [];
+let page = cfg.title, formOpen = false, toastTimer = null;
+let order = (q.get("order") || "").split(",").filter((x) => x !== "").map(Number);
+
+const el = (tag, cls, html) => { const e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; };
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
+function toast(msg) { document.querySelectorAll(".toast").forEach((t) => t.remove()); const t = el("div", "toast", esc(msg)); document.body.append(t);
+  clearTimeout(toastTimer); toastTimer = setTimeout(() => t.remove(), 4000); }
+
+const navEl = el("nav"); const mainEl = el("main");
+document.body.append(navEl, mainEl);
+function renderNav() {
+  navEl.innerHTML = ""; navEl.append(el("div", "brand", esc(cfg.name)));
+  cfg.navs.forEach((n) => { const i = el("div", "nav-item" + (n === page ? " on" : ""), esc(n)); i.onclick = () => { page = n; formOpen = false; render(); }; navEl.append(i); });
+}
+function ordered(fields) {
+  if (order.length !== fields.length) return fields;
+  return order.map((i) => fields[i]);
+}
+function fieldEl(f, values) {
+  const row = el("div", "field"); row.append(el("label", "", esc(f.l)));
+  if (f.opts) {
+    const s = el("div", "input select", `<span class="ph">Choose…</span><span>▾</span>`); s.tabIndex = 0;
+    s.onclick = (e) => {
+      if (e.target.closest(".opt")) return;
+      const open = s.querySelector(".opts"); if (open) { open.remove(); return; }
+      const box = el("div", "opts"); f.opts.forEach((o) => { const it = el("div", "opt", esc(o));
+        it.onclick = (ev) => { ev.stopPropagation(); values[f.k] = o; s.querySelector("span").outerHTML = `<span>${esc(o)}</span>`; box.remove(); }; box.append(it); });
+      s.append(box);
+    };
+    row.append(s);
+  } else {
+    const i = el(f.area ? "textarea" : "input", "input"); i.oninput = () => (values[f.k] = i.value); row.append(i);
+  }
+  return row;
+}
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") document.querySelectorAll(".opts").forEach((o) => o.remove()); });
+document.addEventListener("mousedown", (e) => { if (!e.target.closest(".select")) document.querySelectorAll(".opts").forEach((o) => o.remove()); });
+
+function render() {
+  renderNav(); mainEl.innerHTML = "";
+  if (task === "settings") return renderSettings();
+  const head = el("div", "head"); head.append(el("h1", "", esc(page)));
+  const ob = el("button", "primary", esc(cfg.open)); ob.onclick = () => { formOpen = true; render(); }; head.append(ob); mainEl.append(head);
+  const list = el("div", "list");
+  const rows = page === cfg.after || page === cfg.title ? state.records.filter(() => page === cfg.after).map(cfg.row).concat(page === cfg.title ? listData : []) : [];
+  (rows.length ? rows : [["Nothing here yet", "", ""]]).forEach((r) => list.append(el("div", "item", `<span class="a">${esc(r[0])}</span><span>${esc(r[1])}</span><span class="c">${esc(r[2])}</span>`)));
+  mainEl.append(list);
+  if (formOpen) {
+    const values = {};
+    const form = el("div", "form" + (skin === "B" ? " modal" : ""));
+    const fh = el("div", "formhead"); fh.append(el("h2", "", esc(cfg.formTitle)));
+    const sub = el("button", "primary", esc(cfg.submit));
+    sub.onclick = () => {
+      if (!cfg.fields.every((f) => (values[f.k] || "").trim())) { toast("Please fill in every field"); return; }
+      state.records.push({ ...values }); formOpen = false; page = cfg.after; render(); toast(cfg.toast);
+    };
+    const cancel = el("button", "ghost", "Cancel"); cancel.onclick = () => { formOpen = false; render(); };
+    const actions = el("div", "actions"); actions.append(cancel, sub);
+    if (btn === "top") { fh.append(cancel, sub); form.append(fh); } else form.append(fh);
+    ordered(cfg.fields).forEach((f) => form.append(fieldEl(f, values)));
+    if (btn !== "top") form.append(actions);
+    if (skin === "B") { mainEl.append(el("div", "shade")); }
+    if (skin === "B") mainEl.append(form); else { list.remove(); mainEl.append(form); }
+  }
+}
+function renderSettings() {
+  const head = el("div", "head"); head.append(el("h1", "", esc(page))); mainEl.append(head);
+  const card = el("div", "form");
+  if (page !== "Security") {
+    const rows = page === "Profile" ? [["Name", "Ruth Kumar"], ["Email", "ruth@example.com"], ["Time zone", "Eastern Time"]] : [["Nothing to change here", ""]];
+    rows.forEach(([a, b]) => card.append(el("div", "field", `<label>${esc(a)}</label><span>${esc(b)}</span>`)));
+    mainEl.append(card); return;
+  }
+  const draft = { ...state.settings };
+  card.append(el("h2", "", "Sign-in and security"));
+  const toggles = [["Two-factor sign-in", "Ask for a code when you sign in on a new device"], ["Sign-in alerts", "Email me when someone signs in"], ["Remember this device", "Stay signed in for 30 days"]];
+  ordered(toggles).forEach(([t, d]) => {
+    const r = el("div", "toggle-row", `<div><div class="t">${esc(t)}</div><div class="d">${esc(d)}</div></div>`);
+    const sw = el("div", "switch" + (draft[t] ? " on" : "")); sw.onclick = () => { draft[t] = !draft[t]; sw.classList.toggle("on", draft[t]); };
+    r.append(sw); card.append(r);
+  });
+  const vals = {}; const f = fieldEl({ k: "rec", l: "Recovery email" }, vals); card.append(f);
+  f.querySelector("input").value = draft["Recovery email"]; vals.rec = draft["Recovery email"];
+  const save = el("button", "primary", "Save changes");
+  save.onclick = () => { Object.assign(state.settings, draft, { "Recovery email": vals.rec || "" }); state.saves++; toast("Settings saved"); };
+  const actions = el("div", "actions"); actions.append(save);
+  if (btn === "top") card.insertBefore(actions, card.children[1]); else card.append(actions);
+  mainEl.append(card);
+}
+render();
+})();
+</script>
+<script src="../popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+{
+  "video": "tutorial_settings.mp4",
+  "duration": 13.6,
+  "frames_analyzed": 205,
+  "screen": [
+    1200,
+    760
+  ],
+  "events": [
+    {
+      "t": 2.47,
+      "x": 104,
+      "y": 117
+    },
+    {
+      "t": 4.4,
+      "x": 832,
+      "y": 149
+    },
+    {
+      "t": 6.13,
+      "x": 467,
+      "y": 360,
+      "typed": "ruth.backup@example.com"
+    },
+    {
+      "t": 10.13,
+      "x": 785,
+      "y": 411
+    }
+  ],
+  "steps": [
+    {
+      "index": 1,
+      "t": 2.47,
+      "point": [
+        104,
+        117
+      ],
+      "action": "press",
+      "label": "Security",
+      "box": [
+        12,
+        100,
+        184,
+        35
+      ],
+      "shows": [
+        "Sign-in and security",
+        "Two-factor sign-in",
+        "Ask for a code when you sign in on a new device",
+        "Sign-in alerts",
+        "Email me when someone signs in",
+        "Remember this device"
+      ]
+    },
+    {
+      "index": 2,
+      "t": 4.4,
+      "point": [
+        832,
+        149
+      ],
+      "action": "toggle",
+      "label": "Two-factor sign-in",
+      "box": [
+        808,
+        135,
+        48,
+        30
+      ],
+      "before_on": false,
+      "after_on": true
+    },
+    {
+      "index": 3,
+      "t": 6.13,
+      "point": [
+        467,
+        360
+      ],
+      "action": "type",
+      "label": "Recovery email",
+      "value": "ruth.backup@example.com",
+      "box": [
+        409,
+        344,
+        444,
+        33
+      ]
+    },
+    {
+      "index": 4,
+      "t": 10.13,
+      "point": [
+        785,
+        411
+      ],
+      "action": "press",
+      "label": "Save changes",
+      "box": [
+        716,
+        393,
+        139,
+        37
+      ],
+      "shows": [
+        "Recovery email",
+        "Settings saved"
+      ]
+    }
+  ]
+}

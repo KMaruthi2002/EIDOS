@@ -1,0 +1,106 @@
+{
+  "eidos": "0.2",
+  "kind": "ui",
+  "name": "Everyday skill",
+  "learned_from": "tutorial_mail.mp4",
+  "inputs": {
+    "to": "maya@northwind.com",
+    "subject": "Q3 report",
+    "message": "Attached is the Q3 report."
+  },
+  "steps": [
+    {
+      "id": 1,
+      "do": "press",
+      "video_time": 2.8,
+      "evidence": {
+        "pre": "step1_pre.png",
+        "post": "step1_post.png"
+      },
+      "target": {
+        "text": "Compose"
+      },
+      "contract": {
+        "screen_shows": [
+          "New message",
+          "Subject",
+          "Message"
+        ]
+      },
+      "intent": "Press 'Compose'; the screen should then show 'New message', 'Subject', 'Message'"
+    },
+    {
+      "id": 2,
+      "do": "type",
+      "video_time": 4.67,
+      "evidence": {
+        "pre": "step2_pre.png",
+        "post": "step2_post.png"
+      },
+      "target": {
+        "field": "To"
+      },
+      "value": "{to}",
+      "learned_from": "maya@northwind.com",
+      "contract": {
+        "field_shows": "{to}"
+      },
+      "intent": "Type {to} into the 'To' field"
+    },
+    {
+      "id": 3,
+      "do": "type",
+      "video_time": 8.27,
+      "evidence": {
+        "pre": "step3_pre.png",
+        "post": "step3_post.png"
+      },
+      "target": {
+        "field": "Subject"
+      },
+      "value": "{subject}",
+      "learned_from": "Q3 report",
+      "contract": {
+        "field_shows": "{subject}"
+      },
+      "intent": "Type {subject} into the 'Subject' field"
+    },
+    {
+      "id": 4,
+      "do": "type",
+      "video_time": 11.13,
+      "evidence": {
+        "pre": "step4_pre.png",
+        "post": "step4_post.png"
+      },
+      "target": {
+        "field": "Message"
+      },
+      "value": "{message}",
+      "learned_from": "Attached is the Q3 report.",
+      "contract": {
+        "field_shows": "{message}"
+      },
+      "intent": "Type {message} into the 'Message' field"
+    },
+    {
+      "id": 5,
+      "do": "press",
+      "video_time": 15.4,
+      "evidence": {
+        "pre": "step5_pre.png",
+        "post": "step5_post.png"
+      },
+      "target": {
+        "text": "Send"
+      },
+      "contract": {
+        "screen_shows": [
+          "{to}",
+          "{subject}"
+        ]
+      },
+      "intent": "Press 'Send'; the screen should then show '{to}', '{subject}'"
+    }
+  ]
+}

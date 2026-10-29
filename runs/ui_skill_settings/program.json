@@ -1,0 +1,84 @@
+{
+  "eidos": "0.2",
+  "kind": "ui",
+  "name": "Everyday skill",
+  "learned_from": "tutorial_settings.mp4",
+  "inputs": {
+    "recovery_email": "ruth.backup@example.com"
+  },
+  "steps": [
+    {
+      "id": 1,
+      "do": "press",
+      "video_time": 2.47,
+      "evidence": {
+        "pre": "step1_pre.png",
+        "post": "step1_post.png"
+      },
+      "target": {
+        "text": "Security"
+      },
+      "contract": {
+        "screen_shows": [
+          "Sign-in and security",
+          "Two-factor sign-in",
+          "Ask for a code when you sign in on a new device"
+        ]
+      },
+      "intent": "Press 'Security'; the screen should then show 'Sign-in and security', 'Two-factor sign-in', 'Ask for a code when you sign in on a new device'"
+    },
+    {
+      "id": 2,
+      "do": "toggle",
+      "video_time": 4.4,
+      "evidence": {
+        "pre": "step2_pre.png",
+        "post": "step2_post.png"
+      },
+      "target": {
+        "row": "Two-factor sign-in"
+      },
+      "contract": {
+        "switch_on": true
+      },
+      "intent": "Make sure 'Two-factor sign-in' is on"
+    },
+    {
+      "id": 3,
+      "do": "type",
+      "video_time": 6.13,
+      "evidence": {
+        "pre": "step3_pre.png",
+        "post": "step3_post.png"
+      },
+      "target": {
+        "field": "Recovery email"
+      },
+      "value": "{recovery_email}",
+      "learned_from": "ruth.backup@example.com",
+      "contract": {
+        "field_shows": "{recovery_email}"
+      },
+      "intent": "Type {recovery_email} into the 'Recovery email' field"
+    },
+    {
+      "id": 4,
+      "do": "press",
+      "video_time": 10.13,
+      "evidence": {
+        "pre": "step4_pre.png",
+        "post": "step4_post.png"
+      },
+      "target": {
+        "text": "Save changes"
+      },
+      "contract": {
+        "screen_shows": [
+          "Recovery email",
+          "Settings saved"
+        ]
+      },
+      "intent": "Press 'Save changes'; the screen should then show 'Recovery email', 'Settings saved'"
+    }
+  ]
+}

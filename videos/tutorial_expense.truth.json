@@ -1,0 +1,56 @@
+[
+  {
+    "t": 2.634,
+    "type": "click",
+    "x": 1102.5625,
+    "y": 40.5,
+    "label": "click New expense"
+  },
+  {
+    "t": 4.542,
+    "type": "click",
+    "x": 467,
+    "y": 149.5,
+    "label": "field Merchant"
+  },
+  {
+    "t": 5.181,
+    "type": "type",
+    "text": "Delta Air Lines",
+    "label": "Merchant"
+  },
+  {
+    "t": 7.872,
+    "type": "click",
+    "x": 467,
+    "y": 200.5,
+    "label": "field Amount"
+  },
+  {
+    "t": 8.493,
+    "type": "type",
+    "text": "412.50",
+    "label": "Amount"
+  },
+  {
+    "t": 10.377,
+    "type": "click",
+    "x": 467,
+    "y": 251.5,
+    "label": "open Category"
+  },
+  {
+    "t": 12.143,
+    "type": "click",
+    "x": 467.5,
+    "y": 291.5,
+    "label": "choose Travel"
+  },
+  {
+    "t": 13.797,
+    "type": "click",
+    "x": 811.0625,
+    "y": 302.5,
+    "label": "click Submit"
+  }
+]

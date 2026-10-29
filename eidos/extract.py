@@ -94,6 +94,13 @@ def find_pointer(img: np.ndarray):
             ring = (x + w / 2, y + h / 2)
         elif 10 <= w <= 30 and 14 <= h <= 34:            # arrow
             tip = (x + 2, y + 2)
+    if ring is None and n > 2:
+        # The arrow's white outline can cut the ring into arcs: join nearby pieces and look again.
+        n2, _, st2, _ = cv2.connectedComponentsWithStats(cv2.dilate(m, np.ones((5, 5), np.uint8)))
+        for i in range(1, n2):
+            x, y, w, h, area = st2[i]
+            if 30 <= w <= 70 and 30 <= h <= 70 and area / float(w * h) < 0.6:
+                ring = (x + w / 2, y + h / 2)
     return tip, ring
 
 
@@ -138,7 +145,13 @@ def detect_events(frames: list[Frame]) -> list[Event]:
                 events.append(Event("drag", frames[i].t, x, y, ex, ey))
                 continue
         events.append(Event("click", frames[i].t, x, y))
-    return events
+    # one press can flicker the marker over two frames
+    out: list[Event] = []
+    for e in events:
+        if out and e.kind == out[-1].kind == "click" and e.t - out[-1].t < 0.4 and abs(e.x - out[-1].x) + abs(e.y - out[-1].y) < 20:
+            continue
+        out.append(e)
+    return out
 
 
 def read_typed_text(frames, i0, i1, box) -> tuple[str, str]:

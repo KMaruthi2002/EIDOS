@@ -1,0 +1,55 @@
+[
+  {
+    "t": 2.905,
+    "type": "click",
+    "x": 1117.0078125,
+    "y": 40.5,
+    "label": "click Compose"
+  },
+  {
+    "t": 4.792,
+    "type": "click",
+    "x": 467,
+    "y": 149.5,
+    "label": "field To"
+  },
+  {
+    "t": 5.43,
+    "type": "type",
+    "text": "maya@northwind.com",
+    "label": "To"
+  },
+  {
+    "t": 8.39,
+    "type": "click",
+    "x": 467,
+    "y": 200.5,
+    "label": "field Subject"
+  },
+  {
+    "t": 9.038,
+    "type": "type",
+    "text": "Q3 report",
+    "label": "Subject"
+  },
+  {
+    "t": 11.204,
+    "type": "click",
+    "x": 467,
+    "y": 272.0,
+    "label": "field Message"
+  },
+  {
+    "t": 11.839,
+    "type": "type",
+    "text": "Attached is the Q3 report.",
+    "label": "Message"
+  },
+  {
+    "t": 15.504,
+    "type": "click",
+    "x": 818.21875,
+    "y": 343.5,
+    "label": "click Send"
+  }
+]

@@ -1,0 +1,36 @@
+[
+  {
+    "t": 2.618,
+    "type": "click",
+    "x": 104.5,
+    "y": 117.5,
+    "label": "click Security"
+  },
+  {
+    "t": 4.499,
+    "type": "click",
+    "x": 832.0,
+    "y": 149.5,
+    "label": "toggle Two-factor sign-in"
+  },
+  {
+    "t": 6.264,
+    "type": "click",
+    "x": 467,
+    "y": 360.5,
+    "label": "field Recovery email"
+  },
+  {
+    "t": 6.88,
+    "type": "type",
+    "text": "ruth.backup@example.com",
+    "label": "Recovery email"
+  },
+  {
+    "t": 10.263,
+    "type": "click",
+    "x": 785.7421875,
+    "y": 411.5,
+    "label": "click Save changes"
+  }
+]

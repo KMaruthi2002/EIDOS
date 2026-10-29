@@ -12,3 +12,6 @@ web/demo/
 physical/menagerie/
 physical/runs/
 studio_data/
+runs/ui_skill_*/*.png
+runs/bench_everyday_dev_r1/
+EIDOS_Studio_walkthrough.mp4

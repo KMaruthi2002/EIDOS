@@ -23,6 +23,10 @@ from .compiler import compile_trace
 from .extract import analyze
 from .runner import run_program, replay
 from .score import score_totals
+from .ui import learn as ui_learn
+from .ui.run import run_ui, replay_ui
+from .ui.tasks import TITLES, fresh_inputs, score as ui_score, N_FIELDS
+import random
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "studio_data"
@@ -50,7 +54,8 @@ def _seed_sample():
     """Ship the sample skill learned from the bundled tutorial."""
     dst = SKILLS / "sample-totals"
     src = ROOT / "runs" / "tutorial_totals"
-    if not dst.exists() and src.exists():
+    if src.exists():
+        shutil.rmtree(dst, ignore_errors=True)
         shutil.copytree(src, dst)
         shutil.copy(ROOT / "videos" / "tutorial_totals.mp4", dst / "video.mp4")
         meta = {"id": "sample-totals", "name": "Add a totals row", "source": "Sample tutorial (14 s)", "created": time.time()}
@@ -58,6 +63,36 @@ def _seed_sample():
 
 
 _seed_sample()
+
+
+def _seed_everyday():
+    for task, title in TITLES.items():
+        dst = SKILLS / f"sample-{task}"
+        src = ROOT / "runs" / f"ui_skill_{task}"
+        if src.exists():
+            shutil.rmtree(dst, ignore_errors=True)
+            shutil.copytree(src, dst)
+            shutil.copy(ROOT / "videos" / f"tutorial_{task}.mp4", dst / "video.mp4")
+            (dst / "meta.json").write_text(json.dumps({"id": dst.name, "name": title, "kind": "ui", "task": task,
+                                                       "source": f"Sample tutorial ({task})", "created": time.time()}))
+
+
+_seed_everyday()
+
+
+def _seed_everyday():
+    for task, title in TITLES.items():
+        dst = SKILLS / f"sample-{task}"
+        src = ROOT / "runs" / f"ui_skill_{task}"
+        if src.exists():
+            shutil.rmtree(dst, ignore_errors=True)
+            shutil.copytree(src, dst)
+            shutil.copy(ROOT / "videos" / f"tutorial_{task}.mp4", dst / "video.mp4")
+            (dst / "meta.json").write_text(json.dumps({"id": dst.name, "name": title, "kind": "ui", "task": task,
+                                                       "source": f"Sample tutorial ({task})", "created": time.time()}))
+
+
+_seed_everyday()
 
 
 def _skill(sid: str) -> Path:
@@ -72,6 +107,14 @@ def _skill(sid: str) -> Path:
 @app.get("/", response_class=HTMLResponse)
 def index():
     return (ROOT / "web" / "studio" / "index.html").read_text()
+
+
+@app.get("/api/sample/{name}.mp4")
+def sample_video(name: str):
+    f = ROOT / "videos" / f"tutorial_{Path(name).name}.mp4"
+    if not f.exists():
+        raise HTTPException(404)
+    return FileResponse(f)
 
 
 @app.get("/api/skills")
@@ -106,20 +149,41 @@ def skill_file(sid: str, name: str):
 # ------------------------------------------------------------------ learning
 
 @app.post("/api/learn")
-async def learn(file: UploadFile | None = File(default=None)):
+async def learn(file: UploadFile | None = File(default=None), kind: str = "sheet", sample: str = "totals", task: str = ""):
     """Upload a tutorial video; stream the analysis as it happens."""
     sid = "skill-" + uuid.uuid4().hex[:8]
     out = SKILLS / sid
     out.mkdir(parents=True)
     video = out / "video.mp4"
     if file is None:
-        shutil.copy(ROOT / "videos" / "tutorial_totals.mp4", video)
-        source = "Sample tutorial (14 s)"
+        if sample in TITLES:
+            kind, task = "ui", sample
+        shutil.copy(ROOT / "videos" / f"tutorial_{sample}.mp4", video)
+        source = f"Sample tutorial ({sample})"
     else:
         with video.open("wb") as f:
             while chunk := await file.read(1 << 20):
                 f.write(chunk)
         source = file.filename or "uploaded video"
+
+    if kind == "ui":
+        async def ui_stream():
+            yield sse("status", {"msg": "Reading the video frames: finding clicks, labels, fields and switches", "skill": sid})
+            loop = asyncio.get_running_loop()
+            try:
+                trace, prog = await loop.run_in_executor(None, ui_learn.analyze, video, out, TITLES.get(task, "Everyday skill"))
+            except Exception as e:
+                yield sse("error", {"msg": f"Could not learn from this video: {e}"})
+                return
+            yield sse("status", {"msg": f"Found {len(trace['events'])} clicks in {trace['frames_analyzed']} frames"})
+            for st in prog["steps"]:
+                yield sse("step", {**st, "learned": st.get("learned_from") or st["target"].get("text") or st["target"].get("row")})
+                await asyncio.sleep(0.3)
+            (out / "meta.json").write_text(json.dumps({"id": sid, "name": prog["name"], "kind": "ui", "task": task,
+                                                       "source": source, "created": time.time()}))
+            yield sse("program", prog)
+            yield sse("done", {"skill": sid})
+        return StreamingResponse(ui_stream(), media_type="text/event-stream", headers={"Cache-Control": "no-cache"})
 
     async def stream():
         yield sse("status", {"msg": "Reading the video frames", "skill": sid})
@@ -171,6 +235,9 @@ async def run(request: Request):
     p = _skill(sid)
     program = json.loads((p / "program.json").read_text())
     trace = json.loads((p / "trace.json").read_text())
+    if program.get("kind") == "ui":
+        meta = json.loads((p / "meta.json").read_text()) if (p / "meta.json").exists() else {}
+        return await run_everyday(program, trace, meta, opts, mode, p)
     data = DATASETS.get(opts.get("data", "sales"), DATASETS["sales"])
     inputs = {**data, **{k: v for k, v in (body.get("inputs") or {}).items() if v}}
     url = target_url(opts)
@@ -207,6 +274,67 @@ async def run(request: Request):
             if ev["type"] in ("done", "error"):
                 break
         await task
+
+    return StreamingResponse(stream(), media_type="text/event-stream", headers={"Cache-Control": "no-cache"})
+
+
+def everyday_url(task: str, opts: dict) -> str:
+    q = {"task": task, "skin": "B" if opts.get("app") == "B" else "A", "data": opts.get("seed", 1)}
+    if opts.get("dark"):
+        q["theme"] = "dark"
+    if opts.get("nav") and opts["nav"] != "default":
+        q["nav"] = opts["nav"]
+    if opts.get("labels_top"):
+        q["labels"] = "top"
+    if opts.get("btn_top"):
+        q["btn"] = "top"
+    if opts.get("big"):
+        q["scale"] = "1.2"
+    if opts.get("shuffle"):
+        n = N_FIELDS[task]
+        q["order"] = ",".join(str((i + 1) % n) for i in range(n))
+    if opts.get("popup"):
+        q["popup"] = 4.0
+    return f"http://127.0.0.1:{PORT['value']}/apps/everyday/index.html?" + "&".join(f"{k}={v}" for k, v in q.items())
+
+
+async def run_everyday(program, trace, meta, opts, mode, p):
+    task = meta.get("task") or opts.get("task") or "mail"
+    inputs = dict(program["inputs"])
+    if opts.get("newdata"):
+        inputs.update(fresh_inputs(task, random.Random(time.time())))
+    url = everyday_url(task, opts)
+    queue: asyncio.Queue = asyncio.Queue()
+
+    async def on_event(ev):
+        await queue.put(ev)
+
+    async def worker():
+        async with RUN_LOCK:
+            out = DATA / "runs" / uuid.uuid4().hex[:8]
+            try:
+                if mode == "replay":
+                    await queue.put({"type": "start", "url": url, "steps": len(trace["events"])})
+                    rep = await replay_ui(trace, url, out)
+                else:
+                    rep = await run_ui(program, url, out, inputs, use_contracts=(mode == "eidos"),
+                                       on_event=on_event, frame_every=0.3)
+                truth = ui_score(task, rep.get("oracle_state"), inputs)
+                rep.pop("oracle_state", None)
+                await queue.put({"type": "done", "report": rep, "truth": truth, "url": url, "mode": mode, "inputs": inputs})
+            except Exception as e:
+                await queue.put({"type": "error", "msg": repr(e)})
+
+    task_ = asyncio.create_task(worker())
+
+    async def stream():
+        yield sse("status", {"msg": "Waiting for the browser" if RUN_LOCK.locked() else "Starting", "url": url, "inputs": inputs})
+        while True:
+            ev = await queue.get()
+            yield sse(ev["type"], ev)
+            if ev["type"] in ("done", "error"):
+                break
+        await task_
 
     return StreamingResponse(stream(), media_type="text/event-stream", headers={"Cache-Control": "no-cache"})
 

@@ -1,0 +1,168 @@
+{
+  "video": "tutorial_calendar.mp4",
+  "duration": 19.8,
+  "frames_analyzed": 298,
+  "screen": [
+    1200,
+    760
+  ],
+  "events": [
+    {
+      "t": 2.6,
+      "x": 1113,
+      "y": 43
+    },
+    {
+      "t": 4.47,
+      "x": 467,
+      "y": 148,
+      "typed": "Team lunch"
+    },
+    {
+      "t": 7.33,
+      "x": 467,
+      "y": 200,
+      "typed": "Nov 12"
+    },
+    {
+      "t": 9.87,
+      "x": 467,
+      "y": 251
+    },
+    {
+      "t": 11.67,
+      "x": 467,
+      "y": 430
+    },
+    {
+      "t": 13.4,
+      "x": 467,
+      "y": 302,
+      "typed": "Cafe Lumen"
+    },
+    {
+      "t": 16.27,
+      "x": 819,
+      "y": 352
+    }
+  ],
+  "steps": [
+    {
+      "index": 1,
+      "t": 2.6,
+      "point": [
+        1113,
+        43
+      ],
+      "action": "press",
+      "label": "New event",
+      "box": [
+        1056,
+        23,
+        114,
+        36
+      ],
+      "shows": [
+        "Title",
+        "Date",
+        "Time",
+        "Choose",
+        "Location",
+        "Cancel Save"
+      ]
+    },
+    {
+      "index": 2,
+      "t": 4.47,
+      "point": [
+        467,
+        148
+      ],
+      "action": "type",
+      "label": "Title",
+      "value": "Team lunch",
+      "box": [
+        409,
+        133,
+        444,
+        33
+      ]
+    },
+    {
+      "index": 3,
+      "t": 7.33,
+      "point": [
+        467,
+        200
+      ],
+      "action": "type",
+      "label": "Date",
+      "value": "Nov 12",
+      "box": [
+        409,
+        184,
+        444,
+        33
+      ]
+    },
+    {
+      "index": 4,
+      "t": 9.87,
+      "point": [
+        467,
+        251
+      ],
+      "action": "choose",
+      "label": "Time",
+      "value": "1:00 PM",
+      "shown": "1:00 PM v",
+      "box": [
+        409,
+        235,
+        444,
+        33
+      ]
+    },
+    {
+      "index": 5,
+      "t": 13.4,
+      "point": [
+        467,
+        302
+      ],
+      "action": "type",
+      "label": "Location",
+      "value": "Cafe Lumen",
+      "box": [
+        409,
+        286,
+        444,
+        33
+      ]
+    },
+    {
+      "index": 6,
+      "t": 16.27,
+      "point": [
+        819,
+        352
+      ],
+      "action": "press",
+      "label": "Save",
+      "box": [
+        783,
+        335,
+        72,
+        36
+      ],
+      "shows": [
+        "Team lunch",
+        "Cafe Lumen",
+        "Nov 12, 1:00 PM",
+        "Standup",
+        "Zoom",
+        "Nov 7, 8:30 AM"
+      ]
+    }
+  ]
+}

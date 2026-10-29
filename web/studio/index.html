@@ -117,11 +117,21 @@ video { width: 100%; border-radius: 10px; background: var(--screen); display: bl
     <h2><b>1</b> Learn from a video</h2>
     <div class="row">
       <select id="skillSel" aria-label="Skill"></select>
-      <button id="relearn" title="Analyze the sample tutorial from scratch">Learn sample again</button>
+    </div>
+    <div class="row"><label class="lbl">Sample</label>
+      <select id="sampleSel" aria-label="Sample tutorial">
+        <option value="mail">Send an email (mail app)</option>
+        <option value="calendar">Add a calendar event</option>
+        <option value="expense">Submit an expense</option>
+        <option value="settings">Turn on two-factor sign-in</option>
+        <option value="totals">Add a totals row (spreadsheet)</option>
+      </select>
+      <button id="relearn" title="Analyze this sample tutorial video from scratch">Learn it</button>
     </div>
     <div class="drop" id="drop">
       Drop a screen recording here, or <label class="btn" style="padding:4px 10px">choose a file<input type="file" id="file" accept="video/*" hidden></label>
-      <div class="hint" style="margin-top:6px">Works best with a highlighted pointer and click rings (most screen recorders have this option).</div>
+      <div class="hint" style="margin-top:6px">This video shows <select id="kindSel" style="font-size:13px;padding:3px 6px"><option value="ui">an everyday app (buttons, fields, lists, switches)</option><option value="sheet">a spreadsheet</option></select></div>
+      <div class="hint" style="margin-top:4px">Works best with a highlighted pointer and click rings (most screen recorders have this option).</div>
     </div>
     <video id="vid" controls muted playsinline preload="metadata"></video>
     <div class="status" id="lstatus"></div>
@@ -132,6 +142,30 @@ video { width: 100%; border-radius: 10px; background: var(--screen); display: bl
   <section class="panel" id="run">
     <h2><b>2</b> Run it somewhere new</h2>
     <div class="cfg">
+      <div id="cfgUi" style="display:flex;flex-direction:column;gap:10px">
+      <div class="row"><label class="lbl">App</label>
+        <div class="seg" id="uiAppSeg">
+          <button data-v="A" aria-pressed="true">Design A (as in the video)</button>
+          <button data-v="B" aria-pressed="false">Design B (a different app)</button>
+        </div>
+      </div>
+      <div class="row"><label class="lbl">Redesign</label>
+        <label class="chip"><input type="checkbox" id="u_dark">Dark theme</label>
+        <label class="chip"><input type="checkbox" id="u_labels">Labels above fields</label>
+        <label class="chip"><input type="checkbox" id="u_shuffle">Shuffle fields</label>
+        <label class="chip"><input type="checkbox" id="u_btn">Buttons on top</label>
+        <label class="chip"><input type="checkbox" id="u_big">Bigger text</label>
+        <select id="u_nav" aria-label="Menu position" style="font-size:13px"><option value="default">Menu: default</option><option value="left">Menu: left</option><option value="right">Menu: right</option><option value="top">Menu: top</option></select>
+        <button id="uRandomize" style="padding:5px 11px;font-size:13px">Random redesign</button>
+      </div>
+      <div class="row"><label class="lbl">Data</label>
+        <div class="seg" id="uiDataSeg">
+          <button data-v="same" aria-pressed="false">As in the video</button>
+          <button data-v="new" aria-pressed="true">New values</button>
+        </div>
+      </div>
+      </div>
+      <div id="cfgSheet" style="display:flex;flex-direction:column;gap:10px">
       <div class="row"><label class="lbl">App</label>
         <div class="seg" id="appSeg">
           <button data-v="A" aria-pressed="true">App A: Gridline</button>
@@ -150,6 +184,7 @@ video { width: 100%; border-radius: 10px; background: var(--screen); display: bl
           <button data-v="sales" aria-pressed="true">Sales (as in the video)</button>
           <button data-v="inventory" aria-pressed="false">Inventory (new data)</button>
         </div>
+      </div>
       </div>
       <div class="row"><label class="lbl">Trouble</label>
         <label class="chip"><input type="checkbox" id="o_popup">A dialog pops up mid-task</label>
@@ -179,7 +214,7 @@ video { width: 100%; border-radius: 10px; background: var(--screen); display: bl
 <script>
 const $ = (s) => document.querySelector(s);
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-let current = null, program = null, busy = false;
+let current = null, program = null, busy = false, kind = "sheet";
 
 // --- SSE over fetch (POST bodies, file uploads) ---
 async function stream(url, opts, onEvent) {
@@ -211,17 +246,30 @@ function seg(id, onChange) {
 const getApp = seg("#appSeg", (v) => { $("#redesignRow").style.opacity = v === "B" ? .4 : 1;
   $("#redesignRow").querySelectorAll("input,button").forEach((x) => x.disabled = v === "B"); });
 const getData = seg("#dataSeg"); const getMode = seg("#modeSeg");
+const getUiApp = seg("#uiAppSeg"); const getUiData = seg("#uiDataSeg");
+["dark", "labels", "shuffle", "btn", "big", "nav"].forEach((k) => $("#u_" + k).addEventListener("change", updateUrl));
+$("#uRandomize").onclick = () => { let any = false;
+  ["dark", "labels", "shuffle", "btn", "big"].forEach((k) => { const v = Math.random() < .5; $("#u_" + k).checked = v; any ||= v; });
+  $("#u_nav").value = ["default", "left", "right", "top"][Math.floor(Math.random() * 4)];
+  if (!any) $("#u_shuffle").checked = true; updateUrl(); };
 ["dark", "sidebar", "big", "shuffle", "popup"].forEach((k) => $("#o_" + k).addEventListener("change", updateUrl));
 $("#randomize").onclick = () => { let any = false;
   ["dark", "sidebar", "big", "shuffle"].forEach((k) => { const v = Math.random() < .55; $("#o_" + k).checked = v; any ||= v; });
   if (!any) $("#o_shuffle").checked = true; updateUrl(); };
 
 function target() {
+  if (kind === "ui") return { app: getUiApp(), dark: $("#u_dark").checked, labels_top: $("#u_labels").checked,
+    shuffle: $("#u_shuffle").checked, btn_top: $("#u_btn").checked, big: $("#u_big").checked, nav: $("#u_nav").value,
+    newdata: getUiData() === "new", popup: $("#o_popup").checked, seed: Math.floor(Math.random() * 90) + 2 };
   const t = { app: getApp(), data: getData(), popup: $("#o_popup").checked };
   if (t.app === "A") ["dark", "sidebar", "big", "shuffle"].forEach((k) => t[k] = $("#o_" + k).checked);
   return t;
 }
 async function updateUrl() {
+  if (kind === "ui") { const t = target();
+    $("#url").textContent = [t.app === "B" ? "design B" : "design A", t.dark && "dark", t.labels_top && "labels above", t.shuffle && "fields shuffled",
+      t.btn_top && "buttons on top", t.big && "bigger text", t.nav !== "default" && "menu " + t.nav, t.newdata ? "new values" : "same values", t.popup && "popup"].filter(Boolean).join(" · ");
+    return; }
   const t = target(); const q = new URLSearchParams({ app_: t.app, data: t.data });
   ["dark", "sidebar", "big", "shuffle", "popup"].forEach((k) => t[k] && q.set(k, "true"));
   const r = await fetch("/api/target?" + q).then((r) => r.json());
@@ -236,15 +284,24 @@ function stepCard(s, learned) {
   const contract = s.contract && (s.contract.cell_shows_text ? `cell shows ${s.contract.cell_shows_text}` :
     s.contract.cell_shows_number ? `cell shows the ${s.contract.cell_shows_number.fn} of ${s.contract.cell_shows_number.column}, read off the screen` :
     s.contract.selection_covers_row ? "the selection covers the row, and only the row" :
-    s.contract.text_gets_heavier || s.do === "apply_format" || s.do === "click_control" ? "text in the row gets heavier (bold)" : null);
+    s.contract.text_gets_heavier || s.do === "apply_format" || s.do === "click_control" ? "text in the row gets heavier (bold)" :
+    s.contract.field_shows ? `the '${s.target.field}' field shows ${s.contract.field_shows}` :
+    s.contract.screen_shows ? (s.contract.screen_shows.length ? "the screen then shows " + s.contract.screen_shows.join(", ") : null) :
+    s.contract.switch_on !== undefined ? `the '${s.target.row}' switch is ${s.contract.switch_on ? "on" : "off"}` : null);
   li.innerHTML = `<span class="n">${esc(s.id ?? s.index)}</span><div class="intent">${esc(bindTxt(s.intent))}</div>
     ${learned ? `<div class="learned">from the video: ${esc(learned)}</div>` : ""}
     ${contract ? `<div class="contract">${esc(bindTxt(contract))}</div>` : ""}<div class="checks"></div>`;
   return li;
 }
+function learnedTxt(s) {
+  if (p_kind(s) === "ui") return s.learned_from ? `${s.do === "choose" ? "picked" : "typed"} "${s.learned_from}" at ${s.video_time} s`
+    : s.do === "toggle" ? `flipped the switch at ${s.video_time} s` : `clicked "${s.target.text}" at ${s.video_time} s`;
+  return s.learned_from ? `${s.do} "${s.learned_from}"` : `${s.do}, ${(s.video_time || []).join("–")} s`;
+}
+const p_kind = (s) => (s.do in { press: 1, type: 1, choose: 1, toggle: 1 }) ? "ui" : "sheet";
 function showProgram(p) {
   program = p; const ul = $("#lsteps"); ul.innerHTML = "";
-  p.steps.forEach((s) => ul.append(stepCard(s, s.learned_from ? `${s.do} "${s.learned_from}"` : `${s.do}, ${(s.video_time || []).join("–")} s`)));
+  p.steps.forEach((s) => ul.append(stepCard(s, learnedTxt(s))));
   const rs = $("#rsteps"); rs.innerHTML = "";
   p.steps.forEach((s) => rs.append(stepCard(s)));
 }
@@ -257,8 +314,11 @@ async function loadSkills(select) {
 async function openSkill(id) {
   if (!id) return; current = id;
   const d = await fetch("/api/skills/" + id).then((r) => r.json());
+  kind = d.program.kind === "ui" ? "ui" : "sheet";
+  $("#cfgUi").style.display = kind === "ui" ? "flex" : "none"; $("#cfgSheet").style.display = kind === "ui" ? "none" : "flex";
+  runInputs = {}; updateUrl();
   $("#vid").src = `/api/skills/${id}/file/video.mp4`;
-  $("#lstatus").textContent = `Learned from ${d.meta.source}: ${d.trace.events.length} pointer actions, ${d.program.steps.length} steps.`;
+  $("#lstatus").textContent = `Learned from ${d.meta.source}: ${d.trace.events.length} pointer actions, ${d.program.steps.length} steps. Inputs: ${Object.entries(d.program.inputs).map(([k, v]) => `${k} = ${v}`).join(", ")}`;
   showProgram(d.program);
 }
 $("#skillSel").onchange = (e) => openSkill(e.target.value);
@@ -267,11 +327,13 @@ async function learn(file) {
   if (busy) return; busy = true; setBusy();
   $("#lsteps").innerHTML = ""; $("#lstatus").textContent = "Uploading";
   const fd = new FormData(); if (file) { fd.append("file", file); $("#vid").src = URL.createObjectURL(file); }
+  else $("#vid").src = `/api/sample/${$("#sampleSel").value}.mp4`;
+  const q = new URLSearchParams(file ? { kind: $("#kindSel").value } : { sample: $("#sampleSel").value, kind: $("#sampleSel").value === "totals" ? "sheet" : "ui" });
   let sid = null;
   try {
-    await stream("/api/learn", { method: "POST", body: file ? fd : undefined }, (ev, d) => {
+    await stream("/api/learn?" + q, { method: "POST", body: file ? fd : undefined }, (ev, d) => {
       if (ev === "status") { $("#lstatus").textContent = d.msg; sid = d.skill || sid; }
-      if (ev === "step") $("#lsteps").append(stepCard(d, d.text ? `typed "${d.text}"` : d.action));
+      if (ev === "step") $("#lsteps").append(d.do ? stepCard(d, learnedTxt(d)) : stepCard(d, d.text ? `typed "${d.text}"` : d.action));
       if (ev === "program") { $("#lstatus").textContent = `Compiled into a program with ${d.steps.length} steps and inputs: ${Object.entries(d.inputs).map(([k, v]) => `${k}=${v}`).join(", ")}`; showProgram(d); }
       if (ev === "error") $("#lstatus").textContent = d.msg;
       if (ev === "done") sid = d.skill;
@@ -292,7 +354,7 @@ function setBusy() { $("#go").disabled = busy; $("#relearn").disabled = busy; $(
 $("#go").onclick = async () => {
   if (busy || !current) return; busy = true; setBusy();
   const mode = getMode();
-  runInputs = getData() === "inventory" ? { label_column: "Warehouse", sum_column: "Value" } : {};
+  runInputs = kind === "ui" ? {} : getData() === "inventory" ? { label_column: "Warehouse", sum_column: "Value" } : {};
   showProgram(program); $("#verdict").hidden = true; $("#rstatus").textContent = "Starting a browser";
   if (mode === "replay") $("#rsteps").innerHTML = `<li class="step"><span class="n">↻</span><div class="intent">Replaying the tutorial's exact clicks and keystrokes</div><div class="learned">No perception, no checks: the same pixels as in the video.</div></li>`;
   try {
@@ -303,7 +365,9 @@ $("#go").onclick = async () => {
 };
 function card(id) { return $(`#rsteps .step[data-id="${id}"]`); }
 function onRunEvent(ev, d) {
-  if (ev === "status") $("#rstatus").textContent = d.msg;
+  if (ev === "status") { $("#rstatus").textContent = d.msg;
+    if (d.inputs && kind === "ui") { runInputs = d.inputs; showProgram(program);
+      $("#rstatus").textContent = "Values for this run: " + Object.values(d.inputs).join(" · "); } }
   if (ev === "start") { $("#rstatus").textContent = "Running on " + d.url.replace(/^https?:\/\/[^/]+/, ""); $("#live").classList.add("on"); }
   if (ev === "frame") { const img = $("#frame"); img.src = "data:image/jpeg;base64," + d.jpeg; img.hidden = false; $("#idle").hidden = true; }
   if (ev === "step_start") { const c = card(d.id); c && c.classList.add("active"); $("#rstatus").textContent = `Step ${d.id}: ${d.intent}`; }
@@ -337,7 +401,7 @@ function verdict(d) {
   const agree = says === truth;
   $("#verdict").innerHTML = `
     <div class="v ${says ? "ok" : "bad"}"><h3>The agent says</h3><div class="big">${saysTxt}</div><p>${esc(saysWhy)}</p></div>
-    <div class="v ${truth ? "ok" : "bad"}"><h3>The truth (app's internal state)</h3><div class="big">${truth ? "Task done" : "Task not done"}</div><p>${esc(truth ? "A bold totals row with the correct SUM." : (d.truth.why || "The totals row is missing or wrong."))} The agent never sees this.</p></div>
+    <div class="v ${truth ? "ok" : "bad"}"><h3>The truth (app's internal state)</h3><div class="big">${truth ? "Task done" : "Task not done"}</div><p>${esc(truth ? (kind === "ui" ? "The app saved exactly the values for this run." : "A bold totals row with the correct SUM.") : (d.truth.why || "The result is missing or wrong."))} The agent never sees this.</p></div>
     <div class="agree ${agree ? "ok" : "bad"}">${agree ? "The agent's verdict matches the truth." : "Silent failure: the agent thinks it succeeded, but it didn't."}</div>`;
   $("#verdict").hidden = false;
   $("#rstatus").textContent = "Finished.";

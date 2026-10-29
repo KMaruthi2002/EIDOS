@@ -1,0 +1,69 @@
+[
+  {
+    "t": 2.642,
+    "type": "click",
+    "x": 1113.1875,
+    "y": 40.5,
+    "label": "click New event"
+  },
+  {
+    "t": 4.547,
+    "type": "click",
+    "x": 467,
+    "y": 149.5,
+    "label": "field Title"
+  },
+  {
+    "t": 5.192,
+    "type": "type",
+    "text": "Team lunch",
+    "label": "Title"
+  },
+  {
+    "t": 7.45,
+    "type": "click",
+    "x": 467,
+    "y": 200.5,
+    "label": "field Date"
+  },
+  {
+    "t": 8.074,
+    "type": "type",
+    "text": "Nov 12",
+    "label": "Date"
+  },
+  {
+    "t": 9.955,
+    "type": "click",
+    "x": 467,
+    "y": 251.5,
+    "label": "open Time"
+  },
+  {
+    "t": 11.773,
+    "type": "click",
+    "x": 467.5,
+    "y": 431.5,
+    "label": "choose 1:00 PM"
+  },
+  {
+    "t": 13.456,
+    "type": "click",
+    "x": 467,
+    "y": 302.5,
+    "label": "field Location"
+  },
+  {
+    "t": 14.071,
+    "type": "type",
+    "text": "Cafe Lumen",
+    "label": "Location"
+  },
+  {
+    "t": 16.338,
+    "type": "click",
+    "x": 819.03125,
+    "y": 353.5,
+    "label": "click Save"
+  }
+]

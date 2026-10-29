@@ -1,0 +1,145 @@
+{
+  "video": "tutorial_expense.mp4",
+  "duration": 17.2,
+  "frames_analyzed": 259,
+  "screen": [
+    1200,
+    760
+  ],
+  "events": [
+    {
+      "t": 2.53,
+      "x": 1102,
+      "y": 41
+    },
+    {
+      "t": 4.47,
+      "x": 467,
+      "y": 149,
+      "typed": "Delta Air Lines"
+    },
+    {
+      "t": 7.8,
+      "x": 467,
+      "y": 200,
+      "typed": "412.50"
+    },
+    {
+      "t": 10.27,
+      "x": 467,
+      "y": 251
+    },
+    {
+      "t": 12.0,
+      "x": 467,
+      "y": 291
+    },
+    {
+      "t": 13.67,
+      "x": 811,
+      "y": 302
+    }
+  ],
+  "steps": [
+    {
+      "index": 1,
+      "t": 2.53,
+      "point": [
+        1102,
+        41
+      ],
+      "action": "press",
+      "label": "New expense",
+      "box": [
+        1035,
+        23,
+        135,
+        36
+      ],
+      "shows": [
+        "My expenses",
+        "Merchant",
+        "Amount",
+        "Category",
+        "Choose",
+        "Cancel Submit"
+      ]
+    },
+    {
+      "index": 2,
+      "t": 4.47,
+      "point": [
+        467,
+        149
+      ],
+      "action": "type",
+      "label": "Merchant",
+      "value": "Delta Air Lines",
+      "box": [
+        409,
+        133,
+        444,
+        33
+      ]
+    },
+    {
+      "index": 3,
+      "t": 7.8,
+      "point": [
+        467,
+        200
+      ],
+      "action": "type",
+      "label": "Amount",
+      "value": "412.50",
+      "box": [
+        409,
+        184,
+        444,
+        33
+      ]
+    },
+    {
+      "index": 4,
+      "t": 10.27,
+      "point": [
+        467,
+        251
+      ],
+      "action": "choose",
+      "label": "Category",
+      "value": "Travel",
+      "shown": "Travel v",
+      "box": [
+        409,
+        235,
+        444,
+        33
+      ]
+    },
+    {
+      "index": 5,
+      "t": 13.67,
+      "point": [
+        811,
+        302
+      ],
+      "action": "press",
+      "label": "Submit",
+      "box": [
+        767,
+        284,
+        88,
+        37
+      ],
+      "shows": [
+        "expenses",
+        "Delta Air Lines",
+        "Travel",
+        "$412.50",
+        "Figma",
+        "Meals"
+      ]
+    }
+  ]
+}

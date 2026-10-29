@@ -66,10 +66,14 @@ def normalize_for_ocr(img: np.ndarray, binarize: bool = False) -> np.ndarray:
 
 
 def ocr_words(img, scale: float = 2.0, psm: int = 11, min_conf: float = 40,
-              binarize: bool = False) -> list[Word]:
-    """Return words with boxes in the ORIGINAL image's coordinates."""
+              binarize: bool = False, invert: bool = False) -> list[Word]:
+    """Return words with boxes in the ORIGINAL image's coordinates.
+
+    invert=True reads light text on colored fills (for example button labels)."""
     img = to_bgr(img)
     gray = normalize_for_ocr(img)
+    if invert:
+        gray = 255 - gray
     big = cv2.resize(gray, None, fx=scale, fy=scale, interpolation=cv2.INTER_CUBIC)
     if binarize:
         big = np.where(big < 140, 0, 255).astype(np.uint8)

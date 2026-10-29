@@ -1,0 +1,128 @@
+"""Everyday-task benchmark: four tasks, five conditions, three systems.
+
+    python bench/run_everyday.py BASE_URL SPLIT     (SPLIT = dev | test)
+
+dev uses seed 7 (used while fixing bugs). test uses seed 31337 and is run once.
+For each task: same app and data as the tutorial; new data; random redesigns of
+App A; App B (a different design) with random variations; and runs where a
+dialog interrupts at a random moment. Every run except "same" uses fresh
+inputs, so a system that copies the tutorial's typing cannot pass by luck.
+Success is judged from the app's internal state, which no system sees.
+"""
+from __future__ import annotations
+
+import asyncio
+import json
+import random
+import sys
+import time
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT))
+from eidos.ui.run import run_ui, replay_ui          # noqa: E402
+from eidos.ui.tasks import TUTORIALS, N_FIELDS, fresh_inputs, score, URL   # noqa: E402
+
+BASE = sys.argv[1] if len(sys.argv) > 1 else "http://localhost:8011"
+SPLIT = sys.argv[2] if len(sys.argv) > 2 else "dev"
+SEED = {"dev": 7, "test": 31337}.get(SPLIT, int(SPLIT) if SPLIT.isdigit() else 7)
+N_REDESIGN, N_OTHER, N_INTERRUPT = 6, 3, 4
+OUT = ROOT / "runs" / f"bench_everyday_{SPLIT}"
+
+
+def redesign(rng, task, skin):
+    q = {"skin": skin}
+    while True:
+        if rng.random() < 0.5:
+            q["theme"] = "dark"
+        q["nav"] = rng.choice(["left", "right", "top"])
+        q["labels"] = rng.choice(["left", "top"])
+        q["btn"] = rng.choice(["top", "bottom"])
+        q["scale"] = rng.choice(["1", "1.1", "1.2"])
+        if rng.random() < 0.75:
+            perm = list(range(N_FIELDS[task]))
+            rng.shuffle(perm)
+            q["order"] = ",".join(map(str, perm))
+        default = {"A": ("left", "left", "bottom"), "B": ("top", "top", "top")}[skin]
+        if skin == "B" or (q["nav"], q["labels"], q["btn"]) != default or "theme" in q or "order" in q:
+            return q
+
+
+def conditions():
+    rng = random.Random(SEED)
+    out = []
+    for task in TUTORIALS:
+        out.append({"task": task, "cond": "same", "q": {"skin": "A"}, "inputs": None})
+        out.append({"task": task, "cond": "new_data", "q": {"skin": "A", "data": rng.randint(2, 99)}, "inputs": fresh_inputs(task, rng)})
+        for _ in range(N_REDESIGN):
+            q = redesign(rng, task, "A"); q["data"] = rng.randint(2, 99)
+            out.append({"task": task, "cond": "redesign", "q": q, "inputs": fresh_inputs(task, rng)})
+        for _ in range(N_OTHER):
+            q = redesign(rng, task, "B"); q["data"] = rng.randint(2, 99)
+            out.append({"task": task, "cond": "other_app", "q": q, "inputs": fresh_inputs(task, rng)})
+        for _ in range(N_INTERRUPT):
+            skin = rng.choice(["A", "B"])
+            q = redesign(rng, task, skin) if rng.random() < 0.5 else {"skin": skin}
+            q["data"] = rng.randint(2, 99)
+            q["popup"] = round(rng.uniform(1.5, 9.0), 1)
+            out.append({"task": task, "cond": "interrupt", "q": q, "inputs": fresh_inputs(task, rng)})
+    return out
+
+
+async def one(sem, i, c, system):
+    task = c["task"]
+    sk = ROOT / "runs" / f"ui_skill_{task}"
+    prog = json.loads((sk / "program.json").read_text())
+    inputs = {**prog["inputs"], **(c["inputs"] or {})}
+    url = f"{BASE}{URL}?task={task}&" + "&".join(f"{k}={v}" for k, v in c["q"].items())
+    out = OUT / f"{i:03d}_{task}_{c['cond']}_{system}"
+    async with sem:
+        t = time.monotonic()
+        try:
+            if system == "replay":
+                rep = await replay_ui(json.loads((sk / "trace.json").read_text()), url, out)
+                says = True
+            else:
+                rep = await run_ui(prog, url, out, inputs, use_contracts=(system == "eidos"))
+                says = rep["all_contracts_passed"] if system == "eidos" else all(
+                    not any("error" in ch for ch in s["checks"]) for s in rep["steps"])
+            truth = score(task, rep.get("oracle_state"), inputs)
+        except Exception as e:
+            says, truth, rep = False, {"success": False, "why": f"crash: {e!r}"}, {}
+        dt = round(time.monotonic() - t, 1)
+    row = {"i": i, "task": task, "cond": c["cond"], "system": system, "url": url, "inputs": inputs,
+           "says_done": bool(says), "success": truth["success"], "why": truth.get("why", ""), "seconds": dt,
+           "repairs": sum(max(0, s.get("attempts", 1) - 1) for s in rep.get("steps", []))}
+    print(f"{i:03d} {task:9s} {c['cond']:10s} {system:7s} says={row['says_done']!s:5s} truth={row['success']!s:5s} {dt}s {row['why'][:60]}", flush=True)
+    return row
+
+
+async def main():
+    OUT.mkdir(parents=True, exist_ok=True)
+    conds = conditions()
+    sem = asyncio.Semaphore(int(sys.argv[3]) if len(sys.argv) > 3 else 3)
+    jobs = [one(sem, i, c, s) for i, c in enumerate(conds) for s in ("replay", "nochk", "eidos")]
+    rows = await asyncio.gather(*jobs)
+    (OUT / "results.json").write_text(json.dumps({"seed": SEED, "split": SPLIT, "rows": rows}, indent=2))
+    summarize(rows)
+
+
+def summarize(rows):
+    def cell(rs):
+        return f"{sum(r['success'] for r in rs)}/{len(rs)}"
+    print("\ncondition    runs  replay   nochk    eidos")
+    for cond in ("same", "new_data", "redesign", "other_app", "interrupt", None):
+        rs = [r for r in rows if cond is None or r["cond"] == cond]
+        by = {s: [r for r in rs if r["system"] == s] for s in ("replay", "nochk", "eidos")}
+        print(f"{cond or 'ALL':12s} {len(by['eidos']):4d}  {cell(by['replay']):7s}  {cell(by['nochk']):7s}  {cell(by['eidos']):7s}")
+    for task in TUTORIALS:
+        by = {s: [r for r in rows if r["task"] == task and r["system"] == s] for s in ("replay", "nochk", "eidos")}
+        print(f"  {task:10s} {len(by['eidos']):4d}  {cell(by['replay']):7s}  {cell(by['nochk']):7s}  {cell(by['eidos']):7s}")
+    ei = [r for r in rows if r["system"] == "eidos"]
+    silent = [r for r in ei if r["says_done"] and not r["success"]]
+    agree = sum(r["says_done"] == r["success"] for r in ei)
+    print(f"EIDOS verdict matches truth: {agree}/{len(ei)}; silent failures: {len(silent)}")
+
+
+if __name__ == "__main__":
+    asyncio.run(main())

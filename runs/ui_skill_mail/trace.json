@@ -1,0 +1,137 @@
+{
+  "video": "tutorial_mail.mp4",
+  "duration": 18.93,
+  "frames_analyzed": 285,
+  "screen": [
+    1200,
+    760
+  ],
+  "events": [
+    {
+      "t": 2.8,
+      "x": 1117,
+      "y": 40
+    },
+    {
+      "t": 4.67,
+      "x": 467,
+      "y": 149,
+      "typed": "maya@northwind.com"
+    },
+    {
+      "t": 8.27,
+      "x": 467,
+      "y": 199,
+      "typed": "Q3 report"
+    },
+    {
+      "t": 11.13,
+      "x": 467,
+      "y": 271,
+      "typed": "Attached is the Q3 report."
+    },
+    {
+      "t": 15.4,
+      "x": 818,
+      "y": 343
+    }
+  ],
+  "steps": [
+    {
+      "index": 1,
+      "t": 2.8,
+      "point": [
+        1117,
+        40
+      ],
+      "action": "press",
+      "label": "Compose",
+      "box": [
+        1065,
+        22,
+        105,
+        37
+      ],
+      "shows": [
+        "New message",
+        "Subject",
+        "Message",
+        "Cancel Send"
+      ]
+    },
+    {
+      "index": 2,
+      "t": 4.67,
+      "point": [
+        467,
+        149
+      ],
+      "action": "type",
+      "label": "To",
+      "value": "maya@northwind.com",
+      "box": [
+        409,
+        133,
+        444,
+        33
+      ]
+    },
+    {
+      "index": 3,
+      "t": 8.27,
+      "point": [
+        467,
+        199
+      ],
+      "action": "type",
+      "label": "Subject",
+      "value": "Q3 report",
+      "box": [
+        409,
+        184,
+        444,
+        33
+      ]
+    },
+    {
+      "index": 4,
+      "t": 11.13,
+      "point": [
+        467,
+        271
+      ],
+      "action": "type",
+      "label": "Message",
+      "value": "Attached is the Q3 report.",
+      "box": [
+        409,
+        235,
+        444,
+        74
+      ]
+    },
+    {
+      "index": 5,
+      "t": 15.4,
+      "point": [
+        818,
+        343
+      ],
+      "action": "press",
+      "label": "Send",
+      "box": [
+        781,
+        325,
+        74,
+        37
+      ],
+      "shows": [
+        "Sent",
+        "To: maya@northwind.com",
+        "Q3 report",
+        "Just now",
+        "Message sent"
+      ]
+    }
+  ]
+}

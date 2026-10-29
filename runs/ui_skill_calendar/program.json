@@ -1,0 +1,127 @@
+{
+  "eidos": "0.2",
+  "kind": "ui",
+  "name": "Everyday skill",
+  "learned_from": "tutorial_calendar.mp4",
+  "inputs": {
+    "title": "Team lunch",
+    "date": "Nov 12",
+    "time": "1:00 PM",
+    "location": "Cafe Lumen"
+  },
+  "steps": [
+    {
+      "id": 1,
+      "do": "press",
+      "video_time": 2.6,
+      "evidence": {
+        "pre": "step1_pre.png",
+        "post": "step1_post.png"
+      },
+      "target": {
+        "text": "New event"
+      },
+      "contract": {
+        "screen_shows": [
+          "Title",
+          "Date",
+          "Time"
+        ]
+      },
+      "intent": "Press 'New event'; the screen should then show 'Title', 'Date', 'Time'"
+    },
+    {
+      "id": 2,
+      "do": "type",
+      "video_time": 4.47,
+      "evidence": {
+        "pre": "step2_pre.png",
+        "post": "step2_post.png"
+      },
+      "target": {
+        "field": "Title"
+      },
+      "value": "{title}",
+      "learned_from": "Team lunch",
+      "contract": {
+        "field_shows": "{title}"
+      },
+      "intent": "Type {title} into the 'Title' field"
+    },
+    {
+      "id": 3,
+      "do": "type",
+      "video_time": 7.33,
+      "evidence": {
+        "pre": "step3_pre.png",
+        "post": "step3_post.png"
+      },
+      "target": {
+        "field": "Date"
+      },
+      "value": "{date}",
+      "learned_from": "Nov 12",
+      "contract": {
+        "field_shows": "{date}"
+      },
+      "intent": "Type {date} into the 'Date' field"
+    },
+    {
+      "id": 4,
+      "do": "choose",
+      "video_time": 9.87,
+      "evidence": {
+        "pre": "step4_pre.png",
+        "post": "step4_post.png"
+      },
+      "target": {
+        "field": "Time"
+      },
+      "value": "{time}",
+      "learned_from": "1:00 PM",
+      "contract": {
+        "field_shows": "{time}"
+      },
+      "intent": "Pick {time} in the 'Time' list"
+    },
+    {
+      "id": 5,
+      "do": "type",
+      "video_time": 13.4,
+      "evidence": {
+        "pre": "step5_pre.png",
+        "post": "step5_post.png"
+      },
+      "target": {
+        "field": "Location"
+      },
+      "value": "{location}",
+      "learned_from": "Cafe Lumen",
+      "contract": {
+        "field_shows": "{location}"
+      },
+      "intent": "Type {location} into the 'Location' field"
+    },
+    {
+      "id": 6,
+      "do": "press",
+      "video_time": 16.27,
+      "evidence": {
+        "pre": "step6_pre.png",
+        "post": "step6_post.png"
+      },
+      "target": {
+        "text": "Save"
+      },
+      "contract": {
+        "screen_shows": [
+          "{title}",
+          "{location}",
+          "{time}",
+          "{date}"
+        ]
+      },
+      "intent": "Press 'Save'; the screen should then show '{title}', '{location}', '{time}', '{date}'"
+    }
+  ]
+}
