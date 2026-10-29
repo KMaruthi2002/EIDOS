@@ -1,7 +1,7 @@
 """Pull real benchmark numbers and clip lengths into the video project."""
 import json, subprocess, sys
 from pathlib import Path
-E = Path(".")
+E = Path(__file__).resolve().parent.parent   # the EIDOS repo
 V = Path(__file__).parent
 split = sys.argv[1] if len(sys.argv) > 1 else "test"
 r = json.loads((E / "runs" / f"bench_{split}" / "results.json").read_text())["summary"]

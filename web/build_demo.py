@@ -49,6 +49,8 @@ def main():
     data = {"trace": trace, "program": program, "showcase": showcase, "bench": bench}
     html = (ROOT / "web" / "demo_template.html").read_text()
     html = html.replace("/*DATA*/null", json.dumps(data))
+    # Hosting platform hint: the page's side gutters already clear phone safe areas.
+    html = html.replace("<!--VIEWPORT_META-->", "")
     (OUT / "index.html").write_text(html)
     size = sum(p.stat().st_size for p in OUT.rglob("*") if p.is_file())
     print(f"{OUT / 'index.html'}  total {size / 1e6:.1f} MB")
