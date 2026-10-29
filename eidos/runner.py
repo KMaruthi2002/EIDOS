@@ -92,8 +92,17 @@ class Table:
 
 async def run_program(program: dict, url: str, out_dir: Path, inputs: dict | None = None,
                       skill_dir: Path | None = None, use_contracts: bool = True,
-                      record: bool = True, cursor_color: str = "#18c5d8") -> dict:
-    """Execute a program on the app at `url`. Returns a run report."""
+                      record: bool = True, cursor_color: str = "#18c5d8",
+                      on_event=None, frame_every: float = 0.0) -> dict:
+    """Execute a program on the app at `url`. Returns a run report.
+
+    on_event: optional async callable receiving dicts as the run progresses
+    (start, step_start, step_end, frame) so a UI can follow along live.
+    frame_every: seconds between live JPEG frames sent to on_event (0 = none).
+    """
+    async def emit(ev):
+        if on_event:
+            await on_event(ev)
     out_dir.mkdir(parents=True, exist_ok=True)
     inputs = {**program["inputs"], **(inputs or {})}
     headers = list(dict.fromkeys(program["source_screen"]["headers"] +
@@ -133,9 +142,24 @@ async def run_program(program: dict, url: str, out_dir: Path, inputs: dict | Non
             await page.mouse.move(x, y, steps=18)
             await page.wait_for_timeout(120)
 
+        streaming = {"on": bool(on_event and frame_every)}
+
+        async def stream_frames():
+            import base64
+            while streaming["on"]:
+                try:
+                    jpg = await page.screenshot(type="jpeg", quality=62)
+                    await emit({"type": "frame", "jpeg": base64.b64encode(jpg).decode()})
+                except Exception:
+                    pass
+                await asyncio.sleep(frame_every)
+
+        streamer = asyncio.create_task(stream_frames()) if streaming["on"] else None
+        await emit({"type": "start", "url": url, "steps": len(todo)})
         for st in todo:
             log = StepLog(st["id"], bind(st["intent"], inputs), st["do"])
             log.t_start = round(time.monotonic() - t0, 2)
+            await emit({"type": "step_start", "id": st["id"], "intent": log.intent})
             pre = await shot()
             pre_name = f"run_step{st['id']}_pre.png"
             cv2.imwrite(str(out_dir / pre_name), pre)
@@ -300,11 +324,16 @@ async def run_program(program: dict, url: str, out_dir: Path, inputs: dict | Non
             cv2.imwrite(str(out_dir / post_name), await shot())
             log.shot_post = post_name
             logs.append(log)
+            await emit({"type": "step_end", "id": st["id"], "passed": log.passed,
+                        "grounding": log.grounding, "checks": log.checks})
             if use_contracts and not log.passed:
                 break
 
         await page.mouse.move(760, 470, steps=12)
         await page.wait_for_timeout(900)
+        streaming["on"] = False
+        if streamer:
+            await streamer
         state = await page.evaluate("window.__eidosState ? window.__eidosState() : null")
         video = await page.video.path() if record else None
         await ctx.close()

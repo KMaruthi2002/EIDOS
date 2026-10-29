@@ -5,6 +5,7 @@
   python -m eidos learn VIDEO OUT_DIR        video -> trace + program (+ contracts)
   python -m eidos run OUT_DIR URL [k=v ...]  run a learned program on an app
   python -m eidos check-live                 call each Meta model once (needs META_MODEL_API_KEY)
+  python -m eidos studio [PORT]              the EIDOS Studio app at http://localhost:8000
 """
 from __future__ import annotations
 
@@ -59,6 +60,9 @@ def main(argv: list[str]) -> None:
             for c in s["checks"]:
                 print(f"         {c['contract']}: {'pass' if c['pass'] else 'fail'}")
         print("\nAll contracts passed." if rep["all_contracts_passed"] else "\nStopped: a contract failed.")
+    elif cmd == "studio":
+        from .studio import main as studio
+        studio(int(argv[1]) if len(argv) > 1 else 8000)
     elif cmd == "check-live":
         asyncio.run(check_live())
     else:

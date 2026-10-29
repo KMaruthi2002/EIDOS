@@ -77,6 +77,19 @@ In the recorded showcase (`python physical/showcase.py`), the table is bumped af
 
 Setup: `physical/setup.sh` (MuJoCo plus the Panda model; on headless Linux, OSMesa).
 
+## EIDOS Studio (the app)
+
+```bash
+python -m eidos studio        # then open http://localhost:8000
+```
+
+A local web app over the same engine:
+
+1. **Learn**: drop a screen recording (or use the sample). The steps, their intents and their visual contracts appear as EIDOS finds them.
+2. **Run**: choose where to run the skill: App A or App B, any mix of redesigns (dark theme, sidebar, bigger cells, shuffled columns), the sample or new data, and optionally a dialog that interrupts the task. Choose the agent: EIDOS, EIDOS with checks off, or copying the clicks.
+3. **Watch**: the agent's screen streams live while each step is grounded, acted on and checked; repairs show as they happen.
+4. **Verdict**: what the agent says next to the truth from the app's internal state (which the agent never sees), so silent failures are visible.
+
 ## Run it
 
 ```bash
@@ -100,8 +113,8 @@ python web/build_demo.py                                       # demo page -> we
 apps/        the two target apps (self-hosted, MIT) with redesign parameters
 eidos/       extract.py (video -> steps + contracts), compiler.py (-> program),
              runner.py (perceive, ground, act, check), vision.py (offline perception),
-             meta.py (Meta Model API), score.py (benchmark oracle)
+             meta.py (Meta Model API), score.py (benchmark oracle), studio.py (the app's server)
 bench/       benchmark and showcase runners
-web/         demo page template and builder
+web/         demo page template and builder; studio/ (the EIDOS Studio front end)
 video/       explainer video source (Remotion)
 ```

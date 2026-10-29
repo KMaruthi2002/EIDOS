@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EIDOS Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root {
+  --paper: #eef1f5; --surface: #ffffff; --ink: #142130; --muted: #5a6878; --line: #d5dce5;
+  --contract: #3352ff; --contract-soft: rgba(51,82,255,.10);
+  --pass: #0b8f63; --pass-soft: rgba(11,143,99,.12);
+  --fail: #cf3049; --fail-soft: rgba(207,48,73,.10);
+  --shade: rgba(20,33,48,.06); --warn: #b36b00; --screen: #0b1220;
+  --sans: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #0e1620; --surface: #16212d; --ink: #e5ecf3; --muted: #93a3b5; --line: #2a3848;
+  --contract: #8197ff; --contract-soft: rgba(129,151,255,.14);
+  --pass: #3fd3a0; --pass-soft: rgba(63,211,160,.13);
+  --fail: #ff6f84; --fail-soft: rgba(255,111,132,.12); --shade: rgba(0,0,0,.25); --warn: #ffb547; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --paper: #0e1620; --surface: #16212d; --ink: #e5ecf3; --muted: #93a3b5; --line: #2a3848;
+  --contract: #8197ff; --contract-soft: rgba(129,151,255,.14);
+  --pass: #3fd3a0; --pass-soft: rgba(63,211,160,.13);
+  --fail: #ff6f84; --fail-soft: rgba(255,111,132,.12); --shade: rgba(0,0,0,.25); --warn: #ffb547; color-scheme: dark; }
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 15px/1.5 var(--sans); }
+header { display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;
+  padding: 18px max(20px, env(safe-area-inset-left)) 14px; border-bottom: 1px solid var(--line); background: var(--surface); }
+.mark { font-weight: 800; font-size: 26px; letter-spacing: .02em; font-variation-settings: "wdth" 125; }
+.mark span { color: var(--contract); }
+header p { margin: 0; color: var(--muted); font-size: 14px; }
+main { display: grid; grid-template-columns: minmax(0, 420px) minmax(0, 1fr); gap: 20px;
+  padding: 20px max(20px, env(safe-area-inset-left)); max-width: 1500px; margin: 0 auto; }
+@media (max-width: 980px) { main { grid-template-columns: minmax(0, 1fr); } }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px; min-width: 0;
+  display: flex; flex-direction: column; gap: 14px; }
+h2 { margin: 0; font-size: 13px; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); font-weight: 700;
+  display: flex; align-items: center; gap: 10px; }
+h2 b { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%;
+  background: var(--contract); color: #fff; font-size: 12px; letter-spacing: 0; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+button, .btn { font: 600 14px var(--sans); border-radius: 9px; border: 1px solid var(--line); background: var(--surface);
+  color: var(--ink); padding: 8px 14px; cursor: pointer; }
+button:hover:not(:disabled), .btn:hover { border-color: var(--contract); }
+button.primary { background: var(--contract); border-color: var(--contract); color: #fff; padding: 10px 20px; font-size: 15px; }
+button:disabled { opacity: .5; cursor: default; }
+select { font: 14px var(--sans); padding: 7px 10px; border-radius: 9px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.seg button { border: 0; border-radius: 0; border-right: 1px solid var(--line); padding: 7px 12px; }
+.seg button:last-child { border-right: 0; }
+.seg button[aria-pressed="true"] { background: var(--contract-soft); color: var(--contract); }
+.chip { display: inline-flex; gap: 6px; align-items: center; font-size: 13px; padding: 5px 11px; border: 1px solid var(--line);
+  border-radius: 99px; cursor: pointer; user-select: none; }
+.chip input { accent-color: var(--contract); margin: 0; }
+.chip:has(input:checked) { border-color: var(--contract); background: var(--contract-soft); }
+label.lbl { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; font-weight: 600; min-width: 74px; }
+video { width: 100%; border-radius: 10px; background: var(--screen); display: block; }
+.status { font: 13px var(--mono); color: var(--muted); min-height: 1.5em; }
+.steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.step { border: 1px solid var(--line); border-radius: 11px; padding: 10px 12px; display: grid; grid-template-columns: 26px minmax(0,1fr); gap: 4px 10px;
+  animation: rise .35s ease both; }
+@keyframes rise { from { opacity: 0; transform: translateY(6px); } }
+.step .n { grid-row: span 3; width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center;
+  font: 600 12px var(--mono); background: var(--shade); }
+.step .intent { font-weight: 600; }
+.step .learned { font: 12px var(--mono); color: var(--muted); overflow-wrap: anywhere; }
+.contract { font-size: 13px; color: var(--contract); background: var(--contract-soft); border-radius: 7px; padding: 3px 8px; justify-self: start; }
+.contract::before { content: "contract  "; font: 600 10px var(--mono); letter-spacing: .08em; text-transform: uppercase; opacity: .8; }
+.step.active { border-color: var(--contract); box-shadow: 0 0 0 3px var(--contract-soft); }
+.step.ok { border-color: var(--pass); } .step.ok .n { background: var(--pass); color: #fff; }
+.step.bad { border-color: var(--fail); } .step.bad .n { background: var(--fail); color: #fff; }
+.checks { grid-column: 2; display: flex; flex-direction: column; gap: 3px; font-size: 13px; }
+.checks div { display: flex; gap: 6px; } .checks .g { color: var(--muted); } .checks .r { color: var(--warn); font-weight: 600; } .checks .y { color: var(--pass); } .checks .x { color: var(--fail); }
+.checks small { color: var(--muted); font-family: var(--mono); font-size: 11px; overflow-wrap: anywhere; }
+.screen { position: relative; background: var(--screen); border-radius: 12px; aspect-ratio: 1280 / 800; max-width: 100%; overflow: hidden;
+  display: grid; place-items: center; }
+.screen img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.screen .idle { color: #93a3b5; font-size: 14px; text-align: center; padding: 20px; position: absolute; }
+.live { position: absolute; top: 12px; left: 12px; font: 600 11px var(--mono); letter-spacing: .1em; color: #fff;
+  background: var(--fail); padding: 3px 8px; border-radius: 6px; display: none; }
+.live.on { display: block; animation: blink 1.2s infinite; }
+@keyframes blink { 50% { opacity: .55; } }
+.url { font: 12px var(--mono); color: var(--muted); overflow-wrap: anywhere; }
+.verdict { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 560px) { .verdict { grid-template-columns: 1fr; } }
+.v { border-radius: 12px; padding: 14px 16px; border: 1px solid var(--line); }
+.v h3 { margin: 0 0 4px; font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
+.v .big { font-size: 22px; font-weight: 800; font-variation-settings: "wdth" 110; }
+.v p { margin: 4px 0 0; font-size: 13px; color: var(--muted); }
+.v.ok { background: var(--pass-soft); border-color: var(--pass); } .v.ok .big { color: var(--pass); }
+.v.bad { background: var(--fail-soft); border-color: var(--fail); } .v.bad .big { color: var(--fail); }
+.agree { grid-column: 1 / -1; font-weight: 600; padding: 10px 14px; border-radius: 10px; }
+.agree.ok { background: var(--pass-soft); color: var(--pass); } .agree.bad { background: var(--fail-soft); color: var(--fail); }
+.cols { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 16px; }
+@media (max-width: 1200px) { .cols { grid-template-columns: minmax(0, 1fr); } }
+.cfg { display: flex; flex-direction: column; gap: 10px; padding: 14px; border-radius: 12px; background: var(--shade); }
+.cfg .row { gap: 10px; }
+.hint { font-size: 13px; color: var(--muted); margin: 0; }
+.drop { border: 1.5px dashed var(--line); border-radius: 12px; padding: 16px; text-align: center; color: var(--muted); font-size: 14px; }
+.drop.over { border-color: var(--contract); background: var(--contract-soft); }
+</style>
+</head>
+<body>
+<header>
+  <div class="mark">EIDOS<span>.</span> Studio</div>
+  <p>Show it once. Learn a skill from a tutorial video, then run it on screens the video never showed, with every step checked.</p>
+</header>
+
+<main>
+  <!-- ============ LEARN ============ -->
+  <section class="panel" id="learn">
+    <h2><b>1</b> Learn from a video</h2>
+    <div class="row">
+      <select id="skillSel" aria-label="Skill"></select>
+      <button id="relearn" title="Analyze the sample tutorial from scratch">Learn sample again</button>
+    </div>
+    <div class="drop" id="drop">
+      Drop a screen recording here, or <label class="btn" style="padding:4px 10px">choose a file<input type="file" id="file" accept="video/*" hidden></label>
+      <div class="hint" style="margin-top:6px">Works best with a highlighted pointer and click rings (most screen recorders have this option).</div>
+    </div>
+    <video id="vid" controls muted playsinline preload="metadata"></video>
+    <div class="status" id="lstatus"></div>
+    <ul class="steps" id="lsteps"></ul>
+  </section>
+
+  <!-- ============ RUN ============ -->
+  <section class="panel" id="run">
+    <h2><b>2</b> Run it somewhere new</h2>
+    <div class="cfg">
+      <div class="row"><label class="lbl">App</label>
+        <div class="seg" id="appSeg">
+          <button data-v="A" aria-pressed="true">App A: Gridline</button>
+          <button data-v="B" aria-pressed="false">App B: Tabula (different app)</button>
+        </div>
+      </div>
+      <div class="row" id="redesignRow"><label class="lbl">Redesign</label>
+        <label class="chip"><input type="checkbox" id="o_dark">Dark theme</label>
+        <label class="chip"><input type="checkbox" id="o_sidebar">Sidebar</label>
+        <label class="chip"><input type="checkbox" id="o_big">Bigger cells</label>
+        <label class="chip"><input type="checkbox" id="o_shuffle">Shuffle columns</label>
+        <button id="randomize" style="padding:5px 11px;font-size:13px">Random redesign</button>
+      </div>
+      <div class="row"><label class="lbl">Data</label>
+        <div class="seg" id="dataSeg">
+          <button data-v="sales" aria-pressed="true">Sales (as in the video)</button>
+          <button data-v="inventory" aria-pressed="false">Inventory (new data)</button>
+        </div>
+      </div>
+      <div class="row"><label class="lbl">Trouble</label>
+        <label class="chip"><input type="checkbox" id="o_popup">A dialog pops up mid-task</label>
+      </div>
+      <div class="row"><label class="lbl">Agent</label>
+        <div class="seg" id="modeSeg">
+          <button data-v="eidos" aria-pressed="true">EIDOS</button>
+          <button data-v="nochk" aria-pressed="false">EIDOS, checks off</button>
+          <button data-v="replay" aria-pressed="false">Copy the clicks</button>
+        </div>
+      </div>
+      <div class="row"><button class="primary" id="go">Run skill</button><span class="url" id="url"></span></div>
+    </div>
+
+    <div class="cols">
+      <div style="display:flex;flex-direction:column;gap:10px;min-width:0">
+        <div class="screen"><span class="live" id="live">LIVE</span><img id="frame" alt="What the agent sees" hidden><div class="idle" id="idle">The agent's screen appears here while it runs.</div></div>
+        <div class="status" id="rstatus"></div>
+      </div>
+      <ul class="steps" id="rsteps"></ul>
+    </div>
+
+    <div class="verdict" id="verdict" hidden></div>
+  </section>
+</main>
+
+<script>
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+let current = null, program = null, busy = false;
+
+// --- SSE over fetch (POST bodies, file uploads) ---
+async function stream(url, opts, onEvent) {
+  const res = await fetch(url, opts);
+  if (!res.ok) throw new Error(await res.text());
+  const reader = res.body.getReader(); const dec = new TextDecoder(); let buf = "";
+  for (;;) {
+    const { value, done } = await reader.read(); if (done) break;
+    buf += dec.decode(value, { stream: true });
+    let i;
+    while ((i = buf.indexOf("\n\n")) >= 0) {
+      const chunk = buf.slice(0, i); buf = buf.slice(i + 2);
+      const ev = /^event: (.*)$/m.exec(chunk)?.[1]; const data = /^data: (.*)$/m.exec(chunk)?.[1];
+      if (ev && data) onEvent(ev, JSON.parse(data));
+    }
+  }
+}
+
+// --- segmented controls ---
+function seg(id, onChange) {
+  const el = $(id);
+  el.addEventListener("click", (e) => {
+    const b = e.target.closest("button"); if (!b) return;
+    el.querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", x === b));
+    onChange && onChange(b.dataset.v); updateUrl();
+  });
+  return () => el.querySelector('[aria-pressed="true"]').dataset.v;
+}
+const getApp = seg("#appSeg", (v) => { $("#redesignRow").style.opacity = v === "B" ? .4 : 1;
+  $("#redesignRow").querySelectorAll("input,button").forEach((x) => x.disabled = v === "B"); });
+const getData = seg("#dataSeg"); const getMode = seg("#modeSeg");
+["dark", "sidebar", "big", "shuffle", "popup"].forEach((k) => $("#o_" + k).addEventListener("change", updateUrl));
+$("#randomize").onclick = () => { let any = false;
+  ["dark", "sidebar", "big", "shuffle"].forEach((k) => { const v = Math.random() < .55; $("#o_" + k).checked = v; any ||= v; });
+  if (!any) $("#o_shuffle").checked = true; updateUrl(); };
+
+function target() {
+  const t = { app: getApp(), data: getData(), popup: $("#o_popup").checked };
+  if (t.app === "A") ["dark", "sidebar", "big", "shuffle"].forEach((k) => t[k] = $("#o_" + k).checked);
+  return t;
+}
+async function updateUrl() {
+  const t = target(); const q = new URLSearchParams({ app_: t.app, data: t.data });
+  ["dark", "sidebar", "big", "shuffle", "popup"].forEach((k) => t[k] && q.set(k, "true"));
+  const r = await fetch("/api/target?" + q).then((r) => r.json());
+  $("#url").textContent = r.url.replace(/^https?:\/\/[^/]+/, "");
+}
+
+// --- skills ---
+const bindTxt = (t) => String(t ?? "").replace(/\{(\w+)\}/g, (m, k) => (program && runInputs[k]) || (program && program.inputs[k]) || m);
+let runInputs = {};
+function stepCard(s, learned) {
+  const li = document.createElement("li"); li.className = "step"; li.dataset.id = s.id ?? s.index;
+  const contract = s.contract && (s.contract.cell_shows_text ? `cell shows ${s.contract.cell_shows_text}` :
+    s.contract.cell_shows_number ? `cell shows the ${s.contract.cell_shows_number.fn} of ${s.contract.cell_shows_number.column}, read off the screen` :
+    s.contract.selection_covers_row ? "the selection covers the row, and only the row" :
+    s.contract.text_gets_heavier || s.do === "apply_format" || s.do === "click_control" ? "text in the row gets heavier (bold)" : null);
+  li.innerHTML = `<span class="n">${esc(s.id ?? s.index)}</span><div class="intent">${esc(bindTxt(s.intent))}</div>
+    ${learned ? `<div class="learned">from the video: ${esc(learned)}</div>` : ""}
+    ${contract ? `<div class="contract">${esc(bindTxt(contract))}</div>` : ""}<div class="checks"></div>`;
+  return li;
+}
+function showProgram(p) {
+  program = p; const ul = $("#lsteps"); ul.innerHTML = "";
+  p.steps.forEach((s) => ul.append(stepCard(s, s.learned_from ? `${s.do} "${s.learned_from}"` : `${s.do}, ${(s.video_time || []).join("–")} s`)));
+  const rs = $("#rsteps"); rs.innerHTML = "";
+  p.steps.forEach((s) => rs.append(stepCard(s)));
+}
+async function loadSkills(select) {
+  const list = await fetch("/api/skills").then((r) => r.json());
+  $("#skillSel").innerHTML = list.map((s) => `<option value="${esc(s.id)}">${esc(s.name)} · ${esc(s.source)} · ${s.steps} steps</option>`).join("");
+  if (select) $("#skillSel").value = select;
+  await openSkill($("#skillSel").value);
+}
+async function openSkill(id) {
+  if (!id) return; current = id;
+  const d = await fetch("/api/skills/" + id).then((r) => r.json());
+  $("#vid").src = `/api/skills/${id}/file/video.mp4`;
+  $("#lstatus").textContent = `Learned from ${d.meta.source}: ${d.trace.events.length} pointer actions, ${d.program.steps.length} steps.`;
+  showProgram(d.program);
+}
+$("#skillSel").onchange = (e) => openSkill(e.target.value);
+
+async function learn(file) {
+  if (busy) return; busy = true; setBusy();
+  $("#lsteps").innerHTML = ""; $("#lstatus").textContent = "Uploading";
+  const fd = new FormData(); if (file) { fd.append("file", file); $("#vid").src = URL.createObjectURL(file); }
+  let sid = null;
+  try {
+    await stream("/api/learn", { method: "POST", body: file ? fd : undefined }, (ev, d) => {
+      if (ev === "status") { $("#lstatus").textContent = d.msg; sid = d.skill || sid; }
+      if (ev === "step") $("#lsteps").append(stepCard(d, d.text ? `typed "${d.text}"` : d.action));
+      if (ev === "program") { $("#lstatus").textContent = `Compiled into a program with ${d.steps.length} steps and inputs: ${Object.entries(d.inputs).map(([k, v]) => `${k}=${v}`).join(", ")}`; showProgram(d); }
+      if (ev === "error") $("#lstatus").textContent = d.msg;
+      if (ev === "done") sid = d.skill;
+    });
+    if (sid) await loadSkills(sid);
+  } catch (e) { $("#lstatus").textContent = "Error: " + e.message; }
+  busy = false; setBusy();
+}
+$("#relearn").onclick = () => learn(null);
+$("#file").onchange = (e) => e.target.files[0] && learn(e.target.files[0]);
+const drop = $("#drop");
+drop.addEventListener("dragover", (e) => { e.preventDefault(); drop.classList.add("over"); });
+drop.addEventListener("dragleave", () => drop.classList.remove("over"));
+drop.addEventListener("drop", (e) => { e.preventDefault(); drop.classList.remove("over"); const f = e.dataTransfer.files[0]; f && learn(f); });
+
+// --- run ---
+function setBusy() { $("#go").disabled = busy; $("#relearn").disabled = busy; $("#go").textContent = busy ? "Running…" : "Run skill"; }
+$("#go").onclick = async () => {
+  if (busy || !current) return; busy = true; setBusy();
+  const mode = getMode();
+  runInputs = getData() === "inventory" ? { label_column: "Warehouse", sum_column: "Value" } : {};
+  showProgram(program); $("#verdict").hidden = true; $("#rstatus").textContent = "Starting a browser";
+  if (mode === "replay") $("#rsteps").innerHTML = `<li class="step"><span class="n">↻</span><div class="intent">Replaying the tutorial's exact clicks and keystrokes</div><div class="learned">No perception, no checks: the same pixels as in the video.</div></li>`;
+  try {
+    await stream("/api/run", { method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ skill: current, target: target(), mode }) }, onRunEvent);
+  } catch (e) { $("#rstatus").textContent = "Error: " + e.message; }
+  $("#live").classList.remove("on"); busy = false; setBusy();
+};
+function card(id) { return $(`#rsteps .step[data-id="${id}"]`); }
+function onRunEvent(ev, d) {
+  if (ev === "status") $("#rstatus").textContent = d.msg;
+  if (ev === "start") { $("#rstatus").textContent = "Running on " + d.url.replace(/^https?:\/\/[^/]+/, ""); $("#live").classList.add("on"); }
+  if (ev === "frame") { const img = $("#frame"); img.src = "data:image/jpeg;base64," + d.jpeg; img.hidden = false; $("#idle").hidden = true; }
+  if (ev === "step_start") { const c = card(d.id); c && c.classList.add("active"); $("#rstatus").textContent = `Step ${d.id}: ${d.intent}`; }
+  if (ev === "step_end") {
+    const c = card(d.id); if (!c) return;
+    c.classList.remove("active"); c.classList.add(d.passed ? "ok" : "bad");
+    const box = c.querySelector(".checks");
+    (Array.isArray(d.grounding) ? d.grounding : d.grounding ? [d.grounding] : []).forEach((g) => {
+      const how = typeof g === "string" ? g : g.how || "";
+      const rep = /repair/i.test(how);
+      const det = typeof g === "object" ? Object.entries(g).filter(([n]) => n !== "how" && n !== "point" && n !== "found")
+        .map(([n, v]) => `${n.replace(/_/g, " ")}: ${typeof v === "object" ? JSON.stringify(v) : v}`).join(" · ") : "";
+      box.insertAdjacentHTML("beforeend", `<div class="${rep ? "r" : "g"}">${rep ? "↻" : "◎"} <span>${esc(how)}${det ? `<br><small>${esc(det)}</small>` : ""}</span></div>`);
+    });
+    (d.checks || []).forEach((k) => {
+      const extra = Object.entries(k).filter(([n]) => !["contract", "pass"].includes(n)).map(([n, v]) => `${n}: ${typeof v === "object" ? JSON.stringify(v) : v}`).join(" · ");
+      box.insertAdjacentHTML("beforeend", `<div class="${k.pass ? "y" : "x"}">${k.pass ? "✓" : "✗"} <span>${esc(k.contract)}${extra ? `<br><small>${esc(extra)}</small>` : ""}</span></div>`);
+    });
+  }
+  if (ev === "error") $("#rstatus").textContent = "Error: " + d.msg;
+  if (ev === "done") verdict(d);
+}
+function verdict(d) {
+  $("#live").classList.remove("on");
+  const mode = d.mode, rep = d.report, truth = d.truth.success;
+  const says = mode === "replay" ? true : rep.all_contracts_passed;
+  const saysTxt = mode === "replay" ? "Done (it can't tell)" : says ? "Done, every check passed" : "Stopped: a check failed";
+  const saysWhy = mode === "replay" ? "Copying clicks has no way to check its work." :
+    mode === "nochk" ? "Checks are off, so every step is assumed to have worked." :
+    says ? "Each step's visual contract was confirmed on screen." : "EIDOS reports the failure instead of pretending.";
+  const agree = says === truth;
+  $("#verdict").innerHTML = `
+    <div class="v ${says ? "ok" : "bad"}"><h3>The agent says</h3><div class="big">${saysTxt}</div><p>${esc(saysWhy)}</p></div>
+    <div class="v ${truth ? "ok" : "bad"}"><h3>The truth (app's internal state)</h3><div class="big">${truth ? "Task done" : "Task not done"}</div><p>${esc(truth ? "A bold totals row with the correct SUM." : (d.truth.why || "The totals row is missing or wrong."))} The agent never sees this.</p></div>
+    <div class="agree ${agree ? "ok" : "bad"}">${agree ? "The agent's verdict matches the truth." : "Silent failure: the agent thinks it succeeded, but it didn't."}</div>`;
+  $("#verdict").hidden = false;
+  $("#rstatus").textContent = "Finished.";
+}
+
+loadSkills(); updateUrl();
+</script>
+</body>
+</html>
