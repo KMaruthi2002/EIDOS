@@ -4,6 +4,7 @@
   python -m eidos record                     record the sample tutorial video
   python -m eidos learn VIDEO OUT_DIR        video -> trace + program (+ contracts)
   python -m eidos run OUT_DIR URL [k=v ...]  run a learned program on an app
+  python -m eidos check-live                 call each Meta model once (needs META_MODEL_API_KEY)
 """
 from __future__ import annotations
 
@@ -58,8 +59,36 @@ def main(argv: list[str]) -> None:
             for c in s["checks"]:
                 print(f"         {c['contract']}: {'pass' if c['pass'] else 'fail'}")
         print("\nAll contracts passed." if rep["all_contracts_passed"] else "\nStopped: a contract failed.")
+    elif cmd == "check-live":
+        asyncio.run(check_live())
     else:
         print(__doc__)
+
+
+async def check_live():
+    """Smoke-test the four Meta models on a real frame from the sample tutorial."""
+    import cv2
+    from . import meta
+    if not meta.live():
+        print("META_MODEL_API_KEY is not set.")
+        return
+    skill = ROOT / "runs" / "tutorial_totals"
+    pre = cv2.imread(str(skill / "step4_pre.png"))
+    post = cv2.imread(str(skill / "step4_post.png"))
+    trace = json.loads((skill / "trace.json").read_text())
+
+    async def attempt(name, coro):
+        try:
+            out = await coro
+            print(f"[ok]   {name}: {json.dumps(out)[:300]}")
+        except Exception as e:                     # report and keep going
+            print(f"[fail] {name}: {e!r}"[:400])
+
+    await attempt("SAM 3.1   'bold text button'", meta.sam_find(pre, "bold text button"))
+    await attempt("SAM 3.1   'mouse pointer'", meta.sam_find(post, "mouse pointer"))
+    await attempt("Muse Spark read step 4", meta.spark_read_step(pre, post, (388, 60), trace["steps"][3]["contract"].get("changed_box")))
+    await attempt("Muse Wonder compile", meta.wonder_compile(trace))
+    await attempt("Muse Image skill card", meta.image_skill_card({"name": "Add a totals row"}))
 
 
 if __name__ == "__main__":

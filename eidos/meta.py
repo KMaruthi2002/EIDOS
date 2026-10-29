@@ -23,6 +23,14 @@ from pathlib import Path
 import cv2
 import httpx
 
+# Read a local .env (KEY=value lines) if present, without overriding the shell.
+_env = Path(__file__).resolve().parent.parent / ".env"
+if _env.exists():
+    for _line in _env.read_text().splitlines():
+        if "=" in _line and not _line.lstrip().startswith("#"):
+            _k, _v = _line.split("=", 1)
+            os.environ.setdefault(_k.strip(), _v.strip().strip('"').strip("'"))
+
 API = os.environ.get("META_API_BASE", "https://api.meta.ai/v1")
 KEY = os.environ.get("META_MODEL_API_KEY", "")
 MODELS = {
