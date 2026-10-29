@@ -45,6 +45,11 @@
     "seconds": 19.975
   },
   {
+    "id": "robot",
+    "text": "The same idea works off the screen. From a demonstration video of blocks being stacked, Eye-doss learns the order, and each placement becomes a physical contract: green on blue, then yellow on green. A simulated robot arm runs the skill and checks every placement through its own cameras. When the table gets bumped and the stack falls, Eye-doss notices and rebuilds it. With the checks off, the robot reports success next to a fallen stack.",
+    "seconds": 26.175
+  },
+  {
     "id": "meta",
     "text": "Eye-doss is designed around Meta's models. In the design, SAM 3.1 tracks the pointer and segments what changed. Muse Spark reads each step. Muse Wonder compiles the program. And Muse Image draws each skill's card. Everything you just saw ran offline, with classic vision standing in for each model, so every result can be reproduced.",
     "seconds": 22.6

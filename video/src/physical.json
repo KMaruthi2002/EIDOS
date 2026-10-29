@@ -1,0 +1,17 @@
+{
+ "steps": [
+  "green on blue",
+  "yellow on green"
+ ],
+ "learned_from": "sim_demo.mp4",
+ "eidos": {
+  "truth": true,
+  "agent": true,
+  "seconds": 59.48
+ },
+ "nochk": {
+  "truth": false,
+  "agent": true,
+  "seconds": 22.04
+ }
+}

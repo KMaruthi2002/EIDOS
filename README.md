@@ -65,6 +65,18 @@ EIDOS's own verdict matched the truth on **44/44** runs (0 silent failures). All
 
 **Scope.** This is a pilot: one task family (add a totals row), one scripted tutorial, two open-source spreadsheet apps ([x-spreadsheet](https://github.com/myliang/x-spreadsheet) and [Jspreadsheet CE](https://github.com/jspreadsheet/ce), both MIT), tutorials with a visible click highlight. The alternative route for bold (Ctrl+B) is built in, not learned from the video. The next step is more task families and real third-party tutorial videos with the live Meta models.
 
+## Add-on: physical skills (simulated robot)
+
+The same idea, off the screen. `physical/` learns a stacking task from a demonstration video and runs it on a simulated robot arm.
+
+- **Learn** (`physical/skill.py: learn`): tracks coloured objects through the video, finds each pick-and-place, and records what it achieved as a physical contract, for example "green is on blue".
+- **Run** (`run`): a Franka Panda arm (MuJoCo, model from MuJoCo Menagerie) performs each step. It finds the blocks and checks each contract only through its own cameras: one overhead and two level side views, so a block hidden under another can still be located. After every step it re-checks all earlier contracts, so a stack that gets knocked over is noticed and rebuilt from the lowest broken step.
+- **Honest scope:** the arm's motions are scripted (inverse kinematics plus a pick-and-place routine), not learned. EIDOS decides what to do and how to check it. Objects are found by colour offline; in live mode SAM 3.1 would segment them by name. Scoring uses the simulator's true block positions, which the robot never reads.
+
+In the recorded showcase (`python physical/showcase.py`), the table is bumped after the second placement. With checks, EIDOS detects the broken contracts and rebuilds the stack; with checks off, it reports success next to a fallen stack.
+
+Setup: `physical/setup.sh` (MuJoCo plus the Panda model; on headless Linux, OSMesa).
+
 ## Run it
 
 ```bash

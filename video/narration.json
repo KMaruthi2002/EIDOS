@@ -38,6 +38,10 @@
       "text": "Across 44 runs, with the redesigns and interruptions drawn from a held-out seed, copying the clicks finished the task three times. Eye-doss finished 41, and its own verdict matched the truth every time. When a dialog interrupted the task, Eye-doss finished 14 of 16. With the checks off, zero."
     },
     {
+      "id": "robot",
+      "text": "The same idea works off the screen. From a demonstration video of blocks being stacked, Eye-doss learns the order, and each placement becomes a physical contract: green on blue, then yellow on green. A simulated robot arm runs the skill and checks every placement through its own cameras. When the table gets bumped and the stack falls, Eye-doss notices and rebuilds it. With the checks off, the robot reports success next to a fallen stack."
+    },
+    {
       "id": "meta",
       "text": "Eye-doss is designed around Meta's models. In the design, SAM 3.1 tracks the pointer and segments what changed. Muse Spark reads each step. Muse Wonder compiles the program. And Muse Image draws each skill's card. Everything you just saw ran offline, with classic vision standing in for each model, so every result can be reproduced."
     },

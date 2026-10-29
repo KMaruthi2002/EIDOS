@@ -2,56 +2,27 @@ import React from "react";
 import { AbsoluteFill, Img, Sequence, getStaticFiles, interpolate, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { Video } from "@remotion/media";
 import { C, Contract, MONO, Page, Rise, Stamp, useIn } from "./ui";
+import { BrollBackdrop, DARK } from "./cinema";
 import trace from "./trace.json";
 import results from "./results.json";
+import physical from "./physical.json";
 
 const H1: React.CSSProperties = { fontSize: 112, fontWeight: 800, lineHeight: 1.0, letterSpacing: "-0.02em", fontVariationSettings: '"wdth" 118', margin: 0 };
 const H2: React.CSSProperties = { fontSize: 76, fontWeight: 780, lineHeight: 1.05, fontVariationSettings: '"wdth" 115', margin: 0 };
 const BODY: React.CSSProperties = { fontSize: 44, lineHeight: 1.35, color: C.muted, maxWidth: 1300 };
 
 /* 1. Hook ---------------------------------------------------------------- */
-export const Hook: React.FC = () => {
-  const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
-  const cols = 12, rows = 6;
-  const tiles = [];
-  for (let r = 0; r < rows; r++) {
-    for (let c = 0; c < cols; c++) {
-      const i = r * cols + c;
-      const appear = ((i * 37) % 71) / 71 * 2.4;
-      const o = interpolate(frame / fps, [appear, appear + 0.5], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-      tiles.push(
-        <div key={i} style={{ opacity: o * 0.9, borderRadius: 8, overflow: "hidden", background: C.surface, border: `1px solid ${C.line}`, position: "relative" }}>
-          <Img src={staticFile(`stills/${["step2_post", "step4_pre", "step4_post"][i % 3]}.png`)} style={{ width: "100%", height: "100%", objectFit: "cover", filter: `hue-rotate(${(i * 47) % 360}deg) saturate(.6)` }} />
-          <div style={{ position: "absolute", inset: 0, display: "grid", placeItems: "center" }}>
-            <div style={{ width: 0, height: 0, borderLeft: "18px solid rgba(20,33,48,.55)", borderTop: "11px solid transparent", borderBottom: "11px solid transparent" }} />
-          </div>
-        </div>,
-      );
-    }
-  }
-  const t2 = useIn(5.4);
-  // Optional generated opening shot (for example from Higgsfield): drop it in
-  // public/clips/hook_broll.mp4 and it replaces the tile wall.
-  const broll = getStaticFiles().some((f) => f.name === "clips/hook_broll.mp4");
-  return (
-    <AbsoluteFill style={{ background: C.paper }}>
-      {broll ? (
-        <Video src={staticFile("clips/hook_broll.mp4")} muted style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: 1 - 0.55 * t2 }} />
-      ) : (
-        <div style={{ position: "absolute", inset: 0, display: "grid", gridTemplateColumns: `repeat(${cols}, 1fr)`, gridTemplateRows: `repeat(${rows}, 1fr)`, gap: 12, padding: 40, opacity: 1 - 0.75 * t2 }}>
-          {tiles}
-        </div>
-      )}
-      <Page bg="transparent">
-        <div style={{ marginTop: "auto", marginBottom: 90 }}>
-          <Rise at={0.6}><div style={{ ...H1, background: C.paper, display: "inline", padding: "0 16px", boxDecorationBreak: "clone", WebkitBoxDecorationBreak: "clone" }}>Billions of hours of screen recordings.</div></Rise>
-          <Rise at={5.6} style={{ marginTop: 26 }}><div style={{ ...H2, color: C.fail, background: C.paper, display: "inline", padding: "0 16px" }}>AI agents can't learn from any of it.</div></Rise>
-        </div>
-      </Page>
-    </AbsoluteFill>
-  );
-};
+export const Hook: React.FC = () => (
+  <AbsoluteFill style={{ background: DARK.bg }}>
+    <BrollBackdrop src="broll/shot00.mp4" dim={0.35} fadeIn={0.8} />
+    <Page bg="transparent">
+      <div style={{ marginTop: "auto", marginBottom: 90, color: DARK.ink }}>
+        <Rise at={0.6}><div style={{ ...H1, color: DARK.ink }}>Billions of hours of screen recordings.</div></Rise>
+        <Rise at={5.6} style={{ marginTop: 26 }}><div style={{ ...H2, color: DARK.fail }}>AI agents can't learn from any of it.</div></Rise>
+      </div>
+    </Page>
+  </AbsoluteFill>
+);
 
 /* 2. Problem ------------------------------------------------------------- */
 export const Problem: React.FC = () => {
@@ -61,21 +32,25 @@ export const Problem: React.FC = () => {
     [11.2, "When they go wrong, they don't know.", "No check against what the person actually did."],
   ];
   return (
-    <Page>
-      <div style={{ display: "grid", gap: 64, marginTop: 40 }}>
-        {lines.map(([at, big, small], i) => (
-          <Rise key={i} at={at}>
-            <div style={{ display: "grid", gridTemplateColumns: "90px 1fr", gap: 30, alignItems: "baseline" }}>
-              <div style={{ fontSize: 64, fontWeight: 800, color: i === 2 ? C.fail : C.muted, fontVariationSettings: '"wdth" 125' }}>{i + 1}</div>
-              <div>
-                <div style={{ ...H2, fontSize: 70, color: i === 2 ? C.fail : C.ink }}>{big}</div>
-                <div style={{ ...BODY, marginTop: 10 }}>{small}</div>
+    <AbsoluteFill style={{ background: DARK.bg }}>
+      <BrollBackdrop src="broll/shot01.mp4" dim={0.62} />
+      <BrollBackdrop src="broll/shot02.mp4" dim={0.62} from={10.8} fadeIn={0.8} />
+      <Page bg="transparent">
+        <div style={{ display: "grid", gap: 64, marginTop: 40 }}>
+          {lines.map(([at, big, small], i) => (
+            <Rise key={i} at={at}>
+              <div style={{ display: "grid", gridTemplateColumns: "90px 1fr", gap: 30, alignItems: "baseline" }}>
+                <div style={{ fontSize: 64, fontWeight: 800, color: i === 2 ? DARK.fail : DARK.muted, fontVariationSettings: '"wdth" 125' }}>{i + 1}</div>
+                <div>
+                  <div style={{ ...H2, fontSize: 70, color: i === 2 ? DARK.fail : DARK.ink }}>{big}</div>
+                  <div style={{ ...BODY, color: DARK.muted, marginTop: 10 }}>{small}</div>
+                </div>
               </div>
-            </div>
-          </Rise>
-        ))}
-      </div>
-    </Page>
+            </Rise>
+          ))}
+        </div>
+      </Page>
+    </AbsoluteFill>
   );
 };
 
@@ -85,18 +60,21 @@ export const Name: React.FC = () => {
   const q = useIn(4.6);
   const r = useIn(8.2);
   return (
-    <Page>
-      <div style={{ margin: "auto 0", display: "grid", gap: 40 }}>
-        <div style={{ position: "relative", display: "inline-block", width: "fit-content", padding: "14px 40px", opacity: p }}>
-          <Contract x={0} y={0} w={0} h={0} fill />
-          <div style={{ ...H1, fontSize: 170, letterSpacing: "0.12em", fontVariationSettings: '"wdth" 125', position: "relative" }}>EIDOS</div>
+    <AbsoluteFill style={{ background: DARK.bg }}>
+      <BrollBackdrop src="broll/shot03.mp4" dim={0.5} />
+      <Page bg="transparent">
+        <div style={{ margin: "auto 0", display: "grid", gap: 40, color: DARK.ink }}>
+          <div style={{ position: "relative", display: "inline-block", width: "fit-content", padding: "14px 40px", opacity: p }}>
+            <Contract x={0} y={0} w={0} h={0} fill />
+            <div style={{ ...H1, fontSize: 170, letterSpacing: "0.12em", fontVariationSettings: '"wdth" 125', position: "relative", color: DARK.ink }}>EIDOS</div>
+          </div>
+          <div style={{ ...H2, opacity: q, color: DARK.ink }}>Learns the form of a task, not the pixels.</div>
+          <div style={{ ...BODY, opacity: r, color: DARK.ink }}>
+            Every step carries a <span style={{ color: DARK.contract, fontWeight: 700 }}>visual contract</span> from the video, so the agent can check it did what the person did.
+          </div>
         </div>
-        <div style={{ ...H2, opacity: q }}>Learns the form of a task, not the pixels.</div>
-        <div style={{ ...BODY, opacity: r, color: C.ink }}>
-          Every step carries a <span style={{ color: C.contract, fontWeight: 700 }}>visual contract</span> from the video, so the agent can check it did what the person did.
-        </div>
-      </div>
-    </Page>
+      </Page>
+    </AbsoluteFill>
   );
 };
 
@@ -313,15 +291,52 @@ export const Models: React.FC = () => {
 export const Close: React.FC = () => {
   const p = useIn(2.6, 0.9);
   return (
-    <Page>
-      <div style={{ margin: "auto 0", display: "grid", gap: 30 }}>
-        <Rise at={0.1}><div style={{ ...H2, color: C.muted }}>Prompting is how we talk to AI.</div></Rise>
-        <Rise at={1.4}><div style={H2}>Showing is how we'll teach it.</div></Rise>
-        <div style={{ position: "relative", width: "fit-content", padding: "12px 34px", marginTop: 50, opacity: p }}>
-          <Contract x={0} y={0} w={0} h={0} fill ok={p > 0.95} />
-          <div style={{ ...H1, fontSize: 130, letterSpacing: "0.12em", fontVariationSettings: '"wdth" 125', position: "relative" }}>EIDOS</div>
+    <AbsoluteFill style={{ background: DARK.bg }}>
+      <BrollBackdrop src="broll/shot09.mp4" dim={0.55} />
+      <Page bg="transparent">
+        <div style={{ margin: "auto 0", display: "grid", gap: 30 }}>
+          <Rise at={0.1}><div style={{ ...H2, color: DARK.muted }}>Prompting is how we talk to AI.</div></Rise>
+          <Rise at={1.4}><div style={{ ...H2, color: DARK.ink }}>Showing is how we'll teach it.</div></Rise>
+          <div style={{ position: "relative", width: "fit-content", padding: "12px 34px", marginTop: 50, opacity: p }}>
+            <Contract x={0} y={0} w={0} h={0} fill ok={p > 0.95} />
+            <div style={{ ...H1, fontSize: 130, letterSpacing: "0.12em", fontVariationSettings: '"wdth" 125', position: "relative", color: DARK.ink }}>EIDOS</div>
+          </div>
+          <div style={{ fontSize: 30, color: DARK.muted, opacity: p }}>Maruthi Kunchala, Team Parallax. Meta Global AI Hackathon 2026.</div>
+          <div style={{ fontSize: 20, color: DARK.muted, opacity: p * 0.8 }}>Cinematic shots generated with Higgsfield. All EIDOS footage is real.</div>
         </div>
-        <div style={{ fontSize: 30, color: C.muted, opacity: p }}>Maruthi Kunchala, Team Parallax. Meta Global AI Hackathon 2026.</div>
+      </Page>
+    </AbsoluteFill>
+  );
+};
+
+/* Robot add-on ------------------------------------------------------------ */
+
+export const Robot: React.FC = () => {
+  const p = physical as any;
+  const W = 790;
+  const H = (540 / 960) * W;
+  const lane = (clip: string, title: string, ok: boolean, verdict: string, rate: number, len: number) => (
+    <div style={{ display: "grid", gap: 18, width: W }}>
+      <div style={{ fontSize: 38, fontWeight: 750, fontVariationSettings: '"wdth" 112' }}>{title}</div>
+      <div style={{ position: "relative", width: W, height: H, borderRadius: 14, overflow: "hidden", border: `1px solid ${C.line}`, background: "#fff" }}>
+        <Img src={staticFile(`physical/${clip}_end.png`)} style={{ position: "absolute", inset: 0, width: W, height: H }} />
+        <Sequence from={30} durationInFrames={Math.round((len / rate) * 30) - 3} layout="none">
+          <Video src={staticFile(`physical/${clip}.mp4`)} muted playbackRate={rate} style={{ position: "absolute", inset: 0, width: W, height: H }} />
+        </Sequence>
+        <div style={{ position: "absolute", top: 10, right: 12, fontSize: 20, color: C.muted, background: "rgba(255,255,255,.85)", padding: "2px 8px", borderRadius: 6 }}>{rate}x speed</div>
+      </div>
+      <Stamp ok={ok} text={verdict} at={1 + len / rate - 0.3} />
+    </div>
+  );
+  return (
+    <Page>
+      <Rise at={0.1}><div style={{ ...H2, fontSize: 62 }}>Off the screen: a robot arm.</div></Rise>
+      <Rise at={0.5}><div style={{ ...BODY, fontSize: 32, marginTop: 10 }}>
+        {`Learned from a demonstration video: ${p.steps.join(", then ")}. Simulated Franka Panda in MuJoCo; the arm's motions are scripted, EIDOS decides what to do and checks it with the robot's cameras. Halfway through, the table gets bumped.`}
+      </div></Rise>
+      <div style={{ display: "flex", gap: 60, marginTop: 36 }}>
+        {lane("nochk", "EIDOS with checks off", p.nochk.truth, p.nochk.truth ? "Stack correct" : "Says \"done\". Stack has fallen.", 3, p.nochk.seconds)}
+        {lane("eidos", "EIDOS", p.eidos.truth, p.eidos.truth ? "Noticed, rebuilt, verified" : "Stack not correct", 3, p.eidos.seconds)}
       </div>
     </Page>
   );
