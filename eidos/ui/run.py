@@ -63,27 +63,30 @@ class Screen:
         self.boxes = await asyncio.to_thread(S.boxes, img)
         return self
 
-    def label_of(self, f):
-        """The label that belongs to a box, read independently of how the box was found."""
+    def label_of(self, f, want: str | None = None):
+        """The label that belongs to a box, read independently of how the box was found.
+        Short labels ("To") can be missed by the full-screen pass, so the strips just above
+        and to the left of the box are read too; with `want`, the closest reading is returned."""
         ln = label_for(f, self.lines, self.boxes)
-        if ln:
-            return ln.text
-        # Short labels ("To") can be missed by the full-screen pass: read the strips by the box.
-        x, y, w, h = f
-        above = S.read_label(self.img, (x - 2, max(0, y - 24), min(w, 260), 22)).strip(" .:|")
-        if sum(c.isalpha() for c in above) >= 2:
-            return above
-        left = S.read_label(self.img, (max(0, x - 200), y, 196, min(h, 40))).strip(" .:|")
-        return left if sum(c.isalpha() for c in left) >= 2 else ""
+        cands = [ln.text] if ln else []
+        if not cands or (want and S.sim(cands[0], want) < 0.86):
+            x, y, w, h = f
+            for box in ((x - 2, max(0, y - 24), min(w, 260), 22), (max(0, x - 200), y, 196, min(h, 40))):
+                t = S.read_label(self.img, box).strip(" .:|")
+                if sum(c.isalpha() for c in t) >= 2:
+                    cands.append(t)
+        if not cands:
+            return ""
+        return max(cands, key=lambda t: S.sim(t, want)) if want else cands[0]
 
     def field(self, label):
         for thresh in (0.85, 0.72):
             for hit in S.find_text(self.lines, label, thresh):
                 f = S.field_for(hit, self.boxes)
-                if f and S.sim(self.label_of(f), label) >= 0.75:
+                if f and S.sim(self.label_of(f, label), label) >= 0.86:
                     return hit, f
         for f in sorted([b for b in self.boxes if S.is_field(b)], key=lambda b: (b[1], b[0])):
-            if S.sim(self.label_of(f), label) >= 0.75 and not any(S.inside(o, f[0] + 5, f[1] + 5) and o != f and S.is_field(o) and o[2] * o[3] < f[2] * f[3] for o in self.boxes):
+            if S.sim(self.label_of(f, label), label) >= 0.86 and not any(S.inside(o, f[0] + 5, f[1] + 5) and o != f and S.is_field(o) and o[2] * o[3] < f[2] * f[3] for o in self.boxes):
                 return (1.0, f[0], f[1], 0, 0), f
         raise LookupError(f"no field labelled '{label}' on screen")
 
@@ -216,8 +219,8 @@ async def run_ui(program: dict, url: str, out_dir: Path, inputs: dict | None = N
                         if use_contracts:
                             await scr.look()
                             seen = S.read_box(scr.img, f)
-                            lab = scr.label_of(f)
-                            lab_ok = S.sim(lab, label) >= 0.75
+                            lab = scr.label_of(f, label)
+                            lab_ok = S.sim(lab, label) >= 0.86
                             log.checks.append({"contract": f"the box written to is labelled '{label}'", "saw": lab, "pass": lab_ok})
                             ok = same_text(seen, value)
                             log.checks.append({"contract": f"the '{label}' field shows '{value}'", "saw": clean(seen), "pass": ok})

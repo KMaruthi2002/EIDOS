@@ -1,0 +1,193 @@
+000 mail      same       replay  says=True  truth=True  9.7s 
+001 mail      new_data   replay  says=True  truth=False 9.8s 0 matching, 1 wrong: [{'to': 'maya@northwind.com', 'subject'
+000 mail      same       nochk   says=True  truth=True  13.4s 
+000 mail      same       eidos   says=True  truth=True  19.2s 
+002 mail      redesign   replay  says=True  truth=False 8.7s nothing was saved
+001 mail      new_data   nochk   says=True  truth=True  12.8s 
+001 mail      new_data   eidos   says=True  truth=True  19.0s 
+003 mail      redesign   replay  says=True  truth=False 8.9s nothing was saved
+002 mail      redesign   nochk   says=True  truth=True  12.4s 
+002 mail      redesign   eidos   says=True  truth=True  17.6s 
+004 mail      redesign   replay  says=True  truth=False 9.2s nothing was saved
+003 mail      redesign   nochk   says=True  truth=True  14.5s 
+005 mail      redesign   replay  says=True  truth=False 8.9s nothing was saved
+003 mail      redesign   eidos   says=True  truth=True  21.3s 
+004 mail      redesign   nochk   says=True  truth=True  13.3s 
+004 mail      redesign   eidos   says=True  truth=True  19.2s 
+006 mail      redesign   replay  says=True  truth=False 8.9s nothing was saved
+005 mail      redesign   nochk   says=True  truth=True  12.4s 
+005 mail      redesign   eidos   says=True  truth=True  18.1s 
+006 mail      redesign   nochk   says=True  truth=True  12.5s 
+007 mail      redesign   replay  says=True  truth=False 8.8s nothing was saved
+006 mail      redesign   eidos   says=True  truth=True  17.1s 
+008 mail      other_app  replay  says=True  truth=False 8.7s nothing was saved
+007 mail      redesign   nochk   says=True  truth=True  13.5s 
+009 mail      other_app  replay  says=True  truth=False 8.9s nothing was saved
+007 mail      redesign   eidos   says=True  truth=True  21.4s 
+008 mail      other_app  nochk   says=True  truth=True  15.2s 
+010 mail      other_app  replay  says=True  truth=False 9.4s nothing was saved
+008 mail      other_app  eidos   says=True  truth=True  23.1s 
+009 mail      other_app  nochk   says=True  truth=True  13.6s 
+009 mail      other_app  eidos   says=True  truth=True  26.2s 
+011 mail      interrupt  replay  says=True  truth=False 13.2s nothing was saved
+010 mail      other_app  nochk   says=True  truth=True  18.0s 
+012 mail      interrupt  replay  says=True  truth=False 9.1s nothing was saved
+010 mail      other_app  eidos   says=True  truth=True  29.1s 
+011 mail      interrupt  nochk   says=True  truth=False 15.3s nothing was saved
+011 mail      interrupt  eidos   says=True  truth=True  24.5s 
+012 mail      interrupt  nochk   says=False truth=False 14.6s nothing was saved
+013 mail      interrupt  replay  says=True  truth=False 10.2s nothing was saved
+014 mail      interrupt  replay  says=True  truth=False 9.2s nothing was saved
+013 mail      interrupt  nochk   says=True  truth=False 14.4s nothing was saved
+012 mail      interrupt  eidos   says=True  truth=True  27.2s 
+014 mail      interrupt  nochk   says=False truth=False 13.2s nothing was saved
+013 mail      interrupt  eidos   says=True  truth=True  26.6s 
+015 calendar  same       replay  says=True  truth=True  10.9s 
+016 calendar  new_data   replay  says=True  truth=False 10.1s 0 matching, 1 wrong: [{'title': 'Team lunch', 'date': 'Nov 1
+015 calendar  same       nochk   says=True  truth=True  15.3s 
+014 mail      interrupt  eidos   says=True  truth=True  28.2s 
+015 calendar  same       eidos   says=True  truth=True  24.4s 
+017 calendar  redesign   replay  says=True  truth=False 9.7s nothing was saved
+016 calendar  new_data   nochk   says=True  truth=True  15.3s 
+016 calendar  new_data   eidos   says=True  truth=True  21.8s 
+018 calendar  redesign   replay  says=True  truth=False 10.1s nothing was saved
+017 calendar  redesign   nochk   says=True  truth=True  15.7s 
+017 calendar  redesign   eidos   says=True  truth=True  23.3s 
+019 calendar  redesign   replay  says=True  truth=False 10.2s nothing was saved
+018 calendar  redesign   nochk   says=True  truth=True  18.8s 
+020 calendar  redesign   replay  says=True  truth=False 10.7s nothing was saved
+018 calendar  redesign   eidos   says=True  truth=True  29.3s 
+019 calendar  redesign   nochk   says=False truth=False 17.4s nothing was saved
+019 calendar  redesign   eidos   says=True  truth=True  24.3s 
+021 calendar  redesign   replay  says=True  truth=False 10.0s nothing was saved
+020 calendar  redesign   nochk   says=True  truth=True  15.8s 
+022 calendar  redesign   replay  says=True  truth=False 10.1s nothing was saved
+020 calendar  redesign   eidos   says=True  truth=True  23.9s 
+021 calendar  redesign   nochk   says=True  truth=True  18.3s 
+023 calendar  other_app  replay  says=True  truth=False 10.2s nothing was saved
+021 calendar  redesign   eidos   says=True  truth=True  27.9s 
+022 calendar  redesign   nochk   says=True  truth=True  18.4s 
+022 calendar  redesign   eidos   says=True  truth=True  26.9s 
+024 calendar  other_app  replay  says=True  truth=False 10.0s nothing was saved
+023 calendar  other_app  nochk   says=True  truth=True  21.3s 
+025 calendar  other_app  replay  says=True  truth=False 10.5s nothing was saved
+023 calendar  other_app  eidos   says=True  truth=True  33.3s 
+024 calendar  other_app  nochk   says=True  truth=True  21.3s 
+024 calendar  other_app  eidos   says=True  truth=True  29.7s 
+026 calendar  interrupt  replay  says=True  truth=False 10.1s nothing was saved
+025 calendar  other_app  nochk   says=True  truth=True  17.2s 
+027 calendar  interrupt  replay  says=True  truth=False 10.4s nothing was saved
+025 calendar  other_app  eidos   says=True  truth=True  26.7s 
+026 calendar  interrupt  nochk   says=False truth=False 22.1s nothing was saved
+028 calendar  interrupt  replay  says=True  truth=False 10.0s nothing was saved
+027 calendar  interrupt  nochk   says=False truth=False 17.8s nothing was saved
+026 calendar  interrupt  eidos   says=True  truth=True  33.4s 
+029 calendar  interrupt  replay  says=True  truth=False 9.7s nothing was saved
+028 calendar  interrupt  nochk   says=False truth=False 13.2s nothing was saved
+027 calendar  interrupt  eidos   says=True  truth=True  28.7s 
+030 expense   same       replay  says=True  truth=True  8.6s 
+028 calendar  interrupt  eidos   says=True  truth=True  27.4s 
+029 calendar  interrupt  nochk   says=False truth=False 18.0s nothing was saved
+030 expense   same       nochk   says=True  truth=True  14.6s 
+031 expense   new_data   replay  says=True  truth=False 8.7s 0 matching, 1 wrong: [{'merchant': 'Delta Air Lines', 'amoun
+029 calendar  interrupt  eidos   says=True  truth=True  30.4s 
+030 expense   same       eidos   says=True  truth=True  22.8s 
+032 expense   redesign   replay  says=True  truth=False 8.8s nothing was saved
+031 expense   new_data   nochk   says=True  truth=True  15.7s 
+031 expense   new_data   eidos   says=True  truth=True  22.0s 
+033 expense   redesign   replay  says=True  truth=False 8.6s nothing was saved
+032 expense   redesign   nochk   says=True  truth=True  14.4s 
+034 expense   redesign   replay  says=True  truth=False 8.7s nothing was saved
+032 expense   redesign   eidos   says=True  truth=True  22.5s 
+033 expense   redesign   nochk   says=True  truth=True  16.8s 
+033 expense   redesign   eidos   says=True  truth=True  24.6s 
+035 expense   redesign   replay  says=True  truth=False 8.6s nothing was saved
+034 expense   redesign   nochk   says=True  truth=True  16.3s 
+034 expense   redesign   eidos   says=True  truth=True  22.7s 
+035 expense   redesign   nochk   says=True  truth=True  13.7s 
+036 expense   redesign   replay  says=True  truth=False 8.5s nothing was saved
+035 expense   redesign   eidos   says=True  truth=True  20.6s 
+037 expense   redesign   replay  says=True  truth=False 9.0s nothing was saved
+036 expense   redesign   nochk   says=True  truth=True  16.7s 
+038 expense   other_app  replay  says=True  truth=False 8.5s nothing was saved
+036 expense   redesign   eidos   says=True  truth=True  23.9s 
+037 expense   redesign   nochk   says=True  truth=True  17.2s 
+037 expense   redesign   eidos   says=True  truth=True  22.5s 
+039 expense   other_app  replay  says=True  truth=False 8.7s nothing was saved
+038 expense   other_app  nochk   says=True  truth=True  15.1s 
+038 expense   other_app  eidos   says=True  truth=True  21.7s 
+040 expense   other_app  replay  says=True  truth=False 8.4s nothing was saved
+039 expense   other_app  nochk   says=True  truth=True  16.2s 
+039 expense   other_app  eidos   says=True  truth=True  22.8s 
+041 expense   interrupt  replay  says=True  truth=False 8.6s nothing was saved
+040 expense   other_app  nochk   says=True  truth=True  15.9s 
+040 expense   other_app  eidos   says=True  truth=True  26.1s 
+042 expense   interrupt  replay  says=True  truth=False 12.0s nothing was saved
+041 expense   interrupt  nochk   says=False truth=False 18.6s nothing was saved
+043 expense   interrupt  replay  says=True  truth=False 10.8s nothing was saved
+042 expense   interrupt  nochk   says=False truth=False 12.7s nothing was saved
+041 expense   interrupt  eidos   says=True  truth=True  31.6s 
+044 expense   interrupt  replay  says=True  truth=False 8.3s nothing was saved
+043 expense   interrupt  nochk   says=False truth=False 13.4s nothing was saved
+042 expense   interrupt  eidos   says=True  truth=True  30.1s 
+045 settings  same       replay  says=True  truth=True  6.5s 
+043 expense   interrupt  eidos   says=True  truth=True  27.4s 
+044 expense   interrupt  nochk   says=False truth=False 16.9s nothing was saved
+046 settings  new_data   replay  says=True  truth=False 6.7s saved settings: {'Two-factor sign-in': True, 'Sign-in alerts
+045 settings  same       nochk   says=True  truth=True  10.4s 
+044 expense   interrupt  eidos   says=True  truth=True  28.6s 
+045 settings  same       eidos   says=True  truth=True  18.2s 
+046 settings  new_data   nochk   says=True  truth=True  11.8s 
+047 settings  redesign   replay  says=True  truth=False 6.3s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+046 settings  new_data   eidos   says=True  truth=True  17.7s 
+048 settings  redesign   replay  says=True  truth=False 6.3s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+047 settings  redesign   nochk   says=True  truth=True  10.4s 
+049 settings  redesign   replay  says=True  truth=False 6.4s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+047 settings  redesign   eidos   says=True  truth=True  18.9s 
+048 settings  redesign   nochk   says=True  truth=True  13.0s 
+050 settings  redesign   replay  says=True  truth=False 6.4s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+049 settings  redesign   nochk   says=True  truth=True  11.7s 
+048 settings  redesign   eidos   says=True  truth=True  21.7s 
+051 settings  redesign   replay  says=True  truth=False 6.5s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+049 settings  redesign   eidos   says=True  truth=True  19.4s 
+050 settings  redesign   nochk   says=True  truth=True  13.4s 
+052 settings  redesign   replay  says=True  truth=False 6.2s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+051 settings  redesign   nochk   says=True  truth=True  11.9s 
+050 settings  redesign   eidos   says=True  truth=True  21.0s 
+053 settings  other_app  replay  says=True  truth=False 6.2s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+052 settings  redesign   nochk   says=True  truth=True  10.7s 
+051 settings  redesign   eidos   says=True  truth=True  17.7s 
+054 settings  other_app  replay  says=True  truth=False 6.6s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+052 settings  redesign   eidos   says=True  truth=True  16.2s 
+053 settings  other_app  nochk   says=True  truth=True  11.8s 
+053 settings  other_app  eidos   says=True  truth=True  17.2s 
+055 settings  other_app  replay  says=True  truth=False 6.4s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+054 settings  other_app  nochk   says=True  truth=True  11.6s 
+056 settings  interrupt  replay  says=True  truth=False 6.2s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+054 settings  other_app  eidos   says=True  truth=True  16.6s 
+055 settings  other_app  nochk   says=True  truth=True  11.0s 
+057 settings  interrupt  replay  says=True  truth=False 6.6s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+055 settings  other_app  eidos   says=True  truth=True  17.2s 
+056 settings  interrupt  nochk   says=True  truth=False 12.3s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+058 settings  interrupt  replay  says=True  truth=False 7.1s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+056 settings  interrupt  eidos   says=True  truth=True  21.3s 
+057 settings  interrupt  nochk   says=False truth=False 11.9s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+058 settings  interrupt  nochk   says=False truth=False 6.4s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+059 settings  interrupt  replay  says=True  truth=False 6.4s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+057 settings  interrupt  eidos   says=True  truth=True  26.6s 
+059 settings  interrupt  nochk   says=True  truth=False 11.7s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+058 settings  interrupt  eidos   says=True  truth=True  20.2s 
+059 settings  interrupt  eidos   says=True  truth=True  19.0s 
+
+condition    runs  replay   nochk    eidos
+same            4  4/4      4/4      4/4    
+new_data        4  0/4      4/4      4/4    
+redesign       24  0/24     23/24    24/24  
+other_app      12  0/12     12/12    12/12  
+interrupt      16  0/16     0/16     16/16  
+ALL            60  4/60     43/60    60/60  
+  mail         15  1/15     11/15    15/15  
+  calendar     15  1/15     10/15    15/15  
+  expense      15  1/15     11/15    15/15  
+  settings     15  1/15     11/15    15/15  
+EIDOS verdict matches truth: 60/60; silent failures: 0

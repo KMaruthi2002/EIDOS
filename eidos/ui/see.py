@@ -70,6 +70,7 @@ def lines(img) -> list[Line]:
         if _filled(img, b) or (not has_word and not is_switch(b) and inner.size and inner.std() > 18):
             t = read_label(img, (b[0] + 4, b[1] + 3, b[2] - 8, b[3] - 6))
             t = re.sub(r"[^\w@.,:'$&/ -]", "", t).strip()
+            t = " ".join(tok for tok in t.split() if any(ch.isalnum() for ch in tok))
             if len(t) >= 2:
                 words = [w for w in words if not inside(b, w.cx, w.cy)]
                 cw = b[2] / max(1, len(t))
@@ -96,7 +97,7 @@ def lines(img) -> list[Line]:
         r.sort(key=lambda w: w.x)
         cur = [r[0]]
         for w in r[1:]:
-            if w.x - (cur[-1].x + cur[-1].w) <= 0.9 * max(cur[-1].h, w.h) + 4:
+            if w.x - (cur[-1].x + cur[-1].w) <= 0.9 * min(cur[-1].h, w.h) + 6:
                 cur.append(w)
             else:
                 out.append(cur)
@@ -222,6 +223,19 @@ def find_text(lns: list[Line], phrase: str, thresh: float = 0.8, region=None):
                     if region and not inside(region, (x0 + x1) / 2, (y0 + y1) / 2):
                         continue
                     hits.append((s, x0, y0, x1 - x0, y1 - y0))
+    # Labels that wrap onto two lines ("RECOVERY" / "EMAIL"): join left-aligned stacked lines.
+    if n >= 2:
+        for a in lns:
+            for b in lns:
+                if b is a or abs(b.x - a.x) > 8 or not (0 <= b.y - (a.y + a.h) <= 1.2 * max(a.h, b.h) + 2):
+                    continue
+                sc = sim(a.text + " " + b.text, phrase)
+                if sc >= thresh:
+                    x0, y0 = min(a.x, b.x), a.y
+                    x1, y1 = max(a.x + a.w, b.x + b.w), b.y + b.h
+                    if region and not inside(region, (x0 + x1) / 2, (y0 + y1) / 2):
+                        continue
+                    hits.append((sc, x0, y0, x1 - x0, y1 - y0))
     hits.sort(key=lambda h: -h[0])
     return hits
 
@@ -231,8 +245,13 @@ def field_for(label_hit, bxs):
     s, x, y, w, h = label_hit
     cy = y + h / 2
     best, bd = None, 1e9
+    fields = [b for b in bxs if is_field(b)]
     for b in bxs:
         if not is_field(b):
+            continue
+        # a box that wraps another field (a row, or a focus ring merged with a label) is not a field
+        if any(o != b and o[0] >= b[0] - 1 and o[1] >= b[1] - 1 and o[0] + o[2] <= b[0] + b[2] + 1
+               and o[1] + o[3] <= b[1] + b[3] + 1 and o[3] < b[3] - 8 for o in fields):
             continue
         bx, by, bw, bh = b
         if inside(b, x + w / 2, cy):        # the label is inside a box: not this one

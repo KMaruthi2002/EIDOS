@@ -67,8 +67,22 @@ def label_for(b, lns, bxs=None):
     if above:
         return max(above, key=lambda ln: ln.y)
     left = [ln for ln in lns if ln.x + ln.w <= x + 4 and min(abs(ln.cy - c) for c in cys) < 14 and x - (ln.x + ln.w) < 260]
+    if not left:
+        # a label wrapped onto two lines sits beside the field with its middle near the field's middle
+        for a in lns:
+            for b in lns:
+                if b is a or abs(b.x - a.x) > 8 or not (0 <= b.y - (a.y + a.h) <= 1.2 * max(a.h, b.h) + 2):
+                    continue
+                if max(a.x + a.w, b.x + b.w) <= x + 4 and min(abs((a.y + b.y + b.h) / 2 - c) for c in cys) < 14:
+                    left.append(S.Line(a.text + " " + b.text, a.x, a.y, max(a.w, b.w), b.y + b.h - a.y, a.words + b.words))
     if left:
-        return max(left, key=lambda ln: ln.x + ln.w)
+        a = max(left, key=lambda ln: ln.x + ln.w)
+        # join a continuation line wrapped just below it
+        for b in lns:
+            if b is not a and abs(b.x - a.x) <= 8 and 0 <= b.y - (a.y + a.h) <= 1.2 * max(a.h, b.h) + 2 \
+                    and b.x + b.w <= x + 4 and b.y < y + h:
+                return S.Line(a.text + " " + b.text, a.x, a.y, max(a.w, b.w), b.y + b.h - a.y, a.words + b.words)
+        return a
     return None
 
 
