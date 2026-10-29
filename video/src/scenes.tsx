@@ -151,7 +151,7 @@ export const Watch: React.FC = () => {
             );
           })}
         </div>
-        <Rise at={9.5}><div style={{ fontSize: 30, color: C.muted, lineHeight: 1.35 }}>Recovered from pixels alone: the pointer, the click markers, and what changed.</div></Rise>
+        <Rise at={9.5}><div style={{ fontSize: 30, color: C.muted, lineHeight: 1.35 }}>Recovered from the video frames: the highlighted pointer, click rings, and what changed.</div></Rise>
       </div>
       <TutorialWithContracts width={1300} />
     </AbsoluteFill>
@@ -250,8 +250,8 @@ export const Results: React.FC = () => {
   const it = r.interruption;
   return (
     <Page>
-      <Rise at={0.1}><div style={H2}>Held-out benchmark</div></Rise>
-      <Rise at={0.5}><div style={{ ...BODY, fontSize: 34, marginTop: 12 }}>{`${r.all.eidos.n} conditions the video never showed: new data, ${r.redesign.eidos.n} random redesigns, a second app, ${it.eidos.n} mid-task interruptions. Judged from each app's internal state.`}</div></Rise>
+      <Rise at={0.1}><div style={H2}>Pilot benchmark</div></Rise>
+      <Rise at={0.5}><div style={{ ...BODY, fontSize: 34, marginTop: 12 }}>{`${r.all.eidos.n} runs: new data, a second app, ${r.redesign.eidos.n} random redesigns and ${it.eidos.n} mid-task interruptions from a held-out seed. Judged from each app's internal state.`}</div></Rise>
       <div style={{ display: "grid", gap: 30, marginTop: 56 }}>
         {rows.map(([name, v, col], i) => (
           <Bar key={name} name={name} v={v} col={col} at={1.6 + i * 1.2} />
@@ -291,7 +291,7 @@ export const Models: React.FC = () => {
   ];
   return (
     <Page>
-      <Rise at={0.1}><div style={H2}>Built around Meta's models</div></Rise>
+      <Rise at={0.1}><div style={H2}>Designed around Meta's models</div></Rise>
       <div style={{ display: "grid", gap: 0, marginTop: 54, background: C.surface, borderRadius: 16, border: `1px solid ${C.line}`, overflow: "hidden" }}>
         {rows.map(([m, job], i) => (
           <Rise key={m} at={1.6 + i * 2.2} dist={14}>
@@ -303,7 +303,7 @@ export const Models: React.FC = () => {
         ))}
       </div>
       <Rise at={12.2} style={{ marginTop: 40 }}>
-        <div style={{ fontSize: 32, color: C.muted }}>This demo runs the same pipeline offline with classic vision stand-ins, so every result shown is reproducible.</div>
+        <div style={{ fontSize: 32, color: C.muted }}>Everything shown ran offline, with classic vision standing in for each model, so every result is reproducible.</div>
       </Rise>
     </Page>
   );

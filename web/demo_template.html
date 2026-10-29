@@ -183,9 +183,9 @@ footer { padding-block: 40px 60px; color: var(--muted); font-size: .9rem; border
   <section class="hero" aria-labelledby="h1">
     <div class="hero-copy">
       <h1 id="h1">Show it once.</h1>
-      <p class="lede">EIDOS watches a screen-recorded tutorial and turns it into a program an AI agent can run. Every step carries a visual contract taken from the video, so the agent checks its own work, and the skill keeps working when the data, the design, or the whole app changes.</p>
+      <p class="lede">EIDOS watches a screen-recorded tutorial and turns it into a program an AI agent can run. Every step carries a visual contract taken from the video, so the agent checks its own work. In a pilot benchmark, a skill learned from one video kept working on new data, on redesigned versions of the app, in a second app, and through mid-task interruptions.</p>
       <ul class="hero-points">
-        <li><span class="mark"></span><span>Learns from an ordinary video. No recorder, no scripts, no app access.</span></li>
+        <li><span class="mark"></span><span>Learns from the video, not the app: no access to the app's code or data.</span></li>
         <li><span class="mark"></span><span>Learns what each step is for, not where the pixels were.</span></li>
         <li><span class="mark"></span><span>Checks every step against what the person was seen doing.</span></li>
       </ul>
@@ -195,7 +195,7 @@ footer { padding-block: 40px 60px; color: var(--muted); font-size: .9rem; border
         <video id="tut" src="assets/tutorial_totals.mp4" muted playsinline loop autoplay preload="auto" aria-label="Tutorial video: a person adds a bold totals row to a spreadsheet"></video>
         <div class="layer" id="tut-layer"></div>
         <div class="stage-bar">
-          <span id="tut-caption">A 14-second tutorial. The outlines are the contracts EIDOS recovered from it.</span>
+          <span id="tut-caption">A 14-second tutorial, recorded by a script with a highlighted pointer. The outlines are the contracts EIDOS recovered from it.</span>
           <button class="btn" id="tut-toggle" type="button">Pause</button>
         </div>
       </div>
@@ -205,7 +205,7 @@ footer { padding-block: 40px 60px; color: var(--muted); font-size: .9rem; border
   <section aria-labelledby="h-learned">
     <div class="sec-head">
       <h2 id="h-learned">What it learned from the video</h2>
-      <p class="lede">Every step below was recovered from pixels: the pointer, the click markers, and what changed on screen. EIDOS then rewrote each step in terms that survive a different screen. Select a step to see it in the video.</p>
+      <p class="lede">Every step below was recovered from the video frames: the highlighted pointer and click rings, the text read off the screen, and what changed. EIDOS then rewrote each step in terms that survive a different screen. Select a step to see it in the video.</p>
     </div>
     <div class="steps" id="steps"></div>
   </section>
@@ -213,7 +213,7 @@ footer { padding-block: 40px 60px; color: var(--muted); font-size: .9rem; border
   <section aria-labelledby="h-run">
     <div class="sec-head">
       <h2 id="h-run">Run it where the video never went</h2>
-      <p class="lede">Same skill, no retraining. On the left, the tutorial's clicks and keystrokes copied exactly. On the right, EIDOS. Whether each run really worked is checked from the app's internal state, which the agent never sees.</p>
+      <p class="lede">Same skill, no retraining. On the left, the tutorial's clicks and keystrokes copied exactly (or, for the interruption case, EIDOS with its checks switched off). On the right, EIDOS. Whether each run really worked is checked from the app's internal state, which the agent never sees.</p>
     </div>
     <div class="seg" role="group" aria-label="Choose a condition" id="seg"></div>
     <p class="cond-title" id="cond-title"></p>
@@ -247,11 +247,11 @@ footer { padding-block: 40px 60px; color: var(--muted); font-size: .9rem; border
   <section aria-labelledby="h-models">
     <div class="sec-head">
       <h2 id="h-models">Where Meta's models come in</h2>
-      <p class="lede">EIDOS is built around four Meta models. This demo runs the same pipeline offline, with classic computer vision standing in for each model, so every result on this page is reproducible without an API key. With a key, each stand-in is swapped for the model on its row.</p>
+      <p class="lede">EIDOS is designed around four Meta models. Every result on this page ran offline, with classic computer vision standing in for each model, so it can be reproduced without an API key. The live path is partial today: a client for all four models is in place, and SAM 3.1 concept search is wired in as a way to find a control on a new screen.</p>
     </div>
     <div class="models">
-      <div class="model-row head-row"><div>Model</div><div>Job in EIDOS</div><div>Offline stand-in used on this page</div></div>
-      <div class="model-row"><div class="who">SAM 3.1</div><div>Tracks the pointer and click markers through the video, segments the region each step changed, and finds a control on a new screen from a text concept like "bold text button".</div><div class="off">Color segmentation, frame differencing, and template matching.</div></div>
+      <div class="model-row head-row"><div>Model</div><div>Planned job in EIDOS</div><div>Offline stand-in used on this page</div></div>
+      <div class="model-row"><div class="who">SAM 3.1</div><div>Tracks the pointer and click markers through the video, segments the region each step changed, and finds a control on a new screen from a text concept like "bold text button".</div><div class="off">Color segmentation, frame differencing, and template matching. Concept search is wired in; untested without a key.</div></div>
       <div class="model-row"><div class="who">Muse Spark</div><div>Reads each before and after pair and says what the step was for, in terms that do not depend on pixels.</div><div class="off">OCR plus table rules that map positions to column names and row roles.</div></div>
       <div class="model-row"><div class="who">Muse Wonder</div><div>Generalizes the step trace into a program: inputs, relative targets, formulas explained in terms of the table, and the contract for each step.</div><div class="off">Rules for the step types this pilot covers.</div></div>
       <div class="model-row"><div class="who">Muse Image</div><div>Draws a card for each learned skill so a library of skills can be browsed at a glance.</div><div class="off">Not used offline.</div></div>
@@ -440,7 +440,7 @@ const sr = B.test.summary.eidos_self_report;
 const S = B.test.summary;
 const nk = S.all.eidos_nochk;
 const it = S.interruption;
-$("#bench-lede").innerHTML = `One tutorial, compiled once, then run under ${S.all.eidos.n} conditions it never saw: new data, ${S.redesign.eidos.n} randomly generated redesigns of App A (dark theme, sidebars, resized cells, shuffled columns), a second app, and ${it ? it.eidos.n : 0} runs where a dialog pops up mid-task and blocks input. Everything comes from a held-out seed that was never looked at during development. Success is judged from each app's internal state.`;
+$("#bench-lede").innerHTML = `One tutorial, compiled once, then run ${S.all.eidos.n} times: once on the same sheet as the video, on new data, in a second app, on ${S.redesign.eidos.n} randomly generated redesigns of App A (dark theme, sidebars, resized cells, shuffled columns), and ${it ? it.eidos.n : 0} times with a dialog that pops up mid-task and blocks input. The redesigns and interruptions come from a held-out seed that was never looked at during development. For new column names, the run is told which columns to use. Success is judged from each app's internal state.`;
 let hist = "";
 const rounds = [B.test_v1 && ["1", B.test_v1], B.test_v2 && ["2", B.test_v2]].filter(Boolean);
 if (rounds.length) {
@@ -448,7 +448,7 @@ if (rounds.length) {
 }
 $("#note").innerHTML = `<div class="big">${sr.agrees_with_oracle}/${sr.n}</div>
   <p>runs where EIDOS's own verdict matched the truth. Copying the clicks never knows: it failed silently ${S.replay_silent_failures} times.</p>
-  ${it ? `<p>When a dialog interrupts the task, the contracts are what save the run: EIDOS notices a step did not land, dismisses the dialog and redoes it, finishing ${it.eidos.success}/${it.eidos.n}. With checks off it finished ${it.eidos_nochk.success}/${it.eidos_nochk.n} while reporting success.</p>` : ""}
+  ${it ? `<p>When a dialog interrupts the task, the contracts are what save the run: EIDOS notices a step did not land, dismisses the dialog and redoes it, finishing ${it.eidos.success}/${it.eidos.n}. With checks off it finished ${it.eidos_nochk.success}/${it.eidos_nochk.n}: it has no way to notice, so it carries on as if every step worked.</p>` : ""}
   ${hist}
   <p class="oracle">Development set (used while fixing bugs): EIDOS ${B.dev.summary.all.eidos.success}/${B.dev.summary.all.eidos.n}, copying the clicks ${B.dev.summary.all.replay.success}/${B.dev.summary.all.replay.n}. Pilot scale: one task family, two apps.</p>`;
 </script>

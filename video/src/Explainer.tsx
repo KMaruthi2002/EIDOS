@@ -22,7 +22,7 @@ const SCENES: Record<string, React.FC> = {
   understand: Understand,
   redesign: () => <Runs which="redesign" heading="The app was redesigned." sub="Dark theme, a sidebar, bigger cells, and the columns shuffled." leftTitle="Copying the clicks" leftVerdict="Wrong cells, no sum" rightVerdict="Done: =SUM(A2:A11), checked" />,
   otherapp: () => <Runs which="other_app" heading="A different app entirely." sub="Jspreadsheet: different toolbar, different layout, rows numbered differently." leftTitle="Copying the clicks" leftVerdict="Formula breaks: #ERROR" rightVerdict="Done: =SUM(E1:E10), checked" />,
-  interrupt: () => <Runs which="interrupt" heading="Interrupted mid-task." sub="A dialog pops up and swallows input until it is dismissed." leftTitle="EIDOS with checks off" leftVerdict={'Says "done". It isn\'t.'} rightVerdict="Noticed, dismissed, redid the step" />,
+  interrupt: () => <Runs which="interrupt" heading="Interrupted mid-task." sub="A dialog pops up and swallows input until it is dismissed." leftTitle="EIDOS with checks off" leftVerdict="Carried on blindly: task failed" rightVerdict="Noticed, dismissed, redid the step" />,
   results: Results,
   meta: Models,
   close: Close,

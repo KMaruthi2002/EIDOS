@@ -17,7 +17,7 @@ a, it, sr = r["all"], r.get("interruption"), r["eidos_self_report"]
 words = {n: w for n, w in enumerate("zero one two three four five six seven eight nine ten eleven twelve".split())}
 say = lambda n: words.get(n, str(n))
 verdict = "every time" if sr["agrees_with_oracle"] == sr["n"] else f"in {say(sr['agrees_with_oracle'])} of {say(sr['n'])}"
-text = (f"On {say(a['eidos']['n'])} held-out conditions the video never showed, copying the clicks finished the task "
+text = (f"Across {say(a['eidos']['n'])} runs, with the redesigns and interruptions drawn from a held-out seed, copying the clicks finished the task "
         f"{say(a['replay']['success'])} time{'s' if a['replay']['success'] != 1 else ''}. Eye-doss finished {say(a['eidos']['success'])}, "
         f"and its own verdict matched the truth {verdict}.")
 if it:

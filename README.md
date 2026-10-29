@@ -1,25 +1,25 @@
 # EIDOS
 
-**Show it once.** EIDOS watches a screen-recorded tutorial and compiles it into a program an AI agent can run. Every step carries a **visual contract** taken from the video, so the agent checks its own work, and the skill keeps working when the data, the design, or the whole app changes.
+**Show it once.** EIDOS watches a screen-recorded tutorial and compiles it into a program an AI agent can run. Every step carries a **visual contract** taken from the video, so the agent checks its own work. In a pilot benchmark, a skill learned from one video kept working on new data, on randomly redesigned versions of the app, in a second spreadsheet app, and through mid-task interruptions.
 
 Built by Maruthi Kunchala (Team Parallax) for the Meta Global AI Hackathon 2026.
 
 ## The problem
 
-There are billions of hours of screen-recorded how-to videos. Agents can't learn from them. Recent research ([Watch & Learn](https://arxiv.org/abs/2510.04673), [Learning from Online Videos at Inference Time](https://arxiv.org/abs/2511.04137), [GUIDE](https://arxiv.org/abs/2603.26266)) uses tutorial videos as *hints* in an agent's context, with gains of roughly +2 to +7 points on OSWorld. None of them turn a video into a reusable program, check the agent's run against the video, or test learning in one app and running in another.
+There are billions of hours of screen-recorded how-to videos. Agents can't learn from them. Recent research ([Watch & Learn](https://arxiv.org/abs/2510.04673), [Learning from Online Videos at Inference Time](https://arxiv.org/abs/2511.04137), [GUIDE](https://arxiv.org/abs/2603.26266)) mostly uses tutorial videos as in-context examples, with gains of roughly +2 to +7.5 points on OSWorld; Watch & Learn also fine-tunes on trajectories it extracts from videos. As far as I found, none of them compile a video into a parameterized program whose steps are checked against the video during the run, or test learning in one app and running in another.
 
 ## What EIDOS does
 
 ```
-tutorial video ──► steps + visual contracts ──► intent program ──► run on any screen, checking each step
+tutorial video ──► steps + visual contracts ──► intent program ──► run on a new screen, checking each step
      (pixels)        (what was touched,          (inputs, relative     (perceive, ground, act,
                       what changed, what          targets, formulas     check the contract,
                       it must show after)         explained by role)    try another route if it fails)
 ```
 
-1. **Watch.** Finds the pointer, click markers, drags and typed text in the video, and the region each action changed.
+1. **Watch.** Finds the pointer, click markers and drags in the video frames, reads what was typed off the screen, and finds the region each action changed. The sample tutorial is recorded by a script (`eidos/recorder.py`) with a highlighted pointer and click rings, like the click highlighting in common screen recorders; offline, EIDOS finds the pointer by that highlight color.
 2. **Understand.** Rewrites each step without pixels: `=SUM(E2:E11)` becomes "sum the Revenue column over all data rows"; a toolbar click becomes "make the row bold" because the text got heavier.
-3. **Compile.** Produces a program with inputs (`label`, `label_column`, `sum_column`) and a contract per step.
+3. **Compile.** Produces a program with inputs (`label`, `label_column`, `sum_column`) and a contract per step. On a sheet with different column names, the user binds the inputs (for example `sum_column=Value`); unbound, EIDOS falls back to the first column for the label and the last for the sum.
 4. **Run and check.** On a new screen, EIDOS reads the table, finds where the target column moved, rewrites the formula for that screen (for example `=SUM(A2:A11)` after the columns were shuffled, `=SUM(E1:E10)` in an app that numbers rows differently), and checks every step before moving on. A contract is checked against independent evidence (for example, the header above the cell it wrote), not just against its own choice.
 
 ## Meta models
@@ -31,7 +31,7 @@ tutorial video ──► steps + visual contracts ──► intent program ─�
 | Muse Wonder | Generalize the step trace into a program with inputs and contracts | Rules for the step types in this pilot |
 | Muse Image | Draw a card for each learned skill | Not used offline |
 
-Set `META_MODEL_API_KEY` to switch on the live models (`eidos/meta.py`). Without it, everything runs offline, which is how every result below was produced, so they can be reproduced without a key.
+**Status of the live models.** EIDOS is designed around these four models, but every result in this repo ran offline with the stand-ins. Today the live path is partial: `eidos/meta.py` has a client for all four, SAM 3.1 concept search is wired into the runner as a route for finding a control, Muse Wonder's program is saved alongside the offline one by `learn`, and `python -m eidos check-live` calls each model once. The endpoint and model IDs in `meta.py` still need confirming against the Meta Model API once a key is available. Set `META_MODEL_API_KEY` (or put it in `.env`) to enable it.
 
 ## Pilot benchmark
 
@@ -61,9 +61,9 @@ EIDOS's own verdict matched the truth on **44/44** runs (0 silent failures). All
 - Round 2 (seed 4242, `runs/bench_test_v2/`): EIDOS 28/28, but checks-off also 28/28, so nothing yet showed the contracts making a run succeed. This led to the interruption condition and contract-driven repair (a failed contract makes EIDOS dismiss what is in the way and redo the step).
 - Final (seed 9001, `runs/bench_test/`): the table above.
 
-**What the ablation shows.** On redesigns and new apps, checks-off does about as well as EIDOS: there, the gains come from the intent program. The contracts matter when something goes wrong mid-run: with a dialog interrupting the task, EIDOS finished 14/16 and checks-off 0/16, while reporting success every time.
+**What the ablation shows.** On redesigns and new apps, checks-off does about as well as EIDOS: there, the gains come from the intent program. The contracts matter when something goes wrong mid-run: with a dialog interrupting the task, EIDOS finished 14/16 and checks-off 0/16. Checks-off has no way to notice the failure, so it carries on as if every step worked.
 
-**Scope.** This is a pilot: one task family (add a totals row), two open-source spreadsheet apps ([x-spreadsheet](https://github.com/myliang/x-spreadsheet) and [Jspreadsheet CE](https://github.com/jspreadsheet/ce), both MIT), recorded tutorials with a visible click highlight. The next step is more task families and real third-party tutorial videos with the live Meta models.
+**Scope.** This is a pilot: one task family (add a totals row), one scripted tutorial, two open-source spreadsheet apps ([x-spreadsheet](https://github.com/myliang/x-spreadsheet) and [Jspreadsheet CE](https://github.com/jspreadsheet/ce), both MIT), tutorials with a visible click highlight. The alternative route for bold (Ctrl+B) is built in, not learned from the video. The next step is more task families and real third-party tutorial videos with the live Meta models.
 
 ## Run it
 
@@ -77,7 +77,7 @@ python -m eidos learn videos/tutorial_totals.mp4 runs/skill    # video -> progra
 python -m eidos run runs/skill "http://localhost:8765/tabula.html"             # run in App B
 python -m eidos run runs/skill "http://localhost:8765/gridline.html?theme=dark&side=180&colw=140&rowh=32&order=4,0,1,2,3"
 
-python bench/run_bench.py http://localhost:8765 24 4242       # held-out benchmark
+python bench/run_bench.py http://localhost:8765 24 9001 16    # final held-out benchmark
 python bench/showcase.py                                       # demo recordings
 python web/build_demo.py                                       # demo page -> web/demo/
 ```

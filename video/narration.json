@@ -15,7 +15,7 @@
     },
     {
       "id": "watch",
-      "text": "Here's a fourteen second tutorial. Someone adds a totals row to a spreadsheet. From pixels alone, Eye-doss finds every click, drag and keystroke, and records what each one changed on screen."
+      "text": "Here's a fourteen second tutorial, recorded with a highlighted pointer. A totals row gets added to a spreadsheet. From the video frames alone, Eye-doss finds every click and drag, reads what was typed, and records what each step changed on screen."
     },
     {
       "id": "understand",
@@ -31,15 +31,15 @@
     },
     {
       "id": "interrupt",
-      "text": "And when something gets in the way, like a dialog that pops up halfway through, the contracts are what save the run. Eye-doss notices the step didn't land, dismisses the dialog, and does it again. With the checks switched off, the agent reports success on a task it never finished."
+      "text": "And when something gets in the way, like a dialog that pops up halfway through, the contracts are what save the run. Eye-doss notices the step didn't land, dismisses the dialog, and does it again. With the checks switched off, the agent has no way to notice, and carries on as if nothing happened."
     },
     {
       "id": "results",
-      "text": "On 44 held-out conditions the video never showed, copying the clicks finished the task three times. Eye-doss finished 41, and its own verdict matched the truth every time. When a dialog interrupted the task, Eye-doss finished 14 of 16. With the checks off, zero."
+      "text": "Across 44 runs, with the redesigns and interruptions drawn from a held-out seed, copying the clicks finished the task three times. Eye-doss finished 41, and its own verdict matched the truth every time. When a dialog interrupted the task, Eye-doss finished 14 of 16. With the checks off, zero."
     },
     {
       "id": "meta",
-      "text": "Eye-doss is built around Meta's models. SAM 3.1 tracks the pointer and segments what changed. Muse Spark reads each step. Muse Wonder compiles the program. Muse Image draws each skill's card. This demo runs the same pipeline offline, so every result you saw can be reproduced."
+      "text": "Eye-doss is designed around Meta's models. SAM 3.1 to track the pointer and segment what changed. Muse Spark to read each step. Muse Wonder to compile the program. Muse Image to draw each skill's card. Everything you just saw ran offline, with classic vision standing in for each model, so every result can be reproduced."
     },
     {
       "id": "close",

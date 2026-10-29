@@ -1,13 +1,15 @@
 """EIDOS pilot benchmark.
 
 One tutorial video (App A, sales data) is compiled into a program once.
-The program then runs under conditions the video never showed:
+The program then runs under these conditions:
 
   same        App A, same data                      (sanity check)
   new_data    App A, different dataset and size     (generalization)
   redesign    App A redesigned: dark theme, sidebar, (robustness to UI change)
               resized cells, reordered columns
   other_app   App B (Jspreadsheet), both datasets    (cross-app transfer)
+  interruption a dialog opens mid-task and blocks     (recovery)
+               input until dismissed
 
 Systems compared:
   replay        repeat the tutorial's exact clicks and keystrokes
@@ -35,7 +37,8 @@ SKILL = ROOT / "runs" / "tutorial_totals"
 N_REDESIGNS = int(sys.argv[2]) if len(sys.argv) > 2 else 12
 N_INTERRUPTIONS = int(sys.argv[4]) if len(sys.argv) > 4 else 12
 # Seed 7 is the development set (used while fixing bugs). Headline numbers
-# come from a held-out seed that was never looked at during development.
+# come from a held-out seed. Only the generated conditions (redesigns and
+# interruptions) depend on the seed; same/new_data/other_app are fixed.
 SEED = int(sys.argv[3]) if len(sys.argv) > 3 else 7
 # History: seed 2026 was the first held-out set (results frozen in
 # runs/bench_test_v1 before the fixes it revealed); seed 4242 is the current one.
