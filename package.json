@@ -1,0 +1,19 @@
+{
+  "name": "eidos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@jspreadsheet/formula": "^2.0.2",
+    "jspreadsheet-ce": "^5.0.4",
+    "jsuites": "^6.5.1",
+    "material-icons": "^1.13.12",
+    "x-data-spreadsheet": "^1.1.9"
+  }
+}

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>App A: x-spreadsheet</title>
+<link rel="stylesheet" href="vendor/xspreadsheet.css">
+<style>
+  html, body { margin: 0; height: 100%; background: #fff; font-family: system-ui, sans-serif; }
+  #appbar { height: 36px; display: flex; align-items: center; padding: 0 12px; background: #1f6f43; color: #fff; font-weight: 600; font-size: 14px; }
+  #main { display: flex; height: calc(100% - 36px); }
+  #side { width: 0; background: #eef2f0; border-right: 1px solid #d5ddd8; font-size: 13px; color: #445; overflow: hidden; }
+  #side .item { padding: 10px 14px; border-bottom: 1px solid #dde3df; }
+  #sheet { flex: 1; min-width: 0; }
+  /* Redesign: dark theme for the canvas app (pixels only, no DOM to restyle). */
+  body.dark { background: #111; }
+  body.dark #sheet { filter: invert(0.92) hue-rotate(180deg); }
+  body.dark #side { background: #1d2420; color: #cfd8d2; border-color: #333; }
+  body.dark #appbar { background: #0c2a1a; }
+</style>
+</head>
+<body>
+<div id="appbar">App A &middot; x-spreadsheet (canvas-rendered)</div>
+<div id="main">
+  <div id="side"><div class="item">Workbook</div><div class="item">Sheets</div><div class="item">History</div><div class="item">Sharing</div></div>
+  <div id="sheet"></div>
+</div>
+<script src="seed.js"></script>
+<script src="vendor/xspreadsheet.js"></script>
+<script>
+  // x-spreadsheet draws the grid on a <canvas>: there is no cell DOM.
+  // An agent can only act on this app by seeing it.
+  //
+  // Redesign parameters (used by the UI-mutation benchmark):
+  //   theme=dark   inverted, dark color scheme
+  //   side=PX      a sidebar that shifts everything right
+  //   colw=PX      column width       rowh=PX  row height
+  //   order=4,0,1  column order (indexes into the dataset's columns)
+  const q = new URLSearchParams(location.search);
+  if (q.get("theme") === "dark") document.body.classList.add("dark");
+  const side = parseInt(q.get("side") || "0", 10);
+  document.getElementById("side").style.width = side + "px";
+  const colw = parseInt(q.get("colw") || "110", 10);
+  const rowh = parseInt(q.get("rowh") || "25", 10);
+
+  let data = eidosDataset();
+  if (q.get("order")) {
+    const order = q.get("order").split(",").map(Number);
+    data = data.map(r => order.map(i => r[i]));
+  }
+  const rows = {};
+  data.forEach((r, i) => {
+    const cells = {};
+    r.forEach((v, j) => { cells[j] = { text: String(v) }; });
+    rows[i] = { cells };
+  });
+  rows.len = 60;
+  window.xs = x_spreadsheet("#sheet", {
+    showToolbar: true, showGrid: true, showBottomBar: false,
+    view: {
+      height: () => document.getElementById("sheet").clientHeight,
+      width: () => document.getElementById("sheet").clientWidth,
+    },
+    row: { len: 60, height: rowh },
+    col: { len: 12, width: colw },
+  }).loadData([{ name: "sheet1", rows }]);
+
+  // Benchmark oracle: used ONLY by the scorer to grade results.
+  // The EIDOS agent never reads this; it works from pixels.
+  window.__eidosState = function () {
+    const d = window.xs.getData()[0];
+    const styles = d.styles || [];
+    const out = [];
+    const n = Object.keys(d.rows).filter(k => k !== "len").map(Number);
+    const maxR = n.length ? Math.max(...n) : -1;
+    for (let i = 0; i <= maxR; i++) {
+      const row = d.rows[i];
+      const line = [];
+      if (row && row.cells) {
+        const cs = Object.keys(row.cells).map(Number);
+        const maxC = cs.length ? Math.max(...cs) : -1;
+        for (let j = 0; j <= maxC; j++) {
+          const c = row.cells[j] || {};
+          const st = c.style != null ? styles[c.style] || {} : {};
+          line.push({ v: c.text ?? "", bold: !!(st.font && st.font.bold), fill: st.bgcolor || null });
+        }
+      }
+      out.push(line);
+    }
+    while (out.length && out[out.length - 1].every(c => c.v === "")) out.pop();
+    return { app: "A", cells: out };
+  };
+  // Computed value of a cell (formulas evaluated), for the scorer.
+  window.__eidosValue = function (ri, ci) {
+    const sheet = window.xs.sheet.data;
+    const cell = sheet.getCell(ri, ci);
+    if (!cell) return "";
+    return cell.text;
+  };
+</script>
+</body>
+</html>

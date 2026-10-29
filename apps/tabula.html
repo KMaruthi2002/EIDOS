@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>App B: Jspreadsheet CE</title>
+<link rel="stylesheet" href="vendor/material-icons.css">
+<link rel="stylesheet" href="vendor/jsuites.css">
+<link rel="stylesheet" href="vendor/jspreadsheet.css">
+<style>
+  html, body { margin: 0; background: #f6f7fb; font-family: system-ui, sans-serif; }
+  #appbar { height: 36px; display: flex; align-items: center; padding: 0 12px; background: #3b3f9a; color: #fff; font-weight: 600; font-size: 14px; }
+  #wrap { padding: 12px; }
+</style>
+</head>
+<body>
+<div id="appbar">App B &middot; Jspreadsheet CE (HTML table)</div>
+<div id="wrap"><div id="sheet"></div></div>
+<script src="seed.js"></script>
+<script src="vendor/jsuites.js"></script>
+<script src="vendor/formula.js"></script>
+<script src="vendor/jspreadsheet.js"></script>
+<script>
+  const data = eidosDataset();
+  const header = data[0];
+  const body = data.slice(1).map(r => r.map(String));
+  // Pad with empty rows so there is room to add totals and new records.
+  for (let i = 0; i < 20; i++) body.push(header.map(() => ""));
+  window.wb = jspreadsheet(document.getElementById("sheet"), {
+    toolbar: true,
+    worksheets: [{
+      data: body,
+      columns: header.map(h => ({ title: h, width: 110, type: "text" })),
+      minDimensions: [8, 30],
+    }],
+  });
+  window.ws = window.wb[0];
+
+  // Benchmark oracle: used ONLY by the scorer. Row 0 is the header, as in App A.
+  window.__eidosState = function () {
+    const ws = window.ws;
+    const vals = ws.getData();
+    const nCols = vals[0] ? vals[0].length : 0;
+    // Untitled columns show their letter (F, G, ...); treat those as empty like App A.
+    const out = [ws.getHeaders(true).slice(0, nCols).map((h, j) =>
+      ({ v: h === jspreadsheet.helpers.getColumnName(j) ? "" : h, bold: true, fill: null }))];
+    vals.forEach((row, i) => {
+      out.push(row.map((v, j) => {
+        const cellName = jspreadsheet.helpers.getCellNameFromCoords(j, i);
+        const st = ws.getStyle(cellName) || "";
+        const fill = (st.match(/background-color:\s*([^;]+)/) || [])[1] || null;
+        return { v: v ?? "", bold: /font-weight:\s*(bold|700)/.test(st), fill };
+      }));
+    });
+    // Trim trailing empty columns and rows.
+    out.forEach(r => { while (r.length && r[r.length - 1].v === "" && !r[r.length - 1].fill) r.pop(); });
+    while (out.length && out[out.length - 1].length === 0) out.pop();
+    return { app: "B", cells: out };
+  };
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+[
+  {
+    "t": 2.62,
+    "type": "click",
+    "x": 115,
+    "y": 388,
+    "label": "first empty cell under Region"
+  },
+  {
+    "t": 3.249,
+    "type": "type",
+    "text": "Total",
+    "label": "label the totals row"
+  },
+  {
+    "t": 5.493,
+    "type": "click",
+    "x": 555,
+    "y": 388,
+    "label": "Revenue cell in the totals row"
+  },
+  {
+    "t": 6.12,
+    "type": "type",
+    "text": "=SUM(E2:E11)",
+    "label": "sum the revenue column"
+  },
+  {
+    "t": 9.099,
+    "type": "drag",
+    "x1": 115,
+    "y1": 388,
+    "x2": 555,
+    "y2": 388,
+    "label": "select the totals row"
+  },
+  {
+    "t": 11.089,
+    "type": "click",
+    "x": 384,
+    "y": 56,
+    "label": "bold button"
+  }
+]
