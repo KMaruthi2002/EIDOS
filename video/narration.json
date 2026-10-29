@@ -39,7 +39,7 @@
     },
     {
       "id": "meta",
-      "text": "Eye-doss is designed around Meta's models. SAM 3.1 to track the pointer and segment what changed. Muse Spark to read each step. Muse Wonder to compile the program. Muse Image to draw each skill's card. Everything you just saw ran offline, with classic vision standing in for each model, so every result can be reproduced."
+      "text": "Eye-doss is designed around Meta's models. In the design, SAM 3.1 tracks the pointer and segments what changed. Muse Spark reads each step. Muse Wonder compiles the program. And Muse Image draws each skill's card. Everything you just saw ran offline, with classic vision standing in for each model, so every result can be reproduced."
     },
     {
       "id": "close",
