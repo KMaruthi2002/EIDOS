@@ -210,6 +210,21 @@ async def run_ui(program: dict, url: str, out_dir: Path, inputs: dict | None = N
                             region = (f[0] - 10, f[1] + f[3] - 4, f[2] + 20, 420)
                             opts = S.find_text(scr.lines, value, 0.85, region=region)
                             if not opts:
+                                # read the open list row by row (small text on dark fills is easy to miss)
+                                step_h = max(24, int(f[3] * 0.9))
+                                y0 = f[1] + f[3] + 2
+                                for k in range(0, 14):
+                                    for dy in (0, step_h // 2):
+                                        yy = y0 + k * step_h + dy
+                                        if yy + step_h > scr.img.shape[0]:
+                                            break
+                                        t = S.read_label(scr.img, (f[0] + 4, yy, f[2] - 30, step_h))
+                                        if same_text(t, value):
+                                            opts = [(1.0, f[0] + 8, yy, min(200, f[2] - 40), step_h)]
+                                            break
+                                    if opts:
+                                        break
+                            if not opts:
                                 raise LookupError(f"'{value}' not in the list that opened")
                             o = opts[0]
                             log.grounding.append({"how": f"opened the list and found '{value}'", "at": [o[1], o[2]]})
