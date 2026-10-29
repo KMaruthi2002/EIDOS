@@ -1,0 +1,449 @@
+<title>EIDOS</title>
+<!--VIEWPORT_META-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root {
+  --paper: #eef1f5; --surface: #ffffff; --ink: #142130; --muted: #5a6878; --line: #d5dce5;
+  --contract: #3352ff; --contract-soft: rgba(51, 82, 255, .10);
+  --pass: #0b8f63; --pass-soft: rgba(11, 143, 99, .12);
+  --fail: #cf3049; --fail-soft: rgba(207, 48, 73, .10);
+  --shade: rgba(20, 33, 48, .06);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0e1620; --surface: #16212d; --ink: #e5ecf3; --muted: #93a3b5; --line: #2a3848;
+    --contract: #8197ff; --contract-soft: rgba(129, 151, 255, .14);
+    --pass: #3fd3a0; --pass-soft: rgba(63, 211, 160, .13);
+    --fail: #ff6f84; --fail-soft: rgba(255, 111, 132, .12);
+    --shade: rgba(0, 0, 0, .25); color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0e1620; --surface: #16212d; --ink: #e5ecf3; --muted: #93a3b5; --line: #2a3848;
+  --contract: #8197ff; --contract-soft: rgba(129, 151, 255, .14);
+  --pass: #3fd3a0; --pass-soft: rgba(63, 211, 160, .13);
+  --fail: #ff6f84; --fail-soft: rgba(255, 111, 132, .12);
+  --shade: rgba(0, 0, 0, .25); color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper); color: var(--ink);
+  font-family: "Archivo", "Helvetica Neue", Arial, sans-serif; font-size: 17px; line-height: 1.55;
+  font-variation-settings: "wdth" 100;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: 1180px; margin: 0 auto; }
+code, .mono { font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: .88em; }
+a { color: var(--contract); }
+h1, h2, h3 { text-wrap: balance; margin: 0; font-variation-settings: "wdth" 118; }
+h1 { font-size: clamp(2.6rem, 6.4vw, 5.2rem); line-height: .98; font-weight: 800; letter-spacing: -.02em; }
+h2 { font-size: clamp(1.7rem, 3.2vw, 2.5rem); line-height: 1.08; font-weight: 750; letter-spacing: -.01em; }
+h3 { font-size: 1.12rem; font-weight: 700; font-variation-settings: "wdth" 108; }
+p { margin: 0; max-width: 68ch; }
+.lede { font-size: 1.2rem; color: var(--muted); max-width: 60ch; }
+section { padding-block: clamp(48px, 8vw, 96px); border-top: 1px solid var(--line); }
+section:first-of-type { border-top: 0; }
+.sec-head { display: grid; gap: 14px; margin-bottom: 36px; }
+
+/* ---------- hero ---------- */
+header.top { display: flex; justify-content: space-between; align-items: center; padding-block: 22px 0; gap: 12px; flex-wrap: wrap; }
+.wordmark { font-weight: 800; font-variation-settings: "wdth" 125; letter-spacing: .14em; font-size: 1rem; }
+.wordmark span { display: inline-block; border: 2px dashed var(--contract); padding: 2px 8px; border-radius: 3px; }
+.meta-note { color: var(--muted); font-size: .9rem; }
+.hero { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(24px, 4vw, 56px); align-items: center; padding-block: clamp(36px, 7vw, 80px); }
+.hero-copy { display: grid; gap: 22px; min-width: 0; }
+.hero-points { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.hero-points li { display: grid; grid-template-columns: 22px 1fr; gap: 10px; align-items: start; }
+.hero-points .mark { width: 16px; height: 16px; border: 2px dashed var(--contract); border-radius: 3px; margin-top: 5px; }
+
+/* ---------- video with contracts ---------- */
+.stage { position: relative; background: var(--surface); border-radius: 12px; overflow: hidden; box-shadow: 0 1px 0 var(--line), 0 18px 50px -24px var(--shade); }
+.stage video { display: block; width: 100%; height: auto; aspect-ratio: 1100 / 620; background: #fff; }
+.layer { position: absolute; inset: 0; pointer-events: none; }
+.box {
+  position: absolute; border-radius: 3px;
+  background:
+    linear-gradient(90deg, var(--contract) 50%, transparent 0) repeat-x top / 10px 2px,
+    linear-gradient(90deg, var(--contract) 50%, transparent 0) repeat-x bottom / 10px 2px,
+    linear-gradient(0deg, var(--contract) 50%, transparent 0) repeat-y left / 2px 10px,
+    linear-gradient(0deg, var(--contract) 50%, transparent 0) repeat-y right / 2px 10px,
+    var(--contract-soft);
+  animation: ants .7s linear infinite;
+}
+.box.ok {
+  background:
+    linear-gradient(90deg, var(--pass) 50%, transparent 0) repeat-x top / 10px 2px,
+    linear-gradient(90deg, var(--pass) 50%, transparent 0) repeat-x bottom / 10px 2px,
+    linear-gradient(0deg, var(--pass) 50%, transparent 0) repeat-y left / 2px 10px,
+    linear-gradient(0deg, var(--pass) 50%, transparent 0) repeat-y right / 2px 10px,
+    var(--pass-soft);
+}
+@keyframes ants { to { background-position: 10px 0, -10px 100%, 0 -10px, 100% 10px, 0 0; } }
+@media (prefers-reduced-motion: reduce) { .box { animation: none; } }
+.tag {
+  position: absolute; transform: translateY(-100%); margin-top: -6px;
+  background: var(--contract); color: #fff; font-size: 12px; font-weight: 650; line-height: 1.25;
+  padding: 4px 8px; border-radius: 4px; white-space: nowrap; max-width: 70%; overflow: hidden; text-overflow: ellipsis;
+}
+.tag.ok { background: var(--pass); }
+.stage-bar { display: flex; gap: 8px; align-items: center; justify-content: space-between; padding: 10px 14px; border-top: 1px solid var(--line); font-size: .88rem; color: var(--muted); flex-wrap: wrap; }
+.stage-bar button { font: inherit; }
+.btn {
+  font: inherit; font-weight: 650; font-size: .92rem; cursor: pointer; border-radius: 8px;
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink); padding: 7px 12px;
+}
+.btn:hover { border-color: var(--contract); }
+.btn:focus-visible, .seg button:focus-visible, .step-row:focus-visible { outline: 3px solid var(--contract); outline-offset: 2px; }
+
+/* ---------- learned steps ---------- */
+.steps { display: grid; gap: 14px; }
+.step-row {
+  display: grid; grid-template-columns: 54px minmax(0, 1.25fr) minmax(0, 1fr) minmax(0, 1fr); gap: 20px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px; cursor: pointer; text-align: left;
+  font: inherit; color: inherit; width: 100%;
+}
+.step-row.live { border-color: var(--contract); box-shadow: 0 0 0 1px var(--contract); }
+.num { font-size: 1.9rem; font-weight: 800; font-variation-settings: "wdth" 125; color: var(--contract); line-height: 1; }
+.col { display: grid; gap: 6px; align-content: start; min-width: 0; }
+.col .k { font-size: .82rem; color: var(--muted); font-weight: 600; }
+.col .v { font-size: .98rem; }
+.seen { color: var(--muted); }
+.learned { font-weight: 600; }
+.chip { display: inline-block; padding: 2px 8px; border-radius: 999px; background: var(--contract-soft); color: var(--contract); font-weight: 650; font-size: .82rem; }
+.evidence { display: grid; grid-template-columns: 1fr; gap: 6px; }
+.evidence figure { margin: 0; position: relative; border-radius: 6px; overflow: hidden; border: 1px solid var(--line); background: #fff; }
+.evidence img { display: block; width: 100%; height: auto; }
+.evidence figcaption { font-size: .74rem; color: var(--muted); padding: 3px 6px; background: var(--surface); }
+
+/* ---------- run anywhere ---------- */
+.seg { display: inline-flex; flex-wrap: wrap; gap: 4px; padding: 4px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
+.seg button { font: inherit; font-size: .92rem; font-weight: 650; border: 0; background: transparent; color: var(--muted); padding: 8px 12px; border-radius: 7px; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.cond-title { margin: 18px 0 18px; color: var(--muted); }
+.duel { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; }
+.lane { display: grid; gap: 12px; align-content: start; min-width: 0; }
+.lane-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.verdict { font-weight: 700; font-size: .9rem; padding: 3px 10px; border-radius: 999px; }
+.verdict.pass { color: var(--pass); background: var(--pass-soft); }
+.verdict.fail { color: var(--fail); background: var(--fail-soft); }
+.lane .stage video { aspect-ratio: 1100 / 620; }
+.checks { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.checks li { display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 10px; padding: 10px 12px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; font-size: .92rem; }
+.checks li.now { border-color: var(--contract); }
+.tick { width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; font-weight: 800; font-size: 13px; color: #fff; background: var(--pass); }
+.tick.no { background: var(--fail); }
+.tick.wait { background: var(--line); color: var(--muted); }
+.checks .how { color: var(--muted); font-size: .84rem; }
+.oracle { font-size: .86rem; color: var(--muted); }
+
+/* ---------- results ---------- */
+.results { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 32px; align-items: start; }
+.bars { display: grid; gap: 22px; }
+.bar-group { display: grid; gap: 8px; }
+.bar-group h3 { display: flex; justify-content: space-between; gap: 8px; }
+.bar-group h3 small { color: var(--muted); font-weight: 500; font-size: .86rem; }
+.bar { display: grid; grid-template-columns: 150px minmax(0, 1fr) 64px; gap: 12px; align-items: center; font-size: .92rem; }
+.track { height: 14px; background: var(--shade); border-radius: 4px; overflow: hidden; }
+.fill { height: 100%; border-radius: 4px; background: var(--muted); }
+.fill.eidos { background: var(--contract); }
+.bar .val { text-align: right; font-variant-numeric: tabular-nums; font-weight: 650; }
+.note { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 22px; display: grid; gap: 12px; font-size: .95rem; }
+.note .big { font-size: 2.6rem; font-weight: 800; font-variation-settings: "wdth" 120; line-height: 1; }
+
+/* ---------- models ---------- */
+.models { display: grid; gap: 0; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--surface); }
+.model-row { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr) minmax(0, 1.2fr); gap: 20px; padding: 18px 20px; border-top: 1px solid var(--line); }
+.model-row:first-child { border-top: 0; }
+.model-row .who { font-weight: 750; }
+.model-row .off { color: var(--muted); font-size: .92rem; }
+.head-row { background: var(--paper); font-size: .84rem; color: var(--muted); font-weight: 650; padding-block: 10px; }
+
+footer { padding-block: 40px 60px; color: var(--muted); font-size: .9rem; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+@media (max-width: 900px) {
+  .hero, .results, .duel { grid-template-columns: minmax(0, 1fr); }
+  .step-row { grid-template-columns: 40px minmax(0, 1fr); }
+  .step-row .col.ev { grid-column: 1 / -1; }
+  .step-row .col.learn { grid-column: 2; }
+  .model-row { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+  .head-row { display: none; }
+  .bar { grid-template-columns: 110px minmax(0, 1fr) 54px; }
+}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="wordmark"><span>EIDOS</span></div>
+    <div class="meta-note">Team Parallax, Meta Global AI Hackathon 2026</div>
+  </header>
+
+  <section class="hero" aria-labelledby="h1">
+    <div class="hero-copy">
+      <h1 id="h1">Show it once.</h1>
+      <p class="lede">EIDOS watches a screen-recorded tutorial and turns it into a program an AI agent can run. Every step carries a visual contract taken from the video, so the agent checks its own work, and the skill keeps working when the data, the design, or the whole app changes.</p>
+      <ul class="hero-points">
+        <li><span class="mark"></span><span>Learns from an ordinary video. No recorder, no scripts, no app access.</span></li>
+        <li><span class="mark"></span><span>Learns what each step is for, not where the pixels were.</span></li>
+        <li><span class="mark"></span><span>Checks every step against what the person was seen doing.</span></li>
+      </ul>
+    </div>
+    <div>
+      <div class="stage" id="tut-stage">
+        <video id="tut" src="assets/tutorial_totals.mp4" muted playsinline loop autoplay preload="auto" aria-label="Tutorial video: a person adds a bold totals row to a spreadsheet"></video>
+        <div class="layer" id="tut-layer"></div>
+        <div class="stage-bar">
+          <span id="tut-caption">A 14-second tutorial. The outlines are the contracts EIDOS recovered from it.</span>
+          <button class="btn" id="tut-toggle" type="button">Pause</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-learned">
+    <div class="sec-head">
+      <h2 id="h-learned">What it learned from the video</h2>
+      <p class="lede">Every step below was recovered from pixels: the pointer, the click markers, and what changed on screen. EIDOS then rewrote each step in terms that survive a different screen. Select a step to see it in the video.</p>
+    </div>
+    <div class="steps" id="steps"></div>
+  </section>
+
+  <section aria-labelledby="h-run">
+    <div class="sec-head">
+      <h2 id="h-run">Run it where the video never went</h2>
+      <p class="lede">Same skill, no retraining. On the left, the tutorial's clicks and keystrokes copied exactly. On the right, EIDOS. Whether each run really worked is checked from the app's internal state, which the agent never sees.</p>
+    </div>
+    <div class="seg" role="group" aria-label="Choose a condition" id="seg"></div>
+    <p class="cond-title" id="cond-title"></p>
+    <div class="duel">
+      <div class="lane">
+        <div class="lane-head"><h3>Copying the clicks</h3><span class="verdict" id="v-replay"></span></div>
+        <div class="stage"><video id="vid-replay" muted playsinline preload="auto" controls aria-label="Replay baseline run"></video></div>
+        <p class="oracle" id="o-replay"></p>
+      </div>
+      <div class="lane">
+        <div class="lane-head"><h3>EIDOS</h3><span class="verdict" id="v-eidos"></span></div>
+        <div class="stage"><video id="vid-eidos" muted playsinline preload="auto" controls aria-label="EIDOS run"></video></div>
+        <ol class="checks" id="checks"></ol>
+        <p class="oracle" id="o-eidos"></p>
+      </div>
+    </div>
+    <p style="margin-top:18px"><button class="btn" id="play-both" type="button">Play both from the start</button></p>
+  </section>
+
+  <section aria-labelledby="h-results">
+    <div class="sec-head">
+      <h2 id="h-results">Pilot benchmark</h2>
+      <p class="lede" id="bench-lede"></p>
+    </div>
+    <div class="results">
+      <div class="bars" id="bars"></div>
+      <div class="note" id="note"></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-models">
+    <div class="sec-head">
+      <h2 id="h-models">Where Meta's models come in</h2>
+      <p class="lede">EIDOS is built around four Meta models. This demo runs the same pipeline offline, with classic computer vision standing in for each model, so every result on this page is reproducible without an API key. With a key, each stand-in is swapped for the model on its row.</p>
+    </div>
+    <div class="models">
+      <div class="model-row head-row"><div>Model</div><div>Job in EIDOS</div><div>Offline stand-in used on this page</div></div>
+      <div class="model-row"><div class="who">SAM 3.1</div><div>Tracks the pointer and click markers through the video, segments the region each step changed, and finds a control on a new screen from a text concept like "bold text button".</div><div class="off">Color segmentation, frame differencing, and template matching.</div></div>
+      <div class="model-row"><div class="who">Muse Spark</div><div>Reads each before and after pair and says what the step was for, in terms that do not depend on pixels.</div><div class="off">OCR plus table rules that map positions to column names and row roles.</div></div>
+      <div class="model-row"><div class="who">Muse Wonder</div><div>Generalizes the step trace into a program: inputs, relative targets, formulas explained in terms of the table, and the contract for each step.</div><div class="off">Rules for the step types this pilot covers.</div></div>
+      <div class="model-row"><div class="who">Muse Image</div><div>Draws a card for each learned skill so a library of skills can be browsed at a glance.</div><div class="off">Not used offline.</div></div>
+    </div>
+  </section>
+
+  <footer>
+    <span>EIDOS, by Maruthi Kunchala (Team Parallax).</span>
+    <span>Apps under test: x-spreadsheet and Jspreadsheet CE, both MIT licensed.</span>
+  </footer>
+</div>
+
+<script>
+const DATA = /*DATA*/null;
+const W = 1100, H = 620;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+/* ---------------- hero: tutorial with contracts ---------------- */
+const tut = $("#tut"), layer = $("#tut-layer");
+const steps = DATA.trace.steps;
+function boxFor(s) {
+  const c = s.contract;
+  if (c.selection_box) return c.selection_box;
+  if (c.cell_box) return c.cell_box;
+  if (s.action === "press_control") return [s.point[0] - 16, s.point[1] - 16, 32, 32];
+  return c.changed_box;
+}
+function place(el, b) {
+  el.style.left = (b[0] / W * 100) + "%";
+  el.style.top = (b[1] / H * 100) + "%";
+  el.style.width = (b[2] / W * 100) + "%";
+  el.style.height = (b[3] / H * 100) + "%";
+}
+const progBy = Object.fromEntries(DATA.program.steps.map(p => [p.id, p]));
+function drawTut() {
+  const t = tut.currentTime;
+  let html = "";
+  steps.forEach((s, i) => {
+    const b = boxFor(s);
+    if (!b) return;
+    const end = s.t_end;
+    if (t >= s.t_start - 0.15 && t < end + 0.9) {
+      const done = t > end - 0.25;
+      const p = progBy[i + 1];
+      const label = (i + 1) + ". " + (p ? p.intent.replace("{label}", DATA.program.inputs.label).replace("{label_column}", DATA.program.inputs.label_column).replace("{sum_column}", DATA.program.inputs.sum_column) : s.intent);
+      html += `<div class="box ${done ? "ok" : ""}" data-b="${b.join(",")}"></div><div class="tag ${done ? "ok" : ""}" data-t="${b[0]},${b[1]}">${esc(label)}</div>`;
+    }
+  });
+  layer.innerHTML = html;
+  layer.querySelectorAll(".box").forEach(el => place(el, el.dataset.b.split(",").map(Number)));
+  layer.querySelectorAll(".tag").forEach(el => {
+    const [x, y] = el.dataset.t.split(",").map(Number);
+    el.style.left = (Math.min(x, W * 0.55) / W * 100) + "%";
+    el.style.top = (y / H * 100) + "%";
+  });
+  document.querySelectorAll(".step-row").forEach((r, i) => {
+    const s = steps[i];
+    r.classList.toggle("live", t >= s.t_start - 0.15 && t < s.t_end + 0.3);
+  });
+  requestAnimationFrame(drawTut);
+}
+requestAnimationFrame(drawTut);
+$("#tut-toggle").addEventListener("click", () => {
+  if (tut.paused) { tut.play(); $("#tut-toggle").textContent = "Pause"; }
+  else { tut.pause(); $("#tut-toggle").textContent = "Play"; }
+});
+tut.play().catch(() => { $("#tut-toggle").textContent = "Play"; });
+
+/* ---------------- learned steps ---------------- */
+function bindI(s) {
+  const i = DATA.program.inputs;
+  return String(s).replaceAll("{label}", i.label).replaceAll("{label_column}", i.label_column).replaceAll("{sum_column}", i.sum_column);
+}
+const seenText = (s) => {
+  if (s.action === "enter_text") return `Clicked at (${s.point.map(Math.round).join(", ")}) and typed <code>${esc(s.text)}</code>`;
+  if (s.action === "select_range") return `Dragged from (${s.point.map(Math.round).join(", ")}) to (${s.point2.map(Math.round).join(", ")})`;
+  return `Clicked a toolbar icon at (${s.point.map(Math.round).join(", ")})`;
+};
+const learnedText = (s, p) => {
+  if (p.do === "enter_formula") return `Sum the <span class="chip">${esc(bindI(p.formula.column))}</span> column over <span class="chip">all data rows</span>. <code>E2:E11</code> was this sheet's address for that, not the rule.`;
+  if (p.do === "enter_text") return `Write <span class="chip">${esc(bindI(p.text))}</span> in the <span class="chip">${esc(bindI(p.target.column))}</span> column of <span class="chip">the first empty row below the data</span>.`;
+  if (p.do === "select_row") return `Select that same row from the <span class="chip">first column</span> to the <span class="chip">last column</span>.`;
+  return `Make the selection <span class="chip">bold</span>. Inferred from the effect: the text in the row got heavier.`;
+};
+const contractText = (p) => {
+  const c = p.contract;
+  if (c.cell_shows_text) return `Cell must read \u201c${esc(bindI(c.cell_shows_text))}\u201d.`;
+  if (c.cell_shows_number) return `Cell must show the sum of the ${esc(bindI(c.cell_shows_number.column))} values, read off the screen.`;
+  if (c.selection_covers_row) return "Selection highlight must span the whole row.";
+  return "Text in the selected row must get heavier.";
+};
+$("#steps").innerHTML = steps.map((s, i) => {
+  const p = DATA.program.steps[i];
+  const ev = s.crops;
+  return `<button class="step-row" type="button" data-t="${s.t_start}" aria-label="Show step ${i + 1} in the video">
+    <div class="num">${i + 1}</div>
+    <div class="col learn"><span class="k">Learned</span><span class="v learned">${learnedText(s, p)}</span><span class="v seen">Seen: ${seenText(s)}</span></div>
+    <div class="col"><span class="k">Visual contract</span><span class="v">${contractText(p)}</span></div>
+    <div class="col ev"><span class="k">Evidence from the video</span>
+      <div class="evidence">
+        <figure><img src="assets/zoom_${ev.pre}" alt="Before step ${i + 1}" loading="lazy"><figcaption>Before</figcaption></figure>
+        <figure><img src="assets/zoom_${ev.post}" alt="After step ${i + 1}" loading="lazy"><figcaption>After</figcaption></figure>
+      </div></div>
+  </button>`;
+}).join("");
+document.querySelectorAll(".step-row").forEach(r => r.addEventListener("click", () => {
+  tut.currentTime = Math.max(0, Number(r.dataset.t) - 0.4);
+  tut.play();
+  $("#tut-toggle").textContent = "Pause";
+  $("#tut-stage").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "center" });
+}));
+
+/* ---------------- run anywhere ---------------- */
+const runs = DATA.showcase;
+const segNames = { same: "Same app", new_data: "New data", redesign: "Redesigned app", other_app: "Different app" };
+let current = runs.find(r => r.id === "redesign") || runs[0];
+$("#seg").innerHTML = runs.map(r => `<button type="button" data-id="${r.id}" aria-pressed="${r.id === current.id}">${segNames[r.id] || r.id}</button>`).join("");
+const vr = $("#vid-replay"), ve = $("#vid-eidos");
+function verdict(el, ok) { el.className = "verdict " + (ok ? "pass" : "fail"); el.textContent = ok ? "Task done" : "Task failed"; }
+function oracleText(sc) {
+  if (!sc) return "";
+  const parts = [];
+  parts.push(sc.label_ok ? "label row in place" : "no label row in the right place");
+  parts.push(sc.sum_ok ? `sum correct (${sc.got})` : (sc.formula ? `sum wrong: ${sc.formula}` : "no sum"));
+  parts.push(sc.bold_ok ? "bold" : "not bold");
+  return "Checked from the app's internal state: " + parts.join(", ") + ".";
+}
+function renderChecks(t) {
+  const rep = current.eidos_report;
+  $("#checks").innerHTML = rep.steps.map(s => {
+    const done = t == null || t >= s.t_end - 0.1;
+    const active = t != null && t >= s.t_start - 0.2 && t < s.t_end;
+    const chk = s.checks[s.checks.length - 1] || {};
+    const how = s.grounding.map(g => {
+      if (g.now) return `formula rewritten for this screen: <code>${esc(g.learned)}</code> became <code>${esc(g.now)}</code>`;
+      if (g.column) return `found the ${esc(g.column)} column by reading the screen`;
+      if (g.shortcut) return `used ${esc(g.shortcut.replace("Control", "Ctrl"))} instead`;
+      if (g.found === false) return "did not find the tutorial's toolbar icon";
+      if (g.found) return `matched the tutorial's toolbar icon (${g.method}, ${g.score})`;
+      if (g.from) return "row edges found from the gridlines";
+      return "";
+    }).filter(Boolean).join("; ");
+    const val = chk.saw !== undefined ? ` Saw \u201c${esc(chk.saw)}\u201d${chk.expected !== undefined ? `, expected ${chk.expected}` : ""}.` :
+      (chk.ink_after !== undefined ? ` Ink ${chk.ink_before} to ${chk.ink_after}.` : "");
+    const cls = !done ? "wait" : (s.passed ? "" : "no");
+    return `<li class="${active ? "now" : ""}"><span class="tick ${cls}">${!done ? (s.id) : (s.passed ? "\u2713" : "\u2715")}</span>
+      <div><div>${esc(s.intent)}</div><div class="how">${how}${done ? val : ""}</div></div></li>`;
+  }).join("");
+}
+function show(id) {
+  current = runs.find(r => r.id === id);
+  document.querySelectorAll("#seg button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.id === id)));
+  $("#cond-title").textContent = current.title + ".";
+  vr.poster = `assets/runs/${id}_replay_end.jpg`; ve.poster = `assets/runs/${id}_eidos_end.jpg`;
+  vr.src = `assets/runs/${id}_replay.mp4`; ve.src = `assets/runs/${id}_eidos.mp4`;
+  verdict($("#v-replay"), current.replay.success); verdict($("#v-eidos"), current.eidos.success);
+  $("#o-replay").textContent = oracleText(current.replay);
+  $("#o-eidos").textContent = oracleText(current.eidos) + (current.eidos_self_report ? " EIDOS's own verdict: all contracts passed." : " EIDOS's own verdict: a contract failed, so it stopped.");
+  renderChecks(null);
+}
+document.querySelectorAll("#seg button").forEach(b => b.addEventListener("click", () => show(b.dataset.id)));
+ve.addEventListener("timeupdate", () => renderChecks(ve.currentTime - (current.eidos_offset || 0.6)));
+ve.addEventListener("ended", () => renderChecks(null));
+$("#play-both").addEventListener("click", () => {
+  [vr, ve].forEach(v => { v.currentTime = 0; v.play().catch(() => {}); });
+});
+show(current.id);
+
+/* ---------------- results ---------------- */
+const B = DATA.bench;
+function pct(x) { return x.n ? Math.round(100 * x.success / x.n) : 0; }
+const groups = [["same", "Same app, same data"], ["new_data", "New data"], ["redesign", "Redesigned app"], ["other_app", "Different app"], ["all", "All conditions"]];
+const sysNames = { replay: "Copy the clicks", eidos_nochk: "EIDOS, checks off", eidos: "EIDOS" };
+$("#bars").innerHTML = groups.map(([g, name]) => {
+  const row = B.test.summary[g];
+  if (!row) return "";
+  return `<div class="bar-group"><h3>${name} <small>${row.eidos.n} run${row.eidos.n === 1 ? "" : "s"} each</small></h3>
+    ${["replay", "eidos_nochk", "eidos"].map(s => `<div class="bar"><span>${sysNames[s]}</span><div class="track"><div class="fill ${s === "eidos" ? "eidos" : ""}" style="width:${pct(row[s])}%"></div></div><span class="val">${row[s].success}/${row[s].n}</span></div>`).join("")}
+  </div>`;
+}).join("");
+const sr = B.test.summary.eidos_self_report;
+const nk = B.test.summary.all.eidos_nochk;
+$("#bench-lede").innerHTML = `One tutorial, compiled once, then run under ${B.test.summary.all.eidos.n} conditions it never saw: new data, ${B.test.summary.redesign.eidos.n} randomly generated redesigns of App A (dark theme, sidebars, resized cells, shuffled columns), and a second app. The redesigns come from a held-out seed that was never looked at during development. Success is judged from each app's internal state.`;
+let hist = "";
+if (B.test_v1) {
+  const v = B.test_v1.summary;
+  hist = `<p class="oracle">Round 1 of held-out testing (seed ${B.test_v1.seed}) scored EIDOS ${v.all.eidos.success}/${v.all.eidos.n} with ${v.eidos_self_report.silent_failures} silent failure: on narrow columns it wrote the label one column off, and its check only read back the cell it had chosen. That led to an independent check (the header above the cell must be the intended column) and a gridline fix. Those results are kept as they were; the numbers above are from a fresh seed.</p>`;
+}
+$("#note").innerHTML = `<div class="big">${sr.agrees_with_oracle}/${sr.n}</div>
+  <p>runs where EIDOS's own verdict matched the truth. When a contract fails, EIDOS stops and says so. Copying the clicks never knows: it failed silently ${B.test.summary.replay_silent_failures} times.</p>
+  <p>With checks switched off, EIDOS succeeded ${nk.success}/${nk.n} times. In this pilot the contracts mostly change what the agent knows, not how often it succeeds: without them, a failed run looks exactly like a good one.</p>
+  ${hist}
+  <p class="oracle">Development set (used while fixing bugs): EIDOS ${B.dev.summary.all.eidos.success}/${B.dev.summary.all.eidos.n}, copying the clicks ${B.dev.summary.all.replay.success}/${B.dev.summary.all.replay.n}. Pilot scale: one task family, two apps.</p>`;
+</script>

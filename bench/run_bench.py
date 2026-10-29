@@ -32,8 +32,14 @@ from eidos.score import score_totals                    # noqa: E402
 
 BASE = sys.argv[1] if len(sys.argv) > 1 else "http://localhost:8765"
 SKILL = ROOT / "runs" / "tutorial_totals"
-OUT = ROOT / "runs" / "bench"
 N_REDESIGNS = int(sys.argv[2]) if len(sys.argv) > 2 else 12
+# Seed 7 is the development set (used while fixing bugs). Headline numbers
+# come from a held-out seed that was never looked at during development.
+SEED = int(sys.argv[3]) if len(sys.argv) > 3 else 7
+# History: seed 2026 was the first held-out set (results frozen in
+# runs/bench_test_v1 before the fixes it revealed); seed 4242 is the current one.
+SPLIT = "dev" if SEED == 7 else ("test" if SEED == 4242 else f"seed{SEED}")
+OUT = ROOT / "runs" / f"bench_{SPLIT}"
 
 DATA = {
     "sales": {"label_column": "Region", "sum_column": "Revenue"},
@@ -48,7 +54,7 @@ def conditions():
         {"id": "other_app_sales", "group": "other_app", "app": "B", "url": f"{BASE}/tabula.html", "data": "sales"},
         {"id": "other_app_inventory", "group": "other_app", "app": "B", "url": f"{BASE}/tabula.html?data=inventory", "data": "inventory"},
     ]
-    rng = random.Random(7)
+    rng = random.Random(SEED)
     for i in range(N_REDESIGNS):
         order = list(range(5))
         rng.shuffle(order)
@@ -69,7 +75,9 @@ def conditions():
 async def one(cond, system, program, trace, sem):
     async with sem:
         d = OUT / cond["id"] / system
-        inputs = {"sum_column": DATA[cond["data"]]["sum_column"]}
+        # The user binds the skill's inputs to the columns of the sheet at hand.
+        inputs = {"sum_column": DATA[cond["data"]]["sum_column"],
+                  "label_column": DATA[cond["data"]]["label_column"]}
         try:
             if system == "replay":
                 rep = await replay(trace, cond["url"], d, record=False)
@@ -95,7 +103,7 @@ async def one(cond, system, program, trace, sem):
 async def main():
     program = json.loads((SKILL / "program.json").read_text())
     trace = json.loads((SKILL / "trace.json").read_text())
-    sem = asyncio.Semaphore(4)
+    sem = asyncio.Semaphore(3)
     conds = conditions()
     rows = await asyncio.gather(*[one(c, s, program, trace, sem)
                                   for c in conds for s in ("replay", "eidos", "eidos_nochk")])
@@ -114,7 +122,8 @@ async def main():
     }
     rp = [r for r in rows if r["system"] == "replay"]
     summary["replay_silent_failures"] = sum(1 for r in rp if not r["success"])
-    (OUT / "results.json").write_text(json.dumps({"conditions": conds, "rows": rows, "summary": summary}, indent=2))
+    (OUT / "results.json").write_text(json.dumps({"split": SPLIT, "seed": SEED, "conditions": conds,
+                                                  "rows": rows, "summary": summary}, indent=2))
     print(json.dumps(summary, indent=2))
 
 

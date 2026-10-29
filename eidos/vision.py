@@ -111,7 +111,23 @@ def ocr_region(img, box, scale: float = 3.0, digits: bool = False) -> str:
     if crop.size == 0:
         return ""
     gray = normalize_for_ocr(crop)
+    # Erase border and grid lines that run the full height of the box: OCR
+    # reads them as '1' or '|'.
+    # Only lines touching the box edges count as borders; strokes of
+    # characters in the middle of the box are left alone.
+    ink = gray < 150
+    edge = 4
+    for x in list(range(min(edge, gray.shape[1]))) + list(range(max(0, gray.shape[1] - edge), gray.shape[1])):
+        if ink[:, x].mean() > 0.9:
+            gray[:, x] = 255
+    for y in list(range(min(edge, gray.shape[0]))) + list(range(max(0, gray.shape[0] - edge), gray.shape[0])):
+        if ink[y, :].mean() > 0.9:
+            gray[y, :] = 255
+    # Stretch contrast: dim labels on dark themes are otherwise invisible to OCR.
+    gray = cv2.normalize(gray, None, 0, 255, cv2.NORM_MINMAX)
     big = cv2.resize(gray, None, fx=scale, fy=scale, interpolation=cv2.INTER_CUBIC)
+    if digits:
+        _, big = cv2.threshold(big, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
     big = cv2.copyMakeBorder(big, 12, 12, 12, 12, cv2.BORDER_CONSTANT, value=255)
     ok, png = cv2.imencode(".png", big)
     out = subprocess.run(
@@ -188,9 +204,12 @@ def infer_grid(img, expected_headers: list[str]) -> Grid:
     # take every word on that line.
     line_y = median(w.cy for w in hdr)
     known = sorted(dedupe(hdr), key=lambda w: w.cx)
-    step = median(b.cx - a.cx for a, b in zip(known, known[1:])) if len(known) > 1 else 140
     line = sorted(dedupe([w for w in words if abs(w.cy - line_y) <= 8
                           and re.fullmatch(r"[A-Za-z][A-Za-z0-9 _-]+", w.text)] + known), key=lambda w: w.cx)
+    # Column pitch from neighbouring words on the header line (the known
+    # names may not be adjacent columns).
+    gaps = [b.cx - a.cx for a, b in zip(line, line[1:]) if b.cx - a.cx > 30]
+    step = median(gaps) if gaps else 140
     # Grow outward from the known names while columns stay evenly spaced,
     # so a sidebar or title on the same line is not mistaken for a column.
     lo = min(range(len(line)), key=lambda i: abs(line[i].cx - known[0].cx))
@@ -199,7 +218,21 @@ def infer_grid(img, expected_headers: list[str]) -> Grid:
         lo -= 1
     while hi < len(line) - 1 and line[hi + 1].cx - line[hi].cx <= step * 1.4:
         hi += 1
-    hdr = line[lo:hi + 1]
+    # A real column has data underneath it; a sidebar item on the same line
+    # does not (or has only a few stacked menu items).
+    def has_data(h):
+        below = [w for w in words if w.cy > h.cy + 8 and abs(w.cx - h.cx) < step * 0.45
+                 and re.fullmatch(r"[A-Za-z0-9.,$-]{2,}|\d", w.text)]
+        return len(below) >= 4
+    cols = [w for w in line[lo:hi + 1] if has_data(w) or any(w is k for k in known)]
+    hdr = []
+    for w in cols:
+        if hdr and (w.cx - hdr[-1].cx < step * 0.5):
+            # two readings of one header cell: keep the more confident one
+            if w.conf > hdr[-1].conf:
+                hdr[-1] = w
+            continue
+        hdr.append(w)
     header_y = median(w.cy for w in hdr)
     pitch = median(b.cx - a.cx for a, b in zip(hdr, hdr[1:])) if len(hdr) > 1 else 110
 
@@ -238,7 +271,7 @@ def infer_grid(img, expected_headers: list[str]) -> Grid:
     gutter_right = hdr[0].x - pitch * 0.12
     labels = {}
     for i, y in enumerate(rows):
-        box = (max(0, gutter_right - 70), y - row_h * 0.45, 70, row_h * 0.9)
+        box = (max(0, gutter_right - 50), y - row_h * 0.42, 46, row_h * 0.84)
         t = ocr_region(img, box, digits=True)
         if t.isdigit():
             labels[i] = t
@@ -271,16 +304,25 @@ def column_bounds(img, grid: Grid) -> list[tuple[float, float]]:
     for x in xs:
         if not lines or x - lines[-1] > 4:
             lines.append(x)
+    hs = grid.headers
+    # Width: spacing of header text (left-aligned and centred layouts alike).
+    mw = median(b.x - a.x for a, b in zip(hs, hs[1:])) if len(hs) > 1 else grid.col_pitch
+    # Offset of the text inside its column, measured on columns whose left
+    # gridline is clearly visible.
+    offs = []
+    for h in hs:
+        near = [x for x in lines if 0 <= h.x - x <= mw * 0.6]
+        if near:
+            offs.append(h.x - near[-1])
+    off = median(offs) if offs else 5.0
     out = []
-    for h in grid.headers:
-        lefts = [x for x in lines if x <= h.x + 2]
-        rights = [x for x in lines if x >= h.x + h.w - 2]
-        l = lefts[-1] if lefts else h.cx - grid.col_pitch / 2
-        r = rights[0] if rights else h.cx + grid.col_pitch / 2
-        if r - l > grid.col_pitch * 1.15 and rights:
-            l = r - grid.col_pitch
-        if r - l > grid.col_pitch * 1.5 or r - l < grid.col_pitch * 0.5:
-            l, r = h.cx - grid.col_pitch / 2, h.cx + grid.col_pitch / 2
+    for h in hs:
+        l_hat = h.x - off
+        snap = [x for x in lines if abs(x - l_hat) <= 8]
+        l = float(min(snap, key=lambda x: abs(x - l_hat))) if snap else l_hat
+        r_hat = l + mw
+        snap = [x for x in lines if abs(x - r_hat) <= 8]
+        r = float(min(snap, key=lambda x: abs(x - r_hat))) if snap else r_hat
         out.append((float(l), float(r)))
     return out
 

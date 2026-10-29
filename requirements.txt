@@ -1,0 +1,4 @@
+playwright>=1.48
+opencv-python-headless>=4.10
+numpy>=1.26
+httpx>=0.27
