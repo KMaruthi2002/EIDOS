@@ -92,18 +92,20 @@ class SideCamera:
 
 
 def relation(a: Blob, b: Blob, a_top: Blob | None = None, b_top: Blob | None = None) -> str:
-    """Spatial relation of object a to object b in a side view (image coords).
+    """Is object a sitting on object b? Works for level and angled views.
 
-    'on' when a's bottom edge meets b's top edge and they overlap
-    horizontally; otherwise 'beside'.
+    In a level side view a's bottom edge meets b's top edge. In an angled
+    view (a phone propped at 45 degrees) a's bottom edge falls inside b's
+    visible top face. Either way: a is higher in the image, they overlap
+    horizontally, and a's bottom lies between b's top edge and b's middle.
     """
     overlap = min(a.x + a.w, b.x + b.w) - max(a.x, b.x)
-    touching = abs(a.bottom - b.top) <= max(4, 0.25 * b.h)
-    if overlap > 0.5 * min(a.w, b.w) and touching and a.cy < b.cy:
-        if a_top is not None and b_top is not None:
-            # from above, a must sit over b
-            if math.hypot(a_top.cx - b_top.cx, a_top.cy - b_top.cy) > 0.6 * max(b_top.w, b_top.h):
-                return "beside"
+    if overlap < 0.4 * min(a.w, b.w) or a.cy >= b.cy:
+        return "beside"
+    if b.top - 0.35 * b.h <= a.bottom <= b.cy + 0.15 * b.h:
+        if a_top is not None and b_top is not None and \
+                math.hypot(a_top.cx - b_top.cx, a_top.cy - b_top.cy) > 0.6 * max(b_top.w, b_top.h):
+            return "beside"
         return "on"
     return "beside"
 

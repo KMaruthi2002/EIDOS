@@ -98,6 +98,16 @@ def learn(video: Path) -> dict:
             "intent": f"Put the {obj} block on the {target} block" if target else f"Move the {obj} block",
             "contract": {"relation": [obj, "on", target]} if target else {"moved": obj},
         })
+    # A pause mid-carry splits one placement in two: merge consecutive moves
+    # of the same object, keeping what the last one achieved.
+    merged = []
+    for st in steps:
+        if merged and merged[-1]["object"] == st["object"]:
+            st["video_time"] = [merged[-1]["video_time"][0], st["video_time"][1]]
+            merged[-1] = st
+        else:
+            merged.append(st)
+    steps = merged
     return {"eidos": "0.1-physical", "learned_from": Path(video).name, "objects": names,
             "steps": steps, "settled_states": len(states)}
 
