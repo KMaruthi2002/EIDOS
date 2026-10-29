@@ -5,8 +5,8 @@ import { KokoroTTS } from "kokoro-js";
 
 const project = process.argv[2];
 const only = process.argv[3]; // optional scene id to regenerate
-const spec = JSON.parse(fs.readFileSync(path.join(project, "narration.json"), "utf8"));
-const outDir = path.join(project, "public", "vo");
+const spec = JSON.parse(fs.readFileSync(path.join(project, process.env.SPEC || "narration.json"), "utf8"));
+const outDir = path.join(project, "public", process.env.VO || "vo");
 fs.mkdirSync(outDir, { recursive: true });
 const tts = await KokoroTTS.from_pretrained("onnx-community/Kokoro-82M-v1.0-ONNX", { dtype: "q8", device: "cpu" });
 
@@ -32,4 +32,4 @@ for (const s of spec.scenes) {
   timeline.push({ id: s.id, text: s.text, seconds: +wavSeconds(file).toFixed(3) });
   console.log(s.id, timeline.at(-1).seconds);
 }
-fs.writeFileSync(path.join(project, "src", "timeline.json"), JSON.stringify(timeline, null, 2));
+fs.writeFileSync(path.join(project, "src", process.env.TL || "timeline.json"), JSON.stringify(timeline, null, 2));

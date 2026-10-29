@@ -1,0 +1,3021 @@
+{
+  "seed": 31337,
+  "split": "test",
+  "rows": [
+    {
+      "i": 0,
+      "task": "mail",
+      "cond": "same",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=A",
+      "inputs": {
+        "to": "maya@northwind.com",
+        "subject": "Q3 report",
+        "message": "Attached is the Q3 report."
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 9.2,
+      "repairs": 0
+    },
+    {
+      "i": 0,
+      "task": "mail",
+      "cond": "same",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=A",
+      "inputs": {
+        "to": "maya@northwind.com",
+        "subject": "Q3 report",
+        "message": "Attached is the Q3 report."
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 12.6,
+      "repairs": 0
+    },
+    {
+      "i": 0,
+      "task": "mail",
+      "cond": "same",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=A",
+      "inputs": {
+        "to": "maya@northwind.com",
+        "subject": "Q3 report",
+        "message": "Attached is the Q3 report."
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 18.9,
+      "repairs": 0
+    },
+    {
+      "i": 1,
+      "task": "mail",
+      "cond": "new_data",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=A&data=89",
+      "inputs": {
+        "to": "omar@fieldnote.org",
+        "subject": "Hiring update",
+        "message": "See you at ten."
+      },
+      "says_done": true,
+      "success": false,
+      "why": "0 matching, 1 wrong: [{'to': 'maya@northwind.com', 'subject': 'Q3 report', 'message': 'Attached is the Q3 report.'}]",
+      "seconds": 9.3,
+      "repairs": 0
+    },
+    {
+      "i": 1,
+      "task": "mail",
+      "cond": "new_data",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=A&data=89",
+      "inputs": {
+        "to": "omar@fieldnote.org",
+        "subject": "Hiring update",
+        "message": "See you at ten."
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 12.8,
+      "repairs": 0
+    },
+    {
+      "i": 1,
+      "task": "mail",
+      "cond": "new_data",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=A&data=89",
+      "inputs": {
+        "to": "omar@fieldnote.org",
+        "subject": "Hiring update",
+        "message": "See you at ten."
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 18.0,
+      "repairs": 0
+    },
+    {
+      "i": 2,
+      "task": "mail",
+      "cond": "redesign",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=A&theme=dark&nav=left&labels=top&btn=top&scale=1.2&order=0,1,2&data=97",
+      "inputs": {
+        "to": "sofia@harbor.co",
+        "subject": "Budget review",
+        "message": "See you at ten."
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 9.0,
+      "repairs": 0
+    },
+    {
+      "i": 2,
+      "task": "mail",
+      "cond": "redesign",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=A&theme=dark&nav=left&labels=top&btn=top&scale=1.2&order=0,1,2&data=97",
+      "inputs": {
+        "to": "sofia@harbor.co",
+        "subject": "Budget review",
+        "message": "See you at ten."
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 13.5,
+      "repairs": 0
+    },
+    {
+      "i": 2,
+      "task": "mail",
+      "cond": "redesign",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=A&theme=dark&nav=left&labels=top&btn=top&scale=1.2&order=0,1,2&data=97",
+      "inputs": {
+        "to": "sofia@harbor.co",
+        "subject": "Budget review",
+        "message": "See you at ten."
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 21.0,
+      "repairs": 0
+    },
+    {
+      "i": 3,
+      "task": "mail",
+      "cond": "redesign",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=A&theme=dark&nav=right&labels=left&btn=top&scale=1.2&order=2,1,0&data=22",
+      "inputs": {
+        "to": "sofia@fieldnote.org",
+        "subject": "Offsite plan",
+        "message": "Please review by Friday."
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 8.9,
+      "repairs": 0
+    },
+    {
+      "i": 3,
+      "task": "mail",
+      "cond": "redesign",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=A&theme=dark&nav=right&labels=left&btn=top&scale=1.2&order=2,1,0&data=22",
+      "inputs": {
+        "to": "sofia@fieldnote.org",
+        "subject": "Offsite plan",
+        "message": "Please review by Friday."
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 14.2,
+      "repairs": 0
+    },
+    {
+      "i": 3,
+      "task": "mail",
+      "cond": "redesign",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=A&theme=dark&nav=right&labels=left&btn=top&scale=1.2&order=2,1,0&data=22",
+      "inputs": {
+        "to": "sofia@fieldnote.org",
+        "subject": "Offsite plan",
+        "message": "Please review by Friday."
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 20.2,
+      "repairs": 0
+    },
+    {
+      "i": 4,
+      "task": "mail",
+      "cond": "redesign",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=A&nav=left&labels=left&btn=bottom&scale=1.1&order=0,1,2&data=25",
+      "inputs": {
+        "to": "nadia@fieldnote.org",
+        "subject": "Travel receipts",
+        "message": "See you at ten."
+      },
+      "says_done": true,
+      "success": false,
+      "why": "0 matching, 1 wrong: [{'to': 'maya@northwind.com', 'subject': 'Q3 report', 'message': 'Attached is the Q3 report.'}]",
+      "seconds": 8.9,
+      "repairs": 0
+    },
+    {
+      "i": 4,
+      "task": "mail",
+      "cond": "redesign",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=A&nav=left&labels=left&btn=bottom&scale=1.1&order=0,1,2&data=25",
+      "inputs": {
+        "to": "nadia@fieldnote.org",
+        "subject": "Travel receipts",
+        "message": "See you at ten."
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 12.9,
+      "repairs": 0
+    },
+    {
+      "i": 4,
+      "task": "mail",
+      "cond": "redesign",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=A&nav=left&labels=left&btn=bottom&scale=1.1&order=0,1,2&data=25",
+      "inputs": {
+        "to": "nadia@fieldnote.org",
+        "subject": "Travel receipts",
+        "message": "See you at ten."
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 17.6,
+      "repairs": 0
+    },
+    {
+      "i": 5,
+      "task": "mail",
+      "cond": "redesign",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=A&nav=left&labels=top&btn=bottom&scale=1.2&data=32",
+      "inputs": {
+        "to": "nadia@acme.io",
+        "subject": "Offsite plan",
+        "message": "Notes are attached."
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 8.8,
+      "repairs": 0
+    },
+    {
+      "i": 5,
+      "task": "mail",
+      "cond": "redesign",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=A&nav=left&labels=top&btn=bottom&scale=1.2&data=32",
+      "inputs": {
+        "to": "nadia@acme.io",
+        "subject": "Offsite plan",
+        "message": "Notes are attached."
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 12.6,
+      "repairs": 0
+    },
+    {
+      "i": 5,
+      "task": "mail",
+      "cond": "redesign",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=A&nav=left&labels=top&btn=bottom&scale=1.2&data=32",
+      "inputs": {
+        "to": "nadia@acme.io",
+        "subject": "Offsite plan",
+        "message": "Notes are attached."
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 18.4,
+      "repairs": 0
+    },
+    {
+      "i": 6,
+      "task": "mail",
+      "cond": "redesign",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=A&theme=dark&nav=left&labels=top&btn=top&scale=1&order=1,2,0&data=44",
+      "inputs": {
+        "to": "kenji@harbor.co",
+        "subject": "Hiring update",
+        "message": "Thanks for the help."
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 9.0,
+      "repairs": 0
+    },
+    {
+      "i": 6,
+      "task": "mail",
+      "cond": "redesign",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=A&theme=dark&nav=left&labels=top&btn=top&scale=1&order=1,2,0&data=44",
+      "inputs": {
+        "to": "kenji@harbor.co",
+        "subject": "Hiring update",
+        "message": "Thanks for the help."
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 14.4,
+      "repairs": 0
+    },
+    {
+      "i": 6,
+      "task": "mail",
+      "cond": "redesign",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=A&theme=dark&nav=left&labels=top&btn=top&scale=1&order=1,2,0&data=44",
+      "inputs": {
+        "to": "kenji@harbor.co",
+        "subject": "Hiring update",
+        "message": "Thanks for the help."
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 19.8,
+      "repairs": 0
+    },
+    {
+      "i": 7,
+      "task": "mail",
+      "cond": "redesign",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=A&theme=dark&nav=left&labels=left&btn=top&scale=1.1&order=2,0,1&data=40",
+      "inputs": {
+        "to": "nadia@acme.io",
+        "subject": "Hiring update",
+        "message": "Thanks for the help."
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 9.1,
+      "repairs": 0
+    },
+    {
+      "i": 7,
+      "task": "mail",
+      "cond": "redesign",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=A&theme=dark&nav=left&labels=left&btn=top&scale=1.1&order=2,0,1&data=40",
+      "inputs": {
+        "to": "nadia@acme.io",
+        "subject": "Hiring update",
+        "message": "Thanks for the help."
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 13.1,
+      "repairs": 0
+    },
+    {
+      "i": 7,
+      "task": "mail",
+      "cond": "redesign",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=A&theme=dark&nav=left&labels=left&btn=top&scale=1.1&order=2,0,1&data=40",
+      "inputs": {
+        "to": "nadia@acme.io",
+        "subject": "Hiring update",
+        "message": "Thanks for the help."
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 20.2,
+      "repairs": 0
+    },
+    {
+      "i": 8,
+      "task": "mail",
+      "cond": "other_app",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=B&nav=right&labels=left&btn=top&scale=1.1&order=0,2,1&data=11",
+      "inputs": {
+        "to": "omar@acme.io",
+        "subject": "Signed contract",
+        "message": "Thanks for the help."
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 8.7,
+      "repairs": 0
+    },
+    {
+      "i": 8,
+      "task": "mail",
+      "cond": "other_app",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=B&nav=right&labels=left&btn=top&scale=1.1&order=0,2,1&data=11",
+      "inputs": {
+        "to": "omar@acme.io",
+        "subject": "Signed contract",
+        "message": "Thanks for the help."
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 14.0,
+      "repairs": 0
+    },
+    {
+      "i": 8,
+      "task": "mail",
+      "cond": "other_app",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=B&nav=right&labels=left&btn=top&scale=1.1&order=0,2,1&data=11",
+      "inputs": {
+        "to": "omar@acme.io",
+        "subject": "Signed contract",
+        "message": "Thanks for the help."
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 19.7,
+      "repairs": 0
+    },
+    {
+      "i": 9,
+      "task": "mail",
+      "cond": "other_app",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=B&theme=dark&nav=left&labels=left&btn=bottom&scale=1.1&order=0,1,2&data=16",
+      "inputs": {
+        "to": "li.wei@harbor.co",
+        "subject": "Travel receipts",
+        "message": "Notes are attached."
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 9.0,
+      "repairs": 0
+    },
+    {
+      "i": 9,
+      "task": "mail",
+      "cond": "other_app",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=B&theme=dark&nav=left&labels=left&btn=bottom&scale=1.1&order=0,1,2&data=16",
+      "inputs": {
+        "to": "li.wei@harbor.co",
+        "subject": "Travel receipts",
+        "message": "Notes are attached."
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 14.2,
+      "repairs": 0
+    },
+    {
+      "i": 9,
+      "task": "mail",
+      "cond": "other_app",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=B&theme=dark&nav=left&labels=left&btn=bottom&scale=1.1&order=0,1,2&data=16",
+      "inputs": {
+        "to": "li.wei@harbor.co",
+        "subject": "Travel receipts",
+        "message": "Notes are attached."
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 22.8,
+      "repairs": 0
+    },
+    {
+      "i": 10,
+      "task": "mail",
+      "cond": "other_app",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=B&nav=left&labels=top&btn=top&scale=1&order=2,0,1&data=69",
+      "inputs": {
+        "to": "dev@acme.io",
+        "subject": "Hiring update",
+        "message": "Thanks for the help."
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 8.9,
+      "repairs": 0
+    },
+    {
+      "i": 10,
+      "task": "mail",
+      "cond": "other_app",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=B&nav=left&labels=top&btn=top&scale=1&order=2,0,1&data=69",
+      "inputs": {
+        "to": "dev@acme.io",
+        "subject": "Hiring update",
+        "message": "Thanks for the help."
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 12.8,
+      "repairs": 0
+    },
+    {
+      "i": 10,
+      "task": "mail",
+      "cond": "other_app",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=B&nav=left&labels=top&btn=top&scale=1&order=2,0,1&data=69",
+      "inputs": {
+        "to": "dev@acme.io",
+        "subject": "Hiring update",
+        "message": "Thanks for the help."
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 25.3,
+      "repairs": 0
+    },
+    {
+      "i": 11,
+      "task": "mail",
+      "cond": "interrupt",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=B&nav=top&labels=left&btn=top&scale=1.1&order=2,1,0&data=13&popup=2.4",
+      "inputs": {
+        "to": "dev@brightlane.com",
+        "subject": "Signed contract",
+        "message": "See you at ten."
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 9.2,
+      "repairs": 0
+    },
+    {
+      "i": 11,
+      "task": "mail",
+      "cond": "interrupt",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=B&nav=top&labels=left&btn=top&scale=1.1&order=2,1,0&data=13&popup=2.4",
+      "inputs": {
+        "to": "dev@brightlane.com",
+        "subject": "Signed contract",
+        "message": "See you at ten."
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 16.3,
+      "repairs": 0
+    },
+    {
+      "i": 11,
+      "task": "mail",
+      "cond": "interrupt",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=B&nav=top&labels=left&btn=top&scale=1.1&order=2,1,0&data=13&popup=2.4",
+      "inputs": {
+        "to": "dev@brightlane.com",
+        "subject": "Signed contract",
+        "message": "See you at ten."
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 29.2,
+      "repairs": 1
+    },
+    {
+      "i": 12,
+      "task": "mail",
+      "cond": "interrupt",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=B&nav=right&labels=left&btn=bottom&scale=1.1&order=2,1,0&data=29&popup=1.9",
+      "inputs": {
+        "to": "ana@fieldnote.org",
+        "subject": "Travel receipts",
+        "message": "Notes are attached."
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 13.9,
+      "repairs": 0
+    },
+    {
+      "i": 12,
+      "task": "mail",
+      "cond": "interrupt",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=B&nav=right&labels=left&btn=bottom&scale=1.1&order=2,1,0&data=29&popup=1.9",
+      "inputs": {
+        "to": "ana@fieldnote.org",
+        "subject": "Travel receipts",
+        "message": "Notes are attached."
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 10.2,
+      "repairs": 0
+    },
+    {
+      "i": 12,
+      "task": "mail",
+      "cond": "interrupt",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=B&nav=right&labels=left&btn=bottom&scale=1.1&order=2,1,0&data=29&popup=1.9",
+      "inputs": {
+        "to": "ana@fieldnote.org",
+        "subject": "Travel receipts",
+        "message": "Notes are attached."
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 24.9,
+      "repairs": 1
+    },
+    {
+      "i": 13,
+      "task": "mail",
+      "cond": "interrupt",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=A&data=31&popup=5.9",
+      "inputs": {
+        "to": "dev@brightlane.com",
+        "subject": "Signed contract",
+        "message": "Please review by Friday."
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 9.5,
+      "repairs": 0
+    },
+    {
+      "i": 13,
+      "task": "mail",
+      "cond": "interrupt",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=A&data=31&popup=5.9",
+      "inputs": {
+        "to": "dev@brightlane.com",
+        "subject": "Signed contract",
+        "message": "Please review by Friday."
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 13.8,
+      "repairs": 0
+    },
+    {
+      "i": 13,
+      "task": "mail",
+      "cond": "interrupt",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=A&data=31&popup=5.9",
+      "inputs": {
+        "to": "dev@brightlane.com",
+        "subject": "Signed contract",
+        "message": "Please review by Friday."
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 23.1,
+      "repairs": 1
+    },
+    {
+      "i": 14,
+      "task": "mail",
+      "cond": "interrupt",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=A&data=4&popup=2.1",
+      "inputs": {
+        "to": "nadia@harbor.co",
+        "subject": "Hiring update",
+        "message": "Thanks for the help."
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 9.2,
+      "repairs": 0
+    },
+    {
+      "i": 14,
+      "task": "mail",
+      "cond": "interrupt",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=A&data=4&popup=2.1",
+      "inputs": {
+        "to": "nadia@harbor.co",
+        "subject": "Hiring update",
+        "message": "Thanks for the help."
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 10.0,
+      "repairs": 0
+    },
+    {
+      "i": 14,
+      "task": "mail",
+      "cond": "interrupt",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=A&data=4&popup=2.1",
+      "inputs": {
+        "to": "nadia@harbor.co",
+        "subject": "Hiring update",
+        "message": "Thanks for the help."
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 23.0,
+      "repairs": 1
+    },
+    {
+      "i": 15,
+      "task": "calendar",
+      "cond": "same",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=A",
+      "inputs": {
+        "title": "Team lunch",
+        "date": "Nov 12",
+        "time": "1:00 PM",
+        "location": "Cafe Lumen"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 10.2,
+      "repairs": 0
+    },
+    {
+      "i": 15,
+      "task": "calendar",
+      "cond": "same",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=A",
+      "inputs": {
+        "title": "Team lunch",
+        "date": "Nov 12",
+        "time": "1:00 PM",
+        "location": "Cafe Lumen"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 16.8,
+      "repairs": 0
+    },
+    {
+      "i": 15,
+      "task": "calendar",
+      "cond": "same",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=A",
+      "inputs": {
+        "title": "Team lunch",
+        "date": "Nov 12",
+        "time": "1:00 PM",
+        "location": "Cafe Lumen"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 24.0,
+      "repairs": 0
+    },
+    {
+      "i": 16,
+      "task": "calendar",
+      "cond": "new_data",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=A&data=12",
+      "inputs": {
+        "title": "Yoga class",
+        "date": "Dec 16",
+        "time": "11:30 AM",
+        "location": "Main St Clinic"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "0 matching, 1 wrong: [{'title': 'Team lunch', 'date': 'Nov 12', 'time': '1:00 PM', 'location': 'Cafe Lumen'}]",
+      "seconds": 10.5,
+      "repairs": 0
+    },
+    {
+      "i": 16,
+      "task": "calendar",
+      "cond": "new_data",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=A&data=12",
+      "inputs": {
+        "title": "Yoga class",
+        "date": "Dec 16",
+        "time": "11:30 AM",
+        "location": "Main St Clinic"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 15.5,
+      "repairs": 0
+    },
+    {
+      "i": 16,
+      "task": "calendar",
+      "cond": "new_data",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=A&data=12",
+      "inputs": {
+        "title": "Yoga class",
+        "date": "Dec 16",
+        "time": "11:30 AM",
+        "location": "Main St Clinic"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 24.0,
+      "repairs": 0
+    },
+    {
+      "i": 17,
+      "task": "calendar",
+      "cond": "redesign",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=A&theme=dark&nav=top&labels=top&btn=bottom&scale=1&order=2,1,3,0&data=69",
+      "inputs": {
+        "title": "Dentist",
+        "date": "Nov 8",
+        "time": "4:00 PM",
+        "location": "Studio 9"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 9.9,
+      "repairs": 0
+    },
+    {
+      "i": 17,
+      "task": "calendar",
+      "cond": "redesign",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=A&theme=dark&nav=top&labels=top&btn=bottom&scale=1&order=2,1,3,0&data=69",
+      "inputs": {
+        "title": "Dentist",
+        "date": "Nov 8",
+        "time": "4:00 PM",
+        "location": "Studio 9"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 17.7,
+      "repairs": 0
+    },
+    {
+      "i": 17,
+      "task": "calendar",
+      "cond": "redesign",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=A&theme=dark&nav=top&labels=top&btn=bottom&scale=1&order=2,1,3,0&data=69",
+      "inputs": {
+        "title": "Dentist",
+        "date": "Nov 8",
+        "time": "4:00 PM",
+        "location": "Studio 9"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 26.1,
+      "repairs": 0
+    },
+    {
+      "i": 18,
+      "task": "calendar",
+      "cond": "redesign",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=A&theme=dark&nav=left&labels=left&btn=top&scale=1.2&data=40",
+      "inputs": {
+        "title": "Dentist",
+        "date": "Nov 17",
+        "time": "11:30 AM",
+        "location": "Library"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 10.0,
+      "repairs": 0
+    },
+    {
+      "i": 18,
+      "task": "calendar",
+      "cond": "redesign",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=A&theme=dark&nav=left&labels=left&btn=top&scale=1.2&data=40",
+      "inputs": {
+        "title": "Dentist",
+        "date": "Nov 17",
+        "time": "11:30 AM",
+        "location": "Library"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 17.3,
+      "repairs": 0
+    },
+    {
+      "i": 18,
+      "task": "calendar",
+      "cond": "redesign",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=A&theme=dark&nav=left&labels=left&btn=top&scale=1.2&data=40",
+      "inputs": {
+        "title": "Dentist",
+        "date": "Nov 17",
+        "time": "11:30 AM",
+        "location": "Library"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 25.9,
+      "repairs": 0
+    },
+    {
+      "i": 19,
+      "task": "calendar",
+      "cond": "redesign",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=A&nav=left&labels=top&btn=top&scale=1.2&order=2,1,0,3&data=12",
+      "inputs": {
+        "title": "Dentist",
+        "date": "Dec 7",
+        "time": "4:00 PM",
+        "location": "Main St Clinic"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 9.9,
+      "repairs": 0
+    },
+    {
+      "i": 19,
+      "task": "calendar",
+      "cond": "redesign",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=A&nav=left&labels=top&btn=top&scale=1.2&order=2,1,0,3&data=12",
+      "inputs": {
+        "title": "Dentist",
+        "date": "Dec 7",
+        "time": "4:00 PM",
+        "location": "Main St Clinic"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 14.9,
+      "repairs": 0
+    },
+    {
+      "i": 19,
+      "task": "calendar",
+      "cond": "redesign",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=A&nav=left&labels=top&btn=top&scale=1.2&order=2,1,0,3&data=12",
+      "inputs": {
+        "title": "Dentist",
+        "date": "Dec 7",
+        "time": "4:00 PM",
+        "location": "Main St Clinic"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 21.8,
+      "repairs": 0
+    },
+    {
+      "i": 20,
+      "task": "calendar",
+      "cond": "redesign",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=A&nav=right&labels=left&btn=bottom&scale=1.1&order=0,3,2,1&data=35",
+      "inputs": {
+        "title": "Dentist",
+        "date": "Dec 17",
+        "time": "10:00 AM",
+        "location": "Main St Clinic"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 9.8,
+      "repairs": 0
+    },
+    {
+      "i": 20,
+      "task": "calendar",
+      "cond": "redesign",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=A&nav=right&labels=left&btn=bottom&scale=1.1&order=0,3,2,1&data=35",
+      "inputs": {
+        "title": "Dentist",
+        "date": "Dec 17",
+        "time": "10:00 AM",
+        "location": "Main St Clinic"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 16.0,
+      "repairs": 0
+    },
+    {
+      "i": 20,
+      "task": "calendar",
+      "cond": "redesign",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=A&nav=right&labels=left&btn=bottom&scale=1.1&order=0,3,2,1&data=35",
+      "inputs": {
+        "title": "Dentist",
+        "date": "Dec 17",
+        "time": "10:00 AM",
+        "location": "Main St Clinic"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 22.7,
+      "repairs": 0
+    },
+    {
+      "i": 21,
+      "task": "calendar",
+      "cond": "redesign",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=A&theme=dark&nav=top&labels=left&btn=bottom&scale=1&order=3,1,2,0&data=20",
+      "inputs": {
+        "title": "Yoga class",
+        "date": "Nov 20",
+        "time": "8:30 AM",
+        "location": "Studio 9"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 9.8,
+      "repairs": 0
+    },
+    {
+      "i": 21,
+      "task": "calendar",
+      "cond": "redesign",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=A&theme=dark&nav=top&labels=left&btn=bottom&scale=1&order=3,1,2,0&data=20",
+      "inputs": {
+        "title": "Yoga class",
+        "date": "Nov 20",
+        "time": "8:30 AM",
+        "location": "Studio 9"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 18.2,
+      "repairs": 0
+    },
+    {
+      "i": 21,
+      "task": "calendar",
+      "cond": "redesign",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=A&theme=dark&nav=top&labels=left&btn=bottom&scale=1&order=3,1,2,0&data=20",
+      "inputs": {
+        "title": "Yoga class",
+        "date": "Nov 20",
+        "time": "8:30 AM",
+        "location": "Studio 9"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 28.6,
+      "repairs": 0
+    },
+    {
+      "i": 22,
+      "task": "calendar",
+      "cond": "redesign",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=A&theme=dark&nav=left&labels=left&btn=bottom&scale=1&data=34",
+      "inputs": {
+        "title": "Parent meeting",
+        "date": "Nov 26",
+        "time": "9:00 AM",
+        "location": "Room 4B"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "0 matching, 1 wrong: [{'title': 'Team lunch', 'date': 'Nov 12', 'time': '1:00 PM', 'location': 'Cafe Lumen'}]",
+      "seconds": 9.9,
+      "repairs": 0
+    },
+    {
+      "i": 22,
+      "task": "calendar",
+      "cond": "redesign",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=A&theme=dark&nav=left&labels=left&btn=bottom&scale=1&data=34",
+      "inputs": {
+        "title": "Parent meeting",
+        "date": "Nov 26",
+        "time": "9:00 AM",
+        "location": "Room 4B"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 18.5,
+      "repairs": 0
+    },
+    {
+      "i": 22,
+      "task": "calendar",
+      "cond": "redesign",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=A&theme=dark&nav=left&labels=left&btn=bottom&scale=1&data=34",
+      "inputs": {
+        "title": "Parent meeting",
+        "date": "Nov 26",
+        "time": "9:00 AM",
+        "location": "Room 4B"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 28.1,
+      "repairs": 0
+    },
+    {
+      "i": 23,
+      "task": "calendar",
+      "cond": "other_app",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=B&theme=dark&nav=right&labels=left&btn=bottom&scale=1&order=3,1,2,0&data=53",
+      "inputs": {
+        "title": "Parent meeting",
+        "date": "Dec 22",
+        "time": "11:30 AM",
+        "location": "Room 4B"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 10.1,
+      "repairs": 0
+    },
+    {
+      "i": 23,
+      "task": "calendar",
+      "cond": "other_app",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=B&theme=dark&nav=right&labels=left&btn=bottom&scale=1&order=3,1,2,0&data=53",
+      "inputs": {
+        "title": "Parent meeting",
+        "date": "Dec 22",
+        "time": "11:30 AM",
+        "location": "Room 4B"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 20.6,
+      "repairs": 0
+    },
+    {
+      "i": 23,
+      "task": "calendar",
+      "cond": "other_app",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=B&theme=dark&nav=right&labels=left&btn=bottom&scale=1&order=3,1,2,0&data=53",
+      "inputs": {
+        "title": "Parent meeting",
+        "date": "Dec 22",
+        "time": "11:30 AM",
+        "location": "Room 4B"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 31.0,
+      "repairs": 2
+    },
+    {
+      "i": 24,
+      "task": "calendar",
+      "cond": "other_app",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=B&nav=top&labels=top&btn=bottom&scale=1.1&order=2,1,0,3&data=87",
+      "inputs": {
+        "title": "Yoga class",
+        "date": "Nov 21",
+        "time": "9:00 AM",
+        "location": "Main St Clinic"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 10.2,
+      "repairs": 0
+    },
+    {
+      "i": 24,
+      "task": "calendar",
+      "cond": "other_app",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=B&nav=top&labels=top&btn=bottom&scale=1.1&order=2,1,0,3&data=87",
+      "inputs": {
+        "title": "Yoga class",
+        "date": "Nov 21",
+        "time": "9:00 AM",
+        "location": "Main St Clinic"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 20.6,
+      "repairs": 0
+    },
+    {
+      "i": 24,
+      "task": "calendar",
+      "cond": "other_app",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=B&nav=top&labels=top&btn=bottom&scale=1.1&order=2,1,0,3&data=87",
+      "inputs": {
+        "title": "Yoga class",
+        "date": "Nov 21",
+        "time": "9:00 AM",
+        "location": "Main St Clinic"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 26.9,
+      "repairs": 2
+    },
+    {
+      "i": 25,
+      "task": "calendar",
+      "cond": "other_app",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=B&nav=top&labels=left&btn=top&scale=1&data=77",
+      "inputs": {
+        "title": "Project kickoff",
+        "date": "Nov 7",
+        "time": "9:00 AM",
+        "location": "Room 4B"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 13.2,
+      "repairs": 0
+    },
+    {
+      "i": 25,
+      "task": "calendar",
+      "cond": "other_app",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=B&nav=top&labels=left&btn=top&scale=1&data=77",
+      "inputs": {
+        "title": "Project kickoff",
+        "date": "Nov 7",
+        "time": "9:00 AM",
+        "location": "Room 4B"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 19.6,
+      "repairs": 0
+    },
+    {
+      "i": 25,
+      "task": "calendar",
+      "cond": "other_app",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=B&nav=top&labels=left&btn=top&scale=1&data=77",
+      "inputs": {
+        "title": "Project kickoff",
+        "date": "Nov 7",
+        "time": "9:00 AM",
+        "location": "Room 4B"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 31.5,
+      "repairs": 0
+    },
+    {
+      "i": 26,
+      "task": "calendar",
+      "cond": "interrupt",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=B&data=87&popup=5.1",
+      "inputs": {
+        "title": "Yoga class",
+        "date": "Dec 4",
+        "time": "4:00 PM",
+        "location": "Zoom"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 9.9,
+      "repairs": 0
+    },
+    {
+      "i": 26,
+      "task": "calendar",
+      "cond": "interrupt",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=B&data=87&popup=5.1",
+      "inputs": {
+        "title": "Yoga class",
+        "date": "Dec 4",
+        "time": "4:00 PM",
+        "location": "Zoom"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 21.5,
+      "repairs": 0
+    },
+    {
+      "i": 26,
+      "task": "calendar",
+      "cond": "interrupt",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=B&data=87&popup=5.1",
+      "inputs": {
+        "title": "Yoga class",
+        "date": "Dec 4",
+        "time": "4:00 PM",
+        "location": "Zoom"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 33.9,
+      "repairs": 1
+    },
+    {
+      "i": 27,
+      "task": "calendar",
+      "cond": "interrupt",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=A&nav=right&labels=top&btn=bottom&scale=1.1&order=1,0,2,3&data=14&popup=3.4",
+      "inputs": {
+        "title": "Parent meeting",
+        "date": "Nov 21",
+        "time": "4:00 PM",
+        "location": "Room 4B"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 13.0,
+      "repairs": 0
+    },
+    {
+      "i": 27,
+      "task": "calendar",
+      "cond": "interrupt",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=A&nav=right&labels=top&btn=bottom&scale=1.1&order=1,0,2,3&data=14&popup=3.4",
+      "inputs": {
+        "title": "Parent meeting",
+        "date": "Nov 21",
+        "time": "4:00 PM",
+        "location": "Room 4B"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 17.2,
+      "repairs": 0
+    },
+    {
+      "i": 27,
+      "task": "calendar",
+      "cond": "interrupt",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=A&nav=right&labels=top&btn=bottom&scale=1.1&order=1,0,2,3&data=14&popup=3.4",
+      "inputs": {
+        "title": "Parent meeting",
+        "date": "Nov 21",
+        "time": "4:00 PM",
+        "location": "Room 4B"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 29.5,
+      "repairs": 1
+    },
+    {
+      "i": 28,
+      "task": "calendar",
+      "cond": "interrupt",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=B&nav=right&labels=top&btn=top&scale=1.1&data=54&popup=4.2",
+      "inputs": {
+        "title": "Coffee with Sam",
+        "date": "Dec 28",
+        "time": "8:30 AM",
+        "location": "Main St Clinic"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 10.0,
+      "repairs": 0
+    },
+    {
+      "i": 28,
+      "task": "calendar",
+      "cond": "interrupt",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=B&nav=right&labels=top&btn=top&scale=1.1&data=54&popup=4.2",
+      "inputs": {
+        "title": "Coffee with Sam",
+        "date": "Dec 28",
+        "time": "8:30 AM",
+        "location": "Main St Clinic"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 21.2,
+      "repairs": 0
+    },
+    {
+      "i": 28,
+      "task": "calendar",
+      "cond": "interrupt",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=B&nav=right&labels=top&btn=top&scale=1.1&data=54&popup=4.2",
+      "inputs": {
+        "title": "Coffee with Sam",
+        "date": "Dec 28",
+        "time": "8:30 AM",
+        "location": "Main St Clinic"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 36.4,
+      "repairs": 1
+    },
+    {
+      "i": 29,
+      "task": "calendar",
+      "cond": "interrupt",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=B&data=64&popup=7.3",
+      "inputs": {
+        "title": "Dentist",
+        "date": "Nov 9",
+        "time": "10:00 AM",
+        "location": "Main St Clinic"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 10.3,
+      "repairs": 0
+    },
+    {
+      "i": 29,
+      "task": "calendar",
+      "cond": "interrupt",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=B&data=64&popup=7.3",
+      "inputs": {
+        "title": "Dentist",
+        "date": "Nov 9",
+        "time": "10:00 AM",
+        "location": "Main St Clinic"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 20.4,
+      "repairs": 0
+    },
+    {
+      "i": 29,
+      "task": "calendar",
+      "cond": "interrupt",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=calendar&skin=B&data=64&popup=7.3",
+      "inputs": {
+        "title": "Dentist",
+        "date": "Nov 9",
+        "time": "10:00 AM",
+        "location": "Main St Clinic"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 31.9,
+      "repairs": 1
+    },
+    {
+      "i": 30,
+      "task": "expense",
+      "cond": "same",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=A",
+      "inputs": {
+        "merchant": "Delta Air Lines",
+        "amount": "412.50",
+        "category": "Travel"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 11.3,
+      "repairs": 0
+    },
+    {
+      "i": 30,
+      "task": "expense",
+      "cond": "same",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=A",
+      "inputs": {
+        "merchant": "Delta Air Lines",
+        "amount": "412.50",
+        "category": "Travel"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 14.3,
+      "repairs": 0
+    },
+    {
+      "i": 30,
+      "task": "expense",
+      "cond": "same",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=A",
+      "inputs": {
+        "merchant": "Delta Air Lines",
+        "amount": "412.50",
+        "category": "Travel"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 21.7,
+      "repairs": 0
+    },
+    {
+      "i": 31,
+      "task": "expense",
+      "cond": "new_data",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=A&data=73",
+      "inputs": {
+        "merchant": "Amtrak",
+        "amount": "406.46",
+        "category": "Travel"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "0 matching, 1 wrong: [{'merchant': 'Delta Air Lines', 'amount': '412.50', 'category': 'Travel'}]",
+      "seconds": 8.3,
+      "repairs": 0
+    },
+    {
+      "i": 31,
+      "task": "expense",
+      "cond": "new_data",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=A&data=73",
+      "inputs": {
+        "merchant": "Amtrak",
+        "amount": "406.46",
+        "category": "Travel"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 15.1,
+      "repairs": 0
+    },
+    {
+      "i": 31,
+      "task": "expense",
+      "cond": "new_data",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=A&data=73",
+      "inputs": {
+        "merchant": "Amtrak",
+        "amount": "406.46",
+        "category": "Travel"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 21.5,
+      "repairs": 0
+    },
+    {
+      "i": 32,
+      "task": "expense",
+      "cond": "redesign",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=A&nav=left&labels=top&btn=bottom&scale=1&data=49",
+      "inputs": {
+        "merchant": "Uber",
+        "amount": "805.48",
+        "category": "Software"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 8.3,
+      "repairs": 0
+    },
+    {
+      "i": 32,
+      "task": "expense",
+      "cond": "redesign",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=A&nav=left&labels=top&btn=bottom&scale=1&data=49",
+      "inputs": {
+        "merchant": "Uber",
+        "amount": "805.48",
+        "category": "Software"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 14.2,
+      "repairs": 0
+    },
+    {
+      "i": 32,
+      "task": "expense",
+      "cond": "redesign",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=A&nav=left&labels=top&btn=bottom&scale=1&data=49",
+      "inputs": {
+        "merchant": "Uber",
+        "amount": "805.48",
+        "category": "Software"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 20.9,
+      "repairs": 0
+    },
+    {
+      "i": 33,
+      "task": "expense",
+      "cond": "redesign",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=A&nav=right&labels=left&btn=top&scale=1&order=2,0,1&data=60",
+      "inputs": {
+        "merchant": "Amtrak",
+        "amount": "47.56",
+        "category": "Travel"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 8.4,
+      "repairs": 0
+    },
+    {
+      "i": 33,
+      "task": "expense",
+      "cond": "redesign",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=A&nav=right&labels=left&btn=top&scale=1&order=2,0,1&data=60",
+      "inputs": {
+        "merchant": "Amtrak",
+        "amount": "47.56",
+        "category": "Travel"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 14.5,
+      "repairs": 0
+    },
+    {
+      "i": 33,
+      "task": "expense",
+      "cond": "redesign",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=A&nav=right&labels=left&btn=top&scale=1&order=2,0,1&data=60",
+      "inputs": {
+        "merchant": "Amtrak",
+        "amount": "47.56",
+        "category": "Travel"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 20.0,
+      "repairs": 0
+    },
+    {
+      "i": 34,
+      "task": "expense",
+      "cond": "redesign",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=A&nav=right&labels=left&btn=bottom&scale=1.2&order=1,2,0&data=41",
+      "inputs": {
+        "merchant": "Uber",
+        "amount": "338.41",
+        "category": "Meals"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 8.4,
+      "repairs": 0
+    },
+    {
+      "i": 34,
+      "task": "expense",
+      "cond": "redesign",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=A&nav=right&labels=left&btn=bottom&scale=1.2&order=1,2,0&data=41",
+      "inputs": {
+        "merchant": "Uber",
+        "amount": "338.41",
+        "category": "Meals"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 13.3,
+      "repairs": 0
+    },
+    {
+      "i": 34,
+      "task": "expense",
+      "cond": "redesign",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=A&nav=right&labels=left&btn=bottom&scale=1.2&order=1,2,0&data=41",
+      "inputs": {
+        "merchant": "Uber",
+        "amount": "338.41",
+        "category": "Meals"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 20.0,
+      "repairs": 0
+    },
+    {
+      "i": 35,
+      "task": "expense",
+      "cond": "redesign",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=A&nav=left&labels=left&btn=bottom&scale=1&order=2,0,1&data=68",
+      "inputs": {
+        "merchant": "Amtrak",
+        "amount": "433.41",
+        "category": "Software"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 8.3,
+      "repairs": 0
+    },
+    {
+      "i": 35,
+      "task": "expense",
+      "cond": "redesign",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=A&nav=left&labels=left&btn=bottom&scale=1&order=2,0,1&data=68",
+      "inputs": {
+        "merchant": "Amtrak",
+        "amount": "433.41",
+        "category": "Software"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 14.4,
+      "repairs": 0
+    },
+    {
+      "i": 35,
+      "task": "expense",
+      "cond": "redesign",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=A&nav=left&labels=left&btn=bottom&scale=1&order=2,0,1&data=68",
+      "inputs": {
+        "merchant": "Amtrak",
+        "amount": "433.41",
+        "category": "Software"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 21.4,
+      "repairs": 0
+    },
+    {
+      "i": 36,
+      "task": "expense",
+      "cond": "redesign",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=A&theme=dark&nav=top&labels=top&btn=top&scale=1.1&order=1,0,2&data=64",
+      "inputs": {
+        "merchant": "Amtrak",
+        "amount": "817.77",
+        "category": "Meals"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 8.3,
+      "repairs": 0
+    },
+    {
+      "i": 36,
+      "task": "expense",
+      "cond": "redesign",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=A&theme=dark&nav=top&labels=top&btn=top&scale=1.1&order=1,0,2&data=64",
+      "inputs": {
+        "merchant": "Amtrak",
+        "amount": "817.77",
+        "category": "Meals"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 17.2,
+      "repairs": 0
+    },
+    {
+      "i": 36,
+      "task": "expense",
+      "cond": "redesign",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=A&theme=dark&nav=top&labels=top&btn=top&scale=1.1&order=1,0,2&data=64",
+      "inputs": {
+        "merchant": "Amtrak",
+        "amount": "817.77",
+        "category": "Meals"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 24.1,
+      "repairs": 0
+    },
+    {
+      "i": 37,
+      "task": "expense",
+      "cond": "redesign",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=A&theme=dark&nav=top&labels=left&btn=bottom&scale=1.1&order=0,1,2&data=55",
+      "inputs": {
+        "merchant": "Amtrak",
+        "amount": "176.47",
+        "category": "Meals"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 8.5,
+      "repairs": 0
+    },
+    {
+      "i": 37,
+      "task": "expense",
+      "cond": "redesign",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=A&theme=dark&nav=top&labels=left&btn=bottom&scale=1.1&order=0,1,2&data=55",
+      "inputs": {
+        "merchant": "Amtrak",
+        "amount": "176.47",
+        "category": "Meals"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 16.4,
+      "repairs": 0
+    },
+    {
+      "i": 37,
+      "task": "expense",
+      "cond": "redesign",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=A&theme=dark&nav=top&labels=left&btn=bottom&scale=1.1&order=0,1,2&data=55",
+      "inputs": {
+        "merchant": "Amtrak",
+        "amount": "176.47",
+        "category": "Meals"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 24.3,
+      "repairs": 0
+    },
+    {
+      "i": 38,
+      "task": "expense",
+      "cond": "other_app",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=B&nav=top&labels=left&btn=top&scale=1.1&data=51",
+      "inputs": {
+        "merchant": "Blue Bottle",
+        "amount": "750.65",
+        "category": "Office supplies"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 8.5,
+      "repairs": 0
+    },
+    {
+      "i": 38,
+      "task": "expense",
+      "cond": "other_app",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=B&nav=top&labels=left&btn=top&scale=1.1&data=51",
+      "inputs": {
+        "merchant": "Blue Bottle",
+        "amount": "750.65",
+        "category": "Office supplies"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 15.8,
+      "repairs": 0
+    },
+    {
+      "i": 38,
+      "task": "expense",
+      "cond": "other_app",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=B&nav=top&labels=left&btn=top&scale=1.1&data=51",
+      "inputs": {
+        "merchant": "Blue Bottle",
+        "amount": "750.65",
+        "category": "Office supplies"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 25.6,
+      "repairs": 0
+    },
+    {
+      "i": 39,
+      "task": "expense",
+      "cond": "other_app",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=B&theme=dark&nav=top&labels=left&btn=top&scale=1.2&order=2,0,1&data=70",
+      "inputs": {
+        "merchant": "Hilton",
+        "amount": "353.10",
+        "category": "Training"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 8.2,
+      "repairs": 0
+    },
+    {
+      "i": 39,
+      "task": "expense",
+      "cond": "other_app",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=B&theme=dark&nav=top&labels=left&btn=top&scale=1.2&order=2,0,1&data=70",
+      "inputs": {
+        "merchant": "Hilton",
+        "amount": "353.10",
+        "category": "Training"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 17.9,
+      "repairs": 0
+    },
+    {
+      "i": 39,
+      "task": "expense",
+      "cond": "other_app",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=B&theme=dark&nav=top&labels=left&btn=top&scale=1.2&order=2,0,1&data=70",
+      "inputs": {
+        "merchant": "Hilton",
+        "amount": "353.10",
+        "category": "Training"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 26.6,
+      "repairs": 0
+    },
+    {
+      "i": 40,
+      "task": "expense",
+      "cond": "other_app",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=B&nav=left&labels=left&btn=top&scale=1.1&order=1,2,0&data=31",
+      "inputs": {
+        "merchant": "Hilton",
+        "amount": "380.93",
+        "category": "Training"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 8.3,
+      "repairs": 0
+    },
+    {
+      "i": 40,
+      "task": "expense",
+      "cond": "other_app",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=B&nav=left&labels=left&btn=top&scale=1.1&order=1,2,0&data=31",
+      "inputs": {
+        "merchant": "Hilton",
+        "amount": "380.93",
+        "category": "Training"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 15.8,
+      "repairs": 0
+    },
+    {
+      "i": 40,
+      "task": "expense",
+      "cond": "other_app",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=B&nav=left&labels=left&btn=top&scale=1.1&order=1,2,0&data=31",
+      "inputs": {
+        "merchant": "Hilton",
+        "amount": "380.93",
+        "category": "Training"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 23.0,
+      "repairs": 0
+    },
+    {
+      "i": 41,
+      "task": "expense",
+      "cond": "interrupt",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=B&nav=left&labels=top&btn=bottom&scale=1&order=0,1,2&data=62&popup=4.5",
+      "inputs": {
+        "merchant": "Uber",
+        "amount": "134.98",
+        "category": "Meals"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 8.7,
+      "repairs": 0
+    },
+    {
+      "i": 41,
+      "task": "expense",
+      "cond": "interrupt",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=B&nav=left&labels=top&btn=bottom&scale=1&order=0,1,2&data=62&popup=4.5",
+      "inputs": {
+        "merchant": "Uber",
+        "amount": "134.98",
+        "category": "Meals"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 17.1,
+      "repairs": 0
+    },
+    {
+      "i": 41,
+      "task": "expense",
+      "cond": "interrupt",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=B&nav=left&labels=top&btn=bottom&scale=1&order=0,1,2&data=62&popup=4.5",
+      "inputs": {
+        "merchant": "Uber",
+        "amount": "134.98",
+        "category": "Meals"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 27.9,
+      "repairs": 1
+    },
+    {
+      "i": 42,
+      "task": "expense",
+      "cond": "interrupt",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=A&theme=dark&nav=right&labels=left&btn=top&scale=1.2&data=48&popup=5.5",
+      "inputs": {
+        "merchant": "Amtrak",
+        "amount": "386.50",
+        "category": "Meals"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 8.4,
+      "repairs": 0
+    },
+    {
+      "i": 42,
+      "task": "expense",
+      "cond": "interrupt",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=A&theme=dark&nav=right&labels=left&btn=top&scale=1.2&data=48&popup=5.5",
+      "inputs": {
+        "merchant": "Amtrak",
+        "amount": "386.50",
+        "category": "Meals"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 16.8,
+      "repairs": 0
+    },
+    {
+      "i": 42,
+      "task": "expense",
+      "cond": "interrupt",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=A&theme=dark&nav=right&labels=left&btn=top&scale=1.2&data=48&popup=5.5",
+      "inputs": {
+        "merchant": "Amtrak",
+        "amount": "386.50",
+        "category": "Meals"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 33.9,
+      "repairs": 1
+    },
+    {
+      "i": 43,
+      "task": "expense",
+      "cond": "interrupt",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=B&theme=dark&nav=right&labels=top&btn=bottom&scale=1.1&order=0,1,2&data=55&popup=5.9",
+      "inputs": {
+        "merchant": "Staples",
+        "amount": "102.26",
+        "category": "Software"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 9.1,
+      "repairs": 0
+    },
+    {
+      "i": 43,
+      "task": "expense",
+      "cond": "interrupt",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=B&theme=dark&nav=right&labels=top&btn=bottom&scale=1.1&order=0,1,2&data=55&popup=5.9",
+      "inputs": {
+        "merchant": "Staples",
+        "amount": "102.26",
+        "category": "Software"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 21.0,
+      "repairs": 0
+    },
+    {
+      "i": 43,
+      "task": "expense",
+      "cond": "interrupt",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=B&theme=dark&nav=right&labels=top&btn=bottom&scale=1.1&order=0,1,2&data=55&popup=5.9",
+      "inputs": {
+        "merchant": "Staples",
+        "amount": "102.26",
+        "category": "Software"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 38.5,
+      "repairs": 1
+    },
+    {
+      "i": 44,
+      "task": "expense",
+      "cond": "interrupt",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=B&theme=dark&nav=right&labels=left&btn=bottom&scale=1.2&order=0,1,2&data=15&popup=2.0",
+      "inputs": {
+        "merchant": "Amtrak",
+        "amount": "357.79",
+        "category": "Meals"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 11.6,
+      "repairs": 0
+    },
+    {
+      "i": 44,
+      "task": "expense",
+      "cond": "interrupt",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=B&theme=dark&nav=right&labels=left&btn=bottom&scale=1.2&order=0,1,2&data=15&popup=2.0",
+      "inputs": {
+        "merchant": "Amtrak",
+        "amount": "357.79",
+        "category": "Meals"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 16.5,
+      "repairs": 0
+    },
+    {
+      "i": 44,
+      "task": "expense",
+      "cond": "interrupt",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=expense&skin=B&theme=dark&nav=right&labels=left&btn=bottom&scale=1.2&order=0,1,2&data=15&popup=2.0",
+      "inputs": {
+        "merchant": "Amtrak",
+        "amount": "357.79",
+        "category": "Meals"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 30.7,
+      "repairs": 1
+    },
+    {
+      "i": 45,
+      "task": "settings",
+      "cond": "same",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=A",
+      "inputs": {
+        "recovery_email": "ruth.backup@example.com"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 7.6,
+      "repairs": 0
+    },
+    {
+      "i": 45,
+      "task": "settings",
+      "cond": "same",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=A",
+      "inputs": {
+        "recovery_email": "ruth.backup@example.com"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 13.1,
+      "repairs": 0
+    },
+    {
+      "i": 45,
+      "task": "settings",
+      "cond": "same",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=A",
+      "inputs": {
+        "recovery_email": "ruth.backup@example.com"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 19.0,
+      "repairs": 0
+    },
+    {
+      "i": 46,
+      "task": "settings",
+      "cond": "new_data",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=A&data=39",
+      "inputs": {
+        "recovery_email": "li.wei.backup@harbor.co"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': True, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': 'ruth.backup@example.com'}, saves=1",
+      "seconds": 7.0,
+      "repairs": 0
+    },
+    {
+      "i": 46,
+      "task": "settings",
+      "cond": "new_data",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=A&data=39",
+      "inputs": {
+        "recovery_email": "li.wei.backup@harbor.co"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 11.5,
+      "repairs": 0
+    },
+    {
+      "i": 46,
+      "task": "settings",
+      "cond": "new_data",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=A&data=39",
+      "inputs": {
+        "recovery_email": "li.wei.backup@harbor.co"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 19.0,
+      "repairs": 0
+    },
+    {
+      "i": 47,
+      "task": "settings",
+      "cond": "redesign",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=A&theme=dark&nav=right&labels=top&btn=bottom&scale=1.1&order=2,1,0&data=51",
+      "inputs": {
+        "recovery_email": "dev.backup@brightlane.com"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 6.5,
+      "repairs": 0
+    },
+    {
+      "i": 47,
+      "task": "settings",
+      "cond": "redesign",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=A&theme=dark&nav=right&labels=top&btn=bottom&scale=1.1&order=2,1,0&data=51",
+      "inputs": {
+        "recovery_email": "dev.backup@brightlane.com"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 12.4,
+      "repairs": 0
+    },
+    {
+      "i": 47,
+      "task": "settings",
+      "cond": "redesign",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=A&theme=dark&nav=right&labels=top&btn=bottom&scale=1.1&order=2,1,0&data=51",
+      "inputs": {
+        "recovery_email": "dev.backup@brightlane.com"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 20.7,
+      "repairs": 0
+    },
+    {
+      "i": 48,
+      "task": "settings",
+      "cond": "redesign",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=A&nav=left&labels=left&btn=bottom&scale=1.2&order=0,2,1&data=22",
+      "inputs": {
+        "recovery_email": "omar.backup@fieldnote.org"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 6.9,
+      "repairs": 0
+    },
+    {
+      "i": 48,
+      "task": "settings",
+      "cond": "redesign",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=A&nav=left&labels=left&btn=bottom&scale=1.2&order=0,2,1&data=22",
+      "inputs": {
+        "recovery_email": "omar.backup@fieldnote.org"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 12.5,
+      "repairs": 0
+    },
+    {
+      "i": 48,
+      "task": "settings",
+      "cond": "redesign",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=A&nav=left&labels=left&btn=bottom&scale=1.2&order=0,2,1&data=22",
+      "inputs": {
+        "recovery_email": "omar.backup@fieldnote.org"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 18.9,
+      "repairs": 0
+    },
+    {
+      "i": 49,
+      "task": "settings",
+      "cond": "redesign",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=A&nav=top&labels=top&btn=bottom&scale=1.1&order=2,1,0&data=59",
+      "inputs": {
+        "recovery_email": "omar.backup@fieldnote.org"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 6.5,
+      "repairs": 0
+    },
+    {
+      "i": 49,
+      "task": "settings",
+      "cond": "redesign",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=A&nav=top&labels=top&btn=bottom&scale=1.1&order=2,1,0&data=59",
+      "inputs": {
+        "recovery_email": "omar.backup@fieldnote.org"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 10.9,
+      "repairs": 0
+    },
+    {
+      "i": 49,
+      "task": "settings",
+      "cond": "redesign",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=A&nav=top&labels=top&btn=bottom&scale=1.1&order=2,1,0&data=59",
+      "inputs": {
+        "recovery_email": "omar.backup@fieldnote.org"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 17.0,
+      "repairs": 0
+    },
+    {
+      "i": 50,
+      "task": "settings",
+      "cond": "redesign",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=A&theme=dark&nav=left&labels=top&btn=bottom&scale=1.2&order=2,1,0&data=45",
+      "inputs": {
+        "recovery_email": "nadia.backup@fieldnote.org"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 6.5,
+      "repairs": 0
+    },
+    {
+      "i": 50,
+      "task": "settings",
+      "cond": "redesign",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=A&theme=dark&nav=left&labels=top&btn=bottom&scale=1.2&order=2,1,0&data=45",
+      "inputs": {
+        "recovery_email": "nadia.backup@fieldnote.org"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 13.7,
+      "repairs": 0
+    },
+    {
+      "i": 50,
+      "task": "settings",
+      "cond": "redesign",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=A&theme=dark&nav=left&labels=top&btn=bottom&scale=1.2&order=2,1,0&data=45",
+      "inputs": {
+        "recovery_email": "nadia.backup@fieldnote.org"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 21.7,
+      "repairs": 0
+    },
+    {
+      "i": 51,
+      "task": "settings",
+      "cond": "redesign",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=A&nav=left&labels=top&btn=top&scale=1.2&data=4",
+      "inputs": {
+        "recovery_email": "ana.backup@brightlane.com"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=1",
+      "seconds": 6.6,
+      "repairs": 0
+    },
+    {
+      "i": 51,
+      "task": "settings",
+      "cond": "redesign",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=A&nav=left&labels=top&btn=top&scale=1.2&data=4",
+      "inputs": {
+        "recovery_email": "ana.backup@brightlane.com"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 13.4,
+      "repairs": 0
+    },
+    {
+      "i": 51,
+      "task": "settings",
+      "cond": "redesign",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=A&nav=left&labels=top&btn=top&scale=1.2&data=4",
+      "inputs": {
+        "recovery_email": "ana.backup@brightlane.com"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 18.0,
+      "repairs": 0
+    },
+    {
+      "i": 52,
+      "task": "settings",
+      "cond": "redesign",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=A&theme=dark&nav=top&labels=top&btn=bottom&scale=1.1&order=2,0,1&data=71",
+      "inputs": {
+        "recovery_email": "dev.backup@fieldnote.org"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 7.5,
+      "repairs": 0
+    },
+    {
+      "i": 52,
+      "task": "settings",
+      "cond": "redesign",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=A&theme=dark&nav=top&labels=top&btn=bottom&scale=1.1&order=2,0,1&data=71",
+      "inputs": {
+        "recovery_email": "dev.backup@fieldnote.org"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 13.2,
+      "repairs": 0
+    },
+    {
+      "i": 52,
+      "task": "settings",
+      "cond": "redesign",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=A&theme=dark&nav=top&labels=top&btn=bottom&scale=1.1&order=2,0,1&data=71",
+      "inputs": {
+        "recovery_email": "dev.backup@fieldnote.org"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 20.1,
+      "repairs": 0
+    },
+    {
+      "i": 53,
+      "task": "settings",
+      "cond": "other_app",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=B&theme=dark&nav=left&labels=top&btn=bottom&scale=1.1&order=1,2,0&data=22",
+      "inputs": {
+        "recovery_email": "nadia.backup@harbor.co"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 6.6,
+      "repairs": 0
+    },
+    {
+      "i": 53,
+      "task": "settings",
+      "cond": "other_app",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=B&theme=dark&nav=left&labels=top&btn=bottom&scale=1.1&order=1,2,0&data=22",
+      "inputs": {
+        "recovery_email": "nadia.backup@harbor.co"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 12.7,
+      "repairs": 0
+    },
+    {
+      "i": 53,
+      "task": "settings",
+      "cond": "other_app",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=B&theme=dark&nav=left&labels=top&btn=bottom&scale=1.1&order=1,2,0&data=22",
+      "inputs": {
+        "recovery_email": "nadia.backup@harbor.co"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 19.6,
+      "repairs": 0
+    },
+    {
+      "i": 54,
+      "task": "settings",
+      "cond": "other_app",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=B&nav=left&labels=left&btn=top&scale=1.1&order=1,0,2&data=18",
+      "inputs": {
+        "recovery_email": "sofia.backup@brightlane.com"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 6.7,
+      "repairs": 0
+    },
+    {
+      "i": 54,
+      "task": "settings",
+      "cond": "other_app",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=B&nav=left&labels=left&btn=top&scale=1.1&order=1,0,2&data=18",
+      "inputs": {
+        "recovery_email": "sofia.backup@brightlane.com"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 11.3,
+      "repairs": 0
+    },
+    {
+      "i": 54,
+      "task": "settings",
+      "cond": "other_app",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=B&nav=left&labels=left&btn=top&scale=1.1&order=1,0,2&data=18",
+      "inputs": {
+        "recovery_email": "sofia.backup@brightlane.com"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 19.1,
+      "repairs": 0
+    },
+    {
+      "i": 55,
+      "task": "settings",
+      "cond": "other_app",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=B&theme=dark&nav=right&labels=left&btn=top&scale=1&order=0,1,2&data=46",
+      "inputs": {
+        "recovery_email": "nadia.backup@brightlane.com"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 6.2,
+      "repairs": 0
+    },
+    {
+      "i": 55,
+      "task": "settings",
+      "cond": "other_app",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=B&theme=dark&nav=right&labels=left&btn=top&scale=1&order=0,1,2&data=46",
+      "inputs": {
+        "recovery_email": "nadia.backup@brightlane.com"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 13.8,
+      "repairs": 0
+    },
+    {
+      "i": 55,
+      "task": "settings",
+      "cond": "other_app",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=B&theme=dark&nav=right&labels=left&btn=top&scale=1&order=0,1,2&data=46",
+      "inputs": {
+        "recovery_email": "nadia.backup@brightlane.com"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 20.7,
+      "repairs": 0
+    },
+    {
+      "i": 56,
+      "task": "settings",
+      "cond": "interrupt",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=A&theme=dark&nav=right&labels=left&btn=top&scale=1&order=1,2,0&data=19&popup=7.8",
+      "inputs": {
+        "recovery_email": "nadia.backup@acme.io"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 6.5,
+      "repairs": 0
+    },
+    {
+      "i": 56,
+      "task": "settings",
+      "cond": "interrupt",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=A&theme=dark&nav=right&labels=left&btn=top&scale=1&order=1,2,0&data=19&popup=7.8",
+      "inputs": {
+        "recovery_email": "nadia.backup@acme.io"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 13.0,
+      "repairs": 0
+    },
+    {
+      "i": 56,
+      "task": "settings",
+      "cond": "interrupt",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=A&theme=dark&nav=right&labels=left&btn=top&scale=1&order=1,2,0&data=19&popup=7.8",
+      "inputs": {
+        "recovery_email": "nadia.backup@acme.io"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 25.0,
+      "repairs": 1
+    },
+    {
+      "i": 57,
+      "task": "settings",
+      "cond": "interrupt",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=B&data=38&popup=3.2",
+      "inputs": {
+        "recovery_email": "sofia.backup@acme.io"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 6.6,
+      "repairs": 0
+    },
+    {
+      "i": 57,
+      "task": "settings",
+      "cond": "interrupt",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=B&data=38&popup=3.2",
+      "inputs": {
+        "recovery_email": "sofia.backup@acme.io"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 12.0,
+      "repairs": 0
+    },
+    {
+      "i": 57,
+      "task": "settings",
+      "cond": "interrupt",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=B&data=38&popup=3.2",
+      "inputs": {
+        "recovery_email": "sofia.backup@acme.io"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 21.9,
+      "repairs": 1
+    },
+    {
+      "i": 58,
+      "task": "settings",
+      "cond": "interrupt",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=A&nav=right&labels=top&btn=top&scale=1.1&order=2,0,1&data=13&popup=8.5",
+      "inputs": {
+        "recovery_email": "kenji.backup@brightlane.com"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 6.4,
+      "repairs": 0
+    },
+    {
+      "i": 58,
+      "task": "settings",
+      "cond": "interrupt",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=A&nav=right&labels=top&btn=top&scale=1.1&order=2,0,1&data=13&popup=8.5",
+      "inputs": {
+        "recovery_email": "kenji.backup@brightlane.com"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 12.7,
+      "repairs": 0
+    },
+    {
+      "i": 58,
+      "task": "settings",
+      "cond": "interrupt",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=A&nav=right&labels=top&btn=top&scale=1.1&order=2,0,1&data=13&popup=8.5",
+      "inputs": {
+        "recovery_email": "kenji.backup@brightlane.com"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 21.5,
+      "repairs": 1
+    },
+    {
+      "i": 59,
+      "task": "settings",
+      "cond": "interrupt",
+      "system": "replay",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=A&data=4&popup=4.2",
+      "inputs": {
+        "recovery_email": "julia.backup@harbor.co"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 6.7,
+      "repairs": 0
+    },
+    {
+      "i": 59,
+      "task": "settings",
+      "cond": "interrupt",
+      "system": "nochk",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=A&data=4&popup=4.2",
+      "inputs": {
+        "recovery_email": "julia.backup@harbor.co"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 9.1,
+      "repairs": 0
+    },
+    {
+      "i": 59,
+      "task": "settings",
+      "cond": "interrupt",
+      "system": "eidos",
+      "url": "http://localhost:8011/apps/everyday/index.html?task=settings&skin=A&data=4&popup=4.2",
+      "inputs": {
+        "recovery_email": "julia.backup@harbor.co"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 17.9,
+      "repairs": 1
+    }
+  ]
+}
