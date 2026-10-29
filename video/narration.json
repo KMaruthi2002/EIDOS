@@ -1,0 +1,49 @@
+{
+  "voice": "af_heart",
+  "scenes": [
+    {
+      "id": "hook",
+      "text": "There are billions of hours of screen recordings that show people how to use software. Tutorials, walkthroughs, training videos. AI agents can't learn from any of it."
+    },
+    {
+      "id": "problem",
+      "text": "Today, agents learn tasks from text: prompts, documents, hand-written skills. Recent research lets agents glance at tutorial videos as hints, and it helps by only a few points. And when an agent goes off track, it usually doesn't know."
+    },
+    {
+      "id": "name",
+      "text": "Eye-doss turns a video into a program. It learns the form of a task, not the pixels. And every step carries a visual contract, so the agent can check that it did what the person did."
+    },
+    {
+      "id": "watch",
+      "text": "Here's a fourteen second tutorial. Someone adds a totals row to a spreadsheet. From pixels alone, Eye-doss finds every click, drag and keystroke, and records what each one changed on screen."
+    },
+    {
+      "id": "understand",
+      "text": "Then it works out what each step was for. E2 to E11 isn't an address to copy. It's the Revenue column, over all the data rows. And the bold button is understood by its effect: the text got heavier."
+    },
+    {
+      "id": "redesign",
+      "text": "Now run the skill where the video never went. The app has been redesigned: dark theme, new layout, columns shuffled. Copying the clicks falls apart. Eye-doss finds the Revenue column where it moved, rewrites the formula, and checks every step before it moves on."
+    },
+    {
+      "id": "otherapp",
+      "text": "Even a completely different spreadsheet app. Same skill, rewritten for the new screen, and checked."
+    },
+    {
+      "id": "interrupt",
+      "text": "And when something gets in the way, like a dialog that pops up halfway through, the contracts are what save the run. Eye-doss notices the step didn't land, dismisses the dialog, and does it again. With the checks switched off, the agent reports success on a task it never finished."
+    },
+    {
+      "id": "results",
+      "text": "On 44 held-out conditions the video never showed, copying the clicks finished the task three times. Eye-doss finished 41, and its own verdict matched the truth every time. When a dialog interrupted the task, Eye-doss finished 14 of 16. With the checks off, zero."
+    },
+    {
+      "id": "meta",
+      "text": "Eye-doss is built around Meta's models. SAM 3.1 tracks the pointer and segments what changed. Muse Spark reads each step. Muse Wonder compiles the program. Muse Image draws each skill's card. This demo runs the same pipeline offline, so every result you saw can be reproduced."
+    },
+    {
+      "id": "close",
+      "text": "Prompting is how we talk to AI. Showing is how we'll teach it. This is Eye-doss."
+    }
+  ]
+}

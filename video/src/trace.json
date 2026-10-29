@@ -1,0 +1,253 @@
+{
+  "video": "tutorial_totals.mp4",
+  "duration": 13.666666666666666,
+  "frames_analyzed": 206,
+  "screen": {
+    "headers": [
+      "Region",
+      "Month",
+      "Product",
+      "Units",
+      "Revenue"
+    ],
+    "data_rows": 10,
+    "row_numbers": [
+      "2",
+      "11"
+    ],
+    "col_pitch": 111.25,
+    "row_h": 24.75
+  },
+  "events": [
+    {
+      "kind": "click",
+      "t": 2.466666666666667,
+      "x": 119.0,
+      "y": 392.0,
+      "x2": 0,
+      "y2": 0,
+      "text": ""
+    },
+    {
+      "kind": "click",
+      "t": 5.4,
+      "x": 559.0,
+      "y": 392.0,
+      "x2": 0,
+      "y2": 0,
+      "text": ""
+    },
+    {
+      "kind": "drag",
+      "t": 9.0,
+      "x": 119.0,
+      "y": 392.0,
+      "x2": 558,
+      "y2": 394,
+      "text": ""
+    },
+    {
+      "kind": "click",
+      "t": 11.0,
+      "x": 388.0,
+      "y": 60.0,
+      "x2": 0,
+      "y2": 0,
+      "text": ""
+    }
+  ],
+  "steps": [
+    {
+      "index": 1,
+      "action": "enter_text",
+      "t_start": 2.466666666666667,
+      "t_end": 5.4,
+      "point": [
+        119.0,
+        392.0
+      ],
+      "point2": null,
+      "text": "Total",
+      "target": {
+        "column": "Region",
+        "row": "first_empty_after_data"
+      },
+      "contract": {
+        "cell_box": [
+          62,
+          376,
+          107,
+          22
+        ],
+        "shows": "Total",
+        "changed_box": [
+          36,
+          50,
+          539,
+          381
+        ],
+        "probe_box": [
+          36,
+          50,
+          539,
+          381
+        ],
+        "ink_before": 0.022419275512638843,
+        "ink_after": 0.022726055346977733,
+        "expect": {
+          "cell_text_equals": "Total"
+        }
+      },
+      "crops": {
+        "pre": "step1_pre.png",
+        "post": "step1_post.png"
+      },
+      "intent": "Write 'Total' in the Region column of the first empty after data"
+    },
+    {
+      "index": 2,
+      "action": "enter_text",
+      "t_start": 5.4,
+      "t_end": 9.0,
+      "point": [
+        559.0,
+        392.0
+      ],
+      "point2": null,
+      "text": "=SUM(E2:E11)",
+      "target": {
+        "column": "Revenue",
+        "row": "first_empty_after_data"
+      },
+      "contract": {
+        "cell_box": [
+          502,
+          376,
+          107,
+          22
+        ],
+        "shows": "65500",
+        "changed_box": [
+          59,
+          256,
+          556,
+          175
+        ],
+        "probe_box": [
+          59,
+          256,
+          556,
+          175
+        ],
+        "ink_before": 0.017985611510791366,
+        "ink_after": 0.01895169578622816,
+        "expect": {
+          "cell_number_equals": "SUM(Revenue, all_data_rows)"
+        }
+      },
+      "crops": {
+        "pre": "step2_pre.png",
+        "post": "step2_post.png"
+      },
+      "intent": "Sum the Revenue column over all data rows in the first empty after data",
+      "formula": {
+        "fn": "SUM",
+        "column": "Revenue",
+        "rows": "all_data_rows",
+        "as_typed": "=SUM(E2:E11)"
+      }
+    },
+    {
+      "index": 3,
+      "action": "select_range",
+      "t_start": 9.0,
+      "t_end": 11.0,
+      "point": [
+        119.0,
+        392.0
+      ],
+      "point2": [
+        558,
+        394
+      ],
+      "text": "",
+      "target": {
+        "row": "first_empty_after_data",
+        "from": "Region",
+        "to": "Revenue",
+        "span": "full_table_width"
+      },
+      "contract": {
+        "selection_box": [
+          62,
+          376,
+          547,
+          22
+        ],
+        "changed_box": [
+          59,
+          47,
+          556,
+          384
+        ],
+        "probe_box": [
+          59,
+          47,
+          556,
+          384
+        ],
+        "ink_before": 0.02253821942446043,
+        "ink_after": 0.035577787769784174,
+        "expect": {
+          "selection_spans": "full_table_width"
+        }
+      },
+      "crops": {
+        "pre": "step3_pre.png",
+        "post": "step3_post.png"
+      },
+      "intent": "Select the first empty after data across the whole table"
+    },
+    {
+      "index": 4,
+      "action": "press_control",
+      "t_start": 11.0,
+      "t_end": 13.676666666666666,
+      "point": [
+        388.0,
+        60.0
+      ],
+      "point2": null,
+      "text": "",
+      "target": {
+        "control_look": "step4_control.png",
+        "effect": "text_heavier"
+      },
+      "contract": {
+        "changed_box": [
+          64,
+          53,
+          702,
+          442
+        ],
+        "probe_box": [
+          62,
+          376,
+          547,
+          22
+        ],
+        "ink_before": 0.013794249626059497,
+        "ink_after": 0.01977729765663952,
+        "expect": {
+          "selection_ink_increases": true
+        }
+      },
+      "crops": {
+        "control": "step4_control.png",
+        "pre": "step4_pre.png",
+        "post": "step4_post.png"
+      },
+      "intent": "Make the selected text bold"
+    }
+  ]
+}

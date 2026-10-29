@@ -1,0 +1,62 @@
+{
+  "test": {
+    "all": {
+      "replay": {
+        "n": 44,
+        "success": 3
+      },
+      "eidos": {
+        "n": 44,
+        "success": 41
+      },
+      "eidos_nochk": {
+        "n": 44,
+        "success": 27
+      }
+    },
+    "redesign": {
+      "replay": {
+        "n": 24,
+        "success": 0
+      },
+      "eidos": {
+        "n": 24,
+        "success": 23
+      },
+      "eidos_nochk": {
+        "n": 24,
+        "success": 23
+      }
+    },
+    "interruption": {
+      "replay": {
+        "n": 16,
+        "success": 2
+      },
+      "eidos": {
+        "n": 16,
+        "success": 14
+      },
+      "eidos_nochk": {
+        "n": 16,
+        "success": 0
+      }
+    },
+    "self": {
+      "n": 44,
+      "agrees_with_oracle": 44,
+      "silent_failures": 0
+    },
+    "replay_silent": 41
+  },
+  "clips": {
+    "tutorial_totals": 13.733333,
+    "interrupt_eidos": 15.966667,
+    "redesign_eidos": 14.366667,
+    "interrupt_replay": 13.133333,
+    "other_app_eidos": 13.2,
+    "other_app_replay": 7.4,
+    "redesign_replay": 7.633333
+  },
+  "split": "test"
+}
