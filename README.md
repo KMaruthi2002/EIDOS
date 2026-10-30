@@ -2,13 +2,13 @@
 
 **Show it once.** EIDOS watches a screen-recorded tutorial and compiles it into a skill: a small program an AI agent can run on screens the video never showed. Every step carries a **visual contract** taken from the video, so the agent checks its own work, repairs what went wrong, and reports honestly when it can't.
 
-It works on everyday apps (send an email, add a calendar event, submit an expense, turn on two-factor sign-in) and on spreadsheets, and as an add-on, on a simulated robot arm. On held-out tests with new values, random redesigns, a different app and mid-task interruptions, EIDOS finished **58/60** everyday runs and **41/44** spreadsheet runs, against **4/60** and **3/44** for copying the tutorial's clicks. Its own verdict matched the truth on **104/104** runs.
+It works on four everyday tasks (send an email, add a calendar event, submit an expense, turn on two-factor sign-in) and a spreadsheet task, and as an add-on, on a simulated robot arm. On held-out tests with new values, random redesigns, a different app and mid-task interruptions, EIDOS finished **58/60** everyday runs and **41/44** spreadsheet runs, against **4/60** and **3/44** for copying the tutorial's clicks. Its own verdict matched the truth on **104/104** runs.
 
 Built by Maruthi Kunchala (Team Parallax) for the Meta Global AI Hackathon 2026.
 
 ## The problem
 
-There are billions of hours of screen-recorded how-to videos. Agents can't learn from them. Recent research ([Watch & Learn](https://arxiv.org/abs/2510.04673), [Learning from Online Videos at Inference Time](https://arxiv.org/abs/2511.04137), [GUIDE](https://arxiv.org/abs/2603.26266)) mostly uses tutorial videos as in-context examples, with gains of roughly +2 to +7.5 points on OSWorld; Watch & Learn also fine-tunes on trajectories it extracts from videos. As far as I found, none of them compile a video into a parameterized program whose steps are checked against the video during the run, or test learning in one app and running in another. Agents that copy recorded clicks break when the app changes, and usually don't notice.
+There are billions of hours of screen-recorded how-to videos, but an agent still can't watch one and come away with a skill it can check. Recent research turns tutorial videos into action trajectories for computer-use agents: as in-context examples and training data ([Watch & Learn](https://arxiv.org/abs/2510.04673)), as one trajectory added to context at each step ([Learning from Online Videos at Inference Time](https://arxiv.org/abs/2511.04137)), or as planning and grounding knowledge ([GUIDE](https://arxiv.org/abs/2603.26266), which reports gains of over 5% on OSWorld). As far as I found, none of them compiles one video into a parameterized program whose steps are checked against what the video showed during the run, or tests learning in one app and running in another. Agents that copy recorded clicks break when the app changes, and have no way to notice.
 
 ## What EIDOS does
 
@@ -22,22 +22,22 @@ tutorial video ──► steps + visual contracts ──► program with inputs 
 1. **Watch.** Finds the pointer, click markers and drags in the video frames, reads the screen with OCR, and finds what each action changed. The tutorials are recorded by scripts (`eidos/recorder.py`, `eidos/ui/recorder.py`) with a highlighted pointer and click rings, like the click highlighting in common screen recorders; offline, EIDOS finds the pointer by that highlight color.
 2. **Understand.** Decides what kind of step each click was from what was touched and what changed, and names its target by the text on screen, never by position.
 3. **Compile.** Produces a program: every value the person typed or picked becomes an input named after its field, and every step gets a contract.
-4. **Run and check.** On a new screen, EIDOS finds each target again, acts, and checks the contract against independent evidence before moving on.
+4. **Run and check.** On a new screen, EIDOS finds each target again from a fresh screenshot, acts, and checks the step's contract before moving on. If a check fails, it presses Escape (which closes the benchmark's interrupting dialog), looks again and redoes the step, up to twice; if it still fails, it stops and reports the failure.
 
 ### Everyday apps
 
-Four step types cover any app built from the usual parts:
+Four step types cover the four everyday task families here:
 
 | Step | Learned from the video as | Contract checked on the new screen |
 |---|---|---|
-| press | a click on a button or menu item, named by its text | the new text that appeared (for a submit: the entered values now shown outside the form) |
-| type | a click into a box, then typing, named by the box's label | the box shows the value, and the label attached to that box is the intended one |
+| press | a click on a button or menu item, named by its text | text that newly appeared after the click: for a submit, every entered value must show up outside the form; for other presses, at least two of the (up to three) new phrases seen in the video. Text already on screen before the click doesn't count |
+| type | a click into a box, then typing, named by the box's label | the box shows the value, re-read after typing, and the label next to the box is the intended one |
 | choose | a click on a box, then on an entry of the list that opened | the box shows the chosen value, and its label is the intended one |
-| switch | a click on an on/off switch, named by its row | the switch on that row is on (filled with color) or off (grey) |
+| switch | a click on an on/off switch, named by its row | the switch on that row is on (filled with color) or off (grey); EIDOS clicks only if it isn't already in the wanted state |
 
-For example, from a 19-second tutorial of someone sending an email, EIDOS learns: press "Compose"; type {to} into "To"; type {subject} into "Subject"; type {message} into "Message"; press "Send", after which {to} and {subject} must appear on screen outside the form. The tutorial's values become the defaults for `to`, `subject` and `message`.
+For example, from a 19-second tutorial of someone sending an email, EIDOS learns: press "Compose"; type {to} into "To"; type {subject} into "Subject"; type {message} into "Message"; press "Send", after which both {to} and {subject} must newly appear on screen outside the form. The tutorial's values become the defaults for `to`, `subject` and `message`.
 
-The checks are independent of how the target was found: after typing, EIDOS re-reads the label next to the box it typed into, so typing into the wrong box (for example after matching "Message" in the heading "New message") fails the check instead of passing it.
+Targets are named by their label; position is used only to break ties (for example, a list's entries are looked for below its box). The label is verified when a box is chosen, and re-read after typing. This is what stopped an early bug where "Message" matched the heading "New message" and EIDOS typed into the wrong box; the first version's check only read back the box it had chosen, so it passed.
 
 ### Spreadsheets
 
@@ -45,14 +45,14 @@ The first task family: add a bold totals row. `=SUM(E2:E11)` becomes "sum the Re
 
 ## Meta models
 
-| Model | Job in EIDOS | Offline stand-in in this repo |
+| Model | Planned job in EIDOS | Offline stand-in used for every result in this repo |
 |---|---|---|
 | SAM 3.1 | Track the pointer and click markers; segment what changed; find a field, button or switch on a new screen from a concept ("the text field labelled To") | Color segmentation, frame differencing, edge-based box detection, template matching |
 | Muse Spark | Read each before/after pair and state the step's purpose in screen-independent terms; read labels and values | OCR (Tesseract) plus rules for each step type |
 | Muse Wonder | Generalize the step trace into a program with inputs and contracts | Rules for the step types in this pilot |
 | Muse Image | Draw a card for each learned skill | Not used offline |
 
-**Status of the live models.** EIDOS is designed around these models, but every result in this repo ran offline with the stand-ins. Today the live path is partial: `eidos/meta.py` has a client for each model, SAM 3.1 concept search is wired into the spreadsheet runner as a route for finding a control, Muse Wonder's program is saved alongside the offline one by `learn`, and `python -m eidos check-live` calls each model once. The everyday-task runner uses only the offline stand-ins. The endpoint and model IDs in `meta.py` still need confirming against the Meta Model API once a key is available. Set `META_MODEL_API_KEY` (or put it in `.env`) to enable it.
+**Status of the live models.** EIDOS is designed around these models, but every result in this repo ran offline with the stand-ins. The live path today is a client in `eidos/meta.py`, tested only against a fake server that answers in the API's format (`tests/test_meta_client.py`), so the tests pin down the request and the parsing of replies and say nothing about model quality. SAM 3.1 concept search is wired into the spreadsheet runner as a last route for finding the bold button; Muse Wonder's program is saved next to the offline one by the spreadsheet `learn` command but not used; Muse Spark and Muse Image are called only by `python -m eidos check-live`. The everyday-task pipeline uses only the offline stand-ins. The endpoint and model IDs are placeholders until confirmed against the Meta Model API. Set `META_MODEL_API_KEY` (or put it in `.env`) to enable the client.
 
 ## Benchmarks
 
@@ -106,7 +106,7 @@ The same idea, off the screen. `physical/` learns a stacking task from a demonst
 - **Run** (`run`): a Franka Panda arm (MuJoCo, model from MuJoCo Menagerie) performs each step. It finds the blocks and checks each contract only through its own cameras: one overhead and two level side views, so a block hidden under another can still be located. After every step it re-checks all earlier contracts, so a stack that gets knocked over is noticed and rebuilt from the lowest broken step.
 - **Honest scope:** the arm's motions are scripted (inverse kinematics plus a pick-and-place routine), not learned. EIDOS decides what to do and how to check it. Objects are found by colour offline; in live mode SAM 3.1 would segment them by name. Scoring uses the simulator's true block positions, which the robot never reads.
 
-In the recorded showcase (`python physical/showcase.py`), the table is bumped after the second placement. With checks, EIDOS detects the broken contracts and rebuilds the stack; with checks off, it reports success next to a fallen stack.
+In the recorded showcase (`python physical/showcase.py`, one run of each), a simulated knock after the second placement moves the green block off the stack (the simulator moves it directly). With checks, EIDOS sees the broken contracts through its cameras and rebuilds the stack; with checks off, nothing re-checks the stack, so the run ends reporting done next to a broken stack. The demonstration video it learns from is `physical/demo/sim_demo.mp4`, rendered by the simulator.
 
 Setup: `physical/setup.sh` (MuJoCo plus the Panda model; on headless Linux, OSMesa).
 

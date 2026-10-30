@@ -7,6 +7,8 @@ import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+import sys
+sys.path.insert(0, str(ROOT))
 RUNS = ROOT / "runs"
 OUT = ROOT / "web" / "demo"
 
@@ -46,10 +48,59 @@ def main():
             r = json.loads(f.read_text())
             bench[split] = {"summary": r["summary"], "seed": r["seed"]}
 
-    data = {"trace": trace, "program": program, "showcase": showcase, "bench": bench}
+    # ---- everyday tasks
+    from eidos.ui.tasks import TITLES
+    import re as _re
+    ev = {"tasks": [], "clips": [], "bench": {}}
+    for task, title in TITLES.items():
+        prog = json.loads((RUNS / f"ui_skill_{task}" / "program.json").read_text())
+        shutil.copy(ROOT / "videos" / f"tutorial_{task}.mp4", OUT / "assets" / f"tutorial_{task}.mp4")
+        bindv = lambda t: _re.sub(r"\{(\w+)\}", lambda m: f"{{{m.group(1)}}}", t)
+        ev["tasks"].append({"task": task, "title": title, "inputs": prog["inputs"],
+                            "steps": [{"do": st["do"], "intent": st["intent"], "contract": st["contract"],
+                                       "target": st["target"]} for st in prog["steps"]]})
+    sc = RUNS / "showcase_everyday"
+    idx = {c["id"]: c for c in json.loads((sc / "index.json").read_text())}
+    for k in idx:
+        shutil.copy(sc / k / "run.mp4", OUT / "assets" / "runs" / f"ev_{k}.mp4")
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-sseof", "-0.2", "-i", str(sc / k / "run.mp4"), "-frames:v", "1",
+                        "-q:v", "3", str(OUT / "assets" / "runs" / f"ev_{k}_end.jpg")], check=True)
+        rep = json.loads((sc / k / "report.json").read_text())
+        idx[k]["steps"] = [{"id": st["id"], "intent": st["intent"], "passed": st["passed"], "attempts": st["attempts"],
+                            "checks": [{"contract": c["contract"], "pass": c["pass"]} for c in st["checks"]]}
+                           for st in rep.get("steps", [])]
+        idx[k]["inputs"] = rep.get("inputs")
+    ev["clips"] = [
+        {"id": "other", "title": "A second design of the mail app (design B), dark mode, fields reordered, new values. One example run",
+         "left": idx["other_replay"], "right": idx["other_eidos"]},
+        {"id": "interrupt", "title": "A dialog pops up mid-task and swallows input. One example run",
+         "left": idx["int_nochk"], "right": idx["int_eidos"]},
+    ]
+    for split in ("test2", "test", "dev"):
+        f = RUNS / f"bench_everyday_{split}" / "results.json"
+        if not f.exists():
+            continue
+        rows = json.loads(f.read_text())["rows"]
+        summ = {}
+        for cond in ("same", "new_data", "redesign", "other_app", "interrupt", "all"):
+            rs = [r for r in rows if cond == "all" or r["cond"] == cond]
+            summ[cond] = {sysn: {"success": sum(r["success"] for r in rs if r["system"] == sysn),
+                                 "n": sum(1 for r in rs if r["system"] == sysn)}
+                          for sysn in ("replay", "replay_new", "nochk", "eidos") if any(r["system"] == sysn for r in rows)}
+        ei = [r for r in rows if r["system"] == "eidos"]
+        summ["agree"] = {"agree": sum(r["says_done"] == r["success"] for r in ei), "n": len(ei),
+                         "silent": sum(r["says_done"] and not r["success"] for r in ei)}
+        nk = [r for r in rows if r["system"] == "nochk" and r["cond"] == "interrupt"]
+        summ["nochk_claimed_interrupt"] = {"said_done": sum(r["says_done"] for r in nk), "n": len(nk)}
+        ev["bench"][split] = {"seed": json.loads(f.read_text())["seed"], "summary": summ}
+    film = ROOT / "web" / "explainer_720.mp4"
+    if film.exists():
+        shutil.copy(film, OUT / "assets" / "explainer.mp4")
+        shutil.copy(ROOT / "web" / "explainer_poster.jpg", OUT / "assets" / "explainer_poster.jpg")
+    data = {"trace": trace, "program": program, "showcase": showcase, "bench": bench, "everyday": ev,
+            "film": film.exists()}
     html = (ROOT / "web" / "demo_template.html").read_text()
     html = html.replace("/*DATA*/null", json.dumps(data))
-    # Hosting platform hint: the page's side gutters already clear phone safe areas.
     html = html.replace("<!--VIEWPORT_META-->", "")
     (OUT / "index.html").write_text(html)
     size = sum(p.stat().st_size for p in OUT.rglob("*") if p.is_file())
