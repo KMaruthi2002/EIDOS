@@ -1,0 +1,176 @@
+000 mail      renamed    replay  says=True  truth=False 9.2s nothing was saved
+000 mail      renamed    replay_new says=True  truth=False 9.4s nothing was saved
+000 mail      renamed    nochk   says=False truth=False 11.7s nothing was saved
+000 mail      renamed    eidos   says=False truth=False 7.6s nothing was saved
+001 mail      renamed    replay  says=True  truth=False 9.0s 0 matching, 1 wrong: [{'to': 'maya@northwind.com', 'subject'
+001 mail      renamed    replay_new says=True  truth=True  8.9s 
+001 mail      renamed    nochk   says=False truth=False 15.0s nothing was saved
+001 mail      renamed    eidos   says=False truth=False 10.1s nothing was saved
+002 mail      renamed    replay  says=True  truth=False 13.4s nothing was saved
+002 mail      renamed    replay_new says=True  truth=False 8.7s nothing was saved
+002 mail      renamed    nochk   says=False truth=False 15.8s nothing was saved
+000 mail      renamed    eidos_live says=True  truth=True  66.4s 
+002 mail      renamed    eidos   says=False truth=False 11.7s nothing was saved
+003 mail      renamed    replay  says=True  truth=False 9.5s nothing was saved
+003 mail      renamed    replay_new says=True  truth=False 13.7s nothing was saved
+001 mail      renamed    eidos_live says=True  truth=True  83.3s 
+003 mail      renamed    nochk   says=False truth=False 14.4s nothing was saved
+003 mail      renamed    eidos   says=False truth=False 8.3s nothing was saved
+004 mail      renamed    replay  says=True  truth=False 8.6s nothing was saved
+002 mail      renamed    eidos_live says=True  truth=True  62.3s 
+004 mail      renamed    replay_new says=True  truth=False 9.0s nothing was saved
+004 mail      renamed    nochk   says=False truth=False 13.0s nothing was saved
+004 mail      renamed    eidos   says=False truth=False 9.7s nothing was saved
+005 mail      renamed    replay  says=True  truth=False 8.6s nothing was saved
+005 mail      renamed    replay_new says=True  truth=False 9.3s nothing was saved
+003 mail      renamed    eidos_live says=True  truth=True  52.4s 
+005 mail      renamed    nochk   says=False truth=False 10.9s nothing was saved
+005 mail      renamed    eidos   says=False truth=False 8.7s nothing was saved
+006 mail      renamed    replay  says=True  truth=False 8.7s 0 matching, 1 wrong: [{'to': 'maya@northwind.com', 'subject'
+004 mail      renamed    eidos_live says=True  truth=True  48.8s 
+006 mail      renamed    replay_new says=True  truth=True  8.6s 
+006 mail      renamed    eidos   says=False truth=False 11.8s nothing was saved
+006 mail      renamed    nochk   says=False truth=False 14.8s nothing was saved
+007 mail      renamed    replay  says=True  truth=False 8.8s 0 matching, 1 wrong: [{'to': 'maya@northwind.com', 'subject'
+007 mail      renamed    replay_new says=True  truth=True  14.7s 
+005 mail      renamed    eidos_live says=True  truth=True  65.5s 
+007 mail      renamed    nochk   says=False truth=False 13.1s nothing was saved
+007 mail      renamed    eidos   says=False truth=False 9.1s nothing was saved
+008 calendar  renamed    replay  says=True  truth=False 10.0s nothing was saved
+006 mail      renamed    eidos_live says=True  truth=True  61.3s 
+008 calendar  renamed    replay_new says=True  truth=False 9.7s nothing was saved
+008 calendar  renamed    eidos   says=False truth=False 10.8s nothing was saved
+008 calendar  renamed    nochk   says=False truth=False 16.5s nothing was saved
+009 calendar  renamed    replay  says=True  truth=False 9.9s nothing was saved
+007 mail      renamed    eidos_live says=True  truth=True  58.7s 
+009 calendar  renamed    replay_new says=True  truth=False 9.8s nothing was saved
+009 calendar  renamed    eidos   says=False truth=False 8.2s nothing was saved
+009 calendar  renamed    nochk   says=False truth=False 14.0s nothing was saved
+010 calendar  renamed    replay  says=True  truth=False 9.7s nothing was saved
+010 calendar  renamed    replay_new says=True  truth=False 14.0s nothing was saved
+008 calendar  renamed    eidos_live says=True  truth=True  74.9s 
+010 calendar  renamed    nochk   says=False truth=False 17.4s nothing was saved
+010 calendar  renamed    eidos   says=False truth=False 9.5s nothing was saved
+011 calendar  renamed    replay  says=True  truth=False 14.4s nothing was saved
+009 calendar  renamed    eidos_live says=True  truth=True  77.9s 
+011 calendar  renamed    replay_new says=True  truth=False 9.9s nothing was saved
+011 calendar  renamed    eidos   says=False truth=False 7.8s nothing was saved
+011 calendar  renamed    nochk   says=False truth=False 13.1s nothing was saved
+012 calendar  renamed    replay  says=True  truth=False 14.8s nothing was saved
+012 calendar  renamed    replay_new says=True  truth=False 14.3s nothing was saved
+010 calendar  renamed    eidos_live says=True  truth=True  83.7s 
+012 calendar  renamed    eidos   says=False truth=False 10.9s nothing was saved
+012 calendar  renamed    nochk   says=False truth=False 22.3s nothing was saved
+013 calendar  renamed    replay  says=True  truth=False 13.8s nothing was saved
+013 calendar  renamed    replay_new says=True  truth=False 9.7s nothing was saved
+011 calendar  renamed    eidos_live says=True  truth=True  80.4s 
+013 calendar  renamed    eidos   says=False truth=False 10.1s nothing was saved
+013 calendar  renamed    nochk   says=False truth=False 18.5s nothing was saved
+014 calendar  renamed    replay  says=True  truth=False 12.8s nothing was saved
+014 calendar  renamed    replay_new says=True  truth=False 9.7s nothing was saved
+012 calendar  renamed    eidos_live says=True  truth=True  67.0s 
+014 calendar  renamed    eidos   says=False truth=False 9.8s nothing was saved
+014 calendar  renamed    nochk   says=False truth=False 13.5s nothing was saved
+015 calendar  renamed    replay  says=True  truth=False 10.3s nothing was saved
+015 calendar  renamed    replay_new says=True  truth=False 14.9s nothing was saved
+013 calendar  renamed    eidos_live says=True  truth=True  81.5s 
+015 calendar  renamed    nochk   says=False truth=False 13.4s nothing was saved
+015 calendar  renamed    eidos   says=False truth=False 9.2s nothing was saved
+016 expense   renamed    replay  says=True  truth=False 8.5s 0 matching, 1 wrong: [{'merchant': 'Delta Air Lines', 'amoun
+014 calendar  renamed    eidos_live says=True  truth=True  65.5s 
+016 expense   renamed    replay_new says=True  truth=False 8.1s 0 matching, 1 wrong: [{'merchant': 'Blue Bottle', 'amount': 
+016 expense   renamed    eidos   says=False truth=False 10.6s nothing was saved
+016 expense   renamed    nochk   says=False truth=False 14.5s nothing was saved
+017 expense   renamed    replay  says=True  truth=False 10.3s 0 matching, 1 wrong: [{'merchant': 'Delta Air Lines', 'amoun
+017 expense   renamed    replay_new says=True  truth=False 8.2s 0 matching, 1 wrong: [{'merchant': 'Staples', 'amount': '826
+015 calendar  renamed    eidos_live says=True  truth=True  58.1s 
+017 expense   renamed    eidos   says=False truth=False 8.1s nothing was saved
+017 expense   renamed    nochk   says=False truth=False 13.1s nothing was saved
+018 expense   renamed    replay  says=True  truth=False 8.2s nothing was saved
+016 expense   renamed    eidos_live says=True  truth=True  46.1s 
+018 expense   renamed    replay_new says=True  truth=False 8.0s nothing was saved
+018 expense   renamed    nochk   says=False truth=False 11.5s nothing was saved
+018 expense   renamed    eidos   says=False truth=False 7.6s nothing was saved
+019 expense   renamed    replay  says=True  truth=False 8.5s nothing was saved
+019 expense   renamed    replay_new says=True  truth=False 8.1s nothing was saved
+017 expense   renamed    eidos_live says=True  truth=True  48.4s 
+019 expense   renamed    eidos   says=False truth=False 8.9s nothing was saved
+019 expense   renamed    nochk   says=False truth=False 13.3s nothing was saved
+020 expense   renamed    replay  says=True  truth=False 8.9s 0 matching, 1 wrong: [{'merchant': 'Delta Air Lines', 'amoun
+020 expense   renamed    replay_new says=True  truth=False 8.8s 0 matching, 1 wrong: [{'merchant': 'Amtrak', 'amount': '770.
+018 expense   renamed    eidos_live says=True  truth=True  53.9s 
+020 expense   renamed    nochk   says=False truth=False 11.0s nothing was saved
+020 expense   renamed    eidos   says=False truth=False 8.3s nothing was saved
+021 expense   renamed    replay  says=True  truth=False 8.3s nothing was saved
+021 expense   renamed    replay_new says=True  truth=False 8.0s nothing was saved
+019 expense   renamed    eidos_live says=True  truth=True  50.9s 
+021 expense   renamed    eidos   says=False truth=False 9.5s nothing was saved
+021 expense   renamed    nochk   says=False truth=False 13.8s nothing was saved
+022 expense   renamed    replay  says=True  truth=False 8.8s 0 matching, 1 wrong: [{'merchant': 'Delta Air Lines', 'amoun
+020 expense   renamed    eidos_live says=True  truth=True  48.1s 
+022 expense   renamed    replay_new says=True  truth=True  8.2s 
+022 expense   renamed    eidos   says=False truth=False 17.7s nothing was saved
+022 expense   renamed    nochk   says=False truth=False 21.9s nothing was saved
+023 expense   renamed    replay  says=True  truth=False 8.5s nothing was saved
+023 expense   renamed    replay_new says=True  truth=False 8.2s nothing was saved
+021 expense   renamed    eidos_live says=True  truth=True  67.3s 
+023 expense   renamed    nochk   says=False truth=False 14.2s nothing was saved
+023 expense   renamed    eidos   says=False truth=False 7.4s nothing was saved
+024 settings  renamed    replay  says=True  truth=False 6.3s saved settings: {'Two-factor sign-in': True, 'Sign-in alerts
+022 expense   renamed    eidos_live says=True  truth=True  47.4s 
+024 settings  renamed    replay_new says=True  truth=True  6.3s 
+024 settings  renamed    nochk   says=False truth=False 7.2s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+024 settings  renamed    eidos   says=False truth=False 6.8s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+025 settings  renamed    replay  says=True  truth=False 6.2s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+025 settings  renamed    replay_new says=True  truth=False 6.3s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+023 expense   renamed    eidos_live says=True  truth=True  47.9s 
+025 settings  renamed    nochk   says=False truth=False 13.8s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+025 settings  renamed    eidos   says=False truth=False 9.1s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+026 settings  renamed    replay  says=True  truth=False 6.8s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+026 settings  renamed    replay_new says=True  truth=False 6.3s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+024 settings  renamed    eidos_live says=True  truth=True  50.9s 
+026 settings  renamed    nochk   says=False truth=False 10.3s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+026 settings  renamed    eidos   says=False truth=False 10.4s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+027 settings  renamed    replay  says=True  truth=False 6.4s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+027 settings  renamed    replay_new says=True  truth=False 6.2s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+025 settings  renamed    eidos_live says=True  truth=True  49.8s 
+027 settings  renamed    nochk   says=False truth=False 6.0s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+027 settings  renamed    eidos   says=False truth=False 6.3s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+028 settings  renamed    replay  says=True  truth=False 6.3s saved settings: {'Two-factor sign-in': True, 'Sign-in alerts
+028 settings  renamed    replay_new says=True  truth=True  6.2s 
+026 settings  renamed    eidos_live says=True  truth=True  45.7s 
+028 settings  renamed    nochk   says=False truth=False 7.2s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+028 settings  renamed    eidos   says=False truth=False 5.8s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+029 settings  renamed    replay  says=True  truth=False 6.4s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+029 settings  renamed    replay_new says=True  truth=False 6.5s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+027 settings  renamed    eidos_live says=True  truth=True  43.9s 
+029 settings  renamed    eidos   says=False truth=False 7.3s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+029 settings  renamed    nochk   says=False truth=False 7.6s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+030 settings  renamed    replay  says=True  truth=False 6.5s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+030 settings  renamed    replay_new says=True  truth=False 6.3s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+028 settings  renamed    eidos_live says=True  truth=True  40.0s 
+030 settings  renamed    nochk   says=False truth=False 6.6s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+030 settings  renamed    eidos   says=False truth=False 7.8s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+031 settings  renamed    replay  says=True  truth=False 7.1s saved settings: {'Two-factor sign-in': True, 'Sign-in alerts
+031 settings  renamed    replay_new says=True  truth=True  6.2s 
+031 settings  renamed    nochk   says=False truth=False 6.2s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+029 settings  renamed    eidos_live says=True  truth=True  42.1s 
+031 settings  renamed    eidos   says=False truth=False 5.6s saved settings: {'Two-factor sign-in': False, 'Sign-in alert
+030 settings  renamed    eidos_live says=True  truth=True  46.4s 
+031 settings  renamed    eidos_live says=True  truth=True  41.9s 
+
+condition    runs  replay      replay_new  nochk       eidos       eidos_live
+same            0  0/0         0/0         0/0         0/0         0/0       
+new_data        0  0/0         0/0         0/0         0/0         0/0       
+redesign        0  0/0         0/0         0/0         0/0         0/0       
+other_app       0  0/0         0/0         0/0         0/0         0/0       
+interrupt       0  0/0         0/0         0/0         0/0         0/0       
+renamed        32  0/32        7/32        0/32        0/32        32/32     
+ALL            32  0/32        7/32        0/32        0/32        32/32     
+  mail          8  0/8         3/8         0/8         0/8         8/8       
+  calendar      8  0/8         0/8         0/8         0/8         8/8       
+  expense       8  0/8         1/8         0/8         0/8         8/8       
+  settings      8  0/8         3/8         0/8         0/8         8/8       
+nochk: verdict matches truth 32/32; silent failures 0
+eidos: verdict matches truth 32/32; silent failures 0
+eidos_live: verdict matches truth 32/32; silent failures 0
