@@ -74,11 +74,10 @@
       },
       "contract": {
         "screen_shows": [
-          "Recovery email",
           "Settings saved"
         ]
       },
-      "intent": "Press 'Save changes'; the screen should then show 'Recovery email', 'Settings saved'"
+      "intent": "Press 'Save changes'; the screen should then show 'Settings saved'"
     }
   ]
 }

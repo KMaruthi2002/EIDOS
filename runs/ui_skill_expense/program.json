@@ -22,12 +22,12 @@
       },
       "contract": {
         "screen_shows": [
-          "My expenses",
           "Merchant",
-          "Amount"
+          "Amount",
+          "Category"
         ]
       },
-      "intent": "Press 'New expense'; the screen should then show 'My expenses', 'Merchant', 'Amount'"
+      "intent": "Press 'New expense'; the screen should then show 'Merchant', 'Amount', 'Category'"
     },
     {
       "id": 2,

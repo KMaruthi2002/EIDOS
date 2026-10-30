@@ -54,7 +54,9 @@ def norm(s: str) -> str:
 def lines(img) -> list[Line]:
     img = V.to_bgr(img)
     words = V.dedupe(V.ocr_words(img, scale=2.0, psm=11, min_conf=35) +
-                     V.ocr_words(img, scale=2.0, psm=11, min_conf=35, binarize=True))
+                     V.ocr_words(img, scale=2.0, psm=11, min_conf=35, binarize=True) +
+                     # sparse mode sometimes skips a whole row (seen next to a focused field); page mode doesn't
+                     V.ocr_words(img, scale=2.0, psm=3, min_conf=45))
     # Icons and switches read as stray symbols ("CD", "@"): short and taller than text.
     if words:
         mh = float(np.median([w.h for w in words]))

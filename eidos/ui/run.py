@@ -112,11 +112,17 @@ class Screen:
                 return hit, sw
         raise LookupError(f"no switch next to '{label}'")
 
-    def shows(self, phrase) -> bool:
-        """The phrase is on screen outside any input field (so typed text doesn't count)."""
-        fields = [b for b in self.boxes if S.is_field(b)]
-        return any(not any(S.inside(b, h[1] + h[3] / 2, h[2] + h[4] / 2) for b in fields)
-                   for h in S.find_text(self.lines, phrase, 0.82))
+    def where(self, phrase):
+        """Where the phrase is on screen, outside any input field (typed text doesn't count)."""
+        # input fields are outlined, not painted: a toast or a filled button is not a field
+        fields = [b for b in self.boxes if S.is_field(b) and not S._filled(self.img, b)]
+        return [h for h in S.find_text(self.lines, phrase, 0.82)
+                if not any(S.inside(b, h[1] + h[3] / 2, h[2] + h[4] / 2) for b in fields)]
+
+    def snapshot(self):
+        snap = Screen(self.page)
+        snap.img, snap.lines, snap.boxes = self.img, self.lines, self.boxes
+        return snap
 
 
 async def run_ui(program: dict, url: str, out_dir: Path, inputs: dict | None = None, use_contracts: bool = True,
@@ -170,6 +176,7 @@ async def run_ui(program: dict, url: str, out_dir: Path, inputs: dict | None = N
             log = StepLog(st["id"], bind(st["intent"], inputs), st["do"], t_start=round(time.monotonic() - t0, 2))
             await emit({"type": "step_start", "id": st["id"], "intent": log.intent})
             tries = 3 if use_contracts else 1
+            first_before = None
             for attempt in range(tries):
                 log.attempts = attempt + 1
                 if attempt:
@@ -182,18 +189,43 @@ async def run_ui(program: dict, url: str, out_dir: Path, inputs: dict | None = N
                     do = st["do"]
                     if do == "press":
                         text = bind(st["target"]["text"], inputs)
+                        want = [bind(w, inputs) for w in st["contract"]["screen_shows"]]
+                        values = [bind(w, inputs) for w in st["contract"]["screen_shows"] if "{" in w]
+
+                        def verdict(before):
+                            # Only text that newly appeared counts: anything already on screen
+                            # before the first press (a label, an old row) proves nothing.
+                            def new_at(w):
+                                old = before.where(w) + [h for h in S.find_text(before.lines, w, 0.82)]
+                                return [h for h in scr.where(w)
+                                        if not any(abs(h[1] - o[1]) < 30 and abs(h[2] - o[2]) < 20 for o in old)]
+                            seen = [w for w in want if new_at(w)]
+                            # entered values must all show up; for interface text, two of three is enough
+                            need_vals = all(v in seen for v in values)
+                            ui = [w for w in want if w not in values]
+                            ui_seen = [w for w in ui if w in seen]
+                            ok = need_vals and len(ui_seen) >= min(len(ui), max(1, (2 * len(ui) + 2) // 3))
+                            return ok, seen
+                        if use_contracts and attempt and first_before is not None:
+                            ok, seen = verdict(first_before)
+                            if ok:
+                                log.grounding.append({"how": "the press had worked after all; checked against the screen from before it"})
+                                log.checks.append({"contract": "screen then newly shows " + ", ".join(f"'{w}'" for w in want), "found": seen, "pass": True})
+                                log.passed = True
+                                break
                         hit, b = scr.control(text)
                         x, y = (b[0] + b[2] / 2, b[1] + b[3] / 2) if b else (hit[1] + hit[3] / 2, hit[2] + hit[4] / 2)
                         log.grounding.append({"how": f"found the control reading '{text}' by OCR", "at": [round(x), round(y)]})
+                        before = scr.snapshot()
+                        if first_before is None:
+                            first_before = before
                         await click(x, y)
                         await page.wait_for_timeout(650)
                         ok = True
                         if use_contracts:
                             await scr.look()
-                            want = [bind(w, inputs) for w in st["contract"]["screen_shows"]]
-                            seen = [w for w in want if scr.shows(w)]
-                            ok = len(seen) >= max(1, (len(want) + 1) // 2) if want else True
-                            log.checks.append({"contract": "screen then shows " + ", ".join(f"'{w}'" for w in want),
+                            ok, seen = verdict(first_before)
+                            log.checks.append({"contract": "screen then newly shows " + ", ".join(f"'{w}'" for w in want),
                                                "found": seen, "pass": ok})
                     elif do in ("type", "choose"):
                         label = st["target"]["field"]
@@ -247,7 +279,7 @@ async def run_ui(program: dict, url: str, out_dir: Path, inputs: dict | None = N
                         state = S.is_on(scr.img, sw)
                         log.grounding.append({"how": f"found the switch on the '{label}' row", "box": list(sw),
                                               "was": "on" if state else "off"})
-                        if not use_contracts or state != want:
+                        if state != want:     # make it so (also with checks off: reading the state is grounding)
                             await click(sw[0] + sw[2] / 2, sw[1] + sw[3] / 2)
                             await page.wait_for_timeout(300)
                         ok = True
@@ -288,8 +320,12 @@ async def run_ui(program: dict, url: str, out_dir: Path, inputs: dict | None = N
     return report
 
 
-async def replay_ui(trace: dict, url: str, out_dir: Path, record: bool = False, on_event=None) -> dict:
-    """Copy the clicks: repeat the tutorial's pointer positions and keystrokes."""
+async def replay_ui(trace: dict, url: str, out_dir: Path, record: bool = False, on_event=None,
+                    substitute: dict | None = None) -> dict:
+    """Copy the clicks: repeat the tutorial's pointer positions and keystrokes.
+
+    substitute maps a typed tutorial value to the value to type instead, so the
+    baseline can be given the run's new values (same clicks, new text)."""
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     async with async_playwright() as p:
@@ -309,7 +345,7 @@ async def replay_ui(trace: dict, url: str, out_dir: Path, record: bool = False, 
             await page.mouse.move(ev["x"], ev["y"], steps=12)
             await page.mouse.click(ev["x"], ev["y"])
             if ev.get("typed"):
-                await page.keyboard.type(ev["typed"], delay=18)
+                await page.keyboard.type((substitute or {}).get(ev["typed"], ev["typed"]), delay=18)
             prev = ev["t"]
         await page.wait_for_timeout(900)
         state = await page.evaluate("window.__eidosState ? window.__eidosState() : null")

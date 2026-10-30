@@ -25,9 +25,10 @@ from eidos.ui.tasks import TUTORIALS, N_FIELDS, fresh_inputs, score, URL   # noq
 
 BASE = sys.argv[1] if len(sys.argv) > 1 else "http://localhost:8000"
 SPLIT = sys.argv[2] if len(sys.argv) > 2 else "dev"
-SEED = {"dev": 7, "test": 31337}.get(SPLIT, int(SPLIT) if SPLIT.isdigit() else 7)
+SEED = {"dev": 7, "test": 31337, "test2": 50505}.get(SPLIT, int(SPLIT) if SPLIT.isdigit() else 7)
 N_REDESIGN, N_OTHER, N_INTERRUPT = 6, 3, 4
 OUT = ROOT / "runs" / f"bench_everyday_{SPLIT}"
+SYSTEMS = ("replay", "replay_new", "nochk", "eidos")
 
 
 def redesign(rng, task, skin):
@@ -79,8 +80,11 @@ async def one(sem, i, c, system):
     async with sem:
         t = time.monotonic()
         try:
-            if system == "replay":
-                rep = await replay_ui(json.loads((sk / "trace.json").read_text()), url, out)
+            if system in ("replay", "replay_new"):
+                # Copying the clicks never checks anything, so it has no verdict of its own;
+                # it is counted as "says done". replay_new types this run's values.
+                sub = {prog["inputs"][k]: v for k, v in inputs.items() if k in prog["inputs"]} if system == "replay_new" else None
+                rep = await replay_ui(json.loads((sk / "trace.json").read_text()), url, out, substitute=sub)
                 says = True
             else:
                 rep = await run_ui(prog, url, out, inputs, use_contracts=(system == "eidos"))
@@ -101,7 +105,7 @@ async def main():
     OUT.mkdir(parents=True, exist_ok=True)
     conds = conditions()
     sem = asyncio.Semaphore(int(sys.argv[3]) if len(sys.argv) > 3 else 3)
-    jobs = [one(sem, i, c, s) for i, c in enumerate(conds) for s in ("replay", "nochk", "eidos")]
+    jobs = [one(sem, i, c, s) for i, c in enumerate(conds) for s in SYSTEMS]
     rows = await asyncio.gather(*jobs)
     (OUT / "results.json").write_text(json.dumps({"seed": SEED, "split": SPLIT, "rows": rows}, indent=2))
     summarize(rows)
@@ -110,18 +114,18 @@ async def main():
 def summarize(rows):
     def cell(rs):
         return f"{sum(r['success'] for r in rs)}/{len(rs)}"
-    print("\ncondition    runs  replay   nochk    eidos")
-    for cond in ("same", "new_data", "redesign", "other_app", "interrupt", None):
-        rs = [r for r in rows if cond is None or r["cond"] == cond]
-        by = {s: [r for r in rs if r["system"] == s] for s in ("replay", "nochk", "eidos")}
-        print(f"{cond or 'ALL':12s} {len(by['eidos']):4d}  {cell(by['replay']):7s}  {cell(by['nochk']):7s}  {cell(by['eidos']):7s}")
-    for task in TUTORIALS:
-        by = {s: [r for r in rows if r["task"] == task and r["system"] == s] for s in ("replay", "nochk", "eidos")}
-        print(f"  {task:10s} {len(by['eidos']):4d}  {cell(by['replay']):7s}  {cell(by['nochk']):7s}  {cell(by['eidos']):7s}")
-    ei = [r for r in rows if r["system"] == "eidos"]
-    silent = [r for r in ei if r["says_done"] and not r["success"]]
-    agree = sum(r["says_done"] == r["success"] for r in ei)
-    print(f"EIDOS verdict matches truth: {agree}/{len(ei)}; silent failures: {len(silent)}")
+    systems = [x for x in SYSTEMS if any(r["system"] == x for r in rows)]
+    print("\ncondition    runs  " + "  ".join(f"{x:10s}" for x in systems))
+    groups = [(c, lambda r, c=c: r["cond"] == c) for c in ("same", "new_data", "redesign", "other_app", "interrupt")]
+    groups += [("ALL", lambda r: True)] + [(f"  {t}", lambda r, t=t: r["task"] == t) for t in TUTORIALS]
+    for name, f in groups:
+        by = {x: [r for r in rows if f(r) and r["system"] == x] for x in systems}
+        print(f"{name:12s} {len(by['eidos']):4d}  " + "  ".join(f"{cell(by[x]):10s}" for x in systems))
+    for x in ("nochk", "eidos"):
+        rs = [r for r in rows if r["system"] == x]
+        agree = sum(r["says_done"] == r["success"] for r in rs)
+        silent = sum(r["says_done"] and not r["success"] for r in rs)
+        print(f"{x}: verdict matches truth {agree}/{len(rs)}; silent failures {silent}")
 
 
 if __name__ == "__main__":

@@ -57,7 +57,6 @@
         36
       ],
       "shows": [
-        "My expenses",
         "Merchant",
         "Amount",
         "Category",
@@ -133,12 +132,12 @@
         37
       ],
       "shows": [
-        "expenses",
         "Delta Air Lines",
         "Travel",
         "$412.50",
         "Figma",
-        "Meals"
+        "Meals",
+        "$381.53"
       ]
     }
   ]

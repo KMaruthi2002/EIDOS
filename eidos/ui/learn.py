@@ -96,13 +96,16 @@ def row_label(b, lns):
     return min([ln for ln in c if ln.y - top < 6], key=lambda ln: abs(ln.cx - (b[0] + b[2] / 2)))
 
 
-def new_phrases(pre_l, post_l, exclude=()):
+def new_phrases(pre_l, post_l, exclude=(), values_in=lambda t: False):
     out = []
     for ln in post_l:
         t = ln.text.strip(" .")
         if sum(ch.isalnum() for ch in t) < 3:
             continue
-        if any(S.sim(t, p.text) > 0.85 and abs(p.cy - ln.cy) < 20 and abs(p.x - ln.x) < 40 for p in pre_l):
+        # text already on screen before the click doesn't show what the click did; typed
+        # values may reappear elsewhere (a new row), so those only need a new position
+        if any(S.sim(t, p.text) > 0.85 and ((abs(p.cy - ln.cy) < 20 and abs(p.x - ln.x) < 40) or not values_in(t))
+               for p in pre_l):
             continue
         if any(S.sim(t, e) > 0.8 for e in exclude):
             continue
@@ -200,7 +203,7 @@ def analyze(video: Path, out_dir: Path, name: str | None = None) -> tuple[dict, 
                 near = [ln for ln in fl + pl if S.inside((ln.x, ln.y, ln.w, ln.h), e.x, e.y, pad=8)]
                 label = near[0].text if near else ""
             step.update(action="press", label=label, box=b,
-                        shows=new_phrases(pl, ql, exclude=[label])[:6])
+                        shows=new_phrases(pl, ql, exclude=[label], values_in=lambda t: bool(params_in(t, inputs)))[:6])
         cv2.imwrite(str(out_dir / f"step{step['index']}_pre.png"), pre)
         cv2.imwrite(str(out_dir / f"step{step['index']}_post.png"), post)
         steps.append(step)
