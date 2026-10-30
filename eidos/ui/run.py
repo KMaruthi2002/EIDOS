@@ -186,10 +186,17 @@ async def run_ui(program: dict, url: str, out_dir: Path, inputs: dict | None = N
                     raise
             # whole lines, plus the pieces of short lines (two buttons side by side read as one line)
             cands = [ln.text for ln in scr.lines]
-            for ln in scr.lines:
-                ws = [w.text for w in ln.words]
-                if 1 < len(ws) <= 6:
-                    cands += ws + [" ".join(ws[i:i + 2]) for i in range(len(ws) - 1)]
+            # labels wrapped onto two lines ("BACKUP" / "EMAIL") as one candidate
+            for a_ in scr.lines:
+                for b_ in scr.lines:
+                    if b_ is not a_ and abs(b_.x - a_.x) <= 8 and 0 <= b_.y - (a_.y + a_.h) <= 1.2 * max(a_.h, b_.h) + 2:
+                        cands.append(a_.text + " " + b_.text)
+            if "button" in role or "menu" in role:
+                # two buttons side by side are read as one line: offer the pieces too
+                for ln in scr.lines:
+                    ws = [w.text for w in ln.words]
+                    if 1 < len(ws) <= 6:
+                        cands += [" ".join(ws[i:i + n]) for n in (1, 2, 3) for i in range(len(ws) - n + 1)]
             try:
                 alias = await L.match_label(scr.img, label, role, task_name, cands, which)
             except Exception as e:      # a model error is a failure to ground, reported like any other

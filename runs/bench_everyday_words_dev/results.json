@@ -1,0 +1,2686 @@
+{
+  "seed": 8,
+  "split": "words_dev",
+  "rows": [
+    {
+      "i": 0,
+      "task": "mail",
+      "cond": "renamed",
+      "system": "replay",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=A&theme=dark&nav=left&labels=left&btn=top&scale=1&order=1,0,2&words=alt&data=53",
+      "inputs": {
+        "to": "ana@brightlane.com",
+        "subject": "Travel receipts",
+        "message": "Thanks for the help."
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 10.3,
+      "repairs": 0
+    },
+    {
+      "i": 0,
+      "task": "mail",
+      "cond": "renamed",
+      "system": "replay_new",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=A&theme=dark&nav=left&labels=left&btn=top&scale=1&order=1,0,2&words=alt&data=53",
+      "inputs": {
+        "to": "ana@brightlane.com",
+        "subject": "Travel receipts",
+        "message": "Thanks for the help."
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 10.3,
+      "repairs": 0
+    },
+    {
+      "i": 0,
+      "task": "mail",
+      "cond": "renamed",
+      "system": "nochk",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=A&theme=dark&nav=left&labels=left&btn=top&scale=1&order=1,0,2&words=alt&data=53",
+      "inputs": {
+        "to": "ana@brightlane.com",
+        "subject": "Travel receipts",
+        "message": "Thanks for the help."
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 13.3,
+      "repairs": 0
+    },
+    {
+      "i": 0,
+      "task": "mail",
+      "cond": "renamed",
+      "system": "eidos",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=A&theme=dark&nav=left&labels=left&btn=top&scale=1&order=1,0,2&words=alt&data=53",
+      "inputs": {
+        "to": "ana@brightlane.com",
+        "subject": "Travel receipts",
+        "message": "Thanks for the help."
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 8.5,
+      "repairs": 2
+    },
+    {
+      "i": 0,
+      "task": "mail",
+      "cond": "renamed",
+      "system": "eidos_live",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=A&theme=dark&nav=left&labels=left&btn=top&scale=1&order=1,0,2&words=alt&data=53",
+      "inputs": {
+        "to": "ana@brightlane.com",
+        "subject": "Travel receipts",
+        "message": "Thanks for the help."
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 61.5,
+      "repairs": 0
+    },
+    {
+      "i": 1,
+      "task": "mail",
+      "cond": "renamed",
+      "system": "replay",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=B&theme=dark&nav=right&labels=left&btn=bottom&scale=1&words=alt&data=91",
+      "inputs": {
+        "to": "kenji@brightlane.com",
+        "subject": "Travel receipts",
+        "message": "Thanks for the help."
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 9.1,
+      "repairs": 0
+    },
+    {
+      "i": 1,
+      "task": "mail",
+      "cond": "renamed",
+      "system": "replay_new",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=B&theme=dark&nav=right&labels=left&btn=bottom&scale=1&words=alt&data=91",
+      "inputs": {
+        "to": "kenji@brightlane.com",
+        "subject": "Travel receipts",
+        "message": "Thanks for the help."
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 9.1,
+      "repairs": 0
+    },
+    {
+      "i": 1,
+      "task": "mail",
+      "cond": "renamed",
+      "system": "nochk",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=B&theme=dark&nav=right&labels=left&btn=bottom&scale=1&words=alt&data=91",
+      "inputs": {
+        "to": "kenji@brightlane.com",
+        "subject": "Travel receipts",
+        "message": "Thanks for the help."
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 14.8,
+      "repairs": 0
+    },
+    {
+      "i": 1,
+      "task": "mail",
+      "cond": "renamed",
+      "system": "eidos",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=B&theme=dark&nav=right&labels=left&btn=bottom&scale=1&words=alt&data=91",
+      "inputs": {
+        "to": "kenji@brightlane.com",
+        "subject": "Travel receipts",
+        "message": "Thanks for the help."
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 9.4,
+      "repairs": 2
+    },
+    {
+      "i": 1,
+      "task": "mail",
+      "cond": "renamed",
+      "system": "eidos_live",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=B&theme=dark&nav=right&labels=left&btn=bottom&scale=1&words=alt&data=91",
+      "inputs": {
+        "to": "kenji@brightlane.com",
+        "subject": "Travel receipts",
+        "message": "Thanks for the help."
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 76.4,
+      "repairs": 0
+    },
+    {
+      "i": 2,
+      "task": "mail",
+      "cond": "renamed",
+      "system": "replay",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=A&words=alt&data=14",
+      "inputs": {
+        "to": "li.wei@brightlane.com",
+        "subject": "Hiring update",
+        "message": "Thanks for the help."
+      },
+      "says_done": true,
+      "success": false,
+      "why": "0 matching, 1 wrong: [{'to': 'maya@northwind.com', 'subject': 'Q3 report', 'message': 'Attached is the Q3 report.'}]",
+      "seconds": 9.0,
+      "repairs": 0
+    },
+    {
+      "i": 2,
+      "task": "mail",
+      "cond": "renamed",
+      "system": "replay_new",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=A&words=alt&data=14",
+      "inputs": {
+        "to": "li.wei@brightlane.com",
+        "subject": "Hiring update",
+        "message": "Thanks for the help."
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 9.4,
+      "repairs": 0
+    },
+    {
+      "i": 2,
+      "task": "mail",
+      "cond": "renamed",
+      "system": "nochk",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=A&words=alt&data=14",
+      "inputs": {
+        "to": "li.wei@brightlane.com",
+        "subject": "Hiring update",
+        "message": "Thanks for the help."
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 16.1,
+      "repairs": 0
+    },
+    {
+      "i": 2,
+      "task": "mail",
+      "cond": "renamed",
+      "system": "eidos",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=A&words=alt&data=14",
+      "inputs": {
+        "to": "li.wei@brightlane.com",
+        "subject": "Hiring update",
+        "message": "Thanks for the help."
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 7.7,
+      "repairs": 2
+    },
+    {
+      "i": 2,
+      "task": "mail",
+      "cond": "renamed",
+      "system": "eidos_live",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=A&words=alt&data=14",
+      "inputs": {
+        "to": "li.wei@brightlane.com",
+        "subject": "Hiring update",
+        "message": "Thanks for the help."
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 62.0,
+      "repairs": 0
+    },
+    {
+      "i": 3,
+      "task": "mail",
+      "cond": "renamed",
+      "system": "replay",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=A&words=alt&data=45",
+      "inputs": {
+        "to": "julia@acme.io",
+        "subject": "Travel receipts",
+        "message": "Notes are attached."
+      },
+      "says_done": true,
+      "success": false,
+      "why": "0 matching, 1 wrong: [{'to': 'maya@northwind.com', 'subject': 'Q3 report', 'message': 'Attached is the Q3 report.'}]",
+      "seconds": 16.2,
+      "repairs": 0
+    },
+    {
+      "i": 3,
+      "task": "mail",
+      "cond": "renamed",
+      "system": "replay_new",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=A&words=alt&data=45",
+      "inputs": {
+        "to": "julia@acme.io",
+        "subject": "Travel receipts",
+        "message": "Notes are attached."
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 10.0,
+      "repairs": 0
+    },
+    {
+      "i": 3,
+      "task": "mail",
+      "cond": "renamed",
+      "system": "nochk",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=A&words=alt&data=45",
+      "inputs": {
+        "to": "julia@acme.io",
+        "subject": "Travel receipts",
+        "message": "Notes are attached."
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 13.0,
+      "repairs": 0
+    },
+    {
+      "i": 3,
+      "task": "mail",
+      "cond": "renamed",
+      "system": "eidos",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=A&words=alt&data=45",
+      "inputs": {
+        "to": "julia@acme.io",
+        "subject": "Travel receipts",
+        "message": "Notes are attached."
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 8.6,
+      "repairs": 2
+    },
+    {
+      "i": 3,
+      "task": "mail",
+      "cond": "renamed",
+      "system": "eidos_live",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=A&words=alt&data=45",
+      "inputs": {
+        "to": "julia@acme.io",
+        "subject": "Travel receipts",
+        "message": "Notes are attached."
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 67.7,
+      "repairs": 0
+    },
+    {
+      "i": 4,
+      "task": "mail",
+      "cond": "renamed",
+      "system": "replay",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=A&words=alt&data=71",
+      "inputs": {
+        "to": "ana@brightlane.com",
+        "subject": "Offsite plan",
+        "message": "Notes are attached."
+      },
+      "says_done": true,
+      "success": false,
+      "why": "0 matching, 1 wrong: [{'to': 'maya@northwind.com', 'subject': 'Q3 report', 'message': 'Attached is the Q3 report.'}]",
+      "seconds": 8.9,
+      "repairs": 0
+    },
+    {
+      "i": 4,
+      "task": "mail",
+      "cond": "renamed",
+      "system": "replay_new",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=A&words=alt&data=71",
+      "inputs": {
+        "to": "ana@brightlane.com",
+        "subject": "Offsite plan",
+        "message": "Notes are attached."
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 9.2,
+      "repairs": 0
+    },
+    {
+      "i": 4,
+      "task": "mail",
+      "cond": "renamed",
+      "system": "nochk",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=A&words=alt&data=71",
+      "inputs": {
+        "to": "ana@brightlane.com",
+        "subject": "Offsite plan",
+        "message": "Notes are attached."
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 13.2,
+      "repairs": 0
+    },
+    {
+      "i": 4,
+      "task": "mail",
+      "cond": "renamed",
+      "system": "eidos",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=A&words=alt&data=71",
+      "inputs": {
+        "to": "ana@brightlane.com",
+        "subject": "Offsite plan",
+        "message": "Notes are attached."
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 9.6,
+      "repairs": 2
+    },
+    {
+      "i": 4,
+      "task": "mail",
+      "cond": "renamed",
+      "system": "eidos_live",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=A&words=alt&data=71",
+      "inputs": {
+        "to": "ana@brightlane.com",
+        "subject": "Offsite plan",
+        "message": "Notes are attached."
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 57.6,
+      "repairs": 0
+    },
+    {
+      "i": 5,
+      "task": "mail",
+      "cond": "renamed",
+      "system": "replay",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=B&words=alt&data=58",
+      "inputs": {
+        "to": "kenji@fieldnote.org",
+        "subject": "Travel receipts",
+        "message": "Notes are attached."
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 8.9,
+      "repairs": 0
+    },
+    {
+      "i": 5,
+      "task": "mail",
+      "cond": "renamed",
+      "system": "replay_new",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=B&words=alt&data=58",
+      "inputs": {
+        "to": "kenji@fieldnote.org",
+        "subject": "Travel receipts",
+        "message": "Notes are attached."
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 10.8,
+      "repairs": 0
+    },
+    {
+      "i": 5,
+      "task": "mail",
+      "cond": "renamed",
+      "system": "nochk",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=B&words=alt&data=58",
+      "inputs": {
+        "to": "kenji@fieldnote.org",
+        "subject": "Travel receipts",
+        "message": "Notes are attached."
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 12.9,
+      "repairs": 0
+    },
+    {
+      "i": 5,
+      "task": "mail",
+      "cond": "renamed",
+      "system": "eidos",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=B&words=alt&data=58",
+      "inputs": {
+        "to": "kenji@fieldnote.org",
+        "subject": "Travel receipts",
+        "message": "Notes are attached."
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 9.9,
+      "repairs": 2
+    },
+    {
+      "i": 5,
+      "task": "mail",
+      "cond": "renamed",
+      "system": "eidos_live",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=B&words=alt&data=58",
+      "inputs": {
+        "to": "kenji@fieldnote.org",
+        "subject": "Travel receipts",
+        "message": "Notes are attached."
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 66.7,
+      "repairs": 0
+    },
+    {
+      "i": 6,
+      "task": "mail",
+      "cond": "renamed",
+      "system": "replay",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=A&words=alt&data=14",
+      "inputs": {
+        "to": "sofia@fieldnote.org",
+        "subject": "Travel receipts",
+        "message": "Notes are attached."
+      },
+      "says_done": true,
+      "success": false,
+      "why": "0 matching, 1 wrong: [{'to': 'maya@northwind.com', 'subject': 'Q3 report', 'message': 'Attached is the Q3 report.'}]",
+      "seconds": 9.0,
+      "repairs": 0
+    },
+    {
+      "i": 6,
+      "task": "mail",
+      "cond": "renamed",
+      "system": "replay_new",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=A&words=alt&data=14",
+      "inputs": {
+        "to": "sofia@fieldnote.org",
+        "subject": "Travel receipts",
+        "message": "Notes are attached."
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 13.3,
+      "repairs": 0
+    },
+    {
+      "i": 6,
+      "task": "mail",
+      "cond": "renamed",
+      "system": "nochk",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=A&words=alt&data=14",
+      "inputs": {
+        "to": "sofia@fieldnote.org",
+        "subject": "Travel receipts",
+        "message": "Notes are attached."
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 14.5,
+      "repairs": 0
+    },
+    {
+      "i": 6,
+      "task": "mail",
+      "cond": "renamed",
+      "system": "eidos",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=A&words=alt&data=14",
+      "inputs": {
+        "to": "sofia@fieldnote.org",
+        "subject": "Travel receipts",
+        "message": "Notes are attached."
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 8.0,
+      "repairs": 2
+    },
+    {
+      "i": 6,
+      "task": "mail",
+      "cond": "renamed",
+      "system": "eidos_live",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=A&words=alt&data=14",
+      "inputs": {
+        "to": "sofia@fieldnote.org",
+        "subject": "Travel receipts",
+        "message": "Notes are attached."
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 59.6,
+      "repairs": 0
+    },
+    {
+      "i": 7,
+      "task": "mail",
+      "cond": "renamed",
+      "system": "replay",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=B&nav=top&labels=left&btn=top&scale=1.1&order=2,1,0&words=alt&data=45",
+      "inputs": {
+        "to": "julia@fieldnote.org",
+        "subject": "Budget review",
+        "message": "Thanks for the help."
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 15.2,
+      "repairs": 0
+    },
+    {
+      "i": 7,
+      "task": "mail",
+      "cond": "renamed",
+      "system": "replay_new",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=B&nav=top&labels=left&btn=top&scale=1.1&order=2,1,0&words=alt&data=45",
+      "inputs": {
+        "to": "julia@fieldnote.org",
+        "subject": "Budget review",
+        "message": "Thanks for the help."
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 9.9,
+      "repairs": 0
+    },
+    {
+      "i": 7,
+      "task": "mail",
+      "cond": "renamed",
+      "system": "nochk",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=B&nav=top&labels=left&btn=top&scale=1.1&order=2,1,0&words=alt&data=45",
+      "inputs": {
+        "to": "julia@fieldnote.org",
+        "subject": "Budget review",
+        "message": "Thanks for the help."
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 13.9,
+      "repairs": 0
+    },
+    {
+      "i": 7,
+      "task": "mail",
+      "cond": "renamed",
+      "system": "eidos",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=B&nav=top&labels=left&btn=top&scale=1.1&order=2,1,0&words=alt&data=45",
+      "inputs": {
+        "to": "julia@fieldnote.org",
+        "subject": "Budget review",
+        "message": "Thanks for the help."
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 11.8,
+      "repairs": 2
+    },
+    {
+      "i": 7,
+      "task": "mail",
+      "cond": "renamed",
+      "system": "eidos_live",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=B&nav=top&labels=left&btn=top&scale=1.1&order=2,1,0&words=alt&data=45",
+      "inputs": {
+        "to": "julia@fieldnote.org",
+        "subject": "Budget review",
+        "message": "Thanks for the help."
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 69.7,
+      "repairs": 0
+    },
+    {
+      "i": 8,
+      "task": "calendar",
+      "cond": "renamed",
+      "system": "replay",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=calendar&skin=B&nav=right&labels=left&btn=bottom&scale=1&order=1,2,3,0&words=alt&data=40",
+      "inputs": {
+        "title": "Dentist",
+        "date": "Nov 27",
+        "time": "11:30 AM",
+        "location": "Zoom"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 9.8,
+      "repairs": 0
+    },
+    {
+      "i": 8,
+      "task": "calendar",
+      "cond": "renamed",
+      "system": "replay_new",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=calendar&skin=B&nav=right&labels=left&btn=bottom&scale=1&order=1,2,3,0&words=alt&data=40",
+      "inputs": {
+        "title": "Dentist",
+        "date": "Nov 27",
+        "time": "11:30 AM",
+        "location": "Zoom"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 9.3,
+      "repairs": 0
+    },
+    {
+      "i": 8,
+      "task": "calendar",
+      "cond": "renamed",
+      "system": "nochk",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=calendar&skin=B&nav=right&labels=left&btn=bottom&scale=1&order=1,2,3,0&words=alt&data=40",
+      "inputs": {
+        "title": "Dentist",
+        "date": "Nov 27",
+        "time": "11:30 AM",
+        "location": "Zoom"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 13.6,
+      "repairs": 0
+    },
+    {
+      "i": 8,
+      "task": "calendar",
+      "cond": "renamed",
+      "system": "eidos",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=calendar&skin=B&nav=right&labels=left&btn=bottom&scale=1&order=1,2,3,0&words=alt&data=40",
+      "inputs": {
+        "title": "Dentist",
+        "date": "Nov 27",
+        "time": "11:30 AM",
+        "location": "Zoom"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 7.4,
+      "repairs": 2
+    },
+    {
+      "i": 8,
+      "task": "calendar",
+      "cond": "renamed",
+      "system": "eidos_live",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=calendar&skin=B&nav=right&labels=left&btn=bottom&scale=1&order=1,2,3,0&words=alt&data=40",
+      "inputs": {
+        "title": "Dentist",
+        "date": "Nov 27",
+        "time": "11:30 AM",
+        "location": "Zoom"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 71.7,
+      "repairs": 0
+    },
+    {
+      "i": 9,
+      "task": "calendar",
+      "cond": "renamed",
+      "system": "replay",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=calendar&skin=A&words=alt&data=31",
+      "inputs": {
+        "title": "Project kickoff",
+        "date": "Dec 20",
+        "time": "11:30 AM",
+        "location": "Studio 9"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "0 matching, 1 wrong: [{'title': 'Team lunch', 'date': 'Nov 12', 'time': '1:00 PM', 'location': 'Cafe Lumen'}]",
+      "seconds": 14.3,
+      "repairs": 0
+    },
+    {
+      "i": 9,
+      "task": "calendar",
+      "cond": "renamed",
+      "system": "replay_new",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=calendar&skin=A&words=alt&data=31",
+      "inputs": {
+        "title": "Project kickoff",
+        "date": "Dec 20",
+        "time": "11:30 AM",
+        "location": "Studio 9"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "0 matching, 1 wrong: [{'title': 'Project kickoff', 'date': 'Dec 20', 'time': '1:00 PM', 'location': 'Studio 9'}]",
+      "seconds": 9.9,
+      "repairs": 0
+    },
+    {
+      "i": 9,
+      "task": "calendar",
+      "cond": "renamed",
+      "system": "nochk",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=calendar&skin=A&words=alt&data=31",
+      "inputs": {
+        "title": "Project kickoff",
+        "date": "Dec 20",
+        "time": "11:30 AM",
+        "location": "Studio 9"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 12.5,
+      "repairs": 0
+    },
+    {
+      "i": 9,
+      "task": "calendar",
+      "cond": "renamed",
+      "system": "eidos",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=calendar&skin=A&words=alt&data=31",
+      "inputs": {
+        "title": "Project kickoff",
+        "date": "Dec 20",
+        "time": "11:30 AM",
+        "location": "Studio 9"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 8.8,
+      "repairs": 2
+    },
+    {
+      "i": 9,
+      "task": "calendar",
+      "cond": "renamed",
+      "system": "eidos_live",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=calendar&skin=A&words=alt&data=31",
+      "inputs": {
+        "title": "Project kickoff",
+        "date": "Dec 20",
+        "time": "11:30 AM",
+        "location": "Studio 9"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 60.3,
+      "repairs": 0
+    },
+    {
+      "i": 10,
+      "task": "calendar",
+      "cond": "renamed",
+      "system": "replay",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=calendar&skin=B&theme=dark&nav=top&labels=left&btn=top&scale=1&order=3,1,0,2&words=alt&data=92",
+      "inputs": {
+        "title": "Project kickoff",
+        "date": "Nov 8",
+        "time": "8:30 AM",
+        "location": "Main St Clinic"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 13.7,
+      "repairs": 0
+    },
+    {
+      "i": 10,
+      "task": "calendar",
+      "cond": "renamed",
+      "system": "replay_new",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=calendar&skin=B&theme=dark&nav=top&labels=left&btn=top&scale=1&order=3,1,0,2&words=alt&data=92",
+      "inputs": {
+        "title": "Project kickoff",
+        "date": "Nov 8",
+        "time": "8:30 AM",
+        "location": "Main St Clinic"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 10.1,
+      "repairs": 0
+    },
+    {
+      "i": 10,
+      "task": "calendar",
+      "cond": "renamed",
+      "system": "nochk",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=calendar&skin=B&theme=dark&nav=top&labels=left&btn=top&scale=1&order=3,1,0,2&words=alt&data=92",
+      "inputs": {
+        "title": "Project kickoff",
+        "date": "Nov 8",
+        "time": "8:30 AM",
+        "location": "Main St Clinic"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 17.2,
+      "repairs": 0
+    },
+    {
+      "i": 10,
+      "task": "calendar",
+      "cond": "renamed",
+      "system": "eidos",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=calendar&skin=B&theme=dark&nav=top&labels=left&btn=top&scale=1&order=3,1,0,2&words=alt&data=92",
+      "inputs": {
+        "title": "Project kickoff",
+        "date": "Nov 8",
+        "time": "8:30 AM",
+        "location": "Main St Clinic"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 9.9,
+      "repairs": 2
+    },
+    {
+      "i": 10,
+      "task": "calendar",
+      "cond": "renamed",
+      "system": "eidos_live",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=calendar&skin=B&theme=dark&nav=top&labels=left&btn=top&scale=1&order=3,1,0,2&words=alt&data=92",
+      "inputs": {
+        "title": "Project kickoff",
+        "date": "Nov 8",
+        "time": "8:30 AM",
+        "location": "Main St Clinic"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 72.5,
+      "repairs": 0
+    },
+    {
+      "i": 11,
+      "task": "calendar",
+      "cond": "renamed",
+      "system": "replay",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=calendar&skin=B&nav=top&labels=top&btn=bottom&scale=1.1&words=alt&data=2",
+      "inputs": {
+        "title": "Yoga class",
+        "date": "Nov 3",
+        "time": "2:30 PM",
+        "location": "Room 4B"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 9.8,
+      "repairs": 0
+    },
+    {
+      "i": 11,
+      "task": "calendar",
+      "cond": "renamed",
+      "system": "replay_new",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=calendar&skin=B&nav=top&labels=top&btn=bottom&scale=1.1&words=alt&data=2",
+      "inputs": {
+        "title": "Yoga class",
+        "date": "Nov 3",
+        "time": "2:30 PM",
+        "location": "Room 4B"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 9.7,
+      "repairs": 0
+    },
+    {
+      "i": 11,
+      "task": "calendar",
+      "cond": "renamed",
+      "system": "nochk",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=calendar&skin=B&nav=top&labels=top&btn=bottom&scale=1.1&words=alt&data=2",
+      "inputs": {
+        "title": "Yoga class",
+        "date": "Nov 3",
+        "time": "2:30 PM",
+        "location": "Room 4B"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 14.1,
+      "repairs": 0
+    },
+    {
+      "i": 11,
+      "task": "calendar",
+      "cond": "renamed",
+      "system": "eidos",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=calendar&skin=B&nav=top&labels=top&btn=bottom&scale=1.1&words=alt&data=2",
+      "inputs": {
+        "title": "Yoga class",
+        "date": "Nov 3",
+        "time": "2:30 PM",
+        "location": "Room 4B"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 9.8,
+      "repairs": 2
+    },
+    {
+      "i": 11,
+      "task": "calendar",
+      "cond": "renamed",
+      "system": "eidos_live",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=calendar&skin=B&nav=top&labels=top&btn=bottom&scale=1.1&words=alt&data=2",
+      "inputs": {
+        "title": "Yoga class",
+        "date": "Nov 3",
+        "time": "2:30 PM",
+        "location": "Room 4B"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 69.1,
+      "repairs": 0
+    },
+    {
+      "i": 12,
+      "task": "calendar",
+      "cond": "renamed",
+      "system": "replay",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=calendar&skin=A&nav=right&labels=left&btn=top&scale=1&order=2,0,1,3&words=alt&data=50",
+      "inputs": {
+        "title": "Dentist",
+        "date": "Nov 20",
+        "time": "4:00 PM",
+        "location": "Studio 9"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 10.0,
+      "repairs": 0
+    },
+    {
+      "i": 12,
+      "task": "calendar",
+      "cond": "renamed",
+      "system": "replay_new",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=calendar&skin=A&nav=right&labels=left&btn=top&scale=1&order=2,0,1,3&words=alt&data=50",
+      "inputs": {
+        "title": "Dentist",
+        "date": "Nov 20",
+        "time": "4:00 PM",
+        "location": "Studio 9"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 13.2,
+      "repairs": 0
+    },
+    {
+      "i": 12,
+      "task": "calendar",
+      "cond": "renamed",
+      "system": "nochk",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=calendar&skin=A&nav=right&labels=left&btn=top&scale=1&order=2,0,1,3&words=alt&data=50",
+      "inputs": {
+        "title": "Dentist",
+        "date": "Nov 20",
+        "time": "4:00 PM",
+        "location": "Studio 9"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 12.8,
+      "repairs": 0
+    },
+    {
+      "i": 12,
+      "task": "calendar",
+      "cond": "renamed",
+      "system": "eidos",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=calendar&skin=A&nav=right&labels=left&btn=top&scale=1&order=2,0,1,3&words=alt&data=50",
+      "inputs": {
+        "title": "Dentist",
+        "date": "Nov 20",
+        "time": "4:00 PM",
+        "location": "Studio 9"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 7.6,
+      "repairs": 2
+    },
+    {
+      "i": 12,
+      "task": "calendar",
+      "cond": "renamed",
+      "system": "eidos_live",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=calendar&skin=A&nav=right&labels=left&btn=top&scale=1&order=2,0,1,3&words=alt&data=50",
+      "inputs": {
+        "title": "Dentist",
+        "date": "Nov 20",
+        "time": "4:00 PM",
+        "location": "Studio 9"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 53.7,
+      "repairs": 0
+    },
+    {
+      "i": 13,
+      "task": "calendar",
+      "cond": "renamed",
+      "system": "replay",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=calendar&skin=A&words=alt&data=67",
+      "inputs": {
+        "title": "Dentist",
+        "date": "Dec 20",
+        "time": "11:30 AM",
+        "location": "Zoom"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "0 matching, 1 wrong: [{'title': 'Team lunch', 'date': 'Nov 12', 'time': '1:00 PM', 'location': 'Cafe Lumen'}]",
+      "seconds": 13.4,
+      "repairs": 0
+    },
+    {
+      "i": 13,
+      "task": "calendar",
+      "cond": "renamed",
+      "system": "replay_new",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=calendar&skin=A&words=alt&data=67",
+      "inputs": {
+        "title": "Dentist",
+        "date": "Dec 20",
+        "time": "11:30 AM",
+        "location": "Zoom"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "0 matching, 1 wrong: [{'title': 'Dentist', 'date': 'Dec 20', 'time': '1:00 PM', 'location': 'Zoom'}]",
+      "seconds": 9.8,
+      "repairs": 0
+    },
+    {
+      "i": 13,
+      "task": "calendar",
+      "cond": "renamed",
+      "system": "nochk",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=calendar&skin=A&words=alt&data=67",
+      "inputs": {
+        "title": "Dentist",
+        "date": "Dec 20",
+        "time": "11:30 AM",
+        "location": "Zoom"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 14.6,
+      "repairs": 0
+    },
+    {
+      "i": 13,
+      "task": "calendar",
+      "cond": "renamed",
+      "system": "eidos",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=calendar&skin=A&words=alt&data=67",
+      "inputs": {
+        "title": "Dentist",
+        "date": "Dec 20",
+        "time": "11:30 AM",
+        "location": "Zoom"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 10.0,
+      "repairs": 2
+    },
+    {
+      "i": 13,
+      "task": "calendar",
+      "cond": "renamed",
+      "system": "eidos_live",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=calendar&skin=A&words=alt&data=67",
+      "inputs": {
+        "title": "Dentist",
+        "date": "Dec 20",
+        "time": "11:30 AM",
+        "location": "Zoom"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 63.0,
+      "repairs": 0
+    },
+    {
+      "i": 14,
+      "task": "calendar",
+      "cond": "renamed",
+      "system": "replay",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=calendar&skin=B&theme=dark&nav=right&labels=left&btn=top&scale=1&order=3,1,2,0&words=alt&data=57",
+      "inputs": {
+        "title": "Parent meeting",
+        "date": "Nov 25",
+        "time": "2:30 PM",
+        "location": "Library"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 9.6,
+      "repairs": 0
+    },
+    {
+      "i": 14,
+      "task": "calendar",
+      "cond": "renamed",
+      "system": "replay_new",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=calendar&skin=B&theme=dark&nav=right&labels=left&btn=top&scale=1&order=3,1,2,0&words=alt&data=57",
+      "inputs": {
+        "title": "Parent meeting",
+        "date": "Nov 25",
+        "time": "2:30 PM",
+        "location": "Library"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 10.5,
+      "repairs": 0
+    },
+    {
+      "i": 14,
+      "task": "calendar",
+      "cond": "renamed",
+      "system": "nochk",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=calendar&skin=B&theme=dark&nav=right&labels=left&btn=top&scale=1&order=3,1,2,0&words=alt&data=57",
+      "inputs": {
+        "title": "Parent meeting",
+        "date": "Nov 25",
+        "time": "2:30 PM",
+        "location": "Library"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 14.2,
+      "repairs": 0
+    },
+    {
+      "i": 14,
+      "task": "calendar",
+      "cond": "renamed",
+      "system": "eidos",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=calendar&skin=B&theme=dark&nav=right&labels=left&btn=top&scale=1&order=3,1,2,0&words=alt&data=57",
+      "inputs": {
+        "title": "Parent meeting",
+        "date": "Nov 25",
+        "time": "2:30 PM",
+        "location": "Library"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 8.4,
+      "repairs": 2
+    },
+    {
+      "i": 14,
+      "task": "calendar",
+      "cond": "renamed",
+      "system": "eidos_live",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=calendar&skin=B&theme=dark&nav=right&labels=left&btn=top&scale=1&order=3,1,2,0&words=alt&data=57",
+      "inputs": {
+        "title": "Parent meeting",
+        "date": "Nov 25",
+        "time": "2:30 PM",
+        "location": "Library"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 69.3,
+      "repairs": 0
+    },
+    {
+      "i": 15,
+      "task": "calendar",
+      "cond": "renamed",
+      "system": "replay",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=calendar&skin=A&words=alt&data=43",
+      "inputs": {
+        "title": "Parent meeting",
+        "date": "Dec 25",
+        "time": "2:30 PM",
+        "location": "Main St Clinic"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "0 matching, 1 wrong: [{'title': 'Team lunch', 'date': 'Nov 12', 'time': '1:00 PM', 'location': 'Cafe Lumen'}]",
+      "seconds": 9.8,
+      "repairs": 0
+    },
+    {
+      "i": 15,
+      "task": "calendar",
+      "cond": "renamed",
+      "system": "replay_new",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=calendar&skin=A&words=alt&data=43",
+      "inputs": {
+        "title": "Parent meeting",
+        "date": "Dec 25",
+        "time": "2:30 PM",
+        "location": "Main St Clinic"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "0 matching, 1 wrong: [{'title': 'Parent meeting', 'date': 'Dec 25', 'time': '1:00 PM', 'location': 'Main St Clinic'}]",
+      "seconds": 11.3,
+      "repairs": 0
+    },
+    {
+      "i": 15,
+      "task": "calendar",
+      "cond": "renamed",
+      "system": "nochk",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=calendar&skin=A&words=alt&data=43",
+      "inputs": {
+        "title": "Parent meeting",
+        "date": "Dec 25",
+        "time": "2:30 PM",
+        "location": "Main St Clinic"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 14.7,
+      "repairs": 0
+    },
+    {
+      "i": 15,
+      "task": "calendar",
+      "cond": "renamed",
+      "system": "eidos",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=calendar&skin=A&words=alt&data=43",
+      "inputs": {
+        "title": "Parent meeting",
+        "date": "Dec 25",
+        "time": "2:30 PM",
+        "location": "Main St Clinic"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 8.1,
+      "repairs": 2
+    },
+    {
+      "i": 15,
+      "task": "calendar",
+      "cond": "renamed",
+      "system": "eidos_live",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=calendar&skin=A&words=alt&data=43",
+      "inputs": {
+        "title": "Parent meeting",
+        "date": "Dec 25",
+        "time": "2:30 PM",
+        "location": "Main St Clinic"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 65.0,
+      "repairs": 0
+    },
+    {
+      "i": 16,
+      "task": "expense",
+      "cond": "renamed",
+      "system": "replay",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=expense&skin=A&theme=dark&nav=left&labels=top&btn=bottom&scale=1&order=2,1,0&words=alt&data=97",
+      "inputs": {
+        "merchant": "Hilton",
+        "amount": "831.94",
+        "category": "Office supplies"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 12.7,
+      "repairs": 0
+    },
+    {
+      "i": 16,
+      "task": "expense",
+      "cond": "renamed",
+      "system": "replay_new",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=expense&skin=A&theme=dark&nav=left&labels=top&btn=bottom&scale=1&order=2,1,0&words=alt&data=97",
+      "inputs": {
+        "merchant": "Hilton",
+        "amount": "831.94",
+        "category": "Office supplies"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 8.1,
+      "repairs": 0
+    },
+    {
+      "i": 16,
+      "task": "expense",
+      "cond": "renamed",
+      "system": "nochk",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=expense&skin=A&theme=dark&nav=left&labels=top&btn=bottom&scale=1&order=2,1,0&words=alt&data=97",
+      "inputs": {
+        "merchant": "Hilton",
+        "amount": "831.94",
+        "category": "Office supplies"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 14.2,
+      "repairs": 0
+    },
+    {
+      "i": 16,
+      "task": "expense",
+      "cond": "renamed",
+      "system": "eidos",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=expense&skin=A&theme=dark&nav=left&labels=top&btn=bottom&scale=1&order=2,1,0&words=alt&data=97",
+      "inputs": {
+        "merchant": "Hilton",
+        "amount": "831.94",
+        "category": "Office supplies"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 10.1,
+      "repairs": 2
+    },
+    {
+      "i": 16,
+      "task": "expense",
+      "cond": "renamed",
+      "system": "eidos_live",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=expense&skin=A&theme=dark&nav=left&labels=top&btn=bottom&scale=1&order=2,1,0&words=alt&data=97",
+      "inputs": {
+        "merchant": "Hilton",
+        "amount": "831.94",
+        "category": "Office supplies"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 86.1,
+      "repairs": 0
+    },
+    {
+      "i": 17,
+      "task": "expense",
+      "cond": "renamed",
+      "system": "replay",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=expense&skin=B&words=alt&data=47",
+      "inputs": {
+        "merchant": "Hilton",
+        "amount": "672.13",
+        "category": "Meals"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 10.2,
+      "repairs": 0
+    },
+    {
+      "i": 17,
+      "task": "expense",
+      "cond": "renamed",
+      "system": "replay_new",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=expense&skin=B&words=alt&data=47",
+      "inputs": {
+        "merchant": "Hilton",
+        "amount": "672.13",
+        "category": "Meals"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 8.1,
+      "repairs": 0
+    },
+    {
+      "i": 17,
+      "task": "expense",
+      "cond": "renamed",
+      "system": "nochk",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=expense&skin=B&words=alt&data=47",
+      "inputs": {
+        "merchant": "Hilton",
+        "amount": "672.13",
+        "category": "Meals"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 13.7,
+      "repairs": 0
+    },
+    {
+      "i": 17,
+      "task": "expense",
+      "cond": "renamed",
+      "system": "eidos",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=expense&skin=B&words=alt&data=47",
+      "inputs": {
+        "merchant": "Hilton",
+        "amount": "672.13",
+        "category": "Meals"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 9.3,
+      "repairs": 2
+    },
+    {
+      "i": 17,
+      "task": "expense",
+      "cond": "renamed",
+      "system": "eidos_live",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=expense&skin=B&words=alt&data=47",
+      "inputs": {
+        "merchant": "Hilton",
+        "amount": "672.13",
+        "category": "Meals"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 50.2,
+      "repairs": 0
+    },
+    {
+      "i": 18,
+      "task": "expense",
+      "cond": "renamed",
+      "system": "replay",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=expense&skin=B&nav=right&labels=left&btn=bottom&scale=1.1&order=0,1,2&words=alt&data=88",
+      "inputs": {
+        "merchant": "Amtrak",
+        "amount": "604.46",
+        "category": "Software"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 8.4,
+      "repairs": 0
+    },
+    {
+      "i": 18,
+      "task": "expense",
+      "cond": "renamed",
+      "system": "replay_new",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=expense&skin=B&nav=right&labels=left&btn=bottom&scale=1.1&order=0,1,2&words=alt&data=88",
+      "inputs": {
+        "merchant": "Amtrak",
+        "amount": "604.46",
+        "category": "Software"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 8.0,
+      "repairs": 0
+    },
+    {
+      "i": 18,
+      "task": "expense",
+      "cond": "renamed",
+      "system": "nochk",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=expense&skin=B&nav=right&labels=left&btn=bottom&scale=1.1&order=0,1,2&words=alt&data=88",
+      "inputs": {
+        "merchant": "Amtrak",
+        "amount": "604.46",
+        "category": "Software"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 12.0,
+      "repairs": 0
+    },
+    {
+      "i": 18,
+      "task": "expense",
+      "cond": "renamed",
+      "system": "eidos",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=expense&skin=B&nav=right&labels=left&btn=bottom&scale=1.1&order=0,1,2&words=alt&data=88",
+      "inputs": {
+        "merchant": "Amtrak",
+        "amount": "604.46",
+        "category": "Software"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 7.5,
+      "repairs": 2
+    },
+    {
+      "i": 18,
+      "task": "expense",
+      "cond": "renamed",
+      "system": "eidos_live",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=expense&skin=B&nav=right&labels=left&btn=bottom&scale=1.1&order=0,1,2&words=alt&data=88",
+      "inputs": {
+        "merchant": "Amtrak",
+        "amount": "604.46",
+        "category": "Software"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 51.5,
+      "repairs": 0
+    },
+    {
+      "i": 19,
+      "task": "expense",
+      "cond": "renamed",
+      "system": "replay",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=expense&skin=A&nav=left&labels=top&btn=top&scale=1&order=0,2,1&words=alt&data=16",
+      "inputs": {
+        "merchant": "Amtrak",
+        "amount": "854.35",
+        "category": "Office supplies"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 8.3,
+      "repairs": 0
+    },
+    {
+      "i": 19,
+      "task": "expense",
+      "cond": "renamed",
+      "system": "replay_new",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=expense&skin=A&nav=left&labels=top&btn=top&scale=1&order=0,2,1&words=alt&data=16",
+      "inputs": {
+        "merchant": "Amtrak",
+        "amount": "854.35",
+        "category": "Office supplies"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 8.2,
+      "repairs": 0
+    },
+    {
+      "i": 19,
+      "task": "expense",
+      "cond": "renamed",
+      "system": "nochk",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=expense&skin=A&nav=left&labels=top&btn=top&scale=1&order=0,2,1&words=alt&data=16",
+      "inputs": {
+        "merchant": "Amtrak",
+        "amount": "854.35",
+        "category": "Office supplies"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 15.4,
+      "repairs": 0
+    },
+    {
+      "i": 19,
+      "task": "expense",
+      "cond": "renamed",
+      "system": "eidos",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=expense&skin=A&nav=left&labels=top&btn=top&scale=1&order=0,2,1&words=alt&data=16",
+      "inputs": {
+        "merchant": "Amtrak",
+        "amount": "854.35",
+        "category": "Office supplies"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 9.2,
+      "repairs": 2
+    },
+    {
+      "i": 19,
+      "task": "expense",
+      "cond": "renamed",
+      "system": "eidos_live",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=expense&skin=A&nav=left&labels=top&btn=top&scale=1&order=0,2,1&words=alt&data=16",
+      "inputs": {
+        "merchant": "Amtrak",
+        "amount": "854.35",
+        "category": "Office supplies"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 49.3,
+      "repairs": 0
+    },
+    {
+      "i": 20,
+      "task": "expense",
+      "cond": "renamed",
+      "system": "replay",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=expense&skin=B&words=alt&data=66",
+      "inputs": {
+        "merchant": "Hilton",
+        "amount": "288.80",
+        "category": "Software"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 8.8,
+      "repairs": 0
+    },
+    {
+      "i": 20,
+      "task": "expense",
+      "cond": "renamed",
+      "system": "replay_new",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=expense&skin=B&words=alt&data=66",
+      "inputs": {
+        "merchant": "Hilton",
+        "amount": "288.80",
+        "category": "Software"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 8.3,
+      "repairs": 0
+    },
+    {
+      "i": 20,
+      "task": "expense",
+      "cond": "renamed",
+      "system": "nochk",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=expense&skin=B&words=alt&data=66",
+      "inputs": {
+        "merchant": "Hilton",
+        "amount": "288.80",
+        "category": "Software"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 16.1,
+      "repairs": 0
+    },
+    {
+      "i": 20,
+      "task": "expense",
+      "cond": "renamed",
+      "system": "eidos",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=expense&skin=B&words=alt&data=66",
+      "inputs": {
+        "merchant": "Hilton",
+        "amount": "288.80",
+        "category": "Software"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 10.9,
+      "repairs": 2
+    },
+    {
+      "i": 20,
+      "task": "expense",
+      "cond": "renamed",
+      "system": "eidos_live",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=expense&skin=B&words=alt&data=66",
+      "inputs": {
+        "merchant": "Hilton",
+        "amount": "288.80",
+        "category": "Software"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 48.7,
+      "repairs": 0
+    },
+    {
+      "i": 21,
+      "task": "expense",
+      "cond": "renamed",
+      "system": "replay",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=expense&skin=A&nav=top&labels=top&btn=top&scale=1&words=alt&data=78",
+      "inputs": {
+        "merchant": "Amtrak",
+        "amount": "854.25",
+        "category": "Office supplies"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 8.3,
+      "repairs": 0
+    },
+    {
+      "i": 21,
+      "task": "expense",
+      "cond": "renamed",
+      "system": "replay_new",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=expense&skin=A&nav=top&labels=top&btn=top&scale=1&words=alt&data=78",
+      "inputs": {
+        "merchant": "Amtrak",
+        "amount": "854.25",
+        "category": "Office supplies"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 8.0,
+      "repairs": 0
+    },
+    {
+      "i": 21,
+      "task": "expense",
+      "cond": "renamed",
+      "system": "nochk",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=expense&skin=A&nav=top&labels=top&btn=top&scale=1&words=alt&data=78",
+      "inputs": {
+        "merchant": "Amtrak",
+        "amount": "854.25",
+        "category": "Office supplies"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 11.5,
+      "repairs": 0
+    },
+    {
+      "i": 21,
+      "task": "expense",
+      "cond": "renamed",
+      "system": "eidos",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=expense&skin=A&nav=top&labels=top&btn=top&scale=1&words=alt&data=78",
+      "inputs": {
+        "merchant": "Amtrak",
+        "amount": "854.25",
+        "category": "Office supplies"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 8.2,
+      "repairs": 2
+    },
+    {
+      "i": 21,
+      "task": "expense",
+      "cond": "renamed",
+      "system": "eidos_live",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=expense&skin=A&nav=top&labels=top&btn=top&scale=1&words=alt&data=78",
+      "inputs": {
+        "merchant": "Amtrak",
+        "amount": "854.25",
+        "category": "Office supplies"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 43.3,
+      "repairs": 0
+    },
+    {
+      "i": 22,
+      "task": "expense",
+      "cond": "renamed",
+      "system": "replay",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=expense&skin=B&words=alt&data=16",
+      "inputs": {
+        "merchant": "Figma",
+        "amount": "91.83",
+        "category": "Meals"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 8.2,
+      "repairs": 0
+    },
+    {
+      "i": 22,
+      "task": "expense",
+      "cond": "renamed",
+      "system": "replay_new",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=expense&skin=B&words=alt&data=16",
+      "inputs": {
+        "merchant": "Figma",
+        "amount": "91.83",
+        "category": "Meals"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 8.0,
+      "repairs": 0
+    },
+    {
+      "i": 22,
+      "task": "expense",
+      "cond": "renamed",
+      "system": "nochk",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=expense&skin=B&words=alt&data=16",
+      "inputs": {
+        "merchant": "Figma",
+        "amount": "91.83",
+        "category": "Meals"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 13.5,
+      "repairs": 0
+    },
+    {
+      "i": 22,
+      "task": "expense",
+      "cond": "renamed",
+      "system": "eidos",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=expense&skin=B&words=alt&data=16",
+      "inputs": {
+        "merchant": "Figma",
+        "amount": "91.83",
+        "category": "Meals"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 8.2,
+      "repairs": 2
+    },
+    {
+      "i": 22,
+      "task": "expense",
+      "cond": "renamed",
+      "system": "eidos_live",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=expense&skin=B&words=alt&data=16",
+      "inputs": {
+        "merchant": "Figma",
+        "amount": "91.83",
+        "category": "Meals"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 52.0,
+      "repairs": 0
+    },
+    {
+      "i": 23,
+      "task": "expense",
+      "cond": "renamed",
+      "system": "replay",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=expense&skin=B&words=alt&data=19",
+      "inputs": {
+        "merchant": "Uber",
+        "amount": "629.24",
+        "category": "Office supplies"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 8.6,
+      "repairs": 0
+    },
+    {
+      "i": 23,
+      "task": "expense",
+      "cond": "renamed",
+      "system": "replay_new",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=expense&skin=B&words=alt&data=19",
+      "inputs": {
+        "merchant": "Uber",
+        "amount": "629.24",
+        "category": "Office supplies"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 7.9,
+      "repairs": 0
+    },
+    {
+      "i": 23,
+      "task": "expense",
+      "cond": "renamed",
+      "system": "nochk",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=expense&skin=B&words=alt&data=19",
+      "inputs": {
+        "merchant": "Uber",
+        "amount": "629.24",
+        "category": "Office supplies"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 12.3,
+      "repairs": 0
+    },
+    {
+      "i": 23,
+      "task": "expense",
+      "cond": "renamed",
+      "system": "eidos",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=expense&skin=B&words=alt&data=19",
+      "inputs": {
+        "merchant": "Uber",
+        "amount": "629.24",
+        "category": "Office supplies"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "nothing was saved",
+      "seconds": 9.4,
+      "repairs": 2
+    },
+    {
+      "i": 23,
+      "task": "expense",
+      "cond": "renamed",
+      "system": "eidos_live",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=expense&skin=B&words=alt&data=19",
+      "inputs": {
+        "merchant": "Uber",
+        "amount": "629.24",
+        "category": "Office supplies"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 48.3,
+      "repairs": 0
+    },
+    {
+      "i": 24,
+      "task": "settings",
+      "cond": "renamed",
+      "system": "replay",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=settings&skin=A&theme=dark&nav=top&labels=top&btn=top&scale=1&order=1,0,2&words=alt&data=42",
+      "inputs": {
+        "recovery_email": "ana.backup@acme.io"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 6.2,
+      "repairs": 0
+    },
+    {
+      "i": 24,
+      "task": "settings",
+      "cond": "renamed",
+      "system": "replay_new",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=settings&skin=A&theme=dark&nav=top&labels=top&btn=top&scale=1&order=1,0,2&words=alt&data=42",
+      "inputs": {
+        "recovery_email": "ana.backup@acme.io"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 6.3,
+      "repairs": 0
+    },
+    {
+      "i": 24,
+      "task": "settings",
+      "cond": "renamed",
+      "system": "nochk",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=settings&skin=A&theme=dark&nav=top&labels=top&btn=top&scale=1&order=1,0,2&words=alt&data=42",
+      "inputs": {
+        "recovery_email": "ana.backup@acme.io"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 6.2,
+      "repairs": 0
+    },
+    {
+      "i": 24,
+      "task": "settings",
+      "cond": "renamed",
+      "system": "eidos",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=settings&skin=A&theme=dark&nav=top&labels=top&btn=top&scale=1&order=1,0,2&words=alt&data=42",
+      "inputs": {
+        "recovery_email": "ana.backup@acme.io"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 6.6,
+      "repairs": 2
+    },
+    {
+      "i": 24,
+      "task": "settings",
+      "cond": "renamed",
+      "system": "eidos_live",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=settings&skin=A&theme=dark&nav=top&labels=top&btn=top&scale=1&order=1,0,2&words=alt&data=42",
+      "inputs": {
+        "recovery_email": "ana.backup@acme.io"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 81.2,
+      "repairs": 2
+    },
+    {
+      "i": 25,
+      "task": "settings",
+      "cond": "renamed",
+      "system": "replay",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=settings&skin=A&words=alt&data=48",
+      "inputs": {
+        "recovery_email": "li.wei.backup@harbor.co"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': True, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': 'ruth.backup@example.com'}, saves=1",
+      "seconds": 6.6,
+      "repairs": 0
+    },
+    {
+      "i": 25,
+      "task": "settings",
+      "cond": "renamed",
+      "system": "replay_new",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=settings&skin=A&words=alt&data=48",
+      "inputs": {
+        "recovery_email": "li.wei.backup@harbor.co"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 6.4,
+      "repairs": 0
+    },
+    {
+      "i": 25,
+      "task": "settings",
+      "cond": "renamed",
+      "system": "nochk",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=settings&skin=A&words=alt&data=48",
+      "inputs": {
+        "recovery_email": "li.wei.backup@harbor.co"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 6.3,
+      "repairs": 0
+    },
+    {
+      "i": 25,
+      "task": "settings",
+      "cond": "renamed",
+      "system": "eidos",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=settings&skin=A&words=alt&data=48",
+      "inputs": {
+        "recovery_email": "li.wei.backup@harbor.co"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 5.7,
+      "repairs": 2
+    },
+    {
+      "i": 25,
+      "task": "settings",
+      "cond": "renamed",
+      "system": "eidos_live",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=settings&skin=A&words=alt&data=48",
+      "inputs": {
+        "recovery_email": "li.wei.backup@harbor.co"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 40.8,
+      "repairs": 0
+    },
+    {
+      "i": 26,
+      "task": "settings",
+      "cond": "renamed",
+      "system": "replay",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=settings&skin=A&words=alt&data=42",
+      "inputs": {
+        "recovery_email": "julia.backup@fieldnote.org"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': True, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': 'ruth.backup@example.com'}, saves=1",
+      "seconds": 6.2,
+      "repairs": 0
+    },
+    {
+      "i": 26,
+      "task": "settings",
+      "cond": "renamed",
+      "system": "replay_new",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=settings&skin=A&words=alt&data=42",
+      "inputs": {
+        "recovery_email": "julia.backup@fieldnote.org"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 6.2,
+      "repairs": 0
+    },
+    {
+      "i": 26,
+      "task": "settings",
+      "cond": "renamed",
+      "system": "nochk",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=settings&skin=A&words=alt&data=42",
+      "inputs": {
+        "recovery_email": "julia.backup@fieldnote.org"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 6.5,
+      "repairs": 0
+    },
+    {
+      "i": 26,
+      "task": "settings",
+      "cond": "renamed",
+      "system": "eidos",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=settings&skin=A&words=alt&data=42",
+      "inputs": {
+        "recovery_email": "julia.backup@fieldnote.org"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 5.8,
+      "repairs": 2
+    },
+    {
+      "i": 26,
+      "task": "settings",
+      "cond": "renamed",
+      "system": "eidos_live",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=settings&skin=A&words=alt&data=42",
+      "inputs": {
+        "recovery_email": "julia.backup@fieldnote.org"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 39.7,
+      "repairs": 0
+    },
+    {
+      "i": 27,
+      "task": "settings",
+      "cond": "renamed",
+      "system": "replay",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=settings&skin=B&words=alt&data=10",
+      "inputs": {
+        "recovery_email": "li.wei.backup@fieldnote.org"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 6.2,
+      "repairs": 0
+    },
+    {
+      "i": 27,
+      "task": "settings",
+      "cond": "renamed",
+      "system": "replay_new",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=settings&skin=B&words=alt&data=10",
+      "inputs": {
+        "recovery_email": "li.wei.backup@fieldnote.org"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 6.8,
+      "repairs": 0
+    },
+    {
+      "i": 27,
+      "task": "settings",
+      "cond": "renamed",
+      "system": "nochk",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=settings&skin=B&words=alt&data=10",
+      "inputs": {
+        "recovery_email": "li.wei.backup@fieldnote.org"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 6.4,
+      "repairs": 0
+    },
+    {
+      "i": 27,
+      "task": "settings",
+      "cond": "renamed",
+      "system": "eidos",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=settings&skin=B&words=alt&data=10",
+      "inputs": {
+        "recovery_email": "li.wei.backup@fieldnote.org"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 6.3,
+      "repairs": 2
+    },
+    {
+      "i": 27,
+      "task": "settings",
+      "cond": "renamed",
+      "system": "eidos_live",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=settings&skin=B&words=alt&data=10",
+      "inputs": {
+        "recovery_email": "li.wei.backup@fieldnote.org"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 41.4,
+      "repairs": 0
+    },
+    {
+      "i": 28,
+      "task": "settings",
+      "cond": "renamed",
+      "system": "replay",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=settings&skin=B&theme=dark&nav=right&labels=left&btn=bottom&scale=1.2&words=alt&data=14",
+      "inputs": {
+        "recovery_email": "julia.backup@acme.io"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 6.1,
+      "repairs": 0
+    },
+    {
+      "i": 28,
+      "task": "settings",
+      "cond": "renamed",
+      "system": "replay_new",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=settings&skin=B&theme=dark&nav=right&labels=left&btn=bottom&scale=1.2&words=alt&data=14",
+      "inputs": {
+        "recovery_email": "julia.backup@acme.io"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 6.1,
+      "repairs": 0
+    },
+    {
+      "i": 28,
+      "task": "settings",
+      "cond": "renamed",
+      "system": "nochk",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=settings&skin=B&theme=dark&nav=right&labels=left&btn=bottom&scale=1.2&words=alt&data=14",
+      "inputs": {
+        "recovery_email": "julia.backup@acme.io"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 6.9,
+      "repairs": 0
+    },
+    {
+      "i": 28,
+      "task": "settings",
+      "cond": "renamed",
+      "system": "eidos",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=settings&skin=B&theme=dark&nav=right&labels=left&btn=bottom&scale=1.2&words=alt&data=14",
+      "inputs": {
+        "recovery_email": "julia.backup@acme.io"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 7.8,
+      "repairs": 2
+    },
+    {
+      "i": 28,
+      "task": "settings",
+      "cond": "renamed",
+      "system": "eidos_live",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=settings&skin=B&theme=dark&nav=right&labels=left&btn=bottom&scale=1.2&words=alt&data=14",
+      "inputs": {
+        "recovery_email": "julia.backup@acme.io"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 122.4,
+      "repairs": 2
+    },
+    {
+      "i": 29,
+      "task": "settings",
+      "cond": "renamed",
+      "system": "replay",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=settings&skin=B&words=alt&data=45",
+      "inputs": {
+        "recovery_email": "julia.backup@acme.io"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 6.4,
+      "repairs": 0
+    },
+    {
+      "i": 29,
+      "task": "settings",
+      "cond": "renamed",
+      "system": "replay_new",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=settings&skin=B&words=alt&data=45",
+      "inputs": {
+        "recovery_email": "julia.backup@acme.io"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 6.2,
+      "repairs": 0
+    },
+    {
+      "i": 29,
+      "task": "settings",
+      "cond": "renamed",
+      "system": "nochk",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=settings&skin=B&words=alt&data=45",
+      "inputs": {
+        "recovery_email": "julia.backup@acme.io"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 7.4,
+      "repairs": 0
+    },
+    {
+      "i": 29,
+      "task": "settings",
+      "cond": "renamed",
+      "system": "eidos",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=settings&skin=B&words=alt&data=45",
+      "inputs": {
+        "recovery_email": "julia.backup@acme.io"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 5.7,
+      "repairs": 2
+    },
+    {
+      "i": 29,
+      "task": "settings",
+      "cond": "renamed",
+      "system": "eidos_live",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=settings&skin=B&words=alt&data=45",
+      "inputs": {
+        "recovery_email": "julia.backup@acme.io"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 43.4,
+      "repairs": 0
+    },
+    {
+      "i": 30,
+      "task": "settings",
+      "cond": "renamed",
+      "system": "replay",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=settings&skin=A&nav=right&labels=left&btn=top&scale=1&words=alt&data=18",
+      "inputs": {
+        "recovery_email": "julia.backup@fieldnote.org"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 6.4,
+      "repairs": 0
+    },
+    {
+      "i": 30,
+      "task": "settings",
+      "cond": "renamed",
+      "system": "replay_new",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=settings&skin=A&nav=right&labels=left&btn=top&scale=1&words=alt&data=18",
+      "inputs": {
+        "recovery_email": "julia.backup@fieldnote.org"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 6.1,
+      "repairs": 0
+    },
+    {
+      "i": 30,
+      "task": "settings",
+      "cond": "renamed",
+      "system": "nochk",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=settings&skin=A&nav=right&labels=left&btn=top&scale=1&words=alt&data=18",
+      "inputs": {
+        "recovery_email": "julia.backup@fieldnote.org"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 6.6,
+      "repairs": 0
+    },
+    {
+      "i": 30,
+      "task": "settings",
+      "cond": "renamed",
+      "system": "eidos",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=settings&skin=A&nav=right&labels=left&btn=top&scale=1&words=alt&data=18",
+      "inputs": {
+        "recovery_email": "julia.backup@fieldnote.org"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 5.5,
+      "repairs": 2
+    },
+    {
+      "i": 30,
+      "task": "settings",
+      "cond": "renamed",
+      "system": "eidos_live",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=settings&skin=A&nav=right&labels=left&btn=top&scale=1&words=alt&data=18",
+      "inputs": {
+        "recovery_email": "julia.backup@fieldnote.org"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 43.1,
+      "repairs": 0
+    },
+    {
+      "i": 31,
+      "task": "settings",
+      "cond": "renamed",
+      "system": "replay",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=settings&skin=A&theme=dark&nav=right&labels=left&btn=bottom&scale=1.2&order=0,2,1&words=alt&data=57",
+      "inputs": {
+        "recovery_email": "sofia.backup@brightlane.com"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 6.1,
+      "repairs": 0
+    },
+    {
+      "i": 31,
+      "task": "settings",
+      "cond": "renamed",
+      "system": "replay_new",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=settings&skin=A&theme=dark&nav=right&labels=left&btn=bottom&scale=1.2&order=0,2,1&words=alt&data=57",
+      "inputs": {
+        "recovery_email": "sofia.backup@brightlane.com"
+      },
+      "says_done": true,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 7.8,
+      "repairs": 0
+    },
+    {
+      "i": 31,
+      "task": "settings",
+      "cond": "renamed",
+      "system": "nochk",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=settings&skin=A&theme=dark&nav=right&labels=left&btn=bottom&scale=1.2&order=0,2,1&words=alt&data=57",
+      "inputs": {
+        "recovery_email": "sofia.backup@brightlane.com"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 8.6,
+      "repairs": 0
+    },
+    {
+      "i": 31,
+      "task": "settings",
+      "cond": "renamed",
+      "system": "eidos",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=settings&skin=A&theme=dark&nav=right&labels=left&btn=bottom&scale=1.2&order=0,2,1&words=alt&data=57",
+      "inputs": {
+        "recovery_email": "sofia.backup@brightlane.com"
+      },
+      "says_done": false,
+      "success": false,
+      "why": "saved settings: {'Two-factor sign-in': False, 'Sign-in alerts': False, 'Remember this device': True, 'Recovery email': ''}, saves=0",
+      "seconds": 5.8,
+      "repairs": 2
+    },
+    {
+      "i": 31,
+      "task": "settings",
+      "cond": "renamed",
+      "system": "eidos_live",
+      "url": "http://localhost:8001/apps/everyday/index.html?task=settings&skin=A&theme=dark&nav=right&labels=left&btn=bottom&scale=1.2&order=0,2,1&words=alt&data=57",
+      "inputs": {
+        "recovery_email": "sofia.backup@brightlane.com"
+      },
+      "says_done": true,
+      "success": true,
+      "why": "",
+      "seconds": 49.6,
+      "repairs": 0
+    }
+  ]
+}
