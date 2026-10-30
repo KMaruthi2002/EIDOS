@@ -1,0 +1,205 @@
+{
+  "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=A&popup=5.0&data=33",
+  "inputs": {
+    "to": "kenji@fieldnote.org",
+    "subject": "Hiring update",
+    "message": "See you at ten."
+  },
+  "use_contracts": true,
+  "steps": [
+    {
+      "id": 1,
+      "intent": "Press 'Compose'; the screen should then show 'New message', 'Subject', 'Message'",
+      "do": "press",
+      "grounding": [
+        {
+          "how": "found the control reading 'Compose' by OCR",
+          "at": [
+            1116,
+            40
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "contract": "screen then shows 'New message', 'Subject', 'Message'",
+          "found": [
+            "New message",
+            "Subject",
+            "Message"
+          ],
+          "pass": true
+        }
+      ],
+      "passed": true,
+      "attempts": 1,
+      "t_start": 0.81,
+      "t_end": 3.62
+    },
+    {
+      "id": 2,
+      "intent": "Type kenji@fieldnote.org into the 'To' field",
+      "do": "type",
+      "grounding": [
+        {
+          "how": "found the field labelled 'To' by OCR, then its box",
+          "box": [
+            409,
+            133,
+            444,
+            33
+          ]
+        },
+        {
+          "how": "repair: contract failed, pressed Escape and redid the step"
+        },
+        {
+          "how": "found the field labelled 'To' by OCR, then its box",
+          "box": [
+            409,
+            133,
+            444,
+            33
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "contract": "the box written to is labelled 'To'",
+          "saw": "To",
+          "pass": true
+        },
+        {
+          "contract": "the 'To' field shows 'kenji@fieldnote.org'",
+          "saw": "kenji@fi",
+          "pass": false
+        },
+        {
+          "contract": "the box written to is labelled 'To'",
+          "saw": "To",
+          "pass": true
+        },
+        {
+          "contract": "the 'To' field shows 'kenji@fieldnote.org'",
+          "saw": "kenji@fieldnote.org",
+          "pass": true
+        }
+      ],
+      "passed": true,
+      "attempts": 2,
+      "t_start": 3.62,
+      "t_end": 9.99
+    },
+    {
+      "id": 3,
+      "intent": "Type Hiring update into the 'Subject' field",
+      "do": "type",
+      "grounding": [
+        {
+          "how": "found the field labelled 'Subject' by OCR, then its box",
+          "box": [
+            409,
+            184,
+            444,
+            33
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "contract": "the box written to is labelled 'Subject'",
+          "saw": "Subject",
+          "pass": true
+        },
+        {
+          "contract": "the 'Subject' field shows 'Hiring update'",
+          "saw": "Hiring update",
+          "pass": true
+        }
+      ],
+      "passed": true,
+      "attempts": 1,
+      "t_start": 9.99,
+      "t_end": 12.84
+    },
+    {
+      "id": 4,
+      "intent": "Type See you at ten. into the 'Message' field",
+      "do": "type",
+      "grounding": [
+        {
+          "how": "found the field labelled 'Message' by OCR, then its box",
+          "box": [
+            409,
+            235,
+            444,
+            74
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "contract": "the box written to is labelled 'Message'",
+          "saw": "Message",
+          "pass": true
+        },
+        {
+          "contract": "the 'Message' field shows 'See you at ten.'",
+          "saw": "See you at ten.",
+          "pass": true
+        }
+      ],
+      "passed": true,
+      "attempts": 1,
+      "t_start": 12.84,
+      "t_end": 15.92
+    },
+    {
+      "id": 5,
+      "intent": "Press 'Send'; the screen should then show 'kenji@fieldnote.org', 'Hiring update'",
+      "do": "press",
+      "grounding": [
+        {
+          "how": "found the control reading 'Send' by OCR",
+          "at": [
+            818,
+            343
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "contract": "screen then shows 'kenji@fieldnote.org', 'Hiring update'",
+          "found": [
+            "kenji@fieldnote.org",
+            "Hiring update"
+          ],
+          "pass": true
+        }
+      ],
+      "passed": true,
+      "attempts": 1,
+      "t_start": 15.92,
+      "t_end": 18.61
+    }
+  ],
+  "all_contracts_passed": true,
+  "oracle_state": {
+    "task": "mail",
+    "records": [
+      {
+        "to": "kenji@fieldnote.org",
+        "subject": "Hiring update",
+        "message": "See you at ten."
+      }
+    ],
+    "settings": {
+      "Two-factor sign-in": false,
+      "Sign-in alerts": false,
+      "Remember this device": true,
+      "Recovery email": ""
+    },
+    "saves": 0
+  },
+  "video": "run.mp4"
+}

@@ -16,3 +16,5 @@ runs/ui_skill_*/*.png
 runs/bench_everyday_dev_r1/
 EIDOS_Studio_walkthrough.mp4
 runs/bench_everyday_*/[0-9]*/
+runs/ui_skill_*/run/
+runs/story_rec/

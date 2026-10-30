@@ -1,0 +1,125 @@
+{
+  "url": "http://localhost:8011/apps/everyday/index.html?task=mail&skin=A&popup=5.0&data=33",
+  "inputs": {
+    "to": "kenji@fieldnote.org",
+    "subject": "Hiring update",
+    "message": "See you at ten."
+  },
+  "use_contracts": false,
+  "steps": [
+    {
+      "id": 1,
+      "intent": "Press 'Compose'; the screen should then show 'New message', 'Subject', 'Message'",
+      "do": "press",
+      "grounding": [
+        {
+          "how": "found the control reading 'Compose' by OCR",
+          "at": [
+            1116,
+            40
+          ]
+        }
+      ],
+      "checks": [],
+      "passed": true,
+      "attempts": 1,
+      "t_start": 0.8,
+      "t_end": 2.66
+    },
+    {
+      "id": 2,
+      "intent": "Type kenji@fieldnote.org into the 'To' field",
+      "do": "type",
+      "grounding": [
+        {
+          "how": "found the field labelled 'To' by OCR, then its box",
+          "box": [
+            409,
+            133,
+            444,
+            33
+          ]
+        }
+      ],
+      "checks": [],
+      "passed": true,
+      "attempts": 1,
+      "t_start": 2.66,
+      "t_end": 4.59
+    },
+    {
+      "id": 3,
+      "intent": "Type Hiring update into the 'Subject' field",
+      "do": "type",
+      "grounding": [
+        {
+          "how": "found the field labelled 'Subject' by OCR, then its box",
+          "box": [
+            409,
+            184,
+            444,
+            33
+          ]
+        }
+      ],
+      "checks": [],
+      "passed": true,
+      "attempts": 1,
+      "t_start": 4.59,
+      "t_end": 6.37
+    },
+    {
+      "id": 4,
+      "intent": "Type See you at ten. into the 'Message' field",
+      "do": "type",
+      "grounding": [
+        {
+          "how": "found the field labelled 'Message' by OCR, then its box",
+          "box": [
+            409,
+            235,
+            444,
+            74
+          ]
+        }
+      ],
+      "checks": [],
+      "passed": true,
+      "attempts": 1,
+      "t_start": 6.37,
+      "t_end": 8.34
+    },
+    {
+      "id": 5,
+      "intent": "Press 'Send'; the screen should then show 'kenji@fieldnote.org', 'Hiring update'",
+      "do": "press",
+      "grounding": [
+        {
+          "how": "found the control reading 'Send' by OCR",
+          "at": [
+            818,
+            344
+          ]
+        }
+      ],
+      "checks": [],
+      "passed": true,
+      "attempts": 1,
+      "t_start": 8.34,
+      "t_end": 10.24
+    }
+  ],
+  "all_contracts_passed": true,
+  "oracle_state": {
+    "task": "mail",
+    "records": [],
+    "settings": {
+      "Two-factor sign-in": false,
+      "Sign-in alerts": false,
+      "Remember this device": true,
+      "Recovery email": ""
+    },
+    "saves": 0
+  },
+  "video": "run.mp4"
+}

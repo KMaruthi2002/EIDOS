@@ -1,0 +1,38 @@
+[
+  {
+    "id": "other_replay",
+    "title": "Copying the clicks",
+    "truth": {
+      "success": false,
+      "why": "nothing was saved"
+    },
+    "says_done": null
+  },
+  {
+    "id": "other_eidos",
+    "title": "EIDOS",
+    "truth": {
+      "success": true,
+      "why": ""
+    },
+    "says_done": true
+  },
+  {
+    "id": "int_nochk",
+    "title": "EIDOS, checks off",
+    "truth": {
+      "success": false,
+      "why": "nothing was saved"
+    },
+    "says_done": true
+  },
+  {
+    "id": "int_eidos",
+    "title": "EIDOS",
+    "truth": {
+      "success": true,
+      "why": ""
+    },
+    "says_done": true
+  }
+]

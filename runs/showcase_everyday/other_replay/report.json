@@ -1,0 +1,20 @@
+{
+  "url": "http://localhost:8000/apps/everyday/index.html?task=mail&skin=B&theme=dark&order=2,0,1&data=21",
+  "replay": true,
+  "oracle_state": {
+    "task": "mail",
+    "records": [],
+    "settings": {
+      "Two-factor sign-in": false,
+      "Sign-in alerts": false,
+      "Remember this device": true,
+      "Recovery email": ""
+    },
+    "saves": 0
+  },
+  "all_contracts_passed": null,
+  "truth_with_tutorial_values": {
+    "success": false,
+    "why": "nothing was saved"
+  }
+}
