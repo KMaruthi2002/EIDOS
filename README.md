@@ -2,7 +2,7 @@
 
 **Show it once.** EIDOS watches a screen-recorded tutorial and compiles it into a skill: a small program an AI agent can run on screens the video never showed. Every step carries a **visual contract** taken from the video, so the agent checks its own work, repairs what went wrong, and reports honestly when it can't.
 
-It works on four everyday tasks (send an email, add a calendar event, submit an expense, turn on two-factor sign-in) and a spreadsheet task, and as an add-on, on a simulated robot arm. On held-out tests with new values, random redesigns, a different app and mid-task interruptions, EIDOS finished **58/60** everyday runs and **41/44** spreadsheet runs, against **4/60** and **3/44** for copying the tutorial's clicks. Its own verdict matched the truth on **104/104** runs.
+It works on four everyday tasks (send an email, add a calendar event, submit an expense, turn on two-factor sign-in) and a spreadsheet task, and as an add-on, on a simulated robot arm. On held-out tests with new values, random redesigns, a second design or app and mid-task interruptions, EIDOS finished **60/60** everyday runs and **41/44** spreadsheet runs, against **4/60** and **3/44** for copying the tutorial's clicks. Its own verdict matched the truth on **104/104** of those runs.
 
 Built by Maruthi Kunchala (Team Parallax) for the Meta Global AI Hackathon 2026.
 
@@ -58,24 +58,28 @@ The first task family: add a bold totals row. `=SUM(E2:E11)` becomes "sum the Re
 
 Each skill is learned once, from one tutorial video in App A, then run under conditions the video never showed. Three systems run the same conditions: **copying the clicks** (replay the tutorial's exact pointer positions and keystrokes), **EIDOS with checks off** (the same skill and perception, acting once per step without checking), and **EIDOS**. Success is judged from each app's internal state, which no system sees.
 
-### Everyday tasks (held-out seed 31337, run once)
+### Everyday tasks (held-out round 2, seed 50505, run once)
 
-Four tasks (mail, calendar, expense, settings), each with two apps of different design. Every run except "same" uses new values for the inputs.
+Four tasks (mail, calendar, expense, settings). Each app has two designs built for the benchmark: design A, where the tutorial was recorded, and design B, a second design of the same app with the same field labels and button texts but a different layout (top menu, modal form, labels above fields, pill buttons, serif type). Every run except "same" uses new values for the inputs.
 
-| Condition | Runs | Copy the clicks | EIDOS, checks off | EIDOS |
-|---|---|---|---|---|
-| Same app, same values | 4 | 4/4 | 4/4 | 4/4 |
-| New values | 4 | 0/4 | 4/4 | 4/4 |
-| Redesigned app (dark theme, menu moved, labels above or beside fields, fields shuffled, buttons moved, larger text) | 24 | 0/24 | 24/24 | 24/24 |
-| Different app (design B) with random variations | 12 | 0/12 | 10/12 | 10/12 |
-| Interrupted by a dialog at a random moment | 16 | 0/16 | 0/16 | 16/16 |
-| **All** | 60 | 4/60 | 42/60 | 58/60 |
+Four systems: **copy the clicks** (the tutorial's pointer positions and keystrokes, typing the tutorial's values), **copy the clicks, new values** (same clicks, typing this run's values, which separates layout from data), **EIDOS with checks off** (the same skill and perception, acting once per step without checking; it still reports a step it couldn't ground), and **EIDOS**. Copying the clicks has no verdict of its own.
 
-EIDOS's own verdict matched the truth on **60/60** runs (0 silent failures). Results in `runs/bench_everyday_test/`.
+| Condition | Runs | Copy the clicks | Copy the clicks, new values | EIDOS, checks off | EIDOS |
+|---|---|---|---|---|---|
+| Same app, same values | 4 | 4/4 | 4/4 | 4/4 | 4/4 |
+| New values | 4 | 0/4 | 2/4 | 4/4 | 4/4 |
+| Redesigned app (dark theme, menu moved, labels above or beside fields, fields shuffled, buttons moved, larger text) | 24 | 0/24 | 0/24 | 24/24 | 24/24 |
+| Design B with random variations | 12 | 0/12 | 0/12 | 12/12 | 12/12 |
+| Interrupted by a dialog at a random moment | 16 | 0/16 | 1/16 | 0/16 | 16/16 |
+| **All** | 60 | 4/60 | 7/60 | 44/60 | 60/60 |
 
-Both EIDOS failures were calendar runs on design B, where OCR misread entries of the open Time list (for example "11:30" without "AM"), so EIDOS could not find the option and stopped, reporting the failure. After the held-out run, `choose` steps also read the open list row by row; both cases then pass. That fix is not counted in the table.
+EIDOS's own verdict matched the truth on **60/60** runs (0 silent failures); it repaired a step in 16 of them. Checks off claimed success on 5 runs that had failed, all of them interrupted. Results in `runs/bench_everyday_test2/`.
 
-**Protocol.** Seed 7 is the development set, used while fixing bugs (`runs/bench_everyday_dev/`, final dev run: EIDOS 60/60, checks off 43/60, copy the clicks 4/60). The first dev run had 4 silent failures: on design B, "Message" matched the heading "New message", EIDOS typed into the wrong box, and the check only read back the box it had chosen. That led to the independent label check above and to submit checks that ignore text inside form fields. The held-out seed was run once, after all fixes, and its results are reported unchanged.
+**Protocol.** Seed 7 is the development set, used while fixing bugs (`runs/bench_everyday_dev/`). Each held-out seed is run once and its results are kept unchanged:
+
+- Round 1 (seed 31337, `runs/bench_everyday_test/`, three systems): EIDOS 58/60, checks off 42/60, copy the clicks 4/60, 0 silent failures. Both EIDOS failures were calendar runs on design B where OCR misread entries of the open Time list, so EIDOS stopped and reported it. An independent review of the code and claims then found that some press checks were too lenient (half of the expected text was enough, and text already on screen could count), that copying the clicks was compared only with the tutorial's values, and that larger text sizes made the calendar app clip "9:00 AM". The fixes: press checks count only text that newly appeared and require every entered value; the list is read row by row; a second copy-the-clicks baseline types the new values; checks off reads a switch's state the same way EIDOS does; the app's list columns no longer clip.
+- Round 2 (seed 50505): the table above, with the fixed code.
+- The first development run had 4 silent failures: on design B, "Message" matched the heading "New message", EIDOS typed into the wrong box, and the check only read back the box it had chosen. That led to label verification when a box is chosen and after typing, and to submit checks that ignore text inside form fields.
 
 ### Spreadsheets (held-out seed 9001, run once)
 
@@ -88,15 +92,15 @@ Both EIDOS failures were calendar runs on design B, where OCR misread entries of
 | Interrupted mid-task | 16 | 2/16 | 0/16 | 14/16 |
 | **All** | 44 | 3/44 | 27/44 | 41/44 |
 
-EIDOS's own verdict matched the truth on **44/44** runs. Results in `runs/bench_test/`. Earlier held-out rounds (each run once): seed 2026, EIDOS 25/28 with 1 silent failure (it wrote the label one column off and its check only read back its own cell), which led to the header check; seed 4242, EIDOS 28/28 but checks off also 28/28, which led to the interruption condition and contract-driven repair.
+EIDOS's own verdict matched the truth on **44/44** runs. Results in `runs/bench_test/`. This is the third held-out spreadsheet round; the fixes made after the first two were informed by them (each run once): seed 2026, EIDOS 25/28 with 1 silent failure (it wrote the label one column off and its check only read back its own cell), which led to the header check; seed 4242, EIDOS 28/28 but checks off also 28/28, which led to the interruption condition and contract-driven repair.
 
 ### What the ablation shows
 
-On redesigns and different apps, checks off does about as well as EIDOS: there the gains come from the skill itself (targets by label, values as inputs). The contracts matter when something goes wrong mid-run: with a dialog interrupting the task, EIDOS finished **30/32** across both benchmarks and checks off **0/32**. Checks off can't notice that a click or keystrokes were swallowed, so it carries on and reports success.
+On redesigns and the second design or app, checks off does about as well as EIDOS: there the gains come from the skill itself (targets by label, values as inputs). The checks matter when something goes wrong mid-run: with a dialog interrupting the task, EIDOS finished **30/32** across both held-out benchmarks (16/16 everyday, 14/16 spreadsheet) and checks off **0/32**. In the everyday runs, checks off still claimed success on 5 of the 16 interrupted runs; on the others it failed to find a later target and reported that. The spreadsheet benchmark doesn't record a verdict for checks off. The ablation also removes the repair routes: in spreadsheets, checks off doesn't try Ctrl+B when the bold button isn't found.
 
 ### Scope
 
-This is a pilot. The target apps are built for the benchmark (the everyday apps in `apps/everyday/`) or open-source ([x-spreadsheet](https://github.com/myliang/x-spreadsheet) and [Jspreadsheet CE](https://github.com/jspreadsheet/ce), both MIT). The tutorials are scripted recordings with a visible click highlight. Five task families, no scrolling, and repair is "press Escape and redo the step". The alternative route for bold in spreadsheets (Ctrl+B) is built in, not learned. The next step is real third-party tutorial videos and real apps, with the live Meta models.
+This is a pilot. The target apps are built for the benchmark (the everyday apps in `apps/everyday/`) or open-source ([x-spreadsheet](https://github.com/myliang/x-spreadsheet) and [Jspreadsheet CE](https://github.com/jspreadsheet/ce), both MIT). The tutorials are scripted recordings with a visible click highlight. Five task families, no scrolling, and repair is "press Escape and redo the step" (the benchmark's dialog closes on Escape; other kinds of interruption would need other routes). The alternative route for bold in spreadsheets (Ctrl+B) is built in, not learned. The next step is real third-party tutorial videos and real apps, with the live Meta models.
 
 ## Add-on: physical skills (simulated robot)
 
@@ -134,7 +138,9 @@ python -m eidos studio &
 python -m eidos record-ui                                          # record the four tutorials
 python -m eidos learn-ui videos/tutorial_mail.mp4 runs/ui_skill_mail
 python -m eidos run-ui runs/ui_skill_mail mail "skin=B&theme=dark&order=2,0,1&popup=4" --new-data
-python bench/run_everyday.py http://localhost:8000 test           # held-out everyday benchmark
+python bench/run_everyday.py http://localhost:8000 dev             # development set (seed 7)
+# held-out seeds are run once; their recorded results are protected (pass --force to overwrite)
+python bench/run_everyday.py http://localhost:8000 test2           # held-out round 2 (seed 50505)
 
 # Spreadsheets
 python -m eidos serve &                                            # the two spreadsheet apps on :8765
@@ -146,6 +152,19 @@ python bench/run_bench.py http://localhost:8765 24 9001 16        # held-out spr
 python bench/showcase.py                                           # demo recordings
 python web/build_demo.py                                           # demo page -> web/demo/
 ```
+
+## Tests
+
+```bash
+python -m pytest -q -m "not slow"     # perception, learning, Studio API, Meta client (minutes)
+python -m pytest -q                   # plus end-to-end runs and a click-through of the Studio
+```
+
+- `tests/test_perception.py`: every field is found by its label on four designs of each form, and switch states are read correctly.
+- `tests/test_learn.py`: each tutorial video is learned into exactly the steps and values the recorder performed.
+- `tests/test_run.py`: EIDOS on a hard redesign of each task, an interrupted run with an honest verdict, and copying the clicks working only where the video was recorded.
+- `tests/test_studio.py`: the Studio's API, and a browser click-through from choosing a sample to the verdict.
+- `tests/test_meta_client.py`: the Meta Model API client against a fake server (a test double); it checks the request shape and the parsing of replies, not model quality.
 
 ## Layout
 
