@@ -1,3 +1,4 @@
+<meta charset="utf-8">
 <title>EIDOS</title>
 <!--VIEWPORT_META-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -172,6 +173,33 @@ footer { padding-block: 40px 60px; color: var(--muted); font-size: .9rem; border
   .head-row { display: none; }
   .bar { grid-template-columns: 110px minmax(0, 1fr) 54px; }
 }
+
+/* ---------- everyday ---------- */
+.film { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #000; }
+.ev-learn { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 28px; align-items: start; margin-top: 22px; }
+.ev-learn .stage video, .ev-duel video { aspect-ratio: 1200 / 760; }
+.prog { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; counter-reset: st; }
+.prog li { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 12px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+.prog li::before { counter-increment: st; content: counter(st); font-weight: 800; font-size: 1.3rem; color: var(--contract); font-variation-settings: "wdth" 125; }
+.prog .do { font-weight: 700; }
+.prog .ct { color: var(--muted); font-size: .9rem; }
+.prog .in { font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: .86em; color: var(--contract); }
+.card-row { display: flex; gap: 14px; align-items: center; margin-bottom: 14px; }
+.card-row img { width: 72px; height: 72px; border-radius: 10px; border: 1px solid var(--line); }
+.card-row small { color: var(--muted); }
+.alias { display: inline-block; margin: 2px 4px 2px 0; padding: 2px 8px; border-radius: 999px; background: var(--contract-soft); color: var(--contract); font-size: .82rem; font-weight: 650; }
+.tbl-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+table.tbl { border-collapse: collapse; width: 100%; font-size: .95rem; min-width: 620px; }
+.tbl th, .tbl td { padding: 10px 14px; text-align: right; border-top: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+.tbl th:first-child, .tbl td:first-child { text-align: left; }
+.tbl thead th { border-top: 0; color: var(--muted); font-weight: 650; font-size: .84rem; vertical-align: bottom; }
+.tbl tr.all td { font-weight: 750; }
+.tbl td.win { color: var(--contract); font-weight: 750; }
+.ev-results { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: 28px; align-items: start; }
+.ev-results h3 { margin: 0 0 10px; }
+.stack { display: grid; gap: 28px; min-width: 0; }
+.stack > div, .ev-learn > div, .ev-results > * { min-width: 0; }
+@media (max-width: 900px) { .ev-learn, .ev-results { grid-template-columns: minmax(0, 1fr); } }
 </style>
 
 <div class="wrap">
@@ -183,28 +211,77 @@ footer { padding-block: 40px 60px; color: var(--muted); font-size: .9rem; border
   <section class="hero" aria-labelledby="h1">
     <div class="hero-copy">
       <h1 id="h1">Show it once.</h1>
-      <p class="lede">EIDOS watches a screen-recorded tutorial and turns it into a program an AI agent can run. Every step carries a visual contract taken from the video, so the agent checks its own work. In a pilot benchmark, a skill learned from one video kept working on new data, on redesigned versions of the app, in a second app, and through mid-task interruptions.</p>
-      <ul class="hero-points">
-        <li><span class="mark"></span><span>Learns from the video, not the app: no access to the app's code or data.</span></li>
-        <li><span class="mark"></span><span>Learns what each step is for, not where the pixels were.</span></li>
-        <li><span class="mark"></span><span>Checks every step against what the person was seen doing.</span></li>
-      </ul>
+      <p class="lede">EIDOS watches a screen-recorded tutorial and compiles it into a skill: a small program an AI agent can run on screens the video never showed. Every step carries a visual contract taken from the video, so the agent checks its own work, repairs what went wrong, and says so when it can't.</p>
+      <ul class="hero-points" id="hero-points"></ul>
     </div>
     <div>
-      <div class="stage" id="tut-stage">
-        <video id="tut" src="assets/tutorial_totals.mp4" muted playsinline loop autoplay preload="auto" aria-label="Tutorial video: a person adds a bold totals row to a spreadsheet"></video>
-        <div class="layer" id="tut-layer"></div>
-        <div class="stage-bar">
-          <span id="tut-caption">A 14-second tutorial, recorded by a script with a highlighted pointer. The outlines are the contracts EIDOS recovered from it.</span>
-          <button class="btn" id="tut-toggle" type="button">Pause</button>
-        </div>
+      <div class="stage" id="film-stage"></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-ev">
+    <div class="sec-head">
+      <h2 id="h-ev">Four everyday tasks, one video each</h2>
+      <p class="lede">Each tutorial below was recorded once in design A of a small app. From the pixels alone, EIDOS finds every click, reads the labels, and writes a program: targets named by their label, typed values turned into inputs, and a contract for every step. One engine, four kinds of step: press, type, choose, switch.</p>
+    </div>
+    <div class="seg" role="group" aria-label="Choose a task" id="ev-tabs"></div>
+    <div class="ev-learn">
+      <div class="stage"><video id="ev-tut" muted playsinline loop autoplay preload="auto" controls aria-label="Tutorial video"></video></div>
+      <div><div class="card-row" id="ev-card"></div><ol class="prog" id="ev-prog"></ol></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-evrun">
+    <div class="sec-head">
+      <h2 id="h-evrun">Run it where the video never went</h2>
+      <p class="lede">The same skill, run with new values on screens the tutorial never showed. Whether each run really worked is judged from the app's internal state, which no agent sees.</p>
+    </div>
+    <div class="seg" role="group" aria-label="Choose an example" id="ev-seg"></div>
+    <p class="cond-title" id="ev-title"></p>
+    <div class="duel ev-duel">
+      <div class="lane">
+        <div class="lane-head"><h3 id="ev-lt"></h3><span class="verdict" id="ev-lv"></span></div>
+        <div class="stage"><video id="ev-lvid" muted playsinline preload="auto" controls></video></div>
+        <ol class="checks" id="ev-lchecks"></ol>
+      </div>
+      <div class="lane">
+        <div class="lane-head"><h3 id="ev-rt"></h3><span class="verdict" id="ev-rv"></span></div>
+        <div class="stage"><video id="ev-rvid" muted playsinline preload="auto" controls></video></div>
+        <ol class="checks" id="ev-rchecks"></ol>
+      </div>
+    </div>
+    <p style="margin-top:18px"><button class="btn" id="ev-both" type="button">Play both from the start</button></p>
+  </section>
+
+  <section aria-labelledby="h-evres">
+    <div class="sec-head">
+      <h2 id="h-evres">Held-out results</h2>
+      <p class="lede">Conditions drawn from seeds kept aside during development and run once. Every run except "same" uses new values.</p>
+    </div>
+    <div class="ev-results">
+      <div class="stack" id="ev-tables"></div>
+      <div class="note" id="ev-note"></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-sheet">
+    <div class="sec-head">
+      <h2 id="h-sheet">The first task: spreadsheets</h2>
+      <p class="lede">Add a bold totals row. The outlines are the contracts EIDOS recovered from a 14-second tutorial, recorded by a script with a highlighted pointer.</p>
+    </div>
+    <div class="stage" id="tut-stage">
+      <video id="tut" src="assets/tutorial_totals.mp4" muted playsinline loop autoplay preload="auto" aria-label="Tutorial video: a person adds a bold totals row to a spreadsheet"></video>
+      <div class="layer" id="tut-layer"></div>
+      <div class="stage-bar">
+        <span id="tut-caption">Select a step below to see it in the video.</span>
+        <button class="btn" id="tut-toggle" type="button">Pause</button>
       </div>
     </div>
   </section>
 
   <section aria-labelledby="h-learned">
     <div class="sec-head">
-      <h2 id="h-learned">What it learned from the video</h2>
+      <h2 id="h-learned">What it learned from the spreadsheet video</h2>
       <p class="lede">Every step below was recovered from the video frames: the highlighted pointer and click rings, the text read off the screen, and what changed. EIDOS then rewrote each step in terms that survive a different screen. Select a step to see it in the video.</p>
     </div>
     <div class="steps" id="steps"></div>
@@ -212,7 +289,7 @@ footer { padding-block: 40px 60px; color: var(--muted); font-size: .9rem; border
 
   <section aria-labelledby="h-run">
     <div class="sec-head">
-      <h2 id="h-run">Run it where the video never went</h2>
+      <h2 id="h-run">Spreadsheet runs</h2>
       <p class="lede">Same skill, no retraining. On the left, the tutorial's clicks and keystrokes copied exactly (or, for the interruption case, EIDOS with its checks switched off). On the right, EIDOS. Whether each run really worked is checked from the app's internal state, which the agent never sees.</p>
     </div>
     <div class="seg" role="group" aria-label="Choose a condition" id="seg"></div>
@@ -235,7 +312,7 @@ footer { padding-block: 40px 60px; color: var(--muted); font-size: .9rem; border
 
   <section aria-labelledby="h-results">
     <div class="sec-head">
-      <h2 id="h-results">Pilot benchmark</h2>
+      <h2 id="h-results">Spreadsheet benchmark</h2>
       <p class="lede" id="bench-lede"></p>
     </div>
     <div class="results">
@@ -246,21 +323,22 @@ footer { padding-block: 40px 60px; color: var(--muted); font-size: .9rem; border
 
   <section aria-labelledby="h-models">
     <div class="sec-head">
-      <h2 id="h-models">Where Meta's models come in</h2>
-      <p class="lede">EIDOS is designed around four Meta models. Every result on this page ran offline, with classic computer vision standing in for each model, so it can be reproduced without an API key. The live path is partial today: a client for all four models is in place, and SAM 3.1 concept search is wired in as a way to find a control on a new screen.</p>
+      <h2 id="h-models">Running on Meta's models</h2>
+      <p class="lede">Designs A and B, and the spreadsheets, need no model: those results run offline with classic computer vision, so anyone can reproduce them without a key. Meta's models come in where pixels and OCR aren't enough, and every answer a model gives is checked against the screen.</p>
     </div>
     <div class="models">
-      <div class="model-row head-row"><div>Model</div><div>Planned job in EIDOS</div><div>Offline stand-in used on this page</div></div>
-      <div class="model-row"><div class="who">SAM 3.1</div><div>Tracks the pointer and click markers through the video, segments the region each step changed, and finds a control on a new screen from a text concept like "bold text button".</div><div class="off">Color segmentation, frame differencing, and template matching. Concept search is wired in; untested without a key.</div></div>
-      <div class="model-row"><div class="who">Muse Spark</div><div>Reads each before and after pair and says what the step was for, in terms that do not depend on pixels.</div><div class="off">OCR plus table rules that map positions to column names and row roles.</div></div>
-      <div class="model-row"><div class="who">Muse Wonder</div><div>Generalizes the step trace into a program: inputs, relative targets, formulas explained in terms of the table, and the contract for each step.</div><div class="off">Rules for the step types this pilot covers.</div></div>
-      <div class="model-row"><div class="who">Muse Image</div><div>Draws a card for each learned skill so a library of skills can be browsed at a glance.</div><div class="off">Not used offline.</div></div>
+      <div class="model-row head-row"><div>Model</div><div>What it does in EIDOS</div><div>How its answer is checked</div></div>
+      <div class="model-row"><div class="who">Muse Spark</div><div>When a learned label isn't on the new screen, picks the text that plays the same role (To becomes Recipient, Send becomes Deliver), and maps a press's expected phrases to the new wording.</div><div class="off">It must pick from text read off this screen; EIDOS then finds that text from pixels and checks the step's contract as usual.</div></div>
+      <div class="model-row"><div class="who">SAM 3.1</div><div>A second opinion on where each field, button and switch is ("input box", "Deliver button", "toggle switch").</div><div class="off" id="sam-note">Advisory: compared with the box found from pixels, never overrides it. On the design C runs it agreed on 109 of 151 checks.</div></div>
+      <div class="model-row"><div class="who">Muse Image</div><div>Drew each learned skill's card.</div><div class="off">The cards keep Meta's AI-generated label.</div></div>
+      <div class="model-row"><div class="who">Muse Wonder</div><div>Compiles a step trace into a program with inputs and contracts.</div><div class="off">Saved next to the offline program when a spreadsheet skill is learned; not used for running.</div></div>
+      <div class="model-row"><div class="who">Muse Spark Open</div><div>The same screen-reading job with Meta's open-weights model, served on Baseten.</div><div class="off" id="open-note">Same checks as Muse Spark.</div></div>
     </div>
   </section>
 
   <footer>
     <span>EIDOS, by Maruthi Kunchala (Team Parallax).</span>
-    <span>Apps under test: x-spreadsheet and Jspreadsheet CE, both MIT licensed.</span>
+    <span>Apps under test: four everyday apps built for the benchmark, x-spreadsheet and Jspreadsheet CE (both MIT licensed).</span>
   </footer>
 </div>
 
@@ -319,7 +397,6 @@ $("#tut-toggle").addEventListener("click", () => {
   if (tut.paused) { tut.play(); $("#tut-toggle").textContent = "Pause"; }
   else { tut.pause(); $("#tut-toggle").textContent = "Play"; }
 });
-tut.play().catch(() => { $("#tut-toggle").textContent = "Play"; });
 
 /* ---------------- learned steps ---------------- */
 function bindI(s) {
@@ -451,4 +528,107 @@ $("#note").innerHTML = `<div class="big">${sr.agrees_with_oracle}/${sr.n}</div>
   ${it ? `<p>When a dialog interrupts the task, the contracts are what save the run: EIDOS notices a step did not land, dismisses the dialog and redoes it, finishing ${it.eidos.success}/${it.eidos.n}. With checks off it finished ${it.eidos_nochk.success}/${it.eidos_nochk.n}: it has no way to notice, so it carries on as if every step worked.</p>` : ""}
   ${hist}
   <p class="oracle">Development set (used while fixing bugs): EIDOS ${B.dev.summary.all.eidos.success}/${B.dev.summary.all.eidos.n}, copying the clicks ${B.dev.summary.all.replay.success}/${B.dev.summary.all.replay.n}. Pilot scale: one task family, two apps.</p>`;
+/* ================= everyday tasks ================= */
+const EV = DATA.everyday;
+const R2 = EV.bench.test2 && EV.bench.test2.summary, WC = EV.bench.words && EV.bench.words.summary, WO = EV.bench.words_open && EV.bench.words_open.summary;
+const frac = (x) => x ? `${x.success}/${x.n}` : "";
+{
+  const pts = [];
+  if (R2) pts.push(`On ${R2.all.eidos.n} held-out everyday runs with redesigns, a second design and interruptions, EIDOS finished <b>${frac(R2.all.eidos)}</b>. Copying the clicks finished ${frac(R2.all.replay)}.`);
+  if (WC) pts.push(`With every control renamed, offline EIDOS stopped and said so (${frac(WC.all.eidos)}); reading the screen with Muse Spark it finished <b>${frac(WC.all.eidos_live)}</b>.`);
+  const ag = (R2 ? R2.agree.agree : 0) + (WC ? WC.agree.eidos_live.agree : 0) + DATA.bench.test.summary.eidos_self_report.agrees_with_oracle;
+  const an = (R2 ? R2.agree.n : 0) + (WC ? WC.agree.eidos_live.n : 0) + DATA.bench.test.summary.eidos_self_report.n;
+  pts.push(`Its own verdict matched the truth on <b>${ag}/${an}</b> held-out runs, spreadsheets included.`);
+  $("#hero-points").innerHTML = pts.map(t => `<li><span class="mark"></span><span>${t}</span></li>`).join("");
+  $("#film-stage").innerHTML = DATA.film
+    ? `<video class="film" src="assets/explainer.mp4" poster="assets/explainer_poster.jpg" controls playsinline preload="none" aria-label="Explainer video with narration"></video><div class="stage-bar"><span>The explainer, with narration. All EIDOS footage is real; some clips are sped up.</span></div>`
+    : `<video class="film" src="assets/tutorial_mail.mp4" muted autoplay loop playsinline></video>`;
+}
+const fill = (t, inputs) => String(t).replace(/\{(\w+)\}/g, (m, k) => `<span class="in">${esc(inputs[k] ?? m)}</span>`);
+const doName = { press: "Press", type: "Type", choose: "Choose", toggle: "Switch" };
+function contractOf(st, inputs) {
+  const c = st.contract || {};
+  if (c.screen_shows) return (c.screen_shows.some(x => /\{/.test(x)) ? "Then every entered value must newly show outside the form: " : "Then the screen must newly show ") + c.screen_shows.map(x => `“${fill(x, inputs)}”`).join(", ");
+  if (c.field_shows) return `The box labelled “${esc(st.target.field)}” must show ${fill(c.field_shows, inputs)}`;
+  if (c.switch_on !== undefined) return `The switch on that row must be ${c.switch_on ? "on" : "off"}`;
+  return Object.keys(c).join(", ");
+}
+function targetOf(st, inputs) {
+  const t = st.target || {}, v = (st.intent.match(/\{\w+\}/) || [""])[0];
+  if (st.do === "press") return `“${esc(t.text)}”`;
+  if (st.do === "type") return `${fill(v, inputs)} into “${esc(t.field)}”`;
+  if (st.do === "choose") return `${fill(v, inputs)} in the “${esc(t.field)}” list`;
+  return `on “${esc(t.row)}”`;
+}
+let evTask = EV.tasks[0].task;
+$("#ev-tabs").innerHTML = EV.tasks.map(t => `<button type="button" data-t="${t.task}" aria-pressed="${t.task === evTask}">${esc(t.title)}</button>`).join("");
+function showTask(task) {
+  evTask = task;
+  const t = EV.tasks.find(x => x.task === task);
+  document.querySelectorAll("#ev-tabs button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.t === task)));
+  const v = $("#ev-tut"); v.src = `assets/tutorial_${task}.mp4`; v.play().catch(() => {});
+  $("#ev-card").innerHTML = (t.card ? `<img src="assets/card_${task}.webp" alt="Skill card drawn by Muse Image">` : "") +
+    `<div><h3>${esc(t.title)}</h3><small>Inputs: ${Object.entries(t.inputs).map(([k, v]) => `${esc(k)} (“${esc(v)}” in the video)`).join(", ")}</small></div>`;
+  $("#ev-prog").innerHTML = t.steps.map(st => `<li><div><div><span class="do">${doName[st.do] || st.do}</span> ${targetOf(st, t.inputs)}</div><div class="ct">${contractOf(st, t.inputs)}</div></div></li>`).join("");
+}
+document.querySelectorAll("#ev-tabs button").forEach(b => b.addEventListener("click", () => showTask(b.dataset.t)));
+showTask(evTask);
+
+let evClip = EV.clips[0];
+$("#ev-seg").innerHTML = EV.clips.map(c => `<button type="button" data-c="${c.id}" aria-pressed="${c.id === evClip.id}">${{ other: "Second design", interrupt: "Interrupted", renamed: "Renamed controls" }[c.id] || c.id}</button>`).join("");
+const lv = $("#ev-lvid"), rv = $("#ev-rvid");
+function laneChecks(run, t) {
+  const steps = run.steps || [];
+  if (!steps.length) return `<li><span class="tick wait">–</span><div><div>No checks: it replays the tutorial's pointer positions and keystrokes.</div></div></li>`;
+  return steps.map(s => {
+    const done = t == null || s.t_end == null || t >= s.t_end - 0.1;
+    const fail = s.checks.find(c => !c.pass);
+    const how = [s.model ? `<span class="alias">${esc(s.model.replace(/^muse-spark-[\d.]+/, "Muse Spark"))}</span>` : "",
+                 s.passed && s.attempts > 1 ? "<strong>a check failed, so it pressed Escape and redid the step</strong>" : "",
+                 !s.passed && fail ? `<strong>Failed after ${s.attempts} tries:</strong> ${esc(fail.contract)}` : ""].filter(Boolean).join(" ");
+    const cls = !done ? "wait" : (s.passed ? "" : "no");
+    return `<li><span class="tick ${cls}">${!done ? s.id : (s.passed ? "✓" : "✕")}</span><div><div>${esc(s.intent)}</div>${how ? `<div class="how">${how}</div>` : ""}</div></li>`;
+  }).join("");
+}
+function runVerdict(el, run) {
+  el.className = "verdict " + (run.truth.success ? "pass" : "fail");
+  el.textContent = run.truth.success ? "Task done" : "Task failed";
+}
+function showClip(id) {
+  evClip = EV.clips.find(c => c.id === id);
+  document.querySelectorAll("#ev-seg button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.c === id)));
+  $("#ev-title").textContent = evClip.title + ".";
+  [["l", evClip.left, lv], ["r", evClip.right, rv]].forEach(([k, run, v]) => {
+    $(`#ev-${k}t`).textContent = run.title;
+    runVerdict($(`#ev-${k}v`), run);
+    v.poster = `assets/runs/ev_${run.id}_end.jpg`; v.src = `assets/runs/ev_${run.id}.mp4`;
+    v.dataset.rate = (k === "r" && evClip.rate) ? evClip.rate : 1;
+    v.onloadedmetadata = () => { v.playbackRate = +v.dataset.rate; };
+    const said = run.says_done === null ? "It has no verdict of its own." : (run.says_done ? "Its own verdict: done." : "Its own verdict: a check failed, so it stopped.");
+    $(`#ev-${k}checks`).innerHTML = laneChecks(run, null) + `<li class="oracle" style="background:none;border:0;padding:0 2px;display:block">${said} Judged from the app's state: ${run.truth.success ? "done" : esc(run.truth.why || "not done")}.</li>`;
+  });
+}
+document.querySelectorAll("#ev-seg button").forEach(b => b.addEventListener("click", () => showClip(b.dataset.c)));
+$("#ev-both").addEventListener("click", () => [lv, rv].forEach(v => { v.currentTime = 0; v.playbackRate = +v.dataset.rate || 1; v.play().catch(() => {}); }));
+showClip(evClip.id);
+
+{
+  const sysName = { replay: "Copy the clicks", replay_new: "Copy the clicks, new values", nochk: "EIDOS, checks off", eidos: "EIDOS", eidos_live: "EIDOS + Muse Spark", eidos_open: "EIDOS + Muse Spark Open" };
+  const table = (title, rows, systems, sum, best) => `<div><h3>${title}</h3><div class="tbl-wrap"><table class="tbl"><thead><tr><th></th><th>Runs</th>${systems.map(x => `<th>${sysName[x]}</th>`).join("")}</tr></thead><tbody>
+    ${rows.map(([k, name]) => sum[k] ? `<tr class="${k === "all" ? "all" : ""}"><td>${name}</td><td>${sum[k][systems[0]].n}</td>${systems.map(x => `<td class="${x === best ? "win" : ""}">${frac(sum[k][x])}</td>`).join("")}</tr>` : "").join("")}
+  </tbody></table></div></div>`;
+  let html = "";
+  if (R2) html += table(`Designs A and B (seed ${EV.bench.test2.seed})`, [["same", "Same app, same values"], ["new_data", "New values"], ["redesign", "Redesigned app"], ["other_app", "Design B, random variations"], ["interrupt", "Interrupted by a dialog"], ["all", "All"]], ["replay", "replay_new", "nochk", "eidos"], R2, "eidos");
+  if (WC) {
+    const sy = EV.bench.words.systems.slice();
+    if (WO) { sy.push("eidos_open"); for (const k of Object.keys(WO)) if (WC[k] && WO[k].eidos_open) WC[k].eidos_open = WO[k].eidos_open; }
+    html += table(`Design C, every control renamed (seed ${EV.bench.words.seed})`, [["mail", "Send an email"], ["calendar", "Add a calendar event"], ["expense", "Submit an expense"], ["settings", "Turn on two-factor sign-in"], ["all", "All"]], sy, WC, "eidos_live");
+  }
+  $("#ev-tables").innerHTML = html;
+  const nk = R2 && R2.nochk_claimed_interrupt;
+  $("#ev-note").innerHTML = `${R2 ? `<div class="big">${R2.agree.agree}/${R2.agree.n}</div><p>runs on designs A and B where EIDOS's own verdict matched the truth, with ${R2.agree.silent} silent failures.</p>` : ""}
+    ${R2 ? `<p>The checks are what save an interrupted run: EIDOS finished ${frac(R2.interrupt.eidos)} interrupted runs, checks off ${frac(R2.interrupt.nochk)}${nk ? `, and checks off still said done on ${nk.said_done} of them` : ""}.</p>` : ""}
+    ${WC ? `<p>On design C, offline EIDOS couldn't find the learned labels and stopped, saying so on every run. With Muse Spark choosing among the text on screen, it finished ${frac(WC.all.eidos_live)}, every step still checked from pixels.${WO ? ` With Muse Spark Open on Baseten: ${frac(WO.all.eidos_open)}.` : ""}</p>` : ""}
+    <p class="oracle">Development seeds were used while fixing bugs and are reported separately in the repository.</p>`;
+}
 </script>

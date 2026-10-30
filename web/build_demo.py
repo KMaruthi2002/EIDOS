@@ -67,15 +67,41 @@ def main():
                         "-q:v", "3", str(OUT / "assets" / "runs" / f"ev_{k}_end.jpg")], check=True)
         rep = json.loads((sc / k / "report.json").read_text())
         idx[k]["steps"] = [{"id": st["id"], "intent": st["intent"], "passed": st["passed"], "attempts": st["attempts"],
-                            "checks": [{"contract": c["contract"], "pass": c["pass"]} for c in st["checks"]]}
+                            "t_start": st.get("t_start"), "t_end": st.get("t_end"),
+                            "model": next((g["how"] for g in st.get("grounding", []) if " matched " in g.get("how", "")), None),
+                            "checks": [{"contract": c["contract"], "pass": c["pass"]} for c in st["checks"] if not c.get("advisory")],
+                            "sam": [c["pass"] for c in st["checks"] if c.get("advisory")]}
                            for st in rep.get("steps", [])]
         idx[k]["inputs"] = rep.get("inputs")
+        idx[k]["aliases"] = rep.get("aliases") or {}
     ev["clips"] = [
         {"id": "other", "title": "A second design of the mail app (design B), dark mode, fields reordered, new values. One example run",
          "left": idx["other_replay"], "right": idx["other_eidos"]},
         {"id": "interrupt", "title": "A dialog pops up mid-task and swallows input. One example run",
          "left": idx["int_nochk"], "right": idx["int_eidos"]},
-    ]
+    ] + ([{"id": "renamed", "title": "Design C: every control renamed (Recipient for To, Deliver for Send), design B, dark mode. One example run; the Muse Spark run plays at 3x",
+           "left": idx["renamed_offline"], "right": idx["renamed_live"], "rate": 3}] if "renamed_live" in idx else [])
+    for task in TITLES:
+        card = RUNS / f"ui_skill_{task}" / "card.webp"
+        if card.exists():
+            shutil.copy(card, OUT / "assets" / f"card_{task}.webp")
+    for t in ev["tasks"]:
+        t["card"] = (OUT / "assets" / f"card_{t['task']}.webp").exists()
+    # design C (renamed controls) and the Muse Spark Open runs on the same conditions
+    for split in ("words", "words_open", "words_dev", "words_dev_open"):
+        f = RUNS / f"bench_everyday_{split}" / "results.json"
+        if not f.exists():
+            continue
+        rows = json.loads(f.read_text())["rows"]
+        systems = [x for x in ("replay", "replay_new", "nochk", "eidos", "eidos_live", "eidos_open") if any(r["system"] == x for r in rows)]
+        summ = {task: {x: {"success": sum(r["success"] for r in rows if r["system"] == x and r["task"] == task),
+                           "n": sum(1 for r in rows if r["system"] == x and r["task"] == task)} for x in systems}
+                for task in list(TITLES) + ["all"] if task == "all" or any(r["task"] == task for r in rows)}
+        summ["all"] = {x: {"success": sum(r["success"] for r in rows if r["system"] == x),
+                           "n": sum(1 for r in rows if r["system"] == x)} for x in systems}
+        summ["agree"] = {x: {"agree": sum(r["says_done"] == r["success"] for r in rows if r["system"] == x),
+                             "n": sum(1 for r in rows if r["system"] == x)} for x in systems}
+        ev["bench"][split] = {"seed": json.loads(f.read_text())["seed"], "summary": summ, "systems": systems}
     for split in ("test2", "test", "dev"):
         f = RUNS / f"bench_everyday_{split}" / "results.json"
         if not f.exists():

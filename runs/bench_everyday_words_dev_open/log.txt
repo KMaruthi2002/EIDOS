@@ -1,0 +1,48 @@
+001 mail      renamed    eidos_open says=True  truth=True  238.9s 
+000 mail      renamed    eidos_open says=True  truth=True  358.2s 
+002 mail      renamed    eidos_open says=True  truth=True  290.3s 
+003 mail      renamed    eidos_open says=True  truth=True  202.3s 
+004 mail      renamed    eidos_open says=True  truth=True  88.2s 
+005 mail      renamed    eidos_open says=True  truth=True  156.2s 
+006 mail      renamed    eidos_open says=True  truth=True  261.9s 
+007 mail      renamed    eidos_open says=True  truth=True  256.7s 
+008 calendar  renamed    eidos_open says=True  truth=True  100.0s 
+009 calendar  renamed    eidos_open says=True  truth=True  88.3s 
+010 calendar  renamed    eidos_open says=True  truth=True  142.3s 
+011 calendar  renamed    eidos_open says=True  truth=True  90.5s 
+012 calendar  renamed    eidos_open says=True  truth=True  76.3s 
+013 calendar  renamed    eidos_open says=True  truth=True  111.6s 
+015 calendar  renamed    eidos_open says=True  truth=True  84.1s 
+014 calendar  renamed    eidos_open says=True  truth=True  158.0s 
+016 expense   renamed    eidos_open says=True  truth=True  145.1s 
+017 expense   renamed    eidos_open says=True  truth=True  147.9s 
+019 expense   renamed    eidos_open says=True  truth=True  172.9s 
+018 expense   renamed    eidos_open says=True  truth=True  256.5s 
+020 expense   renamed    eidos_open says=True  truth=True  244.9s 
+021 expense   renamed    eidos_open says=True  truth=True  179.4s 
+023 expense   renamed    eidos_open says=True  truth=True  124.0s 
+022 expense   renamed    eidos_open says=True  truth=True  159.6s 
+025 settings  renamed    eidos_open says=True  truth=True  101.8s 
+024 settings  renamed    eidos_open says=True  truth=True  269.2s 
+026 settings  renamed    eidos_open says=True  truth=True  202.1s 
+027 settings  renamed    eidos_open says=True  truth=True  156.3s 
+028 settings  renamed    eidos_open says=False truth=True  182.5s 
+029 settings  renamed    eidos_open says=True  truth=True  171.4s 
+031 settings  renamed    eidos_open says=True  truth=True  146.5s 
+030 settings  renamed    eidos_open says=True  truth=True  233.5s 
+
+condition    runs  eidos_open
+
+condition    runs  eidos_open
+same            0  0/0       
+new_data        0  0/0       
+redesign        0  0/0       
+other_app       0  0/0       
+interrupt       0  0/0       
+renamed        32  32/32     
+ALL            32  32/32     
+  mail          8  8/8       
+  calendar      8  8/8       
+  expense       8  8/8       
+  settings      8  8/8       
+eidos_open: verdict matches truth 31/32; silent failures 0

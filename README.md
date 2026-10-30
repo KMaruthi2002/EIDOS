@@ -2,7 +2,7 @@
 
 **Show it once.** EIDOS watches a screen-recorded tutorial and compiles it into a skill: a small program an AI agent can run on screens the video never showed. Every step carries a **visual contract** taken from the video, so the agent checks its own work, repairs what went wrong, and reports honestly when it can't.
 
-It works on four everyday tasks (send an email, add a calendar event, submit an expense, turn on two-factor sign-in) and a spreadsheet task, and as an add-on, on a simulated robot arm. On held-out tests with new values, random redesigns, a second design or app and mid-task interruptions, EIDOS finished **60/60** everyday runs and **41/44** spreadsheet runs, against **4/60** and **3/44** for copying the tutorial's clicks. Its own verdict matched the truth on **104/104** of those runs.
+It works on four everyday tasks (send an email, add a calendar event, submit an expense, turn on two-factor sign-in) and a spreadsheet task, and as an add-on, on a simulated robot arm. On held-out tests with new values, random redesigns, a second design or app and mid-task interruptions, EIDOS finished **60/60** everyday runs and **41/44** spreadsheet runs, against **4/60** and **3/44** for copying the tutorial's clicks. When every control was renamed ("Deliver" instead of "Send", "Recipient" instead of "To"), offline EIDOS stopped and said so on all 32 runs, and EIDOS reading the screen with Meta's **Muse Spark** finished **32/32**. Its own verdict matched the truth on all **136** held-out runs.
 
 Built by Maruthi Kunchala (Team Parallax) for the Meta Global AI Hackathon 2026.
 
@@ -45,14 +45,19 @@ The first task family: add a bold totals row. `=SUM(E2:E11)` becomes "sum the Re
 
 ## Meta models
 
-| Model | Planned job in EIDOS | Offline stand-in used for every result in this repo |
-|---|---|---|
-| SAM 3.1 | Track the pointer and click markers; segment what changed; find a field, button or switch on a new screen from a concept ("the text field labelled To") | Color segmentation, frame differencing, edge-based box detection, template matching |
-| Muse Spark | Read each before/after pair and state the step's purpose in screen-independent terms; read labels and values | OCR (Tesseract) plus rules for each step type |
-| Muse Wonder | Generalize the step trace into a program with inputs and contracts | Rules for the step types in this pilot |
-| Muse Image | Draw a card for each learned skill | Not used offline |
+EIDOS runs fully offline, and uses Meta's models where they add something it can't do from pixels and OCR alone. Every model answer is a proposal that EIDOS checks against the screen.
 
-**Status of the live models.** EIDOS is designed around these models, but every result in this repo ran offline with the stand-ins. The live path today is a client in `eidos/meta.py`, tested only against a fake server that answers in the API's format (`tests/test_meta_client.py`), so the tests pin down the request and the parsing of replies and say nothing about model quality. SAM 3.1 concept search is wired into the spreadsheet runner as a last route for finding the bold button; Muse Wonder's program is saved next to the offline one by the spreadsheet `learn` command but not used; Muse Spark and Muse Image are called only by `python -m eidos check-live`. The everyday-task pipeline uses only the offline stand-ins. The endpoint and model IDs are placeholders until confirmed against the Meta Model API. Set `META_MODEL_API_KEY` (or put it in `.env`) to enable the client.
+| Model | What it does in EIDOS | Where |
+|---|---|---|
+| Muse Spark (`muse-spark-1.3`) | When a learned label isn't on the new screen, EIDOS gives Muse Spark the screenshot and the text it read there, and asks which item plays the same role ("the button labelled Send in the tutorial"). The answer must be one of those items, so EIDOS can find it from pixels and check it like any other label. It also maps a press's expected phrases ("Settings saved") to the new wording ("Changes applied") before the contract is checked | `eidos/live.py` `match_label`, `eidos/ui/run.py` |
+| SAM 3.1 (`sam-3.1`) | A second opinion on every field, button and switch EIDOS finds ("input box", "Deliver button", "toggle switch"). Advisory: logged, never overrides the pixel check | `eidos/ui/run.py` `sam_check`; spreadsheet runner fallback |
+| Muse Image (`muse-image-1.0`) | Draws each learned skill's card in the Studio (`runs/*/card.webp`, which keep Meta's AI label) | `eidos/studio.py` |
+| Muse Wonder (`muse-wonder-1.0`) | Compiles a step trace into a program with inputs and contracts; saved next to the offline program by the spreadsheet `learn` command and tried by `check-live`, not used for running | `eidos/live.py` `wonder_compile` |
+| Muse Spark Open (`meta-models/muse-spark-open-1026`, on Baseten) | The same screen reader as Muse Spark, through an OpenAI-compatible endpoint (`EIDOS_READER=open`) | `eidos/live.py` `baseten_chat` |
+
+Keys go in `.env` (`MODEL_API_KEY`, `BASETEN_API_KEY`), which is not committed. `python -m eidos check-live` makes one real call to each model. A live system enters a benchmark only if a test call with its key succeeds.
+
+On the design C held-out runs, Muse Spark was asked a median of 11 times per run, at a median of 2.3 seconds per call. SAM 3.1's box agreed with EIDOS's own (overlap of at least half) on 109 of 151 checks (72%); in most disagreements SAM's top box didn't overlap EIDOS's at all, often because a phrase like "input box" fits every field on the form. Each of those runs still succeeded, which is why SAM stays advisory.
 
 ## Benchmarks
 
@@ -81,6 +86,20 @@ EIDOS's own verdict matched the truth on **60/60** runs (0 silent failures); it 
 - Round 2 (seed 50505): the table above, with the fixed code.
 - The first development run had 4 silent failures: on design B, "Message" matched the heading "New message", EIDOS typed into the wrong box, and the check only read back the box it had chosen. That led to label verification when a box is chosen and after typing, and to submit checks that ignore text inside form fields.
 
+### Renamed controls (design C, held-out seed 60606, run once)
+
+Design C keeps the apps' layout but renames every control and message: "Compose" becomes "New email", "To" becomes "Recipient", "Send" becomes "Deliver", "Save changes" becomes "Apply", "Settings saved" becomes "Changes applied", and so on (`apps/everyday/index.html`, `words=alt`). Half of the 32 runs also get a random redesign, and all use new values. Nothing learned by label can be found as written, so this tests reading for meaning.
+
+| Task | Runs | Copy the clicks | Copy the clicks, new values | EIDOS, checks off | EIDOS (offline) | EIDOS + Muse Spark |
+|---|---|---|---|---|---|---|
+| Mail | 8 | 0/8 | 3/8 | 0/8 | 0/8 | 8/8 |
+| Calendar | 8 | 0/8 | 0/8 | 0/8 | 0/8 | 8/8 |
+| Expense | 8 | 0/8 | 1/8 | 0/8 | 0/8 | 8/8 |
+| Settings | 8 | 0/8 | 3/8 | 0/8 | 0/8 | 8/8 |
+| **All** | 32 | 0/32 | 7/32 | 0/32 | 0/32 | **32/32** |
+
+Every system's verdict matched the truth on 32/32 (offline EIDOS and checks off stop at the first label they can't find and say so). Muse Spark's picks included To → Recipient, Message → Body, Date → Day, Time → Starts at, Two-factor sign-in → Two-step verification and Send → Deliver; each pick was then grounded and checked from pixels. Results in `runs/bench_everyday_words/`; development seed 8 in `runs/bench_everyday_words_dev/` (30/32, then two settings fixes: offer joined two-line labels and single button words as candidates).
+
 ### Spreadsheets (held-out seed 9001, run once)
 
 | Condition | Runs | Copy the clicks | EIDOS, checks off | EIDOS |
@@ -100,7 +119,7 @@ On redesigns and the second design or app, checks off does about as well as EIDO
 
 ### Scope
 
-This is a pilot. The target apps are built for the benchmark (the everyday apps in `apps/everyday/`) or open-source ([x-spreadsheet](https://github.com/myliang/x-spreadsheet) and [Jspreadsheet CE](https://github.com/jspreadsheet/ce), both MIT). The tutorials are scripted recordings with a visible click highlight. Five task families, no scrolling, and repair is "press Escape and redo the step" (the benchmark's dialog closes on Escape; other kinds of interruption would need other routes). The alternative route for bold in spreadsheets (Ctrl+B) is built in, not learned. The next step is real third-party tutorial videos and real apps, with the live Meta models.
+This is a pilot. The target apps are built for the benchmark (the everyday apps in `apps/everyday/`) or open-source ([x-spreadsheet](https://github.com/myliang/x-spreadsheet) and [Jspreadsheet CE](https://github.com/jspreadsheet/ce), both MIT). The tutorials are scripted recordings with a visible click highlight. Five task families, no scrolling, and repair is "press Escape and redo the step" (the benchmark's dialog closes on Escape; other kinds of interruption would need other routes). The alternative route for bold in spreadsheets (Ctrl+B) is built in, not learned. Design C renames controls but keeps their meaning one-to-one; a real redesign can also merge or split steps. The next step is real third-party tutorial videos and real apps.
 
 ## Add-on: physical skills (simulated robot)
 
@@ -120,18 +139,26 @@ Setup: `physical/setup.sh` (MuJoCo plus the Panda model; on headless Linux, OSMe
 python -m eidos studio        # then open http://localhost:8000
 ```
 
-A local web app over the same engine:
+A local web app over the same engine. Everything runs on your machine; the four everyday apps are served by the Studio itself.
 
-1. **Learn**: pick a sample tutorial (email, calendar, expense, two-factor, spreadsheet) or drop your own screen recording. The steps, their inputs and their contracts appear as EIDOS finds them.
-2. **Run**: choose where to run the skill: design A or B, any mix of redesigns, the video's values or new ones, and optionally a dialog that interrupts the task. Choose the agent: EIDOS, EIDOS with checks off, or copying the clicks.
-3. **Watch**: the agent's screen streams live while each step is grounded, acted on and checked; repairs show as they happen.
-4. **Verdict**: what the agent says next to the truth from the app's internal state (which the agent never sees), so silent failures are visible.
+1. **Show it a task**, three ways:
+   - **Teach it live.** Pick an app (Mail, Calendar, Expenses, Settings) and do the task once inside the Studio. Your pointer and keys go to a real browser running the app, which is recorded the way screen recorders record tutorials (highlighted pointer, click rings). When you press "Finish and learn", EIDOS learns from that video file alone, the same as from any other recording.
+   - **Pick a sample tutorial** (email, calendar event, expense, two-factor sign-in, spreadsheet totals).
+   - **Drop a screen recording** and say which app it shows.
+2. **Watch it learn**: the recording plays with each step outlined as EIDOS finds it, with its inputs and contracts.
+3. **Run it anywhere**: design A, B or C (renamed controls), any mix of redesigns, the video's values, new values or **your own values**, and optionally a dialog that interrupts the task. Choose the agent: EIDOS, EIDOS + Muse Spark (with a key), EIDOS with checks off, or copying the clicks. The agent's screen streams live while each step is grounded, acted on and checked; repairs and model matches show as they happen.
+4. **Verdict**: what the agent says next to the truth from the app's internal state (which the agent never sees), so silent failures are visible. For a skill you taught, success means the app saved a record with every value the run entered.
+
+Skills you teach are kept in `studio_data/` and listed on the first screen, where each can be downloaded as JSON or deleted.
 
 ## Run it
 
 ```bash
 pip install -r requirements.txt && python -m playwright install chromium
-# Tesseract OCR is needed for offline mode (apt install tesseract-ocr / brew install tesseract)
+# Tesseract OCR and ffmpeg are needed (apt install tesseract-ocr ffmpeg / brew install tesseract ffmpeg)
+# Optional: put MODEL_API_KEY (Meta Model API) and BASETEN_API_KEY in a .env file to enable the live models
+
+python -m eidos studio                                             # the app: open http://localhost:8000
 
 # Everyday tasks (the Studio also serves the everyday apps)
 python -m eidos studio &
@@ -164,18 +191,21 @@ python -m pytest -q                   # plus end-to-end runs and a click-through
 - `tests/test_learn.py`: each tutorial video is learned into exactly the steps and values the recorder performed.
 - `tests/test_run.py`: EIDOS on a hard redesign of each task, an interrupted run with an honest verdict, and copying the clicks working only where the video was recorded.
 - `tests/test_studio.py`: the Studio's API, and a browser click-through from choosing a sample to the verdict.
+- `tests/test_teach.py`: teaching live end to end (a scripted person records Mail through the teach API, EIDOS learns it, and the skill runs on design B with new values), plus the teach API's guards and the success rule for taught skills.
 - `tests/test_meta_client.py`: the Meta Model API client against a fake server (a test double); it checks the request shape and the parsing of replies, not model quality.
 
 ## Layout
 
 ```
 apps/        spreadsheet apps (self-hosted, MIT) and everyday/ (mail, calendar, expense,
-             settings; two designs each), all with redesign parameters
+             settings; designs A, B and C), all with redesign parameters
 eidos/       ui/ (everyday tasks: see.py perception, learn.py video -> program,
              run.py perceive/ground/act/check, tasks.py scoring and inputs)
              extract.py (video -> steps + contracts), compiler.py (-> program),
              runner.py (perceive, ground, act, check), vision.py (offline perception),
-             meta.py (Meta Model API), score.py (benchmark oracle), studio.py (the app's server)
+             live.py (Meta Model API and Muse Spark Open on Baseten), meta.py (spreadsheet
+             client), score.py (benchmark oracle), studio.py (the app's server),
+             teach.py (teaching live: the recorded browser behind "Teach it live")
 bench/       benchmark and showcase runners (run_everyday.py, run_bench.py)
 web/         demo page template and builder; studio/ (the EIDOS Studio front end)
 video/       explainer video source (Remotion)

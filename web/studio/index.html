@@ -252,6 +252,39 @@ table.cond { width: 100%; border-collapse: collapse; font-size: 14px; }
 table.cond th, table.cond td { text-align: right; padding: 7px 10px; border-bottom: 1px solid var(--line); white-space: nowrap; }
 table.cond th:first-child, table.cond td:first-child { text-align: left; }
 table.cond td.e { font-weight: 750; color: var(--contract); }
+
+/* teach live */
+.teach-card { border: 2px solid var(--contract); border-radius: var(--r-lg); display: grid; align-content: center; justify-items: start; padding: 24px; gap: 10px; min-height: 220px; cursor: pointer; text-align: left;
+  background: linear-gradient(160deg, var(--contract-soft), transparent 70%), var(--surface); color: var(--ink); font: inherit; transition: transform .3s var(--ease), box-shadow .3s var(--ease); }
+.teach-card:hover { transform: translateY(-3px); box-shadow: var(--lift); }
+.teach-card strong { font-size: 18px; }
+.teach-card span { color: var(--muted); font-size: 14px; }
+.teach-card .rec { width: 14px; height: 14px; border-radius: 50%; background: var(--fail); box-shadow: 0 0 0 6px var(--fail-soft); }
+dialog#teach { width: min(1260px, calc(100vw - 24px)); }
+.teach-body { display: grid; gap: 16px; padding: 20px 22px 22px; }
+.teach-bar { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; }
+.teach-bar .left { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.recdot { display: inline-flex; gap: 8px; align-items: center; font-weight: 700; font-variant-numeric: tabular-nums; }
+.recdot i { width: 11px; height: 11px; border-radius: 50%; background: var(--fail); animation: blink 1.2s steps(2, start) infinite; }
+@keyframes blink { to { visibility: hidden; } }
+@media (prefers-reduced-motion: reduce) { .recdot i { animation: none; } }
+.tscreen { position: relative; aspect-ratio: 1200 / 760; background: var(--screen); border-radius: 14px; overflow: hidden; outline: none; cursor: default; }
+.tscreen img { position: absolute; inset: 0; width: 100%; height: 100%; display: block; user-select: none; -webkit-user-drag: none; }
+.tscreen:focus-visible { box-shadow: 0 0 0 3px var(--contract); }
+.tscreen .hint { position: absolute; inset: 0; display: grid; place-items: center; color: #dbe4f3; text-align: center; padding: 20px; background: rgba(7, 12, 22, .72); cursor: default; }
+.tscreen .hint div { display: grid; gap: 12px; max-width: 520px; justify-items: center; }
+.tapps { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.tapps button { font: inherit; padding: 9px 14px; border-radius: 999px; border: 1px solid rgba(255,255,255,.35); background: transparent; color: #fff; cursor: pointer; }
+.tapps button[aria-pressed="true"] { background: #fff; color: #0c1424; }
+.tname { padding: 9px 12px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); font: inherit; min-width: 240px; }
+.fine.tip { max-width: 80ch; }
+.mine-item { display: inline-flex; gap: 2px; align-items: center; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); padding: 2px; }
+.mine-item button { border: 0 !important; background: transparent !important; }
+.mine-item .x { color: var(--muted); font-size: 13px; padding: 6px 10px; cursor: pointer; border-radius: 999px; }
+.mine-item .x:hover { color: var(--fail); }
+.own { display: grid; gap: 8px; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+.own label { display: grid; gap: 4px; font-size: 13px; color: var(--muted); }
+.own input { padding: 8px 10px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); font: inherit; font-size: 14px; }
 </style>
 </head>
 <body>
@@ -271,7 +304,7 @@ table.cond td.e { font-weight: 750; color: var(--contract); }
   <section class="stage on" id="stage-show" aria-labelledby="h-show">
     <div class="lead">
       <h1 id="h-show">Show it a task once.</h1>
-      <p>Pick a tutorial recording, or drop your own. EIDOS reads the video frames and turns what the person did into a skill an agent can run on screens the video never showed.</p>
+      <p>Pick a tutorial recording, teach it live, or drop your own. EIDOS reads the video frames and turns what the person did into a skill an agent can run on screens the video never showed.</p>
     </div>
     <div class="samples" id="samples"></div>
     <div class="mine" id="mineWrap" hidden><h2>Skills you taught it</h2><div class="mine-list" id="mine"></div></div>
@@ -326,6 +359,7 @@ table.cond td.e { font-weight: 750; color: var(--contract); }
           <div class="field"><span>App</span><div class="seg" id="appSeg"></div></div>
           <div class="field"><span>Redesign</span><div class="chips" id="redesign"></div></div>
           <div class="field"><span>Values</span><div class="seg" id="valSeg"></div></div>
+          <div class="own" id="ownWrap" hidden></div>
           <div class="field"><span>Trouble</span><div class="chips"><label class="chip"><input type="checkbox" id="o_popup">A dialog pops up mid-task</label></div></div>
           <div class="field"><span>Agent</span>
             <div class="agents" id="agents">
@@ -347,6 +381,26 @@ table.cond td.e { font-weight: 750; color: var(--contract); }
   <div class="dlg">
     <header><div><h2 id="h-res">Benchmark results</h2><p class="sub">Read from the result files in <code>runs/</code>. Success is judged from each app's internal state, which no agent sees.</p></div><button class="ghost" id="closeResults">Close</button></header>
     <div id="resBody" class="bench"></div>
+  </div>
+</dialog>
+
+<dialog id="teach" aria-labelledby="h-teach">
+  <div class="teach-body">
+    <div class="teach-bar">
+      <div class="left"><h2 id="h-teach" style="font-size:24px;font-weight:780">Teach it live</h2><span class="recdot" id="recState" hidden><i></i><span id="recTime">0:00</span></span><span class="fine" id="recClicks"></span></div>
+      <div class="left"><input class="tname" id="tName" placeholder="Name this skill" aria-label="Skill name"><button class="btn" id="tFinish" disabled>Finish and learn</button><button class="ghost" id="tCancel">Cancel</button></div>
+    </div>
+    <div class="tscreen" id="tScreen" tabindex="0" aria-label="The app you are recording. Click and type here.">
+      <img id="tImg" alt="">
+      <div class="hint" id="tHint"><div>
+        <strong style="font-size:20px">Do a task once, the way you'd show a colleague.</strong>
+        <span>Pick an app. EIDOS records your screen with a highlighted pointer and click rings, then learns from the video alone.</span>
+        <div class="tapps" id="tApps"></div>
+        <button class="btn" id="tStart">Start recording</button>
+        <span class="fine" style="color:#b8c4d8">Click a field before typing into it, and finish with the button that saves or sends. Keep it under a few minutes.</span>
+      </div></div>
+    </div>
+    <p class="fine tip" id="tTip">Your pointer and keys go to a real browser running the app. Click into the screen to start typing.</p>
   </div>
 </dialog>
 
@@ -407,8 +461,9 @@ async function renderSamples() {
     const sk = list.find((x) => x.id === s.id);
     return `<button class="sample" data-id="${s.id}"><div class="thumb"><video src="/api/sample/${s.sample}.mp4#t=6" muted playsinline preload="metadata" loop></video><span class="kind">${s.app}</span><img class="card" alt="" data-card="${s.id}"></div>
       <div class="meta"><h3>${esc(s.title)}</h3><p>${sk.steps} steps, learned from one recording</p></div></button>`;
-  }).join("") + `<label class="drop" id="drop"><strong>Teach it something new</strong><span>Drop a screen recording here, or choose a file.</span>
-      <span>This video shows <select id="kindSel" aria-label="Kind of app"><option value="ui">an everyday app</option><option value="sheet">a spreadsheet</option></select></span>
+  }).join("") + `<button class="teach-card" id="teachCard" type="button"><span class="rec"></span><strong>Teach it live</strong><span>Do a task once in a real app, right here. EIDOS records it and learns the skill from the video.</span></button>
+      <label class="drop" id="drop"><strong>Learn from a recording</strong><span>Drop a screen recording here, or choose a file.</span>
+      <span>This video shows <select id="kindSel" aria-label="Kind of app"><option value="mail">the Mail app</option><option value="calendar">the Calendar app</option><option value="expense">the Expenses app</option><option value="settings">the Settings app</option><option value="sheet">a spreadsheet</option></select></span>
       <input type="file" id="file" accept="video/*" hidden><span class="fine">Works best with a highlighted pointer and click rings.</span></label>`;
   $$(".sample").forEach((c) => {
     const v = $("video", c);
@@ -424,8 +479,13 @@ async function renderSamples() {
   if (LIVE.meta) $$(".sample .card").forEach((im) => { im.onload = () => im.classList.add("on"); im.onerror = () => im.remove(); im.src = `/api/skills/${im.dataset.card}/card`; });
   const mine = list.filter((s) => !s.id.startsWith("sample-"));
   $("#mineWrap").hidden = !mine.length;
-  $("#mine").innerHTML = mine.map((s) => `<button class="ghost" data-id="${s.id}">${esc(s.name)} <span class="fine">from ${esc(s.source)}</span></button>`).join("");
-  $$("#mine button").forEach((b) => b.addEventListener("click", () => openSkill(b.dataset.id)));
+  $("#mine").innerHTML = mine.sort((a, b) => (b.created || 0) - (a.created || 0)).map((s) => `<span class="mine-item"><button class="ghost" data-id="${s.id}">${esc(s.name)} <span class="fine">${s.steps} steps, from ${esc(s.source)}</span></button><a class="x" href="/api/skills/${s.id}/download" title="Download the skill as JSON" aria-label="Download ${esc(s.name)}">Download</a><span class="x" role="button" tabindex="0" data-del="${s.id}" aria-label="Delete ${esc(s.name)}">Delete</span></span>`).join("");
+  $$("#mine button[data-id]").forEach((b) => b.addEventListener("click", () => openSkill(b.dataset.id)));
+  $$("#mine [data-del]").forEach((b) => b.addEventListener("click", async () => {
+    if (b.dataset.confirm !== "1") { b.dataset.confirm = "1"; b.textContent = "Delete?"; setTimeout(() => { b.dataset.confirm = ""; b.textContent = "Delete"; }, 3000); return; }
+    await fetch("/api/skills/" + b.dataset.del, { method: "DELETE" }); renderSamples();
+  }));
+  $("#teachCard").addEventListener("click", openTeach);
 }
 
 /* ---------- 2: learn ---------- */
@@ -546,8 +606,9 @@ $("#toRun").addEventListener("click", () => go("run"));
 async function learn(file) {
   if (busy) return; busy = true;
   const s = file ? null : (SAMPLES.find((x) => x.id === skill?.id) || SAMPLES[0]);
-  const q = file ? new URLSearchParams({ kind: $("#kindSel").value }) : new URLSearchParams({ sample: s.sample, kind: s.sample === "totals" ? "sheet" : "ui" });
-  kind = (file ? $("#kindSel").value : (s.sample === "totals" ? "sheet" : "ui")) === "ui" ? "ui" : "sheet";
+  const sel = file ? $("#kindSel").value : null;
+  const q = file ? new URLSearchParams(sel === "sheet" ? { kind: "sheet" } : { kind: "ui", task: sel }) : new URLSearchParams({ sample: s.sample, kind: s.sample === "totals" ? "sheet" : "ui" });
+  kind = (file ? sel : s.sample) === "sheet" || (!file && s.sample === "totals") ? "sheet" : "ui";
   marks = []; $("#learnSteps").innerHTML = ""; $("#inputs").innerHTML = ""; $("#pins").innerHTML = ""; $("#overlay").innerHTML = ""; $("#overlay").dataset.h = "";
   $$(".stepper button").forEach((b) => b.disabled = b.dataset.go === "run");
   go("learn");
@@ -581,7 +642,9 @@ function buildConfig() {
   const ui = kind === "ui";
   appV = "A"; valV = "new";
   seg($("#appSeg"), ui ? [["A", "Design A, as in the video"], ["B", "Design B"], ["C", "Design C, renamed controls"]] : [["A", "App A, as in the video"], ["B", "App B, a different app"]], appV, (v) => { appV = v; syncRedesign(); refreshPreview(); });
-  seg($("#valSeg"), ui ? [["same", "As in the video"], ["new", "New values"]] : [["same", "Sales, as in the video"], ["new", "Inventory, new data"]], valV, (v) => { valV = v; refreshPreview(); });
+  seg($("#valSeg"), ui ? [["same", "As in the video"], ["new", "New values"], ["own", "Your own"]] : [["same", "Sales, as in the video"], ["new", "Inventory, new data"]], valV, (v) => { valV = v; $("#ownWrap").hidden = v !== "own"; refreshPreview(); });
+  const ow = $("#ownWrap"); ow.hidden = true;
+  ow.innerHTML = ui ? Object.entries(skill.program.inputs).map(([k, v]) => `<label>${esc(k.replace(/_/g, " "))}<input data-k="${esc(k)}" value="${esc(v)}" maxlength="120"></label>`).join("") : "";
   $("#redesign").innerHTML = (ui ? UI_OPTS : SHEET_OPTS).map(([k, t]) => `<label class="chip"><input type="checkbox" data-k="${k}">${t}</label>`).join("") +
     (ui ? `<label class="chip">Menu <select id="navSel" aria-label="Menu position"><option value="default">as designed</option><option value="left">left</option><option value="right">right</option><option value="top">top</option></select></label>` : "");
   $$("#redesign input").forEach((x) => x.addEventListener("change", refreshPreview));
@@ -592,7 +655,8 @@ function buildConfig() {
 function syncRedesign() { const off = kind === "sheet" && appV === "B"; $$("#redesign input").forEach((x) => { x.disabled = off; if (off) x.checked = false; }); }
 function target() {
   const o = Object.fromEntries($$("#redesign input").map((x) => [x.dataset.k, x.checked]));
-  if (kind === "ui") return { app: appV, ...o, nav: $("#navSel")?.value || "default", newdata: valV === "new", popup: $("#o_popup").checked, seed: 2 + Math.floor(Math.random() * 90) };
+  if (kind === "ui") return { app: appV, ...o, nav: $("#navSel")?.value || "default", newdata: valV === "new", popup: $("#o_popup").checked, seed: 2 + Math.floor(Math.random() * 90),
+    inputs: valV === "own" ? Object.fromEntries($$("#ownWrap input").map((x) => [x.dataset.k, x.value])) : null };
   return { app: appV, ...o, data: valV === "new" ? "inventory" : "sales", popup: $("#o_popup").checked };
 }
 let prevUrl = "";
@@ -675,7 +739,7 @@ function verdict(d) {
   const saysWhy = mode === "replay" ? "Copying the clicks never looks at the screen, so it can't tell whether it worked." :
     mode === "nochk" ? "Checks are off, so it assumes every step worked unless it couldn't find a target." :
     says ? "Each step's contract was confirmed on the screen." : "It reports the failure instead of pretending.";
-  const truthWhy = truth ? (kind === "ui" ? "The app saved exactly the values for this run." : "A bold totals row with the correct sum.") : (d.truth.why || "The result is missing or wrong.");
+  const truthWhy = truth ? (kind === "ui" ? (skill.meta.taught ? "The app saved a record with every value this run entered." : "The app saved exactly the values for this run.") : "A bold totals row with the correct sum.") : (d.truth.why || "The result is missing or wrong.");
   const next = [];
   if (!$("#o_popup").checked) next.push(["popup", "Interrupt it with a dialog"]);
   if (agentV !== "nochk") next.push(["nochk", "Run it with checks off"]);
@@ -701,9 +765,9 @@ function verdict(d) {
 }
 
 /* ---------- results ---------- */
-const NAMES = { replay: "Copy the clicks", replay_new: "Copy the clicks, new values", nochk: "EIDOS, checks off", eidos: "EIDOS", eidos_nochk: "EIDOS, checks off" };
+const NAMES = { replay: "Copy the clicks", replay_new: "Copy the clicks, new values", nochk: "EIDOS, checks off", eidos: "EIDOS", eidos_nochk: "EIDOS, checks off", eidos_live: "EIDOS + Muse Spark", eidos_open: "EIDOS + Muse Spark Open" };
 const CONDS = [["same", "Same app and values"], ["new_data", "New values"], ["redesign", "Redesigned app"], ["other_app", "Design B, or the other app"], ["interrupt", "Interrupted"], ["all", "All"]];
-const bars = (summ, systems) => `<div class="rows">${systems.map((s) => { const v = summ.all[s]; return `<div class="row"><span>${NAMES[s]}</span><div class="bar"><i class="${s === "eidos" ? "e" : ""}" data-w="${v.n ? v.success / v.n * 100 : 0}"></i></div><span class="num">${v.success}/${v.n}</span></div>`; }).join("")}</div>`;
+const bars = (summ, systems) => `<div class="rows">${systems.map((s) => { const v = summ.all[s]; return `<div class="row"><span>${NAMES[s]}</span><div class="bar"><i class="${/^eidos(_live|_open)?$/.test(s) ? "e" : ""}" data-w="${v.n ? v.success / v.n * 100 : 0}"></i></div><span class="num">${v.success}/${v.n}</span></div>`; }).join("")}</div>`;
 const table = (summ, systems, keyFor) => `<div class="tablewrap"><table class="cond"><thead><tr><th>Condition</th>${systems.map((s) => `<th>${NAMES[s]}</th>`).join("")}</tr></thead><tbody>${CONDS.map(([c, n]) => {
   const row = summ[keyFor(c)]; if (!row) return "";
   return `<tr><td>${n}</td>${systems.map((s) => `<td class="${s === "eidos" ? "e" : ""}">${row[s] ? `${row[s].success}/${row[s].n}` : ""}</td>`).join("")}</tr>`; }).join("")}</tbody></table></div>`;
@@ -716,6 +780,12 @@ $("#openResults").addEventListener("click", async () => {
     html += `<section class="bench"><h3>${title} <span class="fine">(seed ${b.seed})</span></h3>${bars(b.summary, b.systems)}${table(b.summary, b.systems, (c) => c)}
       <p class="fine">EIDOS's own verdict matched what really happened on ${b.summary.agree.agree} of ${b.summary.agree.n} runs (${b.summary.agree.silent} silent failures).</p></section>`;
   }
+  for (const [key, title] of [["everyday_words", "Design C, every control renamed, held-out"], ["everyday_words_dev", "Design C, development set"]]) {
+    const b = R[key]; if (!b) continue;
+    const sys = b.systems;
+    html += `<section class="bench"><h3>${title} <span class="fine">(seed ${b.seed})</span></h3>${bars(b.summary, sys)}
+      <p class="fine">Every label the skill learned is worded differently here, so offline EIDOS stops and says so; with a model it reads the screen for meaning and still checks every step from pixels.</p></section>`;
+  }
   const sh = R.sheet_test;
   if (sh) {
     const S = sh.summary, sys = ["replay", "eidos_nochk", "eidos"];
@@ -726,6 +796,102 @@ $("#openResults").addEventListener("click", async () => {
   requestAnimationFrame(() => requestAnimationFrame(() => $$("#resBody .bar i").forEach((i) => i.style.width = i.dataset.w + "%")));
 });
 $("#closeResults").addEventListener("click", () => $("#results").close());
+
+/* ---------- teach live ---------- */
+const TAPPS = [["mail", "Mail"], ["calendar", "Calendar"], ["expense", "Expenses"], ["settings", "Settings"]];
+const TKEYS = new Set(["Enter", "Backspace", "Tab", "Escape", "Delete", "ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "Home", "End"]);
+let T = null, tApp = "mail";
+function openTeach() {
+  tApp = "mail"; T = null;
+  $("#tApps").innerHTML = TAPPS.map(([v, l]) => `<button type="button" data-v="${v}" aria-pressed="${v === tApp}">${l}</button>`).join("");
+  $$("#tApps button").forEach((b) => b.addEventListener("click", () => { tApp = b.dataset.v; $$("#tApps button").forEach((x) => x.setAttribute("aria-pressed", x === b)); }));
+  $("#tHint").hidden = false; $("#tImg").removeAttribute("src"); $("#recState").hidden = true; $("#recClicks").textContent = "";
+  $("#tFinish").disabled = true; $("#tName").value = ""; $("#tStart").disabled = false; $("#tStart").textContent = "Start recording";
+  $("#tTip").textContent = "Your pointer and keys go to a real browser running the app. Click into the screen to start typing.";
+  $("#teach").showModal();
+}
+async function startTeach() {
+  $("#tStart").disabled = true; $("#tStart").textContent = "Starting a browser";
+  let info;
+  try { info = await fetch("/api/teach/start", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ task: tApp }) }).then((r) => { if (!r.ok) throw new Error("the browser didn't start"); return r.json(); }); }
+  catch (e) { $("#tStart").disabled = false; $("#tStart").textContent = "Start recording"; $("#tTip").textContent = "Could not start: " + e.message; return; }
+  T = { id: info.id, W: info.width, H: info.height, queue: [], sending: false, alive: true, clicks: 0 };
+  if (!$("#tName").value) $("#tName").value = "My " + TAPPS.find((a) => a[0] === tApp)[1].toLowerCase() + " skill";
+  $("#tHint").hidden = true; $("#recState").hidden = false; $("#tScreen").focus();
+  const ctrl = new AbortController(); T.abort = ctrl;
+  stream(`/api/teach/${T.id}/frames`, { signal: ctrl.signal }, (ev, d) => {
+    if (ev === "frame" && T) {
+      $("#tImg").src = "data:image/jpeg;base64," + d.jpeg;
+      const m = Math.floor(d.seconds / 60), sec = Math.floor(d.seconds % 60);
+      $("#recTime").textContent = `${m}:${String(sec).padStart(2, "0")}`;
+      $("#recClicks").textContent = d.clicks ? `${d.clicks} click${d.clicks === 1 ? "" : "s"}` : "";
+      $("#tFinish").disabled = d.clicks < 1;
+    }
+  }).catch(() => {});
+}
+function tPush(ev) { if (!T || !T.alive) return; T.queue.push(ev); tFlush(); }
+async function tFlush() {
+  if (!T || T.sending || !T.queue.length) return;
+  T.sending = true;
+  const evs = T.queue.splice(0, T.queue.length);
+  // merge runs of moves and of typed characters
+  const out = [];
+  for (const e of evs) {
+    const last = out[out.length - 1];
+    if (e.type === "move" && last?.type === "move") { out[out.length - 1] = e; continue; }
+    if (e.type === "text" && last?.type === "text") { last.text += e.text; continue; }
+    out.push({ ...e });
+  }
+  try { await fetch(`/api/teach/${T.id}/input`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ events: out }) }); } catch (e) {}
+  if (T) { T.sending = false; if (T.queue.length) setTimeout(tFlush, 0); }
+}
+function tPos(e) { const r = $("#tScreen").getBoundingClientRect(); return { x: (e.clientX - r.left) / r.width * T.W, y: (e.clientY - r.top) / r.height * T.H }; }
+let tMoveAt = 0;
+$("#tScreen").addEventListener("pointermove", (e) => { if (!T) return; const now = performance.now(); if (now - tMoveAt < 33) return; tMoveAt = now; tPush({ type: "move", ...tPos(e) }); });
+$("#tScreen").addEventListener("pointerdown", (e) => { if (!T || e.button !== 0) return; e.preventDefault(); $("#tScreen").focus(); tPush({ type: "down", ...tPos(e) }); });
+$("#tScreen").addEventListener("pointerup", (e) => { if (!T || e.button !== 0) return; tPush({ type: "up", ...tPos(e) }); });
+$("#tScreen").addEventListener("keydown", (e) => {
+  if (!T || e.metaKey || e.ctrlKey || e.altKey) return;
+  if (e.key.length === 1) { e.preventDefault(); tPush({ type: "text", text: e.key }); }
+  else if (TKEYS.has(e.key)) { e.preventDefault(); tPush({ type: "key", key: e.key }); }
+});
+$("#tScreen").addEventListener("paste", (e) => { if (!T) return; e.preventDefault(); tPush({ type: "text", text: e.clipboardData.getData("text").slice(0, 200) }); });
+$("#tStart").addEventListener("click", startTeach);
+async function endTeach(cancel) {
+  const t = T; if (!t) { $("#teach").close(); return null; }
+  t.alive = false; while (t.sending) await new Promise((r) => setTimeout(r, 40));
+  if (t.queue.length) { T = t; t.alive = true; await tFlush(); t.alive = false; }
+  t.abort?.abort(); T = null;
+  if (cancel) { fetch(`/api/teach/${t.id}/cancel`, { method: "POST" }); $("#teach").close(); return null; }
+  return t;
+}
+$("#tCancel").addEventListener("click", () => endTeach(true));
+$("#teach").addEventListener("cancel", (e) => { e.preventDefault(); });          // Escape goes to the recorded app, not the dialog
+$("#tFinish").addEventListener("click", async () => {
+  if (busy) return;
+  const poster = $("#tImg").src, name = $("#tName").value.trim();
+  const t = await endTeach(false); if (!t) return;
+  $("#teach").close();
+  busy = true; kind = "ui";
+  marks = []; $("#learnSteps").innerHTML = ""; $("#inputs").innerHTML = ""; $("#pins").innerHTML = ""; $("#overlay").innerHTML = ""; $("#overlay").dataset.h = "";
+  $$(".stepper button").forEach((b) => b.disabled = b.dataset.go === "run");
+  $("#learnScreen").style.setProperty("--ar", "1200 / 760");
+  tv.removeAttribute("src"); tv.poster = poster; go("learn");
+  $("#learnScreen").classList.add("scanning");
+  $("#skillName").textContent = "Learning"; $("#skillMeta").textContent = "saving your recording, then reading the frames";
+  let sid = null, i = 0;
+  try {
+    await stream(`/api/teach/${t.id}/finish`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name }) }, (ev, d) => {
+      if (ev === "status") { $("#learnStatus").textContent = d.msg; sid = d.skill || sid; }
+      if (ev === "step" && d.do) { const el = stepEl(d, i++, {}, true); el.classList.add("arrive"); $("#learnSteps").append(el); }
+      if (ev === "error") { $("#learnStatus").textContent = d.msg; sid = null; }
+      if (ev === "done") sid = d.skill;
+    });
+  } catch (e) { $("#learnStatus").textContent = "Could not learn from your recording: " + e.message; sid = null; }
+  $("#learnScreen").classList.remove("scanning"); tv.poster = ""; busy = false;
+  if (sid) { await renderSamples(); await openSkill(sid); tv.currentTime = 0; tv.play().catch(() => {}); $("#learnStatus").textContent = "Learned from your recording. Here it is again, with the contracts."; }
+  else { $("#skillName").textContent = "Nothing learned"; $("#skillMeta").textContent = "try recording again: click each field before typing, and finish with the save or send button"; }
+});
 
 let LIVE = { meta: false };
 fetch("/api/live").then((r) => r.json()).then((l) => { LIVE = l; $("#liveAgent").hidden = !l.meta; renderSamples(); }).catch(() => renderSamples());

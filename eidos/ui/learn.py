@@ -166,7 +166,7 @@ def analyze(video: Path, out_dir: Path, name: str | None = None) -> tuple[dict, 
                 shown = S.read_box(look(i_after)[0], b)
                 if S.sim(clean(shown), opt[0].text) > 0.8:
                     picked = (opt[0].text, shown)
-        if b and S.is_switch(b):
+        if b and S.is_switch(b) and not S.overlaps_text(b, pl + ql, 0.1):     # a switch has no words on it; a small button does
             lab = row_label(b, pl)
             step.update(action="toggle", label=lab.text if lab else "", box=b,
                         before_on=S.is_on(pre, b), after_on=S.is_on(post, b))
@@ -187,6 +187,8 @@ def analyze(video: Path, out_dir: Path, name: str | None = None) -> tuple[dict, 
                 caretless = [r for r in reads if not re.search(r"[\]\[}{|]$", r)]
                 pool = caretless or reads
                 value = max(pool, key=lambda r: (pool.count(r), len(r))) if pool else ""
+                if "@" in value and len(value.split()) <= 3:       # an email address has no spaces; OCR adds them after dots
+                    value = value.replace(" ", "")
                 step.update(action="type", label=label, value=value, box=b)
                 raw[-1]["typed"] = value
             inputs[slug(label)] = value

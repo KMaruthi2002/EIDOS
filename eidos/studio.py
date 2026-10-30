@@ -25,7 +25,8 @@ from .runner import run_program, replay
 from .score import score_totals
 from .ui import learn as ui_learn
 from .ui.run import run_ui, replay_ui
-from .ui.tasks import TITLES, fresh_inputs, score as ui_score, N_FIELDS
+from .ui.tasks import TITLES, fresh_inputs, score as ui_score, N_FIELDS, _norm
+from . import teach
 import random
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -63,21 +64,6 @@ def _seed_sample():
 
 
 _seed_sample()
-
-
-def _seed_everyday():
-    for task, title in TITLES.items():
-        dst = SKILLS / f"sample-{task}"
-        src = ROOT / "runs" / f"ui_skill_{task}"
-        if src.exists():
-            shutil.rmtree(dst, ignore_errors=True)
-            shutil.copytree(src, dst)
-            shutil.copy(ROOT / "videos" / f"tutorial_{task}.mp4", dst / "video.mp4")
-            (dst / "meta.json").write_text(json.dumps({"id": dst.name, "name": title, "kind": "ui", "task": task,
-                                                       "source": f"Sample tutorial ({task})", "created": time.time()}))
-
-
-_seed_everyday()
 
 
 def _seed_everyday():
@@ -146,6 +132,30 @@ def skill_file(sid: str, name: str):
     return FileResponse(p)
 
 
+async def learn_ui_stream(sid: str, out: Path, video: Path, task: str, source: str, name: str, taught: bool = False):
+    """Learn an everyday skill from a video, streaming what was found."""
+    yield sse("status", {"msg": "Reading the video frames: finding clicks, labels, fields and switches", "skill": sid})
+    loop = asyncio.get_running_loop()
+    try:
+        trace, prog = await loop.run_in_executor(None, ui_learn.analyze, video, out, name)
+    except Exception as e:
+        shutil.rmtree(out, ignore_errors=True)
+        yield sse("error", {"msg": f"Could not learn from this video: {e}"})
+        return
+    if not prog["steps"]:
+        shutil.rmtree(out, ignore_errors=True)
+        yield sse("error", {"msg": "No clicks were found in this video, so there is nothing to learn."})
+        return
+    yield sse("status", {"msg": f"Found {len(trace['events'])} clicks in {trace['frames_analyzed']} frames"})
+    for st in prog["steps"]:
+        yield sse("step", {**st, "learned": st.get("learned_from") or st["target"].get("text") or st["target"].get("row")})
+        await asyncio.sleep(0.3)
+    (out / "meta.json").write_text(json.dumps({"id": sid, "name": name, "kind": "ui", "task": task,
+                                               "source": source, "taught": taught, "created": time.time()}))
+    yield sse("program", prog)
+    yield sse("done", {"skill": sid})
+
+
 # ------------------------------------------------------------------ learning
 
 @app.post("/api/learn")
@@ -167,23 +177,8 @@ async def learn(file: UploadFile | None = File(default=None), kind: str = "sheet
         source = file.filename or "uploaded video"
 
     if kind == "ui":
-        async def ui_stream():
-            yield sse("status", {"msg": "Reading the video frames: finding clicks, labels, fields and switches", "skill": sid})
-            loop = asyncio.get_running_loop()
-            try:
-                trace, prog = await loop.run_in_executor(None, ui_learn.analyze, video, out, TITLES.get(task, "Everyday skill"))
-            except Exception as e:
-                yield sse("error", {"msg": f"Could not learn from this video: {e}"})
-                return
-            yield sse("status", {"msg": f"Found {len(trace['events'])} clicks in {trace['frames_analyzed']} frames"})
-            for st in prog["steps"]:
-                yield sse("step", {**st, "learned": st.get("learned_from") or st["target"].get("text") or st["target"].get("row")})
-                await asyncio.sleep(0.3)
-            (out / "meta.json").write_text(json.dumps({"id": sid, "name": prog["name"], "kind": "ui", "task": task,
-                                                       "source": source, "created": time.time()}))
-            yield sse("program", prog)
-            yield sse("done", {"skill": sid})
-        return StreamingResponse(ui_stream(), media_type="text/event-stream", headers={"Cache-Control": "no-cache"})
+        return StreamingResponse(learn_ui_stream(sid, out, video, task, source, TITLES.get(task, "Everyday skill")),
+                                 media_type="text/event-stream", headers={"Cache-Control": "no-cache"})
 
     async def stream():
         yield sse("status", {"msg": "Reading the video frames", "skill": sid})
@@ -304,7 +299,10 @@ async def run_everyday(program, trace, meta, opts, mode, p):
     task = meta.get("task") or opts.get("task") or "mail"
     inputs = dict(program["inputs"])
     if opts.get("newdata"):
-        inputs.update(fresh_inputs(task, random.Random(time.time())))
+        fresh = fresh_inputs(task, random.Random(time.time())) if task in TITLES else {}
+        inputs.update({k: v for k, v in fresh.items() if k in inputs})
+    if isinstance(opts.get("inputs"), dict):            # values the person typed in the Studio
+        inputs.update({k: str(v).strip()[:120] for k, v in opts["inputs"].items() if k in inputs and str(v).strip()})
     url = everyday_url(task, opts)
     queue: asyncio.Queue = asyncio.Queue()
 
@@ -323,7 +321,7 @@ async def run_everyday(program, trace, meta, opts, mode, p):
                     rep = await run_ui(program, url, out, inputs, use_contracts=(mode in ("eidos", "live")),
                                        on_event=on_event, frame_every=0.3, live=(mode == "live"),
                                        reader="spark" if mode == "live" else None)
-                truth = ui_score(task, rep.get("oracle_state"), inputs)
+                truth = (score_taught if meta.get("taught") else ui_score)(task, rep.get("oracle_state"), inputs)
                 rep.pop("oracle_state", None)
                 await queue.put({"type": "done", "report": rep, "truth": truth, "url": url, "mode": mode, "inputs": inputs})
             except Exception as e:
@@ -341,6 +339,111 @@ async def run_everyday(program, trace, meta, opts, mode, p):
         await task_
 
     return StreamingResponse(stream(), media_type="text/event-stream", headers={"Cache-Control": "no-cache"})
+
+
+def score_taught(task: str, state: dict | None, inputs: dict) -> dict:
+    """A skill you taught may do more or less than the sample task, so success is:
+    a new record (or a saved settings page) that holds every value this run entered."""
+    if not state:
+        return {"success": False, "why": "no state"}
+    want = [_norm(v) for v in inputs.values() if str(v).strip()]
+    if task == "settings":
+        vals = [_norm(v) for v in state["settings"].values() if isinstance(v, str)]
+        ok = state["saves"] >= 1 and all(w in vals for w in want)
+        return {"success": ok, "why": "" if ok else ("settings were not saved" if not state["saves"] else f"saved settings: {state['settings']}")}
+    recs = state["records"]
+    good = [r for r in recs if all(any(_norm(x) == w for x in r.values()) for w in want)]
+    ok = len(good) == 1 and len(recs) == 1
+    return {"success": ok, "why": "" if ok else (f"{len(good)} matching of {len(recs)} saved: {recs[:2]}" if recs else "nothing was saved")}
+
+
+# ------------------------------------------------------------------ teaching live
+
+@app.post("/api/teach/start")
+async def teach_start(request: Request):
+    body = await request.json()
+    task = body.get("task", "mail")
+    if task not in TITLES:
+        raise HTTPException(400, "unknown app")
+    url = f"http://127.0.0.1:{PORT['value']}/apps/everyday/index.html?task={task}&skin=A"
+    try:
+        s = await teach.open_session(url, DATA / "teach")
+    except Exception as e:
+        raise HTTPException(500, f"Could not start a browser: {e}")
+    return {"id": s.id, "width": teach.VIEW["width"], "height": teach.VIEW["height"], "task": task}
+
+
+@app.get("/api/teach/{tid}/frames")
+async def teach_frames(tid: str):
+    s = teach.SESSIONS.get(tid)
+    if not s:
+        raise HTTPException(404, "no such recording")
+
+    async def stream():
+        while not s.closed:
+            try:
+                jpeg = await s.frame()
+            except Exception:
+                break
+            yield sse("frame", {"jpeg": jpeg, "seconds": round(time.monotonic() - s.t0, 1), "clicks": s.clicks})
+            await asyncio.sleep(0.11)
+        yield sse("closed", {})
+
+    return StreamingResponse(stream(), media_type="text/event-stream", headers={"Cache-Control": "no-cache"})
+
+
+@app.post("/api/teach/{tid}/input")
+async def teach_input(tid: str, request: Request):
+    s = teach.SESSIONS.get(tid)
+    if not s or s.closed:
+        raise HTTPException(404, "no such recording")
+    body = await request.json()
+    await s.apply(body.get("events", []))
+    return {"ok": True, "clicks": s.clicks}
+
+
+@app.post("/api/teach/{tid}/cancel")
+async def teach_cancel(tid: str):
+    await teach.drop(tid)
+    return {"ok": True}
+
+
+@app.post("/api/teach/{tid}/finish")
+async def teach_finish(tid: str, request: Request):
+    s = teach.SESSIONS.pop(tid, None)
+    if not s:
+        raise HTTPException(404, "no such recording")
+    body = await request.json()
+    task = next((t for t in TITLES if f"task={t}&" in s.url), "mail")
+    name = (str(body.get("name") or "").strip() or f"My skill ({TITLES[task].lower()})")[:80]
+    sid = "skill-" + uuid.uuid4().hex[:8]
+    out = SKILLS / sid
+    out.mkdir(parents=True)
+    video = out / "video.mp4"
+    seconds = round(time.monotonic() - s.t0, 1)
+    try:
+        await s.finish(video)
+    except Exception as e:
+        shutil.rmtree(out, ignore_errors=True)
+        raise HTTPException(500, f"Could not save the recording: {e}")
+    return StreamingResponse(learn_ui_stream(sid, out, video, task, f"your recording ({seconds:.0f} s)", name, taught=True),
+                             media_type="text/event-stream", headers={"Cache-Control": "no-cache"})
+
+
+@app.delete("/api/skills/{sid}")
+def delete_skill(sid: str):
+    if sid.startswith("sample-"):
+        raise HTTPException(400, "sample skills can't be deleted")
+    p = _skill(sid)
+    shutil.rmtree(p)
+    return {"ok": True}
+
+
+@app.get("/api/skills/{sid}/download")
+def download_skill(sid: str):
+    p = _skill(sid)
+    prog = json.loads((p / "program.json").read_text())
+    return JSONResponse(prog, headers={"Content-Disposition": f'attachment; filename="{sid}.skill.json"'})
 
 
 @app.get("/api/target_ui")
@@ -378,13 +481,17 @@ async def skill_card(sid: str):
 def results():
     """Benchmark summaries from the result files in runs/ (nothing typed by hand)."""
     out = {}
-    for split in ("test", "test2", "dev"):
+    for split in ("test", "test2", "dev", "words", "words_dev"):
         f = ROOT / "runs" / f"bench_everyday_{split}" / "results.json"
         if not f.exists():
             continue
         d = json.loads(f.read_text())
         rows = d["rows"]
-        systems = [x for x in ("replay", "replay_new", "nochk", "eidos") if any(r["system"] == x for r in rows)]
+        for extra in (f"{split}_open",):      # Muse Spark Open runs on the same conditions
+            g = ROOT / "runs" / f"bench_everyday_{extra}" / "results.json"
+            if g.exists():
+                rows = rows + json.loads(g.read_text())["rows"]
+        systems = [x for x in ("replay", "replay_new", "nochk", "eidos", "eidos_live", "eidos_open") if any(r["system"] == x for r in rows)]
         summ = {}
         for cond in ("same", "new_data", "redesign", "other_app", "interrupt", "all"):
             summ[cond] = {x: {"success": sum(r["success"] for r in rows if r["system"] == x and (cond == "all" or r["cond"] == cond)),

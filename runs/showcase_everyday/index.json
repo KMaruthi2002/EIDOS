@@ -34,5 +34,23 @@
       "why": ""
     },
     "says_done": true
+  },
+  {
+    "id": "renamed_offline",
+    "title": "EIDOS, offline",
+    "truth": {
+      "success": false,
+      "why": "nothing was saved"
+    },
+    "says_done": false
+  },
+  {
+    "id": "renamed_live",
+    "title": "EIDOS + Muse Spark",
+    "truth": {
+      "success": true,
+      "why": ""
+    },
+    "says_done": true
   }
 ]

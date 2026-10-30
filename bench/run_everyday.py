@@ -142,7 +142,7 @@ def summarize(rows):
     groups += [("ALL", lambda r: True)] + [(f"  {t}", lambda r, t=t: r["task"] == t) for t in TUTORIALS]
     for name, f in groups:
         by = {x: [r for r in rows if f(r) and r["system"] == x] for x in systems}
-        print(f"{name:12s} {len(by['eidos']):4d}  " + "  ".join(f"{cell(by[x]):10s}" for x in systems))
+        print(f"{name:12s} {len(by[systems[0]]):4d}  " + "  ".join(f"{cell(by[x]):10s}" for x in systems))
     for x in [x for x in ("nochk", "eidos", "eidos_live", "eidos_open") if x in systems]:
         rs = [r for r in rows if r["system"] == x]
         agree = sum(r["says_done"] == r["success"] for r in rs)

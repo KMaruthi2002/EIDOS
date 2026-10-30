@@ -69,27 +69,29 @@ def data():
             what, c = f"{s['value']} into “{s['target']['field']}”", f"the box labelled {s['target']['field']} shows {s['value']}"
         rows.append({"do": s["do"], "what": what, "contract": c})
 
-    def tally(path, cond=None):
+    def tally(path, cond=None, systems=("replay", "nochk", "eidos")):
         rows_ = json.loads(Path(path).read_text())["rows"]
         f = lambda sysn: [r for r in rows_ if r["system"] == sysn and (cond is None or r["cond"] == cond)]
-        return {k: [sum(r["success"] for r in f(s)), len(f(s))] for k, s in (("replay", "replay"), ("nochk", "nochk"), ("eidos", "eidos"))}, rows_
-    ev, evrows = tally(ROOT / "runs" / "bench_everyday_test" / "results.json")
-    evint, _ = tally(ROOT / "runs" / "bench_everyday_test" / "results.json", "interrupt")
+        return {s: [sum(r["success"] for r in f(s)), len(f(s))] for s in systems}, rows_
+    ev, evrows = tally(ROOT / "runs" / "bench_everyday_test2" / "results.json")
+    evint, _ = tally(ROOT / "runs" / "bench_everyday_test2" / "results.json", "interrupt")
+    wd, wdrows = tally(ROOT / "runs" / "bench_everyday_words" / "results.json", systems=("eidos", "eidos_live"))
     # spreadsheet held-out (seed 9001), as used by the first explainer
     sh = json.loads((VID / "src" / "results.json").read_text())["test"]
     g = lambda d: [d["success"], d["n"]]
     sheet = {"replay": g(sh["all"]["replay"]), "nochk": g(sh["all"]["eidos_nochk"]), "eidos": g(sh["all"]["eidos"])}
-    clips = {k: round(dur(CLIPS / f"{k}.mp4"), 2) for k in ("other_replay", "other_eidos", "int_nochk", "int_eidos") if (CLIPS / f"{k}.mp4").exists()}
-    ei = [r for r in evrows if r["system"] == "eidos"]
+    clips = {k: round(dur(CLIPS / f"{k}.mp4"), 2) for k in ("other_replay", "other_eidos", "int_nochk", "int_eidos", "renamed_offline", "renamed_live")
+             if (CLIPS / f"{k}.mp4").exists()}
+    ei = [r for r in evrows if r["system"] == "eidos"] + [r for r in wdrows if r["system"] == "eidos_live"]
     agree = [sum(r["says_done"] == r["success"] for r in ei) + sh["self"]["agrees_with_oracle"], len(ei) + sh["self"]["n"]]
     it = sh["interruption"]
     story = {"program": rows, "clips": clips, "results": {
-        "everyday": {"title": f"Everyday tasks: {ev['eidos'][1]} runs across 4 tasks and 2 apps", **ev},
+        "everyday": {"title": f"Everyday tasks: {ev['eidos'][1]} runs across 4 tasks and 2 designs", **ev},
         "sheet": {"title": f"Spreadsheet task: {sheet['eidos'][1]} runs across 2 apps", **sheet},
+        "words": {"title": f"Every control renamed: {wd['eidos'][1]} runs", "offline": wd["eidos"], "live": wd["eidos_live"]},
         "agree": f"{agree[0]}/{agree[1]}",
         "int_eidos": f"{evint['eidos'][0] + it['eidos']['success']}/{evint['eidos'][1] + it['eidos']['n']}",
         "int_nochk": f"{evint['nochk'][0] + it['eidos_nochk']['success']}/{evint['nochk'][1] + it['eidos_nochk']['n']}",
-        "at1": 2.0, "at2": 6.0, "at3": 10.0,
     }}
     (VID / "src" / "story.json").write_text(json.dumps(story, indent=2))
     print(json.dumps(story["results"], indent=1))
