@@ -1,54 +1,15 @@
-# Remotion video
+# EIDOS explainer video
 
-<p align="center">
-  <a href="https://github.com/remotion-dev/logo">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-dark.apng">
-      <img alt="Animated Remotion Logo" src="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-light.gif">
-    </picture>
-  </a>
-</p>
+The launch explainer is built in code with Remotion. All EIDOS footage in it is real screen capture from the benchmark runs and the Studio; some clips are sped up.
 
-Welcome to your Remotion project!
+- `src/launch.tsx`: the launch video (composition `EidosLaunch`).
+- `narration_v4.json`: the narration script. `tts_make.mjs` voices it into `public/vo4/` (Kokoro TTS) and writes `src/timeline4.json`.
+- `make_music.py`: synthesizes the original background track into `public/music/bed.wav` from the scene starts in `music_scenes.json` (convert to `bed.mp3` with ffmpeg).
+- `src/story.tsx`, `src/Explainer.tsx`: earlier cuts, kept for reference.
 
-## Commands
-
-**Install Dependencies**
+## Render
 
 ```console
-npm i --loglevel=error
+npm i
+npx remotion render src/index.ts EidosLaunch out/EIDOS_launch.mp4
 ```
-
-**Start Preview**
-
-```console
-npm run dev
-```
-
-**Render video**
-
-```console
-npx remotion render
-```
-
-**Upgrade Remotion**
-
-```console
-npx remotion upgrade
-```
-
-## Docs
-
-Get started with Remotion by reading the [fundamentals page](https://www.remotion.dev/docs/the-fundamentals).
-
-## Help
-
-We provide help on our [Discord server](https://discord.gg/6VzzNDwUwV).
-
-## Issues
-
-Found an issue with Remotion? [File an issue here](https://github.com/remotion-dev/remotion/issues/new).
-
-## License
-
-Note that for some entities a company license is needed. [Read the terms here](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md).

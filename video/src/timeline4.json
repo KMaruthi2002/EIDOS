@@ -1,0 +1,62 @@
+[
+  {
+    "id": "hook",
+    "text": "Every day, people record their screens to show each other how things get done. Billions of hours of it. Yet an AI agent still can't watch one, and come away with a skill it can trust.",
+    "seconds": 12.075
+  },
+  {
+    "id": "problem",
+    "text": "Agents that copy clicks break the moment an app changes. Move a button, and they click on nothing. Worse, they never notice.",
+    "seconds": 7.925
+  },
+  {
+    "id": "name",
+    "text": "This is Eye-doss. Show it a task once, and it compiles the video into a skill that checks its own work.",
+    "seconds": 6.575
+  },
+  {
+    "id": "watch",
+    "text": "From the pixels alone, it finds every click and reads every label. Each target is remembered by its label, never its position. Everything typed becomes an input. And every step gets a contract: what must be true on screen once it's done.",
+    "seconds": 15.55
+  },
+  {
+    "id": "otherapp",
+    "text": "Now run it where the video never went. A new design, dark mode, fields shuffled. Copying the clicks lands on nothing. Eye-doss finds each field by its label, and checks every step.",
+    "seconds": 12.125
+  },
+  {
+    "id": "interrupt",
+    "text": "A dialog pops up and swallows the keystrokes. The contract fails, so Eye-doss clears it and does the step again. With checks off, the agent says done, for an email that was never sent.",
+    "seconds": 12.025
+  },
+  {
+    "id": "renamed",
+    "text": "Rename every control. Recipient instead of To. Deliver instead of Send. Offline, Eye-doss stops and says so. With Muse Spark, it reads the screen for meaning, and still checks every step.",
+    "seconds": 12.85
+  },
+  {
+    "id": "tasks",
+    "text": "And it isn't one demo. Email, calendar, expenses, settings, and spreadsheets. One engine, with four kinds of step: press, type, choose, and switch.",
+    "seconds": 9.95
+  },
+  {
+    "id": "teach",
+    "text": "You can even teach it yourself. Do a task once, right in the studio, and it learns the skill from your recording.",
+    "seconds": 6.875
+  },
+  {
+    "id": "results",
+    "text": "On held-out tests, run once: sixty of sixty everyday runs, against four for copying clicks. Thirty-two of thirty-two with every control renamed. And across a hundred and sixty-eight runs, its own verdict matched the truth, every single time.",
+    "seconds": 16.375
+  },
+  {
+    "id": "meta",
+    "text": "Built on Meta's models. Muse Spark reads meaning. SAM 3.1 double-checks where things are. Muse Image draws each skill. And Muse Spark Open does it all with open weights.",
+    "seconds": 12.375
+  },
+  {
+    "id": "close",
+    "text": "Prompting is how we talk to AI. Showing is how we'll teach it. This is Eye-doss.",
+    "seconds": 5.575
+  }
+]
