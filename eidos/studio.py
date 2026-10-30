@@ -320,8 +320,9 @@ async def run_everyday(program, trace, meta, opts, mode, p):
                     sub = {program["inputs"][k]: v for k, v in inputs.items() if k in program["inputs"]} if opts.get("newdata") else None
                     rep = await replay_ui(trace, url, out, substitute=sub)
                 else:
-                    rep = await run_ui(program, url, out, inputs, use_contracts=(mode == "eidos"),
-                                       on_event=on_event, frame_every=0.3)
+                    rep = await run_ui(program, url, out, inputs, use_contracts=(mode in ("eidos", "live")),
+                                       on_event=on_event, frame_every=0.3, live=(mode == "live"),
+                                       reader="spark" if mode == "live" else None)
                 truth = ui_score(task, rep.get("oracle_state"), inputs)
                 rep.pop("oracle_state", None)
                 await queue.put({"type": "done", "report": rep, "truth": truth, "url": url, "mode": mode, "inputs": inputs})
@@ -347,6 +348,30 @@ def preview_target_ui(task: str = "mail", app_: str = "A", dark: bool = False, l
                       btn_top: bool = False, big: bool = False, nav: str = "default"):
     return {"url": everyday_url(task, {"app": app_, "dark": dark, "labels_top": labels_top, "shuffle": shuffle,
                                        "btn_top": btn_top, "big": big, "nav": nav})}
+
+
+@app.get("/api/live")
+def live_status():
+    from . import live as L
+    return {"meta": L.meta_live(), "open": L.open_live(), "models": L.MODELS}
+
+
+@app.get("/api/skills/{sid}/card")
+async def skill_card(sid: str):
+    """The skill's card, drawn once by Muse Image and kept with the skill."""
+    from . import live as L
+    p = _skill(sid)
+    f = p / "card.webp"
+    if not f.exists():
+        if not L.meta_live():
+            raise HTTPException(404, "no card yet, and no Meta Model API key to draw one")
+        prog = json.loads((p / "program.json").read_text())
+        meta = json.loads((p / "meta.json").read_text()) if (p / "meta.json").exists() else {}
+        img = await L.image_card(meta.get("name", prog.get("name", "Skill")), [st["intent"].split(";")[0] for st in prog["steps"]])
+        if not img:
+            raise HTTPException(502, "Muse Image did not return a card")
+        f.write_bytes(img)
+    return FileResponse(f, media_type="image/webp")
 
 
 @app.get("/api/results")
