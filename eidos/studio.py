@@ -315,7 +315,8 @@ async def run_everyday(program, trace, meta, opts, mode, p):
             try:
                 if mode == "replay":
                     await queue.put({"type": "start", "url": url, "steps": len(trace["events"])})
-                    rep = await replay_ui(trace, url, out)
+                    sub = {program["inputs"][k]: v for k, v in inputs.items() if k in program["inputs"]} if opts.get("newdata") else None
+                    rep = await replay_ui(trace, url, out, substitute=sub)
                 else:
                     rep = await run_ui(program, url, out, inputs, use_contracts=(mode == "eidos"),
                                        on_event=on_event, frame_every=0.3)
@@ -337,6 +338,39 @@ async def run_everyday(program, trace, meta, opts, mode, p):
         await task_
 
     return StreamingResponse(stream(), media_type="text/event-stream", headers={"Cache-Control": "no-cache"})
+
+
+@app.get("/api/target_ui")
+def preview_target_ui(task: str = "mail", app_: str = "A", dark: bool = False, labels_top: bool = False, shuffle: bool = False,
+                      btn_top: bool = False, big: bool = False, nav: str = "default"):
+    return {"url": everyday_url(task, {"app": app_, "dark": dark, "labels_top": labels_top, "shuffle": shuffle,
+                                       "btn_top": btn_top, "big": big, "nav": nav})}
+
+
+@app.get("/api/results")
+def results():
+    """Benchmark summaries from the result files in runs/ (nothing typed by hand)."""
+    out = {}
+    for split in ("test", "test2", "dev"):
+        f = ROOT / "runs" / f"bench_everyday_{split}" / "results.json"
+        if not f.exists():
+            continue
+        d = json.loads(f.read_text())
+        rows = d["rows"]
+        systems = [x for x in ("replay", "replay_new", "nochk", "eidos") if any(r["system"] == x for r in rows)]
+        summ = {}
+        for cond in ("same", "new_data", "redesign", "other_app", "interrupt", "all"):
+            summ[cond] = {x: {"success": sum(r["success"] for r in rows if r["system"] == x and (cond == "all" or r["cond"] == cond)),
+                              "n": sum(1 for r in rows if r["system"] == x and (cond == "all" or r["cond"] == cond))} for x in systems}
+        ei = [r for r in rows if r["system"] == "eidos"]
+        summ["agree"] = {"agree": sum(r["says_done"] == r["success"] for r in ei), "n": len(ei),
+                         "silent": sum(r["says_done"] and not r["success"] for r in ei)}
+        out[f"everyday_{split}"] = {"seed": d["seed"], "systems": systems, "summary": summ}
+    f = ROOT / "runs" / "bench_test" / "results.json"
+    if f.exists():
+        d = json.loads(f.read_text())
+        out["sheet_test"] = {"seed": d.get("seed"), "summary": d["summary"]}
+    return out
 
 
 @app.get("/api/target")
