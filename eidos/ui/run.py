@@ -208,7 +208,7 @@ async def run_ui(program: dict, url: str, out_dir: Path, inputs: dict | None = N
                 return
             b = [box[0], box[1], box[0] + box[2], box[1] + box[3]]
             best = max((L.iou(b, d["box"]) for d in found), default=0.0)
-            log.checks.append({"contract": f"SAM 3.1 finds '{phrase}' at the same place", "iou": round(best, 2),
+            log.checks.append({"contract": f"SAM 3.1 finds a '{phrase}' at the same place", "iou": round(best, 2),
                                "pass": best >= 0.5, "advisory": True})
 
         def fpoint(f):
@@ -270,6 +270,8 @@ async def run_ui(program: dict, url: str, out_dir: Path, inputs: dict | None = N
                         (hit, b), shown_text = await via_model(text, "button or menu item", scr.control)
                         x, y = (b[0] + b[2] / 2, b[1] + b[3] / 2) if b else (hit[1] + hit[3] / 2, hit[2] + hit[4] / 2)
                         log.grounding.append({"how": f"found the control reading '{text}' by OCR", "at": [round(x), round(y)]})
+                        if b:
+                            await sam_check(b, f"{shown_text} button")
                         before = scr.snapshot()
                         if first_before is None:
                             first_before = before
@@ -323,7 +325,7 @@ async def run_ui(program: dict, url: str, out_dir: Path, inputs: dict | None = N
                             lab = scr.label_of(f, shown_label)
                             lab_ok = S.sim(lab, shown_label) >= 0.86
                             log.checks.append({"contract": f"the box written to is labelled '{shown_label}'", "saw": lab, "pass": lab_ok})
-                            await sam_check(f, f"the text field labelled {shown_label}")
+                            await sam_check(f, "input box")
                             ok = same_text(seen, value)
                             log.checks.append({"contract": f"the '{label}' field shows '{value}'", "saw": clean(seen), "pass": ok})
                             ok = ok and lab_ok
@@ -331,6 +333,7 @@ async def run_ui(program: dict, url: str, out_dir: Path, inputs: dict | None = N
                         label = st["target"]["row"]
                         want = st["contract"]["switch_on"]
                         (hit, sw), _ = await via_model(label, "setting with an on/off switch", scr.switch)
+                        await sam_check(sw, "toggle switch")
                         state = S.is_on(scr.img, sw)
                         log.grounding.append({"how": f"found the switch on the '{label}' row", "box": list(sw),
                                               "was": "on" if state else "off"})

@@ -127,7 +127,7 @@ async def check_live():
 
     cands = ["Recipient", "Topic", "Body", "Deliver", "Cancel", "Inbox", "Outbox"]
     if L.meta_live():
-        await attempt("SAM 3.1      'the text field labelled To'", L.sam_find(shot, "the text field labelled To"))
+        await attempt("SAM 3.1      'Send button'", L.sam_find(shot, "Send button"))
         await attempt("Muse Spark   match 'To'", L.match_label(shot, "To", "input field label", "Send an email", cands, "spark"))
         await attempt("Muse Wonder  compile", L.wonder_compile([{"do": "press", "label": "Compose"}, {"do": "type", "label": "To", "value": "maya@northwind.com"}], "Send an email"))
         await attempt("Muse Image   skill card", L.image_card("Send an email", ["press Compose", "type To", "press Send"]))
