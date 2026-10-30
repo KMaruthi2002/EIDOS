@@ -88,6 +88,6 @@ async def record(task: str, base_url: str, out_dir: Path) -> Path:
 
 if __name__ == "__main__":
     import sys
-    base = sys.argv[1] if len(sys.argv) > 1 else "http://localhost:8011"
+    base = sys.argv[1] if len(sys.argv) > 1 else "http://localhost:8000"
     for t in (sys.argv[2:] or list(TUTORIALS)):
         print(asyncio.run(record(t, base, ROOT / "videos")))

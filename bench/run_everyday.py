@@ -23,7 +23,7 @@ sys.path.insert(0, str(ROOT))
 from eidos.ui.run import run_ui, replay_ui          # noqa: E402
 from eidos.ui.tasks import TUTORIALS, N_FIELDS, fresh_inputs, score, URL   # noqa: E402
 
-BASE = sys.argv[1] if len(sys.argv) > 1 else "http://localhost:8011"
+BASE = sys.argv[1] if len(sys.argv) > 1 else "http://localhost:8000"
 SPLIT = sys.argv[2] if len(sys.argv) > 2 else "dev"
 SEED = {"dev": 7, "test": 31337}.get(SPLIT, int(SPLIT) if SPLIT.isdigit() else 7)
 N_REDESIGN, N_OTHER, N_INTERRUPT = 6, 3, 4

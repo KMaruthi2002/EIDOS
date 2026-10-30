@@ -331,20 +331,3 @@ def _mp4(video, out_dir):
     shutil.rmtree(out_dir / "_raw", ignore_errors=True)
 
 
-if __name__ == "__main__":
-    import random
-    import sys
-    from .tasks import fresh_inputs, score
-    task, qs = sys.argv[1], (sys.argv[2] if len(sys.argv) > 2 else "skin=A")
-    mode = sys.argv[3] if len(sys.argv) > 3 else "eidos"
-    sk = Path(f"runs/ui_skill_{task}")
-    prog = json.loads((sk / "program.json").read_text())
-    inp = fresh_inputs(task, random.Random(1)) if "new" in sys.argv else {}
-    url = f"http://localhost:8011/apps/everyday/index.html?task={task}&{qs}"
-    if mode == "replay":
-        rep = asyncio.run(replay_ui(json.loads((sk / "trace.json").read_text()), url, Path("/tmp/eidos/uirun")))
-    else:
-        rep = asyncio.run(run_ui(prog, url, Path("/tmp/eidos/uirun"), inp, use_contracts=(mode == "eidos")))
-        for s in rep["steps"]:
-            print(s["id"], s["passed"], s["attempts"], [c.get("saw", c.get("found", c.get("error"))) for c in s["checks"]])
-    print("agent:", rep["all_contracts_passed"], "truth:", score(task, rep["oracle_state"], {**prog["inputs"], **inp}))

@@ -6,6 +6,13 @@
   python -m eidos run OUT_DIR URL [k=v ...]  run a learned program on an app
   python -m eidos check-live                 call each Meta model once (needs META_MODEL_API_KEY)
   python -m eidos studio [PORT]              the EIDOS Studio app at http://localhost:8000
+                                             (also serves the everyday apps at /apps/everyday/)
+
+Everyday tasks (mail, calendar, expense, settings; start the Studio first):
+  python -m eidos record-ui [TASK ...]       record the tutorial videos
+  python -m eidos learn-ui VIDEO OUT_DIR     video -> trace + program
+  python -m eidos run-ui OUT_DIR TASK [QUERY] [--checks-off] [--new-data]
+        QUERY sets the app's design, e.g. "skin=B&theme=dark&order=2,0,1&popup=4"
 """
 from __future__ import annotations
 
@@ -17,6 +24,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+BASE_UI = "http://localhost:8000"   # the Studio serves the everyday apps
 
 
 def main(argv: list[str]) -> None:
@@ -60,6 +68,34 @@ def main(argv: list[str]) -> None:
             for c in s["checks"]:
                 print(f"         {c['contract']}: {'pass' if c['pass'] else 'fail'}")
         print("\nAll contracts passed." if rep["all_contracts_passed"] else "\nStopped: a contract failed.")
+    elif cmd == "record-ui":
+        from .ui.recorder import record
+        from .ui.tasks import TUTORIALS
+        for t in argv[1:] or list(TUTORIALS):
+            print(asyncio.run(record(t, BASE_UI, ROOT / "videos")))
+    elif cmd == "learn-ui":
+        from .ui.learn import analyze as ui_analyze
+        trace, prog = ui_analyze(Path(argv[1]), Path(argv[2]))
+        for s in prog["steps"]:
+            print(f"{s['id']}. {s['intent']}")
+        print("inputs:", prog["inputs"])
+    elif cmd == "run-ui":
+        import random
+        from .ui.run import run_ui
+        from .ui.tasks import URL, fresh_inputs, score
+        out, task = Path(argv[1]), argv[2]
+        rest = [a for a in argv[3:] if not a.startswith("--")]
+        query = rest[0] if rest else "skin=A"
+        program = json.loads((out / "program.json").read_text())
+        inputs = fresh_inputs(task, random.Random()) if "--new-data" in argv else {}
+        url = f"{BASE_UI}{URL}?task={task}&{query}"
+        rep = asyncio.run(run_ui(program, url, out / "run", inputs, use_contracts="--checks-off" not in argv))
+        for s in rep["steps"]:
+            print(f"[{'ok ' if s['passed'] else 'FAIL'}] {s['intent']}")
+            for c in s["checks"]:
+                print(f"         {c['contract']}: {'pass' if c['pass'] else 'fail'}")
+        print("\nAgent says:", "done, every check passed" if rep["all_contracts_passed"] else "stopped, a check failed")
+        print("Truth (app state):", score(task, rep["oracle_state"], {**program["inputs"], **inputs}))
     elif cmd == "studio":
         from .studio import main as studio
         studio(int(argv[1]) if len(argv) > 1 else 8000)
