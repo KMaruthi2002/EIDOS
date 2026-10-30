@@ -183,7 +183,10 @@ async def do_learn(split: str):
         print(f"calibrated {recipe} on {cal['rid']}: {len(prog['calibration']['changes'])} changes", flush=True)
 
 
-async def do_run(split: str, concurrency: int, only: str | None = None):
+async def do_run(split: str, concurrency: int, only: str | None = None, sightings: bool = False):
+    """sightings=False is the tracker the test split was run with (frozen); True adds the rule,
+    made after that run, that a step seen once counts when a step that needs it starts. Its
+    results go to a separate folder."""
     for recipe in SPLITS[split]:
         recs = recordings(recipe)
         demo = demo_of(recs)
@@ -193,7 +196,7 @@ async def do_run(split: str, concurrency: int, only: str | None = None):
         for r in held_out(recs):
             if only and r["rid"] != only:
                 continue
-            dst = OUT / split / f"{r['rid']}.json"
+            dst = OUT / (split + ("_sightings" if sightings else "")) / f"{r['rid']}.json"
             if dst.exists():
                 continue
             if not prep_one(r["rid"], keep_video=False):
@@ -203,7 +206,7 @@ async def do_run(split: str, concurrency: int, only: str | None = None):
             n0 = len(live.LOG)
             t0 = time.monotonic()
             cache = looks_cache(demo["rid"], r["rid"], prog)
-            res = await R.replay(prog, refs, fr, concurrency=concurrency,
+            res = await R.replay(prog, refs, fr, concurrency=concurrency, sightings=sightings,
                                  looks=json.loads(cache.read_text()) if cache.exists() else None)
             cache.parent.mkdir(parents=True, exist_ok=True)
             cache.write_text(json.dumps(res["looks"]))
@@ -274,7 +277,7 @@ def prf(pred: list[bool], truth: list[bool]) -> dict:
             "recall": round(rec, 3), "f1": round(f1, 3), "accuracy": round((tp + tn) / len(pred), 3) if pred else 0.0}
 
 
-def do_score(split: str) -> dict:
+def do_score(split: str, variant: str = "") -> dict:
     rows, track_hit, track_n, lat = [], 0, 0, []
     miss_hit = miss_n = 0
     for recipe in SPLITS[split]:
@@ -286,7 +289,7 @@ def do_score(split: str) -> dict:
         for p, a in pmap.items():
             inv.setdefault(a, set()).add(p)
         for r in held_out(recs):
-            f = OUT / split / f"{r['rid']}.json"
+            f = OUT / (split + variant) / f"{r['rid']}.json"
             if not f.exists():
                 continue
             res = json.loads(f.read_text())
@@ -334,7 +337,7 @@ def do_score(split: str) -> dict:
         "look_latency_median_s": lat[len(lat) // 2] if lat else None,
         "rows": rows,
     }
-    (OUT / f"summary_{split}.json").write_text(json.dumps(summary, indent=1))
+    (OUT / f"summary_{split}{variant}.json").write_text(json.dumps(summary, indent=1))
     return summary
 
 
@@ -344,6 +347,7 @@ def main():
     ap.add_argument("--split", default="dev")
     ap.add_argument("--concurrency", type=int, default=12)
     ap.add_argument("--only")
+    ap.add_argument("--sightings", action="store_true", help="the tracker rule added after the test run (separate results)")
     a = ap.parse_args()
     if a.stage == "prep":
         for recipe in SPLITS[a.split]:
@@ -355,11 +359,11 @@ def main():
     elif a.stage == "learn":
         asyncio.run(do_learn(a.split))
     elif a.stage == "run":
-        asyncio.run(do_run(a.split, a.concurrency, a.only))
+        asyncio.run(do_run(a.split, a.concurrency, a.only, a.sightings))
     elif a.stage == "baseline":
         asyncio.run(do_baseline(a.split))
     else:
-        s = do_score(a.split)
+        s = do_score(a.split, "_sightings" if a.sightings else "")
         print(json.dumps({k: v for k, v in s.items() if k != "rows"}, indent=1))
 
 
