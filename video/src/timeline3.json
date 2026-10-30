@@ -1,38 +1,43 @@
 [
   {
     "id": "hook",
-    "text": "Every day, people record their screens to show each other how things get done. Send this email. File this expense. Turn on this setting. There are billions of hours of these videos. And today's AI agents can't learn from a single one.",
-    "seconds": 15.075
+    "text": "Every day, people record their screens to show each other how things get done. Send this email. File this expense. Turn on this setting. There are billions of hours of these videos. Yet an AI agent still can't watch one, and come away with a skill it can check.",
+    "seconds": 16.575
   },
   {
     "id": "problem",
-    "text": "Agents today learn from text, or they copy clicks. But copying clicks breaks the moment an app changes. Move a button, switch to dark mode, and the agent is clicking on nothing. Worse, it doesn't know. It reports success anyway.",
-    "seconds": 15.125
+    "text": "Agents that copy clicks break the moment an app changes. Move a button, switch to dark mode, and the agent is clicking on nothing. Worse, nothing tells it. It carries on as if it worked.",
+    "seconds": 12.175
   },
   {
     "id": "name",
-    "text": "This is Eye-doss. Show it a task once, and it turns the video into a skill. A small program an agent can run anywhere, that checks its own work at every step.",
-    "seconds": 10.325
+    "text": "This is Eye-doss. Show it a task once, and it turns the video into a skill. A small program an agent can run on screens it has never seen, that checks its own work at every step.",
+    "seconds": 11.6
   },
   {
     "id": "watch",
-    "text": "Here's a nineteen second recording of someone sending an email. Eye-doss reads it from the pixels alone. It finds every click, reads the labels on the screen, and works out what each step did. Press Compose. Type into the field labelled To. Then Subject. Then Message. Then press Send.",
-    "seconds": 18.525
+    "text": "Here's a nineteen second recording of someone sending an email, with the pointer highlighted. Eye-doss reads it from the pixels alone. It finds every click, reads the labels on the screen, and works out what each step did. Press Compose. Type into the field labelled To. Then Subject. Then Message. Then press Send.",
+    "seconds": 20.4
   },
   {
     "id": "understand",
-    "text": "Two ideas make the skill general. Every target is remembered by its label, never by where it sat on the screen. And everything the person typed becomes an input, so the same skill can send any email, to anyone. Each step also gets a contract: what must be true on screen once that step is done.",
-    "seconds": 19.15
+    "text": "Two ideas make the skill general. Every target is remembered by its label, not by where it sat on the screen. And everything the person typed becomes an input, so the same skill can send any email, to anyone. Each step also gets a contract: what must newly be true on screen once that step is done.",
+    "seconds": 19.275
   },
   {
     "id": "otherapp",
-    "text": "Now run it where the video never went. A different mail app. Dark mode. The fields in a different order. Copying the clicks lands on nothing. Eye-doss reads the new screen, finds each field by its label, and checks every step as it goes.",
-    "seconds": 15.4
+    "text": "Now run it where the video never went. A second design of the mail app. Dark mode. The fields in a different order. Copying the clicks lands on nothing. Eye-doss reads the new screen, finds each field by its label, and checks every step as it goes.",
+    "seconds": 16.225
   },
   {
     "id": "interrupt",
-    "text": "And when something gets in the way, like a dialog that pops up halfway through and swallows the keystrokes, the contract fails. Eye-doss notices, clears the dialog, and does the step again. With the checks turned off, the agent carries on blind, and reports success for an email that was never sent.",
-    "seconds": 18.125
+    "text": "And when something gets in the way, like a dialog that pops up halfway through and swallows the keystrokes, the contract fails. Eye-doss presses Escape to clear the way, and does the step again. With the checks turned off, the agent can't tell the keystrokes were lost. In this run, it reported success for an email that was never sent.",
+    "seconds": 20.55
+  },
+  {
+    "id": "renamed",
+    "text": "Now rename every control. Recipient instead of To. Deliver instead of Send. Offline, Eye-doss can't find what it learned, so it stops and says so. With Muse Spark, it reads the new screen, picks the text that means the same thing, and still checks every step before moving on.",
+    "seconds": 18
   },
   {
     "id": "tasks",
@@ -41,23 +46,23 @@
   },
   {
     "id": "results",
-    "text": "We measured it on held-out tests, kept aside and run once. Across sixty everyday runs, with new values, random redesigns, a different app, and interruptions, copying the clicks finished four. Eye-doss finished fifty-eight. On the spreadsheet task, it was three, against forty-one. When a dialog interrupted the task, Eye-doss finished thirty of thirty-two. With the checks off, zero. And across all one hundred and four runs, its own verdict matched the truth, every single time.",
-    "seconds": 26.9
+    "text": "We measured it on held-out tests, kept aside and run once. Across sixty everyday runs, with new values, random redesigns, a different app, and interruptions, copying the clicks finished four. Eye-doss finished all sixty. On the spreadsheet task, it was three, against forty-one. When a dialog interrupted the task, Eye-doss finished thirty of thirty-two. With the checks off, zero. With every control renamed, Eye-doss offline finished none, and said so each time. With Muse Spark reading the screen, it finished thirty-two of thirty-two. And across all one hundred and thirty-six runs, its own verdict matched the truth, every single time.",
+    "seconds": 41.525
   },
   {
     "id": "robot",
-    "text": "And the same idea works off the screen. From a video of blocks being stacked, a simulated robot arm learns the order, checks every placement through its own cameras, and rebuilds the stack when the table gets bumped.",
-    "seconds": 13.375
+    "text": "And the same idea works off the screen. From a video of blocks being stacked, a simulated robot arm learns the order, checks every placement through its own cameras, and rebuilds the stack when a simulated knock breaks it.",
+    "seconds": 13.875
   },
   {
     "id": "unique",
-    "text": "So what makes this different? Other systems treat a video as a hint. Eye-doss compiles it into a program, and holds every step to what the video showed. It carries over to redesigns and to different apps. And it knows when it has failed. That honesty is what makes an agent you can actually depend on.",
-    "seconds": 18.775
+    "text": "So what makes this different? Other systems use tutorial videos as examples, or as training data. Eye-doss compiles one video into a program, and holds every step to what the video showed. It carries over to redesigns, and to a second app. And it knows when it has failed. That honesty is what makes an agent you can actually depend on.",
+    "seconds": 22.45
   },
   {
     "id": "meta",
-    "text": "Eye-doss is designed around Meta's models. SAM 3.1 to find what's on the screen. Muse Spark to understand each step. Muse Wonder to compile the program. Everything you saw here ran offline, with classic vision standing in for each model, so every result can be reproduced.",
-    "seconds": 19.075
+    "text": "Eye-doss runs on Meta's models. Muse Spark reads the screen when a control is worded differently, and must pick text that is really there. SAM 3.1 gives a second opinion on where each field and button is. Muse Image drew each skill's card. And the same check works with Muse Spark Open, Meta's open-weights model, on Base ten.",
+    "seconds": 22.675
   },
   {
     "id": "close",

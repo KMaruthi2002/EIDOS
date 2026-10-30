@@ -2,7 +2,7 @@
 
 **Show it once.** EIDOS watches a screen-recorded tutorial and compiles it into a skill: a small program an AI agent can run on screens the video never showed. Every step carries a **visual contract** taken from the video, so the agent checks its own work, repairs what went wrong, and reports honestly when it can't.
 
-It works on four everyday tasks (send an email, add a calendar event, submit an expense, turn on two-factor sign-in) and a spreadsheet task, and as an add-on, on a simulated robot arm. On held-out tests with new values, random redesigns, a second design or app and mid-task interruptions, EIDOS finished **60/60** everyday runs and **41/44** spreadsheet runs, against **4/60** and **3/44** for copying the tutorial's clicks. When every control was renamed ("Deliver" instead of "Send", "Recipient" instead of "To"), offline EIDOS stopped and said so on all 32 runs, and EIDOS reading the screen with Meta's **Muse Spark** finished **32/32**. Its own verdict matched the truth on all **136** held-out runs.
+It works on four everyday tasks (send an email, add a calendar event, submit an expense, turn on two-factor sign-in) and a spreadsheet task, and as an add-on, on a simulated robot arm. On held-out tests with new values, random redesigns, a second design or app and mid-task interruptions, EIDOS finished **60/60** everyday runs and **41/44** spreadsheet runs, against **4/60** and **3/44** for copying the tutorial's clicks. When every control was renamed ("Deliver" instead of "Send", "Recipient" instead of "To"), offline EIDOS stopped and said so on all 32 runs, and EIDOS reading the screen with Meta's **Muse Spark** finished **32/32**, and so did Meta's open-weights **Muse Spark Open**. Its own verdict matched the truth on all **168** held-out runs.
 
 Built by Maruthi Kunchala (Team Parallax) for the Meta Global AI Hackathon 2026.
 
@@ -90,15 +90,17 @@ EIDOS's own verdict matched the truth on **60/60** runs (0 silent failures); it 
 
 Design C keeps the apps' layout but renames every control and message: "Compose" becomes "New email", "To" becomes "Recipient", "Send" becomes "Deliver", "Save changes" becomes "Apply", "Settings saved" becomes "Changes applied", and so on (`apps/everyday/index.html`, `words=alt`). Half of the 32 runs also get a random redesign, and all use new values. Nothing learned by label can be found as written, so this tests reading for meaning.
 
-| Task | Runs | Copy the clicks | Copy the clicks, new values | EIDOS, checks off | EIDOS (offline) | EIDOS + Muse Spark |
-|---|---|---|---|---|---|---|
-| Mail | 8 | 0/8 | 3/8 | 0/8 | 0/8 | 8/8 |
-| Calendar | 8 | 0/8 | 0/8 | 0/8 | 0/8 | 8/8 |
-| Expense | 8 | 0/8 | 1/8 | 0/8 | 0/8 | 8/8 |
-| Settings | 8 | 0/8 | 3/8 | 0/8 | 0/8 | 8/8 |
-| **All** | 32 | 0/32 | 7/32 | 0/32 | 0/32 | **32/32** |
+| Task | Runs | Copy the clicks | Copy the clicks, new values | EIDOS, checks off | EIDOS (offline) | EIDOS + Muse Spark | EIDOS + Muse Spark Open |
+|---|---|---|---|---|---|---|---|
+| Mail | 8 | 0/8 | 3/8 | 0/8 | 0/8 | 8/8 | 8/8 |
+| Calendar | 8 | 0/8 | 0/8 | 0/8 | 0/8 | 8/8 | 8/8 |
+| Expense | 8 | 0/8 | 1/8 | 0/8 | 0/8 | 8/8 | 8/8 |
+| Settings | 8 | 0/8 | 3/8 | 0/8 | 0/8 | 8/8 | 8/8 |
+| **All** | 32 | 0/32 | 7/32 | 0/32 | 0/32 | **32/32** | **32/32** |
 
 Every system's verdict matched the truth on 32/32 (offline EIDOS and checks off stop at the first label they can't find and say so). Muse Spark's picks included To → Recipient, Message → Body, Date → Day, Time → Starts at, Two-factor sign-in → Two-step verification and Send → Deliver; each pick was then grounded and checked from pixels. Results in `runs/bench_everyday_words/`; development seed 8 in `runs/bench_everyday_words_dev/` (30/32, then two settings fixes: offer joined two-line labels and single button words as candidates).
+
+Muse Spark Open, Meta's open-weights model served on Baseten, ran the same 32 held-out conditions afterwards, once, with no code changes between its development run and this one: **32/32**, verdict matched the truth on 32/32 (`runs/bench_everyday_words_open/`). On the development seed it also finished 32/32, but on one settings run it reported a failure for a save that had worked (it didn't map "Settings saved" to "Changes applied"), a cautious error rather than a silent one. Its calls were slower (median 5.8 s against 2.3 s for Muse Spark; median run 103 s against 53 s).
 
 ### Spreadsheets (held-out seed 9001, run once)
 
@@ -168,6 +170,9 @@ python -m eidos run-ui runs/ui_skill_mail mail "skin=B&theme=dark&order=2,0,1&po
 python bench/run_everyday.py http://localhost:8000 dev             # development set (seed 7)
 # held-out seeds are run once; their recorded results are protected (pass --force to overwrite)
 python bench/run_everyday.py http://localhost:8000 test2           # held-out round 2 (seed 50505)
+python bench/run_everyday.py http://localhost:8000 words           # design C, renamed controls (seed 60606; live systems need a key)
+python bench/run_everyday.py http://localhost:8000 words_open      # the same conditions with Muse Spark Open only
+python -m eidos check-live                                         # one real call to each Meta model
 
 # Spreadsheets
 python -m eidos serve &                                            # the two spreadsheet apps on :8765

@@ -22,7 +22,7 @@ def prog(task):
 async def test_eidos_on_a_hard_redesign(studio, task, tmp_path):
     p = prog(task)
     inputs = {**p["inputs"], **fresh_inputs(task, random.Random(123))}
-    rep = await run_ui(p, f"{studio}{URL}?task={task}&{HARD[task]}", tmp_path, inputs)
+    rep = await run_ui(p, f"{studio}{URL}?task={task}&{HARD[task]}", tmp_path, inputs, live=False)
     truth = score(task, rep["oracle_state"], inputs)
     assert truth["success"], truth
     assert rep["all_contracts_passed"]
@@ -33,7 +33,7 @@ async def test_eidos_on_a_hard_redesign(studio, task, tmp_path):
 async def test_eidos_repairs_an_interruption_and_verdict_is_honest(studio, tmp_path):
     p = prog("mail")
     inputs = {**p["inputs"], **fresh_inputs("mail", random.Random(7))}
-    rep = await run_ui(p, f"{studio}{URL}?task=mail&skin=A&popup=5", tmp_path, inputs)
+    rep = await run_ui(p, f"{studio}{URL}?task=mail&skin=A&popup=5", tmp_path, inputs, live=False)
     truth = score("mail", rep["oracle_state"], inputs)
     assert rep["all_contracts_passed"] == truth["success"]   # never a silent failure
     assert truth["success"]

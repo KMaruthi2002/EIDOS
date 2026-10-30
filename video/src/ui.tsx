@@ -155,7 +155,7 @@ export const Stamp: React.FC<{ ok: boolean; text: string; at: number }> = ({ ok,
 export const Caption: React.FC<{ text: string; seconds: number }> = ({ text, seconds }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const clean = text.replace(/Eye-doss/g, "EIDOS");
+  const clean = text.replace(/Eye-doss/g, "EIDOS").replace(/Base ten/g, "Baseten");
   const parts = clean.match(/[^.!?]+[.!?]+/g) ?? [clean];
   const total = parts.reduce((a, s) => a + s.length, 0);
   const t = frame / fps;

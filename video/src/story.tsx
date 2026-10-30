@@ -30,7 +30,7 @@ const Hook: React.FC = () => (
       <div style={{ marginTop: "auto", marginBottom: 80 }}>
         <Beats dark size={60} beats={[[5.0, "Send this email."], [6.3, "File this expense."], [7.6, "Turn on this setting."]]} />
         <Rise at={9.4} style={{ marginTop: 40 }}><div style={{ ...H1, color: DARK.ink }}>Billions of hours of how-to videos.</div></Rise>
-        <Rise at={T("hook") - 3.2} style={{ marginTop: 22 }}><div style={{ ...H2, color: DARK.fail }}>AI agents can't learn from a single one.</div></Rise>
+        <Rise at={T("hook") - 3.2} style={{ marginTop: 22 }}><div style={{ ...H2, color: DARK.fail }}>An agent still can't learn a skill from one.</div></Rise>
       </div>
     </Page>
   </AbsoluteFill>
@@ -42,7 +42,7 @@ const Problem: React.FC = () => (
     <BrollBackdrop src="broll/shot01.mp4" dim={0.65} />
     <Page bg="transparent">
       <div style={{ margin: "auto 0" }}>
-        <Beats dark beats={[[0.4, "Agents copy clicks."], [3.4, "Change the app, and they click on nothing."], [T("problem") - 4.2, "And they report success anyway.", DARK.fail]]} />
+        <Beats dark beats={[[0.4, "Agents copy clicks."], [2.6, "Change the app, and they click on nothing."], [T("problem") - 4.0, "And nothing tells them.", DARK.fail]]} />
       </div>
     </Page>
   </AbsoluteFill>
@@ -61,7 +61,7 @@ const Name: React.FC = () => {
             <div style={{ ...H1, fontSize: 170, letterSpacing: "0.12em", fontVariationSettings: '"wdth" 125', position: "relative", color: DARK.ink }}>EIDOS</div>
           </div>
           <Rise at={2.2}><div style={{ ...H2, color: DARK.ink }}>Show it once. It learns the skill.</div></Rise>
-          <Rise at={5.2}><div style={{ ...BODY, color: DARK.muted }}>A program an agent can run anywhere, that <span style={{ color: DARK.pass, fontWeight: 700 }}>checks its own work</span> at every step.</div></Rise>
+          <Rise at={5.2}><div style={{ ...BODY, color: DARK.muted }}>A program an agent can run on screens it has never seen, that <span style={{ color: DARK.pass, fontWeight: 700 }}>checks its own work</span> at every step.</div></Rise>
         </div>
       </Page>
     </AbsoluteFill>
@@ -148,9 +148,9 @@ const Understand: React.FC = () => {
           ))}
         </div>
         <div style={{ display: "grid", gap: 40, alignContent: "start", marginTop: 10 }}>
-          <Rise at={2.4}><Point n="1" title="Targets by label" text="“the field labelled To”, never “the box at x = 467”" /></Rise>
+          <Rise at={2.4}><Point n="1" title="Targets by label" text="“the field labelled To”, not “the box at x = 467”" /></Rise>
           <Rise at={7.4}><Point n="2" title="Typed values become inputs" text="{to} · {subject} · {message}: send any email, to anyone" /></Rise>
-          <Rise at={T("understand") - 6.6}><Point n="3" title="A contract per step" text="what must be true on screen once the step is done" /></Rise>
+          <Rise at={T("understand") - 6.6}><Point n="3" title="A contract per step" text="what must newly be true on screen once the step is done" /></Rise>
         </div>
       </div>
     </Page>
@@ -186,6 +186,40 @@ const Split: React.FC<{ heading: string; sub: string; left: [string, string, num
 };
 const clipLen = (k: string) => (story.clips as Record<string, number>)[k];
 
+/* 7b: design C, renamed controls: offline vs Muse Spark */
+const Renamed: React.FC = () => {
+  const W = 790, rate = 3;
+  const lenOff = clipLen("renamed_offline"), lenOn = clipLen("renamed_live");
+  const pairs: [string, string][] = [["Compose", "New email"], ["To", "Recipient"], ["Subject", "Topic"], ["Message", "Body"], ["Send", "Deliver"]];
+  return (
+    <Page>
+      <Rise at={0.1}><div style={{ ...H2, fontSize: 58 }}>Every control renamed.</div></Rise>
+      <Rise at={0.5}><div style={{ ...BODY, fontSize: 32, marginTop: 8 }}>Design C of the mail app, dark mode. One example run of each.</div></Rise>
+      <div style={{ display: "flex", gap: 60, marginTop: 36 }}>
+        <div style={{ display: "grid", gap: 18, width: W }}>
+          <div style={{ fontSize: 38, fontWeight: 750 }}>EIDOS, offline</div>
+          <Screen src="clips/renamed_offline.mp4" still="stills/renamed_offline_end.png" width={W} from={1.0} len={lenOff} />
+          <Stamp ok={false} text="Couldn't find Compose, so it stopped and said so" at={1.0 + lenOff} />
+        </div>
+        <div style={{ display: "grid", gap: 18, width: W }}>
+          <div style={{ fontSize: 38, fontWeight: 750 }}>EIDOS + Muse Spark</div>
+          <Screen src="clips/renamed_live.mp4" still="stills/renamed_live_end.png" width={W} from={1.0} len={lenOn} rate={rate}>
+            <div style={{ position: "absolute", top: 8, right: 10, fontSize: 18, color: C.muted, background: "rgba(255,255,255,.85)", padding: "2px 8px", borderRadius: 6 }}>{rate}x</div>
+          </Screen>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
+            {pairs.map(([a, b], i) => (
+              <Rise key={a} at={2.0 + i * ((lenOn / rate - 2) / pairs.length)} dist={8}>
+                <div style={{ fontSize: 24, background: C.passSoft, color: C.pass, padding: "6px 12px", borderRadius: 8, fontWeight: 650 }}>{a} → {b}</div>
+              </Rise>
+            ))}
+          </div>
+          <Stamp ok text="Sent, every step checked" at={1.0 + lenOn / rate} />
+        </div>
+      </div>
+    </Page>
+  );
+};
+
 /* 8: the four everyday tasks */
 const Tasks: React.FC = () => {
   const items: [string, string][] = [["Send an email", "mail"], ["Add a calendar event", "calendar"], ["Submit an expense", "expense"], ["Turn on two-factor sign-in", "settings"]];
@@ -198,7 +232,7 @@ const Tasks: React.FC = () => {
           <Rise key={k} at={2.2 + i * 1.1} dist={14}>
             <div style={{ display: "grid", gap: 10 }}>
               <div style={{ fontSize: 28, fontWeight: 720 }}>{t}</div>
-              <Screen src={`clips/tutorial_${k}.mp4`} width={500} rate={1.6} />
+              <Screen src={`clips/tutorial_${k}.mp4`} width={500} rate={1.6}><div style={{ position: "absolute", top: 8, right: 10, fontSize: 18, color: C.muted, background: "rgba(255,255,255,.85)", padding: "2px 8px", borderRadius: 6 }}>1.6x</div></Screen>
             </div>
           </Rise>
         ))}
@@ -221,35 +255,41 @@ const Bar: React.FC<{ name: string; s: number; n: number; col: string; at: numbe
   return (
     <div style={{ display: "grid", gridTemplateColumns: "400px 1fr 150px", alignItems: "center", gap: 26, opacity: Math.min(1, p * 3) }}>
       <div style={{ fontSize: 34, fontWeight: 650 }}>{name}</div>
-      <div style={{ height: 38, background: "rgba(20,33,48,.07)", borderRadius: 8, overflow: "hidden" }}>
+      <div style={{ height: 32, background: "rgba(20,33,48,.07)", borderRadius: 8, overflow: "hidden" }}>
         <div style={{ width: `${(n ? s / n : 0) * 100 * p}%`, height: "100%", background: col, borderRadius: 8 }} />
       </div>
       <div style={{ fontSize: 40, fontWeight: 800, textAlign: "right", fontVariantNumeric: "tabular-nums" }}>{`${Math.round(s * p)}/${n}`}</div>
     </div>
   );
 };
+// when a phrase is spoken in a scene, estimated from its position in the narration text
+const At = (id: string, phrase: string, lead = 0.4) => {
+  const sc = timeline.find((x) => x.id === id)!;
+  const i = sc.text.indexOf(phrase);
+  return Math.max(0.3, (i < 0 ? 0 : i / sc.text.length) * sc.seconds - lead);
+};
 const Results: React.FC = () => {
   const r = story.results as any;
-  const block = (title: string, d: any, at: number) => (
-    <div style={{ display: "grid", gap: 18 }}>
-      <Rise at={at}><div style={{ fontSize: 36, fontWeight: 760 }}>{title}</div></Rise>
-      <Bar name="Copying the clicks" s={d.replay[0]} n={d.replay[1]} col={C.muted} at={at + 0.6} />
-      <Bar name="EIDOS, checks off" s={d.nochk[0]} n={d.nochk[1]} col="#8a96a6" at={at + 1.1} />
-      <Bar name="EIDOS" s={d.eidos[0]} n={d.eidos[1]} col={C.contract} at={at + 1.6} />
+  const block = (title: string, bars: [string, number[], string][], at: number) => (
+    <div style={{ display: "grid", gap: 12 }}>
+      <Rise at={at}><div style={{ fontSize: 34, fontWeight: 760 }}>{title}</div></Rise>
+      {bars.map(([name, d, col], i) => <Bar key={name} name={name} s={d[0]} n={d[1]} col={col} at={at + 0.5 + i * 0.5} />)}
     </div>
   );
+  const std = (d: any): [string, number[], string][] => [["Copying the clicks", d.replay, C.muted], ["EIDOS, checks off", d.nochk, "#8a96a6"], ["EIDOS", d.eidos, C.contract]];
   return (
     <Page>
       <Rise at={0.1}><div style={H2}>Measured on held-out tests</div></Rise>
-      <Rise at={0.5}><div style={{ ...BODY, fontSize: 30, marginTop: 8 }}>New values, random redesigns, a different app, and mid-task interruptions, drawn from seeds kept aside and run once. Judged from each app's internal state, which the agent never sees.</div></Rise>
-      <div style={{ display: "grid", gap: 44, marginTop: 40 }}>
-        {block(r.everyday.title, r.everyday, r.at1)}
-        {block(r.sheet.title, r.sheet, r.at2)}
+      <Rise at={0.5}><div style={{ ...BODY, fontSize: 28, marginTop: 6 }}>Seeds kept aside and run once. Judged from each app's internal state, which the agent never sees.</div></Rise>
+      <div style={{ display: "grid", gap: 30, marginTop: 30 }}>
+        {block(r.everyday.title, std(r.everyday), At("results", "Across sixty"))}
+        {block(r.sheet.title, std(r.sheet), At("results", "On the spreadsheet"))}
+        {block(r.words.title, [["EIDOS, offline", r.words.offline, C.fail], ["EIDOS + Muse Spark", r.words.live, C.contract]], At("results", "With every control"))}
       </div>
-      <Rise at={r.at3} style={{ marginTop: 40 }}>
-        <div style={{ display: "flex", gap: 60, fontSize: 34, flexWrap: "wrap" }}>
-          <div><b style={{ color: C.pass }}>{r.agree}</b> times its own verdict matched the truth</div>
+      <Rise at={At("results", "When a dialog")} style={{ marginTop: 30 }}>
+        <div style={{ display: "flex", gap: 60, fontSize: 32, flexWrap: "wrap" }}>
           <div>Interrupted: <b style={{ color: C.contract }}>{r.int_eidos}</b> with checks, <b style={{ color: C.fail }}>{r.int_nochk}</b> without</div>
+          <Rise at={At("results", "And across all")}><div><b style={{ color: C.pass }}>{r.agree}</b> times its own verdict matched the truth</div></Rise>
         </div>
       </Rise>
     </Page>
@@ -259,9 +299,9 @@ const Results: React.FC = () => {
 /* 11: why it's different */
 const Unique: React.FC = () => {
   const rows: [string, string, string][] = [
-    ["Video as a hint", "Video compiled into a program", "2.0"],
-    ["Breaks when the app changes", "Finds targets by label, carries across apps", "8.0"],
-    ["Says “done” either way", "Checks every step, and knows when it failed", "11.4"],
+    ["Video as examples or training data", "One video compiled into a program", "2.0"],
+    ["Breaks when the app changes", "Finds targets by label, carries to a second app", "8.0"],
+    ["Can't tell when it failed", "Checks every step, and knows when it failed", "11.4"],
   ];
   return (
     <AbsoluteFill style={{ background: DARK.bg }}>
@@ -288,13 +328,14 @@ const Unique: React.FC = () => {
 /* 12 */
 const Models: React.FC = () => {
   const rows: [string, string][] = [
-    ["SAM 3.1", "finds what's on the screen: pointer, fields, buttons, what changed"],
-    ["Muse Spark", "understands what each step was for"],
-    ["Muse Wonder", "compiles the steps into a program with contracts"],
+    ["Muse Spark", "reads the screen when a control is worded differently, and must pick text that is really there"],
+    ["SAM 3.1", "a second opinion on where each field, button and switch is"],
+    ["Muse Image", "drew each skill's card"],
+    ["Muse Spark Open", "the same reading job with Meta's open-weights model, on Baseten"],
   ];
   return (
     <Page>
-      <Rise at={0.1}><div style={H2}>Designed around Meta's models</div></Rise>
+      <Rise at={0.1}><div style={H2}>Running on Meta's models</div></Rise>
       <div style={{ display: "grid", marginTop: 50, background: C.surface, borderRadius: 16, border: `1px solid ${C.line}`, overflow: "hidden" }}>
         {rows.map(([m, job], i) => (
           <Rise key={m} at={2.0 + i * 1.6} dist={12}>
@@ -306,7 +347,7 @@ const Models: React.FC = () => {
         ))}
       </div>
       <Rise at={T("meta") - 7.5} style={{ marginTop: 36 }}>
-        <div style={{ fontSize: 30, color: C.muted, maxWidth: 1500 }}>Everything in this video ran offline, with classic computer vision standing in for each model, so every result can be reproduced.</div>
+        <div style={{ fontSize: 30, color: C.muted, maxWidth: 1500 }}>Designs A and B need no model: those results run offline with classic computer vision, so anyone can reproduce them without a key.</div>
       </Rise>
     </Page>
   );
@@ -327,18 +368,19 @@ const Close: React.FC = () => {
             <div style={{ ...H1, fontSize: 130, letterSpacing: "0.12em", fontVariationSettings: '"wdth" 125', position: "relative", color: DARK.ink }}>EIDOS</div>
           </div>
           <div style={{ fontSize: 30, color: DARK.muted, opacity: p }}>Maruthi Kunchala, Team Parallax. Meta Global AI Hackathon 2026.</div>
-          <div style={{ fontSize: 20, color: DARK.muted, opacity: p * 0.8 }}>Cinematic shots generated with Higgsfield. All EIDOS footage is real and unedited.</div>
+          <div style={{ fontSize: 20, color: DARK.muted, opacity: p * 0.8 }}>Cinematic shots generated with Higgsfield. All EIDOS footage is real; some clips are sped up.</div>
         </div>
       </Page>
     </AbsoluteFill>
   );
 };
 
-const PAD: Record<string, number> = { hook: 0.9, problem: 0.7, name: 0.8, watch: 2.5, understand: 1.2, otherapp: 3.0, interrupt: 3.0, tasks: 1.2, results: 2.0, robot: 4.0, unique: 1.2, meta: 0.8, close: 2.5 };
+const PAD: Record<string, number> = { renamed: 1.5, hook: 0.9, problem: 0.7, name: 0.8, watch: 2.5, understand: 1.2, otherapp: 3.0, interrupt: 3.0, tasks: 1.2, results: 2.0, robot: 4.0, unique: 1.2, meta: 0.8, close: 2.5 };
 const MIN: Record<string, number> = {
   otherapp: 2.0 + 1.0 + Math.max(clipLen("other_replay"), clipLen("other_eidos")) + 2.2,
   interrupt: 2.0 + 1.0 + Math.max(clipLen("int_nochk"), clipLen("int_eidos")) + 2.2,
   watch: 2.0 + 0.6 + 19.4,
+  renamed: 1.0 + Math.max(clipLen("renamed_offline"), clipLen("renamed_live") / 3) + 2.5,
 };
 export const storySeconds = (id: string) => Math.max(T(id) + (PAD[id] ?? 0.8), MIN[id] ?? 0);
 export const storyTotal = () => timeline.reduce((a, s) => a + storySeconds(s.id), 0);
@@ -347,10 +389,11 @@ const SCENES: Record<string, React.FC> = {
   hook: Hook, problem: Problem, name: Name,
   watch: () => <WithIntro src="broll/shot04.mp4" title="Learning from one video."><Watch /></WithIntro>,
   understand: Understand,
-  otherapp: () => <WithIntro src="broll/shot05.mp4" title="Somewhere the video never went."><Split heading="A different mail app, in dark mode, fields reordered." sub="Same skill, same video. New values for this run."
+  otherapp: () => <WithIntro src="broll/shot05.mp4" title="Somewhere the video never went."><Split heading="A second design of the mail app, in dark mode, fields reordered." sub="Same skill, same video. New values for this run."
     left={["Copying the clicks", "other_replay", clipLen("other_replay"), "Nothing was sent"]} right={["EIDOS", "other_eidos", clipLen("other_eidos"), "Sent, every step checked"]} /></WithIntro>,
-  interrupt: () => <WithIntro src="broll/shot06.mp4" title="When something gets in the way."><Split heading="A dialog pops up and swallows the keystrokes." sub="Both agents run the same skill. Only one checks its work."
-    left={["EIDOS, checks off", "int_nochk", clipLen("int_nochk"), "Said done. Nothing was sent."]} right={["EIDOS", "int_eidos", clipLen("int_eidos"), "Noticed, cleared it, redid the step"]} /></WithIntro>,
+  interrupt: () => <WithIntro src="broll/shot06.mp4" title="When something gets in the way."><Split heading="A dialog pops up and swallows the keystrokes." sub="One example run. Both agents run the same skill; only one checks its work."
+    left={["EIDOS, checks off", "int_nochk", clipLen("int_nochk"), "Said done. Nothing was sent."]} right={["EIDOS", "int_eidos", clipLen("int_eidos"), "Check failed, so it redid the step"]} /></WithIntro>,
+  renamed: Renamed,
   tasks: Tasks,
   results: Results,
   robot: () => <WithIntro src="broll/shot08.mp4" title="The same idea, off the screen." seconds={3} label="Generated illustration"><Robot /></WithIntro>,

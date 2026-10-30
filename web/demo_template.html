@@ -222,7 +222,7 @@ table.tbl { border-collapse: collapse; width: 100%; font-size: .95rem; min-width
   <section aria-labelledby="h-ev">
     <div class="sec-head">
       <h2 id="h-ev">Four everyday tasks, one video each</h2>
-      <p class="lede">Each tutorial below was recorded once in design A of a small app. From the pixels alone, EIDOS finds every click, reads the labels, and writes a program: targets named by their label, typed values turned into inputs, and a contract for every step. One engine, four kinds of step: press, type, choose, switch.</p>
+      <p class="lede">Each tutorial below was recorded once in design A of a small app. From the pixels alone, EIDOS finds every click, reads the labels, and writes a program: targets named by their label, typed values turned into inputs, and a contract for every step. One engine, four kinds of step: press, type, choose, switch. In the Studio you can also teach a new skill live, by doing the task once in the app.</p>
     </div>
     <div class="seg" role="group" aria-label="Choose a task" id="ev-tabs"></div>
     <div class="ev-learn">
@@ -332,7 +332,7 @@ table.tbl { border-collapse: collapse; width: 100%; font-size: .95rem; min-width
       <div class="model-row"><div class="who">SAM 3.1</div><div>A second opinion on where each field, button and switch is ("input box", "Deliver button", "toggle switch").</div><div class="off" id="sam-note">Advisory: compared with the box found from pixels, never overrides it. On the design C runs it agreed on 109 of 151 checks.</div></div>
       <div class="model-row"><div class="who">Muse Image</div><div>Drew each learned skill's card.</div><div class="off">The cards keep Meta's AI-generated label.</div></div>
       <div class="model-row"><div class="who">Muse Wonder</div><div>Compiles a step trace into a program with inputs and contracts.</div><div class="off">Saved next to the offline program when a spreadsheet skill is learned; not used for running.</div></div>
-      <div class="model-row"><div class="who">Muse Spark Open</div><div>The same screen-reading job with Meta's open-weights model, served on Baseten.</div><div class="off" id="open-note">Same checks as Muse Spark.</div></div>
+      <div class="model-row"><div class="who">Muse Spark Open</div><div>The same screen-reading job with Meta's open-weights model, served on Baseten.</div><div class="off" id="open-note">Same checks as Muse Spark. On the design C held-out runs it also finished 32/32, with every verdict right.</div></div>
     </div>
   </section>
 
@@ -535,9 +535,9 @@ const frac = (x) => x ? `${x.success}/${x.n}` : "";
 {
   const pts = [];
   if (R2) pts.push(`On ${R2.all.eidos.n} held-out everyday runs with redesigns, a second design and interruptions, EIDOS finished <b>${frac(R2.all.eidos)}</b>. Copying the clicks finished ${frac(R2.all.replay)}.`);
-  if (WC) pts.push(`With every control renamed, offline EIDOS stopped and said so (${frac(WC.all.eidos)}); reading the screen with Muse Spark it finished <b>${frac(WC.all.eidos_live)}</b>.`);
-  const ag = (R2 ? R2.agree.agree : 0) + (WC ? WC.agree.eidos_live.agree : 0) + DATA.bench.test.summary.eidos_self_report.agrees_with_oracle;
-  const an = (R2 ? R2.agree.n : 0) + (WC ? WC.agree.eidos_live.n : 0) + DATA.bench.test.summary.eidos_self_report.n;
+  if (WC) pts.push(`With every control renamed, offline EIDOS stopped and said so (${frac(WC.all.eidos)}); reading the screen with Muse Spark it finished <b>${frac(WC.all.eidos_live)}</b>${WO ? `, and with Meta's open-weights Muse Spark Open <b>${frac(WO.all.eidos_open)}</b>` : ""}.`);
+  const ag = (R2 ? R2.agree.agree : 0) + (WC ? WC.agree.eidos_live.agree : 0) + (WO ? WO.agree.eidos_open.agree : 0) + DATA.bench.test.summary.eidos_self_report.agrees_with_oracle;
+  const an = (R2 ? R2.agree.n : 0) + (WC ? WC.agree.eidos_live.n : 0) + (WO ? WO.agree.eidos_open.n : 0) + DATA.bench.test.summary.eidos_self_report.n;
   pts.push(`Its own verdict matched the truth on <b>${ag}/${an}</b> held-out runs, spreadsheets included.`);
   $("#hero-points").innerHTML = pts.map(t => `<li><span class="mark"></span><span>${t}</span></li>`).join("");
   $("#film-stage").innerHTML = DATA.film

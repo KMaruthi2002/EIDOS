@@ -30,21 +30,23 @@
     "other_replay": 9.0,
     "other_eidos": 18.33,
     "int_nochk": 11.0,
-    "int_eidos": 19.2
+    "int_eidos": 19.2,
+    "renamed_offline": 7.83,
+    "renamed_live": 69.23
   },
   "results": {
     "everyday": {
-      "title": "Everyday tasks: 60 runs across 4 tasks and 2 apps",
+      "title": "Everyday tasks: 60 runs across 4 tasks and 2 designs",
       "replay": [
         4,
         60
       ],
       "nochk": [
-        42,
+        44,
         60
       ],
       "eidos": [
-        58,
+        60,
         60
       ]
     },
@@ -63,11 +65,19 @@
         44
       ]
     },
-    "agree": "104/104",
+    "words": {
+      "title": "Every control renamed: 32 runs",
+      "offline": [
+        0,
+        32
+      ],
+      "live": [
+        32,
+        32
+      ]
+    },
+    "agree": "136/136",
     "int_eidos": "30/32",
-    "int_nochk": "0/32",
-    "at1": 3.2,
-    "at2": 11.8,
-    "at3": 16.4
+    "int_nochk": "0/32"
   }
 }
