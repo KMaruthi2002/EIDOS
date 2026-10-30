@@ -67,7 +67,7 @@ def one(program, use_contracts: bool, label: str):
 
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
-    demo = Path(sys.argv[1]) if len(sys.argv) > 1 else HERE / "runs" / "sim_demo.mp4"
+    demo = Path(sys.argv[1]) if len(sys.argv) > 1 else HERE / "demo" / "sim_demo.mp4"
     program = learn(demo)
     (OUT / "program.json").write_text(json.dumps(program, indent=2))
     report = {"learned_from": demo.name, "program": program}

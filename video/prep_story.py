@@ -8,9 +8,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
-VID = Path("../eidos-video")
+import os
+VID = Path(os.environ.get("EIDOS_VIDEO_DIR", ROOT / "video"))   # the Remotion project
 CLIPS, STILLS = VID / "public" / "clips", VID / "public" / "stills"
-BASE = "http://localhost:8011/apps/everyday/index.html?task=mail&"
+BASE = os.environ.get("EIDOS_STUDIO", "http://localhost:8000") + "/apps/everyday/index.html?task=mail&"
 
 
 def dur(p):
@@ -28,7 +29,7 @@ async def record():
     sk = ROOT / "runs" / "ui_skill_mail"
     prog = json.loads((sk / "program.json").read_text())
     trace = json.loads((sk / "trace.json").read_text())
-    tmp = Path("/tmp/eidos/story_rec")
+    tmp = ROOT / "runs" / "story_rec"
     inp = {**prog["inputs"], **fresh_inputs("mail", random.Random(5))}
     other = BASE + "skin=B&theme=dark&order=2,0,1&data=21"
     out = {}

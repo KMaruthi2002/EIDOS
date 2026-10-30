@@ -1,0 +1,73 @@
+{
+  "program": [
+    {
+      "do": "press",
+      "what": "\u201cCompose\u201d",
+      "contract": "screen then shows New message, Subject, Message"
+    },
+    {
+      "do": "type",
+      "what": "{to} into \u201cTo\u201d",
+      "contract": "the box labelled To shows {to}"
+    },
+    {
+      "do": "type",
+      "what": "{subject} into \u201cSubject\u201d",
+      "contract": "the box labelled Subject shows {subject}"
+    },
+    {
+      "do": "type",
+      "what": "{message} into \u201cMessage\u201d",
+      "contract": "the box labelled Message shows {message}"
+    },
+    {
+      "do": "press",
+      "what": "\u201cSend\u201d",
+      "contract": "screen then shows {to}, {subject}"
+    }
+  ],
+  "clips": {
+    "other_replay": 9.0,
+    "other_eidos": 18.33,
+    "int_nochk": 11.0,
+    "int_eidos": 19.2
+  },
+  "results": {
+    "everyday": {
+      "title": "Everyday tasks: 60 runs across 4 tasks and 2 apps",
+      "replay": [
+        4,
+        60
+      ],
+      "nochk": [
+        42,
+        60
+      ],
+      "eidos": [
+        58,
+        60
+      ]
+    },
+    "sheet": {
+      "title": "Spreadsheet task: 44 runs across 2 apps",
+      "replay": [
+        3,
+        44
+      ],
+      "nochk": [
+        27,
+        44
+      ],
+      "eidos": [
+        41,
+        44
+      ]
+    },
+    "agree": "104/104",
+    "int_eidos": "30/32",
+    "int_nochk": "0/32",
+    "at1": 3.2,
+    "at2": 11.8,
+    "at3": 16.4
+  }
+}

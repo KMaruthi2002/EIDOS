@@ -40,10 +40,9 @@ N_INTERRUPTIONS = int(sys.argv[4]) if len(sys.argv) > 4 else 12
 # come from a held-out seed. Only the generated conditions (redesigns and
 # interruptions) depend on the seed; same/new_data/other_app are fixed.
 SEED = int(sys.argv[3]) if len(sys.argv) > 3 else 7
-# History: seed 2026 was the first held-out set (results frozen in
-# runs/bench_test_v1 before the fixes it revealed); seed 4242 is the current one.
-# seed 4242 was round 2 (runs/bench_test_v2, before the interruption condition
-# and contract repair existed); seed 9001 is the final held-out set.
+# History: seed 2026 was held-out round 1 (runs/bench_test_v1, frozen before the fixes it
+# revealed); seed 4242 was round 2 (runs/bench_test_v2, before the interruption condition and
+# contract repair existed); seed 9001 is round 3, reported in the README (runs/bench_test).
 SPLIT = "dev" if SEED == 7 else ("test" if SEED == 9001 else f"seed{SEED}")
 OUT = ROOT / "runs" / f"bench_{SPLIT}"
 

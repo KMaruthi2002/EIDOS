@@ -102,9 +102,12 @@ async def one(sem, i, c, system):
 
 
 async def main():
+    if SPLIT != "dev" and (OUT / "results.json").exists() and "--force" not in sys.argv:
+        sys.exit(f"{OUT}/results.json already holds the recorded held-out result. A held-out seed is run once; "
+                 "pass --force to overwrite it, or choose another seed.")
     OUT.mkdir(parents=True, exist_ok=True)
     conds = conditions()
-    sem = asyncio.Semaphore(int(sys.argv[3]) if len(sys.argv) > 3 else 3)
+    sem = asyncio.Semaphore(int(sys.argv[3]) if len(sys.argv) > 3 and sys.argv[3].isdigit() else 3)
     jobs = [one(sem, i, c, s) for i, c in enumerate(conds) for s in SYSTEMS]
     rows = await asyncio.gather(*jobs)
     (OUT / "results.json").write_text(json.dumps({"seed": SEED, "split": SPLIT, "rows": rows}, indent=2))

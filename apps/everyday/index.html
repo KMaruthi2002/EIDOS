@@ -37,7 +37,8 @@ button { font:inherit; cursor:pointer; }
 .primary { background:var(--accent); color:var(--accentInk); border:0; border-radius:9px; padding:9px 18px; font-weight:700; font-size:1rem; }
 body.B .primary { border-radius:99px; padding:9px 22px; }
 .list { background:var(--surface); border:1px solid var(--line); border-radius:12px; }
-.item { display:grid; grid-template-columns: 200px 1fr 130px; gap:12px; padding:11px 16px; border-bottom:1px solid var(--line); }
+.item { display:grid; grid-template-columns: minmax(240px, auto) 1fr 210px; gap:12px; padding:11px 16px; border-bottom:1px solid var(--line); white-space:nowrap; }
+.item > span { overflow:hidden; text-overflow:ellipsis; }
 .item:last-child { border-bottom:0; }
 .item .a { font-weight:700; } .item .c { color:var(--muted); text-align:right; }
 .form { background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:20px 24px; max-width:640px; display:flex; flex-direction:column; gap:14px; }

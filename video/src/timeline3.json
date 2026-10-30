@@ -1,0 +1,67 @@
+[
+  {
+    "id": "hook",
+    "text": "Every day, people record their screens to show each other how things get done. Send this email. File this expense. Turn on this setting. There are billions of hours of these videos. And today's AI agents can't learn from a single one.",
+    "seconds": 15.075
+  },
+  {
+    "id": "problem",
+    "text": "Agents today learn from text, or they copy clicks. But copying clicks breaks the moment an app changes. Move a button, switch to dark mode, and the agent is clicking on nothing. Worse, it doesn't know. It reports success anyway.",
+    "seconds": 15.125
+  },
+  {
+    "id": "name",
+    "text": "This is Eye-doss. Show it a task once, and it turns the video into a skill. A small program an agent can run anywhere, that checks its own work at every step.",
+    "seconds": 10.325
+  },
+  {
+    "id": "watch",
+    "text": "Here's a nineteen second recording of someone sending an email. Eye-doss reads it from the pixels alone. It finds every click, reads the labels on the screen, and works out what each step did. Press Compose. Type into the field labelled To. Then Subject. Then Message. Then press Send.",
+    "seconds": 18.525
+  },
+  {
+    "id": "understand",
+    "text": "Two ideas make the skill general. Every target is remembered by its label, never by where it sat on the screen. And everything the person typed becomes an input, so the same skill can send any email, to anyone. Each step also gets a contract: what must be true on screen once that step is done.",
+    "seconds": 19.15
+  },
+  {
+    "id": "otherapp",
+    "text": "Now run it where the video never went. A different mail app. Dark mode. The fields in a different order. Copying the clicks lands on nothing. Eye-doss reads the new screen, finds each field by its label, and checks every step as it goes.",
+    "seconds": 15.4
+  },
+  {
+    "id": "interrupt",
+    "text": "And when something gets in the way, like a dialog that pops up halfway through and swallows the keystrokes, the contract fails. Eye-doss notices, clears the dialog, and does the step again. With the checks turned off, the agent carries on blind, and reports success for an email that was never sent.",
+    "seconds": 18.125
+  },
+  {
+    "id": "tasks",
+    "text": "This isn't one demo. It's four everyday tasks: sending an email, adding a calendar event, submitting an expense, and turning on two-factor sign-in. Plus a spreadsheet task. One engine, with four simple kinds of step: press, type, choose, and switch.",
+    "seconds": 16.15
+  },
+  {
+    "id": "results",
+    "text": "We measured it on held-out tests, kept aside and run once. Across sixty everyday runs, with new values, random redesigns, a different app, and interruptions, copying the clicks finished four. Eye-doss finished fifty-eight. On the spreadsheet task, it was three, against forty-one. When a dialog interrupted the task, Eye-doss finished thirty of thirty-two. With the checks off, zero. And across all one hundred and four runs, its own verdict matched the truth, every single time.",
+    "seconds": 26.9
+  },
+  {
+    "id": "robot",
+    "text": "And the same idea works off the screen. From a video of blocks being stacked, a simulated robot arm learns the order, checks every placement through its own cameras, and rebuilds the stack when the table gets bumped.",
+    "seconds": 13.375
+  },
+  {
+    "id": "unique",
+    "text": "So what makes this different? Other systems treat a video as a hint. Eye-doss compiles it into a program, and holds every step to what the video showed. It carries over to redesigns and to different apps. And it knows when it has failed. That honesty is what makes an agent you can actually depend on.",
+    "seconds": 18.775
+  },
+  {
+    "id": "meta",
+    "text": "Eye-doss is designed around Meta's models. SAM 3.1 to find what's on the screen. Muse Spark to understand each step. Muse Wonder to compile the program. Everything you saw here ran offline, with classic vision standing in for each model, so every result can be reproduced.",
+    "seconds": 19.075
+  },
+  {
+    "id": "close",
+    "text": "Prompting is how we talk to AI. Showing is how we'll teach it. This is Eye-doss.",
+    "seconds": 5.575
+  }
+]
