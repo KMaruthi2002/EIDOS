@@ -1,0 +1,204 @@
+{
+ "title": "Replace a part in an electrical control cabinet",
+ "domain": "electrical maintenance",
+ "inputs": {
+  "off_position": "OFF",
+  "on_position": "ON"
+ },
+ "steps": [
+  {
+   "id": 1,
+   "do": "Turn the disconnect switch to {off_position}",
+   "verb": "turn",
+   "objects": [
+    "disconnect switch",
+    "electrical control cabinet"
+   ],
+   "tools": [],
+   "start": 4.0,
+   "end": 15.0,
+   "focus": "disconnect switch",
+   "done_when": "The disconnect handle points to the OFF/O position on the electrical control cabinet",
+   "needs": [],
+   "optional": false,
+   "evidence": {
+    "start": "step1_start.jpg",
+    "end": "step1_end.jpg"
+   }
+  },
+  {
+   "id": 2,
+   "do": "Open the cabinet door",
+   "verb": "open",
+   "objects": [
+    "cabinet door",
+    "electrical control cabinet"
+   ],
+   "tools": [],
+   "start": 12.0,
+   "end": 23.0,
+   "focus": "cabinet door",
+   "done_when": "The cabinet door is open and the internal breakers, wiring and transformer are exposed",
+   "needs": [
+    1
+   ],
+   "optional": true,
+   "evidence": {
+    "start": "step2_start.jpg",
+    "end": "step2_end.jpg",
+    "boxes": [
+     [
+      0.0,
+      0.0,
+      0.9984,
+      0.9972
+     ]
+    ],
+    "outlined": "electrical control cabinet"
+   },
+   "why_optional": "not seen in the second demonstration (R201)"
+  },
+  {
+   "id": 3,
+   "do": "Remove the old electrical component from its mount inside the cabinet",
+   "verb": "remove",
+   "objects": [
+    "old electrical component",
+    "electrical control cabinet"
+   ],
+   "tools": [],
+   "start": 28.0,
+   "end": 35.0,
+   "focus": "old component",
+   "done_when": "The old component is detached and its mount inside the cabinet is empty",
+   "needs": [
+    2
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step3_start.jpg",
+    "end": "step3_end.jpg",
+    "boxes": [
+     [
+      0.5266,
+      0.7972,
+      0.6234,
+      0.9778
+     ]
+    ],
+    "outlined": "old component"
+   }
+  },
+  {
+   "id": 4,
+   "do": "Place the removed component on the shelf",
+   "verb": "place",
+   "objects": [
+    "removed component",
+    "shelf"
+   ],
+   "tools": [],
+   "start": 32.0,
+   "end": 39.0,
+   "focus": "removed component",
+   "done_when": "The removed component rests on the shelf outside the cabinet",
+   "needs": [
+    3
+   ],
+   "optional": true,
+   "evidence": {
+    "start": "step4_start.jpg",
+    "end": "step4_end.jpg",
+    "boxes": [
+     [
+      0.1922,
+      0.0444,
+      0.9984,
+      0.9944
+     ]
+    ],
+    "outlined": "shelf"
+   }
+  },
+  {
+   "id": 5,
+   "do": "Install the new electrical component inside the cabinet and seat its connector",
+   "verb": "install",
+   "objects": [
+    "new electrical component",
+    "wire connector",
+    "electrical control cabinet"
+   ],
+   "tools": [],
+   "start": 44.0,
+   "end": 55.0,
+   "focus": "new component",
+   "done_when": "The new component is seated on its mount inside the cabinet with its connector fully plugged in",
+   "needs": [
+    3
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step5_start.jpg",
+    "end": "step5_end.jpg"
+   }
+  },
+  {
+   "id": 6,
+   "do": "Close the cabinet door",
+   "verb": "close",
+   "objects": [
+    "cabinet door",
+    "electrical control cabinet"
+   ],
+   "tools": [],
+   "start": 100.0,
+   "end": 111.0,
+   "focus": "cabinet door",
+   "done_when": "The cabinet door is fully closed and the cabinet interior is no longer visible",
+   "needs": [
+    5
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step6_start.jpg",
+    "end": "step6_end.jpg"
+   }
+  },
+  {
+   "id": 7,
+   "do": "Turn the disconnect switch to {on_position}",
+   "verb": "turn",
+   "objects": [
+    "disconnect switch",
+    "electrical control cabinet"
+   ],
+   "tools": [],
+   "start": 104.0,
+   "end": 114.0,
+   "focus": "disconnect switch",
+   "done_when": "The disconnect handle points to the ON/I position with the orange indicator visible",
+   "needs": [
+    6
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step7_start.jpg",
+    "end": "step7_end.jpg"
+   }
+  }
+ ],
+ "compiled_by": "muse-wonder-1.0",
+ "learned_from": "R189-24Oct-CircuitBreaker.mp4",
+ "video_seconds": 114.03,
+ "calibration": {
+  "source": "second demonstration (R201)",
+  "changes": [
+   {
+    "step": 2,
+    "change": "optional",
+    "why": "not seen in the second demonstration (R201)"
+   }
+  ]
+ }
+}

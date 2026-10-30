@@ -1,0 +1,1619 @@
+[
+ {
+  "t0": 0.0,
+  "t1": 7.01,
+  "action": "retrieve bowl from cabinet",
+  "objects": [
+   "blue bowl"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "upper cabinet is open and both hands are holding the bowl"
+ },
+ {
+  "t0": 4.0,
+  "t1": 11.01,
+  "action": "take bowl from cabinet and place on counter",
+  "objects": [
+   "blue bowl"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "blue bowl moved from inside cabinet to white cutting board on counter"
+ },
+ {
+  "t0": 8.01,
+  "t1": 15.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "blue bowl moved from cabinet to cutting board on counter and refrigerator door opened"
+ },
+ {
+  "t0": 12.01,
+  "t1": 19.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "refrigerator door is open"
+ },
+ {
+  "t0": 16.02,
+  "t1": 23.02,
+  "action": "none",
+  "objects": [
+   "egg"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "person is holding an egg outside the open refrigerator"
+ },
+ {
+  "t0": 20.02,
+  "t1": 27.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "a white egg is taken from the open refrigerator and carried to the counter where it is held over a dark bowl"
+ },
+ {
+  "t0": 24.02,
+  "t1": 31.03,
+  "action": "crack egg into bowl",
+  "objects": [
+   "egg",
+   "bowl"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "empty bowl now contains cracked raw egg"
+ },
+ {
+  "t0": 28.03,
+  "t1": 35.0,
+  "action": "crack egg and throw away shell",
+  "objects": [
+   "egg",
+   "bowl"
+  ],
+  "tools": [],
+  "amount": "1 egg",
+  "after": "egg is cracked with yolk left in bowl and shell discarded in trash"
+ },
+ {
+  "t0": 32.03,
+  "t1": 39.01,
+  "action": "crack egg into bowl",
+  "objects": [
+   "egg",
+   "bowl"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "whole egg in hand becomes cracked egg with yolk in black bowl"
+ },
+ {
+  "t0": 36.0,
+  "t1": 43.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "a hand appears at the counter near the sink"
+ },
+ {
+  "t0": 40.01,
+  "t1": 47.01,
+  "action": "whisk an egg",
+  "objects": [
+   "egg",
+   "bowl"
+  ],
+  "tools": [
+   "whisk"
+  ],
+  "amount": null,
+  "after": "the whole egg yolk becomes broken and beaten"
+ },
+ {
+  "t0": 44.01,
+  "t1": 51.02,
+  "action": "whisking egg",
+  "objects": [
+   "egg"
+  ],
+  "tools": [
+   "whisk",
+   "bowl"
+  ],
+  "amount": null,
+  "after": "whole egg yolk becomes broken and mixed"
+ },
+ {
+  "t0": 48.01,
+  "t1": 55.02,
+  "action": "whisking eggs",
+  "objects": [
+   "eggs",
+   "bowl"
+  ],
+  "tools": [
+   "whisk"
+  ],
+  "amount": null,
+  "after": "eggs become more uniformly mixed"
+ },
+ {
+  "t0": 52.02,
+  "t1": 59.03,
+  "action": "whisking eggs",
+  "objects": [
+   "eggs"
+  ],
+  "tools": [
+   "whisk",
+   "bowl"
+  ],
+  "amount": null,
+  "after": "eggs become more uniformly mixed and lighter in color"
+ },
+ {
+  "t0": 56.02,
+  "t1": 63.03,
+  "action": "whisking eggs",
+  "objects": [
+   "eggs",
+   "bowl"
+  ],
+  "tools": [
+   "fork"
+  ],
+  "amount": null,
+  "after": "egg yolks break and blend more with whites"
+ },
+ {
+  "t0": 60.03,
+  "t1": 67.0,
+  "action": "whisking eggs",
+  "objects": [
+   "eggs",
+   "bowl"
+  ],
+  "tools": [
+   "fork"
+  ],
+  "amount": null,
+  "after": "whole yolks become broken and beaten together"
+ },
+ {
+  "t0": 64.03,
+  "t1": 71.0,
+  "action": "whisking egg",
+  "objects": [
+   "egg"
+  ],
+  "tools": [
+   "whisk",
+   "bowl"
+  ],
+  "amount": null,
+  "after": "egg is smoothly mixed and whisk is set down on cutting board"
+ },
+ {
+  "t0": 68.0,
+  "t1": 75.01,
+  "action": "whisk eggs then set whisk down",
+  "objects": [
+   "eggs",
+   "bowl"
+  ],
+  "tools": [
+   "whisk"
+  ],
+  "amount": null,
+  "after": "whisk is out of the bowl resting on the cutting board"
+ },
+ {
+  "t0": 72.01,
+  "t1": 79.01,
+  "action": "move bowl aside and grab bread",
+  "objects": [
+   "bowl of whisked egg",
+   "bag of buns"
+  ],
+  "tools": [
+   "whisk"
+  ],
+  "amount": null,
+  "after": "egg bowl moved off cutting board to counter and hand is reaching for bread bag on top of refrigerator"
+ },
+ {
+  "t0": 76.01,
+  "t1": 83.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "a bag of Mission flour tortillas is now on the white cutting board"
+ },
+ {
+  "t0": 80.01,
+  "t1": 87.02,
+  "action": "opening package and taking out a tortilla",
+  "objects": [
+   "Mission flour tortillas"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "one tortilla is held in hands outside the opened bag on the cutting board"
+ },
+ {
+  "t0": 84.02,
+  "t1": 91.02,
+  "action": "takes tortilla from package",
+  "objects": [
+   "tortilla",
+   "tortilla package"
+  ],
+  "tools": [],
+  "amount": "1",
+  "after": "one tortilla is out of the package on the cutting board"
+ },
+ {
+  "t0": 88.02,
+  "t1": 95.03,
+  "action": "close bag",
+  "objects": [
+   "flour tortillas",
+   "plastic bag"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the open tortilla bag is folded shut with one tortilla resting on top"
+ },
+ {
+  "t0": 92.03,
+  "t1": 99.03,
+  "action": "takes a tortilla from bag",
+  "objects": [
+   "tortillas"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "one tortilla is left on the cutting board and the bag is moved aside"
+ },
+ {
+  "t0": 96.03,
+  "t1": 103.0,
+  "action": "take out and place tortilla",
+  "objects": [
+   "tortilla",
+   "tortilla bag"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "one tortilla lies on the cutting board and the bag is moved aside against the wall"
+ },
+ {
+  "t0": 100.03,
+  "t1": 107.01,
+  "action": "set down cheese bag",
+  "objects": [
+   "tortilla",
+   "cheese bag"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "cheese bag is standing upright against the wall by the outlet"
+ },
+ {
+  "t0": 104.0,
+  "t1": 111.01,
+  "action": "repositions bowl",
+  "objects": [
+   "bowl of beaten egg",
+   "tortilla"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "bowl is briefly lifted over the cutting board then set back down"
+ },
+ {
+  "t0": 108.01,
+  "t1": 115.01,
+  "action": "opens microwave",
+  "objects": [
+   "black bowl of beaten egg",
+   "tortilla"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "microwave door is being opened while holding the bowl"
+ },
+ {
+  "t0": 112.01,
+  "t1": 119.02,
+  "action": "puts bowl in microwave",
+  "objects": [
+   "bowl of beaten egg",
+   "microwave"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "bowl of eggs moved from counter into open microwave"
+ },
+ {
+  "t0": 116.02,
+  "t1": 123.02,
+  "action": "heat in microwave",
+  "objects": [
+   "bowl of beaten egg"
+  ],
+  "tools": [
+   "microwave"
+  ],
+  "amount": null,
+  "after": "bowl is placed inside the closed microwave"
+ },
+ {
+  "t0": 120.02,
+  "t1": 127.03,
+  "action": "sets microwave timer",
+  "objects": [
+   "microwave"
+  ],
+  "tools": [],
+  "amount": ":15",
+  "after": "microwave display shows set time and hands move from microwave to tablet"
+ },
+ {
+  "t0": 124.02,
+  "t1": 131.03,
+  "action": "scroll on tablet",
+  "objects": [
+   "tablet computer",
+   "tortilla"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "arms are lowered revealing the counter and the cutting board is slightly repositioned"
+ },
+ {
+  "t0": 128.03,
+  "t1": 135.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "cutting board with tortilla pulled forward and centered, both hands holding it"
+ },
+ {
+  "t0": 132.03,
+  "t1": 139.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 136.0,
+  "t1": 143.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "nothing changes"
+ },
+ {
+  "t0": 140.01,
+  "t1": 147.01,
+  "action": "none",
+  "objects": [
+   "tortilla"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 144.01,
+  "t1": 151.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "tortilla unchanged on cutting board, camera shifts to overhead view"
+ },
+ {
+  "t0": 148.01,
+  "t1": 155.02,
+  "action": "none",
+  "objects": [
+   "tortilla"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "tortilla unchanged; camera moves down so tablet, sink and counter items move out of view"
+ },
+ {
+  "t0": 152.02,
+  "t1": 159.03,
+  "action": "none",
+  "objects": [
+   "tortilla"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "nothing changes"
+ },
+ {
+  "t0": 156.02,
+  "t1": 163.03,
+  "action": "none",
+  "objects": [
+   "tortilla"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "no visible change, tortilla remains on cutting board"
+ },
+ {
+  "t0": 160.03,
+  "t1": 167.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 164.03,
+  "t1": 171.0,
+  "action": "none",
+  "objects": [
+   "tortilla"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 168.0,
+  "t1": 175.01,
+  "action": "none",
+  "objects": [
+   "tortilla"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 172.01,
+  "t1": 179.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 176.01,
+  "t1": 183.02,
+  "action": "none",
+  "objects": [
+   "tortilla"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "nothing changes to the tortilla, camera viewpoint shifts slightly left"
+ },
+ {
+  "t0": 180.01,
+  "t1": 187.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 184.02,
+  "t1": 191.02,
+  "action": "none",
+  "objects": [
+   "tortilla"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 188.02,
+  "t1": 195.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 192.03,
+  "t1": 199.03,
+  "action": "none",
+  "objects": [
+   "tortilla",
+   "cutting board"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hand is lifted off cutting board and out of frame"
+ },
+ {
+  "t0": 196.03,
+  "t1": 203.0,
+  "action": "none",
+  "objects": [
+   "tortilla"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "hand is no longer touching the cutting board"
+ },
+ {
+  "t0": 200.03,
+  "t1": 207.01,
+  "action": "none",
+  "objects": [
+   "tortilla"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 204.0,
+  "t1": 211.01,
+  "action": "none",
+  "objects": [
+   "tortilla"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 208.01,
+  "t1": 215.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 212.01,
+  "t1": 219.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "camera tilts up to reveal tablet, microwave and counter items, tortilla on cutting board unchanged"
+ },
+ {
+  "t0": 216.02,
+  "t1": 223.02,
+  "action": "operate microwave",
+  "objects": [
+   "microwave",
+   "bowl"
+  ],
+  "tools": [
+   "microwave"
+  ],
+  "amount": "1:10",
+  "after": "microwave door is open with bowl visible inside"
+ },
+ {
+  "t0": 220.02,
+  "t1": 227.03,
+  "action": "heat cheese in microwave",
+  "objects": [
+   "microwave",
+   "bowl of cheese",
+   "tortilla"
+  ],
+  "tools": [
+   "tongs"
+  ],
+  "amount": null,
+  "after": "microwave door is open with bowl inside and a tortilla is laid out on the cutting board"
+ },
+ {
+  "t0": 224.02,
+  "t1": 231.03,
+  "action": "placing cheese on tortilla in microwave",
+  "objects": [
+   "tortilla",
+   "cheese"
+  ],
+  "tools": [
+   "microwave",
+   "bowl"
+  ],
+  "amount": null,
+  "after": "tortilla with cheese is positioned in the bowl inside the open microwave"
+ },
+ {
+  "t0": 228.03,
+  "t1": 235.0,
+  "action": "stacking cheese slices",
+  "objects": [
+   "cheese slices",
+   "bowl"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "multiple cheese slices are stacked in the bowl inside the microwave"
+ },
+ {
+  "t0": 232.03,
+  "t1": 239.01,
+  "action": "position bowl and close microwave",
+  "objects": [
+   "bowl"
+  ],
+  "tools": [
+   "microwave"
+  ],
+  "amount": "1:12",
+  "after": "microwave door is closed"
+ },
+ {
+  "t0": 236.0,
+  "t1": 243.01,
+  "action": "close and run microwave",
+  "objects": [
+   "microwave"
+  ],
+  "tools": [],
+  "amount": "1:13",
+  "after": "microwave door is closed"
+ },
+ {
+  "t0": 240.01,
+  "t1": 247.01,
+  "action": "none",
+  "objects": [
+   "tortilla"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "drawer is open and a measuring scoop is in hand"
+ },
+ {
+  "t0": 244.01,
+  "t1": 251.02,
+  "action": "none",
+  "objects": [],
+  "tools": [
+   "pizza cutter"
+  ],
+  "amount": null,
+  "after": "a drawer is opened and a pizza cutter is taken out"
+ },
+ {
+  "t0": 248.01,
+  "t1": 255.02,
+  "action": "carries knobs to cutting board",
+  "objects": [
+   "tortilla",
+   "stove knobs"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "two black knobs are placed on the cutting board next to the tortilla"
+ },
+ {
+  "t0": 252.02,
+  "t1": 259.03,
+  "action": "examine measuring spoons",
+  "objects": [
+   "measuring spoons"
+  ],
+  "tools": [
+   "measuring spoons"
+  ],
+  "amount": null,
+  "after": "measuring spoons are removed from drawer to above cutting board"
+ },
+ {
+  "t0": 256.02,
+  "t1": 263.03,
+  "action": "inspects measuring spoons",
+  "objects": [
+   "measuring spoons"
+  ],
+  "tools": [
+   "measuring spoons"
+  ],
+  "amount": null,
+  "after": "spoons still held in hands, tortilla unchanged on board"
+ },
+ {
+  "t0": 260.03,
+  "t1": 267.0,
+  "action": "holding measuring spoons",
+  "objects": [
+   "measuring spoons"
+  ],
+  "tools": [
+   "measuring spoons"
+  ],
+  "amount": null,
+  "after": "hands lower the spoons down out of view"
+ },
+ {
+  "t0": 264.03,
+  "t1": 271.0,
+  "action": "places measuring spoons on board",
+  "objects": [
+   "tortilla",
+   "cutting board"
+  ],
+  "tools": [
+   "measuring spoons"
+  ],
+  "amount": null,
+  "after": "measuring spoons are resting on cutting board beside tortilla"
+ },
+ {
+  "t0": 268.0,
+  "t1": 275.01,
+  "action": "places measuring spoons on cutting board",
+  "objects": [
+   "tortilla",
+   "cutting board"
+  ],
+  "tools": [
+   "measuring spoons"
+  ],
+  "amount": null,
+  "after": "measuring spoons are resting at top of board above tortilla and hands are out of frame"
+ },
+ {
+  "t0": 272.01,
+  "t1": 279.01,
+  "action": "places tortilla",
+  "objects": [
+   "tortilla"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "hand withdrawn leaving tortilla centered on board"
+ },
+ {
+  "t0": 276.01,
+  "t1": 283.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 280.01,
+  "t1": 287.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change, tortilla remains untouched on cutting board"
+ },
+ {
+  "t0": 284.02,
+  "t1": 291.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 288.02,
+  "t1": 295.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 292.03,
+  "t1": 299.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 296.03,
+  "t1": 303.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 300.03,
+  "t1": 307.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 304.0,
+  "t1": 311.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 308.01,
+  "t1": 315.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 312.01,
+  "t1": 319.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "camera tilts up to reveal the microwave in the background, the tortilla on the cutting board is otherwise unchanged"
+ },
+ {
+  "t0": 316.02,
+  "t1": 323.02,
+  "action": "open microwave and handle bowl",
+  "objects": [
+   "microwave",
+   "bowl"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the microwave door is open"
+ },
+ {
+  "t0": 320.02,
+  "t1": 327.03,
+  "action": "removes bowl from microwave",
+  "objects": [
+   "microwave",
+   "bowl"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "bowl is out of the open microwave and placed on cutting board next to tortilla"
+ },
+ {
+  "t0": 324.02,
+  "t1": 331.03,
+  "action": "remove bowl from microwave",
+  "objects": [
+   "bowl of food",
+   "tortilla"
+  ],
+  "tools": [
+   "microwave"
+  ],
+  "amount": null,
+  "after": "bowl is on cutting board next to tortilla and microwave door is closed"
+ },
+ {
+  "t0": 328.03,
+  "t1": 335.0,
+  "action": "take heated bowl from microwave",
+  "objects": [
+   "bowl of mashed food",
+   "tortilla"
+  ],
+  "tools": [
+   "microwave",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "bowl is out of microwave and placed on cutting board next to tortilla"
+ },
+ {
+  "t0": 332.03,
+  "t1": 339.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "person steps back from counter and pans to stove then back"
+ },
+ {
+  "t0": 336.0,
+  "t1": 343.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "view shifts from stove to counter, no change to items"
+ },
+ {
+  "t0": 340.01,
+  "t1": 347.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "camera pans away from tortilla on counter to floor, stove and sink with no work done"
+ },
+ {
+  "t0": 344.01,
+  "t1": 351.02,
+  "action": "opens a jar",
+  "objects": [
+   "jar",
+   "tortilla"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hands are holding an open jar over a tortilla on the counter"
+ },
+ {
+  "t0": 348.01,
+  "t1": 355.02,
+  "action": "opens jam jar",
+  "objects": [
+   "jam jar"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "jar is open and a small dollop of jam is on the cutting board next to the tortilla"
+ },
+ {
+  "t0": 352.02,
+  "t1": 359.03,
+  "action": "measures sauce",
+  "objects": [
+   "sauce",
+   "tortilla"
+  ],
+  "tools": [
+   "measuring spoon",
+   "bottle"
+  ],
+  "amount": null,
+  "after": "holding sauce bottle and measuring spoon over it with a small dollop on the board"
+ },
+ {
+  "t0": 356.02,
+  "t1": 363.03,
+  "action": "measures sauce with spoon",
+  "objects": [
+   "taco sauce bottle",
+   "tortilla"
+  ],
+  "tools": [
+   "measuring spoon"
+  ],
+  "amount": null,
+  "after": "measuring spoon is picked up from board and held while sauce bottle is set down"
+ },
+ {
+  "t0": 360.03,
+  "t1": 367.03,
+  "action": "pour sauce into bowl",
+  "objects": [
+   "sauce bottle",
+   "small black bowl"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "sauce is poured from bottle into the small black bowl with eggs"
+ },
+ {
+  "t0": 364.03,
+  "t1": 371.0,
+  "action": "pours sauce onto eggs",
+  "objects": [
+   "scrambled eggs"
+  ],
+  "tools": [
+   "sauce bottle",
+   "spoon"
+  ],
+  "amount": null,
+  "after": "red sauce is on the eggs in the black bowl"
+ },
+ {
+  "t0": 368.0,
+  "t1": 375.01,
+  "action": "pours sauce and stirs eggs",
+  "objects": [
+   "eggs in bowl",
+   "sauce",
+   "tortilla"
+  ],
+  "tools": [
+   "sauce bottle",
+   "spoon"
+  ],
+  "amount": null,
+  "after": "bowl has red sauce mixed in, bottle is capped, and eggshell is on tortilla"
+ },
+ {
+  "t0": 372.0,
+  "t1": 379.01,
+  "action": "spoon topping onto eggs",
+  "objects": [
+   "eggs",
+   "tortilla",
+   "jam jar"
+  ],
+  "tools": [
+   "spoon",
+   "measuring spoons"
+  ],
+  "amount": null,
+  "after": "eggs have red topping and upper kitchen cabinet is open"
+ },
+ {
+  "t0": 376.01,
+  "t1": 383.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "kitchen cabinet above stove is open and hand is on a bottle"
+ },
+ {
+  "t0": 380.01,
+  "t1": 387.02,
+  "action": "sprinkle seasoning",
+  "objects": [
+   "tortilla"
+  ],
+  "tools": [
+   "spice jar"
+  ],
+  "amount": null,
+  "after": "spice jar moved from cabinet to over tortilla on cutting board"
+ },
+ {
+  "t0": 384.02,
+  "t1": 391.02,
+  "action": "opens a spice jar",
+  "objects": [
+   "spice jar"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the spice jar lid is removed"
+ },
+ {
+  "t0": 388.02,
+  "t1": 395.03,
+  "action": "sprinkle seasoning",
+  "objects": [
+   "cooked egg"
+  ],
+  "tools": [
+   "seasoning jar"
+  ],
+  "amount": null,
+  "after": "seasoning jar is opened and held over the black bowl"
+ },
+ {
+  "t0": 392.02,
+  "t1": 399.03,
+  "action": "sprinkles seasoning",
+  "objects": [
+   "black bowl of food"
+  ],
+  "tools": [
+   "spice jar"
+  ],
+  "amount": null,
+  "after": "seasoning is added to the food in the bowl"
+ },
+ {
+  "t0": 396.03,
+  "t1": 403.0,
+  "action": "sprinkle seasoning and put jar away",
+  "objects": [
+   "bowl of food"
+  ],
+  "tools": [
+   "spice jar"
+  ],
+  "amount": null,
+  "after": "spice jar is closed and stored in upper cabinet"
+ },
+ {
+  "t0": 400.03,
+  "t1": 407.01,
+  "action": "puts away spice jar",
+  "objects": [
+   "spice jar",
+   "kitchen cabinet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "spice jar is placed on the top cabinet shelf above the stove"
+ },
+ {
+  "t0": 404.0,
+  "t1": 411.01,
+  "action": "takes spice containers from cabinet",
+  "objects": [
+   "spice jars",
+   "kitchen cabinet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "spice containers appear on counter below and camera moves away from cabinet"
+ },
+ {
+  "t0": 408.01,
+  "t1": 415.01,
+  "action": "point at laptop recipe",
+  "objects": [
+   "laptop",
+   "tortilla"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "moves from spice cabinet to counter and points at laptop screen next to tortilla"
+ },
+ {
+  "t0": 412.01,
+  "t1": 419.02,
+  "action": "taps laptop touchscreen",
+  "objects": [
+   "laptop"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "laptop screen content is scrolled"
+ },
+ {
+  "t0": 416.02,
+  "t1": 423.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "camera view shifts from countertop to floor and stove"
+ },
+ {
+  "t0": 420.02,
+  "t1": 427.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "person moves from counter to refrigerator, opens door and reaches inside"
+ },
+ {
+  "t0": 424.02,
+  "t1": 431.03,
+  "action": "opening a jar",
+  "objects": [
+   "salsa jar"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "salsa jar is out of the refrigerator and in hands over the counter"
+ },
+ {
+  "t0": 428.03,
+  "t1": 435.0,
+  "action": "open salsa jar",
+  "objects": [
+   "salsa jar"
+  ],
+  "tools": [
+   "measuring spoon"
+  ],
+  "amount": null,
+  "after": "jar is open with lid placed on tortilla"
+ },
+ {
+  "t0": 432.03,
+  "t1": 439.01,
+  "action": "scoops salsa",
+  "objects": [
+   "salsa jar"
+  ],
+  "tools": [
+   "measuring spoon"
+  ],
+  "amount": null,
+  "after": "spoon is dipped into the salsa jar"
+ },
+ {
+  "t0": 436.0,
+  "t1": 443.01,
+  "action": "scoops salsa from jar",
+  "objects": [
+   "salsa jar",
+   "plate of eggs"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "spoon with salsa lifted out of jar and moved over small plate"
+ },
+ {
+  "t0": 440.01,
+  "t1": 447.01,
+  "action": "spoons salsa into bowl",
+  "objects": [
+   "salsa jar",
+   "black bowl with egg",
+   "tortilla"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "red salsa is added to the black bowl, jar is set down and small container is picked up"
+ },
+ {
+  "t0": 444.01,
+  "t1": 451.02,
+  "action": "close a jar",
+  "objects": [
+   "jar"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the open jar is closed with a lid and moved aside"
+ },
+ {
+  "t0": 448.01,
+  "t1": 455.02,
+  "action": "mixing and mashing",
+  "objects": [
+   "egg with red sauce in a small bowl"
+  ],
+  "tools": [
+   "fork"
+  ],
+  "amount": null,
+  "after": "the egg in the small black bowl is mashed and mixed with red sauce"
+ },
+ {
+  "t0": 452.02,
+  "t1": 459.03,
+  "action": "mixing food in bowl",
+  "objects": [
+   "food mixture"
+  ],
+  "tools": [
+   "fork"
+  ],
+  "amount": null,
+  "after": "mixture appears more mashed and blended"
+ },
+ {
+  "t0": 456.02,
+  "t1": 463.03,
+  "action": "mashing food in a bowl",
+  "objects": [
+   "bowl of food",
+   "tortilla"
+  ],
+  "tools": [
+   "utensil",
+   "tablet"
+  ],
+  "amount": null,
+  "after": "the bowl is moved to the side, the jar is opened, and the hand touches the tablet"
+ },
+ {
+  "t0": 460.03,
+  "t1": 467.03,
+  "action": "taps tablet",
+  "objects": [
+   "tablet",
+   "bowl"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "bowl moved from center to side of counter"
+ },
+ {
+  "t0": 464.03,
+  "t1": 471.0,
+  "action": "whisk egg",
+  "objects": [
+   "egg in small black bowl",
+   "tortilla"
+  ],
+  "tools": [
+   "fork",
+   "tablet"
+  ],
+  "amount": null,
+  "after": "egg is whisked and bowl is moved onto tortilla on cutting board"
+ },
+ {
+  "t0": 468.0,
+  "t1": 475.01,
+  "action": "transfers cooked egg onto tortilla",
+  "objects": [
+   "egg",
+   "tortilla"
+  ],
+  "tools": [
+   "bowl",
+   "fork"
+  ],
+  "amount": null,
+  "after": "bowl is empty and egg with sauce is on tortilla"
+ },
+ {
+  "t0": 472.0,
+  "t1": 479.01,
+  "action": "spoons filling onto tortilla",
+  "objects": [
+   "filling",
+   "tortilla"
+  ],
+  "tools": [
+   "bowl",
+   "spoon"
+  ],
+  "amount": null,
+  "after": "bowl is emptied and tortilla has filling piled in center with bowl set aside"
+ },
+ {
+  "t0": 476.01,
+  "t1": 483.02,
+  "action": "folding a tortilla",
+  "objects": [
+   "tortilla",
+   "filling"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "flat tortilla with filling is folded in half over the filling"
+ },
+ {
+  "t0": 480.01,
+  "t1": 487.02,
+  "action": "fill tortilla",
+  "objects": [
+   "tortilla"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "tortilla has more filling added and person leaves counter and walks toward stove"
+ },
+ {
+  "t0": 484.02,
+  "t1": 491.02,
+  "action": "fetch cheese from refrigerator",
+  "objects": [
+   "tortilla with filling",
+   "cheese package"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "person is at open refrigerator holding a package from the door shelf instead of at counter with tortilla"
+ },
+ {
+  "t0": 488.02,
+  "t1": 495.03,
+  "action": "retrieve and open packet",
+  "objects": [
+   "packet",
+   "tortilla"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "fridge is open and a tortilla with sauce is on the counter"
+ },
+ {
+  "t0": 492.02,
+  "t1": 499.03,
+  "action": "add cheese to tortilla",
+  "objects": [
+   "tortilla",
+   "cheese packet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "cheese packet taken from fridge and opened over tortilla"
+ },
+ {
+  "t0": 496.03,
+  "t1": 503.0,
+  "action": "add shredded cheese",
+  "objects": [
+   "tortilla",
+   "shredded cheese"
+  ],
+  "tools": [
+   "measuring spoons"
+  ],
+  "amount": null,
+  "after": "cheese bag is open and cheese is held over tortilla"
+ },
+ {
+  "t0": 500.03,
+  "t1": 507.01,
+  "action": "scooping shredded cheese",
+  "objects": [
+   "shredded cheese",
+   "tortilla"
+  ],
+  "tools": [
+   "measuring spoon"
+  ],
+  "amount": null,
+  "after": "measuring spoon is filled with shredded cheese and held over the tortilla"
+ },
+ {
+  "t0": 504.0,
+  "t1": 511.01,
+  "action": "adding cheese",
+  "objects": [
+   "tortilla",
+   "shredded cheese"
+  ],
+  "tools": [
+   "measuring spoon"
+  ],
+  "amount": null,
+  "after": "more cheese piled on tortilla"
+ },
+ {
+  "t0": 508.01,
+  "t1": 515.01,
+  "action": "adding shredded cheese",
+  "objects": [
+   "tortilla",
+   "shredded cheese"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "more shredded cheese piled on tortilla filling"
+ },
+ {
+  "t0": 512.01,
+  "t1": 519.02,
+  "action": "sprinkling shredded cheese onto tortilla",
+  "objects": [
+   "tortilla",
+   "shredded cheese"
+  ],
+  "tools": [
+   "measuring spoon",
+   "cheese bag"
+  ],
+  "amount": null,
+  "after": "a pile of cheese is added on top of the filling in center of tortilla"
+ },
+ {
+  "t0": 516.02,
+  "t1": 523.02,
+  "action": "spread filling on tortilla",
+  "objects": [
+   "tortilla",
+   "filling"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "spoon is set down on cutting board and shredded cheese bag is lifted up"
+ },
+ {
+  "t0": 520.02,
+  "t1": 527.03,
+  "action": "adds cheese and folds tortilla",
+  "objects": [
+   "tortilla",
+   "filling"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "more topping is on tortilla and tortilla is being folded"
+ },
+ {
+  "t0": 524.02,
+  "t1": 531.03,
+  "action": "sprinkle cheese and fold tortilla",
+  "objects": [
+   "tortilla",
+   "filling",
+   "shredded cheese"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "cheese is added to filling and tortilla is folded closed"
+ },
+ {
+  "t0": 528.03,
+  "t1": 535.0,
+  "action": "fold a tortilla",
+  "objects": [
+   "tortilla"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "open tortilla with filling is folded closed"
+ },
+ {
+  "t0": 532.03,
+  "t1": 539.01,
+  "action": "rolls a tortilla",
+  "objects": [
+   "tortilla"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "flat open tortilla becomes fully rolled closed"
+ },
+ {
+  "t0": 533.03,
+  "t1": 540.01,
+  "action": "rolling a tortilla",
+  "objects": [
+   "tortilla"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "flat tortilla with filling becomes fully rolled into a closed burrito"
+ }
+]

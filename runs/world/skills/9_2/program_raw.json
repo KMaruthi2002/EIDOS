@@ -1,0 +1,468 @@
+{
+ "title": "Microwaved bread and egg patty",
+ "domain": "cooking",
+ "inputs": {
+  "bread_slice_count": "1 slice",
+  "egg_count": "1 egg",
+  "microwave_time": "1:00"
+ },
+ "steps": [
+  {
+   "id": 1,
+   "do": "Place the cutting board flat on the counter",
+   "verb": "place",
+   "objects": [
+    "cutting board",
+    "counter"
+   ],
+   "tools": [],
+   "start": 8.0,
+   "end": 19.0,
+   "focus": "cutting board",
+   "done_when": "The cutting board lies flat on the counter",
+   "needs": [],
+   "optional": true,
+   "evidence": {
+    "start": "step1_start.jpg",
+    "end": "step1_end.jpg",
+    "boxes": [
+     [
+      0.3156,
+      0.3972,
+      0.5484,
+      0.7917
+     ],
+     [
+      0.2891,
+      0.1833,
+      0.4703,
+      0.3972
+     ]
+    ],
+    "outlined": "cutting board"
+   }
+  },
+  {
+   "id": 2,
+   "do": "Place {bread_slice_count} of bread on the cutting board",
+   "verb": "place",
+   "objects": [
+    "bread slice",
+    "cutting board"
+   ],
+   "tools": [],
+   "start": 20.0,
+   "end": 55.0,
+   "focus": "bread slice",
+   "done_when": "One whole bread slice lies on the cutting board",
+   "needs": [
+    1
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step2_start.jpg",
+    "end": "step2_end.jpg",
+    "boxes": [
+     [
+      0.7234,
+      0.4417,
+      0.8234,
+      0.6
+     ]
+    ],
+    "outlined": "bread slice"
+   }
+  },
+  {
+   "id": 3,
+   "do": "Dice the bread slice into small cubes with the knife",
+   "verb": "dice",
+   "objects": [
+    "bread slice",
+    "cutting board"
+   ],
+   "tools": [
+    "knife"
+   ],
+   "start": 56.0,
+   "end": 115.0,
+   "focus": "bread cubes",
+   "done_when": "The bread slice is replaced by small bread cubes gathered on the cutting board",
+   "needs": [
+    2
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step3_start.jpg",
+    "end": "step3_end.jpg",
+    "boxes": [
+     [
+      0.4781,
+      0.4361,
+      0.6953,
+      0.7833
+     ]
+    ],
+    "outlined": "cutting board"
+   }
+  },
+  {
+   "id": 4,
+   "do": "Mash the butter in the bowl with the spoon",
+   "verb": "mash",
+   "objects": [
+    "butter",
+    "bowl"
+   ],
+   "tools": [
+    "spoon"
+   ],
+   "start": 148.0,
+   "end": 187.0,
+   "focus": "butter",
+   "done_when": "The butter is broken into soft mashed chunks in the bowl",
+   "needs": [],
+   "optional": false,
+   "evidence": {
+    "start": "step4_start.jpg",
+    "end": "step4_end.jpg",
+    "boxes": [
+     [
+      0.3781,
+      0.3472,
+      0.5547,
+      0.6778
+     ]
+    ],
+    "outlined": "bowl"
+   }
+  },
+  {
+   "id": 5,
+   "do": "Melt the mashed butter in the microwave and place the bowl on the cutting board",
+   "verb": "melt",
+   "objects": [
+    "butter",
+    "small bowl"
+   ],
+   "tools": [
+    "microwave"
+   ],
+   "start": 188.0,
+   "end": 267.0,
+   "focus": "melted butter",
+   "done_when": "Liquid melted butter is visible in the small bowl on the cutting board",
+   "needs": [
+    4
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step5_start.jpg",
+    "end": "step5_end.jpg",
+    "boxes": [
+     [
+      0.4422,
+      0.2611,
+      0.5344,
+      0.4194
+     ],
+     [
+      0.425,
+      0.5833,
+      0.5625,
+      0.8361
+     ]
+    ],
+    "outlined": "small bowl"
+   }
+  },
+  {
+   "id": 6,
+   "do": "Crack {egg_count} into a small bowl",
+   "verb": "crack",
+   "objects": [
+    "egg",
+    "small bowl"
+   ],
+   "tools": [],
+   "start": 316.0,
+   "end": 355.0,
+   "focus": "cracked egg",
+   "done_when": "Raw egg yolk and white are in the small bowl with no shell in the bowl",
+   "needs": [],
+   "optional": false,
+   "evidence": {
+    "start": "step6_start.jpg",
+    "end": "step6_end.jpg",
+    "boxes": [
+     [
+      0.7172,
+      0.1694,
+      0.8328,
+      0.3583
+     ],
+     [
+      0.0,
+      0.3639,
+      0.0922,
+      0.575
+     ]
+    ],
+    "outlined": "small bowl"
+   }
+  },
+  {
+   "id": 7,
+   "do": "Beat the egg with the fork until the yolk and white are blended",
+   "verb": "beat",
+   "objects": [
+    "egg",
+    "small bowl"
+   ],
+   "tools": [
+    "fork"
+   ],
+   "start": 352.0,
+   "end": 383.0,
+   "focus": "beaten egg",
+   "done_when": "The small bowl contains uniformly blended yellow beaten egg",
+   "needs": [
+    6
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step7_start.jpg",
+    "end": "step7_end.jpg",
+    "boxes": [
+     [
+      0.4703,
+      0.3139,
+      0.5813,
+      0.5139
+     ],
+     [
+      0.1187,
+      0.0833,
+      0.2609,
+      0.3056
+     ]
+    ],
+    "outlined": "small bowl"
+   }
+  },
+  {
+   "id": 8,
+   "do": "Sprinkle seasoning over the diced bread on the cutting board",
+   "verb": "sprinkle",
+   "objects": [
+    "seasoning",
+    "bread cubes",
+    "cutting board"
+   ],
+   "tools": [],
+   "start": 416.0,
+   "end": 475.0,
+   "focus": "bread cubes",
+   "done_when": "Seasoning specks are visible over the bread cubes on the cutting board",
+   "needs": [
+    3
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step8_start.jpg",
+    "end": "step8_end.jpg"
+   }
+  },
+  {
+   "id": 9,
+   "do": "Press the garlic into a small bowl with the garlic press",
+   "verb": "press",
+   "objects": [
+    "garlic",
+    "small bowl"
+   ],
+   "tools": [
+    "garlic press"
+   ],
+   "start": 456.0,
+   "end": 483.0,
+   "focus": "pressed garlic",
+   "done_when": "Minced garlic is visible in the small bowl",
+   "needs": [],
+   "optional": false,
+   "evidence": {
+    "start": "step9_start.jpg",
+    "end": "step9_end.jpg",
+    "boxes": [
+     [
+      0.6625,
+      0.2778,
+      0.7906,
+      0.4861
+     ],
+     [
+      0.6141,
+      0.4722,
+      0.7125,
+      0.6306
+     ],
+     [
+      0.0,
+      0.5667,
+      0.0469,
+      0.7444
+     ]
+    ],
+    "outlined": "small bowl"
+   }
+  },
+  {
+   "id": 10,
+   "do": "Scoop the seasoned bread cubes and pressed garlic into the bowl with the beaten egg and melted butter",
+   "verb": "scoop",
+   "objects": [
+    "bread cubes",
+    "garlic",
+    "beaten egg",
+    "melted butter",
+    "bowl"
+   ],
+   "tools": [
+    "spoon",
+    "knife"
+   ],
+   "start": 508.0,
+   "end": 527.0,
+   "focus": "bowl mixture",
+   "done_when": "The cutting board is clear and the bread, garlic, egg and butter are together in the bowl",
+   "needs": [
+    5,
+    7,
+    8,
+    9
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step10_start.jpg",
+    "end": "step10_end.jpg"
+   }
+  },
+  {
+   "id": 11,
+   "do": "Mash the contents of the bowl with the fork until evenly combined",
+   "verb": "mash",
+   "objects": [
+    "bowl mixture"
+   ],
+   "tools": [
+    "fork"
+   ],
+   "start": 524.0,
+   "end": 555.0,
+   "focus": "mashed mixture",
+   "done_when": "The bowl contains a uniform mashed mixture with no large dry bread cubes visible",
+   "needs": [
+    10
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step11_start.jpg",
+    "end": "step11_end.jpg",
+    "boxes": [
+     [
+      0.4688,
+      0.3611,
+      0.5516,
+      0.5083
+     ]
+    ],
+    "outlined": "mashed mixture"
+   }
+  },
+  {
+   "id": 12,
+   "do": "Microwave the bowl of mixture for {microwave_time} until set",
+   "verb": "microwave",
+   "objects": [
+    "bowl mixture",
+    "bowl"
+   ],
+   "tools": [
+    "microwave"
+   ],
+   "start": 556.0,
+   "end": 571.0,
+   "focus": "cooked mixture",
+   "done_when": "The mixture is firm and set in the bowl, holding together instead of flowing",
+   "needs": [
+    11
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step12_start.jpg",
+    "end": "step12_end.jpg"
+   }
+  },
+  {
+   "id": 13,
+   "do": "Invert the cooked mixture from the bowl onto the plate",
+   "verb": "invert",
+   "objects": [
+    "cooked mixture",
+    "bowl",
+    "plate"
+   ],
+   "tools": [],
+   "start": 652.0,
+   "end": 679.0,
+   "focus": "mound",
+   "done_when": "A free-standing moulded mound sits on the plate and the bowl is empty",
+   "needs": [
+    12
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step13_start.jpg",
+    "end": "step13_end.jpg",
+    "boxes": [
+     [
+      0.5266,
+      0.6667,
+      0.5953,
+      0.8028
+     ]
+    ],
+    "outlined": "cooked mixture"
+   }
+  },
+  {
+   "id": 14,
+   "do": "Cut the mound into separate pieces with the knife",
+   "verb": "cut",
+   "objects": [
+    "mound",
+    "plate"
+   ],
+   "tools": [
+    "knife"
+   ],
+   "start": 676.0,
+   "end": 703.0,
+   "focus": "patty pieces",
+   "done_when": "The mound is divided into separate cut pieces on the plate",
+   "needs": [
+    13
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step14_start.jpg",
+    "end": "step14_end.jpg"
+   }
+  }
+ ],
+ "compiled_by": "muse-wonder-1.0",
+ "learned_from": "9_2.mp4",
+ "video_seconds": 758.02,
+ "recipe": "Microwave French Toast",
+ "learn_seconds": 153.3
+}

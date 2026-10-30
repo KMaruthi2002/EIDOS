@@ -1,0 +1,474 @@
+{
+ "title": "Microwave Egg and Cheese Burrito",
+ "domain": "cooking",
+ "inputs": {
+  "egg_count": "1 egg",
+  "tortilla_count": "1 tortilla",
+  "first_microwave_time": "0:15",
+  "second_microwave_time": "1:10"
+ },
+ "steps": [
+  {
+   "id": 1,
+   "do": "Crack {egg_count} into the bowl and discard the shell",
+   "verb": "crack",
+   "objects": [
+    "egg",
+    "bowl"
+   ],
+   "tools": [],
+   "start": 24.0,
+   "end": 39.0,
+   "focus": "bowl",
+   "done_when": "The bowl contains a raw cracked egg with the yolk and white visible and no shell in the bowl",
+   "needs": [],
+   "optional": false,
+   "evidence": {
+    "start": "step1_start.jpg",
+    "end": "step1_end.jpg",
+    "boxes": [
+     [
+      0.4219,
+      0.6639,
+      0.5703,
+      0.9417
+     ],
+     [
+      0.0,
+      0.8083,
+      0.0766,
+      0.9972
+     ]
+    ],
+    "outlined": "bowl"
+   }
+  },
+  {
+   "id": 2,
+   "do": "Whisk the egg in the bowl until the yolk and white are uniformly mixed",
+   "verb": "whisk",
+   "objects": [
+    "egg",
+    "bowl"
+   ],
+   "tools": [
+    "whisk"
+   ],
+   "start": 40.0,
+   "end": 75.0,
+   "focus": "beaten egg",
+   "done_when": "The egg in the bowl is a uniform beaten mixture with no separate yolk visible",
+   "needs": [
+    1
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step2_start.jpg",
+    "end": "step2_end.jpg",
+    "boxes": [
+     [
+      0.4656,
+      0.5639,
+      0.6047,
+      0.8111
+     ],
+     [
+      0.0,
+      0.6667,
+      0.1187,
+      0.8778
+     ]
+    ],
+    "outlined": "bowl"
+   }
+  },
+  {
+   "id": 3,
+   "do": "Place {tortilla_count} flat on the cutting board",
+   "verb": "place",
+   "objects": [
+    "tortilla",
+    "cutting board"
+   ],
+   "tools": [],
+   "start": 80.0,
+   "end": 103.0,
+   "focus": "tortilla",
+   "done_when": "One flat tortilla lies on the cutting board",
+   "needs": [],
+   "optional": true,
+   "evidence": {
+    "start": "step3_start.jpg",
+    "end": "step3_end.jpg",
+    "boxes": [
+     [
+      0.4188,
+      0.7361,
+      0.5984,
+      0.9972
+     ],
+     [
+      0.0,
+      0.7583,
+      0.0484,
+      0.975
+     ]
+    ],
+    "outlined": "tortilla"
+   }
+  },
+  {
+   "id": 4,
+   "do": "Place the bowl of beaten egg in the microwave and heat it for {first_microwave_time}",
+   "verb": "heat",
+   "objects": [
+    "beaten egg",
+    "bowl"
+   ],
+   "tools": [
+    "microwave"
+   ],
+   "start": 108.0,
+   "end": 131.0,
+   "focus": "microwave",
+   "done_when": "The bowl of egg is inside the closed microwave",
+   "needs": [
+    2
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step4_start.jpg",
+    "end": "step4_end.jpg",
+    "boxes": [
+     [
+      0.3344,
+      0.0,
+      0.6891,
+      0.1639
+     ]
+    ],
+    "outlined": "microwave"
+   }
+  },
+  {
+   "id": 5,
+   "do": "Add cheese slices to the egg in the bowl inside the microwave",
+   "verb": "add",
+   "objects": [
+    "cheese slices",
+    "egg",
+    "bowl"
+   ],
+   "tools": [
+    "microwave"
+   ],
+   "start": 220.0,
+   "end": 235.0,
+   "focus": "cheese slices",
+   "done_when": "Cheese slices are stacked on the egg in the bowl",
+   "needs": [
+    4
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step5_start.jpg",
+    "end": "step5_end.jpg",
+    "boxes": [
+     [
+      0.4594,
+      0.3,
+      0.5312,
+      0.375
+     ]
+    ],
+    "outlined": "egg"
+   }
+  },
+  {
+   "id": 6,
+   "do": "Close the microwave and heat the egg and cheese for {second_microwave_time}",
+   "verb": "heat",
+   "objects": [
+    "egg",
+    "cheese slices",
+    "bowl"
+   ],
+   "tools": [
+    "microwave"
+   ],
+   "start": 232.0,
+   "end": 243.0,
+   "focus": "microwave",
+   "done_when": "The bowl of egg and cheese is inside the closed microwave",
+   "needs": [
+    5
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step6_start.jpg",
+    "end": "step6_end.jpg"
+   }
+  },
+  {
+   "id": 7,
+   "do": "Remove the bowl from the microwave and place it on the cutting board next to the tortilla",
+   "verb": "remove",
+   "objects": [
+    "bowl",
+    "cooked egg",
+    "tortilla"
+   ],
+   "tools": [
+    "microwave"
+   ],
+   "start": 316.0,
+   "end": 331.0,
+   "focus": "bowl",
+   "done_when": "The bowl of cooked egg is on the cutting board next to the tortilla and the microwave is empty",
+   "needs": [
+    3,
+    6
+   ],
+   "optional": true,
+   "evidence": {
+    "start": "step7_start.jpg",
+    "end": "step7_end.jpg",
+    "boxes": [
+     [
+      0.4844,
+      0.3278,
+      0.6594,
+      0.6417
+     ]
+    ],
+    "outlined": "bowl"
+   }
+  },
+  {
+   "id": 8,
+   "do": "Pour sauce onto the cooked egg in the bowl",
+   "verb": "pour",
+   "objects": [
+    "sauce",
+    "cooked egg",
+    "bowl"
+   ],
+   "tools": [
+    "spoon"
+   ],
+   "start": 360.0,
+   "end": 379.0,
+   "focus": "cooked egg",
+   "done_when": "Red sauce is visible on the cooked egg in the bowl",
+   "needs": [
+    7
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step8_start.jpg",
+    "end": "step8_end.jpg"
+   }
+  },
+  {
+   "id": 9,
+   "do": "Sprinkle seasoning over the cooked egg in the bowl",
+   "verb": "sprinkle",
+   "objects": [
+    "seasoning",
+    "cooked egg",
+    "bowl"
+   ],
+   "tools": [
+    "spice jar"
+   ],
+   "start": 388.0,
+   "end": 403.0,
+   "focus": "cooked egg",
+   "done_when": "Seasoning specks are visible on the cooked egg in the bowl",
+   "needs": [
+    7
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step9_start.jpg",
+    "end": "step9_end.jpg",
+    "boxes": [
+     [
+      0.4891,
+      0.0,
+      0.5391,
+      0.1583
+     ],
+     [
+      0.4844,
+      0.2556,
+      0.525,
+      0.4917
+     ],
+     [
+      0.4219,
+      0.7583,
+      0.4734,
+      0.9111
+     ]
+    ],
+    "outlined": "seasoning"
+   }
+  },
+  {
+   "id": 10,
+   "do": "Spoon salsa into the cooked egg in the bowl",
+   "verb": "spoon",
+   "objects": [
+    "salsa",
+    "cooked egg",
+    "bowl"
+   ],
+   "tools": [
+    "spoon"
+   ],
+   "start": 424.0,
+   "end": 447.0,
+   "focus": "salsa",
+   "done_when": "Chunks of red salsa are visible on the cooked egg in the bowl",
+   "needs": [
+    7
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step10_start.jpg",
+    "end": "step10_end.jpg",
+    "boxes": [
+     [
+      0.5297,
+      0.6444,
+      0.6172,
+      0.8083
+     ],
+     [
+      0.6406,
+      0.5694,
+      0.6937,
+      0.6722
+     ]
+    ],
+    "outlined": "salsa"
+   }
+  },
+  {
+   "id": 11,
+   "do": "Mash and mix the cooked egg with the sauce, seasoning and salsa",
+   "verb": "mash",
+   "objects": [
+    "cooked egg",
+    "sauce",
+    "seasoning",
+    "salsa",
+    "bowl"
+   ],
+   "tools": [
+    "fork"
+   ],
+   "start": 448.0,
+   "end": 467.0,
+   "focus": "egg mixture",
+   "done_when": "The bowl contains a mashed egg mixture evenly mixed with red sauce and salsa",
+   "needs": [
+    8,
+    9,
+    10
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step11_start.jpg",
+    "end": "step11_end.jpg"
+   }
+  },
+  {
+   "id": 12,
+   "do": "Spoon the egg mixture onto the centre of the tortilla",
+   "verb": "spoon",
+   "objects": [
+    "egg mixture",
+    "tortilla"
+   ],
+   "tools": [
+    "spoon",
+    "bowl"
+   ],
+   "start": 468.0,
+   "end": 479.0,
+   "focus": "tortilla",
+   "done_when": "The egg mixture is piled in the centre of the tortilla and the bowl is empty",
+   "needs": [
+    3,
+    11
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step12_start.jpg",
+    "end": "step12_end.jpg",
+    "boxes": [
+     [
+      0.3781,
+      0.5889,
+      0.5391,
+      0.875
+     ]
+    ],
+    "outlined": "tortilla"
+   }
+  },
+  {
+   "id": 13,
+   "do": "Sprinkle shredded cheese over the egg mixture on the tortilla",
+   "verb": "sprinkle",
+   "objects": [
+    "shredded cheese",
+    "egg mixture",
+    "tortilla"
+   ],
+   "tools": [
+    "spoon"
+   ],
+   "start": 492.0,
+   "end": 519.0,
+   "focus": "shredded cheese",
+   "done_when": "A pile of shredded cheese covers the egg mixture in the centre of the tortilla",
+   "needs": [
+    12
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step13_start.jpg",
+    "end": "step13_end.jpg"
+   }
+  },
+  {
+   "id": 14,
+   "do": "Fold and roll the tortilla closed around the filling",
+   "verb": "roll",
+   "objects": [
+    "tortilla",
+    "egg mixture",
+    "shredded cheese"
+   ],
+   "tools": [],
+   "start": 520.0,
+   "end": 540.0,
+   "focus": "burrito",
+   "done_when": "The tortilla is fully rolled into a closed burrito with no filling exposed",
+   "needs": [
+    13
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step14_start.jpg",
+    "end": "step14_end.jpg"
+   }
+  }
+ ],
+ "compiled_by": "muse-wonder-1.0",
+ "learned_from": "7_1.mp4",
+ "video_seconds": 540.01
+}

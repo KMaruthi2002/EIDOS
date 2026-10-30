@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EIDOS Live</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root {
+  --paper: #e9eef6; --surface: #ffffff; --sunk: #dde4ef; --ink: #13213a; --muted: #56647a; --line: #c9d3e1;
+  --contract: #2f54ff; --contract-soft: rgba(47, 84, 255, .10);
+  --pass: #0a8c62; --pass-soft: rgba(10, 140, 98, .12);
+  --fail: #d1374f; --fail-soft: rgba(209, 55, 79, .10);
+  --warn: #c27612; --warn-soft: rgba(224, 144, 31, .14);
+  --screen: #0c1424; --lift: 0 1px 0 rgba(19, 33, 58, .05), 0 18px 40px -26px rgba(19, 33, 58, .35);
+  --sans: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  --ease: cubic-bezier(.16, 1, .3, 1);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #0f1726; --surface: #172235; --sunk: #121b2b; --ink: #e3eaf5; --muted: #93a2b8; --line: #2a3a52;
+  --contract: #7d95ff; --contract-soft: rgba(125, 149, 255, .14); --pass: #3dd3a0; --pass-soft: rgba(61, 211, 160, .13);
+  --fail: #ff6f86; --fail-soft: rgba(255, 111, 134, .12); --warn: #f4b04a; --warn-soft: rgba(244, 176, 74, .14);
+  --screen: #070c16; --lift: 0 1px 0 rgba(0, 0, 0, .3), 0 20px 44px -26px rgba(0, 0, 0, .7); color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --paper: #0f1726; --surface: #172235; --sunk: #121b2b; --ink: #e3eaf5; --muted: #93a2b8; --line: #2a3a52;
+  --contract: #7d95ff; --contract-soft: rgba(125, 149, 255, .14); --pass: #3dd3a0; --pass-soft: rgba(61, 211, 160, .13);
+  --fail: #ff6f86; --fail-soft: rgba(255, 111, 134, .12); --warn: #f4b04a; --warn-soft: rgba(244, 176, 74, .14);
+  --screen: #070c16; --lift: 0 1px 0 rgba(0, 0, 0, .3), 0 20px 44px -26px rgba(0, 0, 0, .7); color-scheme: dark; }
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.5 var(--sans); -webkit-font-smoothing: antialiased; min-height: 100vh; }
+button, select, input { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--contract); outline-offset: 2px; border-radius: 6px; }
+h1, h2, h3 { margin: 0; text-wrap: balance; font-variation-settings: "wdth" 116; letter-spacing: -.01em; }
+p { margin: 0; }
+.mono { font-family: var(--mono); font-size: .86em; }
+
+.ants { --c: var(--contract);
+  background:
+    linear-gradient(90deg, var(--c) 50%, transparent 0) repeat-x top / 12px 2px,
+    linear-gradient(90deg, var(--c) 50%, transparent 0) repeat-x bottom / 12px 2px,
+    linear-gradient(0deg, var(--c) 50%, transparent 0) repeat-y left / 2px 12px,
+    linear-gradient(0deg, var(--c) 50%, transparent 0) repeat-y right / 2px 12px;
+  animation: ants .8s linear infinite; }
+@keyframes ants { to { background-position: 12px 0, -12px 100%, 0 -12px, 100% 12px; } }
+@media (prefers-reduced-motion: reduce) { .ants { animation: none; } * { transition-duration: .01ms !important; animation-duration: .01ms !important; } }
+
+.top { border-bottom: 1px solid var(--line); background: color-mix(in oklab, var(--paper) 88%, transparent); }
+.top-in { max-width: 1440px; margin: 0 auto; display: flex; align-items: center; gap: 22px; flex-wrap: wrap;
+  padding: 14px max(20px, env(safe-area-inset-right, 0px)) 14px max(20px, env(safe-area-inset-left, 0px)); }
+.mark { position: relative; padding: 4px 12px; font-weight: 800; letter-spacing: .16em; font-variation-settings: "wdth" 125; font-size: 17px; }
+.mark .ants { position: absolute; inset: 0; border-radius: 4px; }
+.worlds { display: flex; gap: 4px; padding: 4px; background: var(--sunk); border-radius: 999px; }
+.worlds a { text-decoration: none; color: var(--muted); font-weight: 650; padding: 6px 14px; border-radius: 999px; }
+.worlds a[aria-current="page"] { background: var(--surface); color: var(--ink); box-shadow: var(--lift); }
+.keynote { margin-left: auto; color: var(--muted); font-size: .9rem; }
+
+main { max-width: 1440px; margin: 0 auto; padding: 24px max(20px, env(safe-area-inset-right, 0px)) 60px max(20px, env(safe-area-inset-left, 0px));
+  display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 24px; align-items: start; }
+@media (max-width: 980px) { main { grid-template-columns: minmax(0, 1fr); } }
+
+.card { background: var(--surface); border-radius: 18px; box-shadow: var(--lift); padding: 20px; display: grid; gap: 14px; min-width: 0; }
+.lede { color: var(--muted); }
+.btn { border: 1px solid var(--line); background: var(--surface); padding: 9px 16px; border-radius: 999px; cursor: pointer; font-weight: 650; }
+.btn:hover:not(:disabled) { border-color: var(--contract); }
+.btn.primary { background: var(--contract); border-color: var(--contract); color: #fff; }
+.btn.stop { background: var(--fail); border-color: var(--fail); color: #fff; }
+.btn:disabled { opacity: .5; cursor: default; }
+.row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+select, input[type=text] { border: 1px solid var(--line); background: var(--surface); border-radius: 10px; padding: 8px 10px; min-width: 0; }
+
+/* ---------- the stage ---------- */
+.stage { position: relative; background: var(--screen); border-radius: 14px; overflow: hidden; aspect-ratio: 16 / 9; }
+.stage video { width: 100%; height: 100%; object-fit: contain; display: block; background: var(--screen); }
+.stage .empty { position: absolute; inset: 0; display: grid; place-items: center; color: #9fb0cc; text-align: center; padding: 24px; }
+.hud { position: absolute; left: 12px; right: 12px; top: 12px; display: flex; gap: 8px; justify-content: space-between; align-items: flex-start; pointer-events: none; }
+.pill { background: rgba(8, 14, 26, .78); color: #fff; border-radius: 999px; padding: 6px 12px; font-size: 13px; font-weight: 650; backdrop-filter: blur(6px); }
+.pill .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #ff5a6e; margin-right: 6px; animation: blink 1.2s infinite; }
+@keyframes blink { 50% { opacity: .25; } }
+.now { position: absolute; left: 12px; right: 12px; bottom: 12px; display: grid; gap: 6px; pointer-events: none; }
+.now .step { position: relative; background: rgba(8, 14, 26, .82); color: #fff; border-radius: 12px; padding: 10px 14px; font-weight: 650; }
+.now .step .ants { position: absolute; inset: 0; border-radius: 12px; --c: #8fa4ff; }
+.now .seen { color: #c8d3e8; font-size: 13px; padding: 0 4px; text-shadow: 0 1px 2px #000; }
+.flash { position: absolute; inset: 0; border: 4px solid var(--fail); border-radius: 14px; opacity: 0; pointer-events: none; }
+.flash.on { animation: flash 1.4s var(--ease); }
+@keyframes flash { 15% { opacity: 1; } 100% { opacity: 0; } }
+
+/* ---------- program ---------- */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.steps li { display: grid; grid-template-columns: 28px minmax(0, 1fr) auto; gap: 10px; align-items: start; padding: 9px 10px; border-radius: 12px; border: 1px solid transparent; transition: background .3s, border-color .3s; }
+.steps li .ic { width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; font-size: 12px; font-weight: 800; border: 1.5px solid var(--line); color: var(--muted); }
+.steps li.doing { background: var(--contract-soft); border-color: var(--contract); }
+.steps li.doing .ic { background: var(--contract); border-color: var(--contract); color: #fff; }
+.steps li.done .ic { background: var(--pass); border-color: var(--pass); color: #fff; }
+.steps li.bad .ic { background: var(--fail); border-color: var(--fail); color: #fff; }
+.steps li.missed { background: var(--fail-soft); }
+.steps li.missed .ic { border-color: var(--fail); color: var(--fail); }
+.steps li.next { border-color: var(--line); border-style: dashed; }
+.steps .txt { min-width: 0; }
+.steps .sub { color: var(--muted); font-size: .84rem; }
+button.tag { background: transparent; cursor: pointer; }
+button.tag:hover { border-color: var(--contract); color: var(--ink); }
+.steps .tag { font-size: .75rem; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 1px 8px; white-space: nowrap; }
+.ev { position: relative; width: 96px; border-radius: 6px; overflow: hidden; }
+.ev img { width: 100%; display: block; }
+.ev .box { position: absolute; border-radius: 2px; }
+
+.alerts { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.alerts li { border-radius: 12px; padding: 10px 12px; background: var(--fail-soft); border-left: 4px solid var(--fail); animation: slidein .5s var(--ease); }
+.alerts li.ok { background: var(--pass-soft); border-left-color: var(--pass); }
+.alerts li .t { font-family: var(--mono); font-size: .8rem; color: var(--muted); margin-right: 8px; }
+@keyframes slidein { from { transform: translateY(-6px); opacity: 0; } }
+.verdict { border-radius: 14px; padding: 14px 16px; font-weight: 700; }
+.verdict.good { background: var(--pass-soft); color: var(--pass); }
+.verdict.bad { background: var(--fail-soft); color: var(--fail); }
+.inputs { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 8px; }
+.inputs label { display: grid; gap: 3px; font-size: .84rem; color: var(--muted); }
+
+dialog { border: 0; border-radius: 18px; padding: 0; width: min(760px, calc(100vw - 32px)); background: var(--surface); color: var(--ink); box-shadow: var(--lift); }
+dialog::backdrop { background: rgba(8, 14, 26, .55); }
+dialog .in { padding: 22px; display: grid; gap: 14px; }
+.notes { max-height: 300px; overflow: auto; display: grid; gap: 4px; font-size: .9rem; }
+.notes div { display: grid; grid-template-columns: 70px minmax(0, 1fr); gap: 8px; }
+.notes .t { font-family: var(--mono); color: var(--muted); font-size: .8rem; }
+.err { color: var(--fail); font-weight: 650; }
+</style>
+</head>
+<body>
+<header class="top"><div class="top-in">
+  <div class="mark"><span class="ants" aria-hidden="true"></span>EIDOS</div>
+  <nav class="worlds" aria-label="Worlds"><a href="/">Screens</a><a href="/world" aria-current="page">Real world</a></nav>
+  <span class="keynote" id="keynote"></span>
+</div></header>
+
+<main>
+  <section class="card" aria-labelledby="h-live">
+    <div class="row" style="justify-content:space-between">
+      <h2 id="h-live">Follow along live</h2>
+      <div class="row">
+        <button class="btn primary" id="go" type="button" disabled>Start</button>
+        <button class="btn stop" id="stop" type="button" hidden>Finish</button>
+      </div>
+    </div>
+    <div class="stage" id="stage">
+      <video id="vid" playsinline muted></video>
+      <div class="empty" id="empty">Pick a skill, then use your camera or play a practice recording.<br>EIDOS watches as it happens and checks every step.</div>
+      <div class="hud"><span class="pill" id="live-pill" hidden><span class="dot"></span>Live <span id="clock" class="mono">0:00</span></span><span class="pill" id="seen-pill" hidden></span></div>
+      <div class="now" id="now" hidden><div class="step"><span class="ants" aria-hidden="true"></span><span id="now-txt"></span></div><div class="seen" id="now-seen"></div></div>
+      <div class="flash" id="flash"></div>
+    </div>
+    <div class="row">
+      <label>Watch:&nbsp;<select id="source" aria-label="What EIDOS watches"></select></label>
+      <label class="btn" style="cursor:pointer">Play a video file as live<input type="file" id="playfile" accept="video/*" hidden></label>
+      <label>Model:&nbsp;<select id="reader" aria-label="Model that watches"><option value="spark">Muse Spark (about 4 s a look)</option><option value="open">Muse Spark Open, open weights (about 10 s a look)</option></select></label>
+      <label class="row" style="gap:6px"><input type="checkbox" id="speak"> Speak the next step and alerts</label>
+    </div>
+    <p class="lede" id="source-note"></p>
+    <div id="verdict" hidden></div>
+    <div><h3 style="font-size:1rem;margin-bottom:8px">Alerts</h3><ul class="alerts" id="alerts"><li class="ok">No alerts yet.</li></ul></div>
+  </section>
+
+  <section class="card" aria-labelledby="h-skill">
+    <div class="row" style="justify-content:space-between">
+      <h2 id="h-skill">Skill</h2>
+      <button class="btn" id="learn-open" type="button">Learn from a video</button>
+    </div>
+    <select id="skill" aria-label="Skill"></select>
+    <p class="lede" id="skill-note"></p>
+    <details id="inputs-wrap" hidden><summary>Change the amounts</summary><div class="inputs" id="inputs" style="margin-top:10px"></div></details>
+    <div><h3 style="font-size:1rem;margin-bottom:8px">Program</h3><ol class="steps" id="steps"></ol></div>
+  </section>
+</main>
+
+<dialog id="learn">
+  <form class="in" method="dialog" id="learn-form">
+    <h2>Learn a skill from a real-world video</h2>
+    <p class="lede">Any hands-on task: cooking, a repair, assembly, a lab procedure. EIDOS watches the video eight seconds at a time, then compiles what it saw into a program with a visual contract for every step. No labels needed.</p>
+    <label>Video <input type="file" id="learn-file" accept="video/*" required></label>
+    <label>What is the task? (optional) <input type="text" id="learn-title" placeholder="e.g. Install a stick of RAM"></label>
+    <div class="row"><button class="btn primary" id="learn-go" type="button">Learn</button><button class="btn" value="cancel">Close</button></div>
+    <p id="learn-status" class="lede"></p>
+    <div class="notes" id="learn-notes"></div>
+  </form>
+</dialog>
+
+<canvas id="cv" hidden></canvas>
+
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const fmt = t => `${Math.floor(t / 60)}:${String(Math.floor(t % 60)).padStart(2, "0")}`;
+let skills = [], cur = null, session = null, timer = null, es = null, t0 = 0, stream = null, fileURL = null, state = null;
+
+async function init() {
+  try {
+    const live = await (await fetch("/api/live")).json();
+    $("#keynote").textContent = live.meta ? "Muse Spark is watching" : "Add a Meta Model API key to use the real world";
+  } catch {}
+  skills = await (await fetch("/api/world/skills")).json();
+  $("#skill").innerHTML = skills.map(s => `<option value="${s.id}">${esc(s.title || s.name)}${s.sample ? "" : " (yours)"}</option>`).join("")
+    || `<option value="">No skills yet: learn one from a video</option>`;
+  const want = location.hash.slice(1);
+  if (want && skills.some(s => s.id === want)) $("#skill").value = want;
+  await pick();
+}
+
+async function pick() {
+  const id = $("#skill").value;
+  if (!id) return;
+  cur = await (await fetch(`/api/world/skills/${id}`)).json();
+  const p = cur.program;
+  $("#skill-note").textContent = `Learned from ${cur.meta.source || p.learned_from}. ${p.steps.length} steps, ${p.domain || "hands-on task"}.`;
+  const ins = Object.entries(p.inputs || {});
+  $("#inputs-wrap").hidden = !ins.length;
+  $("#inputs").innerHTML = ins.map(([k, v]) => `<label>${esc(k.replaceAll("_", " "))}<input type="text" data-k="${esc(k)}" value="${esc(v)}"></label>`).join("");
+  drawSteps(null);
+  const opts = [`<option value="camera">Your camera</option>`].concat((cur.practice || []).map((r, i) => `<option value="p${i}">${esc(r.label)}</option>`));
+  $("#source").innerHTML = opts.join("");
+  if ((cur.practice || []).length) $("#source").value = "p0";
+  showSource();
+  $("#go").disabled = false;
+}
+
+function inputs() { const o = {}; document.querySelectorAll("#inputs input").forEach(i => o[i.dataset.k] = i.value); return o; }
+function bind(s) { const ins = { ...(cur.program.inputs || {}), ...inputs() }; return String(s).replace(/\{(\w+)\}/g, (m, k) => ins[k] ?? m); }
+
+function drawSteps(st) {
+  const p = cur.program, byId = Object.fromEntries((st?.steps || []).map(s => [s.id, s]));
+  const missing = new Set((st?.alerts || []).filter(a => a.type === "missing").map(a => a.step));
+  const next = new Set(st?.next || []);
+  $("#steps").innerHTML = p.steps.map(s => {
+    const x = byId[s.id] || {}, c = x.check;
+    let cls = x.state === "doing" ? "doing" : x.state === "done" ? (c && c.ok === false ? "bad" : "done") : "";
+    if (missing.has(s.id)) cls = "missed"; else if (!cls && next.has(s.id) && st) cls = "next";
+    const ic = cls === "done" ? "✓" : cls === "bad" ? "✗" : cls === "missed" ? "!" : s.id;
+    const sub = c && c.why && !c.pending ? `<div class="sub">${c.ok === false ? "Check failed: " : c.ok ? "Checked: " : "Could not see: "}${esc(c.why)}</div>`
+      : `<div class="sub">Done when: ${esc(bind(s.done_when))}</div>`;
+    const boxes = (s.evidence?.boxes || []).map(b => `<span class="box ants" style="left:${b[0] * 100}%;top:${b[1] * 100}%;width:${(b[2] - b[0]) * 100}%;height:${(b[3] - b[1]) * 100}%"></span>`).join("");
+    const img = s.evidence?.end ? `<div class="ev"><img src="/api/world/skills/${cur.meta.id}/file/evidence/${s.evidence.end}" alt="The demonstration after step ${s.id}${s.evidence.outlined ? ", with the " + esc(s.evidence.outlined) + " outlined" : ""}" loading="lazy">${boxes}</div>` : "";
+    const tag = st ? (s.optional ? ' <span class="tag">optional</span>' : "")
+      : ` <button class="tag" type="button" data-opt="${s.id}" title="${s.optional ? esc(s.why_optional || "Not required") + ". Click to make it required." : "Click if this step is only the demonstrator's habit"}">${s.optional ? "optional" : "required"}</button>`;
+    return `<li class="${cls}"><span class="ic">${ic}</span><div class="txt">${esc(bind(s.do))}${tag}${sub}</div>${img}</li>`;
+  }).join("");
+}
+
+function showSource() {
+  const v = $("#source").value, vid = $("#vid");
+  stopCamera();
+  if (v === "camera") {
+    vid.removeAttribute("src"); vid.load();
+    $("#empty").hidden = false;
+    $("#source-note").textContent = "Point your camera at your hands and the work. EIDOS sends one small frame per second.";
+  } else if (v === "file") {
+    vid.src = fileURL; $("#empty").hidden = true;
+    $("#source-note").textContent = "Your video plays in real time and EIDOS only ever sees what has played so far.";
+  } else {
+    const r = cur.practice[+v.slice(1)];
+    vid.src = `/api/world/skills/${cur.meta.id}/file/${r.file}`; $("#empty").hidden = true;
+    $("#source-note").textContent = `${r.note || ""} It plays in real time, and EIDOS only ever sees what has played so far.`;
+  }
+}
+
+async function startCamera() {
+  stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment", width: 1280 }, audio: false });
+  $("#vid").srcObject = stream; await $("#vid").play(); $("#empty").hidden = true;
+}
+function stopCamera() { if (stream) { stream.getTracks().forEach(t => t.stop()); stream = null; $("#vid").srcObject = null; } }
+
+function now() { return $("#source").value === "camera" ? (performance.now() - t0) / 1000 : $("#vid").currentTime; }
+
+async function start() {
+  $("#go").disabled = true;
+  $("#alerts").innerHTML = ""; $("#verdict").hidden = true;
+  try {
+    if ($("#source").value === "camera") await startCamera();
+    const r = await fetch("/api/world/live/start", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ skill: cur.meta.id, inputs: inputs(), reader: $("#reader").value }) });
+    if (!r.ok) throw new Error((await r.json()).detail || "Could not start");
+    session = (await r.json()).id;
+  } catch (e) { $("#alerts").innerHTML = `<li>${esc(e.message)}</li>`; $("#go").disabled = false; return; }
+  es = new EventSource(`/api/world/live/${session}/events`);
+  es.addEventListener("state", e => { state = JSON.parse(e.data); drawSteps(state); nowStep(); });
+  es.addEventListener("look", e => { const d = JSON.parse(e.data); $("#seen-pill").hidden = false; $("#seen-pill").textContent = d.what ? `Sees: ${d.what}` : "Watching"; });
+  es.addEventListener("alert", e => alert_(JSON.parse(e.data)));
+  es.addEventListener("dismissed", e => { const d = JSON.parse(e.data); const ul = $("#alerts"); if (ul.querySelector(".ok:only-child")) ul.innerHTML = "";
+    ul.insertAdjacentHTML("afterbegin", `<li class="ok"><span class="t">${fmt(d.t)}</span>Looked back before raising an alert, and it was done after all: ${esc(d.why)}</li>`); });
+  es.addEventListener("check", e => { const d = JSON.parse(e.data); if (d.ok) okNote(d); });
+  es.addEventListener("finished", e => { const d = JSON.parse(e.data); verdict(d); es.close(); });
+  t0 = performance.now();
+  if ($("#source").value !== "camera") { $("#vid").currentTime = 0; await $("#vid").play(); }
+  $("#live-pill").hidden = false; $("#stop").hidden = false; $("#go").hidden = true;
+  timer = setInterval(sendFrame, 1000);
+  $("#vid").onended = finish;
+}
+
+async function sendFrame() {
+  const vid = $("#vid"); if (!vid.videoWidth) return;
+  const t = now(); $("#clock").textContent = fmt(t);
+  const cv = $("#cv"), w = 448, h = Math.round(vid.videoHeight * w / vid.videoWidth);
+  cv.width = w; cv.height = h; cv.getContext("2d").drawImage(vid, 0, 0, w, h);
+  cv.toBlob(b => b && fetch(`/api/world/live/${session}/frame?t=${t.toFixed(2)}`, { method: "POST", body: b }), "image/jpeg", .75);
+}
+
+let lastSaid = "";
+function say(text) {
+  if (!$("#speak").checked || !("speechSynthesis" in window) || text === lastSaid) return;
+  lastSaid = text; const u = new SpeechSynthesisUtterance(text); u.rate = 1.05; speechSynthesis.speak(u);
+}
+function nowStep() {
+  if (!state || !state.current) { $("#now").hidden = true; return; }
+  const s = state.steps.find(x => x.id === state.current);
+  $("#now").hidden = false; $("#now-txt").textContent = `Step ${s.id}: ${s.do}`;
+  const nx = state.next.filter(n => n !== s.id).slice(0, 1).map(n => state.steps.find(x => x.id === n));
+  $("#now-seen").textContent = nx.length ? `Next: ${nx[0].do}` : "";
+  if (nx.length) say(`Next: ${nx[0].do}`);
+}
+
+function alert_(a) {
+  const ul = $("#alerts"); if (ul.querySelector(".ok:only-child")) ul.innerHTML = "";
+  ul.insertAdjacentHTML("afterbegin", `<li><span class="t">${fmt(a.t)}</span>${esc(bind(a.text))}</li>`);
+  const f = $("#flash"); f.classList.remove("on"); void f.offsetWidth; f.classList.add("on");
+  say(bind(a.text).split(":")[0] + ". " + bind(a.text).split(":").slice(1).join(":"));
+}
+function okNote(c) {
+  const ul = $("#alerts"); if (ul.querySelector(".ok:only-child")) ul.innerHTML = "";
+  ul.insertAdjacentHTML("afterbegin", `<li class="ok"><span class="t">${fmt(c.t)}</span>Step ${c.step} checked against the demonstration: ${esc(c.why)}</li>`);
+}
+
+async function finish() {
+  if (!session) return;
+  clearInterval(timer); $("#vid").pause(); stopCamera();
+  $("#stop").disabled = true; $("#stop").textContent = "Finishing...";
+  const d = await (await fetch(`/api/world/live/${session}/finish`, { method: "POST" })).json();
+  verdict(d);
+}
+function verdict(d) {
+  if (!d || $("#verdict").dataset.done === session) return;
+  $("#verdict").dataset.done = session;
+  const bad = d.alerts.length;
+  $("#verdict").hidden = false;
+  $("#verdict").className = "verdict " + (bad ? "bad" : "good");
+  $("#verdict").textContent = bad ? `Finished with ${bad} alert${bad > 1 ? "s" : ""}: the task did not follow the skill.` : "Finished: every required step was seen, in an allowed order, and every check passed.";
+  $("#live-pill").hidden = true; $("#stop").hidden = true; $("#stop").disabled = false; $("#stop").textContent = "Finish";
+  $("#go").hidden = false; $("#go").disabled = false; $("#go").textContent = "Start again"; session = null;
+}
+
+$("#steps").addEventListener("click", async e => {
+  const b = e.target.closest("[data-opt]"); if (!b || session) return;
+  const st = cur.program.steps.find(x => x.id === +b.dataset.opt); st.optional = !st.optional;
+  await fetch(`/api/world/skills/${cur.meta.id}/steps/${st.id}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ optional: st.optional }) });
+  drawSteps(null);
+});
+$("#skill").addEventListener("change", pick);
+$("#source").addEventListener("change", showSource);
+$("#playfile").addEventListener("change", e => {
+  const f = e.target.files[0]; if (!f) return;
+  if (fileURL) URL.revokeObjectURL(fileURL); fileURL = URL.createObjectURL(f);
+  if (!$("#source").querySelector('option[value="file"]')) $("#source").insertAdjacentHTML("beforeend", `<option value="file">Your video file</option>`);
+  $("#source").querySelector('option[value="file"]').textContent = f.name; $("#source").value = "file"; showSource();
+});
+$("#go").addEventListener("click", start);
+$("#stop").addEventListener("click", finish);
+$("#learn-open").addEventListener("click", () => $("#learn").showModal());
+$("#learn-go").addEventListener("click", async () => {
+  const f = $("#learn-file").files[0]; if (!f) { $("#learn-status").textContent = "Choose a video first."; return; }
+  const fd = new FormData(); fd.append("file", f); fd.append("title", $("#learn-title").value);
+  $("#learn-go").disabled = true; $("#learn-notes").innerHTML = ""; $("#learn-status").textContent = "Uploading...";
+  const r = await fetch("/api/world/learn", { method: "POST", body: fd });
+  if (!r.ok) { $("#learn-status").innerHTML = `<span class="err">${esc((await r.json()).detail)}</span>`; $("#learn-go").disabled = false; return; }
+  const rd = r.body.getReader(), dec = new TextDecoder(); let buf = "", done_id = null;
+  while (true) {
+    const { value, done } = await rd.read(); if (done) break;
+    buf += dec.decode(value, { stream: true });
+    let i; while ((i = buf.indexOf("\n\n")) >= 0) {
+      const chunk = buf.slice(0, i); buf = buf.slice(i + 2);
+      const ev = (chunk.match(/^event: (.*)$/m) || [])[1], data = JSON.parse((chunk.match(/^data: (.*)$/m) || [, "{}"])[1]);
+      if (ev === "status") $("#learn-status").textContent = data.msg;
+      if (ev === "note") { const n = data.note; if (n.action && n.action !== "none") $("#learn-notes").insertAdjacentHTML("beforeend", `<div><span class="t">${fmt(n.t0)}</span><span>${esc(n.action)}${n.amount ? ` (${esc(n.amount)})` : ""}</span></div>`); $("#learn-status").textContent = `Watched ${data.done} of ${data.of} windows`; }
+      if (ev === "program") { $("#learn-status").textContent = `Learned "${data.title}": ${data.steps.length} steps.`; $("#learn-notes").innerHTML = data.steps.map(s => `<div><span class="t">Step ${s.id}</span><span>${esc(s.do)}</span></div>`).join(""); }
+      if (ev === "error") $("#learn-status").innerHTML = `<span class="err">${esc(data.msg)}</span>`;
+      if (ev === "done") done_id = data.skill;
+    }
+  }
+  $("#learn-go").disabled = false;
+  if (done_id) { location.hash = done_id; await init(); }
+});
+init();
+</script>
+</body>
+</html>

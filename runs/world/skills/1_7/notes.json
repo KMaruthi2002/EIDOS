@@ -1,0 +1,1843 @@
+[
+ {
+  "t0": 0.0,
+  "t1": 7.01,
+  "action": "use laptop",
+  "objects": [
+   "laptop"
+  ],
+  "tools": [
+   "laptop"
+  ],
+  "amount": null,
+  "after": "view moves away from laptop to kitchen sink area"
+ },
+ {
+  "t0": 4.0,
+  "t1": 11.01,
+  "action": "opens dishwasher and pulls out rack",
+  "objects": [
+   "dishwasher"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "dishwasher door is open with lower rack pulled out"
+ },
+ {
+  "t0": 8.01,
+  "t1": 15.02,
+  "action": "remove bowl from dishwasher",
+  "objects": [
+   "dishwasher",
+   "bowl"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "dishwasher is closed again and person is holding the bowl by the stove"
+ },
+ {
+  "t0": 12.01,
+  "t1": 19.02,
+  "action": "closes dishwasher and places bowl on stovetop",
+  "objects": [
+   "white bowl",
+   "dishwasher",
+   "stovetop"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "dishwasher door is closed and white bowl is left on the stovetop"
+ },
+ {
+  "t0": 16.02,
+  "t1": 23.02,
+  "action": "place cup on stove and open bottle",
+  "objects": [
+   "white cup",
+   "orange bottle"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "white cup is sitting on stovetop and orange bottle is open with red cap in hand"
+ },
+ {
+  "t0": 20.02,
+  "t1": 27.03,
+  "action": "opens a bottle",
+  "objects": [
+   "bottle"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "red cap is removed and orange bottle is held up"
+ },
+ {
+  "t0": 24.02,
+  "t1": 31.03,
+  "action": "shakes bottle",
+  "objects": [
+   "orange juice bottle"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "red cap is placed on cutting board and person walks away from stove"
+ },
+ {
+  "t0": 28.03,
+  "t1": 35.0,
+  "action": "spray into cup",
+  "objects": [
+   "cup"
+  ],
+  "tools": [
+   "spray bottle"
+  ],
+  "amount": null,
+  "after": "cup is held in hand and being filled from the bottle"
+ },
+ {
+  "t0": 32.03,
+  "t1": 39.01,
+  "action": "spraying into cup",
+  "objects": [
+   "cup"
+  ],
+  "tools": [
+   "spray can"
+  ],
+  "amount": null,
+  "after": "cup contains liquid"
+ },
+ {
+  "t0": 36.0,
+  "t1": 43.01,
+  "action": "spraying into cup",
+  "objects": [
+   "cup",
+   "liquid"
+  ],
+  "tools": [
+   "spray bottle"
+  ],
+  "amount": null,
+  "after": "cup contains pale yellow liquid and is placed on cutting board, person picks up red tomato"
+ },
+ {
+  "t0": 40.01,
+  "t1": 47.01,
+  "action": "adds seasoning to cup and opens oven",
+  "objects": [
+   "cup"
+  ],
+  "tools": [
+   "seasoning bottle"
+  ],
+  "amount": null,
+  "after": "cup is on cutting board and oven door is being opened"
+ },
+ {
+  "t0": 44.01,
+  "t1": 51.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "person moved away from stove to sink area to refrigerator and is touching refrigerator door"
+ },
+ {
+  "t0": 48.01,
+  "t1": 55.02,
+  "action": "opens fridge and rearranges contents",
+  "objects": [
+   "refrigerator door",
+   "egg carton",
+   "ice cube tray"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "refrigerator door is open and both hands are touching containers on the shelf"
+ },
+ {
+  "t0": 52.02,
+  "t1": 59.03,
+  "action": "take an egg",
+  "objects": [
+   "egg",
+   "egg carton"
+  ],
+  "tools": [],
+  "amount": "1 egg",
+  "after": "an egg is removed from the carton in the fridge"
+ },
+ {
+  "t0": 56.02,
+  "t1": 63.03,
+  "action": "none",
+  "objects": [
+   "egg",
+   "refrigerator"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "an egg is taken from the fridge, the fridge door is closed, and the person is holding the egg by the stove"
+ },
+ {
+  "t0": 60.03,
+  "t1": 67.0,
+  "action": "crack egg into bowl",
+  "objects": [
+   "egg",
+   "small bowl"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "holding egg over small bowl with knife ready to crack"
+ },
+ {
+  "t0": 64.03,
+  "t1": 71.0,
+  "action": "crack an egg",
+  "objects": [
+   "egg",
+   "small bowl"
+  ],
+  "tools": [
+   "green knife"
+  ],
+  "amount": null,
+  "after": "egg is held with both hands over the bowl ready to open"
+ },
+ {
+  "t0": 68.0,
+  "t1": 75.01,
+  "action": "crack an egg",
+  "objects": [
+   "egg",
+   "small bowl"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "raw egg is in the bowl"
+ },
+ {
+  "t0": 72.01,
+  "t1": 79.01,
+  "action": "crack egg",
+  "objects": [
+   "egg",
+   "bowl"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "egg is cracked open into bowl and shells are held apart"
+ },
+ {
+  "t0": 76.01,
+  "t1": 83.02,
+  "action": "crack egg into bowl and discard shell",
+  "objects": [
+   "egg",
+   "bowl"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "eggshell is in trash and cracked egg is left in bowl"
+ },
+ {
+  "t0": 80.01,
+  "t1": 87.02,
+  "action": "places laptop on counter",
+  "objects": [
+   "laptop"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "laptop is sitting on kitchen counter next to sink and tool tray"
+ },
+ {
+  "t0": 84.02,
+  "t1": 91.02,
+  "action": "wipe a bowl",
+  "objects": [
+   "white bowl"
+  ],
+  "tools": [
+   "paper towel"
+  ],
+  "amount": null,
+  "after": "a piece of paper towel is torn from the roll and in the person's hand"
+ },
+ {
+  "t0": 88.02,
+  "t1": 95.03,
+  "action": "tears paper towel and picks up bowl",
+  "objects": [
+   "white bowl with cracked egg"
+  ],
+  "tools": [
+   "paper towel roll"
+  ],
+  "amount": null,
+  "after": "person is holding the white bowl with egg and a torn paper towel away from the counter"
+ },
+ {
+  "t0": 92.03,
+  "t1": 99.03,
+  "action": "set microwave to cook egg",
+  "objects": [
+   "egg"
+  ],
+  "tools": [
+   "bowl",
+   "microwave"
+  ],
+  "amount": null,
+  "after": "bowl with egg carried from counter to microwave and microwave controls pressed"
+ },
+ {
+  "t0": 96.03,
+  "t1": 103.0,
+  "action": "puts bowl in microwave",
+  "objects": [
+   "egg in bowl",
+   "microwave"
+  ],
+  "tools": [
+   "bowl"
+  ],
+  "amount": null,
+  "after": "the bowl with egg is inside the microwave and the door is closed"
+ },
+ {
+  "t0": 100.03,
+  "t1": 107.01,
+  "action": "heats bowl in microwave",
+  "objects": [
+   "bowl",
+   "microwave"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "bowl is inside closed microwave and door is shut"
+ },
+ {
+  "t0": 104.0,
+  "t1": 111.01,
+  "action": "operates microwave",
+  "objects": [
+   "microwave"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "arm lowered from microwave area down out of view"
+ },
+ {
+  "t0": 108.01,
+  "t1": 115.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "camera tilts down from the microwave and cabinets to point straight down at the floor and feet"
+ },
+ {
+  "t0": 112.01,
+  "t1": 119.02,
+  "action": "uses laptop",
+  "objects": [
+   "laptop"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "camera faces laptop on counter with hand on its trackpad"
+ },
+ {
+  "t0": 116.02,
+  "t1": 123.02,
+  "action": "scroll on laptop",
+  "objects": [
+   "laptop"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hand lifts off touchpad and camera centers on laptop"
+ },
+ {
+  "t0": 120.02,
+  "t1": 127.03,
+  "action": "rolling small item between fingers",
+  "objects": [
+   "small item"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hand is removed from laptop and both hands are together in front of counter"
+ },
+ {
+  "t0": 124.02,
+  "t1": 131.03,
+  "action": "hold an egg",
+  "objects": [
+   "egg"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "left hand lifts into view holding a white egg then lowers out of view"
+ },
+ {
+  "t0": 128.03,
+  "t1": 135.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "camera pans away from laptop over trash can to the far side of the sink and kitchen door"
+ },
+ {
+  "t0": 132.03,
+  "t1": 139.01,
+  "action": "picks up packaged bread",
+  "objects": [
+   "packaged bread loaves"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a package of buns is lifted from the pile in the counter corner"
+ },
+ {
+  "t0": 136.0,
+  "t1": 143.01,
+  "action": "opens package",
+  "objects": [
+   "english muffins"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "muffin package is lifted off the counter and being opened"
+ },
+ {
+  "t0": 140.01,
+  "t1": 147.01,
+  "action": "opening package",
+  "objects": [
+   "pack of English muffins"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "plastic bag is untwisted and opened"
+ },
+ {
+  "t0": 144.01,
+  "t1": 151.02,
+  "action": "opening a bag",
+  "objects": [
+   "package of english muffins"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the bag is open"
+ },
+ {
+  "t0": 148.01,
+  "t1": 155.02,
+  "action": "opening a package",
+  "objects": [
+   "packaged english muffins"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the plastic wrapper is pulled open at the end"
+ },
+ {
+  "t0": 152.02,
+  "t1": 159.03,
+  "action": "open package and take out a bun",
+  "objects": [
+   "packaged buns"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "package is opened and one bun is held in the right hand away from counter"
+ },
+ {
+  "t0": 156.02,
+  "t1": 163.03,
+  "action": "place and slice a bun",
+  "objects": [
+   "hamburger bun"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "one bun taken from package by sink is moved to cutting board by stove and being cut"
+ },
+ {
+  "t0": 160.03,
+  "t1": 167.0,
+  "action": "slice onion",
+  "objects": [
+   "onion"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "onion is sliced and person moves away from counter"
+ },
+ {
+  "t0": 164.03,
+  "t1": 171.0,
+  "action": "slice onion",
+  "objects": [
+   "onion"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "person leaves cutting board and walks to sink counter with laptop"
+ },
+ {
+  "t0": 168.0,
+  "t1": 175.01,
+  "action": "slices onion",
+  "objects": [
+   "onion"
+  ],
+  "tools": [
+   "green knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "camera moves from sink counter with laptop to stove counter where person holds onion and slices it"
+ },
+ {
+  "t0": 172.01,
+  "t1": 179.01,
+  "action": "slicing onion",
+  "objects": [
+   "onion"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "onion is cut into strips"
+ },
+ {
+  "t0": 176.01,
+  "t1": 183.02,
+  "action": "slicing",
+  "objects": [
+   "english muffin"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "muffin is cut into two halves"
+ },
+ {
+  "t0": 180.01,
+  "t1": 187.02,
+  "action": "cutting a muffin in half",
+  "objects": [
+   "english muffin"
+  ],
+  "tools": [
+   "green knife"
+  ],
+  "amount": null,
+  "after": "muffin is split into two halves laid flat on cutting board"
+ },
+ {
+  "t0": 184.02,
+  "t1": 191.02,
+  "action": "split muffin",
+  "objects": [
+   "english muffin"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "muffin is separated into two halves on the board and person has walked to the other counter"
+ },
+ {
+  "t0": 188.02,
+  "t1": 195.03,
+  "action": "operate laptop",
+  "objects": [
+   "laptop"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "person moved from cutting board by stove to laptop by sink"
+ },
+ {
+  "t0": 192.03,
+  "t1": 199.03,
+  "action": "pick up a dish",
+  "objects": [
+   "dish"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "dish is removed from the drying rack and person walks away"
+ },
+ {
+  "t0": 196.03,
+  "t1": 203.0,
+  "action": "open microwave",
+  "objects": [
+   "microwave"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "microwave door is open"
+ },
+ {
+  "t0": 200.03,
+  "t1": 207.01,
+  "action": "open microwave and stir egg in cup",
+  "objects": [
+   "microwave",
+   "egg",
+   "cup"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "microwave door is open and person is holding a cup with stirred egg"
+ },
+ {
+  "t0": 204.0,
+  "t1": 211.01,
+  "action": "stir egg",
+  "objects": [
+   "bowl",
+   "egg"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "egg yolk is broken and mixed"
+ },
+ {
+  "t0": 208.01,
+  "t1": 215.01,
+  "action": "stir egg",
+  "objects": [
+   "egg",
+   "bowl"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "egg yolk is broken and mixed"
+ },
+ {
+  "t0": 212.01,
+  "t1": 219.02,
+  "action": "stirring egg",
+  "objects": [
+   "egg"
+  ],
+  "tools": [
+   "bowl",
+   "spoon"
+  ],
+  "amount": null,
+  "after": "egg becomes more uniformly mixed"
+ },
+ {
+  "t0": 216.02,
+  "t1": 223.02,
+  "action": "stirring egg",
+  "objects": [
+   "bowl of egg"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "egg yolk is more broken up and mixed"
+ },
+ {
+  "t0": 220.02,
+  "t1": 227.03,
+  "action": "stir egg and place in microwave",
+  "objects": [
+   "egg in mug",
+   "microwave"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "mug is placed inside the open microwave"
+ },
+ {
+  "t0": 224.02,
+  "t1": 231.03,
+  "action": "stir and microwave egg",
+  "objects": [
+   "egg",
+   "mug"
+  ],
+  "tools": [
+   "spoon",
+   "microwave"
+  ],
+  "amount": null,
+  "after": "mug with egg is inside closed microwave"
+ },
+ {
+  "t0": 228.03,
+  "t1": 235.0,
+  "action": "set microwave",
+  "objects": [
+   "microwave"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "microwave door is closed"
+ },
+ {
+  "t0": 232.03,
+  "t1": 239.01,
+  "action": "sets microwave",
+  "objects": [
+   "microwave oven"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "microwave display is lit and hand is pressing its keypad"
+ },
+ {
+  "t0": 236.0,
+  "t1": 243.01,
+  "action": "pressing buttons on microwave",
+  "objects": [
+   "microwave"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "microwave display lights up"
+ },
+ {
+  "t0": 240.01,
+  "t1": 247.01,
+  "action": "sets microwave",
+  "objects": [
+   "microwave"
+  ],
+  "tools": [],
+  "amount": ":30",
+  "after": "microwave is set and person is at counter by laptop holding a cord"
+ },
+ {
+  "t0": 244.01,
+  "t1": 251.02,
+  "action": "operate laptop",
+  "objects": [
+   "laptop"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "view shifts from microwave to laptop on counter with hand on touchpad"
+ },
+ {
+  "t0": 248.01,
+  "t1": 255.02,
+  "action": "operate laptop touchpad",
+  "objects": [
+   "laptop"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "camera pans away from the laptop counter to the kitchen floor and door"
+ },
+ {
+  "t0": 252.02,
+  "t1": 259.03,
+  "action": "open cabinet",
+  "objects": [
+   "kitchen cabinet above stove"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "left cabinet door above stove is open revealing bags and containers inside"
+ },
+ {
+  "t0": 256.02,
+  "t1": 263.03,
+  "action": "sets down can",
+  "objects": [
+   "can"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "can is on stovetop"
+ },
+ {
+  "t0": 260.03,
+  "t1": 267.0,
+  "action": "places can on stove",
+  "objects": [
+   "can",
+   "stove"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "can is sitting on stovetop"
+ },
+ {
+  "t0": 264.03,
+  "t1": 271.0,
+  "action": "opens microwave",
+  "objects": [
+   "microwave oven"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "microwave door is open"
+ },
+ {
+  "t0": 268.0,
+  "t1": 275.01,
+  "action": "open microwave and remove cup",
+  "objects": [
+   "microwave",
+   "cup"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "microwave door is open and white cup with yellow contents is in hand"
+ },
+ {
+  "t0": 272.01,
+  "t1": 279.01,
+  "action": "remove bowl and pierce egg",
+  "objects": [
+   "bowl",
+   "egg"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "bowl is out of microwave and spoon is touching egg yolk"
+ },
+ {
+  "t0": 276.01,
+  "t1": 283.02,
+  "action": "poke egg",
+  "objects": [
+   "egg"
+  ],
+  "tools": [
+   "bowl",
+   "spoon"
+  ],
+  "amount": null,
+  "after": "yolk is punctured"
+ },
+ {
+  "t0": 280.01,
+  "t1": 287.02,
+  "action": "places bowl with egg in microwave",
+  "objects": [
+   "bowl with egg",
+   "microwave oven"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "the bowl is inside the closed microwave oven"
+ },
+ {
+  "t0": 284.02,
+  "t1": 291.02,
+  "action": "close and start microwave",
+  "objects": [
+   "microwave"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "microwave door is closed"
+ },
+ {
+  "t0": 288.02,
+  "t1": 295.03,
+  "action": "operating microwave",
+  "objects": [
+   "microwave"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hand removed from keypad and steps back holding spoon"
+ },
+ {
+  "t0": 292.03,
+  "t1": 299.03,
+  "action": "opens microwave door",
+  "objects": [
+   "microwave"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "microwave door is open"
+ },
+ {
+  "t0": 296.03,
+  "t1": 303.0,
+  "action": "remove cup from microwave",
+  "objects": [
+   "microwave",
+   "cup with egg"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "microwave door is open and white cup with raw egg is in hand"
+ },
+ {
+  "t0": 300.03,
+  "t1": 307.01,
+  "action": "holds and inspects egg",
+  "objects": [
+   "cup with raw egg",
+   "microwave"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "walks away from microwave toward laptop on counter"
+ },
+ {
+  "t0": 304.0,
+  "t1": 311.01,
+  "action": "operate laptop",
+  "objects": [
+   "laptop"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "person moves from open microwave to stove area"
+ },
+ {
+  "t0": 308.01,
+  "t1": 315.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "a small white bowl with yellow contents is moved from near the laptop counter to the stovetop and the person picks up a jar"
+ },
+ {
+  "t0": 312.01,
+  "t1": 319.02,
+  "action": "places butter cup on stove and handles jar",
+  "objects": [
+   "cup of butter",
+   "jar"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "butter cup is sitting on stovetop and person is at sink holding jar and picking a utensil"
+ },
+ {
+  "t0": 316.02,
+  "t1": 323.02,
+  "action": "picks up a screwdriver",
+  "objects": [],
+  "tools": [
+   "green-handled screwdriver"
+  ],
+  "amount": null,
+  "after": "right hand is holding a green-handled screwdriver"
+ },
+ {
+  "t0": 320.02,
+  "t1": 327.03,
+  "action": "tear off paper towel",
+  "objects": [
+   "paper towel"
+  ],
+  "tools": [
+   "paper towel roll"
+  ],
+  "amount": null,
+  "after": "holding a torn sheet of paper towel in left hand"
+ },
+ {
+  "t0": 324.02,
+  "t1": 331.03,
+  "action": "wraps lime in paper towel",
+  "objects": [
+   "lime"
+  ],
+  "tools": [
+   "paper towel"
+  ],
+  "amount": null,
+  "after": "a sheet is torn from the roll and wrapped around the lime"
+ },
+ {
+  "t0": 328.03,
+  "t1": 335.0,
+  "action": "spread sauce",
+  "objects": [
+   "bun"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "one bun half on the stovetop is covered with red sauce"
+ },
+ {
+  "t0": 332.03,
+  "t1": 339.01,
+  "action": "scoops paste into bowl",
+  "objects": [
+   "egg",
+   "red paste",
+   "jar"
+  ],
+  "tools": [
+   "green measuring spoon",
+   "jar lid"
+  ],
+  "amount": null,
+  "after": "a spoonful of red paste is added to the egg in the white bowl"
+ },
+ {
+  "t0": 336.0,
+  "t1": 343.01,
+  "action": "scoops sauce into bowl",
+  "objects": [
+   "sauce",
+   "bowl with egg"
+  ],
+  "tools": [
+   "spoon",
+   "jar"
+  ],
+  "amount": null,
+  "after": "white bowl that started with only yellow contents now has red sauce added in it"
+ },
+ {
+  "t0": 340.01,
+  "t1": 347.01,
+  "action": "stir and season mixture",
+  "objects": [
+   "small cup on stovetop",
+   "english muffin"
+  ],
+  "tools": [
+   "green measuring spoon",
+   "seasoning bottle"
+  ],
+  "amount": null,
+  "after": "spoon is lifted out and seasoning is sprinkled into the cup"
+ },
+ {
+  "t0": 344.01,
+  "t1": 351.02,
+  "action": "seasons sauce in bowl",
+  "objects": [
+   "small bowl"
+  ],
+  "tools": [
+   "measuring spoon",
+   "spice jar"
+  ],
+  "amount": null,
+  "after": "person moves away from stove to sink area"
+ },
+ {
+  "t0": 348.01,
+  "t1": 355.02,
+  "action": "reads laptop",
+  "objects": [
+   "laptop"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "person moved from stove to sink counter"
+ },
+ {
+  "t0": 352.02,
+  "t1": 359.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "view shifts from the counter to the refrigerator area with a cord on the floor visible"
+ },
+ {
+  "t0": 356.02,
+  "t1": 363.03,
+  "action": "opens refrigerator and takes herbs",
+  "objects": [
+   "refrigerator",
+   "bagged greens"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "refrigerator door is open"
+ },
+ {
+  "t0": 360.03,
+  "t1": 367.03,
+  "action": "takes package from refrigerator",
+  "objects": [
+   "refrigerator",
+   "purple food package"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the purple food package is in the person's hand and the refrigerator door is closed"
+ },
+ {
+  "t0": 364.03,
+  "t1": 371.0,
+  "action": "retrieves cheese from refrigerator and opens bag",
+  "objects": [
+   "bag of shredded cheese"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "refrigerator door is closed and the cheese bag is open near the stove"
+ },
+ {
+  "t0": 368.0,
+  "t1": 375.01,
+  "action": "sprinkle cheese on tortillas",
+  "objects": [
+   "shredded cheese",
+   "tortillas"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "tortillas on cutting board now have cheese on them"
+ },
+ {
+  "t0": 372.0,
+  "t1": 379.01,
+  "action": "sprinkles cheese on muffin",
+  "objects": [
+   "english muffin halves",
+   "shredded cheese"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "two muffin halves are on the board topped with cheese"
+ },
+ {
+  "t0": 376.01,
+  "t1": 383.02,
+  "action": "sprinkling cheese",
+  "objects": [
+   "english muffin halves"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "cheese is piled on the muffin halves"
+ },
+ {
+  "t0": 380.01,
+  "t1": 387.02,
+  "action": "sprinkle cheese",
+  "objects": [
+   "tortillas",
+   "shredded cheese bag"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "shredded cheese is placed on the tortillas on the cutting board"
+ },
+ {
+  "t0": 384.02,
+  "t1": 391.02,
+  "action": "sprinkling cheese",
+  "objects": [
+   "shredded cheese",
+   "tortilla"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "cheese is placed onto the tortilla"
+ },
+ {
+  "t0": 388.02,
+  "t1": 395.03,
+  "action": "split muffin",
+  "objects": [
+   "english muffin"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "muffin is separated into two halves on cutting board"
+ },
+ {
+  "t0": 392.02,
+  "t1": 399.03,
+  "action": "spread mustard",
+  "objects": [
+   "english muffin"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "yellow condiment is on the muffin half"
+ },
+ {
+  "t0": 396.03,
+  "t1": 403.0,
+  "action": "sprinkle cheese on muffins",
+  "objects": [
+   "english muffin halves",
+   "shredded cheese bag"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "cheese is on the muffin halves and the cheese bag is set down on the counter"
+ },
+ {
+  "t0": 400.03,
+  "t1": 407.01,
+  "action": "adding cheese to a mug",
+  "objects": [
+   "shredded cheese",
+   "mug"
+  ],
+  "tools": [
+   "small spoon"
+  ],
+  "amount": null,
+  "after": "bag of cheese is moved to back of counter and cheese is placed into the white mug on the stove"
+ },
+ {
+  "t0": 404.0,
+  "t1": 411.01,
+  "action": "dip corn into sauce",
+  "objects": [
+   "corn",
+   "cup of sauce"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "corn is coated and view moves from stove to sink counter with laptop"
+ },
+ {
+  "t0": 408.01,
+  "t1": 415.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "person is no longer visible, only empty counter with laptop and sink remains"
+ },
+ {
+  "t0": 412.01,
+  "t1": 419.02,
+  "action": "stirring food",
+  "objects": [
+   "bowl"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "camera moves from counter with laptop to stovetop where spoon is in bowl"
+ },
+ {
+  "t0": 416.02,
+  "t1": 423.02,
+  "action": "mixing food in bowl",
+  "objects": [
+   "bowl of food on stovetop"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "person stops mixing and moves to refrigerator"
+ },
+ {
+  "t0": 420.02,
+  "t1": 427.03,
+  "action": "stir and pick up cup",
+  "objects": [
+   "cup of food"
+  ],
+  "tools": [
+   "green spoon"
+  ],
+  "amount": null,
+  "after": "cup is lifted off stovetop into hand"
+ },
+ {
+  "t0": 424.02,
+  "t1": 431.03,
+  "action": "heat bowl in microwave",
+  "objects": [
+   "bowl of food"
+  ],
+  "tools": [
+   "microwave"
+  ],
+  "amount": null,
+  "after": "person moved from stove to microwave and is pressing microwave controls"
+ },
+ {
+  "t0": 428.03,
+  "t1": 435.0,
+  "action": "heats food in microwave",
+  "objects": [
+   "cup of food",
+   "microwave"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "cup is inside the closed microwave"
+ },
+ {
+  "t0": 432.03,
+  "t1": 439.01,
+  "action": "heats cup in microwave",
+  "objects": [
+   "cup",
+   "microwave"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "cup is inside closed microwave with timer set"
+ },
+ {
+  "t0": 436.0,
+  "t1": 443.01,
+  "action": "sets microwave timer",
+  "objects": [
+   "microwave"
+  ],
+  "tools": [],
+  "amount": "30 seconds",
+  "after": "hand is withdrawn from keypad and microwave starts"
+ },
+ {
+  "t0": 440.01,
+  "t1": 447.01,
+  "action": "manipulating a tissue",
+  "objects": [
+   "white tissue"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hands come together at bottom center and upper appliances are cropped out"
+ },
+ {
+  "t0": 444.01,
+  "t1": 451.02,
+  "action": "open microwave door",
+  "objects": [
+   "microwave oven"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "microwave door is open"
+ },
+ {
+  "t0": 448.01,
+  "t1": 455.02,
+  "action": "removes bowl from microwave",
+  "objects": [
+   "microwave",
+   "bowl of food"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "microwave door is open and empty and person is holding a bowl of food in hand"
+ },
+ {
+  "t0": 452.02,
+  "t1": 459.03,
+  "action": "take food out of microwave",
+  "objects": [
+   "microwave",
+   "bowl of noodles"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "bowl is out of the microwave and microwave door is closed"
+ },
+ {
+  "t0": 456.02,
+  "t1": 463.03,
+  "action": "heats cup noodles in microwave",
+  "objects": [
+   "instant noodle cup",
+   "microwave"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "noodle cup is inside the closed microwave"
+ },
+ {
+  "t0": 460.03,
+  "t1": 467.03,
+  "action": "microwaves noodles",
+  "objects": [
+   "instant noodle cup"
+  ],
+  "tools": [
+   "microwave oven"
+  ],
+  "amount": null,
+  "after": "cup is placed inside microwave, door is closed, and person steps back"
+ },
+ {
+  "t0": 464.03,
+  "t1": 471.0,
+  "action": "presses microwave buttons",
+  "objects": [
+   "microwave"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hand is withdrawn from the microwave keypad"
+ },
+ {
+  "t0": 468.0,
+  "t1": 475.01,
+  "action": "removes bowl from microwave",
+  "objects": [
+   "microwave",
+   "bowl of food"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "microwave door is open and bowl is held in hand"
+ },
+ {
+  "t0": 472.0,
+  "t1": 479.01,
+  "action": "remove bowl from microwave",
+  "objects": [
+   "microwave",
+   "bowl of noodles"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "microwave door is open and bowl is held outside the microwave"
+ },
+ {
+  "t0": 476.01,
+  "t1": 483.02,
+  "action": "put bowl in microwave",
+  "objects": [
+   "bowl of noodles",
+   "microwave"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "bowl is placed inside and person walks away to trash can area"
+ },
+ {
+  "t0": 480.01,
+  "t1": 487.02,
+  "action": "close microwave and use laptop",
+  "objects": [
+   "bowl of noodles",
+   "microwave",
+   "laptop"
+  ],
+  "tools": [
+   "laptop"
+  ],
+  "amount": null,
+  "after": "microwave door goes from open to closed, person moves to counter touching laptop trackpad"
+ },
+ {
+  "t0": 484.02,
+  "t1": 491.02,
+  "action": "places bowl on stove and handles muffins",
+  "objects": [
+   "bowl of shredded cheese",
+   "English muffins"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "bowl is set on the stovetop and hands are on the muffins on the cutting board"
+ },
+ {
+  "t0": 488.02,
+  "t1": 495.03,
+  "action": "cut an English muffin",
+  "objects": [
+   "English muffin"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "the muffin is separated into halves"
+ },
+ {
+  "t0": 492.02,
+  "t1": 499.03,
+  "action": "shred chicken onto tortillas",
+  "objects": [
+   "chicken",
+   "tortillas"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "chicken is shredded onto tortillas on the board and person moves to refrigerator holding eggshell"
+ },
+ {
+  "t0": 496.03,
+  "t1": 503.0,
+  "action": "gets ingredient from refrigerator",
+  "objects": [
+   "buns",
+   "produce"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "person moved from counter to open refrigerator with hand in crisper drawer"
+ },
+ {
+  "t0": 500.03,
+  "t1": 507.01,
+  "action": "takes bag from refrigerator",
+  "objects": [
+   "refrigerator",
+   "plastic bag of greens"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "refrigerator door is open and a bag of greens is in the person's hand"
+ },
+ {
+  "t0": 504.0,
+  "t1": 511.01,
+  "action": "takes lettuce from fridge and puts in mug",
+  "objects": [
+   "lettuce bag",
+   "mug"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "fridge is closed and lettuce is added to mug on stove"
+ },
+ {
+  "t0": 508.01,
+  "t1": 515.01,
+  "action": "mixes seasoning in cup",
+  "objects": [
+   "cup",
+   "cabinet jar"
+  ],
+  "tools": [
+   "seasoning packet"
+  ],
+  "amount": null,
+  "after": "cup on stove contains orange liquid and upper cabinet is open with a jar in hand"
+ },
+ {
+  "t0": 512.01,
+  "t1": 519.02,
+  "action": "wipe stovetop",
+  "objects": [
+   "stovetop"
+  ],
+  "tools": [
+   "paper towel"
+  ],
+  "amount": null,
+  "after": "stovetop is being wiped"
+ },
+ {
+  "t0": 516.02,
+  "t1": 523.02,
+  "action": "adds shredded topping to cup",
+  "objects": [
+   "cup of food",
+   "shredded cheese bag"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "cheese is in the cup on the stove and a white scrap is left on the stovetop"
+ },
+ {
+  "t0": 520.02,
+  "t1": 527.03,
+  "action": "picks up bag of lettuce",
+  "objects": [
+   "bag of shredded lettuce"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "person moved from stove to sink area holding the opened bag"
+ },
+ {
+  "t0": 524.02,
+  "t1": 531.03,
+  "action": "fetch scissors to open bag",
+  "objects": [
+   "bag of shredded lettuce"
+  ],
+  "tools": [
+   "scissors"
+  ],
+  "amount": null,
+  "after": "person is holding scissors in right hand and sealed lettuce bag in left hand by the stove"
+ },
+ {
+  "t0": 528.03,
+  "t1": 535.0,
+  "action": "none",
+  "objects": [
+   "bag of shredded lettuce"
+  ],
+  "tools": [
+   "scissors"
+  ],
+  "amount": null,
+  "after": "moved from drawer by sink to stove holding scissors to the bag"
+ },
+ {
+  "t0": 532.03,
+  "t1": 539.01,
+  "action": "cut open bag",
+  "objects": [
+   "bag of shredded lettuce"
+  ],
+  "tools": [
+   "scissors"
+  ],
+  "amount": null,
+  "after": "bag is cut open"
+ },
+ {
+  "t0": 536.0,
+  "t1": 543.01,
+  "action": "cutting open bag",
+  "objects": [
+   "bag of shredded lettuce"
+  ],
+  "tools": [
+   "scissors"
+  ],
+  "amount": null,
+  "after": "person walks away from stove to sink area still holding the bag and scissors"
+ },
+ {
+  "t0": 540.01,
+  "t1": 547.01,
+  "action": "cut open bag",
+  "objects": [
+   "bag of shredded lettuce"
+  ],
+  "tools": [
+   "scissors"
+  ],
+  "amount": null,
+  "after": "bag of lettuce is open on the cutting board"
+ },
+ {
+  "t0": 544.01,
+  "t1": 551.02,
+  "action": "adds lettuce to tortillas",
+  "objects": [
+   "shredded lettuce bag",
+   "tortillas"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "shredded lettuce from the bag is placed on the tortillas on the cutting board"
+ },
+ {
+  "t0": 548.01,
+  "t1": 555.02,
+  "action": "sprinkling shredded lettuce",
+  "objects": [
+   "tortilla",
+   "bag of shredded lettuce"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the right tortilla is topped with shredded lettuce"
+ },
+ {
+  "t0": 552.02,
+  "t1": 559.03,
+  "action": "sprinkle shredded lettuce onto tortillas",
+  "objects": [
+   "tortillas",
+   "shredded lettuce"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "both tortillas are topped with lettuce and the person walks away from the counter toward the sink"
+ },
+ {
+  "t0": 556.02,
+  "t1": 563.03,
+  "action": "sprinkle lettuce on tortilla",
+  "objects": [
+   "tortilla",
+   "shredded lettuce"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "person leaves the cutting board and stands in front of laptop by the sink"
+ },
+ {
+  "t0": 560.03,
+  "t1": 567.03,
+  "action": "preparing tortillas",
+  "objects": [
+   "tortillas",
+   "green bag"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "person moves from sink counter to stove counter and opens green bag over tortillas"
+ },
+ {
+  "t0": 564.03,
+  "t1": 571.0,
+  "action": "adds shredded lettuce to tortillas",
+  "objects": [
+   "tortillas",
+   "shredded lettuce",
+   "cup of cheese"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "tortillas on cutting board are topped with lettuce and person is holding a cup of cheese"
+ },
+ {
+  "t0": 568.0,
+  "t1": 575.01,
+  "action": "pours filling onto tortilla",
+  "objects": [
+   "tortilla",
+   "cheese mixture"
+  ],
+  "tools": [
+   "bowl"
+  ],
+  "amount": null,
+  "after": "bowl is moved from stove to cutting board and tilted over tortilla"
+ },
+ {
+  "t0": 572.0,
+  "t1": 579.01,
+  "action": "mixing bowl contents",
+  "objects": [
+   "white bowl"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "mixture in bowl appears stirred"
+ },
+ {
+  "t0": 576.01,
+  "t1": 583.02,
+  "action": "sprinkles cheese onto tortilla",
+  "objects": [
+   "shredded cheese",
+   "tortilla"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the cup is empty and the tortilla is covered with cheese"
+ },
+ {
+  "t0": 580.01,
+  "t1": 587.02,
+  "action": "sprinkle cheese onto bun",
+  "objects": [
+   "shredded cheese",
+   "bun"
+  ],
+  "tools": [
+   "plastic cup",
+   "spoon"
+  ],
+  "amount": null,
+  "after": "the cheese is transferred from the cup onto the bun, leaving the cup empty"
+ },
+ {
+  "t0": 584.02,
+  "t1": 591.02,
+  "action": "assemble a sandwich",
+  "objects": [
+   "sandwich bun"
+  ],
+  "tools": [
+   "cup",
+   "spoon"
+  ],
+  "amount": null,
+  "after": "sauce is poured on and the top bun is placed to close the sandwich"
+ },
+ {
+  "t0": 588.02,
+  "t1": 595.03,
+  "action": "assembles a burger",
+  "objects": [
+   "bun",
+   "bowl"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "bun is closed and person walks away to laptop by sink"
+ },
+ {
+  "t0": 592.02,
+  "t1": 599.03,
+  "action": "picks up laptop",
+  "objects": [
+   "laptop"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "person moved from stove counter to sink counter and is holding laptop"
+ },
+ {
+  "t0": 596.03,
+  "t1": 603.0,
+  "action": "picks up and carries laptop",
+  "objects": [
+   "laptop"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "laptop is lifted off the counter and held in hands near the microwave"
+ }
+]

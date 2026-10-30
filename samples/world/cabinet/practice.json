@@ -1,0 +1,12 @@
+[
+ {
+  "file": "practice/tech-2.mp4",
+  "label": "Another technician",
+  "note": "A different technician doing the same job (HoloAssist R092)."
+ },
+ {
+  "file": "practice/power-on.mp4",
+  "label": "Edited: the power is never switched off",
+  "note": "The same recording with the seconds where the disconnect switch is turned off cut out, so the cabinet is opened with the power still on. This one is edited for the demo."
+ }
+]

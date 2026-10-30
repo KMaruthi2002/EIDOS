@@ -1,0 +1,334 @@
+[
+ {
+  "t0": 0.0,
+  "t1": 7.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "view shifts from glass display enclosure to black electrical cabinet door with CAUTION sign"
+ },
+ {
+  "t0": 4.03,
+  "t1": 11.0,
+  "action": "turn off disconnect switch",
+  "objects": [
+   "electrical control cabinet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "disconnect handle moved from ON/I to OFF/O position"
+ },
+ {
+  "t0": 8.02,
+  "t1": 15.03,
+  "action": "turn off disconnect switch",
+  "objects": [
+   "electrical control cabinet",
+   "disconnect switch",
+   "cabinet door"
+  ],
+  "tools": [],
+  "amount": "OFF",
+  "after": "disconnect handle is in OFF position and hand is on door latch"
+ },
+ {
+  "t0": 12.01,
+  "t1": 19.02,
+  "action": "turn off disconnect and open door",
+  "objects": [
+   "electrical control cabinet",
+   "disconnect switch"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "cabinet door goes from closed to open exposing internal breakers and wiring"
+ },
+ {
+  "t0": 16.0,
+  "t1": 23.01,
+  "action": "open cabinet and point to component",
+  "objects": [
+   "electrical control cabinet",
+   "internal transformer"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "cabinet door is open revealing internal breakers, wiring and transformer"
+ },
+ {
+  "t0": 20.03,
+  "t1": 27.01,
+  "action": "hold a component",
+  "objects": [
+   "electrical control cabinet",
+   "transformer",
+   "wire connector"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a hand appears in the cabinet holding a small component in front of the transformer as the camera zooms in"
+ },
+ {
+  "t0": 24.02,
+  "t1": 31.03,
+  "action": "install a part",
+  "objects": [
+   "terminal block",
+   "electrical control cabinet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the hand-held part is placed onto its mount with both hands"
+ },
+ {
+  "t0": 28.01,
+  "t1": 35.02,
+  "action": "remove a component",
+  "objects": [
+   "electrical control cabinet",
+   "fuse block"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a small clear electrical part is detached from inside the cabinet and held in the hand"
+ },
+ {
+  "t0": 32.0,
+  "t1": 39.02,
+  "action": "remove and set down part",
+  "objects": [
+   "electrical component in control cabinet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the component is removed from the cabinet and placed on the white shelf"
+ },
+ {
+  "t0": 36.03,
+  "t1": 43.01,
+  "action": "places part down and opens toolbox",
+  "objects": [
+   "metal electrical part",
+   "red toolbox"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "metal part is left on shelf edge and red toolbox on floor is open revealing blue cable"
+ },
+ {
+  "t0": 40.02,
+  "t1": 47.03,
+  "action": "open toolbox and move to cabinet",
+  "objects": [
+   "red toolbox",
+   "blue cable",
+   "electrical control cabinet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "red toolbox is open on floor revealing blue cable inside and electrical control cabinet is open"
+ },
+ {
+  "t0": 44.01,
+  "t1": 51.02,
+  "action": "install a connector",
+  "objects": [
+   "electrical connector",
+   "electrical control cabinet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a small connector retrieved from the toolbox is now plugged in inside the cabinet"
+ },
+ {
+  "t0": 48.01,
+  "t1": 55.02,
+  "action": "plug in electrical connector",
+  "objects": [
+   "wire connector",
+   "control transformer"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "connector is seated, hands are removed, and camera pulls back and pans to cabinet door"
+ },
+ {
+  "t0": 52.03,
+  "t1": 59.01,
+  "action": "close cabinet door",
+  "objects": [
+   "electrical control cabinet door"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "cabinet door is closed"
+ },
+ {
+  "t0": 56.02,
+  "t1": 63.0,
+  "action": "open cabinet door",
+  "objects": [
+   "electrical control cabinet door"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the cabinet door is open"
+ },
+ {
+  "t0": 60.02,
+  "t1": 67.03,
+  "action": "turn off disconnect switch and open door",
+  "objects": [
+   "electrical control cabinet",
+   "disconnect switch",
+   "cabinet door"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "disconnect switch is in OFF position and cabinet door is open exposing interior"
+ },
+ {
+  "t0": 64.01,
+  "t1": 71.02,
+  "action": "turn off disconnect and open cabinet",
+  "objects": [
+   "electrical control cabinet",
+   "disconnect switch",
+   "cabinet door"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the disconnect switch is moved from ON to OFF and the cabinet door is opened"
+ },
+ {
+  "t0": 68.03,
+  "t1": 75.01,
+  "action": "points at instructional stickers",
+  "objects": [
+   "electrical control cabinet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hand is gone and red beacon light on top is lit"
+ },
+ {
+  "t0": 72.03,
+  "t1": 79.0,
+  "action": "none",
+  "objects": [
+   "electrical control cabinet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "camera pans from front instructional labels and beacon to side showing CAUTION sign and table with orange safety gear"
+ },
+ {
+  "t0": 76.02,
+  "t1": 83.03,
+  "action": "turn off disconnect switch",
+  "objects": [
+   "electrical control cabinet"
+  ],
+  "tools": [],
+  "amount": "OFF",
+  "after": "disconnect switch is in OFF position"
+ },
+ {
+  "t0": 80.01,
+  "t1": 87.02,
+  "action": "turn off power and open cabinet",
+  "objects": [
+   "electrical control cabinet disconnect switch",
+   "cabinet door"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "disconnect switch is in OFF position and cabinet door is open exposing internal wiring"
+ },
+ {
+  "t0": 84.0,
+  "t1": 91.01,
+  "action": "open cabinet and hold connector",
+  "objects": [
+   "electrical control cabinet",
+   "wiring connector"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "cabinet door is open exposing internal wiring"
+ },
+ {
+  "t0": 88.03,
+  "t1": 95.0,
+  "action": "place removed part in toolbox",
+  "objects": [
+   "electrical connector",
+   "electrical control cabinet",
+   "red toolbox"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "connector is placed inside red toolbox and toolbox is closed"
+ },
+ {
+  "t0": 92.02,
+  "t1": 99.03,
+  "action": "close toolbox and fetch part",
+  "objects": [
+   "red toolbox",
+   "small black electrical part",
+   "electrical control cabinet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "red toolbox goes from open to closed and person is holding a small black part in front of the open control cabinet"
+ },
+ {
+  "t0": 96.01,
+  "t1": 103.02,
+  "action": "install a component",
+  "objects": [
+   "electrical control cabinet",
+   "small black electrical connector"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the small black component is taken from the white table and inserted into the wiring inside the open control cabinet"
+ },
+ {
+  "t0": 100.0,
+  "t1": 107.01,
+  "action": "replace a component",
+  "objects": [
+   "fuse",
+   "electrical control cabinet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the cabinet door is closed"
+ },
+ {
+  "t0": 104.03,
+  "t1": 111.01,
+  "action": "close door and turn on disconnect",
+  "objects": [
+   "electrical control cabinet door",
+   "disconnect switch"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "cabinet door goes from open to closed and disconnect handle is moved to ON"
+ },
+ {
+  "t0": 107.01,
+  "t1": 114.03,
+  "action": "flip disconnect switch to ON",
+  "objects": [
+   "electrical control cabinet disconnect switch"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "disconnect lever is up in ON position with orange indicator visible"
+ }
+]

@@ -27,6 +27,7 @@ from .ui import learn as ui_learn
 from .ui.run import run_ui, replay_ui
 from .ui.tasks import TITLES, fresh_inputs, score as ui_score, N_FIELDS, _norm
 from . import teach
+from .world.server import router as world_router
 import random
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -43,6 +44,7 @@ DATASETS = {
 
 app = FastAPI(title="EIDOS Studio")
 app.mount("/apps", StaticFiles(directory=str(ROOT / "apps")), name="apps")
+app.include_router(world_router)
 RUN_LOCK = asyncio.Lock()
 PORT = {"value": 8000}
 

@@ -1,0 +1,1344 @@
+[
+ {
+  "t0": 0.0,
+  "t1": 7.01,
+  "action": "scroll on tablet",
+  "objects": [
+   "tablet"
+  ],
+  "tools": [
+   "tablet"
+  ],
+  "amount": null,
+  "after": "tablet screen scrolled and camera view moved from stove counter to sink"
+ },
+ {
+  "t0": 4.0,
+  "t1": 11.01,
+  "action": "open refrigerator",
+  "objects": [
+   "refrigerator"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "refrigerator door is open revealing food inside"
+ },
+ {
+  "t0": 8.01,
+  "t1": 15.02,
+  "action": "retrieves meat from drawer",
+  "objects": [
+   "meat bag",
+   "refrigerator"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "refrigerator is open and meat bag is pulled from drawer"
+ },
+ {
+  "t0": 12.01,
+  "t1": 19.02,
+  "action": "picks up a tomato",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a tomato is held in the hand outside the crisper drawer"
+ },
+ {
+  "t0": 16.02,
+  "t1": 23.02,
+  "action": "pick up then put back a tomato",
+  "objects": [
+   "tomato",
+   "plastic bag"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change, tomato is back in the fridge drawer"
+ },
+ {
+  "t0": 20.02,
+  "t1": 27.03,
+  "action": "takes tomato from fridge",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "tomato is out of fridge and held in hand"
+ },
+ {
+  "t0": 24.02,
+  "t1": 31.03,
+  "action": "washing a tomato",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [
+   "sink faucet"
+  ],
+  "amount": null,
+  "after": "tomato is taken from fridge door and held under running water in sink"
+ },
+ {
+  "t0": 28.03,
+  "t1": 35.0,
+  "action": "washing tomato",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [
+   "sink faucet"
+  ],
+  "amount": null,
+  "after": "tomato is wet"
+ },
+ {
+  "t0": 32.03,
+  "t1": 39.01,
+  "action": "wash tomato and set down cutting board",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [
+   "faucet",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "faucet is off and cutting board is placed on the counter"
+ },
+ {
+  "t0": 36.0,
+  "t1": 43.01,
+  "action": "cut tomato",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [
+   "cutting board",
+   "knife"
+  ],
+  "amount": null,
+  "after": "cutting board is laid on counter with tomato on it"
+ },
+ {
+  "t0": 40.01,
+  "t1": 47.01,
+  "action": "dry hands",
+  "objects": [
+   "hands"
+  ],
+  "tools": [
+   "towel"
+  ],
+  "amount": null,
+  "after": "person is holding a blue towel by the stove instead of touching a tomato on the cutting board"
+ },
+ {
+  "t0": 44.01,
+  "t1": 51.02,
+  "action": "fold a towel",
+  "objects": [
+   "blue towel"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "blue towel is unfolded then folded and placed on leg"
+ },
+ {
+  "t0": 48.01,
+  "t1": 55.02,
+  "action": "wipe tomato",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [
+   "towel"
+  ],
+  "amount": null,
+  "after": "tomato is held wrapped in towel over cutting board"
+ },
+ {
+  "t0": 52.02,
+  "t1": 59.03,
+  "action": "dry tomato",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [
+   "towel"
+  ],
+  "amount": null,
+  "after": "tomato is held in hand instead of sitting on cutting board"
+ },
+ {
+  "t0": 56.02,
+  "t1": 63.03,
+  "action": "drying tomato",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [
+   "towel"
+  ],
+  "amount": null,
+  "after": "tomato is placed on towel on cutting board"
+ },
+ {
+  "t0": 60.03,
+  "t1": 67.0,
+  "action": "pull stem from tomato",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hand is gripping the top of the tomato over the cutting board"
+ },
+ {
+  "t0": 64.03,
+  "t1": 71.0,
+  "action": "remove stem from tomato",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [
+   "blue towel"
+  ],
+  "amount": null,
+  "after": "tomato stem is removed and left on cutting board"
+ },
+ {
+  "t0": 68.0,
+  "t1": 75.01,
+  "action": "drying a tomato",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [
+   "blue towel"
+  ],
+  "amount": null,
+  "after": "the tomato and towel are removed, leaving the cutting board empty"
+ },
+ {
+  "t0": 72.01,
+  "t1": 79.01,
+  "action": "dry tomato",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [
+   "towel"
+  ],
+  "amount": null,
+  "after": "tomato is out of view and person moves to stove"
+ },
+ {
+  "t0": 76.01,
+  "t1": 83.02,
+  "action": "dry hands then hold tomato",
+  "objects": [
+   "blue towel",
+   "tomato"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "person leaves stove with towel and holds tomato on cutting board by sink"
+ },
+ {
+  "t0": 80.01,
+  "t1": 87.02,
+  "action": "move cutting board with tomato and take a knife",
+  "objects": [
+   "tomato",
+   "cutting board"
+  ],
+  "tools": [
+   "kitchen knife",
+   "knife block"
+  ],
+  "amount": null,
+  "after": "cutting board with tomato is moved from sink counter to stove counter and person is holding a knife over tomato"
+ },
+ {
+  "t0": 84.02,
+  "t1": 91.02,
+  "action": "slicing tomato",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "tomato is sliced on the cutting board"
+ },
+ {
+  "t0": 88.02,
+  "t1": 95.03,
+  "action": "slicing tomato",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "tomato is partially cut into slices"
+ },
+ {
+  "t0": 92.03,
+  "t1": 99.03,
+  "action": "slicing tomato",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": "1 slice",
+  "after": "one slice is cut off and lies separated on the board"
+ },
+ {
+  "t0": 96.03,
+  "t1": 103.0,
+  "action": "slice tomato",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "no new slice is separated, tomato remains in same position with one slice already cut"
+ },
+ {
+  "t0": 100.03,
+  "t1": 107.01,
+  "action": "slice tomato",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "more tomato slices on cutting board"
+ },
+ {
+  "t0": 104.0,
+  "t1": 111.01,
+  "action": "slicing tomato",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "tomato is cut into more slices on the cutting board"
+ },
+ {
+  "t0": 108.01,
+  "t1": 115.01,
+  "action": "slice tomato",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "tomato is cut into multiple slices"
+ },
+ {
+  "t0": 112.01,
+  "t1": 119.02,
+  "action": "slicing tomato",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "more tomato slices on the cutting board"
+ },
+ {
+  "t0": 116.02,
+  "t1": 123.02,
+  "action": "slicing tomato",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "tomato is cut into multiple slices on the cutting board"
+ },
+ {
+  "t0": 120.02,
+  "t1": 127.03,
+  "action": "slicing tomato",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "an additional tomato slice is cut"
+ },
+ {
+  "t0": 124.02,
+  "t1": 131.03,
+  "action": "slicing a tomato",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "an additional tomato slice is cut on the cutting board"
+ },
+ {
+  "t0": 128.03,
+  "t1": 135.0,
+  "action": "slice tomato",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "more tomato slices on cutting board"
+ },
+ {
+  "t0": 132.03,
+  "t1": 139.01,
+  "action": "slice tomato",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": "6 slices",
+  "after": "tomato is fully sliced into pieces on board and knife is set down"
+ },
+ {
+  "t0": 136.0,
+  "t1": 143.01,
+  "action": "slice tomatoes and grab plate",
+  "objects": [
+   "tomatoes",
+   "plate"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "tomatoes are sliced on the board and person is holding a plate"
+ },
+ {
+  "t0": 140.01,
+  "t1": 147.01,
+  "action": "placing tomatoes on plate",
+  "objects": [
+   "tomatoes",
+   "plate"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "sliced tomatoes moved from cutting board onto the held plate"
+ },
+ {
+  "t0": 144.01,
+  "t1": 151.02,
+  "action": "placing tomato slices on plate",
+  "objects": [
+   "tomato slices",
+   "plate"
+  ],
+  "tools": [],
+  "amount": "3 slices",
+  "after": "sliced tomatoes moved from cutting board to plate"
+ },
+ {
+  "t0": 148.01,
+  "t1": 155.02,
+  "action": "placing tomato slices on plate",
+  "objects": [
+   "tomato slices",
+   "plate"
+  ],
+  "tools": [],
+  "amount": "5 slices",
+  "after": "plate has five tomato slices instead of one and cutting board is nearly empty"
+ },
+ {
+  "t0": 152.02,
+  "t1": 159.03,
+  "action": "placing tomato slices on plate",
+  "objects": [
+   "tomato slices",
+   "plate"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "more tomato slices are on the plate and fewer remain on the cutting board"
+ },
+ {
+  "t0": 156.02,
+  "t1": 163.03,
+  "action": "arranging tomato slices",
+  "objects": [
+   "tomatoes",
+   "plate"
+  ],
+  "tools": [],
+  "amount": "6 slices",
+  "after": "plate holds six arranged tomato slices and person moves to tablet on opposite counter"
+ },
+ {
+  "t0": 160.03,
+  "t1": 167.0,
+  "action": "scroll on tablet",
+  "objects": [
+   "tablet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hand moves from over tomato plate to touching tablet and tablet screen content is scrolled"
+ },
+ {
+  "t0": 164.03,
+  "t1": 171.0,
+  "action": "scrolling on tablet",
+  "objects": [
+   "tablet"
+  ],
+  "tools": [
+   "tablet"
+  ],
+  "amount": null,
+  "after": "more text is visible on the tablet screen"
+ },
+ {
+  "t0": 168.0,
+  "t1": 175.01,
+  "action": "taps tablet",
+  "objects": [
+   "tablet"
+  ],
+  "tools": [
+   "tablet"
+  ],
+  "amount": null,
+  "after": "hand lifts off tablet and camera pulls back to reveal the stove with a skillet"
+ },
+ {
+  "t0": 172.01,
+  "t1": 179.01,
+  "action": "opens refrigerator",
+  "objects": [
+   "refrigerator"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "refrigerator door is open showing contents"
+ },
+ {
+  "t0": 176.01,
+  "t1": 183.02,
+  "action": "takes a bag out of freezer",
+  "objects": [
+   "frozen vegetable bag",
+   "freezer door"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "freezer door is open and a bag is held in hands"
+ },
+ {
+  "t0": 180.01,
+  "t1": 187.02,
+  "action": "retrieves bag from freezer",
+  "objects": [
+   "Kraft Mozzarella cheese bag"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "bag of mozzarella held up in both hands in front of open freezer"
+ },
+ {
+  "t0": 184.02,
+  "t1": 191.02,
+  "action": "takes mozzarella from freezer",
+  "objects": [
+   "Kraft Mozzarella cheese bag",
+   "refrigerator"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "refrigerator door is closed and person is at stove with plate of sliced tomatoes"
+ },
+ {
+  "t0": 188.02,
+  "t1": 195.03,
+  "action": "open bag",
+  "objects": [
+   "Kraft mozzarella cheese bag"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "fridge door is closed and cheese bag is open next to plate of sliced tomatoes"
+ },
+ {
+  "t0": 192.03,
+  "t1": 199.03,
+  "action": "opening a bag",
+  "objects": [
+   "bag of shredded cheese"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "bag is lifted and held up with both hands over the counter"
+ },
+ {
+  "t0": 196.03,
+  "t1": 203.0,
+  "action": "holding a bag of shredded cheese",
+  "objects": [
+   "bag of shredded cheese"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "bag remains held in hands with no visible change"
+ },
+ {
+  "t0": 200.03,
+  "t1": 207.01,
+  "action": "sprinkling cheese onto tomato slices",
+  "objects": [
+   "shredded cheese bag",
+   "tomato slices on plate"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "shredded cheese is on top of the tomato slices"
+ },
+ {
+  "t0": 204.0,
+  "t1": 211.01,
+  "action": "sprinkling cheese",
+  "objects": [
+   "tomato slices",
+   "shredded cheese"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "tomato slices are topped with shredded cheese"
+ },
+ {
+  "t0": 208.01,
+  "t1": 215.01,
+  "action": "sprinkle cheese on tomatoes",
+  "objects": [
+   "sliced tomatoes",
+   "shredded cheese"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "tomato slices are topped with cheese"
+ },
+ {
+  "t0": 212.01,
+  "t1": 219.02,
+  "action": "sprinkling shredded cheese",
+  "objects": [
+   "sliced tomatoes"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "tomato slices on plate are topped with shredded cheese"
+ },
+ {
+  "t0": 216.02,
+  "t1": 223.02,
+  "action": "sprinkling topping onto tomato slices",
+  "objects": [
+   "tomato slices",
+   "cheese bag"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the cheese bag is moved from being held over the plate to being placed on the counter"
+ },
+ {
+  "t0": 220.02,
+  "t1": 227.03,
+  "action": "sprinkle cheese on tomatoes then touch laptop",
+  "objects": [
+   "bag of shredded cheese",
+   "sliced tomatoes on plate",
+   "laptop"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "cheese is added to the tomato slices and the person moves to the counter touching the laptop screen"
+ },
+ {
+  "t0": 224.02,
+  "t1": 231.03,
+  "action": "checks tablet then opens cabinet",
+  "objects": [
+   "tablet",
+   "overhead kitchen cabinet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "upper cabinet door above the counter is open revealing jars and containers"
+ },
+ {
+  "t0": 228.03,
+  "t1": 235.0,
+  "action": "retrieve salt from cabinet",
+  "objects": [
+   "iodized salt container",
+   "kitchen cabinet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "person is holding a container of iodized salt with both hands instead of reaching toward the pressure cooker"
+ },
+ {
+  "t0": 232.03,
+  "t1": 239.01,
+  "action": "open salt canister",
+  "objects": [
+   "Morton iodized salt canister"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "cabinet is closed and open salt canister is held in hands over stove"
+ },
+ {
+  "t0": 236.0,
+  "t1": 243.01,
+  "action": "open container and drawer",
+  "objects": [
+   "salt container",
+   "drawer"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "salt container lid is open and drawer is open"
+ },
+ {
+  "t0": 240.01,
+  "t1": 247.01,
+  "action": "open salt and take spoon",
+  "objects": [
+   "salt container"
+  ],
+  "tools": [
+   "measuring spoon"
+  ],
+  "amount": null,
+  "after": "drawer is open and measuring spoon is in hand"
+ },
+ {
+  "t0": 244.01,
+  "t1": 251.02,
+  "action": "pours salt into measuring spoon",
+  "objects": [
+   "salt"
+  ],
+  "tools": [
+   "salt container",
+   "measuring spoon"
+  ],
+  "amount": null,
+  "after": "person moves from drawer to stove and fills the spoon with salt over a plate of sliced tomatoes"
+ },
+ {
+  "t0": 248.01,
+  "t1": 255.02,
+  "action": "sprinkle salt on tomatoes",
+  "objects": [
+   "tomato slices"
+  ],
+  "tools": [
+   "salt container",
+   "measuring spoon"
+  ],
+  "amount": null,
+  "after": "salt is in spoon and on tomato slices"
+ },
+ {
+  "t0": 252.02,
+  "t1": 259.03,
+  "action": "sprinkle salt",
+  "objects": [
+   "tomato slices"
+  ],
+  "tools": [
+   "salt canister",
+   "measuring spoon"
+  ],
+  "amount": null,
+  "after": "measuring spoon moved from over plate to over cutting board"
+ },
+ {
+  "t0": 256.02,
+  "t1": 263.03,
+  "action": "sprinkle salt on",
+  "objects": [
+   "tomato slices"
+  ],
+  "tools": [
+   "salt container",
+   "spoon"
+  ],
+  "amount": null,
+  "after": "spoon is set down on cutting board and person walks to tablet"
+ },
+ {
+  "t0": 260.03,
+  "t1": 267.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "white container moved from hand to counter and kitchen drawer opened with a small utensil taken in hand"
+ },
+ {
+  "t0": 264.03,
+  "t1": 271.0,
+  "action": "rummaging through drawer",
+  "objects": [
+   "kitchen utensils"
+  ],
+  "tools": [
+   "tongs"
+  ],
+  "amount": null,
+  "after": "holding two black utensils in hands"
+ },
+ {
+  "t0": 268.0,
+  "t1": 275.01,
+  "action": "pick up a knife",
+  "objects": [
+   "kitchen drawer"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "knife is held in left hand"
+ },
+ {
+  "t0": 272.01,
+  "t1": 279.01,
+  "action": "picks up a thermometer from drawer",
+  "objects": [
+   "kitchen drawer"
+  ],
+  "tools": [
+   "probe thermometer"
+  ],
+  "amount": null,
+  "after": "thermometer is in hand and drawer is closed"
+ },
+ {
+  "t0": 276.01,
+  "t1": 283.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "drawer is closed and upper cabinet is open with hand on a box"
+ },
+ {
+  "t0": 280.01,
+  "t1": 287.02,
+  "action": "open a can",
+  "objects": [
+   "small white can"
+  ],
+  "tools": [
+   "manual can opener"
+  ],
+  "amount": null,
+  "after": "a can retrieved from the overhead cabinet is being punctured"
+ },
+ {
+  "t0": 284.02,
+  "t1": 291.02,
+  "action": "opens a box",
+  "objects": [
+   "white box"
+  ],
+  "tools": [
+   "handheld opener"
+  ],
+  "amount": null,
+  "after": "white box is open"
+ },
+ {
+  "t0": 288.02,
+  "t1": 295.03,
+  "action": "opening package",
+  "objects": [
+   "package"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "spoon picked up and used to pry package open"
+ },
+ {
+  "t0": 292.03,
+  "t1": 299.03,
+  "action": "cutting open a packet",
+  "objects": [
+   "white packet"
+  ],
+  "tools": [
+   "scissors"
+  ],
+  "amount": null,
+  "after": "the packet is cut open"
+ },
+ {
+  "t0": 296.03,
+  "t1": 303.0,
+  "action": "slice tomatoes",
+  "objects": [
+   "tomatoes"
+  ],
+  "tools": [
+   "slicer"
+  ],
+  "amount": null,
+  "after": "more tomato slices on plate"
+ },
+ {
+  "t0": 300.03,
+  "t1": 307.01,
+  "action": "sprinkles seasoning",
+  "objects": [
+   "tomato slices"
+  ],
+  "tools": [
+   "shaker"
+  ],
+  "amount": null,
+  "after": "tomato slices are seasoned"
+ },
+ {
+  "t0": 304.0,
+  "t1": 311.01,
+  "action": "seasoning tomato slices",
+  "objects": [
+   "tomato slices"
+  ],
+  "tools": [
+   "seasoning container"
+  ],
+  "amount": null,
+  "after": "seasoning is visible on the slices"
+ },
+ {
+  "t0": 308.01,
+  "t1": 315.01,
+  "action": "salt tomatoes and store salt",
+  "objects": [
+   "tomato slices",
+   "salt box"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "salt box is placed into overhead cabinet"
+ },
+ {
+  "t0": 312.01,
+  "t1": 319.02,
+  "action": "season sliced tomatoes",
+  "objects": [
+   "sliced tomatoes"
+  ],
+  "tools": [
+   "teaspoon"
+  ],
+  "amount": null,
+  "after": "small box is put away in upper cabinet and seasoning is sprinkled onto tomato slices"
+ },
+ {
+  "t0": 316.02,
+  "t1": 323.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "cabinet door closed and a container placed on the counter next to the tablet"
+ },
+ {
+  "t0": 320.02,
+  "t1": 327.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "cabinet door is open and a small dark jar is in the right hand"
+ },
+ {
+  "t0": 324.02,
+  "t1": 331.03,
+  "action": "season sliced tomatoes",
+  "objects": [
+   "sliced tomatoes on plate"
+  ],
+  "tools": [
+   "spice jar"
+  ],
+  "amount": null,
+  "after": "seasoning is added to the sliced tomatoes on the plate"
+ },
+ {
+  "t0": 328.03,
+  "t1": 335.0,
+  "action": "sprinkling seasoning",
+  "objects": [
+   "sliced tomatoes"
+  ],
+  "tools": [
+   "spice bottle"
+  ],
+  "amount": null,
+  "after": "tomato slices on plate are seasoned"
+ },
+ {
+  "t0": 332.03,
+  "t1": 339.01,
+  "action": "sprinkling seasoning",
+  "objects": [
+   "tomato slices"
+  ],
+  "tools": [
+   "spice shaker"
+  ],
+  "amount": null,
+  "after": "seasoning appears on the tomato slices"
+ },
+ {
+  "t0": 336.0,
+  "t1": 343.01,
+  "action": "sprinkling seasoning",
+  "objects": [
+   "tomato slices"
+  ],
+  "tools": [
+   "spice bottle"
+  ],
+  "amount": null,
+  "after": "seasoning is sprinkled over the tomato slices"
+ },
+ {
+  "t0": 340.01,
+  "t1": 347.01,
+  "action": "sprinkling seasoning",
+  "objects": [
+   "food on plate"
+  ],
+  "tools": [
+   "seasoning bottle"
+  ],
+  "amount": null,
+  "after": "seasoning bottle is closed with cap"
+ },
+ {
+  "t0": 344.01,
+  "t1": 351.02,
+  "action": "sprinkles seasoning",
+  "objects": [
+   "tomato slices"
+  ],
+  "tools": [
+   "spice jar"
+  ],
+  "amount": null,
+  "after": "seasoning added to tomato slices"
+ },
+ {
+  "t0": 348.01,
+  "t1": 355.02,
+  "action": "sprinkling seasoning",
+  "objects": [
+   "sliced tomatoes"
+  ],
+  "tools": [
+   "seasoning shaker"
+  ],
+  "amount": null,
+  "after": "seasoning is applied to the tomato slices"
+ },
+ {
+  "t0": 352.02,
+  "t1": 359.03,
+  "action": "sprinkle seasoning",
+  "objects": [
+   "sliced tomatoes on plate"
+  ],
+  "tools": [
+   "seasoning shaker"
+  ],
+  "amount": null,
+  "after": "tomatoes are seasoned and shaker is closed"
+ },
+ {
+  "t0": 356.02,
+  "t1": 363.03,
+  "action": "closes and stores spice jar in cabinet",
+  "objects": [
+   "spice jar"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "spice jar is closed and placed on upper cabinet shelf"
+ },
+ {
+  "t0": 360.03,
+  "t1": 367.03,
+  "action": "storing and sprinkling spices",
+  "objects": [
+   "spice jars",
+   "counter bowl"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "spice jar is back on the cabinet shelf and a small container is left on the counter"
+ },
+ {
+  "t0": 364.03,
+  "t1": 371.0,
+  "action": "sprinkling seasoning with fingers",
+  "objects": [
+   "seasoning"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a white canister is now sitting on the counter next to the tablet"
+ },
+ {
+  "t0": 368.0,
+  "t1": 375.01,
+  "action": "picks up bottle",
+  "objects": [
+   "bottle"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "bottle is lifted off the counter and held in both hands"
+ },
+ {
+  "t0": 372.0,
+  "t1": 379.01,
+  "action": "picks up and inspects bottle",
+  "objects": [
+   "oil bottle",
+   "spice container"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "oil bottle is lifted off the stove into hands and hand is touching spice container"
+ },
+ {
+  "t0": 376.01,
+  "t1": 383.02,
+  "action": "opening a bottle",
+  "objects": [
+   "bottle",
+   "bottle cap"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the bottle cap is removed and held separately from the open bottle"
+ },
+ {
+  "t0": 380.01,
+  "t1": 387.02,
+  "action": "opens bottle and opens drawer",
+  "objects": [
+   "bottle",
+   "bottle cap"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "cap is off bottle and on counter, kitchen drawer is open"
+ },
+ {
+  "t0": 384.02,
+  "t1": 391.02,
+  "action": "takes a spoon from drawer",
+  "objects": [
+   "jar"
+  ],
+  "tools": [
+   "measuring spoon"
+  ],
+  "amount": null,
+  "after": "holding a black measuring spoon in right hand"
+ },
+ {
+  "t0": 388.02,
+  "t1": 395.03,
+  "action": "pour oil into spoon",
+  "objects": [
+   "oil",
+   "sliced tomatoes"
+  ],
+  "tools": [
+   "measuring spoon",
+   "oil bottle"
+  ],
+  "amount": null,
+  "after": "drawer is closed, plate of sliced tomatoes is on counter, and oil is in the spoon held over the plate"
+ },
+ {
+  "t0": 392.02,
+  "t1": 399.03,
+  "action": "pour oil onto spoon",
+  "objects": [
+   "sliced tomatoes on plate"
+  ],
+  "tools": [
+   "oil bottle",
+   "spoon"
+  ],
+  "amount": null,
+  "after": "bottle is upright and pouring has stopped"
+ },
+ {
+  "t0": 396.03,
+  "t1": 403.0,
+  "action": "brushing sliced tomatoes",
+  "objects": [
+   "sliced tomatoes on plate"
+  ],
+  "tools": [
+   "basting brush",
+   "oil bottle"
+  ],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 400.03,
+  "t1": 407.01,
+  "action": "sprinkling seasoning",
+  "objects": [
+   "tomato slices"
+  ],
+  "tools": [
+   "spoon",
+   "spice jar"
+  ],
+  "amount": null,
+  "after": "the spoon is set down on the cutting board"
+ },
+ {
+  "t0": 404.0,
+  "t1": 411.01,
+  "action": "open a bottle",
+  "objects": [
+   "bottle"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "spoon is set down on cutting board and bottle cap is removed"
+ },
+ {
+  "t0": 408.01,
+  "t1": 415.01,
+  "action": "opens and closes bottle then scrolls tablet",
+  "objects": [
+   "oil bottle",
+   "tablet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "bottle is recapped and tablet screen has changed"
+ },
+ {
+  "t0": 412.01,
+  "t1": 419.02,
+  "action": "checks tablet",
+  "objects": [
+   "tablet",
+   "oil bottle"
+  ],
+  "tools": [
+   "tablet"
+  ],
+  "amount": null,
+  "after": "view shifts from tablet on counter to plate of prepared tomato slices by stove"
+ },
+ {
+  "t0": 416.02,
+  "t1": 423.02,
+  "action": "places plate on stove",
+  "objects": [
+   "plate of tomato slices"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "plate is on the stovetop instead of the counter"
+ },
+ {
+  "t0": 420.02,
+  "t1": 427.03,
+  "action": "places plate and scrolls tablet",
+  "objects": [
+   "plate of sliced tomatoes",
+   "tablet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "plate moved from counter to stovetop"
+ },
+ {
+  "t0": 421.02,
+  "t1": 428.03,
+  "action": "places plate and scrolls tablet",
+  "objects": [
+   "plate with sliced tomatoes"
+  ],
+  "tools": [
+   "tablet"
+  ],
+  "amount": null,
+  "after": "plate is on the stovetop instead of being held and hand is touching tablet screen"
+ }
+]

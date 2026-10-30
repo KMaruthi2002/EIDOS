@@ -1,0 +1,658 @@
+{
+ "split": "dev",
+ "recipes": [
+  "Tomato Mozzarella Salad",
+  "Spiced Hot Chocolate"
+ ],
+ "recordings": 30,
+ "with_mistakes": 17,
+ "without_mistakes": 13,
+ "eidos": {
+  "n": 30,
+  "tp": 16,
+  "fp": 12,
+  "fn": 1,
+  "tn": 1,
+  "precision": 0.571,
+  "recall": 0.941,
+  "f1": 0.711,
+  "accuracy": 0.567
+ },
+ "eidos_no_contracts": {
+  "n": 30,
+  "tp": 16,
+  "fp": 6,
+  "fn": 1,
+  "tn": 7,
+  "precision": 0.727,
+  "recall": 0.941,
+  "f1": 0.821,
+  "accuracy": 0.767
+ },
+ "baseline_ask_muse_spark": {
+  "n": 30,
+  "tp": 17,
+  "fp": 13,
+  "fn": 0,
+  "tn": 0,
+  "precision": 0.567,
+  "recall": 1.0,
+  "f1": 0.723,
+  "accuracy": 0.567
+ },
+ "recall_by_mistake_type": {
+  "Missing Step": {
+   "n": 11,
+   "eidos": 11,
+   "baseline": 11
+  },
+  "Measurement Error": {
+   "n": 12,
+   "eidos": 11,
+   "baseline": 12
+  },
+  "Technique Error": {
+   "n": 14,
+   "eidos": 14,
+   "baseline": 14
+  },
+  "Preparation Error": {
+   "n": 12,
+   "eidos": 12,
+   "baseline": 12
+  },
+  "Order Error": {
+   "n": 5,
+   "eidos": 5,
+   "baseline": 5
+  },
+  "Temperature Error": {
+   "n": 5,
+   "eidos": 5,
+   "baseline": 5
+  },
+  "Timing Error": {
+   "n": 8,
+   "eidos": 8,
+   "baseline": 8
+  }
+ },
+ "missing_step_named_correctly": {
+  "n": 15,
+  "hit": 11
+ },
+ "step_tracking": {
+  "looks": 2321,
+  "correct": 1068,
+  "accuracy": 0.46
+ },
+ "look_latency_median_s": 2.72,
+ "rows": [
+  {
+   "rid": "12_6",
+   "recipe": "Tomato Mozzarella Salad",
+   "truth": true,
+   "tags": [
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "baseline": true,
+   "alerts": [
+    "contract",
+    "missing"
+   ]
+  },
+  {
+   "rid": "12_9",
+   "recipe": "Tomato Mozzarella Salad",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": false,
+   "baseline": true,
+   "alerts": [
+    "contract"
+   ]
+  },
+  {
+   "rid": "12_10",
+   "recipe": "Tomato Mozzarella Salad",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": false,
+   "baseline": true,
+   "alerts": [
+    "contract"
+   ]
+  },
+  {
+   "rid": "12_12",
+   "recipe": "Tomato Mozzarella Salad",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": false,
+   "baseline": true,
+   "alerts": [
+    "contract"
+   ]
+  },
+  {
+   "rid": "12_13",
+   "recipe": "Tomato Mozzarella Salad",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": false,
+   "baseline": true,
+   "alerts": [
+    "contract",
+    "contract"
+   ]
+  },
+  {
+   "rid": "12_15",
+   "recipe": "Tomato Mozzarella Salad",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": false,
+   "baseline": true,
+   "alerts": [
+    "contract"
+   ]
+  },
+  {
+   "rid": "12_16",
+   "recipe": "Tomato Mozzarella Salad",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "baseline": true,
+   "alerts": [
+    "contract",
+    "order"
+   ]
+  },
+  {
+   "rid": "12_17",
+   "recipe": "Tomato Mozzarella Salad",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "contract",
+    "contract",
+    "contract",
+    "missing"
+   ]
+  },
+  {
+   "rid": "12_19",
+   "recipe": "Tomato Mozzarella Salad",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": false,
+   "baseline": true,
+   "alerts": [
+    "contract",
+    "contract"
+   ]
+  },
+  {
+   "rid": "12_26",
+   "recipe": "Tomato Mozzarella Salad",
+   "truth": true,
+   "tags": [
+    "Technique Error",
+    "Technique Error",
+    "Technique Error",
+    "Technique Error",
+    "Measurement Error",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "baseline": true,
+   "alerts": [
+    "contract",
+    "order",
+    "missing"
+   ]
+  },
+  {
+   "rid": "12_38",
+   "recipe": "Tomato Mozzarella Salad",
+   "truth": true,
+   "tags": [
+    "Missing Step",
+    "Preparation Error",
+    "Measurement Error",
+    "Preparation Error",
+    "Measurement Error",
+    "Technique Error",
+    "Preparation Error",
+    "Measurement Error",
+    "Technique Error",
+    "Measurement Error",
+    "Preparation Error"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "contract",
+    "contract",
+    "missing"
+   ]
+  },
+  {
+   "rid": "12_41",
+   "recipe": "Tomato Mozzarella Salad",
+   "truth": true,
+   "tags": [
+    "Technique Error",
+    "Preparation Error",
+    "Technique Error",
+    "Preparation Error",
+    "Order Error",
+    "Preparation Error",
+    "Technique Error",
+    "Order Error",
+    "Preparation Error",
+    "Technique Error",
+    "Preparation Error",
+    "Order Error",
+    "Preparation Error",
+    "Order Error",
+    "Technique Error",
+    "Order Error",
+    "Preparation Error"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "order",
+    "contract",
+    "order",
+    "order",
+    "order",
+    "missing",
+    "missing"
+   ]
+  },
+  {
+   "rid": "12_43",
+   "recipe": "Tomato Mozzarella Salad",
+   "truth": true,
+   "tags": [
+    "Temperature Error",
+    "Technique Error",
+    "Measurement Error",
+    "Technique Error",
+    "Missing Step",
+    "Missing Step",
+    "Missing Step",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "baseline": true,
+   "alerts": [
+    "missing",
+    "missing",
+    "missing",
+    "missing"
+   ]
+  },
+  {
+   "rid": "12_48",
+   "recipe": "Tomato Mozzarella Salad",
+   "truth": true,
+   "tags": [
+    "Technique Error",
+    "Technique Error",
+    "Measurement Error",
+    "Preparation Error"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "baseline": true,
+   "alerts": [
+    "missing",
+    "missing"
+   ]
+  },
+  {
+   "rid": "12_51",
+   "recipe": "Tomato Mozzarella Salad",
+   "truth": true,
+   "tags": [
+    "Technique Error",
+    "Preparation Error",
+    "Technique Error",
+    "Technique Error",
+    "Technique Error"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "baseline": true,
+   "alerts": [
+    "contract",
+    "missing"
+   ]
+  },
+  {
+   "rid": "12_119",
+   "recipe": "Tomato Mozzarella Salad",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "baseline": true,
+   "alerts": [
+    "contract",
+    "missing",
+    "missing"
+   ]
+  },
+  {
+   "rid": "8_11",
+   "recipe": "Spiced Hot Chocolate",
+   "truth": true,
+   "tags": [
+    "Measurement Error"
+   ],
+   "eidos": false,
+   "eidos_nocontract": false,
+   "baseline": true,
+   "alerts": []
+  },
+  {
+   "rid": "8_16",
+   "recipe": "Spiced Hot Chocolate",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "missing"
+   ]
+  },
+  {
+   "rid": "8_19",
+   "recipe": "Spiced Hot Chocolate",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "contract",
+    "missing"
+   ]
+  },
+  {
+   "rid": "8_20",
+   "recipe": "Spiced Hot Chocolate",
+   "truth": false,
+   "tags": [],
+   "eidos": false,
+   "eidos_nocontract": false,
+   "baseline": true,
+   "alerts": []
+  },
+  {
+   "rid": "8_25",
+   "recipe": "Spiced Hot Chocolate",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "missing",
+    "missing"
+   ]
+  },
+  {
+   "rid": "8_26",
+   "recipe": "Spiced Hot Chocolate",
+   "truth": true,
+   "tags": [
+    "Technique Error",
+    "Preparation Error",
+    "Timing Error",
+    "Measurement Error",
+    "Temperature Error",
+    "Temperature Error",
+    "Timing Error",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "contract",
+    "order",
+    "missing"
+   ]
+  },
+  {
+   "rid": "8_30",
+   "recipe": "Spiced Hot Chocolate",
+   "truth": true,
+   "tags": [
+    "Preparation Error",
+    "Measurement Error",
+    "Measurement Error",
+    "Measurement Error",
+    "Timing Error",
+    "Temperature Error",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "order",
+    "contract",
+    "order",
+    "contract"
+   ]
+  },
+  {
+   "rid": "8_31",
+   "recipe": "Spiced Hot Chocolate",
+   "truth": true,
+   "tags": [
+    "Technique Error",
+    "Timing Error",
+    "Technique Error",
+    "Technique Error",
+    "Timing Error",
+    "Preparation Error",
+    "Missing Step",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "order",
+    "contract",
+    "missing",
+    "missing"
+   ]
+  },
+  {
+   "rid": "8_33",
+   "recipe": "Spiced Hot Chocolate",
+   "truth": true,
+   "tags": [
+    "Measurement Error",
+    "Preparation Error",
+    "Timing Error",
+    "Temperature Error",
+    "Measurement Error",
+    "Preparation Error",
+    "Preparation Error",
+    "Technique Error",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "contract",
+    "order"
+   ]
+  },
+  {
+   "rid": "8_35",
+   "recipe": "Spiced Hot Chocolate",
+   "truth": true,
+   "tags": [
+    "Technique Error",
+    "Preparation Error",
+    "Measurement Error",
+    "Order Error",
+    "Timing Error",
+    "Order Error",
+    "Measurement Error",
+    "Technique Error",
+    "Order Error",
+    "Measurement Error",
+    "Order Error"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "contract",
+    "order",
+    "order",
+    "contract"
+   ]
+  },
+  {
+   "rid": "8_40",
+   "recipe": "Spiced Hot Chocolate",
+   "truth": true,
+   "tags": [
+    "Measurement Error",
+    "Preparation Error",
+    "Order Error",
+    "Order Error",
+    "Timing Error",
+    "Order Error",
+    "Technique Error",
+    "Order Error",
+    "Measurement Error"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "order",
+    "order",
+    "missing"
+   ]
+  },
+  {
+   "rid": "8_44",
+   "recipe": "Spiced Hot Chocolate",
+   "truth": true,
+   "tags": [
+    "Technique Error",
+    "Preparation Error",
+    "Measurement Error",
+    "Measurement Error",
+    "Technique Error",
+    "Timing Error",
+    "Preparation Error",
+    "Missing Step",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "order",
+    "missing"
+   ]
+  },
+  {
+   "rid": "8_45",
+   "recipe": "Spiced Hot Chocolate",
+   "truth": true,
+   "tags": [
+    "Technique Error",
+    "Measurement Error",
+    "Order Error",
+    "Preparation Error",
+    "Order Error",
+    "Preparation Error",
+    "Order Error",
+    "Timing Error",
+    "Order Error",
+    "Temperature Error",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "order",
+    "order",
+    "contract",
+    "contract",
+    "missing"
+   ]
+  },
+  {
+   "rid": "8_50",
+   "recipe": "Spiced Hot Chocolate",
+   "truth": true,
+   "tags": [
+    "Order Error",
+    "Order Error",
+    "Order Error",
+    "Technique Error",
+    "Missing Step",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "order",
+    "missing",
+    "missing"
+   ]
+  }
+ ]
+}

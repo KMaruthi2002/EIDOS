@@ -1,0 +1,356 @@
+[
+ {
+  "t0": 0.0,
+  "t1": 7.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "camera pans around cluttered storage room showing carts, boxes, and equipment cases"
+ },
+ {
+  "t0": 4.02,
+  "t1": 11.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "hands are placed on the back of the desktop computer case"
+ },
+ {
+  "t0": 8.01,
+  "t1": 15.01,
+  "action": "remove side panel",
+  "objects": [
+   "desktop computer"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "side cover is removed exposing the chassis and a white cable is unplugged"
+ },
+ {
+  "t0": 12.03,
+  "t1": 19.03,
+  "action": "replace side panel",
+  "objects": [
+   "desktop computer",
+   "side panel"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the side cover is put back on the open computer case"
+ },
+ {
+  "t0": 16.02,
+  "t1": 23.02,
+  "action": "close cover and move tower",
+  "objects": [
+   "desktop computer tower",
+   "side panel"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "side panel is closed and tower is moved from shelf to yellow cart"
+ },
+ {
+  "t0": 20.0,
+  "t1": 27.01,
+  "action": "place computer and remove side panel",
+  "objects": [
+   "desktop computer",
+   "side panel"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "computer case is open exposing internal components"
+ },
+ {
+  "t0": 24.02,
+  "t1": 31.03,
+  "action": "remove side panel",
+  "objects": [
+   "desktop computer",
+   "side panel"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "side panel is removed and internal components of computer are exposed"
+ },
+ {
+  "t0": 28.01,
+  "t1": 35.01,
+  "action": "none",
+  "objects": [
+   "desktop computer"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "side panel removed and interior of case fully exposed"
+ },
+ {
+  "t0": 32.03,
+  "t1": 39.0,
+  "action": "install RAM",
+  "objects": [
+   "RAM sticks",
+   "motherboard"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hands moved from holding the case edges to reaching into the case to the RAM slots"
+ },
+ {
+  "t0": 36.02,
+  "t1": 43.02,
+  "action": "remove RAM",
+  "objects": [
+   "desktop computer",
+   "RAM stick"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "RAM stick is removed from motherboard slot and placed beside the case"
+ },
+ {
+  "t0": 40.01,
+  "t1": 47.01,
+  "action": "remove RAM",
+  "objects": [
+   "RAM stick",
+   "desktop computer motherboard"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "RAM stick is removed from motherboard slot and held outside the case"
+ },
+ {
+  "t0": 44.03,
+  "t1": 51.03,
+  "action": "remove RAM",
+  "objects": [
+   "RAM sticks",
+   "motherboard RAM slots"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "both RAM sticks are removed from the slots and held in hand beside the case"
+ },
+ {
+  "t0": 48.01,
+  "t1": 55.02,
+  "action": "remove RAM",
+  "objects": [
+   "RAM sticks",
+   "desktop computer"
+  ],
+  "tools": [],
+  "amount": "2 sticks",
+  "after": "two RAM sticks are removed from the motherboard and placed on the case"
+ },
+ {
+  "t0": 52.0,
+  "t1": 59.0,
+  "action": "remove RAM",
+  "objects": [
+   "RAM sticks",
+   "desktop computer"
+  ],
+  "tools": [],
+  "amount": "3 sticks",
+  "after": "three RAM sticks are outside the case on the cart and hands are off the computer"
+ },
+ {
+  "t0": 56.02,
+  "t1": 63.03,
+  "action": "pick up and handle RAM",
+  "objects": [
+   "RAM sticks",
+   "desktop computer"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a RAM stick is picked up from the cart and held with both hands over the motherboard"
+ },
+ {
+  "t0": 60.01,
+  "t1": 67.01,
+  "action": "install RAM",
+  "objects": [
+   "RAM sticks",
+   "desktop computer motherboard"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "one RAM stick is seated in the motherboard memory slot"
+ },
+ {
+  "t0": 64.03,
+  "t1": 71.03,
+  "action": "install RAM",
+  "objects": [
+   "RAM stick",
+   "desktop computer motherboard"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a RAM stick is seated in the memory slot"
+ },
+ {
+  "t0": 68.02,
+  "t1": 75.02,
+  "action": "install RAM",
+  "objects": [
+   "RAM stick",
+   "desktop computer"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a RAM stick is seated in the motherboard memory slot"
+ },
+ {
+  "t0": 72.0,
+  "t1": 79.01,
+  "action": "install RAM",
+  "objects": [
+   "RAM stick",
+   "desktop computer motherboard"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "RAM stick is seated in the memory slot"
+ },
+ {
+  "t0": 76.03,
+  "t1": 83.03,
+  "action": "remove and install RAM",
+  "objects": [
+   "RAM stick",
+   "motherboard RAM slot"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "old RAM is removed and a green RAM stick is seated in the slot"
+ },
+ {
+  "t0": 80.01,
+  "t1": 87.02,
+  "action": "install RAM module",
+  "objects": [
+   "RAM stick",
+   "desktop computer motherboard slot"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "RAM stick is seated in the slot"
+ },
+ {
+  "t0": 84.0,
+  "t1": 91.0,
+  "action": "install RAM",
+  "objects": [
+   "RAM module",
+   "desktop computer motherboard"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a RAM module is seated in the motherboard memory slot"
+ },
+ {
+  "t0": 88.02,
+  "t1": 95.02,
+  "action": "install RAM",
+  "objects": [
+   "RAM stick",
+   "motherboard RAM slot"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "RAM stick is seated in the motherboard slot"
+ },
+ {
+  "t0": 92.01,
+  "t1": 99.01,
+  "action": "install RAM and close case",
+  "objects": [
+   "RAM sticks",
+   "desktop motherboard",
+   "side panel"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "RAM is seated in slots and side cover is put back on the open case"
+ },
+ {
+  "t0": 96.03,
+  "t1": 103.03,
+  "action": "install RAM and close case",
+  "objects": [
+   "RAM stick",
+   "desktop computer",
+   "side panel"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "RAM is seated in slot and side panel is closed over the computer"
+ },
+ {
+  "t0": 100.02,
+  "t1": 107.02,
+  "action": "close side panel",
+  "objects": [
+   "desktop computer"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "open computer case is closed and lifted up"
+ },
+ {
+  "t0": 104.0,
+  "t1": 111.01,
+  "action": "move computer to floor",
+  "objects": [
+   "desktop computer"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "computer moved from cart to floor with rear panel exposed"
+ },
+ {
+  "t0": 108.02,
+  "t1": 115.03,
+  "action": "plug in power cable",
+  "objects": [
+   "desktop computer",
+   "power cable"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the computer is turned on its side and a power cable is connected to its rear"
+ },
+ {
+  "t0": 112.01,
+  "t1": 119.01,
+  "action": "plug cables into computer",
+  "objects": [
+   "desktop computer",
+   "power cable",
+   "white cable"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "black power cable and white cable are plugged into the back of the computer"
+ },
+ {
+  "t0": 114.02,
+  "t1": 121.02,
+  "action": "plugging in cables",
+  "objects": [
+   "desktop computer",
+   "power cable",
+   "white cable"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "cables are connected to the back of the computer and the person walks away"
+ }
+]

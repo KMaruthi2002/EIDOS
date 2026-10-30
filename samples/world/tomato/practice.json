@@ -1,0 +1,12 @@
+[
+ {
+  "file": "practice/skipped-oil.mp4",
+  "label": "Another cook who skips a step",
+  "note": "A different person in a different kitchen. Labelled in the dataset: never adds the olive oil."
+ },
+ {
+  "file": "practice/clean.mp4",
+  "label": "Another cook, done correctly",
+  "note": "A different person in a different kitchen, with no mistakes labelled in the dataset."
+ }
+]

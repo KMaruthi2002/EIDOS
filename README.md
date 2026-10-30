@@ -1,16 +1,63 @@
 # EIDOS
 
-**Show it once.** EIDOS watches a screen-recorded tutorial and compiles it into a skill: a small program an AI agent can run on screens the video never showed. Every step carries a **visual contract** taken from the video, so the agent checks its own work, repairs what went wrong, and reports honestly when it can't.
+**Show it once.** EIDOS compiles a video of someone doing a task into a program: steps, the order they really need, values you can change, and a **visual contract** for every step, meaning what must be true on camera once the step is done. The same compiler runs in three worlds:
 
-It works on four everyday tasks (send an email, add a calendar event, submit an expense, turn on two-factor sign-in) and a spreadsheet task, and as an add-on, on a simulated robot arm. On held-out tests with new values, random redesigns, a second design or app and mid-task interruptions, EIDOS finished **60/60** everyday runs and **41/44** spreadsheet runs, against **4/60** and **3/44** for copying the tutorial's clicks. When every control was renamed ("Deliver" instead of "Send", "Recipient" instead of "To"), offline EIDOS stopped and said so on all 32 runs, and EIDOS reading the screen with Meta's **Muse Spark** finished **32/32**, and so did Meta's open-weights **Muse Spark Open**. Its own verdict matched the truth on all **168** held-out runs.
+- **The real world, live.** Learn a hands-on task (cooking, a PC repair, electrical maintenance) from one ordinary video. Then point a camera at someone doing it: EIDOS follows along step by step, says what comes next, checks each finished step against the video, and raises an alert the moment a step is skipped, done out of order, or done wrong.
+- **Screens.** An agent runs the learned program on apps the video never showed, and checks its own work.
+- **Robots.** A simulated arm runs a learned stacking program and notices when its work is knocked over.
+
+⟦HEADLINE⟧
 
 Built by Maruthi Kunchala (Team Parallax) for the Meta Global AI Hackathon 2026.
 
 ## The problem
 
-There are billions of hours of screen-recorded how-to videos, but an agent still can't watch one and come away with a skill it can check. Recent research turns tutorial videos into action trajectories for computer-use agents: as in-context examples and training data ([Watch & Learn](https://arxiv.org/abs/2510.04673)), as one trajectory added to context at each step ([Learning from Online Videos at Inference Time](https://arxiv.org/abs/2511.04137)), or as planning and grounding knowledge ([GUIDE](https://arxiv.org/abs/2603.26266), which reports gains of over 5% on OSWorld). As far as I found, none of them compiles one video into a parameterized program whose steps are checked against what the video showed during the run, or tests learning in one app and running in another. Agents that copy recorded clicks break when the app changes, and have no way to notice.
+People film themselves doing things all the time: cooking, fixing, assembling, clicking through software. There are billions of hours of it, but an AI still can't watch one of those videos and come away with a skill it can check. For hands-on work, research systems detect mistakes in procedures after training on many labelled recordings of the same task (for example on [CaptainCook4D](https://arxiv.org/abs/2312.14556) and [HoloAssist](https://arxiv.org/abs/2309.17024)). EIDOS learns a task from one video, with no labels, and turns it into a program a camera can check while the task is being done.
 
-## What EIDOS does
+On screens, there are billions of hours of screen-recorded how-to videos, and an agent still can't watch one and come away with a skill it can check. Recent research turns tutorial videos into action trajectories for computer-use agents: as in-context examples and training data ([Watch & Learn](https://arxiv.org/abs/2510.04673)), as one trajectory added to context at each step ([Learning from Online Videos at Inference Time](https://arxiv.org/abs/2511.04137)), or as planning and grounding knowledge ([GUIDE](https://arxiv.org/abs/2603.26266), which reports gains of over 5% on OSWorld). As far as I found, none of them compiles one video into a parameterized program whose steps are checked against what the video showed during the run, or tests learning in one app and running in another. Agents that copy recorded clicks break when the app changes, and have no way to notice.
+
+## The real world, live
+
+```
+one video ──► notes, 8 s at a time ──► program ──► calibrated on a ──► live: which step is it?
+ (any task)     (Muse Spark)            (Muse Wonder)  second video       did it finish? does it match the video?
+                                         + outlines (SAM 3.1)              anything skipped or out of order?
+```
+
+1. **Watch.** The video is read in overlapping 8-second windows, one frame per second. For each window Muse Spark says what the person does: the action, the objects and tools, any amount it can read or see, and what is visibly different afterwards (`eidos/world/learn.py`).
+2. **Compile.** Muse Wonder turns the notes into a program: steps in plain words, written so they hold for anyone (the mug, not the red mug), amounts as inputs you can change, the steps each step really needs, and a visual contract per step. The frames where each step starts and ends are kept as evidence, and SAM 3.1 outlines what each contract is about in them.
+3. **Show it again.** A second correct demonstration calibrates the program (`eidos/world/calibrate.py`). The program is run on it exactly as it would run live: a step the second person never did becomes optional (a habit, not a requirement), a dependency they did not respect is dropped, and a contract that fails on correct work is switched off. Every change is recorded with its reason, and the person who owns the skill can mark any step optional or required with one click.
+4. **Live.** Frames arrive from a camera about once a second (`eidos/world/session.py`). Every 3 seconds Muse Spark looks at the last 6 seconds and says which step is happening, or none. Each look is independent, so one wrong look can't derail the next; a step starts when it wins 2 of the last 3 looks. Alerts:
+   - **Out of order**: a required step starts before a step it needs. Needs pass through optional steps: if opening a cabinet is optional but needs the power off, removing a part from it still needs the power off.
+   - **Check failed**: a required step ended and the result doesn't match its contract, judged against the frame where the demonstration finished the same step. Only a failure seen twice, a few seconds apart, is reported; if the result isn't clearly visible, nothing is.
+   - **Skipped**: when the task is finished, a required step was never seen.
+   Before an order or skipped alert, EIDOS **looks back** over everything so far for the missing step, the way a person rewinds before accusing someone. The alert is dropped only if the step is clearly found.
+
+Nothing uses frames from the future: each decision at time t uses frames up to t. In the Studio's **Real world** tab, EIDOS watches your camera, or plays a recording as if it were live, and speaks the next step and any alert if you want it to.
+
+### Examples
+
+| Skill (learned from one video) | Source | What happens live |
+|---|---|---|
+| Replace a part in an electrical control cabinet | HoloAssist R189 | On a recording edited so the disconnect switch is never turned off: "Out of order: step 3 (Remove the old electrical component…) started before step 1 (Turn the disconnect switch to OFF)", raised while the video plays, also through a camera feed |
+| Seasoned tomato slices with mozzarella | CaptainCook4D 12_2 | On another cook who never adds the olive oil (labelled in the dataset): "Skipped: Pour oil over the tomato slices" |
+| Install RAM in a desktop computer; install a graphics card | HoloAssist R181, R196 | Learned from one technician's head-camera video each; followed live on other technicians |
+
+### Benchmark: live mistake detection on CaptainCook4D
+
+[CaptainCook4D](https://aria-research-lab.github.io/projects/CaptainCook4D) (Peddi et al., NeurIPS 2024) has first-person recordings of people cooking recipes, many with deliberate mistakes labelled step by step: missing steps, wrong order, wrong amounts, wrong technique, wrong timing or temperature. For each recipe, EIDOS learns from the first recording without mistakes and calibrates on the second; no labels are used to learn. Every other recording of that recipe, by other people in other kitchens, is run through the live runner as if it were a camera feed. The question is the dataset's error-recognition question: did this recording contain a mistake? The labels are used only to score.
+
+The comparison is **Muse Spark asked directly**: it gets the same compiled step list and 24 frames spread over the whole recording (so it sees the end, which a live system can't) and is asked whether the person made any mistake.
+
+⟦BENCH⟧
+
+**What the numbers mean.** On the development recipes, most of EIDOS's false alarms on correct recordings were real deviations from the demonstration that the recipe doesn't require: the demonstrator rinsed the mug first and other people didn't, so the dataset doesn't call it a mistake. EIDOS is faithful to what it was shown; marking that step optional removes the alert. The visual checks rarely fire (6 of 199 checks on the development recipes), and when they do they mostly name mistakes nothing else can see, such as "Tomato is chopped into small irregular pieces, not 6 slices".
+
+**Protocol.** Two recipes were used for development (`runs/world/dev/`, earlier versions kept in `runs/world/archive/`). The eight test recipes were chosen by a rule before any test run (the next eight shortest by average recording length) and run once with the frozen code (`runs/world/test/`). Looks are cached in `runs/world/looks/`, so scores can be recomputed without a key.
+
+**Scope.** Recordings are first-person, 360p, sampled at one frame per second; the step tracker can miss short steps, and amounts and temperatures are hard to see at this size. Learning from one video can't tell a habit from a requirement; calibration on a second video and the one-click override handle that. A real deployment would also want a check on what's being held (a wrong ingredient), which the contracts only partly cover.
+
+## Screens: how it works
 
 ```
 tutorial video ──► steps + visual contracts ──► program with inputs ──► run on a new screen, checking each step
@@ -45,10 +92,14 @@ The first task family: add a bold totals row. `=SUM(E2:E11)` becomes "sum the Re
 
 ## Meta models
 
-EIDOS runs fully offline, and uses Meta's models where they add something it can't do from pixels and OCR alone. Every model answer is a proposal that EIDOS checks against the screen.
+On screens EIDOS runs fully offline and uses Meta's models where they add something pixels and OCR can't; every answer is a proposal checked against the screen. In the real world, Meta's models are how EIDOS sees.
 
 | Model | What it does in EIDOS | Where |
 |---|---|---|
+| Muse Spark (`muse-spark-1.3`), real world | Watches the demonstration 8 seconds at a time; live, says which step is happening every 3 seconds (minimal reasoning, median about 3 s a look); checks each finished step against the demonstration's frame; searches back before an alert | `eidos/world/learn.py`, `eidos/world/run.py` |
+| Muse Wonder (`muse-wonder-1.0`), real world | Compiles the window notes into the program: steps, inputs, dependencies, contracts (Muse Spark is the fallback) | `eidos/world/learn.py` `compile_program` |
+| SAM 3.1 (`sam-3.1`), real world | Outlines what each contract is about in the demonstration's evidence frame (the dashed outline in the Studio) | `eidos/world/learn.py` `outline` |
+| Muse Spark Open, real world | Can be chosen to watch live instead of Muse Spark (about 10 s a look on Baseten, so alerts come later) | Studio, `reader: open` |
 | Muse Spark (`muse-spark-1.3`) | When a learned label isn't on the new screen, EIDOS gives Muse Spark the screenshot and the text it read there, and asks which item plays the same role ("the button labelled Send in the tutorial"). The answer must be one of those items, so EIDOS can find it from pixels and check it like any other label. It also maps a press's expected phrases ("Settings saved") to the new wording ("Changes applied") before the contract is checked | `eidos/live.py` `match_label`, `eidos/ui/run.py` |
 | SAM 3.1 (`sam-3.1`) | A second opinion on every field, button and switch EIDOS finds ("input box", "Deliver button", "toggle switch"). Advisory: logged, never overrides the pixel check | `eidos/ui/run.py` `sam_check`; spreadsheet runner fallback |
 | Muse Image (`muse-image-1.0`) | Draws each learned skill's card in the Studio (`runs/*/card.webp`, which keep Meta's AI label) | `eidos/studio.py` |
@@ -59,7 +110,7 @@ Keys go in `.env` (`MODEL_API_KEY`, `BASETEN_API_KEY`), which is not committed. 
 
 On the design C held-out runs, Muse Spark was asked a median of 11 times per run, at a median of 2.3 seconds per call. SAM 3.1's box agreed with EIDOS's own (overlap of at least half) on 109 of 151 checks (72%); in most disagreements SAM's top box didn't overlap EIDOS's at all, often because a phrase like "input box" fits every field on the form. Each of those runs still succeeded, which is why SAM stays advisory.
 
-## Benchmarks
+## Screens: benchmarks
 
 Each skill is learned once, from one tutorial video in App A, then run under conditions the video never showed. Three systems run the same conditions: **copying the clicks** (replay the tutorial's exact pointer positions and keystrokes), **EIDOS with checks off** (the same skill and perception, acting once per step without checking), and **EIDOS**. Success is judged from each app's internal state, which no system sees.
 
@@ -123,7 +174,7 @@ On redesigns and the second design or app, checks off does about as well as EIDO
 
 This is a pilot. The target apps are built for the benchmark (the everyday apps in `apps/everyday/`) or open-source ([x-spreadsheet](https://github.com/myliang/x-spreadsheet) and [Jspreadsheet CE](https://github.com/jspreadsheet/ce), both MIT). The tutorials are scripted recordings with a visible click highlight. Five task families, no scrolling, and repair is "press Escape and redo the step" (the benchmark's dialog closes on Escape; other kinds of interruption would need other routes). The alternative route for bold in spreadsheets (Ctrl+B) is built in, not learned. Design C renames controls but keeps their meaning one-to-one; a real redesign can also merge or split steps. The next step is real third-party tutorial videos and real apps.
 
-## Add-on: physical skills (simulated robot)
+## Robots: physical skills in simulation
 
 The same idea, off the screen. `physical/` learns a stacking task from a demonstration video and runs it on a simulated robot arm.
 
@@ -141,7 +192,16 @@ Setup: `physical/setup.sh` (MuJoCo plus the Panda model; on headless Linux, OSMe
 python -m eidos studio        # then open http://localhost:8000
 ```
 
-A local web app over the same engine. Everything runs on your machine; the four everyday apps are served by the Studio itself.
+A local web app over the same engine, with two tabs: **Screens** and **Real world**.
+
+**Real world** (`/world`, needs a Meta Model API key):
+
+- **Learn from a video**: drop any video of a hands-on task. The notes appear as EIDOS watches, then the program, with the evidence frames and SAM outlines.
+- **Follow along live**: choose your camera (on a phone or laptop, point it at your hands and the work), a practice recording, or any video file played in real time. The current step, what EIDOS sees, the next step, checks and alerts update as it happens; it can speak the next step and alerts.
+- Three sample skills ship with practice recordings: tomato salad (CaptainCook4D), installing RAM and replacing a part in an electrical cabinet (HoloAssist), including a recording edited so the power is never switched off.
+- Mark any step optional or required with one click before starting.
+
+**Screens**: the four everyday apps are served by the Studio itself.
 
 1. **Show it a task**, three ways:
    - **Teach it live.** Pick an app (Mail, Calendar, Expenses, Settings) and do the task once inside the Studio. Your pointer and keys go to a real browser running the app, which is recorded the way screen recorders record tutorials (highlighted pointer, click rings). When you press "Finish and learn", EIDOS learns from that video file alone, the same as from any other recording.
@@ -160,7 +220,16 @@ pip install -r requirements.txt && python -m playwright install chromium
 # Tesseract OCR and ffmpeg are needed (apt install tesseract-ocr ffmpeg / brew install tesseract ffmpeg)
 # Optional: put MODEL_API_KEY (Meta Model API) and BASETEN_API_KEY in a .env file to enable the live models
 
-python -m eidos studio                                             # the app: open http://localhost:8000
+python -m eidos studio                                             # the app: open http://localhost:8000 (Real world tab: /world)
+
+# Real world (needs MODEL_API_KEY; videos and annotations download to ../data, outside the repo)
+git clone https://github.com/CaptainCook4D/annotations ../data/cc_ann
+python bench/world_bench.py prep  --split dev                      # download recordings, keep one frame per second
+python bench/world_bench.py learn --split dev                      # learn each recipe from one video, calibrate on a second
+python bench/world_bench.py run   --split dev                      # every other recording, as if live
+python bench/world_bench.py baseline --split dev                   # Muse Spark asked directly
+python bench/world_bench.py score --split dev                      # (the same for --split test)
+python tools/make_world_samples.py                                 # rebuild the Studio's sample skills
 
 # Everyday tasks (the Studio also serves the everyday apps)
 python -m eidos studio &
@@ -197,6 +266,7 @@ python -m pytest -q                   # plus end-to-end runs and a click-through
 - `tests/test_run.py`: EIDOS on a hard redesign of each task, an interrupted run with an honest verdict, and copying the clicks working only where the video was recorded.
 - `tests/test_studio.py`: the Studio's API, and a browser click-through from choosing a sample to the verdict.
 - `tests/test_teach.py`: teaching live end to end (a scripted person records Mail through the teach API, EIDOS learns it, and the skill runs on design B with new values), plus the teach API's guards and the success rule for taught skills.
+- `tests/test_world.py`: the live runner offline, with scripted looks: steps start only on agreement, order alerts pass through optional steps, optional steps never alert, skipped steps are reported, calibration drops a dependency a correct demonstration didn't follow, searching back dismisses only a step it clearly finds, and a live session feeds out-of-order answers to the tracker in time order.
 - `tests/test_meta_client.py`: the Meta Model API client against a fake server (a test double); it checks the request shape and the parsing of replies, not model quality.
 
 ## Layout
@@ -204,14 +274,22 @@ python -m pytest -q                   # plus end-to-end runs and a click-through
 ```
 apps/        spreadsheet apps (self-hosted, MIT) and everyday/ (mail, calendar, expense,
              settings; designs A, B and C), all with redesign parameters
-eidos/       ui/ (everyday tasks: see.py perception, learn.py video -> program,
+eidos/       world/ (the real world: learn.py video -> program, calibrate.py, run.py looks,
+             tracker, checks and searching back, session.py live sessions, server.py Studio API)
+             ui/ (everyday tasks: see.py perception, learn.py video -> program,
              run.py perceive/ground/act/check, tasks.py scoring and inputs)
              extract.py (video -> steps + contracts), compiler.py (-> program),
              runner.py (perceive, ground, act, check), vision.py (offline perception),
              live.py (Meta Model API and Muse Spark Open on Baseten), meta.py (spreadsheet
              client), score.py (benchmark oracle), studio.py (the app's server),
              teach.py (teaching live: the recorded browser behind "Teach it live")
-bench/       benchmark and showcase runners (run_everyday.py, run_bench.py)
-web/         demo page template and builder; studio/ (the EIDOS Studio front end)
+bench/       benchmark and showcase runners (world_bench.py, run_everyday.py, run_bench.py)
+samples/     world/: the Studio's sample real-world skills with practice recordings
+tools/       make_world_samples.py
+web/         demo page template and builder; studio/ and world/ (the EIDOS Studio front end)
 video/       explainer video source (Remotion)
 ```
+
+## Credits
+
+Real-world recordings: [CaptainCook4D](https://github.com/CaptainCook4D/annotations) (Apache License 2.0; annotations MIT) and [HoloAssist](https://holoassist.github.io/) (CDLA-Permissive-2.0). Spreadsheet apps: x-spreadsheet and Jspreadsheet CE (MIT). Robot model: MuJoCo Menagerie.

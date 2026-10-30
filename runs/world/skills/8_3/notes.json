@@ -1,0 +1,1227 @@
+[
+ {
+  "t0": 0.0,
+  "t1": 7.01,
+  "action": "none",
+  "objects": [
+   "red mug"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "upper cabinet door is opened and red mug is taken from shelf into hand"
+ },
+ {
+  "t0": 4.0,
+  "t1": 11.01,
+  "action": "takes a mug from cabinet",
+  "objects": [
+   "red mug"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "red mug is out of the cabinet and held over the sink"
+ },
+ {
+  "t0": 8.01,
+  "t1": 15.02,
+  "action": "fill mug with water",
+  "objects": [
+   "red mug"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "mug is in the sink filling with water"
+ },
+ {
+  "t0": 12.01,
+  "t1": 19.02,
+  "action": "rinsing a mug",
+  "objects": [
+   "red mug"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "faucet is turned on and water is flowing into the mug held under it"
+ },
+ {
+  "t0": 16.02,
+  "t1": 23.02,
+  "action": "washing a mug",
+  "objects": [
+   "red mug"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "faucet is turned off and mug is tipped to drain"
+ },
+ {
+  "t0": 20.02,
+  "t1": 27.03,
+  "action": "rinses a mug",
+  "objects": [
+   "red mug"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the faucet is turned off and the mug is emptied"
+ },
+ {
+  "t0": 24.02,
+  "t1": 31.03,
+  "action": "rinse a mug",
+  "objects": [
+   "red mug"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "mug is moved from over the sink to the counter"
+ },
+ {
+  "t0": 28.03,
+  "t1": 35.0,
+  "action": "set down mug and tap tablet",
+  "objects": [
+   "red mug",
+   "tablet"
+  ],
+  "tools": [
+   "kitchen towel"
+  ],
+  "amount": null,
+  "after": "mug is on countertop and finger is touching tablet screen"
+ },
+ {
+  "t0": 32.03,
+  "t1": 39.01,
+  "action": "handles towel and taps tablet",
+  "objects": [
+   "kitchen towel",
+   "tablet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "camera view moves away from stove to the floor"
+ },
+ {
+  "t0": 36.0,
+  "t1": 43.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "the refrigerator door is open"
+ },
+ {
+  "t0": 40.01,
+  "t1": 47.01,
+  "action": "opens milk bottle",
+  "objects": [
+   "plastic milk bottle"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "bottle taken from refrigerator door to counter with pink cap being unscrewed"
+ },
+ {
+  "t0": 44.01,
+  "t1": 51.02,
+  "action": "pour milk into mug",
+  "objects": [
+   "milk bottle",
+   "red mug"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "red mug on counter now contains milk"
+ },
+ {
+  "t0": 48.01,
+  "t1": 55.02,
+  "action": "pouring milk",
+  "objects": [
+   "red mug"
+  ],
+  "tools": [
+   "plastic bottle"
+  ],
+  "amount": null,
+  "after": "red mug is filled with white liquid"
+ },
+ {
+  "t0": 52.02,
+  "t1": 59.03,
+  "action": "pouring milk and capping bottle",
+  "objects": [
+   "red mug",
+   "plastic bottle"
+  ],
+  "tools": [
+   "plastic bottle"
+  ],
+  "amount": null,
+  "after": "the mug is filled with white liquid and the bottle is closed with its pink cap"
+ },
+ {
+  "t0": 56.02,
+  "t1": 63.03,
+  "action": "pour milk and close bottle",
+  "objects": [
+   "milk bottle",
+   "mug"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "mug is filled with milk, bottle is capped and set down, mug is lifted"
+ },
+ {
+  "t0": 60.03,
+  "t1": 67.0,
+  "action": "put mug in microwave",
+  "objects": [
+   "red mug of milk"
+  ],
+  "tools": [
+   "microwave"
+  ],
+  "amount": null,
+  "after": "mug moved from counter into microwave"
+ },
+ {
+  "t0": 64.03,
+  "t1": 71.0,
+  "action": "heat mug in microwave",
+  "objects": [
+   "red mug",
+   "microwave"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "red mug with milk is inside the closed microwave"
+ },
+ {
+  "t0": 68.0,
+  "t1": 75.01,
+  "action": "reposition microwave",
+  "objects": [
+   "microwave"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "microwave is turned to face forward and pushed back, hands are removed"
+ },
+ {
+  "t0": 72.01,
+  "t1": 79.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "camera pulls back to show more of the sink and left counter, no visible change to items"
+ },
+ {
+  "t0": 76.01,
+  "t1": 83.02,
+  "action": "place utensil in sink",
+  "objects": [
+   "utensil",
+   "sink"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a black-handled utensil and a drain cover are visible in the left sink basin that were not there at the start"
+ },
+ {
+  "t0": 80.01,
+  "t1": 87.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 84.02,
+  "t1": 91.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 88.02,
+  "t1": 95.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "a green sponge appears on the left sink edge and the gray towel is shifted slightly toward the faucet"
+ },
+ {
+  "t0": 92.03,
+  "t1": 99.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 96.03,
+  "t1": 103.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 100.03,
+  "t1": 107.01,
+  "action": "placing cup in sink",
+  "objects": [
+   "cup"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a cup appears in the left sink basin at the end"
+ },
+ {
+  "t0": 104.0,
+  "t1": 111.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 108.01,
+  "t1": 115.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 112.01,
+  "t1": 119.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 116.02,
+  "t1": 123.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 120.02,
+  "t1": 127.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 124.02,
+  "t1": 131.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 128.03,
+  "t1": 135.0,
+  "action": "operating microwave",
+  "objects": [
+   "microwave"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hands are on the microwave and view is closer to microwave"
+ },
+ {
+  "t0": 132.03,
+  "t1": 139.01,
+  "action": "opens microwave and removes mug",
+  "objects": [
+   "red mug",
+   "microwave"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "red mug with white liquid is taken out of the open microwave and held in hand"
+ },
+ {
+  "t0": 136.0,
+  "t1": 143.01,
+  "action": "removes mug from microwave and closes door",
+  "objects": [
+   "microwave",
+   "mug"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "mug is out on the counter and microwave door is closed"
+ },
+ {
+  "t0": 140.01,
+  "t1": 147.01,
+  "action": "heat milk in microwave",
+  "objects": [
+   "red mug with milk"
+  ],
+  "tools": [
+   "microwave",
+   "tablet"
+  ],
+  "amount": null,
+  "after": "mug is no longer in hands and person is touching tablet by the stove"
+ },
+ {
+  "t0": 144.01,
+  "t1": 151.02,
+  "action": "scroll on tablet then open cabinet",
+  "objects": [
+   "tablet",
+   "kitchen cabinet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "kitchen cabinet door is open revealing stored food items"
+ },
+ {
+  "t0": 148.01,
+  "t1": 155.02,
+  "action": "opens a packet",
+  "objects": [
+   "yellow seasoning packet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "pantry cabinet is left open and the packet is held open with both hands over the counter"
+ },
+ {
+  "t0": 152.02,
+  "t1": 159.03,
+  "action": "opens bag",
+  "objects": [
+   "Nestle Toll House chocolate chips bag"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "bag is open and green clip is removed and placed on counter"
+ },
+ {
+  "t0": 156.02,
+  "t1": 163.03,
+  "action": "open bag",
+  "objects": [
+   "Nestle Toll House chocolate chips"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "bag is open and chips are in hand"
+ },
+ {
+  "t0": 160.03,
+  "t1": 167.0,
+  "action": "seal bag with clip",
+  "objects": [
+   "chocolate chip bag"
+  ],
+  "tools": [
+   "bag clip"
+  ],
+  "amount": null,
+  "after": "bag is folded shut and secured with green clip"
+ },
+ {
+  "t0": 164.03,
+  "t1": 171.0,
+  "action": "clip bag shut and put away",
+  "objects": [
+   "yellow snack bag"
+  ],
+  "tools": [
+   "green bag clip"
+  ],
+  "amount": null,
+  "after": "the bag is clipped closed and placed inside the cabinet"
+ },
+ {
+  "t0": 168.0,
+  "t1": 175.01,
+  "action": "put away packet and fetch seasoning",
+  "objects": [
+   "yellow seasoning packet",
+   "ground cinnamon container"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "packet is stored in pantry and cinnamon container is held over sink area"
+ },
+ {
+  "t0": 172.01,
+  "t1": 179.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "cinnamon jar taken from cabinet and kitchen drawer opened"
+ },
+ {
+  "t0": 176.01,
+  "t1": 183.02,
+  "action": "open drawer and inspect utensils",
+  "objects": [
+   "kitchen drawer"
+  ],
+  "tools": [
+   "measuring cups and spoons"
+  ],
+  "amount": null,
+  "after": "drawer is open"
+ },
+ {
+  "t0": 180.01,
+  "t1": 187.02,
+  "action": "selects a measuring spoon",
+  "objects": [
+   "measuring spoons",
+   "drawer"
+  ],
+  "tools": [
+   "measuring spoons"
+  ],
+  "amount": null,
+  "after": "one measuring spoon is held over the counter and the drawer is closed"
+ },
+ {
+  "t0": 184.02,
+  "t1": 191.02,
+  "action": "washing a measuring spoon",
+  "objects": [
+   "measuring spoon"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "spoon is under running water in the sink"
+ },
+ {
+  "t0": 188.02,
+  "t1": 195.03,
+  "action": "rinsing a utensil",
+  "objects": [
+   "small black utensil"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the utensil is rinsed and the person moves from the sink to the stove"
+ },
+ {
+  "t0": 192.03,
+  "t1": 199.03,
+  "action": "dry with towel",
+  "objects": [
+   "small black utensil"
+  ],
+  "tools": [
+   "oven towel"
+  ],
+  "amount": null,
+  "after": "moves from sink to stove and rubs utensil in towel"
+ },
+ {
+  "t0": 196.03,
+  "t1": 203.0,
+  "action": "removing a clip from a towel",
+  "objects": [
+   "kitchen towel"
+  ],
+  "tools": [
+   "clip"
+  ],
+  "amount": null,
+  "after": "clip is removed from towel and held in hand by sink"
+ },
+ {
+  "t0": 200.03,
+  "t1": 207.01,
+  "action": "assemble a portafilter",
+  "objects": [
+   "portafilter handle",
+   "filter basket"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "portafilter handle is removed from towel and assembled with basket at the sink counter"
+ },
+ {
+  "t0": 204.0,
+  "t1": 211.01,
+  "action": "stirs coffee grounds",
+  "objects": [
+   "portafilter",
+   "coffee grounds"
+  ],
+  "tools": [
+   "thin stir stick"
+  ],
+  "amount": null,
+  "after": "coffee grounds are loosened and distributed inside the portafilter"
+ },
+ {
+  "t0": 208.01,
+  "t1": 215.01,
+  "action": "scraping out pod",
+  "objects": [
+   "coffee pod",
+   "coffee grounds"
+  ],
+  "tools": [
+   "small spatula"
+  ],
+  "amount": null,
+  "after": "coffee grounds are scooped out of the pod onto the tool"
+ },
+ {
+  "t0": 212.01,
+  "t1": 219.02,
+  "action": "scoops ingredient into mug",
+  "objects": [
+   "brown powder",
+   "mug of white liquid"
+  ],
+  "tools": [
+   "small spoon"
+  ],
+  "amount": null,
+  "after": "container is set down on counter and spoon is left in the mug"
+ },
+ {
+  "t0": 216.02,
+  "t1": 223.02,
+  "action": "adds and stirs powder into liquid",
+  "objects": [
+   "red mug with white liquid"
+  ],
+  "tools": [
+   "small jar",
+   "brush"
+  ],
+  "amount": null,
+  "after": "powder is in the mug and the brush is laid down on the counter"
+ },
+ {
+  "t0": 220.02,
+  "t1": 227.03,
+  "action": "stirs drink then puts spice jar back",
+  "objects": [
+   "red mug",
+   "spice jar"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "spoon is out of mug and spice jar is stored in upper cabinet"
+ },
+ {
+  "t0": 224.02,
+  "t1": 231.03,
+  "action": "put spice jar in cabinet",
+  "objects": [
+   "spice jar",
+   "cabinet doors"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "spice jar is stored and cabinet doors are closed"
+ },
+ {
+  "t0": 228.03,
+  "t1": 235.0,
+  "action": "retrieves ingredients from cabinet",
+  "objects": [
+   "imperial sugar bag",
+   "spice jars"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "lower pantry and upper cabinet doors are open with hands on items inside upper cabinet"
+ },
+ {
+  "t0": 232.03,
+  "t1": 239.01,
+  "action": "takes sugar bag from cabinet",
+  "objects": [
+   "Imperial Sugar bag"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "sugar bag is removed from the cabinet and held in both hands over the counter by the sink"
+ },
+ {
+  "t0": 236.0,
+  "t1": 243.01,
+  "action": "none",
+  "objects": [
+   "Imperial Sugar bag"
+  ],
+  "tools": [
+   "measuring cup"
+  ],
+  "amount": null,
+  "after": "sugar bag is moved from cabinet to counter and utensil drawer is opened"
+ },
+ {
+  "t0": 240.01,
+  "t1": 247.01,
+  "action": "none",
+  "objects": [],
+  "tools": [
+   "measuring spoon"
+  ],
+  "amount": null,
+  "after": "a kitchen drawer is open and the person is holding up a small black measuring spoon instead of a bag"
+ },
+ {
+  "t0": 244.01,
+  "t1": 251.02,
+  "action": "rinse a measuring spoon",
+  "objects": [
+   "measuring spoon"
+  ],
+  "tools": [
+   "sink faucet"
+  ],
+  "amount": null,
+  "after": "measuring spoon is taken from drawer to sink and held under running water"
+ },
+ {
+  "t0": 248.01,
+  "t1": 255.02,
+  "action": "washing and drying a spoon",
+  "objects": [
+   "small black spoon"
+  ],
+  "tools": [
+   "faucet",
+   "toothbrush",
+   "towel"
+  ],
+  "amount": null,
+  "after": "spoon is rinsed under faucet then wiped dry on oven towel"
+ },
+ {
+  "t0": 252.02,
+  "t1": 259.03,
+  "action": "drying a spoon",
+  "objects": [
+   "spoon"
+  ],
+  "tools": [
+   "towel"
+  ],
+  "amount": null,
+  "after": "spoon is dry"
+ },
+ {
+  "t0": 256.02,
+  "t1": 263.03,
+  "action": "tying a towel",
+  "objects": [
+   "kitchen towel"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "towel is knotted on the oven handle and right hand lifts a utensil over the pot"
+ },
+ {
+  "t0": 260.03,
+  "t1": 267.0,
+  "action": "scoop coffee into filter",
+  "objects": [
+   "ground coffee",
+   "coffee filter"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "coffee filter is filled with coffee grounds"
+ },
+ {
+  "t0": 264.03,
+  "t1": 271.0,
+  "action": "scoop powder from bag",
+  "objects": [
+   "paper bag",
+   "red mug"
+  ],
+  "tools": [
+   "measuring spoon"
+  ],
+  "amount": null,
+  "after": "spoon is filled with white powder held over bag"
+ },
+ {
+  "t0": 268.0,
+  "t1": 275.01,
+  "action": "scoops sugar into mug",
+  "objects": [
+   "sugar bag",
+   "mug"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "spoonful of sugar moved from bag into red mug"
+ },
+ {
+  "t0": 272.01,
+  "t1": 279.01,
+  "action": "scooping sugar into a mug",
+  "objects": [
+   "sugar bag",
+   "mug"
+  ],
+  "tools": [
+   "measuring spoon"
+  ],
+  "amount": null,
+  "after": "spoon is set down on counter and sugar bag is closed and lifted up"
+ },
+ {
+  "t0": 276.01,
+  "t1": 283.02,
+  "action": "store sugar bag in cabinet",
+  "objects": [
+   "sugar bag"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "sugar bag moved from countertop into upper cabinet"
+ },
+ {
+  "t0": 280.01,
+  "t1": 287.02,
+  "action": "puts sugar bag away in cabinet",
+  "objects": [
+   "bag of Imperial Sugar"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "sugar bag is inside the upper cabinet and the cabinet door is closed"
+ },
+ {
+  "t0": 284.02,
+  "t1": 291.02,
+  "action": "rinse a spoon",
+  "objects": [
+   "spoon"
+  ],
+  "tools": [
+   "kitchen sink faucet"
+  ],
+  "amount": null,
+  "after": "the faucet is turned on with water running over the spoon"
+ },
+ {
+  "t0": 288.02,
+  "t1": 295.03,
+  "action": "rinsing a spoon",
+  "objects": [
+   "spoon"
+  ],
+  "tools": [
+   "kitchen faucet"
+  ],
+  "amount": null,
+  "after": "the faucet is turned off and water stops running"
+ },
+ {
+  "t0": 292.03,
+  "t1": 299.03,
+  "action": "rinse and dry a spoon",
+  "objects": [
+   "spoon"
+  ],
+  "tools": [
+   "kitchen sink",
+   "kitchen towel"
+  ],
+  "amount": null,
+  "after": "the water is turned off and the spoon is dried with the towel"
+ },
+ {
+  "t0": 296.03,
+  "t1": 303.0,
+  "action": "wiping a spoon",
+  "objects": [
+   "spoon"
+  ],
+  "tools": [
+   "kitchen towel"
+  ],
+  "amount": null,
+  "after": "towel is bunched up and person steps away from the stove"
+ },
+ {
+  "t0": 300.03,
+  "t1": 307.01,
+  "action": "wipes spoon and stirs drink",
+  "objects": [
+   "spoon, red mug with mixture"
+  ],
+  "tools": [
+   "spoon",
+   "cloth towel"
+  ],
+  "amount": null,
+  "after": "spoon moved from stove towel to counter and mixture in mug is stirred"
+ },
+ {
+  "t0": 304.0,
+  "t1": 311.01,
+  "action": "stirring drink",
+  "objects": [
+   "red mug"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "powder dissolves into liquid and becomes smooth"
+ },
+ {
+  "t0": 308.01,
+  "t1": 315.01,
+  "action": "stirring a drink",
+  "objects": [
+   "mug"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "drink in mug becomes frothy and lighter in color"
+ },
+ {
+  "t0": 312.01,
+  "t1": 319.02,
+  "action": "stirring drink",
+  "objects": [
+   "red mug"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the liquid becomes more evenly mixed and frothy white"
+ },
+ {
+  "t0": 316.02,
+  "t1": 323.02,
+  "action": "stirring",
+  "objects": [
+   "red mug"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "the powder dissolves and the liquid becomes more uniform"
+ },
+ {
+  "t0": 320.02,
+  "t1": 327.03,
+  "action": "stirring",
+  "objects": [
+   "mug"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "the contents are mixed together"
+ },
+ {
+  "t0": 324.02,
+  "t1": 331.03,
+  "action": "stirs drink",
+  "objects": [
+   "mug",
+   "drink"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "spoon is set down on counter and mug is lifted toward microwave"
+ },
+ {
+  "t0": 328.03,
+  "t1": 335.0,
+  "action": "moves mug to microwave",
+  "objects": [
+   "red mug",
+   "microwave"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "spoon is set down on counter and microwave door is opened"
+ },
+ {
+  "t0": 332.03,
+  "t1": 339.01,
+  "action": "put mug in microwave",
+  "objects": [
+   "red mug"
+  ],
+  "tools": [
+   "microwave"
+  ],
+  "amount": null,
+  "after": "mug is inside open microwave"
+ },
+ {
+  "t0": 336.0,
+  "t1": 343.01,
+  "action": "heats mug in microwave",
+  "objects": [
+   "red mug",
+   "microwave"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "mug is inside closed microwave"
+ },
+ {
+  "t0": 340.01,
+  "t1": 347.01,
+  "action": "heat in microwave",
+  "objects": [
+   "red container"
+  ],
+  "tools": [
+   "microwave"
+  ],
+  "amount": "00:01",
+  "after": "microwave door is closed with container inside"
+ },
+ {
+  "t0": 344.01,
+  "t1": 351.02,
+  "action": "turn on faucet",
+  "objects": [
+   "sink"
+  ],
+  "tools": [
+   "faucet"
+  ],
+  "amount": null,
+  "after": "water is flowing from the faucet into the sink"
+ },
+ {
+  "t0": 348.01,
+  "t1": 355.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 352.02,
+  "t1": 359.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 356.02,
+  "t1": 363.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "nothing changes"
+ },
+ {
+  "t0": 360.03,
+  "t1": 367.03,
+  "action": "run water",
+  "objects": [
+   "sink"
+  ],
+  "tools": [
+   "faucet"
+  ],
+  "amount": null,
+  "after": "a stream of water is running from the faucet into the sink"
+ },
+ {
+  "t0": 364.03,
+  "t1": 371.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 368.0,
+  "t1": 375.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 372.0,
+  "t1": 379.01,
+  "action": "placing timer",
+  "objects": [
+   "timer"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a small blue timer is now sitting on top of the box grater"
+ },
+ {
+  "t0": 376.01,
+  "t1": 383.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "camera shifts slightly revealing more of the left sink basin"
+ },
+ {
+  "t0": 380.01,
+  "t1": 387.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 384.02,
+  "t1": 391.02,
+  "action": "place mug in sink",
+  "objects": [
+   "mug"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a mug appears in the left sink basin"
+ },
+ {
+  "t0": 388.02,
+  "t1": 395.03,
+  "action": "placing a utensil",
+  "objects": [
+   "utensil"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a small utensil appears lying on the edge of the sink"
+ },
+ {
+  "t0": 392.02,
+  "t1": 399.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change to countertop objects, only camera viewpoint shifts"
+ },
+ {
+  "t0": 396.03,
+  "t1": 403.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 400.03,
+  "t1": 407.01,
+  "action": "open microwave",
+  "objects": [
+   "microwave"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hands appear and touch the microwave door"
+ },
+ {
+  "t0": 404.0,
+  "t1": 411.01,
+  "action": "take mug out of microwave",
+  "objects": [
+   "microwave",
+   "red mug"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "microwave door is open and hand is holding red mug inside"
+ },
+ {
+  "t0": 408.01,
+  "t1": 415.01,
+  "action": "takes mug out of microwave",
+  "objects": [
+   "microwave",
+   "red mug"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "mug is on counter and microwave door is closed"
+ },
+ {
+  "t0": 412.01,
+  "t1": 419.02,
+  "action": "removes mug from microwave",
+  "objects": [
+   "red mug with hot drink"
+  ],
+  "tools": [
+   "microwave"
+  ],
+  "amount": null,
+  "after": "microwave door is closed and mug is moved from counter to stove area"
+ },
+ {
+  "t0": 414.01,
+  "t1": 421.02,
+  "action": "carries mug",
+  "objects": [
+   "red mug"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "mug moved from sink counter to counter by stove"
+ }
+]

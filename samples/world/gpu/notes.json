@@ -1,0 +1,391 @@
+[
+ {
+  "t0": 0.0,
+  "t1": 7.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "camera pans left revealing stacked red crates, wooden crates, and a desk monitor with a cup on the left side"
+ },
+ {
+  "t0": 4.02,
+  "t1": 11.0,
+  "action": "connect cables",
+  "objects": [
+   "desktop computer",
+   "cables"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "view shifts from stacked cases to under-desk computer with cables plugged into back"
+ },
+ {
+  "t0": 8.03,
+  "t1": 15.02,
+  "action": "close side panel",
+  "objects": [
+   "desktop computer tower"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "side panel is closed over the tower"
+ },
+ {
+  "t0": 12.02,
+  "t1": 19.0,
+  "action": "close computer case",
+  "objects": [
+   "computer tower",
+   "side panel"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "side panel is closed on the computer tower and camera moves away to storage area"
+ },
+ {
+  "t0": 16.03,
+  "t1": 23.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "camera moves away from black case to TVs and boxes in storage area with no installation visible"
+ },
+ {
+  "t0": 20.01,
+  "t1": 27.04,
+  "action": "open computer case",
+  "objects": [
+   "computer"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "side panel removed exposing internal components"
+ },
+ {
+  "t0": 24.03,
+  "t1": 31.02,
+  "action": "remove side panel",
+  "objects": [
+   "computer tower"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "side panel is off and internal motherboard and components are exposed"
+ },
+ {
+  "t0": 28.01,
+  "t1": 35.03,
+  "action": "none",
+  "objects": [
+   "open desktop computer"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "camera steadies into clear overhead view of open case with no component changed"
+ },
+ {
+  "t0": 32.03,
+  "t1": 39.02,
+  "action": "point at motherboard",
+  "objects": [
+   "desktop computer"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "view shifts from inside of case to rear of case with no card installed"
+ },
+ {
+  "t0": 36.01,
+  "t1": 43.03,
+  "action": "none",
+  "objects": [
+   "desktop computer"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 40.03,
+  "t1": 47.01,
+  "action": "reposition computer case",
+  "objects": [
+   "desktop computer"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "rear of computer faces camera"
+ },
+ {
+  "t0": 44.01,
+  "t1": 51.03,
+  "action": "remove expansion slot cover",
+  "objects": [
+   "desktop computer",
+   "expansion slot cover"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "expansion slot cover is detached from the rear of the case"
+ },
+ {
+  "t0": 48.03,
+  "t1": 55.01,
+  "action": "position computer case",
+  "objects": [
+   "desktop computer"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hands move from rear bracket to holding sides of open chassis"
+ },
+ {
+  "t0": 52.01,
+  "t1": 59.03,
+  "action": "install graphics card",
+  "objects": [
+   "computer",
+   "graphics card"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "left hand is pressing on the graphics card in the motherboard slot"
+ },
+ {
+  "t0": 56.03,
+  "t1": 63.01,
+  "action": "press graphics card into slot",
+  "objects": [
+   "graphics card",
+   "desktop computer"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hand moves from middle of graphics card to its end to seat it"
+ },
+ {
+  "t0": 60.01,
+  "t1": 67.03,
+  "action": "remove graphics card",
+  "objects": [
+   "graphics card",
+   "desktop computer"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "graphics card is pulled out of motherboard and held in hands"
+ },
+ {
+  "t0": 64.02,
+  "t1": 71.01,
+  "action": "remove a graphics card",
+  "objects": [
+   "graphics card",
+   "desktop computer"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "graphics card is removed from motherboard and set aside"
+ },
+ {
+  "t0": 68.0,
+  "t1": 75.03,
+  "action": "remove expansion cards",
+  "objects": [
+   "expansion cards",
+   "desktop computer"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "two cards are outside the case on the right and a cable is disconnected inside"
+ },
+ {
+  "t0": 72.02,
+  "t1": 79.01,
+  "action": "remove graphics card",
+  "objects": [
+   "graphics card",
+   "desktop computer"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "graphics card is removed from the motherboard and placed on the table beside the case"
+ },
+ {
+  "t0": 76.0,
+  "t1": 83.02,
+  "action": "install a graphics card",
+  "objects": [
+   "graphics card",
+   "desktop computer"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "one graphics card is seated in the motherboard slot, one remains outside the case"
+ },
+ {
+  "t0": 80.02,
+  "t1": 87.01,
+  "action": "installing graphics card",
+  "objects": [
+   "graphics card",
+   "motherboard"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "graphics card is seated in the motherboard slot"
+ },
+ {
+  "t0": 84.0,
+  "t1": 91.02,
+  "action": "installs graphics card",
+  "objects": [
+   "graphics card",
+   "motherboard"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "graphics card is seated in motherboard slot"
+ },
+ {
+  "t0": 88.02,
+  "t1": 95.0,
+  "action": "install graphics card",
+  "objects": [
+   "graphics card",
+   "motherboard"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "graphics card is seated in the PCIe slot on the motherboard"
+ },
+ {
+  "t0": 92.0,
+  "t1": 99.02,
+  "action": "installing graphics card",
+  "objects": [
+   "graphics card",
+   "motherboard"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "graphics card is seated into the PCIe slot"
+ },
+ {
+  "t0": 96.02,
+  "t1": 103.0,
+  "action": "install graphics card",
+  "objects": [
+   "graphics card",
+   "motherboard"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "graphics card is seated into motherboard slot"
+ },
+ {
+  "t0": 100.03,
+  "t1": 107.02,
+  "action": "seat graphics card",
+  "objects": [
+   "graphics card",
+   "desktop computer"
+  ],
+  "tools": [
+   "screwdriver"
+  ],
+  "amount": null,
+  "after": "graphics card is seated in PCIe slot with rear bracket aligned to case"
+ },
+ {
+  "t0": 104.02,
+  "t1": 111.0,
+  "action": "none",
+  "objects": [
+   "desktop computer"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "computer case is repositioned to show open interior"
+ },
+ {
+  "t0": 108.03,
+  "t1": 115.02,
+  "action": "replace side cover",
+  "objects": [
+   "desktop computer",
+   "side cover"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "side cover is closed over the open computer case"
+ },
+ {
+  "t0": 112.01,
+  "t1": 119.04,
+  "action": "pack TV into box",
+  "objects": [
+   "TV"
+  ],
+  "tools": [],
+  "amount": "70\"",
+  "after": "TV is laid face-down in crate in front of its Samsung box"
+ },
+ {
+  "t0": 116.03,
+  "t1": 123.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": "70 inch",
+  "after": "camera panned away from Samsung UHD TV box to desk with monitor and red storage crates"
+ },
+ {
+  "t0": 120.01,
+  "t1": 127.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "camera moves from stacked boxes to a desk area where a black computer tower is now visible with a hand on it"
+ },
+ {
+  "t0": 124.03,
+  "t1": 131.02,
+  "action": "plug in cable",
+  "objects": [
+   "desktop computer",
+   "white cable"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "white cable is inserted into rear port of computer"
+ },
+ {
+  "t0": 128.01,
+  "t1": 135.03,
+  "action": "plug in cables",
+  "objects": [
+   "desktop computer",
+   "white cable",
+   "black power cable"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "white cable and black power cable are connected to the back of the computer"
+ },
+ {
+  "t0": 132.03,
+  "t1": 139.01,
+  "action": "plug in power cable",
+  "objects": [
+   "desktop computer",
+   "power cable"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "power cable is connected to back of computer and person walks away into storage area"
+ }
+]

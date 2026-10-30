@@ -71,6 +71,9 @@ p { margin: 0; }
 .stepper button[aria-current="step"] .n { background: var(--contract); border-color: var(--contract); color: #fff; }
 .stepper button.done .n { background: var(--pass-soft); border-color: var(--pass); color: var(--pass); }
 .stepper button:disabled { opacity: .45; cursor: default; }
+.worlds { display: flex; gap: 4px; padding: 4px; background: var(--sunk); border-radius: 999px; }
+.worlds a { text-decoration: none; color: var(--muted); font-weight: 650; padding: 6px 14px; border-radius: 999px; }
+.worlds a[aria-current="page"] { background: var(--surface); color: var(--ink); box-shadow: var(--lift); }
 .ghost { border: 1px solid var(--line); background: var(--surface); padding: 8px 14px; border-radius: 999px; cursor: pointer; font-weight: 600; }
 .ghost:hover { border-color: var(--contract); }
 
@@ -291,6 +294,7 @@ dialog#teach { width: min(1260px, calc(100vw - 24px)); }
 <header class="top">
   <div class="top-in">
     <div class="mark"><span class="ants"></span>EIDOS<small>Studio</small></div>
+    <nav class="worlds" aria-label="Worlds"><a href="/" aria-current="page">Screens</a><a href="/world">Real world</a></nav>
     <ol class="stepper" aria-label="Steps">
       <li><button data-go="show" aria-current="step"><span class="n">1</span>Show it a task</button></li>
       <li><button data-go="learn" disabled><span class="n">2</span>Watch it learn</button></li>

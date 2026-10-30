@@ -1,0 +1,1049 @@
+[
+ {
+  "t0": 0.0,
+  "t1": 7.01,
+  "action": "places cutting board on counter",
+  "objects": [
+   "cutting board"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "cutting board moved from over sink to lying flat on counter next to tablet"
+ },
+ {
+  "t0": 4.0,
+  "t1": 11.01,
+  "action": "none",
+  "objects": [
+   "tortilla"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a tortilla is retrieved from a bag and the view returns to the cutting board and tablet by the stove"
+ },
+ {
+  "t0": 8.01,
+  "t1": 15.02,
+  "action": "take a tortilla and prepare to butter it",
+  "objects": [
+   "tortilla",
+   "butter"
+  ],
+  "tools": [
+   "butter knife",
+   "cutting board",
+   "paper towel"
+  ],
+  "amount": null,
+  "after": "a tortilla is removed from its package and placed on the cutting board by the tablet"
+ },
+ {
+  "t0": 12.01,
+  "t1": 19.02,
+  "action": "wipes knife and opens cabinet",
+  "objects": [
+   "butter dish",
+   "pantry jar"
+  ],
+  "tools": [
+   "butter knife",
+   "paper towel"
+  ],
+  "amount": null,
+  "after": "knife is wiped clean and upper cabinet is open with hand reaching for a jar"
+ },
+ {
+  "t0": 16.02,
+  "t1": 23.02,
+  "action": "spread peanut butter",
+  "objects": [
+   "tortilla",
+   "peanut butter jar"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "peanut butter jar is open and peanut butter is spread on tortilla"
+ },
+ {
+  "t0": 20.02,
+  "t1": 27.03,
+  "action": "spread peanut butter",
+  "objects": [
+   "tortilla",
+   "peanut butter"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "peanut butter jar is open and a dollop of peanut butter is spread in the center of the tortilla"
+ },
+ {
+  "t0": 24.02,
+  "t1": 31.03,
+  "action": "spread peanut butter",
+  "objects": [
+   "tortilla",
+   "peanut butter"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "tortilla goes from plain to covered with peanut butter in the center"
+ },
+ {
+  "t0": 28.03,
+  "t1": 35.0,
+  "action": "spreading peanut butter",
+  "objects": [
+   "tortilla",
+   "peanut butter"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "peanut butter covers a larger area of the tortilla"
+ },
+ {
+  "t0": 32.03,
+  "t1": 39.01,
+  "action": "spreading peanut butter",
+  "objects": [
+   "tortilla"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "peanut butter is spread evenly across the tortilla"
+ },
+ {
+  "t0": 36.0,
+  "t1": 43.01,
+  "action": "spreading peanut butter",
+  "objects": [
+   "tortilla"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "peanut butter is spread over a larger area of the tortilla"
+ },
+ {
+  "t0": 40.01,
+  "t1": 47.01,
+  "action": "spreading peanut butter",
+  "objects": [
+   "tortilla",
+   "peanut butter"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "peanut butter covers more of the tortilla surface"
+ },
+ {
+  "t0": 44.01,
+  "t1": 51.02,
+  "action": "spreading peanut butter",
+  "objects": [
+   "tortilla"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "peanut butter is more evenly spread across tortilla"
+ },
+ {
+  "t0": 48.01,
+  "t1": 55.02,
+  "action": "spreading peanut butter",
+  "objects": [
+   "tortilla",
+   "peanut butter"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "peanut butter spread more evenly across tortilla"
+ },
+ {
+  "t0": 52.02,
+  "t1": 59.03,
+  "action": "spreading peanut butter",
+  "objects": [
+   "tortilla",
+   "peanut butter"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "peanut butter spread more evenly over tortilla"
+ },
+ {
+  "t0": 56.02,
+  "t1": 63.03,
+  "action": "spreading peanut butter",
+  "objects": [
+   "tortilla",
+   "peanut butter"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "peanut butter is spread more evenly across tortilla"
+ },
+ {
+  "t0": 60.03,
+  "t1": 67.0,
+  "action": "spreading peanut butter",
+  "objects": [
+   "tortilla"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "peanut butter is spread over tortilla and hands move away"
+ },
+ {
+  "t0": 64.03,
+  "t1": 71.0,
+  "action": "spreading peanut butter",
+  "objects": [
+   "tortilla",
+   "peanut butter"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "tortilla is coated with peanut butter and person holds peanut butter jar and lid"
+ },
+ {
+  "t0": 68.0,
+  "t1": 75.01,
+  "action": "spread peanut butter and put jar away",
+  "objects": [
+   "tortilla",
+   "peanut butter jar"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "peanut butter jar is removed from counter into cabinet and person is at sink holding a cup"
+ },
+ {
+  "t0": 72.01,
+  "t1": 79.01,
+  "action": "tear off paper towel",
+  "objects": [
+   "paper towel roll"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "person is holding a torn paper towel sheet and a tortilla with peanut butter spread is on the counter"
+ },
+ {
+  "t0": 76.01,
+  "t1": 83.02,
+  "action": "tear off paper towel and lay down knife",
+  "objects": [
+   "paper towel"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "a sheet is torn from the roll and the knife is resting on it on the counter"
+ },
+ {
+  "t0": 80.01,
+  "t1": 87.02,
+  "action": "wipe knife and take jar from cabinet",
+  "objects": [
+   "tortilla with spread",
+   "jar"
+  ],
+  "tools": [
+   "knife",
+   "paper towel"
+  ],
+  "amount": null,
+  "after": "knife is wiped on paper towel and a jar is removed from the cabinet"
+ },
+ {
+  "t0": 84.02,
+  "t1": 91.02,
+  "action": "takes jar from cabinet",
+  "objects": [
+   "glass jar"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "an open jar sits on the counter next to the laptop and hand points at laptop screen"
+ },
+ {
+  "t0": 88.02,
+  "t1": 95.03,
+  "action": "scooping salsa from a jar",
+  "objects": [
+   "small glass salsa jar",
+   "tortilla"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "hands are holding the open salsa jar over the counter and a small bowl of salsa is on the counter"
+ },
+ {
+  "t0": 92.03,
+  "t1": 99.03,
+  "action": "spreading peanut butter",
+  "objects": [
+   "tortilla",
+   "peanut butter"
+  ],
+  "tools": [
+   "spoon",
+   "jar"
+  ],
+  "amount": null,
+  "after": "peanut butter spread more evenly across tortilla"
+ },
+ {
+  "t0": 96.03,
+  "t1": 103.0,
+  "action": "spreading peanut butter",
+  "objects": [
+   "tortilla"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "tortilla is evenly coated with peanut butter"
+ },
+ {
+  "t0": 100.03,
+  "t1": 107.01,
+  "action": "spreading peanut butter",
+  "objects": [
+   "tortilla"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "peanut butter is spread more evenly across the tortilla"
+ },
+ {
+  "t0": 104.0,
+  "t1": 111.01,
+  "action": "spreading paste",
+  "objects": [
+   "tortilla"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "paste is spread more evenly across tortilla"
+ },
+ {
+  "t0": 108.01,
+  "t1": 115.01,
+  "action": "spreading peanut butter",
+  "objects": [
+   "tortilla"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "peanut butter covers more of the tortilla surface"
+ },
+ {
+  "t0": 112.01,
+  "t1": 119.02,
+  "action": "spreading peanut butter",
+  "objects": [
+   "tortilla"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "peanut butter is more evenly spread on tortilla"
+ },
+ {
+  "t0": 116.02,
+  "t1": 123.02,
+  "action": "spreading peanut butter",
+  "objects": [
+   "tortilla"
+  ],
+  "tools": [
+   "butter knife"
+  ],
+  "amount": null,
+  "after": "tortilla is fully covered, knife is set down and person picks up a paper towel"
+ },
+ {
+  "t0": 120.02,
+  "t1": 127.03,
+  "action": "tap screen and wipe hands",
+  "objects": [
+   "laptop",
+   "tortilla"
+  ],
+  "tools": [
+   "paper towel",
+   "knife"
+  ],
+  "amount": null,
+  "after": "knife is set down beside tortilla and tissue becomes used"
+ },
+ {
+  "t0": 124.02,
+  "t1": 131.03,
+  "action": "spreads peanut butter and grabs jelly",
+  "objects": [
+   "tortilla",
+   "peanut butter",
+   "jelly jar"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "tortilla fully spread with peanut butter and jelly jar taken from cabinet"
+ },
+ {
+  "t0": 128.03,
+  "t1": 135.0,
+  "action": "roll up tortilla",
+  "objects": [
+   "tortilla with spread"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "flat tortilla is folded and rolled up"
+ },
+ {
+  "t0": 132.03,
+  "t1": 139.01,
+  "action": "roll a tortilla",
+  "objects": [
+   "tortilla"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "flat tortilla becomes a rolled wrap"
+ },
+ {
+  "t0": 136.0,
+  "t1": 143.01,
+  "action": "roll a tortilla",
+  "objects": [
+   "tortilla"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "flat tortilla is rolled into a cylinder on the cutting board"
+ },
+ {
+  "t0": 140.01,
+  "t1": 147.01,
+  "action": "knead dough, use tablet and take jar from cabinet",
+  "objects": [
+   "dough",
+   "tablet",
+   "jar"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "dough is formed into a log and person is holding a white container"
+ },
+ {
+  "t0": 144.01,
+  "t1": 151.02,
+  "action": "sprinkle seasoning",
+  "objects": [
+   "banana"
+  ],
+  "tools": [
+   "seasoning shaker"
+  ],
+  "amount": null,
+  "after": "seasoning is sprinkled onto banana piece on cutting board"
+ },
+ {
+  "t0": 148.01,
+  "t1": 155.02,
+  "action": "sprinkle salt and insert skewers",
+  "objects": [
+   "white food piece"
+  ],
+  "tools": [
+   "salt shaker",
+   "toothpicks"
+  ],
+  "amount": null,
+  "after": "the food piece goes from plain to salted with multiple toothpicks inserted"
+ },
+ {
+  "t0": 152.02,
+  "t1": 159.03,
+  "action": "rolls dough",
+  "objects": [
+   "dough"
+  ],
+  "tools": [
+   "skewer"
+  ],
+  "amount": null,
+  "after": "dough is shaped into a tight roll"
+ },
+ {
+  "t0": 156.02,
+  "t1": 163.03,
+  "action": "peel",
+  "objects": [
+   "root vegetable"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a longer section is peeled"
+ },
+ {
+  "t0": 160.03,
+  "t1": 167.0,
+  "action": "peeling a root vegetable",
+  "objects": [
+   "white root vegetable"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "peel is removed and a salt shaker is picked up"
+ },
+ {
+  "t0": 164.03,
+  "t1": 171.0,
+  "action": "sprinkle seasoning on wrap",
+  "objects": [
+   "tortilla wrap"
+  ],
+  "tools": [
+   "salt shaker"
+  ],
+  "amount": null,
+  "after": "shaker is put back on counter with hand on wrap"
+ },
+ {
+  "t0": 168.0,
+  "t1": 175.01,
+  "action": "sprinkling seasoning",
+  "objects": [
+   "rolled tortilla"
+  ],
+  "tools": [
+   "small white shaker"
+  ],
+  "amount": null,
+  "after": "the shaker is set down while both hands press the tortilla, then picked up again"
+ },
+ {
+  "t0": 172.01,
+  "t1": 179.01,
+  "action": "roll a wrap",
+  "objects": [
+   "tortilla wrap"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "person stops rolling and reaches into upper kitchen cabinet"
+ },
+ {
+  "t0": 176.01,
+  "t1": 183.02,
+  "action": "roll tortilla",
+  "objects": [
+   "tortilla"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "tortilla is formed into a rolled log on the cutting board"
+ },
+ {
+  "t0": 180.01,
+  "t1": 187.02,
+  "action": "checks tablet then cuts wrap",
+  "objects": [
+   "tortilla wrap"
+  ],
+  "tools": [
+   "tablet",
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "wrap goes from whole to being cut into pieces"
+ },
+ {
+  "t0": 184.02,
+  "t1": 191.02,
+  "action": "cuts roll",
+  "objects": [
+   "wrap"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "wrap is cut into pieces"
+ },
+ {
+  "t0": 188.02,
+  "t1": 195.03,
+  "action": "slicing a wrap",
+  "objects": [
+   "wrap"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "the wrap is cut into slices on the cutting board"
+ },
+ {
+  "t0": 192.03,
+  "t1": 199.03,
+  "action": "cutting a wrap",
+  "objects": [
+   "wrap",
+   "cutting board"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "wrap is cut into pieces"
+ },
+ {
+  "t0": 196.03,
+  "t1": 203.0,
+  "action": "cutting wrap",
+  "objects": [
+   "tortilla wrap"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "wrap cut into smaller pieces"
+ },
+ {
+  "t0": 200.03,
+  "t1": 207.01,
+  "action": "trim produce and discard scraps",
+  "objects": [
+   "white root vegetable"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "small scraps cleared from cutting board and thrown in floor trash, peeled piece left on board"
+ },
+ {
+  "t0": 204.0,
+  "t1": 211.01,
+  "action": "cut a roll",
+  "objects": [
+   "white food roll"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "roll on cutting board has cut marks"
+ },
+ {
+  "t0": 208.01,
+  "t1": 215.01,
+  "action": "pull dental floss",
+  "objects": [
+   "rolled wrap",
+   "dental floss pack"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "knife is laid on cutting board and a length of floss is pulled from the pack"
+ },
+ {
+  "t0": 212.01,
+  "t1": 219.02,
+  "action": "pull dental floss",
+  "objects": [
+   "dental floss dispenser"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "dispenser is out of hands and a length of floss is held between hands"
+ },
+ {
+  "t0": 216.02,
+  "t1": 223.02,
+  "action": "season and adjust a wrap",
+  "objects": [
+   "tortilla wrap"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hand is touching the tablet screen"
+ },
+ {
+  "t0": 220.02,
+  "t1": 227.03,
+  "action": "tapping tablet",
+  "objects": [
+   "tablet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "burrito wrap shifted slightly on cutting board"
+ },
+ {
+  "t0": 224.02,
+  "t1": 231.03,
+  "action": "adjusting a rolled wrap",
+  "objects": [
+   "rolled wrap",
+   "tablet",
+   "cutting board"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hand moves from tablet to cutting board and repositions the rolled wrap"
+ },
+ {
+  "t0": 228.03,
+  "t1": 235.0,
+  "action": "rolling a wrap",
+  "objects": [
+   "tortilla"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "wrap is tucked and rolled closed"
+ },
+ {
+  "t0": 232.03,
+  "t1": 239.01,
+  "action": "cutting a wrap",
+  "objects": [
+   "rolled tortilla"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "the end of the roll is cut off and picked up"
+ },
+ {
+  "t0": 236.0,
+  "t1": 243.01,
+  "action": "cutting a wrap",
+  "objects": [
+   "wrap",
+   "cutting board"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a small end piece is separated from the wrap"
+ },
+ {
+  "t0": 240.01,
+  "t1": 247.01,
+  "action": "slicing a wrapped roll into pieces",
+  "objects": [
+   "rolled tortilla wrap"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "two small pieces are cut off and separated from the main roll on the cutting board"
+ },
+ {
+  "t0": 244.01,
+  "t1": 251.02,
+  "action": "cutting a wrap",
+  "objects": [
+   "wrap",
+   "cutting board"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the wrap is divided into several small pieces"
+ },
+ {
+  "t0": 248.01,
+  "t1": 255.02,
+  "action": "cuts roll",
+  "objects": [
+   "tortilla wrap"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "long roll is separated into two pieces leaving four pieces total on the board"
+ },
+ {
+  "t0": 252.02,
+  "t1": 259.03,
+  "action": "slicing a wrap",
+  "objects": [
+   "tortilla wrap"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "wrap cut from two pieces into four pieces"
+ },
+ {
+  "t0": 256.02,
+  "t1": 263.03,
+  "action": "peel a clove",
+  "objects": [
+   "garlic"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "one piece is broken open"
+ },
+ {
+  "t0": 260.03,
+  "t1": 267.0,
+  "action": "cutting into smaller cubes",
+  "objects": [
+   "white food cubes"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "there are more small cubes on the cutting board"
+ },
+ {
+  "t0": 264.03,
+  "t1": 271.0,
+  "action": "thread cubes onto skewer",
+  "objects": [
+   "white food cubes"
+  ],
+  "tools": [
+   "skewer"
+  ],
+  "amount": null,
+  "after": "one cube is threaded and left hand moves to the tablet"
+ },
+ {
+  "t0": 268.0,
+  "t1": 275.01,
+  "action": "cut food, touch tablet, and handle cord",
+  "objects": [
+   "white food cubes on cutting board"
+  ],
+  "tools": [
+   "small knife",
+   "tablet",
+   "electric cord"
+  ],
+  "amount": null,
+  "after": "food cut into separate pieces and person is holding a cord on the floor by the stove"
+ },
+ {
+  "t0": 272.01,
+  "t1": 279.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "view moves from stove and cutting board with tablet to cluttered sink counter"
+ },
+ {
+  "t0": 276.01,
+  "t1": 283.02,
+  "action": "adjusts cord under shelf",
+  "objects": [
+   "power cord",
+   "wire shelf"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hand moves from over trash bin to under wire shelf near floor"
+ },
+ {
+  "t0": 280.01,
+  "t1": 287.02,
+  "action": "arranging plates",
+  "objects": [
+   "plates",
+   "wire shelf"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "both hands holding plates on lower shelf"
+ },
+ {
+  "t0": 284.02,
+  "t1": 291.02,
+  "action": "placing a plate in rack",
+  "objects": [
+   "plate",
+   "dish rack"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a plate is held upright in the rack with both hands"
+ },
+ {
+  "t0": 288.02,
+  "t1": 295.03,
+  "action": "takes a plate from rack to counter",
+  "objects": [
+   "plate"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "plate is removed from dish rack and placed on counter by cutting board"
+ },
+ {
+  "t0": 292.03,
+  "t1": 299.03,
+  "action": "puts cut pieces on plate",
+  "objects": [
+   "cut white food pieces"
+  ],
+  "tools": [
+   "plate"
+  ],
+  "amount": "3 pieces",
+  "after": "plate that started empty holds three pieces"
+ },
+ {
+  "t0": 296.03,
+  "t1": 303.0,
+  "action": "placing pieces on plate",
+  "objects": [
+   "cut white food pieces"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "plate goes from holding one piece to holding six pieces"
+ },
+ {
+  "t0": 300.03,
+  "t1": 307.01,
+  "action": "placing banana slices",
+  "objects": [
+   "banana slices",
+   "plate"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "plate holds six banana slices arranged in a circle"
+ },
+ {
+  "t0": 304.0,
+  "t1": 311.01,
+  "action": "wipe cutting board",
+  "objects": [
+   "cutting board"
+  ],
+  "tools": [
+   "paper towel"
+  ],
+  "amount": null,
+  "after": "plate with sliced food moved off the board, leaving the board empty"
+ },
+ {
+  "t0": 308.01,
+  "t1": 315.01,
+  "action": "wipe cutting board",
+  "objects": [
+   "cutting board"
+  ],
+  "tools": [
+   "paper towel"
+  ],
+  "amount": null,
+  "after": "cutting board moved from counter to sink and wiped clean"
+ },
+ {
+  "t0": 312.01,
+  "t1": 319.02,
+  "action": "wiping cutting board",
+  "objects": [
+   "cutting board"
+  ],
+  "tools": [
+   "paper towel"
+  ],
+  "amount": null,
+  "after": "cutting board is wiped clean and repositioned"
+ },
+ {
+  "t0": 316.02,
+  "t1": 323.02,
+  "action": "none",
+  "objects": [],
+  "tools": [
+   "paper towel"
+  ],
+  "amount": null,
+  "after": "camera viewpoint moves from sink area around the kitchen to the stove with no change to the food or dishes"
+ },
+ {
+  "t0": 320.02,
+  "t1": 327.03,
+  "action": "scroll on tablet",
+  "objects": [
+   "tablet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "tablet screen display is scrolled down"
+ },
+ {
+  "t0": 321.02,
+  "t1": 328.03,
+  "action": "scrolls on tablet",
+  "objects": [
+   "tablet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "view moves from stove to counter with hand touching tablet screen"
+ }
+]
