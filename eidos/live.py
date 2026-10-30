@@ -51,6 +51,20 @@ def open_live() -> bool:
     return bool(BASETEN_KEY)
 
 
+def works(which: str) -> bool:
+    """One tiny real call, to tell a working key from a present but rejected one."""
+    try:
+        if which == "open":
+            r = httpx.post(f"{BASETEN_BASE}/chat/completions", headers={"Authorization": f"Bearer {BASETEN_KEY}"},
+                           json={"model": MODELS["open"], "messages": [{"role": "user", "content": "ok"}], "max_tokens": 1}, timeout=60)
+        else:
+            r = httpx.post(f"{META_BASE}/responses", headers={"Authorization": f"Bearer {META_KEY}"},
+                           json={"model": MODELS["spark"], "input": "ok", "max_output_tokens": 16}, timeout=60)
+        return r.status_code < 400
+    except Exception:
+        return False
+
+
 def reader() -> str | None:
     """Which model reads screens for meaning, if any key is set."""
     want = os.environ.get("EIDOS_READER", "spark")

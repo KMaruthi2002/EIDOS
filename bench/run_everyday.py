@@ -31,7 +31,9 @@ WORDS = SPLIT.startswith("words")     # design C: every control renamed (needs a
 N_REDESIGN, N_OTHER, N_INTERRUPT = 6, 3, 4
 OUT = ROOT / "runs" / f"bench_everyday_{SPLIT}"
 from eidos import live as L    # noqa: E402
-SYSTEMS = ("replay", "replay_new", "nochk", "eidos") + (("eidos_live",) if L.meta_live() else ()) + (("eidos_open",) if L.open_live() else ())
+# a live system is included only if its key actually works (one tiny test call)
+SYSTEMS = ("replay", "replay_new", "nochk", "eidos") + (("eidos_live",) if L.meta_live() and L.works("spark") else ()) \
+    + (("eidos_open",) if L.open_live() and L.works("open") else ())
 
 
 def redesign(rng, task, skin):

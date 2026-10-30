@@ -190,7 +190,10 @@ async def run_ui(program: dict, url: str, out_dir: Path, inputs: dict | None = N
                 ws = [w.text for w in ln.words]
                 if 1 < len(ws) <= 6:
                     cands += ws + [" ".join(ws[i:i + 2]) for i in range(len(ws) - 1)]
-            alias = await L.match_label(scr.img, label, role, task_name, cands, which)
+            try:
+                alias = await L.match_label(scr.img, label, role, task_name, cands, which)
+            except Exception as e:      # a model error is a failure to ground, reported like any other
+                raise LookupError(f"no '{label}' on screen, and {L.MODELS[which]} could not be reached: {e!r}"[:300])
             if not alias:
                 raise LookupError(f"no '{label}' on screen, and {L.MODELS[which]} found nothing that means it")
             aliases[label] = alias
@@ -249,7 +252,10 @@ async def run_ui(program: dict, url: str, out_dir: Path, inputs: dict | None = N
                                 fresh = [ln.text for ln in scr.lines if not any(S.sim(ln.text, o.text) > 0.85 for o in before.lines)]
                                 for w in [w for w in want if w not in seen and w not in values]:
                                     if fresh:
-                                        alias = await L.match_label(scr.img, w, "confirmation or heading text", task_name, fresh, which)
+                                        try:
+                                            alias = await L.match_label(scr.img, w, "confirmation or heading text", task_name, fresh, which)
+                                        except Exception:
+                                            alias = None
                                         if alias and new_at(alias):
                                             aliases[w] = alias
                                             seen.append(w)
