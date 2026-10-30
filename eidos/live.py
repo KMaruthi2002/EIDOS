@@ -38,7 +38,7 @@ MODELS = {
     "wonder": os.environ.get("MUSE_WONDER_MODEL", "muse-wonder-1.0"),
     "image": os.environ.get("MUSE_IMAGE_MODEL", "muse-image-1.0"),
     "sam": os.environ.get("SAM_MODEL", "sam-3.1"),
-    "open": os.environ.get("MUSE_OPEN_MODEL", "meta-models/muse-spark-open"),
+    "open": os.environ.get("MUSE_OPEN_MODEL", "meta-models/muse-spark-open-1026"),   # the hackathon key works only with this model
 }
 LOG: list[dict] = []          # every live call made in this process: model, purpose, seconds, ok
 

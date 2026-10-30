@@ -26,7 +26,9 @@ from eidos.ui.tasks import TUTORIALS, N_FIELDS, fresh_inputs, score, URL   # noq
 
 BASE = sys.argv[1] if len(sys.argv) > 1 else "http://localhost:8000"
 SPLIT = sys.argv[2] if len(sys.argv) > 2 else "dev"
-SEED = {"dev": 7, "test": 31337, "test2": 50505, "words_dev": 8, "words": 60606}.get(SPLIT, int(SPLIT) if SPLIT.isdigit() else 7)
+SEED = {"dev": 7, "test": 31337, "test2": 50505, "words_dev": 8, "words": 60606,
+        "words_dev_open": 8, "words_open": 60606}.get(SPLIT, int(SPLIT) if SPLIT.isdigit() else 7)
+ONLY_OPEN = SPLIT.endswith("_open")   # same conditions as the matching split, Muse Spark Open only
 WORDS = SPLIT.startswith("words")     # design C: every control renamed (needs a model to read meaning)
 N_REDESIGN, N_OTHER, N_INTERRUPT = 6, 3, 4
 OUT = ROOT / "runs" / f"bench_everyday_{SPLIT}"
@@ -34,6 +36,8 @@ from eidos import live as L    # noqa: E402
 # a live system is included only if its key actually works (one tiny test call)
 SYSTEMS = ("replay", "replay_new", "nochk", "eidos") + (("eidos_live",) if L.meta_live() and L.works("spark") else ()) \
     + (("eidos_open",) if L.open_live() and L.works("open") else ())
+if ONLY_OPEN:
+    SYSTEMS = ("eidos_open",)
 
 
 def redesign(rng, task, skin):

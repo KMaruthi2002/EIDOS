@@ -1,0 +1,65 @@
+{
+  "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=B&theme=dark&words=alt&data=19",
+  "inputs": {
+    "to": "nadia@brightlane.com",
+    "subject": "Travel receipts",
+    "message": "Notes are attached."
+  },
+  "use_contracts": true,
+  "live": false,
+  "aliases": {},
+  "model_calls": [],
+  "steps": [
+    {
+      "id": 1,
+      "intent": "Press 'Compose'; the screen should then show 'New message', 'Subject', 'Message'",
+      "do": "press",
+      "grounding": [
+        {
+          "how": "repair: contract failed, pressed Escape and redid the step"
+        },
+        {
+          "how": "repair: contract failed, pressed Escape and redid the step"
+        }
+      ],
+      "checks": [
+        {
+          "contract": "find the target on this screen",
+          "error": "no control reading 'Compose' on screen",
+          "pass": false
+        },
+        {
+          "contract": "find the target on this screen",
+          "error": "no control reading 'Compose' on screen",
+          "pass": false
+        },
+        {
+          "contract": "find the target on this screen",
+          "error": "no control reading 'Compose' on screen",
+          "pass": false
+        }
+      ],
+      "passed": false,
+      "attempts": 3,
+      "t_start": 0.92,
+      "t_end": 7.15
+    }
+  ],
+  "all_contracts_passed": false,
+  "oracle_state": {
+    "task": "mail",
+    "records": [],
+    "settings": {
+      "Two-factor sign-in": false,
+      "Sign-in alerts": false,
+      "Remember this device": true,
+      "Recovery email": ""
+    },
+    "saves": 0
+  },
+  "video": "run.mp4",
+  "truth": {
+    "success": false,
+    "why": "nothing was saved"
+  }
+}

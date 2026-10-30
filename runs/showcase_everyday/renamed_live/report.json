@@ -1,0 +1,312 @@
+{
+  "url": "http://localhost:8001/apps/everyday/index.html?task=mail&skin=B&theme=dark&words=alt&data=19",
+  "inputs": {
+    "to": "nadia@brightlane.com",
+    "subject": "Travel receipts",
+    "message": "Notes are attached."
+  },
+  "use_contracts": true,
+  "live": true,
+  "aliases": {
+    "Compose": "New email",
+    "New message": "Write an email",
+    "Subject": "TOPIC",
+    "Message": "BODY",
+    "To": "RECIPIENT",
+    "Send": "Deliver"
+  },
+  "model_calls": [
+    {
+      "model": "muse-spark-1.3",
+      "purpose": "match 'Compose'",
+      "seconds": 2.94,
+      "ok": true
+    },
+    {
+      "model": "sam-3.1",
+      "purpose": "SAM 'New email button'",
+      "seconds": 0.98,
+      "ok": true
+    },
+    {
+      "model": "muse-spark-1.3",
+      "purpose": "match 'New message'",
+      "seconds": 3.18,
+      "ok": true
+    },
+    {
+      "model": "muse-spark-1.3",
+      "purpose": "match 'Subject'",
+      "seconds": 2.8,
+      "ok": true
+    },
+    {
+      "model": "muse-spark-1.3",
+      "purpose": "match 'Message'",
+      "seconds": 11.43,
+      "ok": true
+    },
+    {
+      "model": "muse-spark-1.3",
+      "purpose": "match 'To'",
+      "seconds": 2.65,
+      "ok": true
+    },
+    {
+      "model": "sam-3.1",
+      "purpose": "SAM 'input box'",
+      "seconds": 1.07,
+      "ok": true
+    },
+    {
+      "model": "sam-3.1",
+      "purpose": "SAM 'input box'",
+      "seconds": 2.01,
+      "ok": true
+    },
+    {
+      "model": "sam-3.1",
+      "purpose": "SAM 'input box'",
+      "seconds": 0.93,
+      "ok": true
+    },
+    {
+      "model": "muse-spark-1.3",
+      "purpose": "match 'Send'",
+      "seconds": 2.39,
+      "ok": true
+    },
+    {
+      "model": "sam-3.1",
+      "purpose": "SAM 'Deliver button'",
+      "seconds": 1.35,
+      "ok": true
+    }
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "intent": "Press 'Compose'; the screen should then show 'New message', 'Subject', 'Message'",
+      "do": "press",
+      "grounding": [
+        {
+          "how": "muse-spark-1.3 matched 'Compose' to 'New email' on this screen"
+        },
+        {
+          "how": "found the control reading 'Compose' by OCR",
+          "at": [
+            96,
+            94
+          ]
+        },
+        {
+          "how": "muse-spark-1.3 matched 'New message' to 'Write an email' after the press"
+        },
+        {
+          "how": "muse-spark-1.3 matched 'Subject' to 'TOPIC' after the press"
+        },
+        {
+          "how": "muse-spark-1.3 matched 'Message' to 'BODY' after the press"
+        }
+      ],
+      "checks": [
+        {
+          "contract": "SAM 3.1 finds a 'New email button' at the same place",
+          "iou": 0.0,
+          "pass": false,
+          "advisory": true
+        },
+        {
+          "contract": "screen then newly shows 'New message', 'Subject', 'Message'",
+          "found": [
+            "New message",
+            "Subject",
+            "Message"
+          ],
+          "pass": true
+        }
+      ],
+      "passed": true,
+      "attempts": 1,
+      "t_start": 0.9,
+      "t_end": 28.21
+    },
+    {
+      "id": 2,
+      "intent": "Type nadia@brightlane.com into the 'To' field",
+      "do": "type",
+      "grounding": [
+        {
+          "how": "muse-spark-1.3 matched 'To' to 'RECIPIENT' on this screen"
+        },
+        {
+          "how": "found the field labelled 'To' by OCR, then its box",
+          "box": [
+            345,
+            216,
+            507,
+            35
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "contract": "the box written to is labelled 'RECIPIENT'",
+          "saw": "RECIPIENT",
+          "pass": true
+        },
+        {
+          "contract": "SAM 3.1 finds a 'input box' at the same place",
+          "iou": 0.0,
+          "pass": false,
+          "advisory": true
+        },
+        {
+          "contract": "the 'To' field shows 'nadia@brightlane.com'",
+          "saw": "nadia@brightlane.com",
+          "pass": true
+        }
+      ],
+      "passed": true,
+      "attempts": 1,
+      "t_start": 28.21,
+      "t_end": 44.79
+    },
+    {
+      "id": 3,
+      "intent": "Type Travel receipts into the 'Subject' field",
+      "do": "type",
+      "grounding": [
+        {
+          "how": "found the field labelled 'Subject' by OCR, then its box",
+          "box": [
+            345,
+            288,
+            507,
+            35
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "contract": "the box written to is labelled 'TOPIC'",
+          "saw": "TOPIC",
+          "pass": true
+        },
+        {
+          "contract": "SAM 3.1 finds a 'input box' at the same place",
+          "iou": 0.0,
+          "pass": false,
+          "advisory": true
+        },
+        {
+          "contract": "the 'Subject' field shows 'Travel receipts'",
+          "saw": "Travel receipts",
+          "pass": true
+        }
+      ],
+      "passed": true,
+      "attempts": 1,
+      "t_start": 44.79,
+      "t_end": 53.08
+    },
+    {
+      "id": 4,
+      "intent": "Type Notes are attached. into the 'Message' field",
+      "do": "type",
+      "grounding": [
+        {
+          "how": "found the field labelled 'Message' by OCR, then its box",
+          "box": [
+            345,
+            360,
+            507,
+            75
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "contract": "the box written to is labelled 'BODY'",
+          "saw": "BODY",
+          "pass": true
+        },
+        {
+          "contract": "SAM 3.1 finds a 'input box' at the same place",
+          "iou": 0.0,
+          "pass": false,
+          "advisory": true
+        },
+        {
+          "contract": "the 'Message' field shows 'Notes are attached.'",
+          "saw": "Notes are attached.",
+          "pass": true
+        }
+      ],
+      "passed": true,
+      "attempts": 1,
+      "t_start": 53.08,
+      "t_end": 60.12
+    },
+    {
+      "id": 5,
+      "intent": "Press 'Send'; the screen should then show 'nadia@brightlane.com', 'Travel receipts'",
+      "do": "press",
+      "grounding": [
+        {
+          "how": "muse-spark-1.3 matched 'Send' to 'Deliver' on this screen"
+        },
+        {
+          "how": "found the control reading 'Send' by OCR",
+          "at": [
+            803,
+            164
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "contract": "SAM 3.1 finds a 'Deliver button' at the same place",
+          "iou": 0.99,
+          "pass": true,
+          "advisory": true
+        },
+        {
+          "contract": "screen then newly shows 'nadia@brightlane.com', 'Travel receipts'",
+          "found": [
+            "nadia@brightlane.com",
+            "Travel receipts"
+          ],
+          "pass": true
+        }
+      ],
+      "passed": true,
+      "attempts": 1,
+      "t_start": 60.12,
+      "t_end": 68.63
+    }
+  ],
+  "all_contracts_passed": true,
+  "oracle_state": {
+    "task": "mail",
+    "records": [
+      {
+        "to": "nadia@brightlane.com",
+        "subject": "Travel receipts",
+        "message": "Notes are attached."
+      }
+    ],
+    "settings": {
+      "Two-factor sign-in": false,
+      "Sign-in alerts": false,
+      "Remember this device": true,
+      "Recovery email": ""
+    },
+    "saves": 0
+  },
+  "video": "run.mp4",
+  "truth": {
+    "success": true,
+    "why": ""
+  }
+}
