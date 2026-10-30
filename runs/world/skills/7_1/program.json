@@ -169,7 +169,7 @@
    "needs": [
     4
    ],
-   "optional": false,
+   "optional": true,
    "evidence": {
     "start": "step5_start.jpg",
     "end": "step5_end.jpg",
@@ -182,7 +182,8 @@
      ]
     ],
     "outlined": "egg"
-   }
+   },
+   "why_optional": "not seen in the second demonstration (7_2)"
   },
   {
    "id": 6,
@@ -373,11 +374,7 @@
    "end": 467.0,
    "focus": "egg mixture",
    "done_when": "The bowl contains a mashed egg mixture evenly mixed with red sauce and salsa",
-   "needs": [
-    8,
-    9,
-    10
-   ],
+   "needs": [],
    "optional": false,
    "evidence": {
     "start": "step11_start.jpg",
@@ -470,5 +467,32 @@
  ],
  "compiled_by": "muse-wonder-1.0",
  "learned_from": "7_1.mp4",
- "video_seconds": 540.01
+ "video_seconds": 540.01,
+ "recipe": "Breakfast Burritos",
+ "learn_seconds": 121.2,
+ "calibration": {
+  "source": "second demonstration (7_2)",
+  "changes": [
+   {
+    "step": 5,
+    "change": "optional",
+    "why": "not seen in the second demonstration (7_2)"
+   },
+   {
+    "step": 11,
+    "change": "no longer needs step 8",
+    "why": "the second demonstration (7_2) did step 11 first"
+   },
+   {
+    "step": 11,
+    "change": "no longer needs step 9",
+    "why": "the second demonstration (7_2) did step 11 first"
+   },
+   {
+    "step": 11,
+    "change": "no longer needs step 10",
+    "why": "the second demonstration (7_2) did step 11 first"
+   }
+  ]
+ }
 }

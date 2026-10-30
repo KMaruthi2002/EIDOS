@@ -102,7 +102,8 @@
    "evidence": {
     "start": "step4_start.jpg",
     "end": "step4_end.jpg"
-   }
+   },
+   "check": false
   },
   {
    "id": 5,
@@ -143,9 +144,7 @@
    "end": 247.0,
    "focus": "microwave",
    "done_when": "The mug with the egg is inside the closed microwave with the display lit",
-   "needs": [
-    5
-   ],
+   "needs": [],
    "optional": false,
    "evidence": {
     "start": "step6_start.jpg",
@@ -171,7 +170,7 @@
    "needs": [
     6
    ],
-   "optional": false,
+   "optional": true,
    "evidence": {
     "start": "step7_start.jpg",
     "end": "step7_end.jpg",
@@ -184,7 +183,8 @@
      ]
     ],
     "outlined": "egg"
-   }
+   },
+   "why_optional": "not seen in the second demonstration (1_14)"
   },
   {
    "id": 8,
@@ -259,9 +259,7 @@
    "end": 575.0,
    "focus": "lettuce",
    "done_when": "Shredded lettuce covers the cheese on the muffin base on the cutting board",
-   "needs": [
-    9
-   ],
+   "needs": [],
    "optional": false,
    "evidence": {
     "start": "step10_start.jpg",
@@ -297,5 +295,32 @@
  ],
  "compiled_by": "muse-wonder-1.0",
  "learned_from": "1_7.mp4",
- "video_seconds": 603.0
+ "video_seconds": 603.0,
+ "recipe": "Microwave Egg Sandwich",
+ "learn_seconds": 120.7,
+ "calibration": {
+  "source": "second demonstration (1_14)",
+  "changes": [
+   {
+    "step": 7,
+    "change": "optional",
+    "why": "not seen in the second demonstration (1_14)"
+   },
+   {
+    "step": 6,
+    "change": "no longer needs step 5",
+    "why": "the second demonstration (1_14) did step 6 first"
+   },
+   {
+    "step": 10,
+    "change": "no longer needs step 9",
+    "why": "the second demonstration (1_14) did step 10 first"
+   },
+   {
+    "step": 4,
+    "change": "contract not checked",
+    "why": "it failed on the second demonstration (1_14), which was done correctly: The muffin is still sealed in its bag and no halves are on the cutting board."
+   }
+  ]
+ }
 }

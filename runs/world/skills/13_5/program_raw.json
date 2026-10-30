@@ -1,0 +1,421 @@
+{
+ "title": "Seasoned Mashed Corn",
+ "domain": "cooking",
+ "inputs": {
+  "lime_count": "1",
+  "second_heating_time": "4 minutes"
+ },
+ "steps": [
+  {
+   "id": 1,
+   "do": "Cut open the bag of corn kernels with scissors",
+   "verb": "cut",
+   "objects": [
+    "bag of corn kernels"
+   ],
+   "tools": [
+    "scissors"
+   ],
+   "start": 32.0,
+   "end": 51.0,
+   "focus": "corn bag",
+   "done_when": "The corn bag is cut open with the kernels accessible inside",
+   "needs": [],
+   "optional": true,
+   "evidence": {
+    "start": "step1_start.jpg",
+    "end": "step1_end.jpg"
+   }
+  },
+  {
+   "id": 2,
+   "do": "Pour the corn kernels from the bag, using the measuring cup, into the colander",
+   "verb": "pour",
+   "objects": [
+    "corn kernels",
+    "colander"
+   ],
+   "tools": [
+    "measuring cup"
+   ],
+   "start": 80.0,
+   "end": 123.0,
+   "focus": "corn kernels",
+   "done_when": "The colander holds the poured corn kernels and the measuring cup is empty",
+   "needs": [
+    1
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step2_start.jpg",
+    "end": "step2_end.jpg",
+    "boxes": [
+     [
+      0.3984,
+      0.3139,
+      0.6391,
+      0.7833
+     ]
+    ],
+    "outlined": "colander"
+   }
+  },
+  {
+   "id": 3,
+   "do": "Rinse the corn kernels in the colander under running water, stirring them to rinse all sides",
+   "verb": "rinse",
+   "objects": [
+    "corn kernels",
+    "colander"
+   ],
+   "tools": [
+    "sink faucet"
+   ],
+   "start": 128.0,
+   "end": 175.0,
+   "focus": "corn kernels",
+   "done_when": "Wet rinsed corn kernels are gathered in the colander with the faucet off",
+   "needs": [
+    2
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step3_start.jpg",
+    "end": "step3_end.jpg",
+    "boxes": [
+     [
+      0.4531,
+      0.3361,
+      0.7203,
+      0.8028
+     ]
+    ],
+    "outlined": "colander"
+   }
+  },
+  {
+   "id": 4,
+   "do": "Shake the colander to drain the corn, then transfer the corn kernels into a small bowl",
+   "verb": "transfer",
+   "objects": [
+    "corn kernels",
+    "small bowl"
+   ],
+   "tools": [
+    "colander"
+   ],
+   "start": 216.0,
+   "end": 267.0,
+   "focus": "corn bowl",
+   "done_when": "The small bowl is full of corn kernels and the colander is empty",
+   "needs": [
+    3
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step4_start.jpg",
+    "end": "step4_end.jpg",
+    "boxes": [
+     [
+      0.5172,
+      0.6611,
+      0.6438,
+      0.8139
+     ]
+    ],
+    "outlined": "corn bowl"
+   }
+  },
+  {
+   "id": 5,
+   "do": "Place the bowl of corn in the microwave and heat it until hot",
+   "verb": "heat",
+   "objects": [
+    "bowl of corn"
+   ],
+   "tools": [
+    "microwave"
+   ],
+   "start": 284.0,
+   "end": 303.0,
+   "focus": "microwave",
+   "done_when": "The bowl of corn is inside the closed, running microwave",
+   "needs": [
+    4
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step5_start.jpg",
+    "end": "step5_end.jpg",
+    "boxes": [
+     [
+      0.3828,
+      0.2611,
+      0.6844,
+      0.6306
+     ]
+    ],
+    "outlined": "microwave"
+   }
+  },
+  {
+   "id": 6,
+   "do": "Remove the bowl from the microwave and add a pat of butter on top of the corn",
+   "verb": "add",
+   "objects": [
+    "butter",
+    "bowl of corn"
+   ],
+   "tools": [
+    "spoon"
+   ],
+   "start": 424.0,
+   "end": 463.0,
+   "focus": "butter",
+   "done_when": "A pat of butter sits on top of the hot corn in the bowl on the counter",
+   "needs": [
+    5
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step6_start.jpg",
+    "end": "step6_end.jpg",
+    "boxes": [
+     [
+      0.6219,
+      0.2639,
+      0.7,
+      0.3889
+     ]
+    ],
+    "outlined": "butter"
+   }
+  },
+  {
+   "id": 7,
+   "do": "Sprinkle salt over the corn",
+   "verb": "sprinkle",
+   "objects": [
+    "salt",
+    "bowl of corn"
+   ],
+   "tools": [
+    "measuring spoon",
+    "salt container"
+   ],
+   "start": 536.0,
+   "end": 555.0,
+   "focus": "corn bowl",
+   "done_when": "Salt is scattered over the surface of the corn in the bowl",
+   "needs": [
+    6
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step7_start.jpg",
+    "end": "step7_end.jpg",
+    "boxes": [
+     [
+      0.4734,
+      0.5083,
+      0.6172,
+      0.7806
+     ]
+    ],
+    "outlined": "corn bowl"
+   }
+  },
+  {
+   "id": 8,
+   "do": "Stir and mash the corn with the butter and salt until partially mashed and evenly mixed",
+   "verb": "mash",
+   "objects": [
+    "bowl of corn"
+   ],
+   "tools": [
+    "spatula"
+   ],
+   "start": 580.0,
+   "end": 651.0,
+   "focus": "mashed corn",
+   "done_when": "The corn in the bowl is visibly mashed, mixed, and no separate butter pat remains",
+   "needs": [
+    7
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step8_start.jpg",
+    "end": "step8_end.jpg",
+    "boxes": [
+     [
+      0.6906,
+      0.6139,
+      0.7984,
+      0.7944
+     ]
+    ],
+    "outlined": "bowl of corn"
+   }
+  },
+  {
+   "id": 9,
+   "do": "Return the bowl to the microwave and heat it for {second_heating_time}",
+   "verb": "heat",
+   "objects": [
+    "bowl of corn"
+   ],
+   "tools": [
+    "microwave"
+   ],
+   "start": 656.0,
+   "end": 675.0,
+   "focus": "microwave",
+   "done_when": "The bowl of corn is inside the closed, running microwave",
+   "needs": [
+    8
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step9_start.jpg",
+    "end": "step9_end.jpg",
+    "boxes": [
+     [
+      0.3359,
+      0.2444,
+      0.6703,
+      0.6444
+     ]
+    ],
+    "outlined": "microwave"
+   }
+  },
+  {
+   "id": 10,
+   "do": "Remove the hot bowl from the microwave with oven mitts, squeeze the lime pieces over the corn, and pour in any collected lime juice",
+   "verb": "squeeze",
+   "objects": [
+    "lime pieces",
+    "bowl of corn"
+   ],
+   "tools": [
+    "oven mitts",
+    "small bowl"
+   ],
+   "start": 864.0,
+   "end": 1167.0,
+   "focus": "lime wedge",
+   "done_when": "Squeezed lime pieces are beside the bowl and the corn is moistened with lime juice",
+   "needs": [
+    9
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step10_start.jpg",
+    "end": "step10_end.jpg"
+   }
+  },
+  {
+   "id": 11,
+   "do": "Wash {lime_count} lime under running water",
+   "verb": "wash",
+   "objects": [
+    "lime"
+   ],
+   "tools": [
+    "sink faucet"
+   ],
+   "start": 936.0,
+   "end": 947.0,
+   "focus": "lime",
+   "done_when": "The washed lime is out of the sink and ready on the counter",
+   "needs": [],
+   "optional": true,
+   "evidence": {
+    "start": "step11_start.jpg",
+    "end": "step11_end.jpg"
+   }
+  },
+  {
+   "id": 12,
+   "do": "Cut the lime into small pieces on the cutting board",
+   "verb": "cut",
+   "objects": [
+    "lime",
+    "cutting board"
+   ],
+   "tools": [
+    "knife"
+   ],
+   "start": 948.0,
+   "end": 1007.0,
+   "focus": "lime pieces",
+   "done_when": "The lime is cut into pieces lying on the cutting board",
+   "needs": [
+    11
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step12_start.jpg",
+    "end": "step12_end.jpg",
+    "boxes": [
+     [
+      0.6813,
+      0.8083,
+      0.7203,
+      0.8806
+     ],
+     [
+      0.6562,
+      0.7556,
+      0.6844,
+      0.8
+     ],
+     [
+      0.6766,
+      0.7333,
+      0.7109,
+      0.7917
+     ]
+    ],
+    "outlined": "lime pieces"
+   }
+  },
+  {
+   "id": 13,
+   "do": "Stir and mash the corn again until the lime and seasonings are evenly mixed through it",
+   "verb": "mash",
+   "objects": [
+    "bowl of corn"
+   ],
+   "tools": [
+    "spoon"
+   ],
+   "start": 1196.0,
+   "end": 1259.0,
+   "focus": "mashed corn",
+   "done_when": "The finished corn is evenly mashed and mixed in the bowl with no pooled juice on top",
+   "needs": [
+    10
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step13_start.jpg",
+    "end": "step13_end.jpg",
+    "boxes": [
+     [
+      0.4813,
+      0.4889,
+      0.6094,
+      0.7194
+     ]
+    ],
+    "outlined": "bowl of corn"
+   }
+  }
+ ],
+ "compiled_by": "muse-wonder-1.0",
+ "learned_from": "13_5.mp4",
+ "video_seconds": 1300.03,
+ "recipe": "Butter Corn Cup",
+ "learn_seconds": 249.2
+}

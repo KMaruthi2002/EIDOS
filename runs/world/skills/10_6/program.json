@@ -54,7 +54,8 @@
      ]
     ],
     "outlined": "tortilla"
-   }
+   },
+   "check": false
   },
   {
    "id": 3,
@@ -222,5 +223,17 @@
  ],
  "compiled_by": "muse-wonder-1.0",
  "learned_from": "10_6.mp4",
- "video_seconds": 328.03
+ "video_seconds": 328.03,
+ "recipe": "Pinwheels",
+ "learn_seconds": 86.2,
+ "calibration": {
+  "source": "second demonstration (10_16)",
+  "changes": [
+   {
+    "step": 2,
+    "change": "contract not checked",
+    "why": "it failed on the second demonstration (10_16), which was done correctly: No tortilla is visible, only paper towels on the cutting board."
+   }
+  ]
+ }
 }

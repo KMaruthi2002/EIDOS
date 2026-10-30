@@ -41,11 +41,12 @@
    "focus": "powder packet",
    "done_when": "The powder packet is cut open and the powder inside is accessible",
    "needs": [],
-   "optional": false,
+   "optional": true,
    "evidence": {
     "start": "step2_start.jpg",
     "end": "step2_end.jpg"
-   }
+   },
+   "why_optional": "not seen in the second demonstration (3_5)"
   },
   {
    "id": 3,
@@ -70,7 +71,8 @@
    "evidence": {
     "start": "step3_start.jpg",
     "end": "step3_end.jpg"
-   }
+   },
+   "check": false
   },
   {
    "id": 4,
@@ -90,11 +92,12 @@
    "needs": [
     3
    ],
-   "optional": false,
+   "optional": true,
    "evidence": {
     "start": "step4_start.jpg",
     "end": "step4_end.jpg"
-   }
+   },
+   "why_optional": "not seen in the second demonstration (3_5)"
   },
   {
    "id": 5,
@@ -170,9 +173,7 @@
    "end": 355.0,
    "focus": "mixture",
    "done_when": "The mug contains a smooth, blended mixture with no separate dry powder visible",
-   "needs": [
-    6
-   ],
+   "needs": [],
    "optional": false,
    "evidence": {
     "start": "step7_start.jpg",
@@ -276,5 +277,32 @@
  ],
  "compiled_by": "muse-wonder-1.0",
  "learned_from": "3_2.mp4",
- "video_seconds": 657.02
+ "video_seconds": 657.02,
+ "recipe": "Microwave Mug Pizza",
+ "learn_seconds": 122.3,
+ "calibration": {
+  "source": "second demonstration (3_5)",
+  "changes": [
+   {
+    "step": 2,
+    "change": "optional",
+    "why": "not seen in the second demonstration (3_5)"
+   },
+   {
+    "step": 4,
+    "change": "optional",
+    "why": "not seen in the second demonstration (3_5)"
+   },
+   {
+    "step": 7,
+    "change": "no longer needs step 6",
+    "why": "the second demonstration (3_5) did step 7 first"
+   },
+   {
+    "step": 3,
+    "change": "contract not checked",
+    "why": "it failed on the second demonstration (3_5), which was done correctly: Spoon still holds white powder instead of being empty."
+   }
+  ]
+ }
 }

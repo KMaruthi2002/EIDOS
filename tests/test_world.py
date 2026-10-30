@@ -10,12 +10,11 @@ from eidos.world import session as S
 from eidos.world.calibrate import calibrate
 
 def run(coro):
-    """A fresh event loop per call, independent of loops other tests leave behind."""
-    loop = asyncio.new_event_loop()
-    try:
-        return loop.run_until_complete(coro)
-    finally:
-        loop.close()
+    """Run on a thread of its own: other tests (the Studio's browser click-through) can leave an
+    event loop running on the main thread."""
+    import concurrent.futures
+    with concurrent.futures.ThreadPoolExecutor(1) as ex:
+        return ex.submit(asyncio.run, coro).result()
 
 
 PROGRAM = {
@@ -174,3 +173,18 @@ def test_live_session_feeds_looks_in_time_order(monkeypatch, tmp_path):
     out, looks = run(go())
     assert looks == sorted(looks)
     assert out["seen"] == [1, 3, 5]
+
+
+def test_a_short_step_seen_once_counts_when_a_step_that_needs_it_starts():
+    """Removing the part wins only one look, then installing the new one starts: the removal
+    counts (from its sighting), and it is still checked for order: the power was never off."""
+    tr = R.Tracker(PROGRAM)
+    feed(tr, [2, 2, 3, 5, 5])
+    assert 3 in tr.started and tr.started[3] < tr.started[5]
+    assert ("order", 3) in alerts(tr)
+
+
+def test_the_sighting_rule_can_be_switched_off():
+    tr = R.Tracker(PROGRAM, confirm_sightings=False)
+    feed(tr, [2, 2, 3, 5, 5])
+    assert 3 not in tr.started

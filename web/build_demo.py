@@ -123,8 +123,26 @@ def main():
     if film.exists():
         shutil.copy(film, OUT / "assets" / "explainer.mp4")
         shutil.copy(ROOT / "web" / "explainer_poster.jpg", OUT / "assets" / "explainer_poster.jpg")
+    # ---- real world
+    world = None
+    wsk = ROOT / "samples" / "world" / "cabinet"
+    if (wsk / "program.json").exists():
+        (OUT / "assets" / "world").mkdir(parents=True, exist_ok=True)
+        for f in (wsk / "evidence").glob("*_end.jpg"):
+            shutil.copy(f, OUT / "assets" / "world" / f.name)
+        live_clip = ROOT / "web" / "world_live.mp4"
+        if live_clip.exists():
+            shutil.copy(live_clip, OUT / "assets" / "world_live.mp4")
+            shutil.copy(ROOT / "web" / "world_live.jpg", OUT / "assets" / "world_live.jpg")
+        world = {"program": json.loads((wsk / "program.json").read_text())}
+        for split in ("test", "dev"):
+            f = RUNS / "world" / f"summary_{split}.json"
+            if f.exists():
+                sm = json.loads(f.read_text())
+                sm.pop("rows", None)
+                world[split] = sm
     data = {"trace": trace, "program": program, "showcase": showcase, "bench": bench, "everyday": ev,
-            "film": film.exists()}
+            "film": film.exists(), "world": world}
     html = (ROOT / "web" / "demo_template.html").read_text()
     html = html.replace("/*DATA*/null", json.dumps(data))
     html = html.replace("<!--VIEWPORT_META-->", "")

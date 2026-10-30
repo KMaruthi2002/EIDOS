@@ -20,6 +20,8 @@ import numpy as np
 from . import run as R
 from .learn import bind
 
+import os
+DEBUG_DIR = os.environ.get("EIDOS_DEBUG_FRAMES")
 MAX_SESSIONS = 4
 IDLE_LIMIT = 20 * 60
 
@@ -79,6 +81,8 @@ class LiveSession:
         if self.frames and t <= self.frames[-1][0]:
             return
         self.frames.append((t, img))
+        if DEBUG_DIR:
+            cv2.imwrite(f"{DEBUG_DIR}/{self.id}_{t:07.2f}.jpg", img)
         if not self.history or t - self.history[-1][0] >= 2:
             self.history.append((t, cv2.resize(img, (320, int(img.shape[0] * 320 / img.shape[1])))))
         while t >= self.next_look:

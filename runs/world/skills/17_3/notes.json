@@ -1,0 +1,2702 @@
+[
+ {
+  "t0": 0.0,
+  "t1": 7.01,
+  "action": "picks up mug",
+  "objects": [
+   "mug"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "person moved from tablet by stove to sink with hand on mug on dish rack"
+ },
+ {
+  "t0": 4.0,
+  "t1": 11.01,
+  "action": "move bowl from rack to stove",
+  "objects": [
+   "pink bowl"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "pink bowl is on the stovetop instead of the dish rack"
+ },
+ {
+  "t0": 8.01,
+  "t1": 15.02,
+  "action": "takes bowl from rack and places on stove",
+  "objects": [
+   "pink bowl"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "pink bowl moved from dish rack to stove top"
+ },
+ {
+  "t0": 12.01,
+  "t1": 19.02,
+  "action": "take item from refrigerator",
+  "objects": [
+   "food container"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "refrigerator door is open with hand reaching inside grasping container"
+ },
+ {
+  "t0": 16.02,
+  "t1": 23.02,
+  "action": "takes ice cream from refrigerator",
+  "objects": [
+   "ice cream container",
+   "refrigerator"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "ice cream container is out of the refrigerator and refrigerator door is closed"
+ },
+ {
+  "t0": 20.02,
+  "t1": 27.03,
+  "action": "opens ice cream tub",
+  "objects": [
+   "ice cream tub with lid"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "tub is out of the fridge and open with lid removed"
+ },
+ {
+  "t0": 24.02,
+  "t1": 31.03,
+  "action": "opens container",
+  "objects": [
+   "tub",
+   "red lid",
+   "foil seal"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "tub is open with lid off and foil seal peeled off"
+ },
+ {
+  "t0": 28.03,
+  "t1": 35.0,
+  "action": "open container",
+  "objects": [
+   "plastic tub"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the seal is peeled off, the tub is placed on the stovetop, and the utensil drawer is opened"
+ },
+ {
+  "t0": 32.03,
+  "t1": 39.01,
+  "action": "searches through drawer",
+  "objects": [
+   "white container",
+   "kitchen drawer"
+  ],
+  "tools": [
+   "measuring spoon"
+  ],
+  "amount": null,
+  "after": "white container placed on stove and drawer left open"
+ },
+ {
+  "t0": 36.0,
+  "t1": 43.01,
+  "action": "inspecting measuring utensils",
+  "objects": [
+   "measuring spoon",
+   "measuring cup"
+  ],
+  "tools": [
+   "measuring spoon",
+   "measuring cup"
+  ],
+  "amount": null,
+  "after": "utensils returned to drawer"
+ },
+ {
+  "t0": 40.01,
+  "t1": 47.01,
+  "action": "inspect and store measuring cup",
+  "objects": [
+   "measuring cup",
+   "kitchen drawer"
+  ],
+  "tools": [
+   "measuring cup"
+  ],
+  "amount": null,
+  "after": "measuring cup is back in drawer and drawer is closed"
+ },
+ {
+  "t0": 44.01,
+  "t1": 51.02,
+  "action": "scoop white powder",
+  "objects": [
+   "white powder container"
+  ],
+  "tools": [
+   "measuring cup"
+  ],
+  "amount": null,
+  "after": "measuring cup is filled with white powder over the container on the stove"
+ },
+ {
+  "t0": 48.01,
+  "t1": 55.02,
+  "action": "stirring mixture",
+  "objects": [
+   "white batter in bowl"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "person is holding bowl and lifting white mixture with spoon"
+ },
+ {
+  "t0": 52.02,
+  "t1": 59.03,
+  "action": "scooping white substance",
+  "objects": [
+   "white bowl",
+   "white cream"
+  ],
+  "tools": [
+   "black spoon"
+  ],
+  "amount": null,
+  "after": "spoon holds a scoop of white substance"
+ },
+ {
+  "t0": 56.02,
+  "t1": 63.03,
+  "action": "scooping cream into a small bowl",
+  "objects": [
+   "white cream",
+   "pink bowl"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "a scoop of white cream is now in the pink bowl on the stove"
+ },
+ {
+  "t0": 60.03,
+  "t1": 67.0,
+  "action": "scoops cream into a bowl",
+  "objects": [
+   "tub of white cream",
+   "small pink bowl"
+  ],
+  "tools": [
+   "black spoon"
+  ],
+  "amount": null,
+  "after": "pink bowl now contains a small amount of white cream"
+ },
+ {
+  "t0": 64.03,
+  "t1": 71.0,
+  "action": "scooping shortening",
+  "objects": [
+   "shortening",
+   "pink bowl"
+  ],
+  "tools": [
+   "scoop",
+   "tub"
+  ],
+  "amount": null,
+  "after": "pink bowl has an extra scoop of white shortening"
+ },
+ {
+  "t0": 68.0,
+  "t1": 75.01,
+  "action": "scooping into bowl",
+  "objects": [
+   "white powder",
+   "pink bowl"
+  ],
+  "tools": [
+   "scoop"
+  ],
+  "amount": null,
+  "after": "pink bowl fills with scoops of white powder"
+ },
+ {
+  "t0": 72.01,
+  "t1": 79.01,
+  "action": "scoop yogurt and close tub",
+  "objects": [
+   "yogurt tub",
+   "pink bowl"
+  ],
+  "tools": [
+   "spoon",
+   "lid"
+  ],
+  "amount": null,
+  "after": "pink bowl has more scoops of yogurt and yogurt tub is sealed with lid"
+ },
+ {
+  "t0": 76.01,
+  "t1": 83.02,
+  "action": "close yogurt container",
+  "objects": [
+   "yogurt tub",
+   "lid"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "open yogurt tub is sealed with red lid"
+ },
+ {
+  "t0": 80.01,
+  "t1": 87.02,
+  "action": "put in refrigerator",
+  "objects": [
+   "yogurt container"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "yogurt container is on refrigerator shelf"
+ },
+ {
+  "t0": 84.02,
+  "t1": 91.02,
+  "action": "putting food away in refrigerator",
+  "objects": [
+   "refrigerator",
+   "butter carton",
+   "yogurt container"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "refrigerator is closed and person is at sink holding a spoon"
+ },
+ {
+  "t0": 88.02,
+  "t1": 95.03,
+  "action": "puts spoon on dish rack",
+  "objects": [
+   "spoon"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a spoon is added to the over-sink dish rack"
+ },
+ {
+  "t0": 92.03,
+  "t1": 99.03,
+  "action": "stirring mixture",
+  "objects": [
+   "white cream in pink bowl"
+  ],
+  "tools": [
+   "spoon",
+   "bowl"
+  ],
+  "amount": null,
+  "after": "white mixture in bowl is blended smooth on stovetop"
+ },
+ {
+  "t0": 96.03,
+  "t1": 103.0,
+  "action": "stirring mixture",
+  "objects": [
+   "bowl",
+   "batter"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "bowl is lifted off stove and contents are blended smooth"
+ },
+ {
+  "t0": 100.03,
+  "t1": 107.01,
+  "action": "stirring mixture",
+  "objects": [
+   "batter in pink bowl"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "mixture becomes more evenly blended"
+ },
+ {
+  "t0": 104.0,
+  "t1": 111.01,
+  "action": "mixing",
+  "objects": [
+   "batter in bowl"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "batter looks smoother and a kitchen drawer is opened"
+ },
+ {
+  "t0": 108.01,
+  "t1": 115.01,
+  "action": "mash mixture in bowl",
+  "objects": [
+   "pink bowl with white mixture"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "mixture is more mashed and spoon is set on stovetop"
+ },
+ {
+  "t0": 112.01,
+  "t1": 119.02,
+  "action": "whisking batter",
+  "objects": [
+   "bowl of batter"
+  ],
+  "tools": [
+   "whisk"
+  ],
+  "amount": null,
+  "after": "batter is stirred smooth and spoon is set down on stovetop"
+ },
+ {
+  "t0": 116.02,
+  "t1": 123.02,
+  "action": "whisking mixture",
+  "objects": [
+   "bowl of batter"
+  ],
+  "tools": [
+   "whisk",
+   "bowl"
+  ],
+  "amount": null,
+  "after": "mixture becomes smoother and more evenly mixed"
+ },
+ {
+  "t0": 120.02,
+  "t1": 127.03,
+  "action": "whisking mixture",
+  "objects": [
+   "bowl of batter"
+  ],
+  "tools": [
+   "whisk"
+  ],
+  "amount": null,
+  "after": "the batter appears smoother and more uniformly mixed"
+ },
+ {
+  "t0": 124.02,
+  "t1": 131.03,
+  "action": "whisking batter",
+  "objects": [
+   "batter in bowl"
+  ],
+  "tools": [
+   "whisk"
+  ],
+  "amount": null,
+  "after": "batter becomes smoother and more evenly mixed"
+ },
+ {
+  "t0": 128.03,
+  "t1": 135.0,
+  "action": "whisking batter",
+  "objects": [
+   "batter",
+   "bowl"
+  ],
+  "tools": [
+   "whisk"
+  ],
+  "amount": null,
+  "after": "batter appears more smoothly mixed"
+ },
+ {
+  "t0": 132.03,
+  "t1": 139.01,
+  "action": "whisking mixture",
+  "objects": [
+   "batter",
+   "small bowl"
+  ],
+  "tools": [
+   "wire whisk"
+  ],
+  "amount": null,
+  "after": "batter looks smoother and thicker"
+ },
+ {
+  "t0": 136.0,
+  "t1": 143.01,
+  "action": "stir batter and rinse whisk",
+  "objects": [
+   "batter in bowl"
+  ],
+  "tools": [
+   "whisk",
+   "sink faucet"
+  ],
+  "amount": null,
+  "after": "batter is smooth and whisk is removed from bowl and rinsed"
+ },
+ {
+  "t0": 140.01,
+  "t1": 147.01,
+  "action": "rinsing whisk in sink",
+  "objects": [
+   "whisk"
+  ],
+  "tools": [
+   "sink"
+  ],
+  "amount": null,
+  "after": "bowl is on the counter next to the tablet and whisk is left in the sink"
+ },
+ {
+  "t0": 144.01,
+  "t1": 151.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "the drawer under the counter is pulled open with hands over it"
+ },
+ {
+  "t0": 148.01,
+  "t1": 155.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "the utensil drawer is open"
+ },
+ {
+  "t0": 152.02,
+  "t1": 159.03,
+  "action": "inspects measuring spoons",
+  "objects": [
+   "kitchen drawer",
+   "measuring spoons"
+  ],
+  "tools": [
+   "measuring spoons"
+  ],
+  "amount": null,
+  "after": "drawer contents are rearranged"
+ },
+ {
+  "t0": 156.02,
+  "t1": 163.03,
+  "action": "sorting utensils into drawer",
+  "objects": [
+   "measuring spoons",
+   "kitchen drawer"
+  ],
+  "tools": [
+   "measuring spoons"
+  ],
+  "amount": null,
+  "after": "utensils are placed inside drawer"
+ },
+ {
+  "t0": 160.03,
+  "t1": 167.0,
+  "action": "lift and carry bowl",
+  "objects": [
+   "bowl of white batter"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "utensil drawer is closed and bowl is lifted off counter next to stove"
+ },
+ {
+  "t0": 164.03,
+  "t1": 171.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "bowl moved to other side of counter and an orange spice container is held in hands"
+ },
+ {
+  "t0": 168.0,
+  "t1": 175.01,
+  "action": "adding orange powder",
+  "objects": [
+   "orange powder",
+   "white mixture"
+  ],
+  "tools": [
+   "container",
+   "spoon"
+  ],
+  "amount": null,
+  "after": "orange powder is added to the white mixture bowl"
+ },
+ {
+  "t0": 172.01,
+  "t1": 179.01,
+  "action": "adds spice to bowl",
+  "objects": [
+   "orange spice powder",
+   "white cream"
+  ],
+  "tools": [
+   "spoon",
+   "small cup"
+  ],
+  "amount": null,
+  "after": "white cream is topped with orange powder and small cup is placed in drawer"
+ },
+ {
+  "t0": 176.01,
+  "t1": 183.02,
+  "action": "add seasoning and check tablet",
+  "objects": [
+   "bowl of food",
+   "tablet"
+  ],
+  "tools": [
+   "measuring spoon"
+  ],
+  "amount": null,
+  "after": "seasoning added to bowl, spoon put away, drawer closed, and person scrolls tablet by stove"
+ },
+ {
+  "t0": 180.01,
+  "t1": 187.02,
+  "action": "checks tablet and opens refrigerator",
+  "objects": [
+   "tablet",
+   "refrigerator food"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "refrigerator is open with hand reaching inside"
+ },
+ {
+  "t0": 184.02,
+  "t1": 191.02,
+  "action": "opens refrigerator and takes out cucumbers",
+  "objects": [
+   "refrigerator",
+   "bag of mini cucumbers"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "refrigerator door is open and bag of mini cucumbers is in person's hands being opened"
+ },
+ {
+  "t0": 188.02,
+  "t1": 195.03,
+  "action": "opens a bag of cucumbers",
+  "objects": [
+   "bag of mini cucumbers"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "bag is removed from fridge door and opened"
+ },
+ {
+  "t0": 192.03,
+  "t1": 199.03,
+  "action": "open a bag",
+  "objects": [
+   "bag of brussels sprouts"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the bag is open"
+ },
+ {
+  "t0": 196.03,
+  "t1": 203.0,
+  "action": "wash a cucumber",
+  "objects": [
+   "cucumber"
+  ],
+  "tools": [
+   "sink",
+   "faucet"
+  ],
+  "amount": null,
+  "after": "cucumber retrieved from fridge is wet under running water"
+ },
+ {
+  "t0": 200.03,
+  "t1": 207.01,
+  "action": "washing a cucumber",
+  "objects": [
+   "cucumber"
+  ],
+  "tools": [
+   "faucet"
+  ],
+  "amount": null,
+  "after": "cucumber is wet under running water in sink"
+ },
+ {
+  "t0": 204.0,
+  "t1": 211.01,
+  "action": "wash a pepper",
+  "objects": [
+   "green chili pepper"
+  ],
+  "tools": [
+   "kitchen sink faucet"
+  ],
+  "amount": null,
+  "after": "pepper is washed and held over a stove burner away from the sink"
+ },
+ {
+  "t0": 208.01,
+  "t1": 215.01,
+  "action": "char pepper on burner",
+  "objects": [
+   "jalapeno pepper"
+  ],
+  "tools": [
+   "electric stovetop"
+  ],
+  "amount": null,
+  "after": "pepper moved from sink to stovetop burner and person turns to look at tablet"
+ },
+ {
+  "t0": 212.01,
+  "t1": 219.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "cabinet above counter is open with a hand grasping a jar inside"
+ },
+ {
+  "t0": 216.02,
+  "t1": 223.02,
+  "action": "opens a box",
+  "objects": [
+   "green spice box"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "green box is removed from the cabinet and held in both hands over the counter"
+ },
+ {
+  "t0": 220.02,
+  "t1": 227.03,
+  "action": "opens box",
+  "objects": [
+   "green spice box"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "box is open"
+ },
+ {
+  "t0": 224.02,
+  "t1": 231.03,
+  "action": "cutting open a packet",
+  "objects": [
+   "silver foil packet"
+  ],
+  "tools": [
+   "scissors"
+  ],
+  "amount": null,
+  "after": "person is cutting the foil packet with scissors"
+ },
+ {
+  "t0": 228.03,
+  "t1": 235.0,
+  "action": "cut open packet",
+  "objects": [
+   "foil packet"
+  ],
+  "tools": [
+   "scissors"
+  ],
+  "amount": null,
+  "after": "packet is cut open and scissors are set down on counter"
+ },
+ {
+  "t0": 232.03,
+  "t1": 239.01,
+  "action": "cut open a foil packet",
+  "objects": [
+   "foil packet"
+  ],
+  "tools": [
+   "scissors"
+  ],
+  "amount": null,
+  "after": "scissors are placed on the counter, packet is opened by hand, and view shifts to tablet by stove"
+ },
+ {
+  "t0": 236.0,
+  "t1": 243.01,
+  "action": "measure seasoning from packet",
+  "objects": [
+   "seasoning packet"
+  ],
+  "tools": [
+   "measuring spoon"
+  ],
+  "amount": null,
+  "after": "packet is open and spoon is held over it"
+ },
+ {
+  "t0": 240.01,
+  "t1": 247.01,
+  "action": "load a garlic press",
+  "objects": [
+   "foil packet"
+  ],
+  "tools": [
+   "garlic press"
+  ],
+  "amount": null,
+  "after": "garlic press is loaded and held with both hands over the stove"
+ },
+ {
+  "t0": 244.01,
+  "t1": 251.02,
+  "action": "scoop paste from packet into tub",
+  "objects": [
+   "packet",
+   "plastic tub of food"
+  ],
+  "tools": [
+   "small spatula"
+  ],
+  "amount": null,
+  "after": "spatula is in the tub mixing orange paste"
+ },
+ {
+  "t0": 248.01,
+  "t1": 255.02,
+  "action": "adds seasoning to bowl",
+  "objects": [
+   "seasoning packet",
+   "bowl"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "seasoning is added to bowl and view pans to tablet on counter"
+ },
+ {
+  "t0": 252.02,
+  "t1": 259.03,
+  "action": "scoop contents from packet onto food",
+  "objects": [
+   "foil packet",
+   "food in container"
+  ],
+  "tools": [
+   "dinner knife"
+  ],
+  "amount": null,
+  "after": "packet is open with knife inserted to scoop white paste"
+ },
+ {
+  "t0": 256.02,
+  "t1": 263.03,
+  "action": "scoops seasoning from packet into container",
+  "objects": [
+   "seasoning packet",
+   "food container"
+  ],
+  "tools": [
+   "butter knife"
+  ],
+  "amount": null,
+  "after": "knife is in the food container with seasoning added"
+ },
+ {
+  "t0": 260.03,
+  "t1": 267.0,
+  "action": "adding and mixing seasoning",
+  "objects": [
+   "seasoning packet",
+   "bowl of food"
+  ],
+  "tools": [
+   "small spoon"
+  ],
+  "amount": null,
+  "after": "seasoning is added to the bowl and the spoon is set down while the packet is folded closed"
+ },
+ {
+  "t0": 264.03,
+  "t1": 271.0,
+  "action": "stirring food then opening packet",
+  "objects": [
+   "container of food",
+   "packet"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "spoon is set down on counter and packet is held with both hands"
+ },
+ {
+  "t0": 268.0,
+  "t1": 275.01,
+  "action": "put box in cabinet",
+  "objects": [
+   "green box"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the green box is no longer in hands and is stored in the upper cabinet"
+ },
+ {
+  "t0": 272.01,
+  "t1": 279.01,
+  "action": "scroll on tablet",
+  "objects": [
+   "tablet"
+  ],
+  "tools": [
+   "tablet"
+  ],
+  "amount": null,
+  "after": "cabinet door is out of view and a green chili is on the stovetop next to the skillet"
+ },
+ {
+  "t0": 276.01,
+  "t1": 283.02,
+  "action": "taps tablet screen",
+  "objects": [
+   "tablet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "person moves away from stove to sink holding a black lid"
+ },
+ {
+  "t0": 280.01,
+  "t1": 287.02,
+  "action": "picks up cutting board",
+  "objects": [
+   "cutting board"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "cutting board is held in both hands away from the sink rack"
+ },
+ {
+  "t0": 284.02,
+  "t1": 291.02,
+  "action": "move cutting board",
+  "objects": [
+   "cutting board"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "cutting board moved from sink area to counter by stove"
+ },
+ {
+  "t0": 288.02,
+  "t1": 295.03,
+  "action": "cuts cucumber",
+  "objects": [
+   "cucumber",
+   "cutting board"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "cucumber moved from stovetop to cutting board and its tip is cut off"
+ },
+ {
+  "t0": 292.03,
+  "t1": 299.03,
+  "action": "cutting pepper",
+  "objects": [
+   "green pepper"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "the tip of the pepper is cut off and sits separately on the board"
+ },
+ {
+  "t0": 296.03,
+  "t1": 303.0,
+  "action": "put down knife and take another",
+  "objects": [
+   "green chili pepper"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "small knife is left on cutting board and person steps back from counter"
+ },
+ {
+  "t0": 300.03,
+  "t1": 307.01,
+  "action": "puts knife back and searches drawer",
+  "objects": [
+   "knife",
+   "knife block",
+   "drawer"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "knife is back in block and drawer is open with hand rummaging inside"
+ },
+ {
+  "t0": 304.0,
+  "t1": 311.01,
+  "action": "rummaging through drawer",
+  "objects": [
+   "kitchen drawer"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "drawer is open and items inside are rearranged"
+ },
+ {
+  "t0": 308.01,
+  "t1": 315.01,
+  "action": "organizing utensils in drawer",
+  "objects": [
+   "kitchen drawer",
+   "utensils"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "utensils are shifted and rearranged within the drawer"
+ },
+ {
+  "t0": 312.01,
+  "t1": 319.02,
+  "action": "peel a pepper",
+  "objects": [
+   "green pepper"
+  ],
+  "tools": [
+   "vegetable peeler"
+  ],
+  "amount": null,
+  "after": "a peeler is taken from the drawer and used on a green pepper on a cutting board"
+ },
+ {
+  "t0": 316.02,
+  "t1": 323.02,
+  "action": "peel a pepper",
+  "objects": [
+   "green pepper"
+  ],
+  "tools": [
+   "vegetable peeler",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "green skin is peeled off in strips onto the board"
+ },
+ {
+  "t0": 320.02,
+  "t1": 327.03,
+  "action": "slice a pepper",
+  "objects": [
+   "green pepper"
+  ],
+  "tools": [
+   "vegetable peeler"
+  ],
+  "amount": null,
+  "after": "the pepper is cut into long strips"
+ },
+ {
+  "t0": 324.02,
+  "t1": 331.03,
+  "action": "slicing pepper",
+  "objects": [
+   "green pepper"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "pepper is cut into more thin strips"
+ },
+ {
+  "t0": 328.03,
+  "t1": 335.0,
+  "action": "slice pepper",
+  "objects": [
+   "green pepper"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "pepper cut into long strips"
+ },
+ {
+  "t0": 332.03,
+  "t1": 339.01,
+  "action": "peeling a pepper",
+  "objects": [
+   "green chili pepper"
+  ],
+  "tools": [
+   "vegetable peeler"
+  ],
+  "amount": null,
+  "after": "more peel strips accumulate on the cutting board"
+ },
+ {
+  "t0": 336.0,
+  "t1": 343.01,
+  "action": "slicing peppers",
+  "objects": [
+   "green peppers"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "peppers are cut into smaller pieces"
+ },
+ {
+  "t0": 340.01,
+  "t1": 347.01,
+  "action": "cutting pepper",
+  "objects": [
+   "green pepper"
+  ],
+  "tools": [
+   "kitchen scissors"
+  ],
+  "amount": null,
+  "after": "pepper is cut into more small strips on the cutting board"
+ },
+ {
+  "t0": 344.01,
+  "t1": 351.02,
+  "action": "slice green pepper",
+  "objects": [
+   "green chili pepper"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "pepper is cut into strips"
+ },
+ {
+  "t0": 348.01,
+  "t1": 355.02,
+  "action": "slicing peppers",
+  "objects": [
+   "green peppers"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "more of the green peppers are cut into small pieces"
+ },
+ {
+  "t0": 352.02,
+  "t1": 359.03,
+  "action": "chopping peppers",
+  "objects": [
+   "green peppers"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "knife is put down on cutting board and hands move away toward stove"
+ },
+ {
+  "t0": 356.02,
+  "t1": 363.03,
+  "action": "chop peppers then check tablet",
+  "objects": [
+   "green peppers",
+   "tablet"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "person moves away from cutting board to look at tablet next to stove"
+ },
+ {
+  "t0": 360.03,
+  "t1": 367.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 364.03,
+  "t1": 371.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "the scene looks the same with chopped greens, a knife, and a bowl on the cutting board next to the stove"
+ },
+ {
+  "t0": 368.0,
+  "t1": 375.01,
+  "action": "pick up a measuring spoon",
+  "objects": [
+   "measuring spoons on sink counter"
+  ],
+  "tools": [
+   "measuring spoon"
+  ],
+  "amount": null,
+  "after": "person is holding a black measuring spoon in both hands over the sink counter"
+ },
+ {
+  "t0": 372.0,
+  "t1": 379.01,
+  "action": "tear off paper towel",
+  "objects": [
+   "paper towel",
+   "bowl of sliced peppers"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a sheet of paper towel is torn off and held over the bowl"
+ },
+ {
+  "t0": 376.01,
+  "t1": 383.02,
+  "action": "drying a spoon",
+  "objects": [
+   "black measuring spoon"
+  ],
+  "tools": [
+   "paper towel"
+  ],
+  "amount": null,
+  "after": "spoon is wrapped in paper towel"
+ },
+ {
+  "t0": 380.01,
+  "t1": 387.02,
+  "action": "wiping a spoon",
+  "objects": [
+   "spoon"
+  ],
+  "tools": [
+   "paper towel"
+  ],
+  "amount": null,
+  "after": "spoon is wiped and paper towel is set aside"
+ },
+ {
+  "t0": 384.02,
+  "t1": 391.02,
+  "action": "unpack measuring spoon and open spice drawer",
+  "objects": [
+   "measuring spoon",
+   "packaging",
+   "spice containers"
+  ],
+  "tools": [
+   "measuring spoon"
+  ],
+  "amount": null,
+  "after": "measuring spoon is out of packaging and spice drawer is open"
+ },
+ {
+  "t0": 388.02,
+  "t1": 395.03,
+  "action": "none",
+  "objects": [],
+  "tools": [
+   "small black spoon"
+  ],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 392.02,
+  "t1": 399.03,
+  "action": "scoop green chutney",
+  "objects": [
+   "green chutney",
+   "spice box"
+  ],
+  "tools": [
+   "measuring spoon",
+   "container"
+  ],
+  "amount": null,
+  "after": "person is holding up a container of green chutney"
+ },
+ {
+  "t0": 396.03,
+  "t1": 403.0,
+  "action": "stir green paste",
+  "objects": [
+   "green paste container"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "drawer is closed"
+ },
+ {
+  "t0": 400.03,
+  "t1": 407.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "spice drawer is closed and overhead cabinet is open"
+ },
+ {
+  "t0": 404.0,
+  "t1": 411.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "cabinet is open and a plastic container is in hand"
+ },
+ {
+  "t0": 408.01,
+  "t1": 415.01,
+  "action": "rearranges containers",
+  "objects": [
+   "plastic food storage containers"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a lower container was lifted and put back and an upper container is shifted"
+ },
+ {
+  "t0": 412.01,
+  "t1": 419.02,
+  "action": "arranging containers",
+  "objects": [
+   "plastic food containers"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a container is placed on the bottom shelf"
+ },
+ {
+  "t0": 416.02,
+  "t1": 423.02,
+  "action": "none",
+  "objects": [
+   "pantry containers in cabinet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hand moves from middle shelf containers to holding a small container over a glass bowl on the bottom shelf"
+ },
+ {
+  "t0": 420.02,
+  "t1": 427.03,
+  "action": "rearranges cupboard",
+  "objects": [
+   "jars",
+   "containers",
+   "cartons"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "blue and green cartons are moved to the front of the lower shelf and the peanut butter jar is picked up and put back"
+ },
+ {
+  "t0": 424.02,
+  "t1": 431.03,
+  "action": "puts away peanut butter and opens spice drawer",
+  "objects": [
+   "peanut butter jar",
+   "spice containers"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "peanut butter jar is in cabinet and spice drawer is open with spice plate visible"
+ },
+ {
+  "t0": 428.03,
+  "t1": 435.0,
+  "action": "add spices",
+  "objects": [
+   "spice bowls",
+   "bowl of food"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "upper cabinet container touched and spice drawer is open with hand over spice bowls"
+ },
+ {
+  "t0": 432.03,
+  "t1": 439.01,
+  "action": "picks up a spice jar",
+  "objects": [
+   "spice jar"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "person is holding a small glass jar in left hand"
+ },
+ {
+  "t0": 436.0,
+  "t1": 443.01,
+  "action": "scoops seasoning into bowl",
+  "objects": [
+   "bowl of food",
+   "spice jar"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "seasoning is transferred from the jar to the bowl"
+ },
+ {
+  "t0": 440.01,
+  "t1": 447.01,
+  "action": "spoon spice into bowl",
+  "objects": [
+   "spice",
+   "bowl of food"
+  ],
+  "tools": [
+   "spoon",
+   "spice jar"
+  ],
+  "amount": null,
+  "after": "spice added to bowl and spoon placed on cutting board"
+ },
+ {
+  "t0": 444.01,
+  "t1": 451.02,
+  "action": "stores spice and checks recipe",
+  "objects": [
+   "bowl of food",
+   "tablet"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "spice jar put in drawer, drawer closed, person moved to tablet by stove"
+ },
+ {
+  "t0": 448.01,
+  "t1": 455.02,
+  "action": "turns stove knob",
+  "objects": [
+   "electric stove"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "holding a green vegetable stalk near the sink"
+ },
+ {
+  "t0": 452.02,
+  "t1": 459.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "a drawer is open and the person is holding a green chili and a grater"
+ },
+ {
+  "t0": 456.02,
+  "t1": 463.03,
+  "action": "none",
+  "objects": [],
+  "tools": [
+   "grater",
+   "green chili"
+  ],
+  "amount": null,
+  "after": "person is now holding a grater and the drawer is closed"
+ },
+ {
+  "t0": 460.03,
+  "t1": 467.03,
+  "action": "putting grater in drawer",
+  "objects": [
+   "grater",
+   "kitchen drawer"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "grater is inside drawer and drawer is closed"
+ },
+ {
+  "t0": 464.03,
+  "t1": 471.0,
+  "action": "take a plate",
+  "objects": [
+   "plate"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "drawer is closed and a plate is held over the counter"
+ },
+ {
+  "t0": 468.0,
+  "t1": 475.01,
+  "action": "grate a chili pepper onto a plate",
+  "objects": [
+   "plate",
+   "green chili pepper"
+  ],
+  "tools": [
+   "grater"
+  ],
+  "amount": null,
+  "after": "a plate is taken from the drying rack and grated green chili is on it"
+ },
+ {
+  "t0": 472.0,
+  "t1": 479.01,
+  "action": "grating a chili",
+  "objects": [
+   "green chili pepper"
+  ],
+  "tools": [
+   "grater"
+  ],
+  "amount": null,
+  "after": "grated green pieces accumulate on the grater"
+ },
+ {
+  "t0": 476.01,
+  "t1": 483.02,
+  "action": "grating green chili",
+  "objects": [
+   "green chili"
+  ],
+  "tools": [
+   "grater"
+  ],
+  "amount": null,
+  "after": "grated green chili accumulates on the grater and plate"
+ },
+ {
+  "t0": 480.01,
+  "t1": 487.02,
+  "action": "grating vegetable",
+  "objects": [
+   "green pepper"
+  ],
+  "tools": [
+   "hand grater"
+  ],
+  "amount": null,
+  "after": "shredded green pepper accumulates on the grater and plate"
+ },
+ {
+  "t0": 484.02,
+  "t1": 491.02,
+  "action": "grate pepper",
+  "objects": [
+   "green chili peppers"
+  ],
+  "tools": [
+   "hand grater"
+  ],
+  "amount": null,
+  "after": "grated green pieces accumulate on the plate"
+ },
+ {
+  "t0": 488.02,
+  "t1": 495.03,
+  "action": "grating",
+  "objects": [
+   "green vegetable"
+  ],
+  "tools": [
+   "grater"
+  ],
+  "amount": null,
+  "after": "more green grated pieces collected on plate"
+ },
+ {
+  "t0": 492.02,
+  "t1": 499.03,
+  "action": "grating lime zest",
+  "objects": [
+   "lime",
+   "plate"
+  ],
+  "tools": [
+   "grater"
+  ],
+  "amount": null,
+  "after": "more grated green zest accumulated on the plate"
+ },
+ {
+  "t0": 496.03,
+  "t1": 503.0,
+  "action": "zesting a lime",
+  "objects": [
+   "lime"
+  ],
+  "tools": [
+   "zester"
+  ],
+  "amount": null,
+  "after": "grated lime zest accumulates on the plate and zester"
+ },
+ {
+  "t0": 500.03,
+  "t1": 507.01,
+  "action": "grating lime zest",
+  "objects": [
+   "lime"
+  ],
+  "tools": [
+   "grater"
+  ],
+  "amount": null,
+  "after": "more green zest accumulates on the plate"
+ },
+ {
+  "t0": 504.0,
+  "t1": 511.01,
+  "action": "grating lime zest",
+  "objects": [
+   "lime",
+   "plate"
+  ],
+  "tools": [
+   "microplane grater"
+  ],
+  "amount": null,
+  "after": "more green grated zest accumulated on the plate"
+ },
+ {
+  "t0": 508.01,
+  "t1": 515.01,
+  "action": "grate lime",
+  "objects": [
+   "lime",
+   "plate"
+  ],
+  "tools": [
+   "microplane grater"
+  ],
+  "amount": null,
+  "after": "zest accumulates on plate then person stops and moves to other side of stove"
+ },
+ {
+  "t0": 512.01,
+  "t1": 519.02,
+  "action": "grate lime then check tablet",
+  "objects": [
+   "lime zest",
+   "tablet"
+  ],
+  "tools": [
+   "grater"
+  ],
+  "amount": null,
+  "after": "person stops grating and moves to tablet by stove and touches it"
+ },
+ {
+  "t0": 516.02,
+  "t1": 523.02,
+  "action": "taps tablet",
+  "objects": [
+   "tablet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hand moves from tablet screen to edge of counter"
+ },
+ {
+  "t0": 520.02,
+  "t1": 527.03,
+  "action": "open refrigerator",
+  "objects": [
+   "refrigerator"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "refrigerator door is open showing food inside, hand is off the tablet"
+ },
+ {
+  "t0": 524.02,
+  "t1": 531.03,
+  "action": "none",
+  "objects": [
+   "cilantro in plastic bag"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "refrigerator door is open and person is holding a bag of cilantro"
+ },
+ {
+  "t0": 528.03,
+  "t1": 535.0,
+  "action": "pick and pluck cilantro",
+  "objects": [
+   "cilantro",
+   "plastic bag"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a bunch of cilantro is taken out of the fridge and a small sprig is separated"
+ },
+ {
+  "t0": 532.03,
+  "t1": 539.01,
+  "action": "picks herbs",
+  "objects": [
+   "cilantro"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "holding a small sprig at the stove counter"
+ },
+ {
+  "t0": 536.0,
+  "t1": 543.01,
+  "action": "chop chilies",
+  "objects": [
+   "green chilies"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "chilies are chopped into a small pile on the cutting board"
+ },
+ {
+  "t0": 540.01,
+  "t1": 547.01,
+  "action": "chop and plate green peppers",
+  "objects": [
+   "green peppers",
+   "plate"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "pile of chopped greens added to plate"
+ },
+ {
+  "t0": 544.01,
+  "t1": 551.02,
+  "action": "chopping green onions",
+  "objects": [
+   "green onions",
+   "cutting board"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "green onions are cut into small chopped pieces on the board"
+ },
+ {
+  "t0": 548.01,
+  "t1": 555.02,
+  "action": "chopping greens",
+  "objects": [
+   "green onions"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "more chopped greens on the plate and less on the cutting board"
+ },
+ {
+  "t0": 552.02,
+  "t1": 559.03,
+  "action": "chopping green onions",
+  "objects": [
+   "green onions"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "larger pile of chopped greens on the cutting board"
+ },
+ {
+  "t0": 556.02,
+  "t1": 563.03,
+  "action": "chopping vegetables",
+  "objects": [
+   "green vegetables"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "more of the vegetables are finely chopped on the cutting board"
+ },
+ {
+  "t0": 560.03,
+  "t1": 567.03,
+  "action": "chopping vegetables",
+  "objects": [
+   "green herbs"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "the pile of chopped greens is finer and more gathered"
+ },
+ {
+  "t0": 564.03,
+  "t1": 571.0,
+  "action": "chopping green onions",
+  "objects": [
+   "green onions"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "pile of chopped greens on cutting board grows"
+ },
+ {
+  "t0": 568.0,
+  "t1": 575.01,
+  "action": "chopping",
+  "objects": [
+   "green onions"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "green onions are cut into small pieces"
+ },
+ {
+  "t0": 572.0,
+  "t1": 579.01,
+  "action": "chopping herbs",
+  "objects": [
+   "green herbs"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "the pile of chopped herbs is larger and more finely minced"
+ },
+ {
+  "t0": 576.01,
+  "t1": 583.02,
+  "action": "chopping herbs",
+  "objects": [
+   "green herbs"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "the herbs are more finely chopped"
+ },
+ {
+  "t0": 580.01,
+  "t1": 587.02,
+  "action": "chop herbs",
+  "objects": [
+   "green herbs"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "knife is set down on board and person steps away toward stove"
+ },
+ {
+  "t0": 584.02,
+  "t1": 591.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "person steps away from cutting board to look at stove and tablet"
+ },
+ {
+  "t0": 588.02,
+  "t1": 595.03,
+  "action": "chop herbs",
+  "objects": [
+   "green herbs"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "green herbs are gathered and chopped into smaller pieces on the cutting board"
+ },
+ {
+  "t0": 592.02,
+  "t1": 599.03,
+  "action": "chop herbs",
+  "objects": [
+   "green herbs"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "herbs are chopped into small pieces"
+ },
+ {
+  "t0": 596.03,
+  "t1": 603.0,
+  "action": "chopping herbs",
+  "objects": [
+   "green herbs",
+   "cutting board"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "chopped herbs accumulate in a pile on the board after glancing at tablet"
+ },
+ {
+  "t0": 600.03,
+  "t1": 607.01,
+  "action": "adds chopped greens to bowl",
+  "objects": [
+   "chopped greens",
+   "bowl of food"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "chopped greens are moved from the cutting board into the bowl"
+ },
+ {
+  "t0": 604.0,
+  "t1": 611.01,
+  "action": "chop and add green onions",
+  "objects": [
+   "green onions",
+   "bowl",
+   "tablet"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "chopped greens moved from board to bowl and cabinet is opened"
+ },
+ {
+  "t0": 608.01,
+  "t1": 615.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "salt container is on the counter and utensil drawer is open"
+ },
+ {
+  "t0": 612.01,
+  "t1": 619.02,
+  "action": "searches utensil drawer",
+  "objects": [
+   "kitchen utensils"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "salt canister is placed on counter and utensil drawer is open"
+ },
+ {
+  "t0": 616.02,
+  "t1": 623.02,
+  "action": "picks up a cord from drawer",
+  "objects": [
+   "white cord"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "person is holding the white cord and has moved away from the drawer toward the stove and sink"
+ },
+ {
+  "t0": 620.02,
+  "t1": 627.03,
+  "action": "handles kitchen utensils",
+  "objects": [
+   "scissors, bowls, chopsticks"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change, items only touched in drawer and on dish rack"
+ },
+ {
+  "t0": 624.02,
+  "t1": 631.03,
+  "action": "picking up utensils from dish rack",
+  "objects": [
+   "metal bowl",
+   "chopsticks",
+   "black spoon"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "person is holding a small black spoon in hand"
+ },
+ {
+  "t0": 628.03,
+  "t1": 635.0,
+  "action": "picks up a spoon",
+  "objects": [
+   "dishes on rack"
+  ],
+  "tools": [
+   "black measuring spoon"
+  ],
+  "amount": null,
+  "after": "black spoon is removed from the rack and brought to the stove area"
+ },
+ {
+  "t0": 632.03,
+  "t1": 639.01,
+  "action": "none",
+  "objects": [],
+  "tools": [
+   "measuring spoon",
+   "black utensil"
+  ],
+  "amount": null,
+  "after": "measuring spoon is placed on the counter, drawer is open, and person is holding a different black utensil in both hands"
+ },
+ {
+  "t0": 636.0,
+  "t1": 643.01,
+  "action": "open a container",
+  "objects": [
+   "salt container"
+  ],
+  "tools": [
+   "handheld opener tool"
+  ],
+  "amount": null,
+  "after": "the white container is lifted from the stove and its lid is pried open in the hands"
+ },
+ {
+  "t0": 640.01,
+  "t1": 647.01,
+  "action": "scoops salt",
+  "objects": [
+   "salt"
+  ],
+  "tools": [
+   "salt container",
+   "measuring spoon"
+  ],
+  "amount": null,
+  "after": "drawer is closed and spoon holds salt"
+ },
+ {
+  "t0": 644.01,
+  "t1": 651.02,
+  "action": "add salt to bowl",
+  "objects": [
+   "salt",
+   "bowl of food"
+  ],
+  "tools": [
+   "measuring spoon",
+   "salt container"
+  ],
+  "amount": null,
+  "after": "spoonful of salt moved from container to food bowl"
+ },
+ {
+  "t0": 648.01,
+  "t1": 655.02,
+  "action": "adds salt",
+  "objects": [
+   "bowl of food"
+  ],
+  "tools": [
+   "measuring spoon",
+   "salt container"
+  ],
+  "amount": null,
+  "after": "salt is sprinkled into the bowl"
+ },
+ {
+  "t0": 652.02,
+  "t1": 659.03,
+  "action": "sprinkle garnish and put away items",
+  "objects": [
+   "bowl of food",
+   "plate"
+  ],
+  "tools": [
+   "seasoning container",
+   "spoon"
+  ],
+  "amount": null,
+  "after": "spoons moved from cutting board to counter by tablet and seasoning container lifted up to cabinet"
+ },
+ {
+  "t0": 656.02,
+  "t1": 663.03,
+  "action": "puts container in cabinet",
+  "objects": [
+   "container with white lid"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "container is gone from hand, cabinet door is closed"
+ },
+ {
+  "t0": 660.03,
+  "t1": 667.03,
+  "action": "carry plate to sink",
+  "objects": [
+   "plate with food residue"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "plate removed from stovetop and brought to sink area"
+ },
+ {
+  "t0": 664.03,
+  "t1": 671.0,
+  "action": "fetch chopsticks and pick at leftovers",
+  "objects": [
+   "white plate with leftover greens"
+  ],
+  "tools": [
+   "chopsticks"
+  ],
+  "amount": null,
+  "after": "person returns to stove holding the plate and moves food around on it with chopsticks"
+ },
+ {
+  "t0": 668.0,
+  "t1": 675.01,
+  "action": "scrape food into container",
+  "objects": [
+   "chopped greens",
+   "plate",
+   "container"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "plate is scraped clean and greens are in the small container"
+ },
+ {
+  "t0": 672.0,
+  "t1": 679.01,
+  "action": "set down plate",
+  "objects": [
+   "plate"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "plate moved from hands to counter beside stove"
+ },
+ {
+  "t0": 676.01,
+  "t1": 683.02,
+  "action": "places plate down and checks tablet",
+  "objects": [
+   "plate",
+   "tablet",
+   "bowl of food"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "plate moved from hands over stove to cutting board"
+ },
+ {
+  "t0": 680.01,
+  "t1": 687.02,
+  "action": "mixing ingredients",
+  "objects": [
+   "bowl"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the contents of the bowl are mixed together"
+ },
+ {
+  "t0": 684.02,
+  "t1": 691.02,
+  "action": "mixing",
+  "objects": [
+   "bowl"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "chunky green ingredients blend into a smooth creamy mixture"
+ },
+ {
+  "t0": 688.02,
+  "t1": 695.03,
+  "action": "mixing",
+  "objects": [
+   "mixture in bowl"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "mixture becomes smooth and uniform"
+ },
+ {
+  "t0": 692.02,
+  "t1": 699.03,
+  "action": "stirring",
+  "objects": [
+   "bowl of white mixture"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "the mixture becomes more evenly combined"
+ },
+ {
+  "t0": 696.03,
+  "t1": 703.0,
+  "action": "stirs batter then sets spoon on plate",
+  "objects": [
+   "bowl of batter",
+   "plate"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "spoon is resting on plate instead of in bowl"
+ },
+ {
+  "t0": 700.03,
+  "t1": 707.01,
+  "action": "carry plate and grater to sink",
+  "objects": [
+   "plate with spoon"
+  ],
+  "tools": [
+   "microplane grater"
+  ],
+  "amount": null,
+  "after": "plate is in the sink and grater is held over the sink"
+ },
+ {
+  "t0": 704.0,
+  "t1": 711.01,
+  "action": "place dishes into sink",
+  "objects": [
+   "plate",
+   "spoon",
+   "grater"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "plate, spoon and grater are in the sink basin with water running"
+ },
+ {
+  "t0": 708.01,
+  "t1": 715.01,
+  "action": "wash dishes",
+  "objects": [
+   "plate, knives, spoon"
+  ],
+  "tools": [
+   "sink",
+   "faucet"
+  ],
+  "amount": null,
+  "after": "faucet is turned on with water running and person brings a knife from the cutting board to the sink"
+ },
+ {
+  "t0": 712.01,
+  "t1": 719.02,
+  "action": "gathers chopped greens",
+  "objects": [
+   "green onions"
+  ],
+  "tools": [
+   "knife",
+   "paper towel"
+  ],
+  "amount": null,
+  "after": "cutting board goes from covered with chopped greens to mostly clear with greens collected onto paper towel"
+ },
+ {
+  "t0": 716.02,
+  "t1": 723.02,
+  "action": "covers chopped greens with paper towel",
+  "objects": [
+   "chopped greens"
+  ],
+  "tools": [
+   "paper towel"
+  ],
+  "amount": null,
+  "after": "chopped greens are covered with paper towel on cutting board and board is lifted"
+ },
+ {
+  "t0": 720.02,
+  "t1": 727.03,
+  "action": "scrape herbs off cutting board into trash",
+  "objects": [
+   "chopped herbs",
+   "cutting board",
+   "paper towel"
+  ],
+  "tools": [
+   "paper towel"
+  ],
+  "amount": null,
+  "after": "chopped herbs are pushed off the cutting board into the trash can"
+ },
+ {
+  "t0": 724.02,
+  "t1": 731.03,
+  "action": "wiping herbs into trash",
+  "objects": [
+   "cutting board",
+   "chopped herbs"
+  ],
+  "tools": [
+   "paper towel"
+  ],
+  "amount": null,
+  "after": "cutting board goes from covered in herbs to clean"
+ },
+ {
+  "t0": 728.03,
+  "t1": 735.0,
+  "action": "wipe cutting board clean",
+  "objects": [
+   "cutting board",
+   "trash can lid"
+  ],
+  "tools": [
+   "paper towel"
+  ],
+  "amount": null,
+  "after": "person carries cutting board to kitchen sink"
+ },
+ {
+  "t0": 732.03,
+  "t1": 739.0,
+  "action": "scrapes and rinses cutting board",
+  "objects": [
+   "wooden cutting board"
+  ],
+  "tools": [
+   "kitchen sink faucet"
+  ],
+  "amount": null,
+  "after": "debris is removed and cutting board is wet and clean under running water"
+ },
+ {
+  "t0": 736.0,
+  "t1": 743.01,
+  "action": "rinse cutting board and put in rack",
+  "objects": [
+   "cutting board"
+  ],
+  "tools": [
+   "sink faucet"
+  ],
+  "amount": null,
+  "after": "cutting board is moved from under running water to upright in dish rack and faucet is turned off"
+ },
+ {
+  "t0": 740.01,
+  "t1": 747.01,
+  "action": "washing knives",
+  "objects": [
+   "knives"
+  ],
+  "tools": [
+   "kitchen sink faucet"
+  ],
+  "amount": null,
+  "after": "cutting board placed on counter and knives held under running water"
+ },
+ {
+  "t0": 744.01,
+  "t1": 751.02,
+  "action": "rinses handgun",
+  "objects": [
+   "handgun"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "handgun set down in sink and reaches for soap"
+ },
+ {
+  "t0": 748.01,
+  "t1": 755.02,
+  "action": "washing",
+  "objects": [
+   "metal grater"
+  ],
+  "tools": [
+   "sponge"
+  ],
+  "amount": null,
+  "after": "the grater is scrubbed with the sponge and rinsed under running water"
+ },
+ {
+  "t0": 752.02,
+  "t1": 759.02,
+  "action": "washing a grater",
+  "objects": [
+   "box grater"
+  ],
+  "tools": [
+   "sponge"
+  ],
+  "amount": null,
+  "after": "water is off and grater is placed in the sink"
+ },
+ {
+  "t0": 756.02,
+  "t1": 763.03,
+  "action": "washing utensils",
+  "objects": [
+   "grater and black small kitchen parts"
+  ],
+  "tools": [
+   "kitchen sink faucet",
+   "yellow sponge"
+  ],
+  "amount": null,
+  "after": "the faucet spout is swung from the left basin toward the right and the washed parts are gathered in the left basin"
+ },
+ {
+  "t0": 760.03,
+  "t1": 767.03,
+  "action": "washing a grater",
+  "objects": [
+   "grater"
+  ],
+  "tools": [
+   "sponge"
+  ],
+  "amount": null,
+  "after": "faucet water is turned off"
+ },
+ {
+  "t0": 764.03,
+  "t1": 771.0,
+  "action": "scrubbing utensils",
+  "objects": [
+   "kitchen utensils"
+  ],
+  "tools": [
+   "sponge"
+  ],
+  "amount": null,
+  "after": "utensils are gathered and held up in left hand"
+ },
+ {
+  "t0": 768.0,
+  "t1": 775.01,
+  "action": "scrubbing a grater",
+  "objects": [
+   "grater"
+  ],
+  "tools": [
+   "sponge"
+  ],
+  "amount": null,
+  "after": "grater is picked up from sink and scrubbed"
+ },
+ {
+  "t0": 772.0,
+  "t1": 779.01,
+  "action": "washing utensils",
+  "objects": [
+   "grater",
+   "knives",
+   "kitchen utensils"
+  ],
+  "tools": [
+   "sponge"
+  ],
+  "amount": null,
+  "after": "the grater is rinsed and placed back in the sink and a smaller utensil is being washed"
+ },
+ {
+  "t0": 776.01,
+  "t1": 783.02,
+  "action": "washing utensils",
+  "objects": [
+   "knives",
+   "kitchen utensils"
+  ],
+  "tools": [
+   "sponge"
+  ],
+  "amount": null,
+  "after": "utensils are shifted and repositioned in the sink"
+ },
+ {
+  "t0": 780.01,
+  "t1": 787.02,
+  "action": "washing utensils",
+  "objects": [
+   "kitchen utensils"
+  ],
+  "tools": [
+   "sponge"
+  ],
+  "amount": null,
+  "after": "utensils are moved and rearranged in the left sink basin"
+ },
+ {
+  "t0": 784.02,
+  "t1": 791.02,
+  "action": "washing utensils",
+  "objects": [
+   "kitchen utensils"
+  ],
+  "tools": [
+   "sponge"
+  ],
+  "amount": null,
+  "after": "person is scrubbing a utensil with both hands under running water"
+ },
+ {
+  "t0": 788.02,
+  "t1": 795.03,
+  "action": "washing dishes",
+  "objects": [
+   "plate"
+  ],
+  "tools": [
+   "sponge"
+  ],
+  "amount": null,
+  "after": "holding and scrubbing a white plate in the sink"
+ },
+ {
+  "t0": 792.02,
+  "t1": 799.03,
+  "action": "washing plate",
+  "objects": [
+   "plate"
+  ],
+  "tools": [
+   "sponge"
+  ],
+  "amount": null,
+  "after": "plate is scrubbed with soap and lifted from sink and sponge is placed on rack"
+ },
+ {
+  "t0": 796.03,
+  "t1": 803.0,
+  "action": "rinse a plate",
+  "objects": [
+   "plate"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "plate is held under running water and yellow sponge is on sink edge"
+ },
+ {
+  "t0": 800.03,
+  "t1": 807.01,
+  "action": "wash dishes",
+  "objects": [
+   "plate",
+   "utensils"
+  ],
+  "tools": [
+   "sink"
+  ],
+  "amount": null,
+  "after": "washed plate is placed in drying rack and person starts rinsing utensils"
+ },
+ {
+  "t0": 804.0,
+  "t1": 811.01,
+  "action": "rinsing dishes",
+  "objects": [
+   "plates, measuring spoons and knives"
+  ],
+  "tools": [
+   "sink faucet"
+  ],
+  "amount": null,
+  "after": "a rinsed plate is placed in the drying rack"
+ },
+ {
+  "t0": 808.01,
+  "t1": 815.01,
+  "action": "rinsing utensils",
+  "objects": [
+   "measuring spoons",
+   "kitchen utensils"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "utensils are rinsed and placed in the dish drying rack"
+ },
+ {
+  "t0": 812.01,
+  "t1": 819.02,
+  "action": "rinsing measuring spoons",
+  "objects": [
+   "measuring spoons"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "one spoon is moved from the sink to the dish rack"
+ },
+ {
+  "t0": 816.02,
+  "t1": 823.02,
+  "action": "rinsing a small part",
+  "objects": [
+   "faucet aerator"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a knife is left in the sink and the small black part is held under running water"
+ },
+ {
+  "t0": 820.02,
+  "t1": 827.03,
+  "action": "rinsing faucet parts",
+  "objects": [
+   "faucet attachment"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the black attachment is separated into two small pieces held in both hands"
+ },
+ {
+  "t0": 824.02,
+  "t1": 831.03,
+  "action": "washing utensils",
+  "objects": [
+   "knives",
+   "kitchen utensils"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "utensils moved from the counter into the left sink basin and rinsed under running water"
+ },
+ {
+  "t0": 828.03,
+  "t1": 835.0,
+  "action": "wash knives",
+  "objects": [
+   "kitchen knives"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "knives are removed from sink and stored in knife block"
+ },
+ {
+  "t0": 832.03,
+  "t1": 839.0,
+  "action": "rinse and store a knife",
+  "objects": [
+   "knife",
+   "knife block"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the small knife is removed from the sink and placed in the knife block"
+ },
+ {
+  "t0": 836.0,
+  "t1": 843.01,
+  "action": "washes honing steel",
+  "objects": [
+   "honing steel"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "honing steel removed from knife rack and wet over sink"
+ },
+ {
+  "t0": 840.01,
+  "t1": 847.01,
+  "action": "clean sink drain",
+  "objects": [
+   "sink drain"
+  ],
+  "tools": [
+   "drain cleaning tool"
+  ],
+  "amount": null,
+  "after": "a strand of hair is pulled from the drain and held up"
+ },
+ {
+  "t0": 844.01,
+  "t1": 851.02,
+  "action": "rinse grater",
+  "objects": [
+   "metal grater"
+  ],
+  "tools": [
+   "kitchen sink faucet"
+  ],
+  "amount": null,
+  "after": "person leaves sink and stands by the stove"
+ },
+ {
+  "t0": 848.01,
+  "t1": 855.02,
+  "action": "operates tablet",
+  "objects": [
+   "tablet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "faucet is off and both hands are on tablet screen"
+ }
+]

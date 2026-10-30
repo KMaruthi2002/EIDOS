@@ -1,0 +1,627 @@
+{
+ "title": "Spiced yogurt dip with peppers and herbs",
+ "domain": "cooking",
+ "inputs": {},
+ "steps": [
+  {
+   "id": 1,
+   "do": "Open the yogurt tub by removing the lid and peeling off the foil seal",
+   "verb": "open",
+   "objects": [
+    "yogurt tub",
+    "lid",
+    "foil seal"
+   ],
+   "tools": [],
+   "start": 20.0,
+   "end": 35.0,
+   "focus": "yogurt tub",
+   "done_when": "The yogurt tub is open with the lid and foil seal removed and the yogurt exposed",
+   "needs": [],
+   "optional": true,
+   "evidence": {
+    "start": "step1_start.jpg",
+    "end": "step1_end.jpg",
+    "boxes": [
+     [
+      0.0,
+      0.4806,
+      0.1313,
+      0.8667
+     ]
+    ],
+    "outlined": "lid"
+   }
+  },
+  {
+   "id": 2,
+   "do": "Scoop the yogurt from the tub into the bowl",
+   "verb": "scoop",
+   "objects": [
+    "yogurt",
+    "bowl"
+   ],
+   "tools": [
+    "spoon"
+   ],
+   "start": 52.0,
+   "end": 79.0,
+   "focus": "bowl",
+   "done_when": "The bowl contains scoops of white yogurt and is no longer empty",
+   "needs": [
+    1
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step2_start.jpg",
+    "end": "step2_end.jpg",
+    "boxes": [
+     [
+      0.4141,
+      0.175,
+      0.5422,
+      0.3889
+     ],
+     [
+      0.3859,
+      0.3917,
+      0.55,
+      0.6806
+     ]
+    ],
+    "outlined": "bowl"
+   }
+  },
+  {
+   "id": 3,
+   "do": "Whisk the yogurt in the bowl until smooth",
+   "verb": "whisk",
+   "objects": [
+    "yogurt",
+    "bowl"
+   ],
+   "tools": [
+    "whisk"
+   ],
+   "start": 92.0,
+   "end": 143.0,
+   "focus": "yogurt",
+   "done_when": "The yogurt in the bowl is smooth and uniformly blended with no separate scoops visible",
+   "needs": [
+    2
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step3_start.jpg",
+    "end": "step3_end.jpg"
+   }
+  },
+  {
+   "id": 4,
+   "do": "Add the orange spice powder to the yogurt",
+   "verb": "add",
+   "objects": [
+    "orange spice powder",
+    "yogurt",
+    "bowl"
+   ],
+   "tools": [
+    "spoon"
+   ],
+   "start": 168.0,
+   "end": 179.0,
+   "focus": "yogurt",
+   "done_when": "Orange spice powder is visible on top of the white yogurt in the bowl",
+   "needs": [
+    2
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step4_start.jpg",
+    "end": "step4_end.jpg",
+    "boxes": [
+     [
+      0.4,
+      0.1111,
+      0.5031,
+      0.2806
+     ]
+    ],
+    "outlined": "orange spice powder"
+   }
+  },
+  {
+   "id": 5,
+   "do": "Wash the cucumber and the green pepper under running water",
+   "verb": "wash",
+   "objects": [
+    "cucumber",
+    "green pepper"
+   ],
+   "tools": [
+    "sink faucet"
+   ],
+   "start": 196.0,
+   "end": 211.0,
+   "focus": "vegetables",
+   "done_when": "The cucumber and green pepper are wet and clean, with no soil visible on their skins",
+   "needs": [],
+   "optional": false,
+   "evidence": {
+    "start": "step5_start.jpg",
+    "end": "step5_end.jpg",
+    "boxes": [
+     [
+      0.5797,
+      0.4389,
+      0.6094,
+      0.5472
+     ]
+    ],
+    "outlined": "cucumber"
+   }
+  },
+  {
+   "id": 6,
+   "do": "Char the washed green pepper on the stovetop burner",
+   "verb": "char",
+   "objects": [
+    "green pepper"
+   ],
+   "tools": [
+    "stovetop burner"
+   ],
+   "start": 208.0,
+   "end": 215.0,
+   "focus": "pepper",
+   "done_when": "The green pepper rests on the burner with darkened, charred patches on its skin",
+   "needs": [
+    5
+   ],
+   "optional": true,
+   "evidence": {
+    "start": "step6_start.jpg",
+    "end": "step6_end.jpg"
+   },
+   "why_optional": "not seen in the second demonstration (17_5)"
+  },
+  {
+   "id": 7,
+   "do": "Cut open the seasoning packet and add its paste to the bowl",
+   "verb": "add",
+   "objects": [
+    "seasoning packet",
+    "seasoning paste",
+    "bowl"
+   ],
+   "tools": [
+    "scissors",
+    "knife"
+   ],
+   "start": 224.0,
+   "end": 263.0,
+   "focus": "bowl",
+   "done_when": "The seasoning paste from the opened packet is visible in the bowl with the yogurt",
+   "needs": [
+    2
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step7_start.jpg",
+    "end": "step7_end.jpg",
+    "boxes": [
+     [
+      0.4641,
+      0.3472,
+      0.6016,
+      0.5917
+     ]
+    ],
+    "outlined": "bowl"
+   }
+  },
+  {
+   "id": 8,
+   "do": "Trim the tip off the washed cucumber on the cutting board",
+   "verb": "trim",
+   "objects": [
+    "cucumber",
+    "cutting board"
+   ],
+   "tools": [
+    "knife"
+   ],
+   "start": 288.0,
+   "end": 295.0,
+   "focus": "cucumber",
+   "done_when": "The cucumber lies on the cutting board with its tip cut off and sitting separately beside it",
+   "needs": [
+    5
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step8_start.jpg",
+    "end": "step8_end.jpg",
+    "boxes": [
+     [
+      0.4516,
+      0.3778,
+      0.5281,
+      0.4556
+     ]
+    ],
+    "outlined": "cucumber"
+   }
+  },
+  {
+   "id": 9,
+   "do": "Peel the charred pepper and slice it into small strips on the cutting board",
+   "verb": "slice",
+   "objects": [
+    "green pepper",
+    "cutting board"
+   ],
+   "tools": [
+    "vegetable peeler",
+    "knife"
+   ],
+   "start": 312.0,
+   "end": 359.0,
+   "focus": "pepper strips",
+   "done_when": "The cutting board holds small strips of green pepper with peeled skin strips beside them and no whole pepper remaining",
+   "needs": [
+    6
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step9_start.jpg",
+    "end": "step9_end.jpg",
+    "boxes": [
+     [
+      0.4906,
+      0.4778,
+      0.5484,
+      0.5889
+     ],
+     [
+      0.6,
+      0.45,
+      0.6312,
+      0.4889
+     ],
+     [
+      0.5719,
+      0.4972,
+      0.6312,
+      0.5306
+     ]
+    ],
+    "outlined": "green pepper"
+   },
+   "check": false
+  },
+  {
+   "id": 10,
+   "do": "Add the green chutney to the bowl",
+   "verb": "add",
+   "objects": [
+    "green chutney",
+    "bowl"
+   ],
+   "tools": [
+    "measuring spoon"
+   ],
+   "start": 392.0,
+   "end": 403.0,
+   "focus": "bowl",
+   "done_when": "Green chutney is visible in the bowl with the yogurt mixture",
+   "needs": [
+    2
+   ],
+   "optional": true,
+   "evidence": {
+    "start": "step10_start.jpg",
+    "end": "step10_end.jpg",
+    "boxes": [
+     [
+      0.2969,
+      0.1306,
+      0.4203,
+      0.3444
+     ],
+     [
+      0.3641,
+      0.5806,
+      0.4203,
+      0.6667
+     ],
+     [
+      0.4203,
+      0.5556,
+      0.4719,
+      0.6417
+     ]
+    ],
+    "outlined": "bowl"
+   },
+   "why_optional": "not seen in the second demonstration (17_5)"
+  },
+  {
+   "id": 11,
+   "do": "Spoon the spice from the spice jar into the bowl",
+   "verb": "spoon",
+   "objects": [
+    "spice jar",
+    "spice",
+    "bowl"
+   ],
+   "tools": [
+    "spoon"
+   ],
+   "start": 428.0,
+   "end": 447.0,
+   "focus": "bowl",
+   "done_when": "Additional dry spice is visible on the mixture in the bowl",
+   "needs": [
+    2
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step11_start.jpg",
+    "end": "step11_end.jpg",
+    "boxes": [
+     [
+      0.3609,
+      0.1472,
+      0.4891,
+      0.3722
+     ],
+     [
+      0.4469,
+      0.7111,
+      0.5,
+      0.7972
+     ],
+     [
+      0.4125,
+      0.6444,
+      0.4656,
+      0.7333
+     ]
+    ],
+    "outlined": "bowl"
+   }
+  },
+  {
+   "id": 12,
+   "do": "Grate the green chili onto the plate",
+   "verb": "grate",
+   "objects": [
+    "green chili",
+    "plate"
+   ],
+   "tools": [
+    "grater"
+   ],
+   "start": 468.0,
+   "end": 491.0,
+   "focus": "grated chili",
+   "done_when": "A pile of grated green chili covers part of the plate",
+   "needs": [],
+   "optional": false,
+   "evidence": {
+    "start": "step12_start.jpg",
+    "end": "step12_end.jpg",
+    "boxes": [
+     [
+      0.4094,
+      0.2139,
+      0.6234,
+      0.6194
+     ]
+    ],
+    "outlined": "plate"
+   }
+  },
+  {
+   "id": 13,
+   "do": "Zest the lime onto the plate with the grated chili",
+   "verb": "zest",
+   "objects": [
+    "lime",
+    "plate"
+   ],
+   "tools": [
+    "grater"
+   ],
+   "start": 492.0,
+   "end": 519.0,
+   "focus": "lime zest",
+   "done_when": "Fine green lime zest is accumulated on the plate alongside the grated chili",
+   "needs": [
+    12
+   ],
+   "optional": true,
+   "evidence": {
+    "start": "step13_start.jpg",
+    "end": "step13_end.jpg"
+   },
+   "why_optional": "not seen in the second demonstration (17_5)"
+  },
+  {
+   "id": 14,
+   "do": "Chop the cilantro and green onions into small pieces on the cutting board",
+   "verb": "chop",
+   "objects": [
+    "cilantro",
+    "green onions",
+    "cutting board"
+   ],
+   "tools": [
+    "knife"
+   ],
+   "start": 528.0,
+   "end": 603.0,
+   "focus": "chopped greens",
+   "done_when": "A pile of finely chopped green herbs and green onions covers part of the cutting board with no whole stalks remaining",
+   "needs": [],
+   "optional": false,
+   "evidence": {
+    "start": "step14_start.jpg",
+    "end": "step14_end.jpg",
+    "boxes": [
+     [
+      0.4703,
+      0.3722,
+      0.5422,
+      0.5472
+     ],
+     [
+      0.4391,
+      0.3694,
+      0.4656,
+      0.4222
+     ],
+     [
+      0.5703,
+      0.2972,
+      0.6141,
+      0.3972
+     ]
+    ],
+    "outlined": "chopped greens"
+   }
+  },
+  {
+   "id": 15,
+   "do": "Add the chopped greens to the bowl",
+   "verb": "add",
+   "objects": [
+    "chopped greens",
+    "bowl"
+   ],
+   "tools": [],
+   "start": 600.0,
+   "end": 611.0,
+   "focus": "bowl",
+   "done_when": "Chopped green herbs are visible in the bowl and the cutting board is largely cleared of them",
+   "needs": [
+    2,
+    14
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step15_start.jpg",
+    "end": "step15_end.jpg"
+   },
+   "check": false
+  },
+  {
+   "id": 16,
+   "do": "Add salt to the bowl",
+   "verb": "add",
+   "objects": [
+    "salt",
+    "bowl"
+   ],
+   "tools": [
+    "measuring spoon",
+    "salt container"
+   ],
+   "start": 636.0,
+   "end": 655.0,
+   "focus": "bowl",
+   "done_when": "White salt granules are visible sprinkled over the mixture in the bowl",
+   "needs": [
+    2
+   ],
+   "optional": true,
+   "evidence": {
+    "start": "step16_start.jpg",
+    "end": "step16_end.jpg",
+    "boxes": [
+     [
+      0.5734,
+      0.3722,
+      0.6875,
+      0.5806
+     ]
+    ],
+    "outlined": "bowl"
+   },
+   "why_optional": "not seen in the second demonstration (17_5)"
+  },
+  {
+   "id": 17,
+   "do": "Mix all the ingredients in the bowl until evenly combined",
+   "verb": "mix",
+   "objects": [
+    "yogurt mixture",
+    "bowl"
+   ],
+   "tools": [
+    "spoon"
+   ],
+   "start": 680.0,
+   "end": 703.0,
+   "focus": "mixture",
+   "done_when": "The bowl contains a smooth, uniform creamy mixture with the green herbs and spices evenly distributed throughout",
+   "needs": [
+    3,
+    4,
+    7,
+    9,
+    10,
+    11,
+    13,
+    15,
+    16
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step17_start.jpg",
+    "end": "step17_end.jpg"
+   }
+  }
+ ],
+ "compiled_by": "muse-wonder-1.0",
+ "learned_from": "17_3.mp4",
+ "video_seconds": 855.02,
+ "recipe": "Cucumber Raita",
+ "learn_seconds": 181.3,
+ "calibration": {
+  "source": "second demonstration (17_5)",
+  "changes": [
+   {
+    "step": 6,
+    "change": "optional",
+    "why": "not seen in the second demonstration (17_5)"
+   },
+   {
+    "step": 10,
+    "change": "optional",
+    "why": "not seen in the second demonstration (17_5)"
+   },
+   {
+    "step": 13,
+    "change": "optional",
+    "why": "not seen in the second demonstration (17_5)"
+   },
+   {
+    "step": 16,
+    "change": "optional",
+    "why": "not seen in the second demonstration (17_5)"
+   },
+   {
+    "step": 15,
+    "change": "contract not checked",
+    "why": "it failed on the second demonstration (17_5), which was done correctly: The bowl shows no greens and the board still has chopped greens on it."
+   },
+   {
+    "step": 9,
+    "change": "contract not checked",
+    "why": "it failed on the second demonstration (17_5), which was done correctly: Live images show a whole uncut pepper in hand with no sliced strips on the board."
+   }
+  ]
+ }
+}

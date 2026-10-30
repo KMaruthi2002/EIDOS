@@ -91,7 +91,7 @@
    "needs": [
     2
    ],
-   "optional": false,
+   "optional": true,
    "evidence": {
     "start": "step3_start.jpg",
     "end": "step3_end.jpg",
@@ -104,7 +104,8 @@
      ]
     ],
     "outlined": "cutting board"
-   }
+   },
+   "why_optional": "not seen in the second demonstration (9_4)"
   },
   {
    "id": 4,
@@ -361,9 +362,7 @@
    "end": 555.0,
    "focus": "mashed mixture",
    "done_when": "The bowl contains a uniform mashed mixture with no large dry bread cubes visible",
-   "needs": [
-    10
-   ],
+   "needs": [],
    "optional": false,
    "evidence": {
     "start": "step11_start.jpg",
@@ -462,5 +461,22 @@
  ],
  "compiled_by": "muse-wonder-1.0",
  "learned_from": "9_2.mp4",
- "video_seconds": 758.02
+ "video_seconds": 758.02,
+ "recipe": "Microwave French Toast",
+ "learn_seconds": 153.3,
+ "calibration": {
+  "source": "second demonstration (9_4)",
+  "changes": [
+   {
+    "step": 3,
+    "change": "optional",
+    "why": "not seen in the second demonstration (9_4)"
+   },
+   {
+    "step": 11,
+    "change": "no longer needs step 10",
+    "why": "the second demonstration (9_4) did step 11 first"
+   }
+  ]
+ }
 }

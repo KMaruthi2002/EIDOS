@@ -160,6 +160,8 @@ class Tracker:
     started: dict = field(default_factory=dict)     # step id -> time first seen
     ended: dict = field(default_factory=dict)       # step id -> time last left
     events: list = field(default_factory=list)
+    sighted: dict = field(default_factory=dict)     # step id -> first look that named it, even once
+    confirm_sightings: bool = True
 
     def __post_init__(self):
         self.by_id = {s["id"]: s for s in self.program["steps"]}
@@ -183,6 +185,8 @@ class Tracker:
     def feed(self, t: float, doing: int) -> list[dict]:
         """One look at time t. Returns the events it caused."""
         self.history.append(doing)
+        if doing:
+            self.sighted.setdefault(doing, t)
         last = self.history[-3:]
         winner = max(set(last), key=last.count)
         new = []
@@ -195,6 +199,19 @@ class Tracker:
                 first = winner not in self.started
                 self.started.setdefault(winner, t)
                 new.append({"t": t, "kind": "start", "step": winner, "first": first})
+                if first and self.confirm_sightings:
+                    # a short step may have won only one look; if this step needs it and it was
+                    # seen once before, that sighting counts (and is itself checked for order)
+                    for n in sorted(self.needs(winner)):
+                        if n not in self.started and n in self.sighted and self.sighted[n] < t:
+                            self.started[n] = self.sighted[n]
+                            new.append({"t": t, "kind": "start", "step": n, "first": True, "confirmed_by": winner})
+                            if self.required(n):
+                                g = sorted(m for m in self.needs(n) if m not in self.started)
+                                if g:
+                                    need = " and ".join(f"step {m} ({self.by_id[m]['do']})" for m in g)
+                                    new.append({"t": t, "kind": "alert", "type": "order", "step": n, "before": g,
+                                                "text": f"Out of order: step {n} ({self.by_id[n]['do']}) started before {need}."})
                 if first and self.required(winner):
                     gaps = sorted(n for n in self.needs(winner) if n not in self.started)
                     if gaps:
@@ -266,7 +283,7 @@ def load_refs(skill_dir: Path, program: dict) -> dict:
 
 async def replay(program: dict, refs: dict, frames: list[tuple[float, object]], contracts: bool = True,
                  concurrency: int = 8, inputs=None, which: str = "spark", looks: list | None = None,
-                 verify: bool = True) -> dict:
+                 verify: bool = True, sightings: bool = True) -> dict:
     """Run on a recording as if live: look k at time t sees only frames up to t.
 
     The looks are independent, so they are computed in parallel and then fed to the tracker
@@ -289,7 +306,7 @@ async def replay(program: dict, refs: dict, frames: list[tuple[float, object]], 
         looks = [(lk["t"], {k: v for k, v in lk.items() if k != "t"}) for lk in looks]
     else:
         looks = sorted(await asyncio.gather(*(one(t, w) for t, w in jobs)), key=lambda x: x[0])
-    tr = Tracker(program)
+    tr = Tracker(program, confirm_sightings=sightings)
     for t, lk in looks:
         tr.feed(t, lk["doing"])
     tr.finish(times[-1] if times else 0)

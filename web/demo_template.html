@@ -188,6 +188,14 @@ footer { padding-block: 40px 60px; color: var(--muted); font-size: .9rem; border
 .card-row img { width: 72px; height: 72px; border-radius: 10px; border: 1px solid var(--line); }
 .card-row small { color: var(--muted); }
 .alias { display: inline-block; margin: 2px 4px 2px 0; padding: 2px 8px; border-radius: 999px; background: var(--contract-soft); color: var(--contract); font-size: .82rem; font-weight: 650; }
+.world-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 24px; align-items: start; }
+.world-grid .stage video { width: 100%; display: block; background: #0c1424; aspect-ratio: 1152 / 720; }
+.wstep { display: grid; grid-template-columns: minmax(0, 1fr) 112px; gap: 12px; align-items: center; }
+.wstep .ev { position: relative; border-radius: 6px; overflow: hidden; }
+.wstep .ev img { display: block; width: 100%; }
+.wstep .ev .bx { position: absolute; border: 2px dashed var(--contract); border-radius: 2px; }
+.wstep .opt { font-size: .78rem; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 0 8px; margin-left: 6px; }
+@media (max-width: 900px) { .world-grid { grid-template-columns: minmax(0, 1fr); } }
 .tbl-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
 table.tbl { border-collapse: collapse; width: 100%; font-size: .95rem; min-width: 620px; }
 .tbl th, .tbl td { padding: 10px 14px; text-align: right; border-top: 1px solid var(--line); font-variant-numeric: tabular-nums; }
@@ -211,12 +219,30 @@ table.tbl { border-collapse: collapse; width: 100%; font-size: .95rem; min-width
   <section class="hero" aria-labelledby="h1">
     <div class="hero-copy">
       <h1 id="h1">Show it once.</h1>
-      <p class="lede">EIDOS watches a screen-recorded tutorial and compiles it into a skill: a small program an AI agent can run on screens the video never showed. Every step carries a visual contract taken from the video, so the agent checks its own work, repairs what went wrong, and says so when it can't.</p>
+      <p class="lede">EIDOS compiles one video of a task into a program: the steps, the order they really need, values you can change, and a visual contract for every step. Then it runs that program in three worlds: it follows a person live through a camera and flags a skipped, out-of-order or wrong step as it happens; an agent runs it on apps the video never showed; a simulated robot arm runs it and notices when its work is knocked over.</p>
       <ul class="hero-points" id="hero-points"></ul>
     </div>
     <div>
       <div class="stage" id="film-stage"></div>
     </div>
+  </section>
+
+  <section aria-labelledby="h-world">
+    <div class="sec-head">
+      <h2 id="h-world">The real world, live</h2>
+      <p class="lede">EIDOS learned this skill from one technician's head-camera video of replacing a part in an electrical control cabinet (HoloAssist), with no labels. Here it follows another recording, edited so the disconnect switch is never turned off, as if it were a live camera: it only ever sees what has played so far. The alert appears while the recording plays.</p>
+    </div>
+    <div class="world-grid">
+      <div class="stage"><video id="w-live" src="assets/world_live.mp4" poster="assets/world_live.jpg" controls playsinline preload="metadata" aria-label="EIDOS Studio following a recording live"></video>
+        <div class="stage-bar"><span>EIDOS Studio, Real world tab. A real take, recorded from the Studio at normal speed.</span></div></div>
+      <div><h3 id="w-title" style="margin-bottom:10px"></h3><ol class="prog" id="w-prog"></ol></div>
+    </div>
+    <div class="sec-head" style="margin-top:48px">
+      <h3 style="font-size:1.4rem">Benchmark: live mistake detection on CaptainCook4D</h3>
+      <p class="lede" id="w-lede"></p>
+    </div>
+    <div class="tbl-wrap"><table class="tbl" id="w-tbl"></table></div>
+    <p class="oracle" id="w-note" style="margin-top:12px"></p>
   </section>
 
   <section aria-labelledby="h-ev">
@@ -528,6 +554,25 @@ $("#note").innerHTML = `<div class="big">${sr.agrees_with_oracle}/${sr.n}</div>
   ${it ? `<p>When a dialog interrupts the task, the contracts are what save the run: EIDOS notices a step did not land, dismisses the dialog and redoes it, finishing ${it.eidos.success}/${it.eidos.n}. With checks off it finished ${it.eidos_nochk.success}/${it.eidos_nochk.n}: it has no way to notice, so it carries on as if every step worked.</p>` : ""}
   ${hist}
   <p class="oracle">Development set (used while fixing bugs): EIDOS ${B.dev.summary.all.eidos.success}/${B.dev.summary.all.eidos.n}, copying the clicks ${B.dev.summary.all.replay.success}/${B.dev.summary.all.replay.n}. Pilot scale: one task family, two apps.</p>`;
+/* ================= real world ================= */
+const WD = DATA.world;
+if (WD) {
+  $("#w-title").textContent = WD.program.title;
+  $("#w-prog").innerHTML = WD.program.steps.map(st => {
+    const ev = st.evidence || {};
+    const bx = (ev.boxes || []).map(b => `<span class="bx" style="left:${b[0] * 100}%;top:${b[1] * 100}%;width:${(b[2] - b[0]) * 100}%;height:${(b[3] - b[1]) * 100}%"></span>`).join("");
+    return `<li><div class="wstep"><div><b>${esc(st.do.replace(/\{(\w+)\}/g, (m, k) => WD.program.inputs[k] ?? m))}</b>${st.optional ? '<span class="opt">optional</span>' : ""}<div class="oracle">Done when: ${esc(st.done_when)}</div></div>
+      ${ev.end ? `<div class="ev"><img src="assets/world/${ev.end}" alt="The demonstration after this step" loading="lazy">${bx}</div>` : ""}</div></li>`;
+  }).join("");
+  const T = WD.test, D = WD.dev, pct = x => Math.round(x * 100) + "%";
+  const rows = [["EIDOS, live", "eidos"], ["EIDOS without visual checks", "eidos_no_contracts"], ["EIDOS without searching back", "eidos_no_search_back"], ["Muse Spark asked directly (sees the whole recording)", "baseline_ask_muse_spark"]];
+  const cell = (S, k) => S && S[k] ? `<td>${pct(S[k].accuracy)}</td><td>${S[k].f1.toFixed(2)}</td><td>${pct(S[k].precision)}</td><td>${pct(S[k].recall)}</td>` : "<td></td><td></td><td></td><td></td>";
+  $("#w-tbl").innerHTML = `<thead><tr><th>Held-out recordings</th><th>Accuracy</th><th>F1</th><th>Precision</th><th>Recall</th></tr></thead><tbody>${rows.map(([n, k]) => `<tr><td>${n}</td>${cell(T, k)}</tr>`).join("")}</tbody>`;
+  if (T) {
+    $("#w-lede").innerHTML = `For each recipe, EIDOS learns from one correct recording and calibrates on a second; no labels are used to learn. Each of the other ${T.recordings} recordings of ${T.recipes.length} held-out recipes (${T.with_mistakes} with labelled mistakes, ${T.without_mistakes} without), by other people in other kitchens, runs through the live runner as if it were a camera feed. The question is the dataset's: did this recording contain a mistake?`;
+    $("#w-note").innerHTML = `Test recipes were chosen by a rule before any test run and run once with frozen code. EIDOS named the right skipped step on ${T.missing_step_named_correctly.hit} of ${T.missing_step_named_correctly.n} labelled missing steps.${D ? ` Development recipes (used for tuning): EIDOS accuracy ${pct(D.eidos.accuracy)}, Muse Spark asked directly ${pct(D.baseline_ask_muse_spark.accuracy)}.` : ""}`;
+  }
+}
 /* ================= everyday tasks ================= */
 const EV = DATA.everyday;
 const R2 = EV.bench.test2 && EV.bench.test2.summary, WC = EV.bench.words && EV.bench.words.summary, WO = EV.bench.words_open && EV.bench.words_open.summary;

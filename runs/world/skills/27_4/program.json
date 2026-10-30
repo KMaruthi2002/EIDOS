@@ -1,0 +1,568 @@
+{
+ "title": "Microwave Cheese Egg Mug with Peppers",
+ "domain": "cooking",
+ "inputs": {
+  "shredded_cheese": "1 measuring cup",
+  "egg": "1",
+  "salt": "1 measuring spoon",
+  "paper_towel_sheets": "1 sheet"
+ },
+ "steps": [
+  {
+   "id": 1,
+   "do": "Rinse the measuring spoons and the bowl under the faucet.",
+   "verb": "rinse",
+   "objects": [
+    "measuring spoons",
+    "bowl"
+   ],
+   "tools": [
+    "faucet"
+   ],
+   "start": 12.0,
+   "end": 43.0,
+   "focus": "measuring spoons",
+   "done_when": "The measuring spoons and bowl are clean and set on the counter beside the sink.",
+   "needs": [],
+   "optional": true,
+   "evidence": {
+    "start": "step1_start.jpg",
+    "end": "step1_end.jpg",
+    "boxes": [
+     [
+      0.2766,
+      0.6889,
+      0.5203,
+      0.9972
+     ]
+    ],
+    "outlined": "bowl"
+   }
+  },
+  {
+   "id": 2,
+   "do": "Place the mug on the counter.",
+   "verb": "place",
+   "objects": [
+    "mug"
+   ],
+   "tools": [],
+   "start": 44.0,
+   "end": 63.0,
+   "focus": "mug",
+   "done_when": "A mug sits on the countertop.",
+   "needs": [],
+   "optional": true,
+   "evidence": {
+    "start": "step2_start.jpg",
+    "end": "step2_end.jpg",
+    "boxes": [
+     [
+      0.4781,
+      0.025,
+      0.5625,
+      0.2306
+     ],
+     [
+      0.5281,
+      0.6611,
+      0.6156,
+      0.8333
+     ]
+    ],
+    "outlined": "mug"
+   }
+  },
+  {
+   "id": 3,
+   "do": "Scoop {shredded_cheese} of shredded cheese into the mug.",
+   "verb": "scoop",
+   "objects": [
+    "shredded cheese",
+    "mug"
+   ],
+   "tools": [
+    "measuring cup"
+   ],
+   "start": 84.0,
+   "end": 103.0,
+   "focus": "mug",
+   "done_when": "The mug contains shredded cheese and no cheese remains in the measuring cup.",
+   "needs": [
+    2
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step3_start.jpg",
+    "end": "step3_end.jpg"
+   }
+  },
+  {
+   "id": 4,
+   "do": "Seal the cheese bag and return it to the refrigerator.",
+   "verb": "return",
+   "objects": [
+    "shredded cheese bag"
+   ],
+   "tools": [],
+   "start": 96.0,
+   "end": 107.0,
+   "focus": "cheese bag",
+   "done_when": "The sealed cheese bag is inside the closed refrigerator.",
+   "needs": [
+    3
+   ],
+   "optional": true,
+   "evidence": {
+    "start": "step4_start.jpg",
+    "end": "step4_end.jpg"
+   }
+  },
+  {
+   "id": 5,
+   "do": "Add {egg} egg to the mug.",
+   "verb": "add",
+   "objects": [
+    "egg",
+    "mug"
+   ],
+   "tools": [],
+   "start": 104.0,
+   "end": 111.0,
+   "focus": "mug",
+   "done_when": "Egg is in the mug with the shredded cheese.",
+   "needs": [
+    3
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step5_start.jpg",
+    "end": "step5_end.jpg",
+    "boxes": [
+     [
+      0.5672,
+      0.4083,
+      0.6766,
+      0.6139
+     ]
+    ],
+    "outlined": "mug"
+   }
+  },
+  {
+   "id": 6,
+   "do": "Add dry powder mix to the mug.",
+   "verb": "add",
+   "objects": [
+    "dry powder mix",
+    "mug"
+   ],
+   "tools": [
+    "measuring spoons"
+   ],
+   "start": 108.0,
+   "end": 115.0,
+   "focus": "mug",
+   "done_when": "Dry powder mix is visible in the mug with the cheese and egg.",
+   "needs": [
+    5
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step6_start.jpg",
+    "end": "step6_end.jpg",
+    "boxes": [
+     [
+      0.3,
+      0.3389,
+      0.4625,
+      0.5861
+     ],
+     [
+      0.2578,
+      0.6972,
+      0.4766,
+      0.9722
+     ]
+    ],
+    "outlined": "mug"
+   }
+  },
+  {
+   "id": 7,
+   "do": "Place the bell pepper on the cutting board.",
+   "verb": "place",
+   "objects": [
+    "red bell pepper"
+   ],
+   "tools": [
+    "cutting board"
+   ],
+   "start": 120.0,
+   "end": 135.0,
+   "focus": "bell pepper",
+   "done_when": "The bell pepper rests on a cutting board on the counter.",
+   "needs": [],
+   "optional": true,
+   "evidence": {
+    "start": "step7_start.jpg",
+    "end": "step7_end.jpg"
+   }
+  },
+  {
+   "id": 8,
+   "do": "Cut off the pepper top and slice the pepper into small pieces.",
+   "verb": "slice",
+   "objects": [
+    "red bell pepper"
+   ],
+   "tools": [
+    "knife",
+    "cutting board"
+   ],
+   "start": 136.0,
+   "end": 215.0,
+   "focus": "pepper pieces",
+   "done_when": "The cutting board holds small pepper pieces and no large pepper half remains.",
+   "needs": [
+    7
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step8_start.jpg",
+    "end": "step8_end.jpg"
+   }
+  },
+  {
+   "id": 9,
+   "do": "Chop the tomato into small pieces on the cutting board.",
+   "verb": "chop",
+   "objects": [
+    "tomato"
+   ],
+   "tools": [
+    "knife",
+    "cutting board"
+   ],
+   "start": 188.0,
+   "end": 215.0,
+   "focus": "tomato pieces",
+   "done_when": "The cutting board holds finely chopped tomato pieces and no whole tomato remains.",
+   "needs": [
+    7
+   ],
+   "optional": true,
+   "evidence": {
+    "start": "step9_start.jpg",
+    "end": "step9_end.jpg"
+   },
+   "why_optional": "not seen in the second demonstration (27_9)"
+  },
+  {
+   "id": 10,
+   "do": "Microwave the mug until the egg mixture is cooked, then set the mug on the stovetop.",
+   "verb": "microwave",
+   "objects": [
+    "mug",
+    "egg mixture"
+   ],
+   "tools": [
+    "microwave"
+   ],
+   "start": 216.0,
+   "end": 263.0,
+   "focus": "mug",
+   "done_when": "The cooked egg mixture is set in the mug on the stovetop.",
+   "needs": [],
+   "optional": false,
+   "evidence": {
+    "start": "step10_start.jpg",
+    "end": "step10_end.jpg",
+    "boxes": [
+     [
+      0.5141,
+      0.2222,
+      0.6094,
+      0.4194
+     ]
+    ],
+    "outlined": "mug"
+   }
+  },
+  {
+   "id": 11,
+   "do": "Transfer the chopped peppers from the cutting board into the bowl.",
+   "verb": "transfer",
+   "objects": [
+    "chopped peppers",
+    "bowl"
+   ],
+   "tools": [
+    "knife",
+    "cutting board"
+   ],
+   "start": 264.0,
+   "end": 283.0,
+   "focus": "bowl",
+   "done_when": "The bowl contains the chopped peppers and the cutting board is cleared of peppers.",
+   "needs": [
+    1,
+    8
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step11_start.jpg",
+    "end": "step11_end.jpg",
+    "boxes": [
+     [
+      0.0,
+      0.1944,
+      0.2437,
+      0.6333
+     ]
+    ],
+    "outlined": "bowl"
+   }
+  },
+  {
+   "id": 12,
+   "do": "Cover the bowl with {paper_towel_sheets} of paper towel, microwave the bowl, then set the hot bowl on the stovetop.",
+   "verb": "microwave",
+   "objects": [
+    "bowl",
+    "chopped peppers",
+    "paper towel"
+   ],
+   "tools": [
+    "microwave"
+   ],
+   "start": 288.0,
+   "end": 455.0,
+   "focus": "bowl",
+   "done_when": "The hot bowl of peppers sits on the stovetop and the paper towel is separated from it.",
+   "needs": [
+    11
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step12_start.jpg",
+    "end": "step12_end.jpg"
+   }
+  },
+  {
+   "id": 13,
+   "do": "Wash the cutting board, knife and pan in the sink.",
+   "verb": "wash",
+   "objects": [
+    "cutting board",
+    "knife",
+    "pan"
+   ],
+   "tools": [
+    "sponge",
+    "faucet"
+   ],
+   "start": 312.0,
+   "end": 403.0,
+   "focus": "cutting board",
+   "done_when": "The cutting board, knife and pan are rinsed clean with no soap foam remaining.",
+   "needs": [],
+   "optional": true,
+   "evidence": {
+    "start": "step13_start.jpg",
+    "end": "step13_end.jpg",
+    "boxes": [
+     [
+      0.3969,
+      0.2639,
+      0.6094,
+      0.5972
+     ]
+    ],
+    "outlined": "knife"
+   }
+  },
+  {
+   "id": 14,
+   "do": "Scoop the cooked mixture from the mug into the bowl.",
+   "verb": "scoop",
+   "objects": [
+    "cooked egg mixture",
+    "mug",
+    "bowl"
+   ],
+   "tools": [
+    "spoon"
+   ],
+   "start": 468.0,
+   "end": 495.0,
+   "focus": "bowl",
+   "done_when": "The mug is empty and the bowl contains the cooked mixture with the peppers.",
+   "needs": [
+    10,
+    12
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step14_start.jpg",
+    "end": "step14_end.jpg",
+    "boxes": [
+     [
+      0.4281,
+      0.1056,
+      0.6219,
+      0.4639
+     ]
+    ],
+    "outlined": "bowl"
+   }
+  },
+  {
+   "id": 15,
+   "do": "Mash the food in the bowl with the spoon.",
+   "verb": "mash",
+   "objects": [
+    "food",
+    "bowl"
+   ],
+   "tools": [
+    "spoon"
+   ],
+   "start": 492.0,
+   "end": 523.0,
+   "focus": "bowl",
+   "done_when": "The food in the bowl is broken into smaller mashed pieces.",
+   "needs": [
+    14
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step15_start.jpg",
+    "end": "step15_end.jpg",
+    "boxes": [
+     [
+      0.0,
+      0.9222,
+      0.075,
+      0.9972
+     ],
+     [
+      0.0,
+      0.0,
+      0.1391,
+      0.1472
+     ]
+    ],
+    "outlined": "food"
+   }
+  },
+  {
+   "id": 16,
+   "do": "Measure {salt} of salt and add it and the other seasoning to the bowl.",
+   "verb": "add",
+   "objects": [
+    "salt",
+    "seasoning",
+    "bowl"
+   ],
+   "tools": [
+    "measuring spoon",
+    "seasoning shaker"
+   ],
+   "start": 532.0,
+   "end": 611.0,
+   "focus": "bowl",
+   "done_when": "White salt and seasoning are visible on the mashed food in the bowl.",
+   "needs": [],
+   "optional": false,
+   "evidence": {
+    "start": "step16_start.jpg",
+    "end": "step16_end.jpg",
+    "boxes": [
+     [
+      0.4625,
+      0.0,
+      0.6422,
+      0.3694
+     ]
+    ],
+    "outlined": "bowl"
+   }
+  },
+  {
+   "id": 17,
+   "do": "Mash and mix the seasoned food in the bowl until combined.",
+   "verb": "mix",
+   "objects": [
+    "food",
+    "bowl"
+   ],
+   "tools": [
+    "spoon"
+   ],
+   "start": 616.0,
+   "end": 644.0,
+   "focus": "bowl",
+   "done_when": "The bowl holds an evenly mashed and mixed food mixture with seasoning distributed throughout.",
+   "needs": [
+    16
+   ],
+   "optional": true,
+   "evidence": {
+    "start": "step17_start.jpg",
+    "end": "step17_end.jpg",
+    "boxes": [
+     [
+      0.0141,
+      0.8611,
+      0.15,
+      0.9972
+     ],
+     [
+      0.0,
+      0.0,
+      0.1187,
+      0.15
+     ]
+    ],
+    "outlined": "food"
+   },
+   "why_optional": "not seen in the second demonstration (27_9)"
+  }
+ ],
+ "compiled_by": "muse-wonder-1.0",
+ "learned_from": "27_4.mp4",
+ "video_seconds": 644.01,
+ "recipe": "Cheese Pimiento",
+ "learn_seconds": 135.2,
+ "calibration": {
+  "source": "second demonstration (27_9)",
+  "changes": [
+   {
+    "step": 9,
+    "change": "optional",
+    "why": "not seen in the second demonstration (27_9)"
+   },
+   {
+    "step": 17,
+    "change": "optional",
+    "why": "not seen in the second demonstration (27_9)"
+   },
+   {
+    "step": 10,
+    "change": "no longer needs step 6",
+    "why": "the second demonstration (27_9) did step 10 first"
+   },
+   {
+    "step": 13,
+    "change": "no longer needs step 11",
+    "why": "the second demonstration (27_9) did step 13 first"
+   },
+   {
+    "step": 16,
+    "change": "no longer needs step 15",
+    "why": "the second demonstration (27_9) did step 16 first"
+   }
+  ]
+ }
+}
