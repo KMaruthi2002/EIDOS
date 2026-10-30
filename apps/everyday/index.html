@@ -106,6 +106,16 @@ const T = {
   settings: { name: skin === "A" ? "Account" : "Profile Hub", navs: ["Profile", "Security", "Notifications", "Billing"], title: "Profile" },
 };
 const cfg = T[task];
+// words=alt: design C. Every control is renamed (same meaning, different words). State keeps the
+// original names, so scoring is unchanged; only what is on screen differs.
+const ALT = q.get("words") === "alt" ? {
+  "Compose": "New email", "New message": "Write an email", "To": "Recipient", "Subject": "Topic", "Message": "Body", "Send": "Deliver", "Message sent": "Delivered", "Sent": "Outbox",
+  "New event": "Schedule", "Title": "Event name", "Date": "Day", "Time": "Starts at", "Location": "Where", "Save": "Create", "Event saved": "Added to your calendar",
+  "New expense": "Add receipt", "Merchant": "Vendor", "Amount": "Total", "Category": "Kind", "Submit": "Send for approval", "Expense submitted": "Sent for approval",
+  "Security": "Privacy and safety", "Two-factor sign-in": "Two-step verification", "Sign-in alerts": "Login notifications", "Remember this device": "Keep me logged in",
+  "Recovery email": "Backup email", "Save changes": "Apply", "Settings saved": "Changes applied", "Sign-in and security": "Account protection",
+} : {};
+const w = (x) => ALT[x] || x;
 const state = { task, records: [], settings: { "Two-factor sign-in": false, "Sign-in alerts": false, "Remember this device": true, "Recovery email": "" }, saves: 0 };
 window.__eidosState = () => JSON.parse(JSON.stringify(state));
 const listData = cfg.seedList ? cfg.seedList() : [];
@@ -121,14 +131,14 @@ const navEl = el("nav"); const mainEl = el("main");
 document.body.append(navEl, mainEl);
 function renderNav() {
   navEl.innerHTML = ""; navEl.append(el("div", "brand", esc(cfg.name)));
-  cfg.navs.forEach((n) => { const i = el("div", "nav-item" + (n === page ? " on" : ""), esc(n)); i.onclick = () => { page = n; formOpen = false; render(); }; navEl.append(i); });
+  cfg.navs.forEach((n) => { const i = el("div", "nav-item" + (n === page ? " on" : ""), esc(w(n))); i.onclick = () => { page = n; formOpen = false; render(); }; navEl.append(i); });
 }
 function ordered(fields) {
   if (order.length !== fields.length) return fields;
   return order.map((i) => fields[i]);
 }
 function fieldEl(f, values) {
-  const row = el("div", "field"); row.append(el("label", "", esc(f.l)));
+  const row = el("div", "field"); row.append(el("label", "", esc(w(f.l))));
   if (f.opts) {
     const s = el("div", "input select", `<span class="ph">Choose…</span><span>▾</span>`); s.tabIndex = 0;
     s.onclick = (e) => {
@@ -150,8 +160,8 @@ document.addEventListener("mousedown", (e) => { if (!e.target.closest(".select")
 function render() {
   renderNav(); mainEl.innerHTML = "";
   if (task === "settings") return renderSettings();
-  const head = el("div", "head"); head.append(el("h1", "", esc(page)));
-  const ob = el("button", "primary", esc(cfg.open)); ob.onclick = () => { formOpen = true; render(); }; head.append(ob); mainEl.append(head);
+  const head = el("div", "head"); head.append(el("h1", "", esc(w(page))));
+  const ob = el("button", "primary", esc(w(cfg.open))); ob.onclick = () => { formOpen = true; render(); }; head.append(ob); mainEl.append(head);
   const list = el("div", "list");
   const rows = page === cfg.after || page === cfg.title ? state.records.filter(() => page === cfg.after).map(cfg.row).concat(page === cfg.title ? listData : []) : [];
   (rows.length ? rows : [["Nothing here yet", "", ""]]).forEach((r) => list.append(el("div", "item", `<span class="a">${esc(r[0])}</span><span>${esc(r[1])}</span><span class="c">${esc(r[2])}</span>`)));
@@ -159,11 +169,11 @@ function render() {
   if (formOpen) {
     const values = {};
     const form = el("div", "form" + (skin === "B" ? " modal" : ""));
-    const fh = el("div", "formhead"); fh.append(el("h2", "", esc(cfg.formTitle)));
-    const sub = el("button", "primary", esc(cfg.submit));
+    const fh = el("div", "formhead"); fh.append(el("h2", "", esc(w(cfg.formTitle))));
+    const sub = el("button", "primary", esc(w(cfg.submit)));
     sub.onclick = () => {
       if (!cfg.fields.every((f) => (values[f.k] || "").trim())) { toast("Please fill in every field"); return; }
-      state.records.push({ ...values }); formOpen = false; page = cfg.after; render(); toast(cfg.toast);
+      state.records.push({ ...values }); formOpen = false; page = cfg.after; render(); toast(w(cfg.toast));
     };
     const cancel = el("button", "ghost", "Cancel"); cancel.onclick = () => { formOpen = false; render(); };
     const actions = el("div", "actions"); actions.append(cancel, sub);
@@ -175,7 +185,7 @@ function render() {
   }
 }
 function renderSettings() {
-  const head = el("div", "head"); head.append(el("h1", "", esc(page))); mainEl.append(head);
+  const head = el("div", "head"); head.append(el("h1", "", esc(w(page)))); mainEl.append(head);
   const card = el("div", "form");
   if (page !== "Security") {
     const rows = page === "Profile" ? [["Name", "Ruth Kumar"], ["Email", "ruth@example.com"], ["Time zone", "Eastern Time"]] : [["Nothing to change here", ""]];
@@ -183,17 +193,17 @@ function renderSettings() {
     mainEl.append(card); return;
   }
   const draft = { ...state.settings };
-  card.append(el("h2", "", "Sign-in and security"));
+  card.append(el("h2", "", esc(w("Sign-in and security"))));
   const toggles = [["Two-factor sign-in", "Ask for a code when you sign in on a new device"], ["Sign-in alerts", "Email me when someone signs in"], ["Remember this device", "Stay signed in for 30 days"]];
   ordered(toggles).forEach(([t, d]) => {
-    const r = el("div", "toggle-row", `<div><div class="t">${esc(t)}</div><div class="d">${esc(d)}</div></div>`);
+    const r = el("div", "toggle-row", `<div><div class="t">${esc(w(t))}</div><div class="d">${esc(d)}</div></div>`);
     const sw = el("div", "switch" + (draft[t] ? " on" : "")); sw.onclick = () => { draft[t] = !draft[t]; sw.classList.toggle("on", draft[t]); };
     r.append(sw); card.append(r);
   });
   const vals = {}; const f = fieldEl({ k: "rec", l: "Recovery email" }, vals); card.append(f);
   f.querySelector("input").value = draft["Recovery email"]; vals.rec = draft["Recovery email"];
-  const save = el("button", "primary", "Save changes");
-  save.onclick = () => { Object.assign(state.settings, draft, { "Recovery email": vals.rec || "" }); state.saves++; toast("Settings saved"); };
+  const save = el("button", "primary", esc(w("Save changes")));
+  save.onclick = () => { Object.assign(state.settings, draft, { "Recovery email": vals.rec || "" }); state.saves++; toast(w("Settings saved")); };
   const actions = el("div", "actions"); actions.append(save);
   if (btn === "top") card.insertBefore(actions, card.children[1]); else card.append(actions);
   mainEl.append(card);

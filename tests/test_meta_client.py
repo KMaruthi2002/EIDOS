@@ -19,7 +19,7 @@ def fake(monkeypatch):
         seen.append({"url": str(req.url), "auth": req.headers.get("authorization"), "body": body})
         model = body["model"]
         if model == meta.MODELS["sam"]:
-            text = json.dumps({"detections": [{"box": [10, 20, 110, 60], "score": 0.97}, {"bbox": [0, 0, 5, 5], "score": 0.2}]})
+            text = "<0f>0<|box;x1=10;y1=20;x2=110;y2=60;w=10;h=10;c=0.97|><|mask;x=0;y=0;data=1,1,~a|>,1<|box;x1=0;y1=0;x2=5;y2=5;w=10;h=10;c=0.2|><|mask;x=0;y=0;data=1,1,~a|>"
         elif model == meta.MODELS["spark"]:
             text = 'Here you go: {"action": "type", "intent": "Type the recipient", "target": {"field": "To"}}'
         elif model == meta.MODELS["wonder"]:
@@ -40,7 +40,7 @@ def test_sam_boxes_parsed_and_ranked(fake):
     assert boxes[0] == {"box": [10.0, 20.0, 110.0, 60.0], "score": 0.97}
     assert fake[0]["auth"] == "Bearer test-key" and fake[0]["url"].endswith("/responses")
     content = fake[0]["body"]["input"][0]["content"]
-    assert content[0]["type"] == "input_image" and content[1]["text"] == "the text field labelled To"
+    assert content[0]["text"] == "the text field labelled To" and content[1]["type"] == "input_image"
 
 
 def test_spark_json_extracted_from_prose(fake):

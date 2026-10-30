@@ -280,6 +280,8 @@ async def run(request: Request):
 
 def everyday_url(task: str, opts: dict) -> str:
     q = {"task": task, "skin": "B" if opts.get("app") == "B" else "A", "data": opts.get("seed", 1)}
+    if opts.get("app") == "C":                 # design C: the same app with every control renamed
+        q["words"] = "alt"
     if opts.get("dark"):
         q["theme"] = "dark"
     if opts.get("nav") and opts["nav"] != "default":

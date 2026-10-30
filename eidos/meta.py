@@ -8,9 +8,9 @@
                 contracts), and check a failed step to suggest a repair
     Muse Image  draw a skill card for the skill library
 
-Set META_MODEL_API_KEY to enable. Without it EIDOS runs offline.
-Endpoint shape follows the Meta Model API /v1/responses format; the exact
-SAM 3.1 output grammar is parsed defensively (JSON first, then numbers).
+Set MODEL_API_KEY (or put it in .env) to enable. Without it EIDOS runs offline.
+Requests use the Meta Model API Responses format (POST /v1/responses); SAM 3.1
+replies in special-token text, parsed by eidos.live.parse_sam.
 """
 from __future__ import annotations
 
@@ -23,22 +23,12 @@ from pathlib import Path
 import cv2
 import httpx
 
-# Read a local .env (KEY=value lines) if present, without overriding the shell.
-_env = Path(__file__).resolve().parent.parent / ".env"
-if _env.exists():
-    for _line in _env.read_text().splitlines():
-        if "=" in _line and not _line.lstrip().startswith("#"):
-            _k, _v = _line.split("=", 1)
-            os.environ.setdefault(_k.strip(), _v.strip().strip('"').strip("'"))
+# Keys, endpoint and model IDs live in eidos/live.py (one source of truth).
+from . import live as _L
 
-API = os.environ.get("META_API_BASE", "https://api.meta.ai/v1")
-KEY = os.environ.get("META_MODEL_API_KEY", "")
-MODELS = {
-    "spark": os.environ.get("MUSE_SPARK_MODEL", "muse-spark-1.3"),
-    "sam": os.environ.get("SAM_MODEL", "sam-3.1"),
-    "wonder": os.environ.get("MUSE_WONDER_MODEL", "muse-wonder"),
-    "image": os.environ.get("MUSE_IMAGE_MODEL", "muse-image"),
-}
+API = _L.META_BASE
+KEY = _L.META_KEY
+MODELS = {"spark": _L.MODELS["spark"], "sam": _L.MODELS["sam"], "wonder": _L.MODELS["wonder"], "image": _L.MODELS["image"]}
 
 
 def live() -> bool:
@@ -81,28 +71,12 @@ def _json(text: str):
 
 
 async def sam_find(img, concept: str) -> list[dict]:
-    """Boxes for `concept` in the image, best first: [{box:[x1,y1,x2,y2], score}]."""
+    """Boxes for `concept` in the image, best first: [{box:[x1,y1,x2,y2], score}] (SAM 3.1 token output)."""
     resp = await _call(MODELS["sam"], [
-        {"type": "input_image", "image_url": _img_url(img)},
         {"type": "input_text", "text": concept},
-    ])
-    raw = _text(resp)
-    parsed = _json(raw)
-    boxes = []
-    if isinstance(parsed, dict):
-        parsed = parsed.get("detections") or parsed.get("segments") or parsed.get("objects") or []
-    if isinstance(parsed, list):
-        for d in parsed:
-            b = d.get("box") or d.get("bbox") if isinstance(d, dict) else d
-            if isinstance(b, dict):
-                b = [b.get("x1"), b.get("y1"), b.get("x2"), b.get("y2")]
-            if b and len(b) >= 4:
-                boxes.append({"box": [float(v) for v in b[:4]], "score": float(d.get("score", 0.9)) if isinstance(d, dict) else 0.9})
-    if not boxes:
-        nums = [float(n) for n in re.findall(r"-?\d+\.?\d*", raw)]
-        for i in range(0, len(nums) - 3, 4):
-            boxes.append({"box": nums[i:i + 4], "score": 0.5})
-    return sorted(boxes, key=lambda b: -b["score"])
+        {"type": "input_image", "image_url": _img_url(img)},
+    ], metadata={"include_confidence": "true"})
+    return [{"box": b["box"], "score": b["score"]} for b in _L.parse_sam(_text(resp))]
 
 
 async def spark_read_step(pre, post, point, changed_box) -> dict:
@@ -138,8 +112,8 @@ async def wonder_compile(trace: dict) -> dict | None:
 
 async def image_skill_card(program: dict) -> str | None:
     """A small illustrated card for the skill library."""
-    prompt = (f"A minimal, elegant trading-card style illustration for a learned software skill named "
-              f"'{program['name']}'. Abstract spreadsheet motif, one accent color, no text.")
+    prompt = (f"A minimal, elegant illustration for a learned software skill named "
+              f"'{program['name']}'. Flat shapes, one accent color, no text.")
     resp = await _call(MODELS["image"], [{"type": "input_text", "text": prompt}])
     for item in resp.get("output", []):
         for c in item.get("content", []) or []:

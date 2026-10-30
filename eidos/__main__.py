@@ -4,7 +4,7 @@
   python -m eidos record                     record the sample tutorial video
   python -m eidos learn VIDEO OUT_DIR        video -> trace + program (+ contracts)
   python -m eidos run OUT_DIR URL [k=v ...]  run a learned program on an app
-  python -m eidos check-live                 call each Meta model once (needs META_MODEL_API_KEY)
+  python -m eidos check-live                 call each live model once (needs MODEL_API_KEY and/or BASETEN_API_KEY in .env)
   python -m eidos studio [PORT]              the EIDOS Studio app at http://localhost:8000
                                              (also serves the everyday apps at /apps/everyday/)
 
@@ -106,29 +106,35 @@ def main(argv: list[str]) -> None:
 
 
 async def check_live():
-    """Smoke-test the four Meta models on a real frame from the sample tutorial."""
+    """Call each live model once on real frames and report what came back."""
     import cv2
+    from . import live as L
     from . import meta
-    if not meta.live():
-        print("META_MODEL_API_KEY is not set.")
+    if not (L.meta_live() or L.open_live()):
+        print("No keys set. Put MODEL_API_KEY (Meta Model API) and/or BASETEN_API_KEY in .env.")
         return
-    skill = ROOT / "runs" / "tutorial_totals"
-    pre = cv2.imread(str(skill / "step4_pre.png"))
-    post = cv2.imread(str(skill / "step4_post.png"))
-    trace = json.loads((skill / "trace.json").read_text())
+    shot = cv2.imread(str(ROOT / "runs" / "ui_skill_mail" / "step2_pre.png")) if (ROOT / "runs" / "ui_skill_mail" / "step2_pre.png").exists() else None
+    if shot is None:
+        import numpy as np
+        shot = np.full((760, 1200, 3), 255, np.uint8)
 
     async def attempt(name, coro):
         try:
             out = await coro
-            print(f"[ok]   {name}: {json.dumps(out)[:300]}")
+            print(f"[ok]   {name}: {json.dumps(out, default=str)[:300]}")
         except Exception as e:                     # report and keep going
             print(f"[fail] {name}: {e!r}"[:400])
 
-    await attempt("SAM 3.1   'bold text button'", meta.sam_find(pre, "bold text button"))
-    await attempt("SAM 3.1   'mouse pointer'", meta.sam_find(post, "mouse pointer"))
-    await attempt("Muse Spark read step 4", meta.spark_read_step(pre, post, (388, 60), trace["steps"][3]["contract"].get("changed_box")))
-    await attempt("Muse Wonder compile", meta.wonder_compile(trace))
-    await attempt("Muse Image skill card", meta.image_skill_card({"name": "Add a totals row"}))
+    cands = ["Recipient", "Topic", "Body", "Deliver", "Cancel", "Inbox", "Outbox"]
+    if L.meta_live():
+        await attempt("SAM 3.1      'the text field labelled To'", L.sam_find(shot, "the text field labelled To"))
+        await attempt("Muse Spark   match 'To'", L.match_label(shot, "To", "input field label", "Send an email", cands, "spark"))
+        await attempt("Muse Wonder  compile", L.wonder_compile([{"do": "press", "label": "Compose"}, {"do": "type", "label": "To", "value": "maya@northwind.com"}], "Send an email"))
+        await attempt("Muse Image   skill card", L.image_card("Send an email", ["press Compose", "type To", "press Send"]))
+    if L.open_live():
+        await attempt("Muse Spark Open (Baseten) match 'Send'", L.match_label(shot, "Send", "button", "Send an email", cands, "open"))
+    for c in L.LOG:
+        print("  ", c)
 
 
 if __name__ == "__main__":

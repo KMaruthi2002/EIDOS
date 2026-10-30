@@ -575,7 +575,7 @@ function seg(el, items, cur, on) {
 function buildConfig() {
   const ui = kind === "ui";
   appV = "A"; valV = "new";
-  seg($("#appSeg"), ui ? [["A", "Design A, as in the video"], ["B", "Design B"]] : [["A", "App A, as in the video"], ["B", "App B, a different app"]], appV, (v) => { appV = v; syncRedesign(); refreshPreview(); });
+  seg($("#appSeg"), ui ? [["A", "Design A, as in the video"], ["B", "Design B"], ["C", "Design C, renamed controls"]] : [["A", "App A, as in the video"], ["B", "App B, a different app"]], appV, (v) => { appV = v; syncRedesign(); refreshPreview(); });
   seg($("#valSeg"), ui ? [["same", "As in the video"], ["new", "New values"]] : [["same", "Sales, as in the video"], ["new", "Inventory, new data"]], valV, (v) => { valV = v; refreshPreview(); });
   $("#redesign").innerHTML = (ui ? UI_OPTS : SHEET_OPTS).map(([k, t]) => `<label class="chip"><input type="checkbox" data-k="${k}">${t}</label>`).join("") +
     (ui ? `<label class="chip">Menu <select id="navSel" aria-label="Menu position"><option value="default">as designed</option><option value="left">left</option><option value="right">right</option><option value="top">top</option></select></label>` : "");
@@ -604,7 +604,7 @@ async function refreshPreview() {
     url = (await fetch("/api/target?" + q).then((r) => r.json())).url;
   }
   url = url.replace(/^https?:\/\/[^/]+/, "").replace(/&?popup=[\d.]+/, "");
-  const parts = [t.app === "B" ? (kind === "ui" ? "design B" : "App B") : (kind === "ui" ? "design A" : "App A")];
+  const parts = [t.app === "C" ? "design C (every control renamed: needs a model to read meaning)" : t.app === "B" ? (kind === "ui" ? "design B" : "App B") : (kind === "ui" ? "design A" : "App A")];
   (kind === "ui" ? UI_OPTS : SHEET_OPTS).forEach(([k, l]) => t[k] && parts.push(l.toLowerCase()));
   if (t.nav && t.nav !== "default") parts.push("menu on the " + t.nav);
   $("#previewCap").textContent = "Preview: " + parts.join(", ") + (t.popup ? ". A dialog will interrupt the run." : "");

@@ -12,6 +12,7 @@ Success is judged from the app's internal state, which no system sees.
 from __future__ import annotations
 
 import asyncio
+import os
 import json
 import random
 import sys
@@ -25,10 +26,12 @@ from eidos.ui.tasks import TUTORIALS, N_FIELDS, fresh_inputs, score, URL   # noq
 
 BASE = sys.argv[1] if len(sys.argv) > 1 else "http://localhost:8000"
 SPLIT = sys.argv[2] if len(sys.argv) > 2 else "dev"
-SEED = {"dev": 7, "test": 31337, "test2": 50505}.get(SPLIT, int(SPLIT) if SPLIT.isdigit() else 7)
+SEED = {"dev": 7, "test": 31337, "test2": 50505, "words_dev": 8, "words": 60606}.get(SPLIT, int(SPLIT) if SPLIT.isdigit() else 7)
+WORDS = SPLIT.startswith("words")     # design C: every control renamed (needs a model to read meaning)
 N_REDESIGN, N_OTHER, N_INTERRUPT = 6, 3, 4
 OUT = ROOT / "runs" / f"bench_everyday_{SPLIT}"
-SYSTEMS = ("replay", "replay_new", "nochk", "eidos")
+from eidos import live as L    # noqa: E402
+SYSTEMS = ("replay", "replay_new", "nochk", "eidos") + (("eidos_live",) if L.meta_live() else ()) + (("eidos_open",) if L.open_live() else ())
 
 
 def redesign(rng, task, skin):
@@ -52,6 +55,14 @@ def redesign(rng, task, skin):
 def conditions():
     rng = random.Random(SEED)
     out = []
+    if WORDS:
+        for task in TUTORIALS:
+            for _ in range(8):
+                skin = rng.choice(["A", "B"])
+                q = redesign(rng, task, skin) if rng.random() < 0.5 else {"skin": skin}
+                q.update(words="alt", data=rng.randint(2, 99))
+                out.append({"task": task, "cond": "renamed", "q": q, "inputs": fresh_inputs(task, rng)})
+        return out
     for task in TUTORIALS:
         out.append({"task": task, "cond": "same", "q": {"skin": "A"}, "inputs": None})
         out.append({"task": task, "cond": "new_data", "q": {"skin": "A", "data": rng.randint(2, 99)}, "inputs": fresh_inputs(task, rng)})
@@ -87,8 +98,10 @@ async def one(sem, i, c, system):
                 rep = await replay_ui(json.loads((sk / "trace.json").read_text()), url, out, substitute=sub)
                 says = True
             else:
-                rep = await run_ui(prog, url, out, inputs, use_contracts=(system == "eidos"))
-                says = rep["all_contracts_passed"] if system == "eidos" else all(
+                rep = await run_ui(prog, url, out, inputs, use_contracts=(system != "nochk"),
+                                   live=system in ("eidos_live", "eidos_open"),
+                                   reader={"eidos_live": "spark", "eidos_open": "open"}.get(system))
+                says = rep["all_contracts_passed"] if system != "nochk" else all(
                     not any("error" in ch for ch in s["checks"]) for s in rep["steps"])
             truth = score(task, rep.get("oracle_state"), inputs)
         except Exception as e:
@@ -119,12 +132,12 @@ def summarize(rows):
         return f"{sum(r['success'] for r in rs)}/{len(rs)}"
     systems = [x for x in SYSTEMS if any(r["system"] == x for r in rows)]
     print("\ncondition    runs  " + "  ".join(f"{x:10s}" for x in systems))
-    groups = [(c, lambda r, c=c: r["cond"] == c) for c in ("same", "new_data", "redesign", "other_app", "interrupt")]
+    groups = [(c, lambda r, c=c: r["cond"] == c) for c in ("same", "new_data", "redesign", "other_app", "interrupt", "renamed")]
     groups += [("ALL", lambda r: True)] + [(f"  {t}", lambda r, t=t: r["task"] == t) for t in TUTORIALS]
     for name, f in groups:
         by = {x: [r for r in rows if f(r) and r["system"] == x] for x in systems}
         print(f"{name:12s} {len(by['eidos']):4d}  " + "  ".join(f"{cell(by[x]):10s}" for x in systems))
-    for x in ("nochk", "eidos"):
+    for x in [x for x in ("nochk", "eidos", "eidos_live", "eidos_open") if x in systems]:
         rs = [r for r in rows if r["system"] == x]
         agree = sum(r["says_done"] == r["success"] for r in rs)
         silent = sum(r["says_done"] and not r["success"] for r in rs)

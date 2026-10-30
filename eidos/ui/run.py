@@ -126,7 +126,16 @@ class Screen:
 
 
 async def run_ui(program: dict, url: str, out_dir: Path, inputs: dict | None = None, use_contracts: bool = True,
-                 record: bool = False, on_event=None, frame_every: float = 0.0, cursor_color: str = "#18c5d8") -> dict:
+                 record: bool = False, on_event=None, frame_every: float = 0.0, cursor_color: str = "#18c5d8",
+                 live: bool | None = None, reader: str | None = None) -> dict:
+    """live: use the Meta models (or Muse Spark Open) when a learned label isn't on screen.
+    None means "if a key is set"."""
+    from .. import live as L
+    which = reader or L.reader()
+    use_live = bool(which) if live is None else (bool(live) and bool(which))
+    aliases: dict[str, str] = {}        # learned label -> the text that means it on this screen
+    task_name = program.get("name", "the task")
+    n_calls0 = len(L.LOG)
     async def emit(ev):
         if on_event:
             await on_event(ev)
@@ -168,6 +177,40 @@ async def run_ui(program: dict, url: str, out_dir: Path, inputs: dict | None = N
             await glide(x, y)
             await page.mouse.click(x, y)
 
+        async def via_model(label, role, finder):
+            """Ground `label`; if it isn't on screen, ask the reader model which on-screen text means it."""
+            try:
+                return finder(aliases.get(label, label)), aliases.get(label, label)
+            except LookupError:
+                if not use_live:
+                    raise
+            # whole lines, plus the pieces of short lines (two buttons side by side read as one line)
+            cands = [ln.text for ln in scr.lines]
+            for ln in scr.lines:
+                ws = [w.text for w in ln.words]
+                if 1 < len(ws) <= 6:
+                    cands += ws + [" ".join(ws[i:i + 2]) for i in range(len(ws) - 1)]
+            alias = await L.match_label(scr.img, label, role, task_name, cands, which)
+            if not alias:
+                raise LookupError(f"no '{label}' on screen, and {L.MODELS[which]} found nothing that means it")
+            aliases[label] = alias
+            log.grounding.append({"how": f"{L.MODELS[which]} matched '{label}' to '{alias}' on this screen"})
+            return finder(alias), alias
+
+        async def sam_check(box, phrase):
+            """Second opinion from SAM 3.1 on a box found from pixels."""
+            if not (use_live and L.meta_live() and which == "spark"):
+                return
+            try:
+                found = await L.sam_find(scr.img, phrase)
+            except Exception as e:
+                log.grounding.append({"how": f"SAM 3.1 unavailable: {e!r}"[:160]})
+                return
+            b = [box[0], box[1], box[0] + box[2], box[1] + box[3]]
+            best = max((L.iou(b, d["box"]) for d in found), default=0.0)
+            log.checks.append({"contract": f"SAM 3.1 finds '{phrase}' at the same place", "iou": round(best, 2),
+                               "pass": best >= 0.5, "advisory": True})
+
         def fpoint(f):
             return f[0] + min(60, f[2] / 3), f[1] + min(f[3], 40) / 2
 
@@ -192,14 +235,25 @@ async def run_ui(program: dict, url: str, out_dir: Path, inputs: dict | None = N
                         want = [bind(w, inputs) for w in st["contract"]["screen_shows"]]
                         values = [bind(w, inputs) for w in st["contract"]["screen_shows"] if "{" in w]
 
-                        def verdict(before):
+                        async def verdict(before):
                             # Only text that newly appeared counts: anything already on screen
                             # before the first press (a label, an old row) proves nothing.
                             def new_at(w):
                                 old = before.where(w) + [h for h in S.find_text(before.lines, w, 0.82)]
                                 return [h for h in scr.where(w)
                                         if not any(abs(h[1] - o[1]) < 30 and abs(h[2] - o[2]) < 20 for o in old)]
-                            seen = [w for w in want if new_at(w)]
+                            seen = [w for w in want if new_at(aliases.get(w, w))]
+                            if use_live:
+                                # interface text may be worded differently on this design: ask which newly
+                                # shown text means each missing phrase (values must still match exactly)
+                                fresh = [ln.text for ln in scr.lines if not any(S.sim(ln.text, o.text) > 0.85 for o in before.lines)]
+                                for w in [w for w in want if w not in seen and w not in values]:
+                                    if fresh:
+                                        alias = await L.match_label(scr.img, w, "confirmation or heading text", task_name, fresh, which)
+                                        if alias and new_at(alias):
+                                            aliases[w] = alias
+                                            seen.append(w)
+                                            log.grounding.append({"how": f"{L.MODELS[which]} matched '{w}' to '{alias}' after the press"})
                             # entered values must all show up; for interface text, two of three is enough
                             need_vals = all(v in seen for v in values)
                             ui = [w for w in want if w not in values]
@@ -207,13 +261,13 @@ async def run_ui(program: dict, url: str, out_dir: Path, inputs: dict | None = N
                             ok = need_vals and len(ui_seen) >= min(len(ui), max(1, (2 * len(ui) + 2) // 3))
                             return ok, seen
                         if use_contracts and attempt and first_before is not None:
-                            ok, seen = verdict(first_before)
+                            ok, seen = await verdict(first_before)
                             if ok:
                                 log.grounding.append({"how": "the press had worked after all; checked against the screen from before it"})
                                 log.checks.append({"contract": "screen then newly shows " + ", ".join(f"'{w}'" for w in want), "found": seen, "pass": True})
                                 log.passed = True
                                 break
-                        hit, b = scr.control(text)
+                        (hit, b), shown_text = await via_model(text, "button or menu item", scr.control)
                         x, y = (b[0] + b[2] / 2, b[1] + b[3] / 2) if b else (hit[1] + hit[3] / 2, hit[2] + hit[4] / 2)
                         log.grounding.append({"how": f"found the control reading '{text}' by OCR", "at": [round(x), round(y)]})
                         before = scr.snapshot()
@@ -224,13 +278,13 @@ async def run_ui(program: dict, url: str, out_dir: Path, inputs: dict | None = N
                         ok = True
                         if use_contracts:
                             await scr.look()
-                            ok, seen = verdict(first_before)
+                            ok, seen = await verdict(first_before)
                             log.checks.append({"contract": "screen then newly shows " + ", ".join(f"'{w}'" for w in want),
                                                "found": seen, "pass": ok})
                     elif do in ("type", "choose"):
                         label = st["target"]["field"]
                         value = bind(st["value"], inputs)
-                        hit, f = scr.field(label)
+                        (hit, f), shown_label = await via_model(label, "input field label", scr.field)
                         log.grounding.append({"how": f"found the field labelled '{label}' by OCR, then its box", "box": list(f)})
                         await click(*fpoint(f))
                         if do == "type":
@@ -266,16 +320,17 @@ async def run_ui(program: dict, url: str, out_dir: Path, inputs: dict | None = N
                         if use_contracts:
                             await scr.look()
                             seen = S.read_box(scr.img, f)
-                            lab = scr.label_of(f, label)
-                            lab_ok = S.sim(lab, label) >= 0.86
-                            log.checks.append({"contract": f"the box written to is labelled '{label}'", "saw": lab, "pass": lab_ok})
+                            lab = scr.label_of(f, shown_label)
+                            lab_ok = S.sim(lab, shown_label) >= 0.86
+                            log.checks.append({"contract": f"the box written to is labelled '{shown_label}'", "saw": lab, "pass": lab_ok})
+                            await sam_check(f, f"the text field labelled {shown_label}")
                             ok = same_text(seen, value)
                             log.checks.append({"contract": f"the '{label}' field shows '{value}'", "saw": clean(seen), "pass": ok})
                             ok = ok and lab_ok
                     elif do == "toggle":
                         label = st["target"]["row"]
                         want = st["contract"]["switch_on"]
-                        hit, sw = scr.switch(label)
+                        (hit, sw), _ = await via_model(label, "setting with an on/off switch", scr.switch)
                         state = S.is_on(scr.img, sw)
                         log.grounding.append({"how": f"found the switch on the '{label}' row", "box": list(sw),
                                               "was": "on" if state else "off"})
@@ -310,7 +365,8 @@ async def run_ui(program: dict, url: str, out_dir: Path, inputs: dict | None = N
         video = await page.video.path() if record else None
         await ctx.close()
         await browser.close()
-    report = {"url": url, "inputs": inputs, "use_contracts": use_contracts, "steps": [vars(l) for l in logs],
+    report = {"url": url, "inputs": inputs, "use_contracts": use_contracts, "live": use_live, "aliases": aliases,
+              "model_calls": L.LOG[n_calls0:], "steps": [vars(l) for l in logs],
               "all_contracts_passed": all(l.passed for l in logs) and len(logs) == len(program["steps"]),
               "oracle_state": state}
     if video:
