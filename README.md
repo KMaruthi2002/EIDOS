@@ -6,7 +6,7 @@
 - **Screens.** An agent runs the learned program on apps the video never showed, and checks its own work.
 - **Robots.** A simulated arm runs a learned stacking program and notices when its work is knocked over.
 
-⟦HEADLINE⟧
+**Results, in short.** *Real world:* on 8 held-out CaptainCook4D recipes (106 recordings of people cooking, mistakes labelled by the dataset), run live and once, EIDOS named 22 of 54 labelled skipped steps as they happened, and claimed a step was skipped 0.7 times per correct recording, against 2.8 times for Muse Spark asked to look over the whole video. Telling a flawless recording from a flawed one is not solved yet: EIDOS's accuracy there (67%) is no better than always answering "mistake" (66%). *Screens:* on held-out tests, 60/60 everyday runs and 41/44 spreadsheet runs against 4/60 and 3/44 for copying the tutorial's clicks; with every control renamed, 32/32 with Muse Spark and 32/32 with Muse Spark Open; its own verdict matched the truth on all 168 held-out screen runs. *Robots:* a simulated arm rebuilds a stack that gets knocked over, which checks-off misses.
 
 Built by Maruthi Kunchala (Team Parallax) for the Meta Global AI Hackathon 2026.
 
@@ -33,7 +33,7 @@ one video ──► notes, 8 s at a time ──► program ──► calibrated 
    - **Skipped**: when the task is finished, a required step was never seen.
    Before an order or skipped alert, EIDOS **looks back** over everything so far for the missing step, the way a person rewinds before accusing someone. The alert is dropped only if the step is clearly found.
 
-Nothing uses frames from the future: each decision at time t uses frames up to t. In the Studio's **Real world** tab, EIDOS watches your camera, or plays a recording as if it were live, and speaks the next step and any alert if you want it to.
+Nothing uses frames from the future: each decision at time t uses frames up to t. The Studio also counts a step seen in a single look once a later step that needs it starts, so a short step isn't missed; this rule was added after the benchmark's round 1, which ran without it. In the Studio's **Real world** tab, EIDOS watches your camera, or plays a recording as if it were live, and speaks the next step and any alert if you want it to.
 
 ### Examples
 
@@ -77,6 +77,8 @@ EIDOS makes about a quarter of the false accusations but names fewer of the skip
 **Why it over-flags.** EIDOS flags what differs from the demonstration; CaptainCook4D labels what differs from the official recipe. Other cooks skip steps the demonstrator happened to do (rinsing the mug first, moving the plate afterwards), and calibrating on one more demonstration removes only some of these. The visual checks fired about as often on correct recordings as on wrong ones (37 against 61 times on 36 and 70 recordings), so at the recording level they add false alarms, even though the ones on wrong recordings often name the real mistake (chopped instead of sliced, half a mug instead of a full one).
 
 **What EIDOS adds on this benchmark** is the step-level answer: which step, at the moment it happens, with far fewer false accusations than asking a model to look over the whole video. Telling a correct recording from a wrong one is not yet better than always answering "mistake" on these recipes, and that is the next thing to fix.
+
+**A second version, and why there is no round 2.** After round 1, a version 2 was tried on the development recipes and on round 1's recipes (now development data): calibrate on two extra demonstrations instead of one, let a step seen in a single look count once a step that needs it starts, and turn failed checks into notes instead of alarms. On the two development recipes it looked like the fix: accuracy 86% (Muse Spark asked directly: 61%), a false alarm on 1 of 11 correct recordings, and no false skipped-step claims. On round 1's eight recipes it did not hold: accuracy 60%, still flagging 22 of 28 correct recordings (`runs/world/summary_*_v2.json`). Since the gain didn't carry over even to known recipes, it was not run on fresh ones. What's left is perception: on these 360p first-person recordings at one frame a second, the live looks name the annotated step 42% of the time, so steps that were done are sometimes never recognised and get reported as skipped or out of order. Sharper frames and more reasoning per look are the obvious next step.
 
 **Protocol.** Two recipes were used for development (`runs/world/dev/`, earlier versions kept in `runs/world/archive/`). The eight test recipes were chosen by a rule before any test run (the next eight shortest by average recording length) and run once with the frozen code (`runs/world/test/`). Looks are cached in `runs/world/looks/`, so scores can be recomputed without a key.
 
