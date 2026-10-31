@@ -1,0 +1,388 @@
+{
+ "title": "Microwaved Instant Noodle Bowl with Onion, Garlic and Herbs",
+ "domain": "cooking",
+ "inputs": {
+  "garlic_cloves": "1 clove",
+  "red_onion": "1",
+  "instant_noodle_packet": "1 packet",
+  "water": "enough to cover noodles",
+  "microwave_time": "40:00",
+  "cilantro_sprigs": "small handful"
+ },
+ "steps": [
+  {
+   "id": 1,
+   "do": "Peel {garlic_cloves} of garlic over the trash",
+   "verb": "peel",
+   "objects": [
+    "garlic"
+   ],
+   "tools": [],
+   "start": 0.0,
+   "end": 51.0,
+   "focus": "garlic clove",
+   "done_when": "papery skin separated from the white garlic clove and clove is fully exposed",
+   "needs": [],
+   "optional": false,
+   "evidence": {
+    "start": "step1_start.jpg",
+    "end": "step1_end.jpg"
+   }
+  },
+  {
+   "id": 2,
+   "do": "Open {instant_noodle_packet} of instant noodles and remove the noodle block",
+   "verb": "open",
+   "objects": [
+    "instant noodle packet",
+    "noodle block"
+   ],
+   "tools": [],
+   "start": 72.0,
+   "end": 91.0,
+   "focus": "noodle block",
+   "done_when": "dry noodle block sits outside its packaging on the counter",
+   "needs": [],
+   "optional": false,
+   "evidence": {
+    "start": "step2_start.jpg",
+    "end": "step2_end.jpg"
+   }
+  },
+  {
+   "id": 3,
+   "do": "Retrieve the cutting board and knife",
+   "verb": "retrieve",
+   "objects": [
+    "cutting board",
+    "knife"
+   ],
+   "tools": [],
+   "start": 100.0,
+   "end": 119.0,
+   "focus": "cutting board",
+   "done_when": "cutting board and knife are on the counter ready for chopping",
+   "needs": [],
+   "optional": true,
+   "evidence": {
+    "start": "step3_start.jpg",
+    "end": "step3_end.jpg"
+   }
+  },
+  {
+   "id": 4,
+   "do": "Finely chop the peeled garlic on the cutting board",
+   "verb": "chop",
+   "objects": [
+    "garlic"
+   ],
+   "tools": [
+    "knife",
+    "cutting board"
+   ],
+   "start": 124.0,
+   "end": 163.0,
+   "focus": "chopped garlic",
+   "done_when": "garlic is cut into small minced pieces scattered on the cutting board",
+   "needs": [
+    1,
+    3
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step4_start.jpg",
+    "end": "step4_end.jpg"
+   }
+  },
+  {
+   "id": 5,
+   "do": "Peel {red_onion} red onion over the trash",
+   "verb": "peel",
+   "objects": [
+    "red onion"
+   ],
+   "tools": [],
+   "start": 164.0,
+   "end": 211.0,
+   "focus": "red onion",
+   "done_when": "papery outer skin removed and onion bulb is exposed",
+   "needs": [],
+   "optional": false,
+   "evidence": {
+    "start": "step5_start.jpg",
+    "end": "step5_end.jpg"
+   }
+  },
+  {
+   "id": 6,
+   "do": "Slice the peeled red onion into thin pieces on the cutting board",
+   "verb": "slice",
+   "objects": [
+    "red onion"
+   ],
+   "tools": [
+    "knife",
+    "cutting board"
+   ],
+   "start": 208.0,
+   "end": 255.0,
+   "focus": "onion slices",
+   "done_when": "onion is cut into thin rings and small pieces spread on the cutting board",
+   "needs": [
+    3,
+    5
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step6_start.jpg",
+    "end": "step6_end.jpg"
+   }
+  },
+  {
+   "id": 7,
+   "do": "Transfer the chopped garlic and sliced onion into the bowl",
+   "verb": "transfer",
+   "objects": [
+    "garlic",
+    "red onion",
+    "bowl"
+   ],
+   "tools": [
+    "knife",
+    "cutting board"
+   ],
+   "start": 256.0,
+   "end": 283.0,
+   "focus": "bowl",
+   "done_when": "bowl contains the chopped garlic and separated onion slices and cutting board is mostly empty",
+   "needs": [
+    4,
+    6
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step7_start.jpg",
+    "end": "step7_end.jpg"
+   }
+  },
+  {
+   "id": 8,
+   "do": "Crumble {instant_noodle_packet} of dry noodles into the bowl with the onion and garlic",
+   "verb": "crumble",
+   "objects": [
+    "instant noodles",
+    "bowl"
+   ],
+   "tools": [],
+   "start": 280.0,
+   "end": 303.0,
+   "focus": "noodle pieces",
+   "done_when": "dry noodle block is broken into small crumbled pieces mixed with onion in the bowl",
+   "needs": [
+    2,
+    7
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step8_start.jpg",
+    "end": "step8_end.jpg"
+   }
+  },
+  {
+   "id": 9,
+   "do": "Add {water} to the bowl to cover and soak the noodles",
+   "verb": "add",
+   "objects": [
+    "water",
+    "bowl",
+    "instant noodles"
+   ],
+   "tools": [
+    "sink faucet"
+   ],
+   "start": 300.0,
+   "end": 315.0,
+   "focus": "bowl",
+   "done_when": "bowl is filled with water and noodles are submerged and wet",
+   "needs": [
+    8
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step9_start.jpg",
+    "end": "step9_end.jpg"
+   }
+  },
+  {
+   "id": 10,
+   "do": "Place the bowl in the microwave and cover it with a plate",
+   "verb": "place",
+   "objects": [
+    "bowl",
+    "plate",
+    "microwave"
+   ],
+   "tools": [
+    "microwave"
+   ],
+   "start": 312.0,
+   "end": 331.0,
+   "focus": "bowl",
+   "done_when": "bowl sits inside the microwave covered by a plate with the door ready to close",
+   "needs": [
+    9
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step10_start.jpg",
+    "end": "step10_end.jpg"
+   }
+  },
+  {
+   "id": 11,
+   "do": "Heat the bowl in the microwave for {microwave_time}",
+   "verb": "heat",
+   "objects": [
+    "bowl",
+    "microwave"
+   ],
+   "tools": [
+    "microwave"
+   ],
+   "start": 332.0,
+   "end": 343.0,
+   "focus": "microwave display",
+   "done_when": "microwave display shows {microwave_time} and is running with the door closed",
+   "needs": [
+    10
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step11_start.jpg",
+    "end": "step11_end.jpg"
+   }
+  },
+  {
+   "id": 12,
+   "do": "Remove the bowl and plate from the microwave to the counter",
+   "verb": "remove",
+   "objects": [
+    "bowl",
+    "plate",
+    "microwave"
+   ],
+   "tools": [],
+   "start": 580.0,
+   "end": 643.0,
+   "focus": "bowl",
+   "done_when": "bowl of heated noodles sits uncovered on the counter and microwave is open and empty",
+   "needs": [
+    11
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step12_start.jpg",
+    "end": "step12_end.jpg"
+   }
+  },
+  {
+   "id": 13,
+   "do": "Sprinkle seasoning over the noodles in the bowl",
+   "verb": "season",
+   "objects": [
+    "instant noodles",
+    "seasoning"
+   ],
+   "tools": [
+    "seasoning jar"
+   ],
+   "start": 640.0,
+   "end": 679.0,
+   "focus": "seasoned noodles",
+   "done_when": "dry seasoning powder is visible scattered over the noodles in the bowl",
+   "needs": [
+    12
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step13_start.jpg",
+    "end": "step13_end.jpg"
+   }
+  },
+  {
+   "id": 14,
+   "do": "Chop {cilantro_sprigs} of cilantro on the cutting board",
+   "verb": "chop",
+   "objects": [
+    "cilantro"
+   ],
+   "tools": [
+    "knife",
+    "cutting board"
+   ],
+   "start": 680.0,
+   "end": 715.0,
+   "focus": "chopped herbs",
+   "done_when": "herbs are cut into small green pieces piled on the cutting board",
+   "needs": [
+    3
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step14_start.jpg",
+    "end": "step14_end.jpg"
+   }
+  },
+  {
+   "id": 15,
+   "do": "Add the chopped herbs and the contents of the seasoning packet to the noodle bowl",
+   "verb": "add",
+   "objects": [
+    "herbs",
+    "seasoning packet",
+    "bowl"
+   ],
+   "tools": [],
+   "start": 712.0,
+   "end": 739.0,
+   "focus": "noodle bowl",
+   "done_when": "green chopped herbs and seasoning granules rest on top of the noodles in the bowl",
+   "needs": [
+    13,
+    14
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step15_start.jpg",
+    "end": "step15_end.jpg"
+   }
+  },
+  {
+   "id": 16,
+   "do": "Stir the noodles, seasoning, and herbs together with a fork",
+   "verb": "stir",
+   "objects": [
+    "instant noodles",
+    "bowl"
+   ],
+   "tools": [
+    "fork"
+   ],
+   "start": 736.0,
+   "end": 774.0,
+   "focus": "noodle bowl",
+   "done_when": "noodles, broth, seasoning and herbs are evenly mixed in the bowl with fork resting inside",
+   "needs": [
+    15
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step16_start.jpg",
+    "end": "step16_end.jpg"
+   }
+  }
+ ],
+ "compiled_by": "meta-models/muse-spark-open-1026",
+ "learned_from": "4_2.mp4",
+ "video_seconds": 774.01
+}

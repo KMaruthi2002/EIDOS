@@ -1,0 +1,242 @@
+{
+ "title": "Herb and Tomato Omelette",
+ "domain": "cooking",
+ "inputs": {
+  "egg_count": "2",
+  "herb_bunch": "1 bunch",
+  "tomato_count": "1",
+  "oil_amount": "1 tablespoon",
+  "salt": "1 pinch",
+  "pepper": "1 pinch"
+ },
+ "steps": [
+  {
+   "id": 1,
+   "do": "Crack {egg_count} eggs into the bowl",
+   "verb": "crack",
+   "objects": [
+    "egg",
+    "bowl"
+   ],
+   "tools": [
+    "knife"
+   ],
+   "start": 32.0,
+   "end": 59.0,
+   "focus": "bowl",
+   "done_when": "raw cracked eggs with yolks visible sit in the bowl and empty shells are set aside on paper towel",
+   "needs": [],
+   "optional": false,
+   "evidence": {
+    "start": "step1_start.jpg",
+    "end": "step1_end.jpg"
+   }
+  },
+  {
+   "id": 2,
+   "do": "Destem {herb_bunch} fresh herbs and finely chop the leaves on the cutting board",
+   "verb": "chop",
+   "objects": [
+    "herbs",
+    "cutting board"
+   ],
+   "tools": [
+    "knife",
+    "cutting board"
+   ],
+   "start": 96.0,
+   "end": 303.0,
+   "focus": "chopped herbs",
+   "done_when": "small pile of finely chopped green herb leaves sits on the cutting board with bare stems separated to the side",
+   "needs": [],
+   "optional": false,
+   "evidence": {
+    "start": "step2_start.jpg",
+    "end": "step2_end.jpg"
+   }
+  },
+  {
+   "id": 3,
+   "do": "Wash, dry and slice {tomato_count} tomato into halves on the cutting board",
+   "verb": "slice",
+   "objects": [
+    "tomato",
+    "cutting board"
+   ],
+   "tools": [
+    "knife",
+    "cutting board"
+   ],
+   "start": 308.0,
+   "end": 351.0,
+   "focus": "tomato halves",
+   "done_when": "tomato cut into two halves lies on the cutting board with stem removed",
+   "needs": [],
+   "optional": false,
+   "evidence": {
+    "start": "step3_start.jpg",
+    "end": "step3_end.jpg"
+   }
+  },
+  {
+   "id": 4,
+   "do": "Add the chopped herbs to the bowl with the eggs and season with {salt} salt and {pepper} pepper",
+   "verb": "season",
+   "objects": [
+    "herbs",
+    "egg",
+    "bowl"
+   ],
+   "tools": [
+    "spice jar",
+    "bowl"
+   ],
+   "start": 436.0,
+   "end": 531.0,
+   "focus": "bowl",
+   "done_when": "bowl contains cracked eggs topped with a mound of chopped green herbs and visible seasoning",
+   "needs": [
+    1,
+    2
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step4_start.jpg",
+    "end": "step4_end.jpg"
+   }
+  },
+  {
+   "id": 5,
+   "do": "Whisk the egg and herb mixture with a fork until evenly blended",
+   "verb": "whisk",
+   "objects": [
+    "egg",
+    "herbs",
+    "bowl"
+   ],
+   "tools": [
+    "fork",
+    "bowl"
+   ],
+   "start": 536.0,
+   "end": 551.0,
+   "focus": "bowl",
+   "done_when": "egg and herbs are blended into a uniform yellow-green liquid in the bowl with no streaks of yolk",
+   "needs": [
+    4
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step5_start.jpg",
+    "end": "step5_end.jpg"
+   }
+  },
+  {
+   "id": 6,
+   "do": "Scrub the frying pan clean, dry it, place on the burner and add {oil_amount} cooking oil to coat",
+   "verb": "heat",
+   "objects": [
+    "frying pan",
+    "cooking oil"
+   ],
+   "tools": [
+    "sponge",
+    "stove"
+   ],
+   "start": 596.0,
+   "end": 735.0,
+   "focus": "frying pan",
+   "done_when": "clean frying pan sits on the burner with a thin even layer of oil coating the bottom",
+   "needs": [],
+   "optional": false,
+   "evidence": {
+    "start": "step6_start.jpg",
+    "end": "step6_end.jpg"
+   }
+  },
+  {
+   "id": 7,
+   "do": "Place the tomato halves cut-side down in the hot oiled pan and fry briefly",
+   "verb": "fry",
+   "objects": [
+    "tomato",
+    "frying pan"
+   ],
+   "tools": [
+    "spatula"
+   ],
+   "start": 772.0,
+   "end": 791.0,
+   "focus": "tomato halves",
+   "done_when": "two tomato halves rest cut-side down in the frying pan on the stove",
+   "needs": [
+    3,
+    6
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step7_start.jpg",
+    "end": "step7_end.jpg"
+   }
+  },
+  {
+   "id": 8,
+   "do": "Pour the whisked egg and herb mixture into the pan around the tomatoes and cook while stirring until set",
+   "verb": "cook",
+   "objects": [
+    "egg",
+    "herbs",
+    "tomato",
+    "frying pan"
+   ],
+   "tools": [
+    "spatula",
+    "wooden spoon"
+   ],
+   "start": 864.0,
+   "end": 1303.0,
+   "focus": "frying pan",
+   "done_when": "egg is set opaque and lightly browned around the tomatoes with green herbs distributed throughout the pan",
+   "needs": [
+    5,
+    7
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step8_start.jpg",
+    "end": "step8_end.jpg"
+   }
+  },
+  {
+   "id": 9,
+   "do": "Transfer the cooked egg and tomatoes from the pan to the plate",
+   "verb": "plate",
+   "objects": [
+    "egg",
+    "tomato",
+    "plate"
+   ],
+   "tools": [
+    "spatula",
+    "wooden spoon"
+   ],
+   "start": 1304.0,
+   "end": 1315.0,
+   "focus": "plate",
+   "done_when": "cooked green egg and two tomato halves sit together on the plate with the pan empty",
+   "needs": [
+    8
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step9_start.jpg",
+    "end": "step9_end.jpg"
+   }
+  }
+ ],
+ "compiled_by": "meta-models/muse-spark-open-1026",
+ "learned_from": "22_4.mp4",
+ "video_seconds": 1329.03,
+ "recipe": "Herb Omelet with Fried Tomatoes",
+ "learn_seconds": 377.0
+}

@@ -1,0 +1,233 @@
+{
+ "title": "Garlic Zucchini Noodles",
+ "domain": "cooking",
+ "inputs": {
+  "zucchini": "1 medium",
+  "garlic": "2 cloves",
+  "oil": "1 tablespoon",
+  "seasoning": "1 teaspoon"
+ },
+ "steps": [
+  {
+   "id": 1,
+   "do": "Wash {zucchini} zucchini under running water",
+   "verb": "wash",
+   "objects": [
+    "zucchini"
+   ],
+   "tools": [
+    "sink",
+    "faucet"
+   ],
+   "start": 16.0,
+   "end": 23.0,
+   "focus": "zucchini",
+   "done_when": "zucchini is clean and wet in the sink",
+   "needs": [],
+   "optional": false,
+   "evidence": {
+    "start": "step1_start.jpg",
+    "end": "step1_end.jpg"
+   }
+  },
+  {
+   "id": 2,
+   "do": "Pat the zucchini dry with a paper towel",
+   "verb": "dry",
+   "objects": [
+    "zucchini"
+   ],
+   "tools": [
+    "paper towel"
+   ],
+   "start": 44.0,
+   "end": 51.0,
+   "focus": "zucchini",
+   "done_when": "zucchini is dry on the counter with no water droplets",
+   "needs": [
+    1
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step2_start.jpg",
+    "end": "step2_end.jpg"
+   }
+  },
+  {
+   "id": 3,
+   "do": "Spiralize {zucchini} zucchini into noodles onto the plate using the handheld spiralizer",
+   "verb": "spiralize",
+   "objects": [
+    "zucchini",
+    "plate"
+   ],
+   "tools": [
+    "handheld spiralizer"
+   ],
+   "start": 204.0,
+   "end": 215.0,
+   "focus": "zucchini noodles",
+   "done_when": "pile of spiralized zucchini noodles is on the plate",
+   "needs": [
+    2
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step3_start.jpg",
+    "end": "step3_end.jpg"
+   }
+  },
+  {
+   "id": 4,
+   "do": "Heat {oil} oil in the frying pan on the stovetop until bubbling",
+   "verb": "heat",
+   "objects": [
+    "oil",
+    "frying pan"
+   ],
+   "tools": [
+    "frying pan",
+    "stovetop"
+   ],
+   "start": 332.0,
+   "end": 343.0,
+   "focus": "oil",
+   "done_when": "oil is melted and bubbling across the bottom of the pan on the burner",
+   "needs": [],
+   "optional": false,
+   "evidence": {
+    "start": "step4_start.jpg",
+    "end": "step4_end.jpg"
+   }
+  },
+  {
+   "id": 5,
+   "do": "Mince {garlic} garlic on the cutting board with the knife",
+   "verb": "mince",
+   "objects": [
+    "garlic",
+    "cutting board"
+   ],
+   "tools": [
+    "knife",
+    "cutting board"
+   ],
+   "start": 456.0,
+   "end": 491.0,
+   "focus": "minced garlic",
+   "done_when": "small pile of finely minced garlic is on the cutting board",
+   "needs": [],
+   "optional": false,
+   "evidence": {
+    "start": "step5_start.jpg",
+    "end": "step5_end.jpg"
+   }
+  },
+  {
+   "id": 6,
+   "do": "Add the minced garlic to the hot oil and saute briefly",
+   "verb": "saute",
+   "objects": [
+    "garlic",
+    "oil"
+   ],
+   "tools": [
+    "frying pan",
+    "knife"
+   ],
+   "start": 524.0,
+   "end": 535.0,
+   "focus": "garlic",
+   "done_when": "minced garlic is sizzling in the hot oil in the pan",
+   "needs": [
+    4,
+    5
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step6_start.jpg",
+    "end": "step6_end.jpg"
+   }
+  },
+  {
+   "id": 7,
+   "do": "Add the zucchini noodles from the plate to the pan",
+   "verb": "add",
+   "objects": [
+    "zucchini noodles",
+    "frying pan"
+   ],
+   "tools": [
+    "plate",
+    "frying pan"
+   ],
+   "start": 676.0,
+   "end": 699.0,
+   "focus": "zucchini noodles",
+   "done_when": "zucchini noodles are in the frying pan and the plate is empty",
+   "needs": [
+    3,
+    6
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step7_start.jpg",
+    "end": "step7_end.jpg"
+   }
+  },
+  {
+   "id": 8,
+   "do": "Sprinkle {seasoning} seasoning over the noodles in the pan",
+   "verb": "season",
+   "objects": [
+    "seasoning",
+    "zucchini noodles"
+   ],
+   "tools": [
+    "seasoning jar",
+    "measuring spoon"
+   ],
+   "start": 752.0,
+   "end": 795.0,
+   "focus": "seasoning",
+   "done_when": "light-colored seasoning powder is visible on top of the green noodles in the pan",
+   "needs": [
+    7
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step8_start.jpg",
+    "end": "step8_end.jpg"
+   }
+  },
+  {
+   "id": 9,
+   "do": "Stir the noodles in the pan with the spatula until evenly mixed and tender",
+   "verb": "stir",
+   "objects": [
+    "zucchini noodles",
+    "frying pan"
+   ],
+   "tools": [
+    "spatula"
+   ],
+   "start": 796.0,
+   "end": 815.0,
+   "focus": "noodles",
+   "done_when": "noodles are evenly spread and mixed in the pan",
+   "needs": [
+    8
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step9_start.jpg",
+    "end": "step9_end.jpg"
+   }
+  }
+ ],
+ "compiled_by": "meta-models/muse-spark-open-1026",
+ "learned_from": "18_8.mp4",
+ "video_seconds": 1107.01,
+ "recipe": "Zoodles",
+ "learn_seconds": 296.6
+}

@@ -1,0 +1,244 @@
+{
+ "title": "Pour-over coffee",
+ "domain": "coffee",
+ "inputs": {
+  "coffee_beans": "16 g"
+ },
+ "steps": [
+  {
+   "id": 1,
+   "do": "Place the mug on the counter and set the filter inside it",
+   "verb": "place",
+   "objects": [
+    "mug",
+    "filter"
+   ],
+   "tools": [],
+   "start": 24.0,
+   "end": 43.0,
+   "focus": "mug",
+   "done_when": "mug sitting on counter with filter seated inside it",
+   "needs": [],
+   "optional": false,
+   "evidence": {
+    "start": "step1_start.jpg",
+    "end": "step1_end.jpg"
+   }
+  },
+  {
+   "id": 2,
+   "do": "Place the bowl on the scale and tare the scale to zero",
+   "verb": "tare",
+   "objects": [
+    "bowl",
+    "scale"
+   ],
+   "tools": [
+    "scale"
+   ],
+   "start": 52.0,
+   "end": 79.0,
+   "focus": "scale",
+   "done_when": "bowl sitting on scale with display reading zero",
+   "needs": [],
+   "optional": false,
+   "evidence": {
+    "start": "step2_start.jpg",
+    "end": "step2_end.jpg"
+   }
+  },
+  {
+   "id": 3,
+   "do": "Add {coffee_beans} of coffee beans to the bowl on the scale",
+   "verb": "add",
+   "objects": [
+    "coffee beans",
+    "bowl"
+   ],
+   "tools": [
+    "scale"
+   ],
+   "start": 76.0,
+   "end": 107.0,
+   "focus": "bowl",
+   "done_when": "bowl on scale contains dark coffee beans",
+   "needs": [
+    2
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step3_start.jpg",
+    "end": "step3_end.jpg"
+   }
+  },
+  {
+   "id": 4,
+   "do": "Transfer the coffee beans to the grinder and secure the lid",
+   "verb": "fill",
+   "objects": [
+    "coffee beans",
+    "grinder"
+   ],
+   "tools": [
+    "grinder"
+   ],
+   "start": 140.0,
+   "end": 147.0,
+   "focus": "grinder",
+   "done_when": "grinder capped and containing coffee beans",
+   "needs": [
+    3
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step4_start.jpg",
+    "end": "step4_end.jpg"
+   }
+  },
+  {
+   "id": 5,
+   "do": "Fill the kettle with water and heat it to brewing temperature",
+   "verb": "heat",
+   "objects": [
+    "water",
+    "kettle"
+   ],
+   "tools": [
+    "kettle",
+    "thermometer"
+   ],
+   "start": 452.0,
+   "end": 519.0,
+   "focus": "kettle",
+   "done_when": "kettle contains hot water",
+   "needs": [],
+   "optional": false,
+   "evidence": {
+    "start": "step5_start.jpg",
+    "end": "step5_end.jpg"
+   }
+  },
+  {
+   "id": 6,
+   "do": "Grind the coffee beans into the bowl",
+   "verb": "grind",
+   "objects": [
+    "coffee beans"
+   ],
+   "tools": [
+    "grinder",
+    "bowl"
+   ],
+   "start": 548.0,
+   "end": 555.0,
+   "focus": "ground coffee",
+   "done_when": "bowl contains finely ground coffee powder",
+   "needs": [
+    4
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step6_start.jpg",
+    "end": "step6_end.jpg"
+   }
+  },
+  {
+   "id": 7,
+   "do": "Place the filter in the brewer and add the ground coffee to the filter",
+   "verb": "add",
+   "objects": [
+    "filter",
+    "ground coffee",
+    "brewer"
+   ],
+   "tools": [],
+   "start": 552.0,
+   "end": 567.0,
+   "focus": "filter",
+   "done_when": "filter seated in brewer containing dry ground coffee",
+   "needs": [
+    1,
+    6
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step7_start.jpg",
+    "end": "step7_end.jpg"
+   }
+  },
+  {
+   "id": 8,
+   "do": "Pour hot water from the kettle over the coffee grounds in the filter",
+   "verb": "pour",
+   "objects": [
+    "water",
+    "coffee grounds"
+   ],
+   "tools": [
+    "kettle"
+   ],
+   "start": 556.0,
+   "end": 659.0,
+   "focus": "mug",
+   "done_when": "mug contains dark brewed coffee and filter holds wet grounds",
+   "needs": [
+    5,
+    7
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step8_start.jpg",
+    "end": "step8_end.jpg"
+   }
+  },
+  {
+   "id": 9,
+   "do": "Stir the brewed coffee in the mug",
+   "verb": "stir",
+   "objects": [
+    "coffee",
+    "mug"
+   ],
+   "tools": [
+    "spoon"
+   ],
+   "start": 716.0,
+   "end": 723.0,
+   "focus": "mug",
+   "done_when": "coffee in mug is uniformly mixed",
+   "needs": [
+    8
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step9_start.jpg",
+    "end": "step9_end.jpg"
+   }
+  },
+  {
+   "id": 10,
+   "do": "Remove and discard the used filter and coffee grounds",
+   "verb": "discard",
+   "objects": [
+    "filter",
+    "coffee grounds"
+   ],
+   "tools": [],
+   "start": 804.0,
+   "end": 819.0,
+   "focus": "filter",
+   "done_when": "used filter and spent grounds removed from brewer, mug holds clear brewed coffee",
+   "needs": [
+    8
+   ],
+   "optional": true,
+   "evidence": {
+    "start": "step10_start.jpg",
+    "end": "step10_end.jpg"
+   }
+  }
+ ],
+ "compiled_by": "meta-models/muse-spark-open-1026",
+ "learned_from": "5_2.mp4",
+ "video_seconds": 819.02
+}

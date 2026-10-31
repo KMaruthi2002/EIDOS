@@ -1,0 +1,321 @@
+{
+ "title": "Tomato Cheese Toast",
+ "domain": "cooking",
+ "inputs": {
+  "baguette_loaves": "2 loaves",
+  "bread_slices": "2 slices",
+  "cherry_tomatoes": "1 cup (about 8 tomatoes)",
+  "shredded_cheese": "1/2 cup",
+  "olive_oil": "2 tablespoons",
+  "salt": "1 teaspoon",
+  "seasoning": "1 spoonful",
+  "egg_wash": "1 small bowl"
+ },
+ "steps": [
+  {
+   "id": 1,
+   "do": "Pour white powder with {salt} and {seasoning} into the bowl containing butter on the stovetop",
+   "verb": "pour",
+   "objects": [
+    "bowl",
+    "butter",
+    "white powder",
+    "salt",
+    "seasoning"
+   ],
+   "tools": [
+    "measuring spoon",
+    "canister"
+   ],
+   "start": 20.0,
+   "end": 71.0,
+   "focus": "bowl",
+   "done_when": "the bowl on the stovetop contains white powder, salt and seasoning mixed with butter",
+   "needs": [],
+   "optional": false,
+   "evidence": {
+    "start": "step1_start.jpg",
+    "end": "step1_end.jpg"
+   }
+  },
+  {
+   "id": 2,
+   "do": "Cut open the package of {baguette_loaves} and place one loaf on the cutting board",
+   "verb": "cut",
+   "objects": [
+    "baguette",
+    "package",
+    "cutting board"
+   ],
+   "tools": [
+    "scissors"
+   ],
+   "start": 96.0,
+   "end": 115.0,
+   "focus": "baguette",
+   "done_when": "one baguette loaf rests on the cutting board with the opened package nearby",
+   "needs": [],
+   "optional": false,
+   "evidence": {
+    "start": "step2_start.jpg",
+    "end": "step2_end.jpg"
+   }
+  },
+  {
+   "id": 3,
+   "do": "Slice {bread_slices} from the baguette on the cutting board",
+   "verb": "slice",
+   "objects": [
+    "baguette",
+    "bread slices"
+   ],
+   "tools": [
+    "knife",
+    "cutting board"
+   ],
+   "start": 148.0,
+   "end": 183.0,
+   "focus": "bread slices",
+   "done_when": "two even bread slices lie separated on the cutting board with the remaining loaf showing fresh cut ends",
+   "needs": [
+    2
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step3_start.jpg",
+    "end": "step3_end.jpg"
+   }
+  },
+  {
+   "id": 4,
+   "do": "Scoop {shredded_cheese} and {seasoning} into the bowl on the stovetop",
+   "verb": "scoop",
+   "objects": [
+    "shredded cheese",
+    "seasoning",
+    "bowl"
+   ],
+   "tools": [
+    "measuring cup",
+    "measuring spoon"
+   ],
+   "start": 332.0,
+   "end": 395.0,
+   "focus": "bowl",
+   "done_when": "the bowl on the stovetop holds a mound of shredded cheese topped with seasoning",
+   "needs": [
+    1
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step4_start.jpg",
+    "end": "step4_end.jpg"
+   }
+  },
+  {
+   "id": 5,
+   "do": "Pour {olive_oil} into the frying pan on the burner",
+   "verb": "pour",
+   "objects": [
+    "olive oil",
+    "frying pan"
+   ],
+   "tools": [
+    "oil bottle"
+   ],
+   "start": 432.0,
+   "end": 475.0,
+   "focus": "frying pan",
+   "done_when": "the frying pan on the burner contains a shallow pool of yellow oil",
+   "needs": [],
+   "optional": false,
+   "evidence": {
+    "start": "step5_start.jpg",
+    "end": "step5_end.jpg"
+   }
+  },
+  {
+   "id": 6,
+   "do": "Brush {egg_wash} evenly onto both sides of {bread_slices} on the cutting board",
+   "verb": "brush",
+   "objects": [
+    "bread slices",
+    "egg wash"
+   ],
+   "tools": [
+    "pastry brush",
+    "small bowl"
+   ],
+   "start": 508.0,
+   "end": 591.0,
+   "focus": "bread slices",
+   "done_when": "both bread slices on the cutting board appear glossy and evenly coated with yellow egg wash",
+   "needs": [
+    3
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step6_start.jpg",
+    "end": "step6_end.jpg"
+   }
+  },
+  {
+   "id": 7,
+   "do": "Measure {cherry_tomatoes} and rinse them under running water",
+   "verb": "rinse",
+   "objects": [
+    "cherry tomatoes"
+   ],
+   "tools": [
+    "measuring cup",
+    "sink"
+   ],
+   "start": 672.0,
+   "end": 755.0,
+   "focus": "cherry tomatoes",
+   "done_when": "about eight clean cherry tomatoes sit on the cutting board with water droplets visible",
+   "needs": [],
+   "optional": false,
+   "evidence": {
+    "start": "step7_start.jpg",
+    "end": "step7_end.jpg"
+   }
+  },
+  {
+   "id": 8,
+   "do": "Slice the rinsed cherry tomatoes in half on the cutting board",
+   "verb": "slice",
+   "objects": [
+    "cherry tomatoes"
+   ],
+   "tools": [
+    "knife",
+    "cutting board"
+   ],
+   "start": 756.0,
+   "end": 795.0,
+   "focus": "tomato halves",
+   "done_when": "a pile of halved cherry tomatoes is spread across the cutting board",
+   "needs": [
+    7
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step8_start.jpg",
+    "end": "step8_end.jpg"
+   }
+  },
+  {
+   "id": 9,
+   "do": "Transfer the sliced tomatoes into the bowl and mix with the cheese and seasoning",
+   "verb": "mix",
+   "objects": [
+    "cherry tomatoes",
+    "bowl",
+    "shredded cheese"
+   ],
+   "tools": [
+    "knife",
+    "cutting board",
+    "spoon"
+   ],
+   "start": 808.0,
+   "end": 823.0,
+   "focus": "bowl",
+   "done_when": "the bowl contains evenly mixed chopped tomatoes and shredded cheese",
+   "needs": [
+    4,
+    8
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step9_start.jpg",
+    "end": "step9_end.jpg"
+   }
+  },
+  {
+   "id": 10,
+   "do": "Pan-fry {bread_slices} in the hot oiled pan, flipping until golden on both sides",
+   "verb": "fry",
+   "objects": [
+    "bread slices",
+    "frying pan"
+   ],
+   "tools": [
+    "spatula",
+    "frying pan"
+   ],
+   "start": 1024.0,
+   "end": 1115.0,
+   "focus": "toast",
+   "done_when": "two golden-brown toasted bread slices sizzle in the frying pan on the glowing burner",
+   "needs": [
+    5,
+    6
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step10_start.jpg",
+    "end": "step10_end.jpg"
+   }
+  },
+  {
+   "id": 11,
+   "do": "Transfer the fried {bread_slices} from the pan to the plate on the counter",
+   "verb": "transfer",
+   "objects": [
+    "bread slices",
+    "plate",
+    "frying pan"
+   ],
+   "tools": [
+    "spatula"
+   ],
+   "start": 1116.0,
+   "end": 1131.0,
+   "focus": "plate",
+   "done_when": "two fried bread slices rest side by side on the white patterned plate",
+   "needs": [
+    10
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step11_start.jpg",
+    "end": "step11_end.jpg"
+   }
+  },
+  {
+   "id": 12,
+   "do": "Spoon the tomato-cheese mixture from the bowl onto the {bread_slices} on the plate",
+   "verb": "spoon",
+   "objects": [
+    "tomato mixture",
+    "bread slices",
+    "plate",
+    "bowl"
+   ],
+   "tools": [
+    "spoon",
+    "bowl"
+   ],
+   "start": 1168.0,
+   "end": 1267.0,
+   "focus": "topped toast",
+   "done_when": "both toast slices on the plate are generously covered with chunky tomato-cheese topping and the bowl is nearly empty",
+   "needs": [
+    9,
+    11
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step12_start.jpg",
+    "end": "step12_end.jpg"
+   }
+  }
+ ],
+ "compiled_by": "meta-models/muse-spark-open-1026",
+ "learned_from": "29_6.mp4",
+ "video_seconds": 1280.01,
+ "recipe": "Caprese Bruschetta",
+ "learn_seconds": 357.4
+}

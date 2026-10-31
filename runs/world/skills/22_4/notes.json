@@ -1,0 +1,4471 @@
+[
+ {
+  "t0": 0.0,
+  "t1": 7.01,
+  "action": "picks up and holds bowl",
+  "objects": [
+   "floral bowl"
+  ],
+  "tools": [],
+  "amount": "one bowl",
+  "after": "the white floral bowl has been removed from the dish rack on the left and is now held in both hands on the right side of the sink"
+ },
+ {
+  "t0": 4.0,
+  "t1": 11.01,
+  "action": "carries bowl from dish rack to counter and reaches for paper towel",
+  "objects": [
+   "white bowl with red floral pattern"
+  ],
+  "tools": [
+   "paper towel roll"
+  ],
+  "amount": null,
+  "after": "bowl moved from drying rack by the sink to the countertop next to the tablet, hands now gripping the paper towel roll"
+ },
+ {
+  "t0": 8.01,
+  "t1": 15.02,
+  "action": "tears paper towel and covers bowl",
+  "objects": [
+   "bowl",
+   "paper towel sheet"
+  ],
+  "tools": [
+   "paper towel roll"
+  ],
+  "amount": null,
+  "after": "a sheet is torn from the paper towel roll and laid over the bowl on the counter"
+ },
+ {
+  "t0": 12.01,
+  "t1": 19.02,
+  "action": "tear and lay paper towel to position cable",
+  "objects": [
+   "paper towel sheet",
+   "black cable"
+  ],
+  "tools": [],
+  "amount": "one sheet",
+  "after": "a sheet of paper towel is torn from the roll and laid flat on the counter with the black cable placed on top of it"
+ },
+ {
+  "t0": 16.02,
+  "t1": 23.02,
+  "action": "arrange tablet cable and open refrigerator to retrieve item",
+  "objects": [
+   "charging cable",
+   "tablet",
+   "refrigerator contents"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "cable repositioned at back of counter near tablet and refrigerator door opened with hand reaching inside for an item"
+ },
+ {
+  "t0": 20.02,
+  "t1": 27.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "pasture-raised egg carton moved from inside refrigerator to countertop, refrigerator door now open"
+ },
+ {
+  "t0": 24.02,
+  "t1": 31.03,
+  "action": "retrieves egg carton from fridge and opens it",
+  "objects": [
+   "egg carton",
+   "eggs"
+  ],
+  "tools": [],
+  "amount": "12 eggs",
+  "after": "egg carton is on the countertop open with a dozen eggs exposed and the fridge door is closed"
+ },
+ {
+  "t0": 28.03,
+  "t1": 35.0,
+  "action": "open egg carton and pick up an egg",
+  "objects": [
+   "egg carton",
+   "egg"
+  ],
+  "tools": [],
+  "amount": "1 egg",
+  "after": "carton is open on the counter with eggs exposed and one egg removed from the carton, view shifts to sink area with an empty bowl on the counter"
+ },
+ {
+  "t0": 32.03,
+  "t1": 39.01,
+  "action": "crack an egg and retrieve a knife",
+  "objects": [
+   "eggs",
+   "bowl"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": "1 egg cracked into bowl, 2 eggs handled",
+  "after": "one egg is cracked into a small bowl by the sink, fewer eggs remain in the carton, a drawer is open and a knife is held in the hands"
+ },
+ {
+  "t0": 36.0,
+  "t1": 43.01,
+  "action": "taps an egg with a knife to crack it",
+  "objects": [
+   "egg",
+   "bowl"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": "1 egg",
+  "after": "person now holds an egg and a knife over the bowl at the sink, drawer left open with utensils visible"
+ },
+ {
+  "t0": 40.01,
+  "t1": 47.01,
+  "action": "tap egg with knife to crack it over bowl",
+  "objects": [
+   "egg",
+   "bowl"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": "1 egg",
+  "after": "drawer closed and person moved to sink counter holding egg over bowl tapping it with knife, egg still intact"
+ },
+ {
+  "t0": 44.01,
+  "t1": 51.02,
+  "action": "cracking an egg",
+  "objects": [
+   "egg"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": "one egg",
+  "after": "egg shell is split open over the bowl"
+ },
+ {
+  "t0": 48.01,
+  "t1": 55.02,
+  "action": "crack an egg",
+  "objects": [
+   "egg"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": "1 egg",
+  "after": "egg is cracked open into the bowl"
+ },
+ {
+  "t0": 52.02,
+  "t1": 59.03,
+  "action": "crack an egg into a bowl",
+  "objects": [
+   "egg",
+   "bowl"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": "1 egg",
+  "after": "whole egg becomes cracked raw egg in bowl and empty shell placed on paper towel"
+ },
+ {
+  "t0": 56.02,
+  "t1": 63.03,
+  "action": "wash hands after handling egg",
+  "objects": [
+   "egg",
+   "bowl"
+  ],
+  "tools": [
+   "sink faucet"
+  ],
+  "amount": null,
+  "after": "bowl with cracked egg left on counter and hands are washed"
+ },
+ {
+  "t0": 60.03,
+  "t1": 67.0,
+  "action": "rinse hands and tear paper towel",
+  "objects": [
+   "hands",
+   "frying pan",
+   "mug"
+  ],
+  "tools": [
+   "sink faucet sprayer",
+   "paper towel roll"
+  ],
+  "amount": null,
+  "after": "hands are out of the sink and dry, a sheet has been pulled from the paper towel roll, pan and mug remain soaking in the sink"
+ },
+ {
+  "t0": 64.03,
+  "t1": 71.0,
+  "action": "tear paper towel and take plate",
+  "objects": [
+   "paper towel roll",
+   "white plate"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a sheet is torn from the paper towel roll on the counter and a white plate is removed from the dish rack by the sink and carried to the stove area where a carton of eggs is visible"
+ },
+ {
+  "t0": 68.0,
+  "t1": 75.01,
+  "action": "sets out bowl and bacon to prepare cooking",
+  "objects": [
+   "white bowl",
+   "egg carton with eggs",
+   "bacon package"
+  ],
+  "tools": [],
+  "amount": "12 eggs in carton, 2 cracked eggs in bowl on counter",
+  "after": "white bowl moved from dish rack to counter by the stove and a package of bacon placed on the counter next to the egg carton"
+ },
+ {
+  "t0": 72.01,
+  "t1": 79.01,
+  "action": "puts egg carton in refrigerator",
+  "objects": [
+   "egg carton",
+   "eggs"
+  ],
+  "tools": [],
+  "amount": "12 eggs",
+  "after": "open egg carton on counter is closed and placed inside the open refrigerator, counter cleared"
+ },
+ {
+  "t0": 76.01,
+  "t1": 83.02,
+  "action": "puts box in refrigerator",
+  "objects": [
+   "burger box",
+   "refrigerator"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "burger box is no longer in hand and is stored on a shelf inside the closed refrigerator"
+ },
+ {
+  "t0": 80.01,
+  "t1": 87.02,
+  "action": "removes plastic bag from fridge and opens it",
+  "objects": [
+   "plastic grocery bag",
+   "refrigerator door"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "refrigerator door is closed and plastic bag is on the countertop held open"
+ },
+ {
+  "t0": 84.02,
+  "t1": 91.02,
+  "action": "opens plastic bag and retrieves cutting board",
+  "objects": [
+   "plastic shopping bag",
+   "cutting board"
+  ],
+  "tools": [
+   "green cutting board"
+  ],
+  "amount": null,
+  "after": "plastic bag is opened and left on the counter and a bright green cutting board is now held up in both hands over the stove area"
+ },
+ {
+  "t0": 88.02,
+  "t1": 95.03,
+  "action": "places cutting board on counter",
+  "objects": [
+   "green cutting board"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "green cutting board moved from dish rack by sink to countertop next to stove with hands resting on it"
+ },
+ {
+  "t0": 92.03,
+  "t1": 99.03,
+  "action": "positions cutting board and opens bag of greens",
+  "objects": [
+   "green cutting board",
+   "plastic grocery bag",
+   "leafy greens",
+   "white bowl"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "cutting board is laid flat on counter and plastic grocery bag is pulled open with both hands reaching into leafy greens"
+ },
+ {
+  "t0": 96.03,
+  "t1": 103.0,
+  "action": "pulls bunch of greens from plastic bag",
+  "objects": [
+   "leafy greens",
+   "plastic grocery bag"
+  ],
+  "tools": [],
+  "amount": "one bunch",
+  "after": "plastic bag is opened and bunch of leafy greens is lifted out and held in hands above the counter"
+ },
+ {
+  "t0": 100.03,
+  "t1": 107.01,
+  "action": "sorting cilantro",
+  "objects": [
+   "cilantro",
+   "plastic bag"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "bunch of cilantro pulled out of bag and held up over cutting board"
+ },
+ {
+  "t0": 104.0,
+  "t1": 111.01,
+  "action": "picks cilantro sprigs from bag onto cutting board",
+  "objects": [
+   "cilantro"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a small bunch of cilantro now lies on the green cutting board that was empty at the start"
+ },
+ {
+  "t0": 108.01,
+  "t1": 115.01,
+  "action": "sorting herbs on cutting board",
+  "objects": [
+   "herbs",
+   "plastic bag"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "plastic bag removed from counter and herbs gathered together on green cutting board with both hands"
+ },
+ {
+  "t0": 112.01,
+  "t1": 119.02,
+  "action": "destemming leafy herbs",
+  "objects": [
+   "leafy herbs"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "herbs are removed from the bag and spread on the cutting board with stems being separated from leaves"
+ },
+ {
+  "t0": 116.02,
+  "t1": 123.02,
+  "action": "plucking leaves from herb stems",
+  "objects": [
+   "herbs"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "several leaves detached from stems and left scattered on the green cutting board"
+ },
+ {
+  "t0": 120.02,
+  "t1": 127.03,
+  "action": "plucking leaves from herb stems",
+  "objects": [
+   "herbs"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "a small pile of detached leaves accumulates on the cutting board separated from the stems"
+ },
+ {
+  "t0": 124.02,
+  "t1": 131.03,
+  "action": "plucking parsley leaves",
+  "objects": [
+   "parsley sprigs"
+  ],
+  "tools": [
+   "green cutting board"
+  ],
+  "amount": null,
+  "after": "a small pile of detached leaves has accumulated on the right side of the cutting board separate from the stems"
+ },
+ {
+  "t0": 128.03,
+  "t1": 135.0,
+  "action": "plucking leaves from stems",
+  "objects": [
+   "herbs"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "leaves are stripped from stems and a small pile of plucked leaves accumulates on the cutting board"
+ },
+ {
+  "t0": 132.03,
+  "t1": 139.01,
+  "action": "plucking leaves from herb stems",
+  "objects": [
+   "herbs"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "leaves are stripped from stems and accumulate in a small pile on the green cutting board while bare stems are held aside"
+ },
+ {
+  "t0": 136.0,
+  "t1": 143.01,
+  "action": "destemming herbs",
+  "objects": [
+   "herbs"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "herbs separated into leaves and stems in two piles on the cutting board"
+ },
+ {
+  "t0": 140.01,
+  "t1": 147.01,
+  "action": "plucking leaves from herb stems",
+  "objects": [
+   "cilantro"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "leaves are stripped from the stems and a small pile of picked leaves accumulates on the cutting board while the bare stems are gathered in the hand"
+ },
+ {
+  "t0": 144.01,
+  "t1": 151.02,
+  "action": "stripping leaves from herb stems",
+  "objects": [
+   "fresh cilantro sprigs"
+  ],
+  "tools": [
+   "green cutting board"
+  ],
+  "amount": null,
+  "after": "a small pile of picked leaves accumulates on the right side of the cutting board while stripped bare stems are discarded to the top edge"
+ },
+ {
+  "t0": 148.01,
+  "t1": 155.02,
+  "action": "plucking herb leaves off stems",
+  "objects": [
+   "cilantro"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the bunch is broken apart and a small pile of picked leaves and stems accumulates on the green cutting board"
+ },
+ {
+  "t0": 152.02,
+  "t1": 159.03,
+  "action": "stripping leaves from herb stems",
+  "objects": [
+   "herbs"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "leaves are separated from stems and gathered in a pile on the green cutting board"
+ },
+ {
+  "t0": 156.02,
+  "t1": 163.03,
+  "action": "tying herbs into a bundle",
+  "objects": [
+   "herbs",
+   "herb stem"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a small bunch of herbs is gathered and tied together with a stem on the cutting board"
+ },
+ {
+  "t0": 160.03,
+  "t1": 167.0,
+  "action": "stripping herb leaves",
+  "objects": [
+   "herbs"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "herbs separated into a pile of leaves and a pile of stems on the cutting board"
+ },
+ {
+  "t0": 164.03,
+  "t1": 171.0,
+  "action": "stripping leaves from herb stems",
+  "objects": [
+   "cilantro",
+   "herbs"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "leaves are separated from stems and piled on the cutting board with bare stems set aside on the counter"
+ },
+ {
+  "t0": 168.0,
+  "t1": 175.01,
+  "action": "stripping leaves from herb stems",
+  "objects": [
+   "fresh herbs"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "herb leaves are separated from stems and gathered on the cutting board while hands hold the bare stems"
+ },
+ {
+  "t0": 172.01,
+  "t1": 179.01,
+  "action": "tearing herbs",
+  "objects": [
+   "herbs"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "a small pile of torn herb leaves is separated on the cutting board"
+ },
+ {
+  "t0": 176.01,
+  "t1": 183.02,
+  "action": "picking cilantro leaves",
+  "objects": [
+   "cilantro"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "cilantro separated into small piles of leaves on the cutting board with stripped stems set aside on the counter"
+ },
+ {
+  "t0": 180.01,
+  "t1": 187.02,
+  "action": "stripping herb leaves from stems",
+  "objects": [
+   "cilantro"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "more cilantro leaves are stripped from the stems and piled on the green cutting board with bare stems separated"
+ },
+ {
+  "t0": 184.02,
+  "t1": 191.02,
+  "action": "stripping herb stems by hand",
+  "objects": [
+   "fresh herbs",
+   "cilantro stems"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "leaves separated from stems and gathered in small piles on the cutting board"
+ },
+ {
+  "t0": 188.02,
+  "t1": 195.03,
+  "action": "stripping leaves from herb stems",
+  "objects": [
+   "cilantro sprigs",
+   "herb leaves"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "more leaves are detached from the stems and accumulate in a small pile on the green cutting board"
+ },
+ {
+  "t0": 192.03,
+  "t1": 199.03,
+  "action": "stripping leaves from herb stems",
+  "objects": [
+   "herb sprigs"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "leaves are separated from the stems and a pile of picked leaves accumulates on the green cutting board"
+ },
+ {
+  "t0": 196.03,
+  "t1": 203.0,
+  "action": "stripping herb leaves",
+  "objects": [
+   "cilantro sprigs"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "a pile of detached leaves accumulates on the green cutting board while stripped stems are set aside"
+ },
+ {
+  "t0": 200.03,
+  "t1": 207.01,
+  "action": "stripping leaves from herb stems",
+  "objects": [
+   "fresh herbs"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "a pile of stripped leaves accumulates on the green cutting board and more bare stems are separated"
+ },
+ {
+  "t0": 204.0,
+  "t1": 211.01,
+  "action": "stripping herb leaves by hand",
+  "objects": [
+   "green herbs"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "a larger pile of stripped leaves has accumulated on the green cutting board"
+ },
+ {
+  "t0": 208.01,
+  "t1": 215.01,
+  "action": "tearing green onions by hand",
+  "objects": [
+   "green onions"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a pile of small torn green pieces accumulates on the green cutting board"
+ },
+ {
+  "t0": 212.01,
+  "t1": 219.02,
+  "action": "tearing herbs by hand",
+  "objects": [
+   "leafy herbs"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "herbs are torn into small pieces and accumulate in a pile on the cutting board"
+ },
+ {
+  "t0": 216.02,
+  "t1": 223.02,
+  "action": "tearing greens by hand",
+  "objects": [
+   "green onions"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "loose greens on the cutting board are torn into small shreds and collected into a finer pile on the right side of the board"
+ },
+ {
+  "t0": 220.02,
+  "t1": 227.03,
+  "action": "tearing herbs by hand",
+  "objects": [
+   "green herbs"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a larger pile of small torn herb pieces has accumulated on the green cutting board"
+ },
+ {
+  "t0": 224.02,
+  "t1": 231.03,
+  "action": "stripping leaves from herb stems by hand",
+  "objects": [
+   "green herbs"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "leaves are separated from stems and form a small pile on the green cutting board"
+ },
+ {
+  "t0": 228.03,
+  "t1": 235.0,
+  "action": "plucking leaves from herb stems",
+  "objects": [
+   "herbs",
+   "cilantro stems"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "a small pile of detached leaves has accumulated on the green cutting board while the stems are stripped"
+ },
+ {
+  "t0": 232.03,
+  "t1": 239.01,
+  "action": "plucking cilantro leaves from stems",
+  "objects": [
+   "cilantro sprigs",
+   "cilantro leaves"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a small pile of stripped leaves accumulates on the green cutting board as stems are separated"
+ },
+ {
+  "t0": 236.0,
+  "t1": 243.01,
+  "action": "stripping leaves from herb stems",
+  "objects": [
+   "herb sprigs",
+   "herb leaves"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "a larger pile of stripped leaves has accumulated on the green cutting board and bare stems are set aside on the counter"
+ },
+ {
+  "t0": 240.01,
+  "t1": 247.01,
+  "action": "stripping herb leaves",
+  "objects": [
+   "herbs"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "several herb sprigs have been returned to the plastic bag on the left and a small pile of picked leaves remains on the green cutting board with discarded stems on the counter behind it"
+ },
+ {
+  "t0": 244.01,
+  "t1": 251.02,
+  "action": "prepares herbs",
+  "objects": [
+   "herbs",
+   "plastic bag"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "chopped herbs are piled on cutting board and refrigerator door is open"
+ },
+ {
+  "t0": 248.01,
+  "t1": 255.02,
+  "action": "gather chopped greens and retrieve item from refrigerator",
+  "objects": [
+   "chopped green herbs on cutting board",
+   "item in refrigerator door"
+  ],
+  "tools": [
+   "green cutting board",
+   "refrigerator"
+  ],
+  "amount": null,
+  "after": "herbs were picked up, moved and gathered on the board and the refrigerator was opened and an item taken from the door shelf before returning to the counter"
+ },
+ {
+  "t0": 252.02,
+  "t1": 259.03,
+  "action": "gather chopped green onions and retrieve knife",
+  "objects": [
+   "green onions",
+   "freezer door"
+  ],
+  "tools": [
+   "green cutting board",
+   "chef's knife"
+  ],
+  "amount": "small pile of chopped greens",
+  "after": "freezer is closed and chopped greens are gathered on cutting board with a large kitchen knife held up in hand"
+ },
+ {
+  "t0": 256.02,
+  "t1": 263.03,
+  "action": "chop herbs",
+  "objects": [
+   "herbs"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "knife has been retrieved and is chopping the herbs into smaller pieces on the cutting board"
+ },
+ {
+  "t0": 260.03,
+  "t1": 267.0,
+  "action": "chopping green onions",
+  "objects": [
+   "green onions"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "green onions are finely chopped into a small pile on the cutting board"
+ },
+ {
+  "t0": 264.03,
+  "t1": 271.0,
+  "action": "chopping green onions",
+  "objects": [
+   "green onions"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "a larger pile of finely chopped greens has accumulated on the cutting board"
+ },
+ {
+  "t0": 268.0,
+  "t1": 275.01,
+  "action": "chopping herbs",
+  "objects": [
+   "herbs"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "more of the held herbs have been finely chopped and the pile of chopped greens on the cutting board is larger"
+ },
+ {
+  "t0": 272.01,
+  "t1": 279.01,
+  "action": "chopping green onions",
+  "objects": [
+   "green onions"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "chopped greens are gathered into a more compact pile in the center of the board"
+ },
+ {
+  "t0": 276.01,
+  "t1": 283.02,
+  "action": "chopping herbs",
+  "objects": [
+   "herbs"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "herbs are more finely minced and spread across the cutting board"
+ },
+ {
+  "t0": 280.01,
+  "t1": 287.02,
+  "action": "chopping herbs",
+  "objects": [
+   "herbs"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "herbs are finely chopped into a small pile on the cutting board and the knife is set down"
+ },
+ {
+  "t0": 284.02,
+  "t1": 291.02,
+  "action": "chop herbs and tap tablet",
+  "objects": [
+   "green herbs",
+   "eggs",
+   "tablet"
+  ],
+  "tools": [
+   "knife",
+   "green cutting board"
+  ],
+  "amount": null,
+  "after": "herbs are finely chopped on the board and the person has moved from the stove to the sink counter where a bowl with cracked eggs sits next to a tablet being tapped"
+ },
+ {
+  "t0": 288.02,
+  "t1": 295.03,
+  "action": "check tablet and chop herbs",
+  "objects": [
+   "herbs",
+   "egg"
+  ],
+  "tools": [
+   "knife",
+   "cutting board",
+   "tablet"
+  ],
+  "amount": null,
+  "after": "an egg is cracked into a bowl by the sink and herbs are gathered and chopped on the green cutting board by the stove"
+ },
+ {
+  "t0": 292.03,
+  "t1": 299.03,
+  "action": "chop herbs",
+  "objects": [
+   "herbs"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "herbs go from whole bunch to finely chopped pile on green cutting board next to stove"
+ },
+ {
+  "t0": 296.03,
+  "t1": 303.0,
+  "action": "chopping and gathering herbs",
+  "objects": [
+   "herbs",
+   "green onions"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "knife moved from right hand to left hand at edge of board and right hand moves onto the pile of chopped herbs to gather it"
+ },
+ {
+  "t0": 300.03,
+  "t1": 307.01,
+  "action": "chop herbs",
+  "objects": [
+   "herbs"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "herbs finely chopped and gathered on board, knife set down on board, refrigerator door opened with hand reaching inside"
+ },
+ {
+  "t0": 304.0,
+  "t1": 311.01,
+  "action": "chop herbs",
+  "objects": [
+   "herbs",
+   "tomato"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "knife is left on the cutting board, refrigerator door is open and a tomato is held in hand"
+ },
+ {
+  "t0": 308.01,
+  "t1": 315.01,
+  "action": "retrieves tomato from fridge and removes its stem",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [],
+  "amount": "1 tomato",
+  "after": "tomato is out of the fridge with stem detached in opposite hand and fridge door closed"
+ },
+ {
+  "t0": 312.01,
+  "t1": 319.02,
+  "action": "destems tomato and discards stem in trash",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [],
+  "amount": "one tomato",
+  "after": "stem removed from tomato and dropped in trash bag on floor, refrigerator door closed"
+ },
+ {
+  "t0": 316.02,
+  "t1": 323.02,
+  "action": "plug in power cord and rinse tomato",
+  "objects": [
+   "tomato",
+   "power cord"
+  ],
+  "tools": [
+   "faucet",
+   "sink"
+  ],
+  "amount": "1 tomato",
+  "after": "power cord plugged into wall outlet behind stove and faucet running with tomato being washed under water in sink"
+ },
+ {
+  "t0": 320.02,
+  "t1": 327.03,
+  "action": "rinsing a tomato under running water",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [
+   "faucet"
+  ],
+  "amount": "one tomato",
+  "after": "the tomato is wet and rinsed and the faucet is turned off"
+ },
+ {
+  "t0": 324.02,
+  "t1": 331.03,
+  "action": "washes tomato and tears paper towel",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [
+   "faucet",
+   "paper towel roll"
+  ],
+  "amount": "one tomato",
+  "after": "faucet turned off and a sheet of paper towel torn off and held with the washed tomato"
+ },
+ {
+  "t0": 328.03,
+  "t1": 335.0,
+  "action": "tearing paper towel to dry tomato",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [
+   "paper towel"
+  ],
+  "amount": "one tomato, one sheet",
+  "after": "a sheet of paper towel has been torn from the roll and is held in hand with the tomato moved from the sink to the counter"
+ },
+ {
+  "t0": 332.03,
+  "t1": 339.01,
+  "action": "wipe tomato with paper towel",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [
+   "paper towel"
+  ],
+  "amount": null,
+  "after": "view shifts from sink counter with cracked egg and tablet to stove counter where tomato is unwrapped from paper towel and held in hands over green cutting board"
+ },
+ {
+  "t0": 336.0,
+  "t1": 343.01,
+  "action": "unwraps and positions tomato for cutting",
+  "objects": [
+   "tomato",
+   "green onions"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": "one tomato",
+  "after": "tomato is unwrapped and placed on the green cutting board with knife in hand ready to cut"
+ },
+ {
+  "t0": 340.01,
+  "t1": 347.01,
+  "action": "slice tomato",
+  "objects": [
+   "tomato",
+   "herbs"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "tomato is placed on the green cutting board and being sliced next to a pile of chopped herbs, with stems pushed to the back of the counter"
+ },
+ {
+  "t0": 344.01,
+  "t1": 351.02,
+  "action": "slice tomato",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": "1 tomato cut into 2 halves",
+  "after": "whole tomato is sliced into two halves on the green cutting board and the person has moved from the stove counter to the sink handling a bowl"
+ },
+ {
+  "t0": 348.01,
+  "t1": 355.02,
+  "action": "slice tomatoes and season mixture while checking tablet",
+  "objects": [
+   "tomatoes",
+   "chopped herbs",
+   "egg mixture in bowl"
+  ],
+  "tools": [
+   "knife",
+   "cutting board",
+   "bowl",
+   "tablet"
+  ],
+  "amount": "2 tomatoes sliced",
+  "after": "tomatoes are sliced and herbs piled on green board by stove, then view shifts to sink counter where a bowl with seasoned eggs sits and person taps tablet"
+ },
+ {
+  "t0": 352.02,
+  "t1": 359.03,
+  "action": "taps tablet then briefly handles bowl",
+  "objects": [
+   "tablet",
+   "bowl with egg",
+   "eggshell"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hand is withdrawn from frame and camera pans slightly right/down to show more floor, bowl with cracked egg and eggshell remain on counter unchanged"
+ },
+ {
+  "t0": 356.02,
+  "t1": 363.03,
+  "action": "tapping tablet",
+  "objects": [
+   "tablet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a hand is now visible touching the tablet screen, otherwise the bowl with egg, eggshell, knife and paper towel are unchanged"
+ },
+ {
+  "t0": 360.03,
+  "t1": 367.03,
+  "action": "taps tablet screen",
+  "objects": [
+   "tablet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hand remains on tablet and tablet screen content has scrolled, bowl with cracked egg still on counter"
+ },
+ {
+  "t0": 364.03,
+  "t1": 371.0,
+  "action": "taps tablet then picks up bowl with both hands",
+  "objects": [
+   "tablet",
+   "bowl with cracked egg and ingredients",
+   "whole egg on paper towel"
+  ],
+  "tools": [],
+  "amount": "one cracked egg in bowl, one whole egg on counter",
+  "after": "bowl is lifted off the counter and held in both hands away from the sink area, camera view shifts toward floor and refrigerator"
+ },
+ {
+  "t0": 368.0,
+  "t1": 375.01,
+  "action": "carry bowl and add herbs to egg",
+  "objects": [
+   "bowl with egg and vegetables",
+   "herbs",
+   "tomatoes"
+  ],
+  "tools": [
+   "tablet",
+   "cutting board",
+   "knife"
+  ],
+  "amount": null,
+  "after": "egg bowl moved from sink-side counter to stove-side counter with herbs added, person now at sink holding empty white bowl"
+ },
+ {
+  "t0": 372.0,
+  "t1": 379.01,
+  "action": "places bowl in dish rack",
+  "objects": [
+   "white bowl"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "white bowl moved from counter by stove to dish drying rack by sink; camera view shifts to sink area"
+ },
+ {
+  "t0": 376.01,
+  "t1": 383.02,
+  "action": "taps tablet screen",
+  "objects": [
+   "tablet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hand moves from dish rack on left to tapping tablet on right counter and camera pans right to show tomato and knife on paper towel"
+ },
+ {
+  "t0": 380.01,
+  "t1": 387.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "view shifts from sink counter with tablet and whole egg on paper to stove counter with egg cracked in bowl, chopped herbs and two tomatoes on green cutting board, and an open drawer revealing utensils"
+ },
+ {
+  "t0": 384.02,
+  "t1": 391.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "drawer is now open with hand rummaging through utensils inside, and countertop with green cutting board, tomatoes, herbs, knife and bowl is in view instead of just the kitchen floor"
+ },
+ {
+  "t0": 388.02,
+  "t1": 395.03,
+  "action": "rummaging through drawer and rearranging utensils",
+  "objects": [
+   "kitchen utensils",
+   "red measuring cups"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "red measuring cups moved from back to center top of drawer and utensils slightly rearranged with hand pressing down on them"
+ },
+ {
+  "t0": 392.02,
+  "t1": 399.03,
+  "action": "arranging measuring cups in drawer",
+  "objects": [
+   "red measuring cups"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "red measuring cups are repositioned and spread out more neatly inside the open drawer"
+ },
+ {
+  "t0": 396.03,
+  "t1": 403.0,
+  "action": "rearranges measuring cups in drawer",
+  "objects": [
+   "red measuring cups"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "measuring cups shifted and repositioned in open drawer, two tomatoes and a bowl with egg now visible on counter beside green cutting board"
+ },
+ {
+  "t0": 400.03,
+  "t1": 407.01,
+  "action": "arranges measuring cups in drawer",
+  "objects": [
+   "red measuring cups",
+   "kitchen drawer"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "measuring cups are neatly arranged in the open drawer and the person has moved from the drawer to the sink area touching utensils by the dish rack"
+ },
+ {
+  "t0": 404.0,
+  "t1": 411.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "camera moves from the side counter with open drawer and egg on paper towel to center on the sink; hand briefly touches red-handled scissors on the counter but egg, dishes and pan remain unmoved with no visible task progress"
+ },
+ {
+  "t0": 408.01,
+  "t1": 415.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "view shifts from sink to stove, drawer is now open showing red measuring cups, a bowl with a cracked egg and a green cutting board with two tomatoes and chopped herbs are now visible on the counter"
+ },
+ {
+  "t0": 412.01,
+  "t1": 419.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "two drawers under the counter are now open revealing red measuring cups and blue oven mitts, view has moved from the sink to the stove and cutting board area"
+ },
+ {
+  "t0": 416.02,
+  "t1": 423.02,
+  "action": "closes drawer and picks up measuring cup",
+  "objects": [
+   "kitchen drawer"
+  ],
+  "tools": [
+   "red measuring cups"
+  ],
+  "amount": null,
+  "after": "right drawer is pushed closed and a red measuring cup is lifted in the right hand from the left drawer"
+ },
+ {
+  "t0": 420.02,
+  "t1": 427.03,
+  "action": "rummages through drawer",
+  "objects": [
+   "red measuring cups"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "red measuring cups are shifted and jumbled together in the open drawer compared to spread out at start"
+ },
+ {
+  "t0": 424.02,
+  "t1": 431.03,
+  "action": "none",
+  "objects": [],
+  "tools": [
+   "red measuring cups"
+  ],
+  "amount": null,
+  "after": "view shifts from open utensil drawer by stove with hand inside to sink counter; hand ends touching a red measuring cup on the counter beside the dish rack"
+ },
+ {
+  "t0": 428.03,
+  "t1": 435.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "view shifted from sink with tablet and paper towel to stove area with green cutting board, tomatoes and herbs, and a drawer open showing red lids"
+ },
+ {
+  "t0": 432.03,
+  "t1": 439.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "person moved from sink to stove, drawer is now open and a red measuring cup is held in the right hand"
+ },
+ {
+  "t0": 436.0,
+  "t1": 443.01,
+  "action": "grinding seasoning onto herbs",
+  "objects": [
+   "chopped herbs"
+  ],
+  "tools": [
+   "red pepper grinder"
+  ],
+  "amount": null,
+  "after": "kitchen drawer is closed and seasoning is sprinkled over the herbs on the green cutting board"
+ },
+ {
+  "t0": 440.01,
+  "t1": 447.01,
+  "action": "sprinkling herbs onto tomato",
+  "objects": [
+   "tomato",
+   "herbs"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hands moved from below the counter to above the green cutting board and chopped herbs are being placed onto the small tomato held in the left hand"
+ },
+ {
+  "t0": 444.01,
+  "t1": 451.02,
+  "action": "picking apart herbs by hand",
+  "objects": [
+   "fresh herbs"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "herb pile is slightly rearranged on the green cutting board with no major visible change"
+ },
+ {
+  "t0": 448.01,
+  "t1": 455.02,
+  "action": "adding chopped herbs to bowl",
+  "objects": [
+   "chopped green herbs",
+   "tomato",
+   "egg in bowl"
+  ],
+  "tools": [
+   "knife",
+   "cutting board",
+   "bowl"
+  ],
+  "amount": null,
+  "after": "pile of chopped greens moved from green cutting board into white bowl on top of cracked egg, small whole tomato now held in left hand"
+ },
+ {
+  "t0": 452.02,
+  "t1": 459.03,
+  "action": "adds chopped herbs to bowl with egg",
+  "objects": [
+   "chopped green herbs",
+   "tomatoes",
+   "egg"
+  ],
+  "tools": [
+   "knife",
+   "cutting board",
+   "bowl"
+  ],
+  "amount": null,
+  "after": "bowl goes from a small amount of herbs to filled with chopped herbs and the pile of herbs on the green cutting board is visibly reduced"
+ },
+ {
+  "t0": 456.02,
+  "t1": 463.03,
+  "action": "tearing green onions by hand",
+  "objects": [
+   "green onions"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "a larger pile of chopped green onions is spread on the green cutting board"
+ },
+ {
+  "t0": 460.03,
+  "t1": 467.03,
+  "action": "sprinkling chopped scallions and adding a tomato to a bowl",
+  "objects": [
+   "scallions",
+   "tomato",
+   "bowl"
+  ],
+  "tools": [
+   "cutting board",
+   "knife"
+  ],
+  "amount": null,
+  "after": "a small red tomato is held over the white bowl and the pile of chopped greens on the green cutting board is more spread out"
+ },
+ {
+  "t0": 464.03,
+  "t1": 471.0,
+  "action": "chops green onions and handles chili then points at laptop",
+  "objects": [
+   "green onions",
+   "tomatoes",
+   "red chili",
+   "laptop",
+   "egg"
+  ],
+  "tools": [
+   "knife",
+   "cutting board",
+   "bowl"
+  ],
+  "amount": null,
+  "after": "chopped greens remain on board and chili is moved to bowl, camera view shifts from stove counter to sink counter where person points at laptop next to an egg and knife"
+ },
+ {
+  "t0": 468.0,
+  "t1": 475.01,
+  "action": "chop scallions and tap tablet",
+  "objects": [
+   "scallions",
+   "tomatoes"
+  ],
+  "tools": [
+   "knife",
+   "cutting board",
+   "bowl",
+   "tablet"
+  ],
+  "amount": null,
+  "after": "person leaves cutting board to interact with tablet by sink then returns to bowl of chopped scallions, ingredients remain on board"
+ },
+ {
+  "t0": 472.0,
+  "t1": 479.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "bowl of chopped greens moved from side counter to sink counter, drawer opened and utensil picked up"
+ },
+ {
+  "t0": 476.01,
+  "t1": 483.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "person moved from sink to stove counter, drawer is open and a small black peeler is held in hand, green cutting board with tomatoes and knife now in view"
+ },
+ {
+  "t0": 480.01,
+  "t1": 487.02,
+  "action": "picks up a small scoop from drawer and takes a spice jar from cabinet",
+  "objects": [
+   "spice jar"
+  ],
+  "tools": [
+   "melon baller scoop"
+  ],
+  "amount": null,
+  "after": "kitchen cabinet is open and the person is holding the scoop in one hand and a spice jar in the other"
+ },
+ {
+  "t0": 484.02,
+  "t1": 491.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "spice cabinet door is open and a spice jar has been taken from the shelf and is held in the hand over the counter"
+ },
+ {
+  "t0": 488.02,
+  "t1": 495.03,
+  "action": "sprinkles seasoning",
+  "objects": [
+   "bowl of chopped greens"
+  ],
+  "tools": [
+   "spice jar"
+  ],
+  "amount": null,
+  "after": "spice jar removed from cabinet and held open in hands over the counter by the bowl"
+ },
+ {
+  "t0": 492.02,
+  "t1": 499.03,
+  "action": "sprinkle seasoning",
+  "objects": [
+   "bowl of chopped greens"
+  ],
+  "tools": [
+   "salt shaker",
+   "pepper shaker"
+  ],
+  "amount": null,
+  "after": "both shakers are uncapped and held over the bowl with seasoning sprinkled onto the greens"
+ },
+ {
+  "t0": 496.03,
+  "t1": 503.0,
+  "action": "attaching grinder lid to spice jar",
+  "objects": [
+   "spice jar",
+   "bowl of chopped greens"
+  ],
+  "tools": [
+   "grinder lid"
+  ],
+  "amount": null,
+  "after": "grinder lid is now secured onto the jar held over the bowl, whereas it was separate at the start"
+ },
+ {
+  "t0": 500.03,
+  "t1": 507.01,
+  "action": "sprinkling seasoning into bowl",
+  "objects": [
+   "small bowl with chopped greens"
+  ],
+  "tools": [
+   "spice jar with blue grinder cap"
+  ],
+  "amount": null,
+  "after": "no visible change in the bowl contents; the person is still holding the jar over the bowl and the camera view has pulled back slightly to show more of the counter and tablet"
+ },
+ {
+  "t0": 504.0,
+  "t1": 511.01,
+  "action": "grinding seasoning into bowl",
+  "objects": [
+   "bowl of chopped greens"
+  ],
+  "tools": [
+   "glass spice jar",
+   "hand grinder"
+  ],
+  "amount": null,
+  "after": "hands move apart and seasoning is added to the greens in the bowl"
+ },
+ {
+  "t0": 508.01,
+  "t1": 515.01,
+  "action": "sprinkle seasoning into bowl",
+  "objects": [
+   "bowl of chopped green herbs"
+  ],
+  "tools": [
+   "spice jar",
+   "small spoon"
+  ],
+  "amount": null,
+  "after": "seasoning added to the bowl and view shifts from sink counter to stove with green cutting board and tomatoes"
+ },
+ {
+  "t0": 512.01,
+  "t1": 519.02,
+  "action": "sprinkles seasoning",
+  "objects": [
+   "chopped greens in bowl",
+   "tomatoes and chili on cutting board"
+  ],
+  "tools": [
+   "spice jar",
+   "spoon"
+  ],
+  "amount": null,
+  "after": "seasoning has been sprinkled onto the green cutting board and the person has returned to the sink counter to pick up the jar cap"
+ },
+ {
+  "t0": 516.02,
+  "t1": 523.02,
+  "action": "sprinkling seasoning",
+  "objects": [
+   "bowl of chopped greens",
+   "egg"
+  ],
+  "tools": [
+   "spice jar"
+  ],
+  "amount": null,
+  "after": "green cutting board with tomatoes and knife by the stove is no longer in view; person is now at the sink counter with a bowl of chopped greens and an egg, hand sprinkling seasoning from the jar"
+ },
+ {
+  "t0": 520.02,
+  "t1": 527.03,
+  "action": "screws lid onto jar",
+  "objects": [
+   "spice jar"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "lid is now on the jar which was open at the start"
+ },
+ {
+  "t0": 524.02,
+  "t1": 531.03,
+  "action": "sprinkle seasoning into bowl",
+  "objects": [
+   "bowl of chopped greens"
+  ],
+  "tools": [
+   "spice shaker"
+  ],
+  "amount": null,
+  "after": "greens are seasoned and the overhead spice cabinet is open with the shaker put away"
+ },
+ {
+  "t0": 528.03,
+  "t1": 535.0,
+  "action": "retrieve seasoning and operate tablet",
+  "objects": [
+   "spice jar",
+   "tablet",
+   "bowl of greens",
+   "egg"
+  ],
+  "tools": [
+   "tablet"
+  ],
+  "amount": null,
+  "after": "cabinet door is now closed, a bowl of chopped greens and an egg on a board are visible on the counter and the tablet screen has changed to a list view"
+ },
+ {
+  "t0": 532.03,
+  "t1": 539.01,
+  "action": "taps tablet and picks up fork from dish rack",
+  "objects": [
+   "tablet",
+   "egg",
+   "bowl of chopped greens"
+  ],
+  "tools": [
+   "fork"
+  ],
+  "amount": null,
+  "after": "egg and knife are now on a paper towel on the counter and the person is holding a fork near the bowl"
+ },
+ {
+  "t0": 536.0,
+  "t1": 543.01,
+  "action": "retrieves fork, stirs greens and cracks egg into bowl",
+  "objects": [
+   "bowl of chopped greens",
+   "egg"
+  ],
+  "tools": [
+   "fork"
+  ],
+  "amount": "1 egg",
+  "after": "the fork was taken from the dish rack and is now in the bowl, and a raw egg has been cracked into the bowl of chopped greens"
+ },
+ {
+  "t0": 540.01,
+  "t1": 547.01,
+  "action": "crack and whisk egg into greens",
+  "objects": [
+   "egg",
+   "chopped greens",
+   "bowl"
+  ],
+  "tools": [
+   "fork",
+   "bowl"
+  ],
+  "amount": "1 egg",
+  "after": "egg moved from paper towel on counter into bowl and yolk broken and mixed into chopped greens"
+ },
+ {
+  "t0": 544.01,
+  "t1": 551.02,
+  "action": "stirring mixture",
+  "objects": [
+   "bowl of egg and chopped greens"
+  ],
+  "tools": [
+   "fork"
+  ],
+  "amount": null,
+  "after": "the green and yellow ingredients are more evenly blended together"
+ },
+ {
+  "t0": 548.01,
+  "t1": 555.02,
+  "action": "mashing and mixing",
+  "objects": [
+   "avocado mixture",
+   "bowl"
+  ],
+  "tools": [
+   "fork"
+  ],
+  "amount": null,
+  "after": "green mixture is more mashed and a portion is lifted on the fork"
+ },
+ {
+  "t0": 552.02,
+  "t1": 559.03,
+  "action": "mashing and mixing in bowl",
+  "objects": [
+   "green food in bowl"
+  ],
+  "tools": [
+   "fork"
+  ],
+  "amount": null,
+  "after": "the green mixture is more mashed and evenly mixed than at the start"
+ },
+ {
+  "t0": 556.02,
+  "t1": 563.03,
+  "action": "mashing avocado",
+  "objects": [
+   "avocado",
+   "bowl"
+  ],
+  "tools": [
+   "fork"
+  ],
+  "amount": null,
+  "after": "avocado is more thoroughly mashed and mixed"
+ },
+ {
+  "t0": 560.03,
+  "t1": 567.03,
+  "action": "mashing avocado in bowl",
+  "objects": [
+   "avocado",
+   "bowl"
+  ],
+  "tools": [
+   "fork"
+  ],
+  "amount": null,
+  "after": "avocado is more broken down, smoother and more evenly spread in the bowl"
+ },
+ {
+  "t0": 564.03,
+  "t1": 571.0,
+  "action": "mashing and stirring",
+  "objects": [
+   "bowl of green mixture"
+  ],
+  "tools": [
+   "fork",
+   "bowl"
+  ],
+  "amount": null,
+  "after": "the green mixture in the bowl is more thoroughly mashed and evenly mixed"
+ },
+ {
+  "t0": 568.0,
+  "t1": 575.01,
+  "action": "mashing avocado",
+  "objects": [
+   "avocado",
+   "bowl"
+  ],
+  "tools": [
+   "fork"
+  ],
+  "amount": null,
+  "after": "avocado is more thoroughly mashed and spread in the bowl"
+ },
+ {
+  "t0": 572.0,
+  "t1": 579.01,
+  "action": "mashing avocado in a bowl",
+  "objects": [
+   "avocado",
+   "bowl"
+  ],
+  "tools": [
+   "fork"
+  ],
+  "amount": null,
+  "after": "avocado is more finely mashed and evenly spread in the bowl"
+ },
+ {
+  "t0": 576.01,
+  "t1": 583.02,
+  "action": "mashes avocado then taps tablet",
+  "objects": [
+   "bowl of avocado",
+   "tablet"
+  ],
+  "tools": [
+   "fork"
+  ],
+  "amount": null,
+  "after": "avocado is more mashed, bowl is set down on counter and hand moves from bowl to tapping the tablet screen"
+ },
+ {
+  "t0": 580.01,
+  "t1": 587.02,
+  "action": "tap and scroll on tablet",
+  "objects": [
+   "tablet",
+   "bowl of green mixture"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "bowl of green mixture with spoon and egg on paper towel remain untouched on counter; camera pans left and pulls back to reveal double sink, dish rack and microwave"
+ },
+ {
+  "t0": 584.02,
+  "t1": 591.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change to food or dishes; camera pans from right counter with bowl, egg and tablet to left sink and dish rack and a hand enters frame"
+ },
+ {
+  "t0": 588.02,
+  "t1": 595.03,
+  "action": "open oven door",
+  "objects": [
+   "oven door"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "oven door is now open and the camera has panned from the sink to the stove"
+ },
+ {
+  "t0": 592.02,
+  "t1": 599.03,
+  "action": "open and close oven",
+  "objects": [
+   "oven"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "oven door was opened and then closed again, ending closed as at start; pan on stove and tomatoes on cutting board remain untouched"
+ },
+ {
+  "t0": 596.03,
+  "t1": 603.0,
+  "action": "move frying pan from stove to sink",
+  "objects": [
+   "white frying pan with red handle"
+  ],
+  "tools": [
+   "frying pan"
+  ],
+  "amount": null,
+  "after": "oven door is closed and frying pan is lifted off the burner and held over the kitchen sink"
+ },
+ {
+  "t0": 600.03,
+  "t1": 607.01,
+  "action": "pick up and rinse pan",
+  "objects": [
+   "white frying pan"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "pan moved from stovetop to kitchen sink and is under running water being hand-rinsed"
+ },
+ {
+  "t0": 604.0,
+  "t1": 611.01,
+  "action": "rinsing pan and picking up sponge",
+  "objects": [
+   "white frying pan"
+  ],
+  "tools": [
+   "faucet",
+   "sponge"
+  ],
+  "amount": null,
+  "after": "pan lifted and tilted out of left basin and green sponge held in right hand under running water"
+ },
+ {
+  "t0": 608.01,
+  "t1": 615.01,
+  "action": "scrubbing a pan",
+  "objects": [
+   "white frying pan"
+  ],
+  "tools": [
+   "sponge"
+  ],
+  "amount": null,
+  "after": "pan is lifted out from under the running faucet and is being scrubbed with a yellow sponge"
+ },
+ {
+  "t0": 612.01,
+  "t1": 619.02,
+  "action": "scrubbing pan",
+  "objects": [
+   "white frying pan"
+  ],
+  "tools": [
+   "yellow sponge"
+  ],
+  "amount": null,
+  "after": "pan is reoriented from tilted to flat over the sink and yellow sponge is scrubbing its interior"
+ },
+ {
+  "t0": 616.02,
+  "t1": 623.02,
+  "action": "scrubbing a pan",
+  "objects": [
+   "white frying pan"
+  ],
+  "tools": [
+   "yellow sponge"
+  ],
+  "amount": null,
+  "after": "pan is still held over the sink and being scrubbed, no visible completion or rinsing"
+ },
+ {
+  "t0": 620.02,
+  "t1": 627.03,
+  "action": "scrubs and rinses pan",
+  "objects": [
+   "frying pan"
+  ],
+  "tools": [
+   "sponge",
+   "faucet"
+  ],
+  "amount": null,
+  "after": "pan is under running water being rinsed and yellow sponge has been set aside on the counter"
+ },
+ {
+  "t0": 624.02,
+  "t1": 631.03,
+  "action": "rinsing a frying pan under running water",
+  "objects": [
+   "white frying pan with red handle"
+  ],
+  "tools": [
+   "kitchen sink faucet"
+  ],
+  "amount": null,
+  "after": "the pan is lifted from the sink basin and held under the running faucet while being hand-rinsed"
+ },
+ {
+  "t0": 628.03,
+  "t1": 635.0,
+  "action": "rinsing a pan",
+  "objects": [
+   "white frying pan with red handle"
+  ],
+  "tools": [
+   "kitchen faucet"
+  ],
+  "amount": null,
+  "after": "soap suds are rinsed off and water runs clearer over the pan"
+ },
+ {
+  "t0": 632.03,
+  "t1": 639.01,
+  "action": "rinsing a pan under running water",
+  "objects": [
+   "white frying pan with red handle"
+  ],
+  "tools": [
+   "kitchen faucet"
+  ],
+  "amount": null,
+  "after": "the soap is rinsed off the pan and the faucet is turned off with water stopped and pan lifted"
+ },
+ {
+  "t0": 636.0,
+  "t1": 643.01,
+  "action": "rinse pan and place on stove",
+  "objects": [
+   "pan"
+  ],
+  "tools": [
+   "faucet"
+  ],
+  "amount": null,
+  "after": "pan rinsed under running water, faucet turned off, and pan moved from sink to stovetop burner"
+ },
+ {
+  "t0": 640.01,
+  "t1": 647.01,
+  "action": "wash pan and tear paper towel",
+  "objects": [
+   "frying pan",
+   "paper towel"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "pan moved from sink to stove burner and a sheet of paper towel pulled from roll"
+ },
+ {
+  "t0": 644.01,
+  "t1": 651.02,
+  "action": "wipe pan with paper towel",
+  "objects": [
+   "frying pan"
+  ],
+  "tools": [
+   "paper towel"
+  ],
+  "amount": null,
+  "after": "a sheet of paper towel has been torn from the roll and is being used to wipe the inside of the pan"
+ },
+ {
+  "t0": 648.01,
+  "t1": 655.02,
+  "action": "wipes pan",
+  "objects": [
+   "pan"
+  ],
+  "tools": [
+   "paper towel"
+  ],
+  "amount": null,
+  "after": "pan is being wiped clean on the stovetop, view has shifted from counter with bowl and tablet to stove"
+ },
+ {
+  "t0": 652.02,
+  "t1": 659.03,
+  "action": "wipes pan",
+  "objects": [
+   "frying pan"
+  ],
+  "tools": [
+   "paper towel"
+  ],
+  "amount": null,
+  "after": "pan is left sitting on the stove and the paper towel is discarded, person steps away"
+ },
+ {
+  "t0": 656.02,
+  "t1": 663.03,
+  "action": "place pan on burner and turn on stove",
+  "objects": [
+   "frying pan",
+   "stove burner"
+  ],
+  "tools": [
+   "frying pan",
+   "paper towel"
+  ],
+  "amount": null,
+  "after": "pan is resting on the stove burner and the stove's indicator light is on, with a cutting board and tomatoes visible on the counter"
+ },
+ {
+  "t0": 660.03,
+  "t1": 667.03,
+  "action": "turns stove knob and taps tablet",
+  "objects": [
+   "stove",
+   "tablet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "stove indicator light is on and camera has moved from stove to sink counter where a bowl of green mixture, an egg, and a tablet are visible with a hand touching the tablet screen"
+ },
+ {
+  "t0": 664.03,
+  "t1": 671.0,
+  "action": "taps and scrolls on tablet then briefly stirs bowl",
+  "objects": [
+   "tablet",
+   "bowl of green mixture"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "hand is withdrawn from tablet after briefly stirring the bowl and the camera is framed tighter and more top-down on the counter"
+ },
+ {
+  "t0": 668.0,
+  "t1": 675.01,
+  "action": "stirring mixture and handling tomatoes",
+  "objects": [
+   "bowl of green mixture",
+   "tomatoes"
+  ],
+  "tools": [
+   "tablet",
+   "spoon",
+   "measuring spoon",
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "bowl has been stirred and shifted on counter, person now holds red measuring spoon at sink and a pan is now in the sink basin"
+ },
+ {
+  "t0": 672.0,
+  "t1": 679.01,
+  "action": "rinsing peeler under faucet",
+  "objects": [
+   "red vegetable peeler"
+  ],
+  "tools": [
+   "kitchen faucet"
+  ],
+  "amount": null,
+  "after": "camera moved from floor between fridge and counter to sink area where hands are washing the red peeler under running water with a bowl of chopped food and tablet now visible on the counter"
+ },
+ {
+  "t0": 676.01,
+  "t1": 683.02,
+  "action": "wash and dry tomato",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [
+   "faucet",
+   "paper towel"
+  ],
+  "amount": "1 tomato",
+  "after": "tomato is rinsed under faucet, removed from sink and dried on paper towel by the stove"
+ },
+ {
+  "t0": 680.01,
+  "t1": 687.02,
+  "action": "patting tomato dry",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [
+   "paper towel"
+  ],
+  "amount": "1 tomato",
+  "after": "a sheet of paper towel has been torn from the roll and is wrapped around the tomato to dry it"
+ },
+ {
+  "t0": 684.02,
+  "t1": 691.02,
+  "action": "wipes a measuring spoon with a paper towel",
+  "objects": [
+   "red measuring spoon"
+  ],
+  "tools": [
+   "paper towel"
+  ],
+  "amount": null,
+  "after": "red measuring spoon is wiped clean and held over the counter near the bottles, hands now visible holding spoon and towel"
+ },
+ {
+  "t0": 688.02,
+  "t1": 695.03,
+  "action": "measuring oil and pouring into pan",
+  "objects": [
+   "cooking oil"
+  ],
+  "tools": [
+   "measuring spoon",
+   "bottle",
+   "frying pan"
+  ],
+  "amount": null,
+  "after": "oil bottle is open and held over the stove and oil is now in the white frying pan"
+ },
+ {
+  "t0": 692.02,
+  "t1": 699.03,
+  "action": "pouring oil into measuring spoon",
+  "objects": [
+   "oil"
+  ],
+  "tools": [
+   "bottle",
+   "measuring spoon",
+   "frying pan"
+  ],
+  "amount": null,
+  "after": "bottle tilted over red measuring spoon filled with oil held over white frying pan on stove"
+ },
+ {
+  "t0": 696.03,
+  "t1": 703.0,
+  "action": "pouring oil into pan",
+  "objects": [
+   "cooking oil",
+   "frying pan"
+  ],
+  "tools": [
+   "plastic bottle",
+   "red measuring spoon"
+  ],
+  "amount": "one spoonful",
+  "after": "oil has been transferred from the bottle via the spoon into the pan and the bottle is lifted away"
+ },
+ {
+  "t0": 700.03,
+  "t1": 707.01,
+  "action": "pouring oil into measuring spoon",
+  "objects": [
+   "cooking oil"
+  ],
+  "tools": [
+   "measuring spoon",
+   "frying pan",
+   "plastic bottle"
+  ],
+  "amount": null,
+  "after": "measuring spoon is filled with oil and bottle is moved from over the pan on the stove to the countertop"
+ },
+ {
+  "t0": 704.0,
+  "t1": 711.01,
+  "action": "pours oil into measuring spoon",
+  "objects": [
+   "cooking oil"
+  ],
+  "tools": [
+   "plastic bottle",
+   "red measuring spoon"
+  ],
+  "amount": null,
+  "after": "bottle is capped on the counter and oil is in the red measuring spoon on the green cutting board beside the tomatoes instead of being poured over the plate on the stove"
+ },
+ {
+  "t0": 708.01,
+  "t1": 715.01,
+  "action": "pour oil into pan and heat it",
+  "objects": [
+   "cooking oil",
+   "frying pan"
+  ],
+  "tools": [
+   "oil bottle",
+   "stove"
+  ],
+  "amount": null,
+  "after": "oil bottle is opened and oil is in the white pan with red handle now sitting on the stove burner"
+ },
+ {
+  "t0": 712.01,
+  "t1": 719.02,
+  "action": "heat pan on stove",
+  "objects": [
+   "frying pan",
+   "cooking oil"
+  ],
+  "tools": [
+   "frying pan with red handle",
+   "electric stovetop"
+  ],
+  "amount": null,
+  "after": "white frying pan with red handle is now on the front right burner being held over heat, whereas at the start no pan was on the stove"
+ },
+ {
+  "t0": 716.02,
+  "t1": 723.02,
+  "action": "shakes pan",
+  "objects": [
+   "pan"
+  ],
+  "tools": [
+   "pan"
+  ],
+  "amount": null,
+  "after": "pan remains over the same burner with only slight shifts in position, no visible change to pan or contents"
+ },
+ {
+  "t0": 720.02,
+  "t1": 727.03,
+  "action": "swirls pan over burner",
+  "objects": [
+   "pan"
+  ],
+  "tools": [
+   "frying pan"
+  ],
+  "amount": null,
+  "after": "pan is slightly shifted over the burner and oil is spread more evenly across the bottom"
+ },
+ {
+  "t0": 724.02,
+  "t1": 731.03,
+  "action": "swirls pan over burner",
+  "objects": [
+   "frying pan"
+  ],
+  "tools": [
+   "frying pan"
+  ],
+  "amount": null,
+  "after": "pan remains over the same burner held at a slightly different tilt and position, no visible change to contents"
+ },
+ {
+  "t0": 728.03,
+  "t1": 735.0,
+  "action": "swirls oil to coat pan",
+  "objects": [
+   "oil",
+   "pan"
+  ],
+  "tools": [
+   "frying pan with red handle",
+   "electric stovetop"
+  ],
+  "amount": null,
+  "after": "pan is set down resting on the burner and the view widens from close-up to show the countertop with chopped herbs and tomatoes"
+ },
+ {
+  "t0": 732.03,
+  "t1": 739.0,
+  "action": "place pan on burner and tear paper towel",
+  "objects": [
+   "pan with red handle",
+   "paper towel roll"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "pan is now resting on the stove burner instead of held in hand and a sheet is being torn from the paper towel roll on the counter"
+ },
+ {
+  "t0": 736.0,
+  "t1": 743.01,
+  "action": "tear a sheet of paper towel",
+  "objects": [
+   "paper towel roll"
+  ],
+  "tools": [],
+  "amount": "1 sheet",
+  "after": "a sheet has been torn from the upright paper towel roll and is held in the hands, the roll is set back on the counter and the view shifts to show more of the sink"
+ },
+ {
+  "t0": 740.01,
+  "t1": 747.01,
+  "action": "tear paper towel and pick up trash bag from floor",
+  "objects": [
+   "paper towel",
+   "plastic trash bag"
+  ],
+  "tools": [
+   "paper towel roll"
+  ],
+  "amount": null,
+  "after": "paper towel torn from roll and roll left on counter, trash bag lifted off floor, view moves from sink counter to stove and floor area"
+ },
+ {
+  "t0": 744.01,
+  "t1": 751.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change to food preparation; bowl with green mixture and egg still on counter, pan still on stove, view returns to sink area"
+ },
+ {
+  "t0": 748.01,
+  "t1": 755.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "a white pan with a red handle and a yellow plate are now on the stovetop, with the yellow plate being held over a burner"
+ },
+ {
+  "t0": 752.02,
+  "t1": 759.02,
+  "action": "places yellow plate on stove burner",
+  "objects": [
+   "yellow plate"
+  ],
+  "tools": [
+   "electric stove"
+  ],
+  "amount": null,
+  "after": "yellow plate is now on the front left burner of the stove and the camera view has shifted from the kitchen floor to the stovetop"
+ },
+ {
+  "t0": 756.02,
+  "t1": 763.03,
+  "action": "places plate on burner",
+  "objects": [
+   "yellow plate"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "yellow plate now rests covering the front-left burner and hands are withdrawn"
+ },
+ {
+  "t0": 760.03,
+  "t1": 767.03,
+  "action": "places plate on burner and adjusts pan",
+  "objects": [
+   "yellow plate",
+   "white frying pan",
+   "stovetop"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "yellow plate is now sitting on the front-left burner instead of being held aloft and the person's hand is gripping the red handle of the white pan"
+ },
+ {
+  "t0": 764.03,
+  "t1": 771.0,
+  "action": "shake pan",
+  "objects": [
+   "pan"
+  ],
+  "tools": [
+   "frying pan"
+  ],
+  "amount": null,
+  "after": "pan remains on burner but camera pulls back to wider view showing stove knobs and counter and hand is no longer holding handle"
+ },
+ {
+  "t0": 768.0,
+  "t1": 775.01,
+  "action": "adjust pan on burner",
+  "objects": [
+   "pan",
+   "tomatoes"
+  ],
+  "tools": [
+   "stove",
+   "cutting board",
+   "knife"
+  ],
+  "amount": null,
+  "after": "hand releases red-handled pan leaving it resting on burner, camera pans to countertop with tomatoes and chopped herbs then back to stove with no visible change to food"
+ },
+ {
+  "t0": 772.0,
+  "t1": 779.01,
+  "action": "places sliced tomato into pan",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [
+   "frying pan"
+  ],
+  "amount": "1 tomato half",
+  "after": "one tomato half moved from the green cutting board to the white frying pan on the stove, one tomato remains on the board"
+ },
+ {
+  "t0": 776.01,
+  "t1": 783.02,
+  "action": "places tomato halves cut-side down in pan",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [
+   "pan"
+  ],
+  "amount": "2 tomato halves",
+  "after": "white pan on stove now contains tomato halves, one tomato remains on cutting board"
+ },
+ {
+  "t0": 780.01,
+  "t1": 787.02,
+  "action": "places tomato halves in pan",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [
+   "frying pan"
+  ],
+  "amount": "2 halves",
+  "after": "two tomato halves in pan instead of one"
+ },
+ {
+  "t0": 784.02,
+  "t1": 791.02,
+  "action": "place tomatoes in pan and shake pan",
+  "objects": [
+   "tomatoes"
+  ],
+  "tools": [
+   "frying pan"
+  ],
+  "amount": "2 tomatoes",
+  "after": "two tomato halves are now resting in the white pan on the stove and the camera has pulled back to show the yellow plate and countertop with cutting board"
+ },
+ {
+  "t0": 788.02,
+  "t1": 795.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "view shifts from close-up of stove with white pan holding two tomato halves to sink counter with a bowl of green mixture, an egg and a tablet; hands release pan and person moves away from stove"
+ },
+ {
+  "t0": 792.02,
+  "t1": 799.03,
+  "action": "reach for knife beside egg",
+  "objects": [
+   "egg",
+   "bowl of green mixture"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "camera moved from stove-side counter with green cutting board and chopped herbs to sink-side counter with a bowl of mashed green mixture and a single brown egg on paper towel; hand is now on the knife next to the egg"
+ },
+ {
+  "t0": 796.03,
+  "t1": 803.0,
+  "action": "washes knife under faucet",
+  "objects": [
+   "knife"
+  ],
+  "tools": [
+   "faucet"
+  ],
+  "amount": null,
+  "after": "knife moved from the counter next to the egg to the sink where it is being held under running water"
+ },
+ {
+  "t0": 800.03,
+  "t1": 807.01,
+  "action": "rinsing a knife in the sink",
+  "objects": [
+   "knife"
+  ],
+  "tools": [
+   "faucet",
+   "sponge"
+  ],
+  "amount": null,
+  "after": "knife moved from over the bowl on the counter into the sink under running water, then water turned off and sponge picked up"
+ },
+ {
+  "t0": 804.0,
+  "t1": 811.01,
+  "action": "scrubbing a knife with a sponge",
+  "objects": [
+   "knife"
+  ],
+  "tools": [
+   "sponge",
+   "faucet"
+  ],
+  "amount": null,
+  "after": "faucet is turned off and the sponge is being used to scrub the knife over the sink"
+ },
+ {
+  "t0": 808.01,
+  "t1": 815.01,
+  "action": "scrubbing and rinsing a knife",
+  "objects": [
+   "knife"
+  ],
+  "tools": [
+   "sponge"
+  ],
+  "amount": null,
+  "after": "the knife goes from being scrubbed with the sponge to being rinsed under running water with both hands after the person briefly reaches to tap the tablet on the counter"
+ },
+ {
+  "t0": 812.01,
+  "t1": 819.02,
+  "action": "rinsing a knife",
+  "objects": [
+   "knife"
+  ],
+  "tools": [
+   "sponge",
+   "faucet"
+  ],
+  "amount": null,
+  "after": "yellow sponge is no longer in hand and knife is held under running water with both hands after right hand briefly tapped the tablet"
+ },
+ {
+  "t0": 816.02,
+  "t1": 823.02,
+  "action": "rinsing a knife under running water",
+  "objects": [
+   "knife"
+  ],
+  "tools": [
+   "faucet"
+  ],
+  "amount": null,
+  "after": "knife is held away from the water stream and right hand has moved to the faucet handle"
+ },
+ {
+  "t0": 820.02,
+  "t1": 827.03,
+  "action": "rinses a knife under the faucet, turns off the water and walks to the counter",
+  "objects": [
+   "knife"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the faucet is turned off and the person is standing at the stove-side counter holding the rinsed knife with a drawer pulled open"
+ },
+ {
+  "t0": 824.02,
+  "t1": 831.03,
+  "action": "cuts open package",
+  "objects": [
+   "knife sharpener package"
+  ],
+  "tools": [
+   "paring knife"
+  ],
+  "amount": null,
+  "after": "drawer is open and person is at the stove-side counter holding a paring knife to a packaged sharpener instead of standing at the sink"
+ },
+ {
+  "t0": 828.03,
+  "t1": 835.0,
+  "action": "sharpen a small knife and wash a large knife",
+  "objects": [
+   "paring knife",
+   "chef's knife"
+  ],
+  "tools": [
+   "knife sharpener",
+   "chef's knife",
+   "kitchen faucet"
+  ],
+  "amount": null,
+  "after": "the small knife has been pulled through the sharpener and returned to the open drawer and the large black chef's knife has been moved from the green cutting board to the sink where it is being rinsed under running water"
+ },
+ {
+  "t0": 832.03,
+  "t1": 839.0,
+  "action": "rinsing a knife under running water",
+  "objects": [
+   "knife"
+  ],
+  "tools": [
+   "faucet"
+  ],
+  "amount": null,
+  "after": "the knife was picked up from the green cutting board and is now in the sink being rinsed under the running faucet"
+ },
+ {
+  "t0": 836.0,
+  "t1": 843.01,
+  "action": "rinsing and scrubbing a knife",
+  "objects": [
+   "knife"
+  ],
+  "tools": [
+   "yellow sponge",
+   "kitchen faucet with running water"
+  ],
+  "amount": null,
+  "after": "a yellow sponge has been picked up from the counter and is now being used to scrub the knife under running water in the left sink basin"
+ },
+ {
+  "t0": 840.01,
+  "t1": 847.01,
+  "action": "scrubbing and rinsing a knife",
+  "objects": [
+   "knife"
+  ],
+  "tools": [
+   "yellow sponge",
+   "kitchen faucet"
+  ],
+  "amount": null,
+  "after": "the sponge is set aside on the counter and the knife is being rinsed under running water"
+ },
+ {
+  "t0": 844.01,
+  "t1": 851.02,
+  "action": "scrubbing a knife under running water",
+  "objects": [
+   "knife"
+  ],
+  "tools": [
+   "sponge"
+  ],
+  "amount": null,
+  "after": "the knife is being scrubbed with the sponge and the right hand moves from the counter to the faucet handle"
+ },
+ {
+  "t0": 848.01,
+  "t1": 855.02,
+  "action": "washing a knife",
+  "objects": [
+   "knife"
+  ],
+  "tools": [
+   "kitchen faucet"
+  ],
+  "amount": null,
+  "after": "faucet is turned off and person has moved from the sink to the stove holding the cleaned knife near a cutting board and pan"
+ },
+ {
+  "t0": 852.02,
+  "t1": 859.02,
+  "action": "wash and sharpen a knife",
+  "objects": [
+   "knife"
+  ],
+  "tools": [
+   "knife",
+   "knife sharpener"
+  ],
+  "amount": null,
+  "after": "knife is removed from the sink and is being sharpened over an open drawer with sharpener in hand"
+ },
+ {
+  "t0": 856.02,
+  "t1": 863.03,
+  "action": "sharpens knife",
+  "objects": [
+   "kitchen knife"
+  ],
+  "tools": [
+   "knife",
+   "manual knife sharpener"
+  ],
+  "amount": null,
+  "after": "knife is sharpened and returned to drawer, drawer is closed, and camera view has moved from the stove to the sink"
+ },
+ {
+  "t0": 860.03,
+  "t1": 867.03,
+  "action": "put away knife and handle spatula",
+  "objects": [
+   "knife",
+   "spatula"
+  ],
+  "tools": [
+   "knife",
+   "spatula"
+  ],
+  "amount": null,
+  "after": "knife is stored in the now-closed drawer and spatula is picked up and held over the sink"
+ },
+ {
+  "t0": 864.03,
+  "t1": 871.0,
+  "action": "picking up spatula and pressing food in pan",
+  "objects": [
+   "tomato slices in frying pan"
+  ],
+  "tools": [
+   "spatula"
+  ],
+  "amount": "2 pieces",
+  "after": "spatula moved from kitchen counter to stove and is pressing one tomato leaving a smear in the pan"
+ },
+ {
+  "t0": 868.0,
+  "t1": 875.01,
+  "action": "breaks egg yolks with spatula",
+  "objects": [
+   "eggs"
+  ],
+  "tools": [
+   "spatula",
+   "frying pan"
+  ],
+  "amount": "2 eggs",
+  "after": "egg yolks are ruptured and smeared in the pan"
+ },
+ {
+  "t0": 872.0,
+  "t1": 879.01,
+  "action": "frying eggs in pan",
+  "objects": [
+   "eggs"
+  ],
+  "tools": [
+   "frying pan",
+   "spatula"
+  ],
+  "amount": "2 eggs",
+  "after": "two egg yolks are separated and clearly visible in the pan where only one was clearly visible at the start"
+ },
+ {
+  "t0": 876.01,
+  "t1": 883.02,
+  "action": "grinding pepper onto eggs",
+  "objects": [
+   "two fried eggs"
+  ],
+  "tools": [
+   "pepper grinder",
+   "frying pan"
+  ],
+  "amount": "2 eggs",
+  "after": "pepper seasoning added to eggs, eggs still in pan"
+ },
+ {
+  "t0": 880.01,
+  "t1": 887.02,
+  "action": "frying eggs",
+  "objects": [
+   "eggs"
+  ],
+  "tools": [
+   "spatula",
+   "frying pan"
+  ],
+  "amount": "2 eggs",
+  "after": "a second egg yolk appears in the pan and the spatula is lifted and repositioned between the two yolks as the pan handle is released"
+ },
+ {
+  "t0": 884.02,
+  "t1": 891.02,
+  "action": "fry eggs with tomatoes and stir bowl",
+  "objects": [
+   "frying pan with eggs and tomato slices",
+   "bowl of green mixture"
+  ],
+  "tools": [
+   "frying pan",
+   "spatula",
+   "spoon"
+  ],
+  "amount": "2 tomato slices",
+  "after": "pan left on stove and person moved to sink counter stirring the bowl"
+ },
+ {
+  "t0": 888.02,
+  "t1": 895.03,
+  "action": "stirring bowl mixture then cooking in pan",
+  "objects": [
+   "bowl of green mixture",
+   "pan with tomatoes"
+  ],
+  "tools": [
+   "fork",
+   "spatula"
+  ],
+  "amount": null,
+  "after": "bowl remains mixed on left counter and person is now at stove pressing tomatoes in pan with spatula"
+ },
+ {
+  "t0": 892.02,
+  "t1": 899.03,
+  "action": "cooks and opens dishwasher",
+  "objects": [
+   "egg mixture",
+   "tomatoes",
+   "dishes"
+  ],
+  "tools": [
+   "spatula",
+   "frying pan",
+   "bowl"
+  ],
+  "amount": null,
+  "after": "dishwasher door is open with hand reaching into rack, pan with tomatoes left on stove and bowl with green mixture left on counter"
+ },
+ {
+  "t0": 896.03,
+  "t1": 903.0,
+  "action": "opens dishwasher and takes out a wooden spoon",
+  "objects": [
+   "dishwasher",
+   "wooden spoon"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "dishwasher door is open and a wooden spoon has been removed from the rack and is held in the hand over the floor"
+ },
+ {
+  "t0": 900.03,
+  "t1": 907.01,
+  "action": "cooking eggs in frying pan with spoon and spatula",
+  "objects": [
+   "eggs in frying pan",
+   "dishwasher rack"
+  ],
+  "tools": [
+   "wooden spoon",
+   "spatula",
+   "frying pan"
+  ],
+  "amount": "2 eggs",
+  "after": "wooden spoon taken from dishwasher rack and both wooden spoon and spatula held over frying pan on stove"
+ },
+ {
+  "t0": 904.0,
+  "t1": 911.01,
+  "action": "stirring and flipping food in pan",
+  "objects": [
+   "tomatoes and egg in frying pan"
+  ],
+  "tools": [
+   "spatula",
+   "wooden spoon",
+   "frying pan"
+  ],
+  "amount": "2 tomatoes",
+  "after": "person moved from dishwasher to stove and the two tomatoes have been repositioned and flipped to opposite sides of the pan"
+ },
+ {
+  "t0": 908.01,
+  "t1": 915.01,
+  "action": "separating tomatoes on plate",
+  "objects": [
+   "tomatoes"
+  ],
+  "tools": [
+   "spatula",
+   "wooden spoon"
+  ],
+  "amount": "2 tomatoes",
+  "after": "tomatoes are separated and spaced apart on the plate"
+ },
+ {
+  "t0": 912.01,
+  "t1": 919.02,
+  "action": "adjusts eggs in pan",
+  "objects": [
+   "eggs",
+   "frying pan"
+  ],
+  "tools": [
+   "spatula",
+   "wooden spoon",
+   "knife"
+  ],
+  "amount": "2 eggs",
+  "after": "eggs shifted together in pan and spatula and wooden spoon moved from over pan to yellow plate with knife set down on stove"
+ },
+ {
+  "t0": 916.02,
+  "t1": 923.02,
+  "action": "press tomatoes in pan and set utensils on plate",
+  "objects": [
+   "tomatoes",
+   "frying pan"
+  ],
+  "tools": [
+   "spatula",
+   "wooden spoon",
+   "knife"
+  ],
+  "amount": "2 tomatoes",
+  "after": "spatula and wooden spoon moved from hands onto yellow plate, tomatoes slightly repositioned in pan, hands withdrawn from stove"
+ },
+ {
+  "t0": 920.02,
+  "t1": 927.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "camera view moves from stove with pan containing two tomatoes to sink counter with bowl of green mixture, egg and tablet"
+ },
+ {
+  "t0": 924.02,
+  "t1": 931.03,
+  "action": "wipe an egg with a paper towel",
+  "objects": [
+   "egg"
+  ],
+  "tools": [
+   "paper towel"
+  ],
+  "amount": "1 egg and 1 sheet of paper towel",
+  "after": "paper towel is torn from the roll, used to wipe the egg, and held crumpled in hands near the stove"
+ },
+ {
+  "t0": 928.03,
+  "t1": 935.0,
+  "action": "wraps and wipes egg with paper towel",
+  "objects": [
+   "egg",
+   "paper towel"
+  ],
+  "tools": [
+   "paper towel"
+  ],
+  "amount": "1 egg",
+  "after": "egg is wrapped and lifted off counter and person moves from sink to stove area with pans"
+ },
+ {
+  "t0": 932.03,
+  "t1": 939.0,
+  "action": "wrap green onions in paper towel and carry to trash",
+  "objects": [
+   "green onions",
+   "paper towel"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "green onions are wrapped in paper towel and moved from countertop to over floor trash bin"
+ },
+ {
+  "t0": 936.0,
+  "t1": 943.01,
+  "action": "discard scraps into trash",
+  "objects": [
+   "green onion trimmings"
+  ],
+  "tools": [
+   "paper towel"
+  ],
+  "amount": null,
+  "after": "the paper towel holding green onion scraps is no longer on the counter and is now inside the black trash bag on the floor"
+ },
+ {
+  "t0": 940.01,
+  "t1": 947.01,
+  "action": "discard vegetable scraps and pick up spatula at stove",
+  "objects": [
+   "herb stems and vegetable scraps in plastic bag",
+   "frying pan with two eggs topped with tomato slices"
+  ],
+  "tools": [
+   "plastic trash bag",
+   "spatula"
+  ],
+  "amount": "two round red slices in pan",
+  "after": "scrap bag left on floor against wall by black trash bag and person is now at stove holding spatula over pan"
+ },
+ {
+  "t0": 944.01,
+  "t1": 951.02,
+  "action": "poking food in pan with knife",
+  "objects": [
+   "frying pan with two round red items",
+   "yellow plate"
+  ],
+  "tools": [
+   "small knife",
+   "spatula"
+  ],
+  "amount": "2 items",
+  "after": "pan with two items now on front burner, spatula removed from yellow plate and knife is prodding/moving the items together"
+ },
+ {
+  "t0": 948.01,
+  "t1": 955.02,
+  "action": "stirring eggs with a spoon",
+  "objects": [
+   "eggs",
+   "frying pan"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": "2 eggs",
+  "after": "egg yolks have shifted position and egg whites are more broken up and spread in the pan"
+ },
+ {
+  "t0": 952.02,
+  "t1": 959.02,
+  "action": "adjusting eggs in pan",
+  "objects": [
+   "eggs"
+  ],
+  "tools": [
+   "spatula",
+   "frying pan"
+  ],
+  "amount": "2 eggs",
+  "after": "yolks moved together to top of pan and left hand now gripping pan handle"
+ },
+ {
+  "t0": 956.02,
+  "t1": 963.03,
+  "action": "pokes and nudges eggs with spatula",
+  "objects": [
+   "eggs"
+  ],
+  "tools": [
+   "frying pan",
+   "spatula"
+  ],
+  "amount": "2 eggs",
+  "after": "left hand now grips pan handle and spatula tip has moved from beside the pan to touching and slightly lifting a yolk, eggs shifted slightly in pan"
+ },
+ {
+  "t0": 960.03,
+  "t1": 967.03,
+  "action": "stirs and repositions food in pan",
+  "objects": [
+   "eggs",
+   "tomatoes"
+  ],
+  "tools": [
+   "frying pan",
+   "spoon"
+  ],
+  "amount": null,
+  "after": "tomatoes moved from together at top to separated sides of pan and left hand released pan handle"
+ },
+ {
+  "t0": 964.03,
+  "t1": 971.0,
+  "action": "reposition tomatoes frying with egg",
+  "objects": [
+   "tomatoes",
+   "egg in pan"
+  ],
+  "tools": [
+   "spatula",
+   "frying pan"
+  ],
+  "amount": "2 tomato halves",
+  "after": "tomatoes separated in pan and spatula moved from pan to yellow plate as view shifts from stove to sink counter with bowl of greens"
+ },
+ {
+  "t0": 968.0,
+  "t1": 975.01,
+  "action": "frying eggs then tapping tablet",
+  "objects": [
+   "eggs",
+   "tablet"
+  ],
+  "tools": [
+   "spatula",
+   "frying pan"
+  ],
+  "amount": "2 eggs",
+  "after": "spatula moved from pan to yellow plate and person moved from stove to sink counter to touch tablet screen"
+ },
+ {
+  "t0": 972.0,
+  "t1": 979.01,
+  "action": "taps and scrolls on tablet",
+  "objects": [
+   "tablet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a hand is now over the tablet and the screen content has scrolled slightly, otherwise the bowl and counter are unchanged"
+ },
+ {
+  "t0": 976.01,
+  "t1": 983.02,
+  "action": "taps and scrolls on tablet",
+  "objects": [
+   "tablet"
+  ],
+  "tools": [
+   "tablet"
+  ],
+  "amount": null,
+  "after": "hand is withdrawn from tablet and out of frame, tablet remains on counter"
+ },
+ {
+  "t0": 980.01,
+  "t1": 987.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "view shifts from sink counter with tablet and bowl of green mixture to stove; pan with two round red items is now visible on burner and hand reaches for spatula on yellow plate"
+ },
+ {
+  "t0": 984.02,
+  "t1": 991.02,
+  "action": "picks up spatula and flips food in pan",
+  "objects": [
+   "two eggs with tomatoes in frying pan"
+  ],
+  "tools": [
+   "spatula"
+  ],
+  "amount": "2 items in pan",
+  "after": "spatula moved from yellow plate to hand over pan and one red item in pan has been lifted and turned over"
+ },
+ {
+  "t0": 988.02,
+  "t1": 995.03,
+  "action": "bursting egg yolks with spatula",
+  "objects": [
+   "eggs"
+  ],
+  "tools": [
+   "spatula",
+   "frying pan"
+  ],
+  "amount": "2 eggs",
+  "after": "one yolk is broken and smeared while the other remains intact"
+ },
+ {
+  "t0": 992.02,
+  "t1": 999.03,
+  "action": "prodding and repositioning eggs in pan",
+  "objects": [
+   "eggs",
+   "frying pan"
+  ],
+  "tools": [
+   "spatula"
+  ],
+  "amount": "2 eggs",
+  "after": "one yolk has been pushed to the right edge of the pan and the egg whites look slightly more cooked"
+ },
+ {
+  "t0": 996.03,
+  "t1": 1003.0,
+  "action": "pushes egg yolks together in pan",
+  "objects": [
+   "egg yolks",
+   "fried egg"
+  ],
+  "tools": [
+   "spatula",
+   "frying pan"
+  ],
+  "amount": "2 egg yolks",
+  "after": "the two yolks are moved from apart to clustered together at the top of the pan and the left hand reaches for the pan handle"
+ },
+ {
+  "t0": 1000.03,
+  "t1": 1007.01,
+  "action": "arranging egg yolks in pan",
+  "objects": [
+   "eggs",
+   "frying pan"
+  ],
+  "tools": [
+   "spatula",
+   "wooden spoon"
+  ],
+  "amount": "2 eggs",
+  "after": "both egg yolks are clustered together at the top of the pan and the person now holds a wooden spoon in the left hand with the spatula over the pan"
+ },
+ {
+  "t0": 1004.0,
+  "t1": 1011.01,
+  "action": "repositioning tomatoes in pan",
+  "objects": [
+   "tomatoes",
+   "egg"
+  ],
+  "tools": [
+   "spatula",
+   "wooden spoon",
+   "frying pan"
+  ],
+  "amount": "2 tomatoes",
+  "after": "tomatoes moved from clustered at top of pan to separated on opposite sides of the pan"
+ },
+ {
+  "t0": 1008.01,
+  "t1": 1015.01,
+  "action": "arranges tomatoes in pan",
+  "objects": [
+   "tomatoes",
+   "egg",
+   "pan"
+  ],
+  "tools": [
+   "spatula",
+   "spoon"
+  ],
+  "amount": "2 tomatoes",
+  "after": "second tomato moved from spatula into pan and both tomatoes are now together at the top of the egg"
+ },
+ {
+  "t0": 1012.01,
+  "t1": 1019.02,
+  "action": "repositioning tomatoes in pan",
+  "objects": [
+   "tomatoes",
+   "fried egg"
+  ],
+  "tools": [
+   "spatula",
+   "chopstick"
+  ],
+  "amount": "2 tomato halves",
+  "after": "tomatoes are moved apart with the right tomato shifted toward the right side of the pan"
+ },
+ {
+  "t0": 1016.01,
+  "t1": 1023.02,
+  "action": "repositions tomatoes in pan",
+  "objects": [
+   "tomatoes",
+   "egg"
+  ],
+  "tools": [
+   "fork",
+   "chopstick"
+  ],
+  "amount": "2 tomatoes",
+  "after": "tomatoes moved from together at top of pan to separated on opposite left and right sides"
+ },
+ {
+  "t0": 1020.02,
+  "t1": 1027.03,
+  "action": "repositioning egg yolks in pan",
+  "objects": [
+   "eggs",
+   "frying pan"
+  ],
+  "tools": [
+   "wooden spatula",
+   "metal spatula"
+  ],
+  "amount": "2 eggs",
+  "after": "yolks were briefly separated to opposite sides of the pan then returned to close together at the top, with egg whites slightly more disturbed than at start"
+ },
+ {
+  "t0": 1024.02,
+  "t1": 1031.03,
+  "action": "repositions tomatoes in pan",
+  "objects": [
+   "tomatoes",
+   "egg"
+  ],
+  "tools": [
+   "chopstick",
+   "spatula"
+  ],
+  "amount": "2 tomatoes",
+  "after": "tomatoes are moved from clustered at the top to separated on opposite sides of the pan"
+ },
+ {
+  "t0": 1028.03,
+  "t1": 1035.0,
+  "action": "prodding and repositioning eggs in pan",
+  "objects": [
+   "eggs in frying pan"
+  ],
+  "tools": [
+   "slotted spatula",
+   "wooden chopstick"
+  ],
+  "amount": "2 eggs",
+  "after": "spatula moved from edge of pan to pressing on egg white between yolks, eggs slightly nudged from original position"
+ },
+ {
+  "t0": 1032.03,
+  "t1": 1039.0,
+  "action": "cooking eggs",
+  "objects": [
+   "eggs",
+   "pan"
+  ],
+  "tools": [
+   "spatula",
+   "wooden utensil"
+  ],
+  "amount": "2 eggs",
+  "after": "eggs are nudged and repositioned in pan with yolks moved closer together but still intact"
+ },
+ {
+  "t0": 1036.0,
+  "t1": 1043.01,
+  "action": "transfer tomato with spoon and spatula",
+  "objects": [
+   "tomato",
+   "plate"
+  ],
+  "tools": [
+   "slotted spatula",
+   "wooden spoon"
+  ],
+  "amount": "1 of 2 tomatoes",
+  "after": "one tomato moved from the white plate to the yellow plate, leaving one tomato on the white plate"
+ },
+ {
+  "t0": 1040.01,
+  "t1": 1047.01,
+  "action": "transferring tomatoes between plates",
+  "objects": [
+   "tomato",
+   "plate"
+  ],
+  "tools": [
+   "spatula",
+   "wooden spoon"
+  ],
+  "amount": "2 tomatoes",
+  "after": "one tomato moved from the white plate to the previously empty yellow plate, leaving one tomato on each plate"
+ },
+ {
+  "t0": 1044.01,
+  "t1": 1051.02,
+  "action": "transfers tomato to plate and manipulates tomato in pan",
+  "objects": [
+   "tomato",
+   "fried egg"
+  ],
+  "tools": [
+   "spatula",
+   "wooden spoon"
+  ],
+  "amount": null,
+  "after": "tomato moved from wooden spoon to yellow plate on stove and tomato in white pan repositioned and turned with egg slightly disturbed"
+ },
+ {
+  "t0": 1048.01,
+  "t1": 1055.02,
+  "action": "maneuvering a tomato inside a pan with spatula and spoon",
+  "objects": [
+   "tomato",
+   "frying pan"
+  ],
+  "tools": [
+   "spatula",
+   "wooden spoon"
+  ],
+  "amount": null,
+  "after": "tomato transferred from spoon into pan and moved from bottom to top of pan"
+ },
+ {
+  "t0": 1052.02,
+  "t1": 1059.02,
+  "action": "repositions tomato in pan with spatula",
+  "objects": [
+   "tomato",
+   "fried egg"
+  ],
+  "tools": [
+   "spatula",
+   "frying pan",
+   "wooden spoon"
+  ],
+  "amount": null,
+  "after": "tomato shifted slightly from top edge toward center of pan and spatula lifted away from pan"
+ },
+ {
+  "t0": 1056.02,
+  "t1": 1063.03,
+  "action": "none",
+  "objects": [
+   "egg with tomato in pan"
+  ],
+  "tools": [
+   "frying pan",
+   "spatula"
+  ],
+  "amount": null,
+  "after": "spatula lifted from under the egg to resting at the rim of the pan, egg remains in pan with little visible change"
+ },
+ {
+  "t0": 1060.03,
+  "t1": 1067.03,
+  "action": "none",
+  "objects": [
+   "egg",
+   "tomato"
+  ],
+  "tools": [
+   "spatula",
+   "wooden spoon"
+  ],
+  "amount": null,
+  "after": "spatula moved slightly further over the pan, otherwise no visible change"
+ },
+ {
+  "t0": 1064.03,
+  "t1": 1071.0,
+  "action": "transfers tomato from pan to plate",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [
+   "spatula",
+   "wooden spoon"
+  ],
+  "amount": "1 tomato",
+  "after": "tomato lifted from white pan with spatula and wooden spoon and placed on yellow plate, yellow plate now has two tomatoes and pan no longer contains tomato"
+ },
+ {
+  "t0": 1068.0,
+  "t1": 1075.01,
+  "action": "transfers tomato from pan to plate",
+  "objects": [
+   "tomato",
+   "pan",
+   "plate"
+  ],
+  "tools": [
+   "spatula",
+   "wooden spoon"
+  ],
+  "amount": "2 tomatoes on yellow plate",
+  "after": "the tomato that was in the white pan is now on the yellow plate with the other tomato, the white pan is left with only yellow residue, and both utensils are resting on the yellow plate"
+ },
+ {
+  "t0": 1072.0,
+  "t1": 1079.01,
+  "action": "place utensils on plate and shake pan",
+  "objects": [
+   "egg",
+   "plate"
+  ],
+  "tools": [
+   "spatula",
+   "wooden spoon",
+   "frying pan"
+  ],
+  "amount": null,
+  "after": "spatula and spoon left resting on yellow plate and frying pan tilted and shaken with egg shifted inside"
+ },
+ {
+  "t0": 1076.01,
+  "t1": 1083.02,
+  "action": "tilts and swirls pan to cook egg",
+  "objects": [
+   "egg"
+  ],
+  "tools": [
+   "frying pan"
+  ],
+  "amount": null,
+  "after": "egg spreads across pan and becomes more set, opaque and lightly browned compared to runny and centered at start"
+ },
+ {
+  "t0": 1080.01,
+  "t1": 1087.02,
+  "action": "shakes pan",
+  "objects": [
+   "egg"
+  ],
+  "tools": [
+   "frying pan"
+  ],
+  "amount": null,
+  "after": "egg firms up and is more set with light browning"
+ },
+ {
+  "t0": 1084.02,
+  "t1": 1091.02,
+  "action": "shaking pan",
+  "objects": [
+   "egg"
+  ],
+  "tools": [
+   "frying pan"
+  ],
+  "amount": null,
+  "after": "egg still cooking in pan, pan slightly recentered with no major visible change"
+ },
+ {
+  "t0": 1088.02,
+  "t1": 1095.03,
+  "action": "shakes pan",
+  "objects": [
+   "eggs"
+  ],
+  "tools": [
+   "frying pan"
+  ],
+  "amount": null,
+  "after": "eggs become more set, spread evenly and lightly browned compared to more liquid at start"
+ },
+ {
+  "t0": 1092.02,
+  "t1": 1099.03,
+  "action": "shaking pan to fry eggs",
+  "objects": [
+   "eggs"
+  ],
+  "tools": [
+   "frying pan"
+  ],
+  "amount": null,
+  "after": "eggs are more evenly spread, set and lightly browned compared to runny yolk at start"
+ },
+ {
+  "t0": 1096.03,
+  "t1": 1103.0,
+  "action": "shakes pan",
+  "objects": [
+   "egg"
+  ],
+  "tools": [
+   "frying pan"
+  ],
+  "amount": null,
+  "after": "pan is repositioned to center of burner and egg is slightly more set with less liquid on top"
+ },
+ {
+  "t0": 1100.03,
+  "t1": 1107.01,
+  "action": "shake pan and stir mixture",
+  "objects": [
+   "egg in pan",
+   "green mixture in bowl"
+  ],
+  "tools": [
+   "frying pan",
+   "spoon"
+  ],
+  "amount": null,
+  "after": "egg was shaken in pan on stove and person moved to counter stirring green mixture in bowl by the sink"
+ },
+ {
+  "t0": 1104.0,
+  "t1": 1111.01,
+  "action": "stirs mixture and pours it into pan",
+  "objects": [
+   "bowl of green batter",
+   "pan on stove"
+  ],
+  "tools": [
+   "spoon",
+   "bowl"
+  ],
+  "amount": null,
+  "after": "green mixture transferred from counter bowl into pan on stovetop"
+ },
+ {
+  "t0": 1108.01,
+  "t1": 1115.01,
+  "action": "spooning green mixture onto omelette in pan",
+  "objects": [
+   "bowl of green mixture",
+   "pan with omelette"
+  ],
+  "tools": [
+   "spoon",
+   "bowl"
+  ],
+  "amount": null,
+  "after": "green mixture moved from bowl onto the omelette in the pan, bowl is now mostly empty"
+ },
+ {
+  "t0": 1112.01,
+  "t1": 1119.02,
+  "action": "scraping green mixture from small bowl into pan",
+  "objects": [
+   "green mixture",
+   "white bowl with batter"
+  ],
+  "tools": [
+   "fork",
+   "small blue bowl"
+  ],
+  "amount": null,
+  "after": "most of the green mixture has been transferred from the small blue bowl into the white bowl on the stove, leaving the small bowl nearly empty"
+ },
+ {
+  "t0": 1116.01,
+  "t1": 1123.02,
+  "action": "scoops green filling and tomatoes into pan and spreads filling",
+  "objects": [
+   "frying pan with egg",
+   "green chopped filling",
+   "diced tomatoes"
+  ],
+  "tools": [
+   "light blue bowl",
+   "fork",
+   "wooden spoon"
+  ],
+  "amount": null,
+  "after": "green filling is transferred from bowl to egg in pan and spread out; bowl with tomatoes is moved to countertop and pan remains on stove"
+ },
+ {
+  "t0": 1120.02,
+  "t1": 1127.03,
+  "action": "spreads chopped herbs over egg in pan",
+  "objects": [
+   "egg",
+   "chopped green herbs"
+  ],
+  "tools": [
+   "frying pan",
+   "wooden spoon"
+  ],
+  "amount": null,
+  "after": "green herbs go from a clump in the center to evenly spread across the surface of the egg cooking in the pan"
+ },
+ {
+  "t0": 1124.02,
+  "t1": 1131.03,
+  "action": "stirring ingredients in pan",
+  "objects": [
+   "egg and chopped greens in pan"
+  ],
+  "tools": [
+   "frying pan with red handle",
+   "wooden spoon"
+  ],
+  "amount": null,
+  "after": "the green herbs are stirred and more mixed into the egg and repositioned toward the center of the pan"
+ },
+ {
+  "t0": 1128.03,
+  "t1": 1135.0,
+  "action": "spreads green sauce over frying egg",
+  "objects": [
+   "egg",
+   "green sauce"
+  ],
+  "tools": [
+   "frying pan",
+   "wooden spoon"
+  ],
+  "amount": null,
+  "after": "green sauce is spread from a clump into smaller pieces distributed across the egg"
+ },
+ {
+  "t0": 1132.03,
+  "t1": 1139.0,
+  "action": "stirring and gathering greens in pan",
+  "objects": [
+   "egg",
+   "chopped greens"
+  ],
+  "tools": [
+   "frying pan",
+   "wooden spatula"
+  ],
+  "amount": null,
+  "after": "greens are gathered into a more compact pile in the center of the egg"
+ },
+ {
+  "t0": 1136.0,
+  "t1": 1143.01,
+  "action": "stirring food in pan",
+  "objects": [
+   "egg and greens in frying pan"
+  ],
+  "tools": [
+   "frying pan",
+   "wooden spoon"
+  ],
+  "amount": null,
+  "after": "greens are slightly repositioned within the egg but egg remains uncooked and pan stays on the stove"
+ },
+ {
+  "t0": 1140.01,
+  "t1": 1147.01,
+  "action": "stirring food in pan",
+  "objects": [
+   "green food mixture in pan"
+  ],
+  "tools": [
+   "frying pan with red handle",
+   "wooden spoon"
+  ],
+  "amount": null,
+  "after": "green mixture is slightly stirred and more spread in the pan"
+ },
+ {
+  "t0": 1144.01,
+  "t1": 1151.02,
+  "action": "stir and plate food then check tablet",
+  "objects": [
+   "green mixture in pan",
+   "yellow plate with tomato halves"
+  ],
+  "tools": [
+   "frying pan with red handle",
+   "wooden spoon"
+  ],
+  "amount": null,
+  "after": "a portion of green mixture has been transferred from the pan to the yellow plate with the spoon left on it and the person has moved from the stove to the sink counter touching a tablet"
+ },
+ {
+  "t0": 1148.01,
+  "t1": 1155.02,
+  "action": "taps tablet",
+  "objects": [
+   "tablet"
+  ],
+  "tools": [
+   "wooden spoon",
+   "tablet"
+  ],
+  "amount": null,
+  "after": "wooden spoon placed on yellow plate by stove and person moved to sink counter tapping tablet screen"
+ },
+ {
+  "t0": 1152.02,
+  "t1": 1159.02,
+  "action": "taps tablet screen",
+  "objects": [
+   "tablet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hand moves off tablet and rests at edge of counter"
+ },
+ {
+  "t0": 1156.02,
+  "t1": 1163.03,
+  "action": "tap tablet",
+  "objects": [
+   "tablet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "camera briefly pans right to show refrigerator and opposite counter then returns, hand ends touching the tablet screen"
+ },
+ {
+  "t0": 1160.03,
+  "t1": 1167.03,
+  "action": "tap tablet screen",
+  "objects": [
+   "tablet"
+  ],
+  "tools": [
+   "tablet"
+  ],
+  "amount": null,
+  "after": "view shifts from sink counter to stove showing a pan with egg and green herbs and a yellow plate with two tomato slices"
+ },
+ {
+  "t0": 1164.03,
+  "t1": 1171.0,
+  "action": "holds frying pan",
+  "objects": [
+   "frying pan with egg and herbs"
+  ],
+  "tools": [
+   "frying pan"
+  ],
+  "amount": null,
+  "after": "camera moves from counter with tablet to stove and hand is now gripping the red-handled frying pan with egg"
+ },
+ {
+  "t0": 1168.0,
+  "t1": 1175.01,
+  "action": "holds and shakes pan",
+  "objects": [
+   "egg"
+  ],
+  "tools": [
+   "frying pan"
+  ],
+  "amount": null,
+  "after": "hand is now gripping the pan handle and the pan has shifted slightly on the burner"
+ },
+ {
+  "t0": 1172.0,
+  "t1": 1179.01,
+  "action": "shakes pan",
+  "objects": [
+   "omelette"
+  ],
+  "tools": [
+   "frying pan"
+  ],
+  "amount": null,
+  "after": "egg is more set and opaque with less runny liquid visible"
+ },
+ {
+  "t0": 1176.01,
+  "t1": 1183.02,
+  "action": "holds and gently shakes pan to cook egg",
+  "objects": [
+   "egg with green filling"
+  ],
+  "tools": [
+   "red-handled frying pan",
+   "stovetop burner"
+  ],
+  "amount": null,
+  "after": "egg white becomes more opaque, set and cooked around the edges compared to more liquid at the start"
+ },
+ {
+  "t0": 1180.01,
+  "t1": 1187.02,
+  "action": "shakes pan",
+  "objects": [
+   "egg omelette"
+  ],
+  "tools": [
+   "frying pan"
+  ],
+  "amount": null,
+  "after": "pan is slightly repositioned on the burner with the egg still cooking inside, no major change to the food"
+ },
+ {
+  "t0": 1184.02,
+  "t1": 1191.02,
+  "action": "shakes pan",
+  "objects": [
+   "omelette"
+  ],
+  "tools": [
+   "frying pan"
+  ],
+  "amount": null,
+  "after": "pan is slightly recentered on the burner and the omelette remains in the pan with no major visible change"
+ },
+ {
+  "t0": 1188.02,
+  "t1": 1195.03,
+  "action": "jiggles pan over burner to cook omelette",
+  "objects": [
+   "omelette"
+  ],
+  "tools": [
+   "frying pan"
+  ],
+  "amount": null,
+  "after": "egg white firms up and sets around the green filling as the pan settles centered on the burner"
+ },
+ {
+  "t0": 1192.02,
+  "t1": 1199.03,
+  "action": "shakes pan",
+  "objects": [
+   "egg with green filling"
+  ],
+  "tools": [
+   "frying pan"
+  ],
+  "amount": null,
+  "after": "egg and topping have shifted slightly in the pan as it is repositioned on the burner"
+ },
+ {
+  "t0": 1196.03,
+  "t1": 1203.0,
+  "action": "shakes and swirls pan to cook omelette",
+  "objects": [
+   "omelette with green filling in frying pan"
+  ],
+  "tools": [
+   "red-handled frying pan",
+   "electric stovetop"
+  ],
+  "amount": null,
+  "after": "hand releases the pan leaving it resting on the burner and the view widens to show more of the countertop"
+ },
+ {
+  "t0": 1200.03,
+  "t1": 1207.01,
+  "action": "stirs and spreads filling in omelette",
+  "objects": [
+   "omelette",
+   "green filling"
+  ],
+  "tools": [
+   "frying pan with red handle",
+   "wooden spoon"
+  ],
+  "amount": null,
+  "after": "the hand released the pan handle and the wooden spoon was moved from the yellow plate into the pan to stir and spread the green filling"
+ },
+ {
+  "t0": 1204.0,
+  "t1": 1211.01,
+  "action": "spreading filling over egg",
+  "objects": [
+   "egg in pan",
+   "green filling"
+  ],
+  "tools": [
+   "wooden spoon"
+  ],
+  "amount": null,
+  "after": "green filling is spread more evenly across the surface of the cooking egg"
+ },
+ {
+  "t0": 1208.01,
+  "t1": 1215.01,
+  "action": "spreading filling over egg",
+  "objects": [
+   "egg",
+   "green filling"
+  ],
+  "tools": [
+   "wooden spoon"
+  ],
+  "amount": null,
+  "after": "green filling is spread more evenly across the egg in the pan"
+ },
+ {
+  "t0": 1212.01,
+  "t1": 1219.02,
+  "action": "spreading filling",
+  "objects": [
+   "egg",
+   "green filling"
+  ],
+  "tools": [
+   "wooden spoon",
+   "frying pan"
+  ],
+  "amount": null,
+  "after": "green filling is spread more evenly over the egg in the pan"
+ },
+ {
+  "t0": 1216.01,
+  "t1": 1223.02,
+  "action": "spreads green filling on egg with spoon",
+  "objects": [
+   "egg in frying pan",
+   "green filling"
+  ],
+  "tools": [
+   "wooden spoon",
+   "frying pan"
+  ],
+  "amount": null,
+  "after": "the green filling is spread more evenly over the egg and the wooden spoon has been moved from the pan to rest on the yellow plate beside the spatula"
+ },
+ {
+  "t0": 1220.02,
+  "t1": 1227.03,
+  "action": "place spoon on plate",
+  "objects": [
+   "yellow plate with tomato slices"
+  ],
+  "tools": [
+   "wooden spoon"
+  ],
+  "amount": null,
+  "after": "wooden spoon now rests on yellow plate beside tomatoes and spatula and person's hands are out of frame"
+ },
+ {
+  "t0": 1224.02,
+  "t1": 1231.03,
+  "action": "scoops chopped herbs and adds to bowl",
+  "objects": [
+   "chopped herbs",
+   "small mixing bowl"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "pile of chopped herbs moved from green cutting board into the small bowl beside the stove, spoon now in bowl"
+ },
+ {
+  "t0": 1228.03,
+  "t1": 1235.0,
+  "action": "stirring mixture in bowl then washing bowl in sink",
+  "objects": [
+   "small bowl with mixture",
+   "chopped herbs on cutting board"
+  ],
+  "tools": [
+   "red measuring spoon",
+   "small knife",
+   "kitchen sink faucet"
+  ],
+  "amount": null,
+  "after": "bowl moved from counter next to stove to the sink and is being rinsed under running water, red spoon still in bowl"
+ },
+ {
+  "t0": 1232.03,
+  "t1": 1239.0,
+  "action": "rinsing bowl and pepper under running water",
+  "objects": [
+   "small bowl",
+   "red pepper"
+  ],
+  "tools": [
+   "kitchen faucet"
+  ],
+  "amount": null,
+  "after": "bowl moved from counter to sink and is being washed under running water"
+ },
+ {
+  "t0": 1236.0,
+  "t1": 1243.01,
+  "action": "rinsing a bowl under running water",
+  "objects": [
+   "bowl"
+  ],
+  "tools": [
+   "faucet"
+  ],
+  "amount": null,
+  "after": "bowl is held with both hands under the running faucet in the right sink basin, left hand lowered from raised position to grip the bowl"
+ },
+ {
+  "t0": 1240.01,
+  "t1": 1247.01,
+  "action": "rinse bowl and lift cutting board",
+  "objects": [
+   "bowl",
+   "chopped herbs",
+   "cutting board"
+  ],
+  "tools": [
+   "sink faucet",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "bowl rinsed under faucet and green cutting board with chopped herbs lifted up from counter"
+ },
+ {
+  "t0": 1244.01,
+  "t1": 1251.02,
+  "action": "rinsing cutting board",
+  "objects": [
+   "green cutting board",
+   "chopped herbs"
+  ],
+  "tools": [
+   "kitchen faucet"
+  ],
+  "amount": null,
+  "after": "cutting board moved from counter to sink and held under running water with herbs washing off into sink"
+ },
+ {
+  "t0": 1248.01,
+  "t1": 1255.02,
+  "action": "rinsing a cutting board under running water",
+  "objects": [
+   "green cutting board",
+   "chopped herbs"
+  ],
+  "tools": [
+   "kitchen faucet"
+  ],
+  "amount": null,
+  "after": "the pile of chopped herbs is washed off the cutting board into the sink and the board is wet and largely clean"
+ },
+ {
+  "t0": 1252.02,
+  "t1": 1259.02,
+  "action": "rinsing and rubbing cutting board under running water",
+  "objects": [
+   "green cutting board"
+  ],
+  "tools": [
+   "kitchen faucet"
+  ],
+  "amount": null,
+  "after": "cutting board is wet and rinsed with water droplets visible, held tilted over the sink with hand moved away from surface"
+ },
+ {
+  "t0": 1256.02,
+  "t1": 1263.03,
+  "action": "rinses cutting board and places in rack",
+  "objects": [
+   "green cutting board"
+  ],
+  "tools": [
+   "kitchen faucet"
+  ],
+  "amount": null,
+  "after": "faucet is turned off and cutting board is moved from under running water in sink to upright in dish rack on left"
+ },
+ {
+  "t0": 1260.03,
+  "t1": 1267.03,
+  "action": "rinsing cutting board and tearing paper towel",
+  "objects": [
+   "green cutting board",
+   "paper towel roll"
+  ],
+  "tools": [
+   "kitchen sink faucet",
+   "dish drying rack"
+  ],
+  "amount": null,
+  "after": "green cutting board moved from being rinsed in sink to placed in drying rack and a sheet of paper towel torn and held in hand"
+ },
+ {
+  "t0": 1264.03,
+  "t1": 1271.0,
+  "action": "tears off and discards paper towel",
+  "objects": [
+   "paper towel roll",
+   "paper towel sheet"
+  ],
+  "tools": [],
+  "amount": "one sheet",
+  "after": "one sheet torn from roll and tossed onto floor by trash bag"
+ },
+ {
+  "t0": 1268.0,
+  "t1": 1275.01,
+  "action": "picking up spatula and pressing food in pan",
+  "objects": [
+   "green food in frying pan"
+  ],
+  "tools": [
+   "spatula",
+   "wooden spoon",
+   "frying pan"
+  ],
+  "amount": null,
+  "after": "person is now holding spatula and wooden spoon with spatula pressing the food in the pan, food slightly shifted from start"
+ },
+ {
+  "t0": 1272.0,
+  "t1": 1279.01,
+  "action": "stirs and presses green mixture in pan",
+  "objects": [
+   "green mixture",
+   "frying pan"
+  ],
+  "tools": [
+   "wooden spoon",
+   "spatula"
+  ],
+  "amount": null,
+  "after": "wooden spoon and spatula lifted from yellow plate to pan and green mixture is stirred, pressed and slightly spread in the pan"
+ },
+ {
+  "t0": 1276.01,
+  "t1": 1283.02,
+  "action": "stirring and folding food in pan",
+  "objects": [
+   "green food in frying pan"
+  ],
+  "tools": [
+   "wooden spoon",
+   "spatula"
+  ],
+  "amount": null,
+  "after": "green food is folded and slightly repositioned in the pan"
+ },
+ {
+  "t0": 1280.01,
+  "t1": 1287.02,
+  "action": "stirs food in pan then places utensils on plate",
+  "objects": [
+   "white frying pan with green food",
+   "yellow plate with two tomato halves"
+  ],
+  "tools": [
+   "black slotted spatula",
+   "wooden spoon"
+  ],
+  "amount": null,
+  "after": "both the spatula and wooden spoon are left resting on the yellow plate and the person's hands are out of frame, with the green food still in the pan on the stove"
+ },
+ {
+  "t0": 1284.02,
+  "t1": 1291.02,
+  "action": "put down utensils and tap tablet",
+  "objects": [
+   "tomatoes",
+   "pan of food",
+   "tablet"
+  ],
+  "tools": [
+   "spatula",
+   "wooden spoon"
+  ],
+  "amount": null,
+  "after": "spatula and wooden spoon left resting on yellow plate on stove, camera shifted to countertop with hand touching tablet screen"
+ },
+ {
+  "t0": 1288.02,
+  "t1": 1295.03,
+  "action": "taps tablet",
+  "objects": [
+   "tablet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hand has withdrawn and camera has panned left, showing more of the sink and microwave and cropping out the refrigerator, otherwise counter and tablet unchanged"
+ },
+ {
+  "t0": 1292.02,
+  "t1": 1299.03,
+  "action": "stir and mash food in pan",
+  "objects": [
+   "green food in frying pan",
+   "tomato slices on yellow plate"
+  ],
+  "tools": [
+   "spatula",
+   "wooden spoon",
+   "frying pan"
+  ],
+  "amount": null,
+  "after": "view shifts from counter to stove, a second tomato slice appears on the yellow plate and the person's hands are actively stirring/mashing the green mixture in the pan with both utensils"
+ },
+ {
+  "t0": 1296.03,
+  "t1": 1303.0,
+  "action": "stirs and presses food in pan",
+  "objects": [
+   "green food in frying pan",
+   "tomato slices on yellow plate"
+  ],
+  "tools": [
+   "spatula",
+   "wooden spoon",
+   "frying pan"
+  ],
+  "amount": "2 tomato slices on plate",
+  "after": "a second tomato slice appears on the yellow plate and the person is holding the spatula and wooden spoon over the pan with the green food gathered in the center"
+ },
+ {
+  "t0": 1300.03,
+  "t1": 1307.01,
+  "action": "stirs and presses food in pan with chopstick",
+  "objects": [
+   "white frying pan with red handle",
+   "green food mixture"
+  ],
+  "tools": [
+   "wooden chopstick",
+   "black slotted spatula"
+  ],
+  "amount": null,
+  "after": "chopstick moves from hovering at edge of pan to contacting and slightly spreading the green mixture while spatula remains poised over the food"
+ },
+ {
+  "t0": 1304.0,
+  "t1": 1311.01,
+  "action": "transferring cooked food from pan to plate",
+  "objects": [
+   "cooked greens",
+   "yellow plate with tomatoes"
+  ],
+  "tools": [
+   "wooden spoon",
+   "slotted spatula",
+   "frying pan"
+  ],
+  "amount": null,
+  "after": "the green food has been moved from the white frying pan onto the yellow plate next to the tomatoes, leaving the pan empty"
+ },
+ {
+  "t0": 1308.01,
+  "t1": 1315.01,
+  "action": "transfers and arranges food onto plate",
+  "objects": [
+   "green food",
+   "tomatoes",
+   "yellow plate"
+  ],
+  "tools": [
+   "spatula",
+   "wooden spoon"
+  ],
+  "amount": "1 portion with 2 tomatoes",
+  "after": "green food moved from spatula to yellow plate and both utensils left resting on the plate"
+ },
+ {
+  "t0": 1312.01,
+  "t1": 1319.02,
+  "action": "holds spatula and wooden spoon together and walks to sink",
+  "objects": [
+   "yellow plate with green food and tomatoes on stove"
+  ],
+  "tools": [
+   "black spatula",
+   "wooden spoon"
+  ],
+  "amount": null,
+  "after": "utensils lifted off plate and carried away; camera pans from stove-top close-up to sink area with dishes, tablet and paper towels visible"
+ },
+ {
+  "t0": 1316.01,
+  "t1": 1323.02,
+  "action": "scrapes spatula clean with wooden spoon over sink",
+  "objects": [
+   "spatula",
+   "wooden spoon",
+   "bowl in sink"
+  ],
+  "tools": [
+   "spatula",
+   "wooden spoon"
+  ],
+  "amount": null,
+  "after": "person moved from stove with yellow plate to sink and is scraping residue off spatula into bowl"
+ },
+ {
+  "t0": 1320.02,
+  "t1": 1327.03,
+  "action": "places utensils in sink and turns on stove burner",
+  "objects": [
+   "spatula and wooden spoon",
+   "bowl in sink",
+   "stove with plate of food"
+  ],
+  "tools": [
+   "spatula",
+   "wooden spoon"
+  ],
+  "amount": null,
+  "after": "utensils are left in bowl in sink and stove burner indicator light is on"
+ },
+ {
+  "t0": 1322.02,
+  "t1": 1329.03,
+  "action": "move pan to stove, turn on burner and tap tablet",
+  "objects": [
+   "pan with red handle",
+   "stove burner",
+   "yellow plate with tomatoes and greens",
+   "tablet on counter"
+  ],
+  "tools": [
+   "pan",
+   "stove knob",
+   "tablet touchscreen"
+  ],
+  "amount": null,
+  "after": "pan moved from sink to right stove burner, stove indicator light turned on, person now touching tablet on counter instead of holding pan over sink"
+ }
+]

@@ -1,0 +1,356 @@
+{
+ "title": "Banana Pancakes with Strawberries",
+ "domain": "cooking",
+ "inputs": {
+  "egg": "1 large egg",
+  "banana": "1 banana",
+  "all_purpose_flour": "1 spoonful",
+  "baking_powder": "1 spoonful",
+  "butter": "1 small pat",
+  "pancake_count": "3",
+  "strawberry": "1 strawberry",
+  "syrup": "to taste"
+ },
+ "steps": [
+  {
+   "id": 1,
+   "do": "Crack {egg} into the glass and discard the shell",
+   "verb": "crack",
+   "objects": [
+    "egg",
+    "glass"
+   ],
+   "tools": [
+    "knife"
+   ],
+   "start": 44.0,
+   "end": 71.0,
+   "focus": "glass",
+   "done_when": "whole egg with yolk and white sits in the glass on the counter, empty shell in trash",
+   "needs": [],
+   "optional": false,
+   "evidence": {
+    "start": "step1_start.jpg",
+    "end": "step1_end.jpg"
+   }
+  },
+  {
+   "id": 2,
+   "do": "Peel {banana} and tear into pieces into the glass",
+   "verb": "peel",
+   "objects": [
+    "banana",
+    "glass"
+   ],
+   "tools": [],
+   "start": 68.0,
+   "end": 103.0,
+   "focus": "glass",
+   "done_when": "torn banana pieces mixed with egg in the glass, peel in trash",
+   "needs": [
+    1
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step2_start.jpg",
+    "end": "step2_end.jpg"
+   }
+  },
+  {
+   "id": 3,
+   "do": "Add {all_purpose_flour} to the glass",
+   "verb": "add",
+   "objects": [
+    "all-purpose flour",
+    "glass"
+   ],
+   "tools": [
+    "measuring spoon"
+   ],
+   "start": 124.0,
+   "end": 147.0,
+   "focus": "glass",
+   "done_when": "white flour powder visible on top of egg and banana in the glass",
+   "needs": [
+    2
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step3_start.jpg",
+    "end": "step3_end.jpg"
+   }
+  },
+  {
+   "id": 4,
+   "do": "Add {baking_powder} to the glass",
+   "verb": "add",
+   "objects": [
+    "baking powder",
+    "glass"
+   ],
+   "tools": [
+    "measuring spoon",
+    "can"
+   ],
+   "start": 160.0,
+   "end": 179.0,
+   "focus": "glass",
+   "done_when": "second spoonful of white powder added to the liquid in the glass",
+   "needs": [
+    3
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step4_start.jpg",
+    "end": "step4_end.jpg"
+   }
+  },
+  {
+   "id": 5,
+   "do": "Blend the mixture in the blender until smooth",
+   "verb": "blend",
+   "objects": [
+    "batter",
+    "blender jar"
+   ],
+   "tools": [
+    "blender"
+   ],
+   "start": 232.0,
+   "end": 323.0,
+   "focus": "blender jar",
+   "done_when": "light-colored batter is smooth and uniformly mixed inside the blender jar",
+   "needs": [
+    4
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step5_start.jpg",
+    "end": "step5_end.jpg"
+   }
+  },
+  {
+   "id": 6,
+   "do": "Place the frying pan on the stove burner",
+   "verb": "place",
+   "objects": [
+    "frying pan",
+    "stove"
+   ],
+   "tools": [],
+   "start": 328.0,
+   "end": 343.0,
+   "focus": "frying pan",
+   "done_when": "empty frying pan sits centered on the front stove burner",
+   "needs": [],
+   "optional": false,
+   "evidence": {
+    "start": "step6_start.jpg",
+    "end": "step6_end.jpg"
+   }
+  },
+  {
+   "id": 7,
+   "do": "Melt {butter} in the frying pan to coat the bottom",
+   "verb": "melt",
+   "objects": [
+    "butter",
+    "frying pan"
+   ],
+   "tools": [
+    "fork",
+    "stove"
+   ],
+   "start": 352.0,
+   "end": 451.0,
+   "focus": "butter",
+   "done_when": "butter is melted and spread thinly across the bottom of the hot pan",
+   "needs": [
+    6
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step7_start.jpg",
+    "end": "step7_end.jpg"
+   }
+  },
+  {
+   "id": 8,
+   "do": "Pour batter into the frying pan to form {pancake_count} pancakes",
+   "verb": "pour",
+   "objects": [
+    "batter",
+    "frying pan"
+   ],
+   "tools": [
+    "blender jar",
+    "spoon"
+   ],
+   "start": 468.0,
+   "end": 515.0,
+   "focus": "pancakes",
+   "done_when": "three round dollops of light batter sit separated in the buttered frying pan",
+   "needs": [
+    5,
+    7
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step8_start.jpg",
+    "end": "step8_end.jpg"
+   }
+  },
+  {
+   "id": 9,
+   "do": "Cook the pancakes on the first side until puffed",
+   "verb": "cook",
+   "objects": [
+    "pancakes",
+    "frying pan"
+   ],
+   "tools": [
+    "frying pan",
+    "stove"
+   ],
+   "start": 520.0,
+   "end": 651.0,
+   "focus": "pancakes",
+   "done_when": "three pancakes are puffed slightly and lightly browned on the bottom, still in the pan",
+   "needs": [
+    8
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step9_start.jpg",
+    "end": "step9_end.jpg"
+   }
+  },
+  {
+   "id": 10,
+   "do": "Flip the pancakes and cook the other side",
+   "verb": "flip",
+   "objects": [
+    "pancakes",
+    "frying pan"
+   ],
+   "tools": [
+    "spatula"
+   ],
+   "start": 648.0,
+   "end": 731.0,
+   "focus": "pancakes",
+   "done_when": "three pancakes are flipped and browned on both sides in the pan",
+   "needs": [
+    9
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step10_start.jpg",
+    "end": "step10_end.jpg"
+   }
+  },
+  {
+   "id": 11,
+   "do": "Slice {strawberry} into thin slices on the cutting board",
+   "verb": "slice",
+   "objects": [
+    "strawberry",
+    "cutting board"
+   ],
+   "tools": [
+    "knife",
+    "cutting board"
+   ],
+   "start": 752.0,
+   "end": 807.0,
+   "focus": "strawberry slices",
+   "done_when": "strawberry is cut into 5-6 thin slices spread on the cutting board",
+   "needs": [],
+   "optional": false,
+   "evidence": {
+    "start": "step11_start.jpg",
+    "end": "step11_end.jpg"
+   }
+  },
+  {
+   "id": 12,
+   "do": "Transfer the cooked pancakes from the pan to the plate",
+   "verb": "transfer",
+   "objects": [
+    "pancakes",
+    "plate",
+    "frying pan"
+   ],
+   "tools": [
+    "spatula"
+   ],
+   "start": 852.0,
+   "end": 895.0,
+   "focus": "plate",
+   "done_when": "three cooked pancakes are arranged on the white plate, frying pan is empty on the burner",
+   "needs": [
+    10
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step12_start.jpg",
+    "end": "step12_end.jpg"
+   }
+  },
+  {
+   "id": 13,
+   "do": "Top the pancakes with the sliced strawberries",
+   "verb": "top",
+   "objects": [
+    "strawberries",
+    "pancakes",
+    "plate"
+   ],
+   "tools": [
+    "knife",
+    "cutting board"
+   ],
+   "start": 896.0,
+   "end": 915.0,
+   "focus": "plate",
+   "done_when": "sliced strawberries are scattered on top of the pancakes on the plate, cutting board is empty",
+   "needs": [
+    11,
+    12
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step13_start.jpg",
+    "end": "step13_end.jpg"
+   }
+  },
+  {
+   "id": 14,
+   "do": "Drizzle {syrup} over the pancakes and strawberries",
+   "verb": "drizzle",
+   "objects": [
+    "syrup",
+    "pancakes",
+    "plate"
+   ],
+   "tools": [
+    "syrup bottle"
+   ],
+   "start": 920.0,
+   "end": 939.0,
+   "focus": "plate",
+   "done_when": "syrup is visibly drizzled over the strawberries and pancakes on the plate",
+   "needs": [
+    13
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step14_start.jpg",
+    "end": "step14_end.jpg"
+   }
+  }
+ ],
+ "compiled_by": "meta-models/muse-spark-open-1026",
+ "learned_from": "21_8.mp4",
+ "video_seconds": 946.01
+}

@@ -1,0 +1,2261 @@
+[
+ {
+  "t0": 0.0,
+  "t1": 7.01,
+  "action": "picks up small white object",
+  "objects": [
+   "small white object"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "left hand is now holding the small white object that was on the counter near the tablet stand and right hand is off the counter"
+ },
+ {
+  "t0": 4.0,
+  "t1": 11.01,
+  "action": "picks up and peels garlic",
+  "objects": [
+   "garlic clove"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "small white garlic clove picked up from the counter is now held in both hands and being peeled/broken apart"
+ },
+ {
+  "t0": 8.01,
+  "t1": 15.02,
+  "action": "peeling garlic",
+  "objects": [
+   "garlic clove"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "more of the papery outer skin has been peeled away and the white clove is more exposed"
+ },
+ {
+  "t0": 12.01,
+  "t1": 19.02,
+  "action": "peels an egg",
+  "objects": [
+   "egg"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "eggshell fragments appear on the counter and the egg is broken into smaller peeled pieces"
+ },
+ {
+  "t0": 16.02,
+  "t1": 23.02,
+  "action": "peeling",
+  "objects": [
+   "small food item"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "person has moved from the stove counter to standing over the trash bin while still peeling the item in hands"
+ },
+ {
+  "t0": 20.02,
+  "t1": 27.03,
+  "action": "rolling a cigarette",
+  "objects": [
+   "rolling paper"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "person moved from kitchen counter by stove to standing over trash can and the paper is more tightly twisted/rolled between fingers"
+ },
+ {
+  "t0": 24.02,
+  "t1": 31.03,
+  "action": "peeling garlic",
+  "objects": [
+   "garlic clove"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the skin is separated from the garlic clove"
+ },
+ {
+  "t0": 28.03,
+  "t1": 35.0,
+  "action": "peeling garlic",
+  "objects": [
+   "garlic clove"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "garlic skin is pulled away and the clove is more exposed"
+ },
+ {
+  "t0": 32.03,
+  "t1": 39.01,
+  "action": "peeling garlic",
+  "objects": [
+   "garlic clove"
+  ],
+  "tools": [],
+  "amount": "one clove",
+  "after": "the skin is peeled away from the clove and held separately over the trash"
+ },
+ {
+  "t0": 36.0,
+  "t1": 43.01,
+  "action": "peeling garlic",
+  "objects": [
+   "garlic clove"
+  ],
+  "tools": [],
+  "amount": "one clove",
+  "after": "the skin is peeled off and separated from the garlic clove"
+ },
+ {
+  "t0": 40.01,
+  "t1": 47.01,
+  "action": "peeling garlic",
+  "objects": [
+   "garlic clove"
+  ],
+  "tools": [],
+  "amount": "one clove",
+  "after": "garlic clove is peeled of its skin and person has moved away from the trash can toward the kitchen"
+ },
+ {
+  "t0": 44.01,
+  "t1": 51.02,
+  "action": "peel garlic and tear paper towel",
+  "objects": [
+   "garlic clove",
+   "paper towel"
+  ],
+  "tools": [],
+  "amount": "one garlic clove",
+  "after": "garlic clove is peeled and a sheet of paper towel is torn from the roll"
+ },
+ {
+  "t0": 48.01,
+  "t1": 55.02,
+  "action": "tears off and folds paper towel",
+  "objects": [
+   "paper towel"
+  ],
+  "tools": [],
+  "amount": "1 sheet",
+  "after": "a single sheet is torn from the paper towel roll and folded flat on the counter by the stove"
+ },
+ {
+  "t0": 52.02,
+  "t1": 59.03,
+  "action": "folds paper towel and places small item on it",
+  "objects": [
+   "paper towel",
+   "small food item"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "paper towel is folded flat on the counter with a small round item sitting on top of it"
+ },
+ {
+  "t0": 56.02,
+  "t1": 63.03,
+  "action": "rolling dough",
+  "objects": [
+   "dough"
+  ],
+  "tools": [],
+  "amount": "2 small pieces",
+  "after": "hands move from pressing dough on paper towel to rolling dough directly on the countertop and the tablet screen is scrolled"
+ },
+ {
+  "t0": 60.03,
+  "t1": 67.0,
+  "action": "shape dough",
+  "objects": [
+   "dough"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "person moved from the stove counter with tablet to the opposite counter holding a small piece of dough"
+ },
+ {
+  "t0": 64.03,
+  "t1": 71.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "person moved from stove counter to opposite counter and opened an overhead cabinet with hand reaching for a jar inside"
+ },
+ {
+  "t0": 68.0,
+  "t1": 75.01,
+  "action": "none",
+  "objects": [
+   "Maruchan Ramen Noodle Soup packet"
+  ],
+  "tools": [],
+  "amount": "1 packet",
+  "after": "cabinet opened and one Maruchan Chicken Ramen packet retrieved from cabinet and carried to stove"
+ },
+ {
+  "t0": 72.01,
+  "t1": 79.01,
+  "action": "tear open ramen packet",
+  "objects": [
+   "Maruchan Ramen Noodle Soup packet"
+  ],
+  "tools": [],
+  "amount": "1 packet",
+  "after": "packet is torn open at the top on the counter next to the stove, person has moved from the cabinet to the stove"
+ },
+ {
+  "t0": 76.01,
+  "t1": 83.02,
+  "action": "tears open packet",
+  "objects": [
+   "packet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "packet is torn open"
+ },
+ {
+  "t0": 80.01,
+  "t1": 87.02,
+  "action": "opens instant noodle package and removes noodle block",
+  "objects": [
+   "instant noodle package",
+   "instant noodle block"
+  ],
+  "tools": [],
+  "amount": "one package",
+  "after": "noodle block is out of the package and placed on the paper towel on the counter"
+ },
+ {
+  "t0": 84.02,
+  "t1": 91.02,
+  "action": "unpacks instant noodles",
+  "objects": [
+   "instant noodle pack",
+   "noodle block"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "noodle block removed from its orange packaging and placed on white paper on the countertop"
+ },
+ {
+  "t0": 88.02,
+  "t1": 95.03,
+  "action": "tapping tablet screen",
+  "objects": [
+   "tablet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "left hand moved from noodles and counter to resting on tablet screen"
+ },
+ {
+  "t0": 92.03,
+  "t1": 99.03,
+  "action": "scrolling on tablet",
+  "objects": [
+   "tablet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 96.03,
+  "t1": 103.0,
+  "action": "scrolls on tablet then turns stove knob",
+  "objects": [
+   "tablet",
+   "stove"
+  ],
+  "tools": [
+   "tablet"
+  ],
+  "amount": null,
+  "after": "hand is off the tablet and view has panned away from the counter to show the stove top and double sink with kitchen floor"
+ },
+ {
+  "t0": 100.03,
+  "t1": 107.01,
+  "action": "turns stove knob and opens dishwasher",
+  "objects": [
+   "stove",
+   "dishwasher"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "stove knob is turned and dishwasher door is open revealing dishes inside"
+ },
+ {
+  "t0": 104.0,
+  "t1": 111.01,
+  "action": "opens dishwasher and removes cutting board",
+  "objects": [
+   "dishwasher",
+   "cutting board"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "dishwasher door is open with rack pulled out and white cutting board is lifted out and held in both hands"
+ },
+ {
+  "t0": 108.01,
+  "t1": 115.01,
+  "action": "removes cutting board from dishwasher",
+  "objects": [
+   "cutting board",
+   "dishwasher"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "cutting board is out of the dishwasher rack and held in both hands over the sink area while reaching toward knife block"
+ },
+ {
+  "t0": 112.01,
+  "t1": 119.02,
+  "action": "pulls knife from knife block",
+  "objects": [],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "knife is lifted out of the wooden block and held in the hand, cutting board moved from centered over the dishwasher to lowered at the right edge of the sink"
+ },
+ {
+  "t0": 116.02,
+  "t1": 123.02,
+  "action": "none",
+  "objects": [],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "knife is removed from the wooden block and a white cutting board is now held in the hands over the stove"
+ },
+ {
+  "t0": 120.02,
+  "t1": 127.03,
+  "action": "none",
+  "objects": [],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "cutting board moved from being held to placed flat on the counter next to the stove with the knife laid on top of it and both hands poised over the board, ramen block still on paper behind the board"
+ },
+ {
+  "t0": 124.02,
+  "t1": 131.03,
+  "action": "slicing garlic",
+  "objects": [
+   "garlic"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "a garlic clove is placed on the cutting board and partially sliced, board was empty at start"
+ },
+ {
+  "t0": 128.03,
+  "t1": 135.0,
+  "action": "chopping garlic",
+  "objects": [
+   "garlic"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "garlic clove is sliced into small pieces on the cutting board"
+ },
+ {
+  "t0": 132.03,
+  "t1": 139.01,
+  "action": "slicing garlic",
+  "objects": [
+   "garlic"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "garlic is chopped into small pieces on the cutting board"
+ },
+ {
+  "t0": 136.0,
+  "t1": 143.01,
+  "action": "chopping garlic",
+  "objects": [
+   "garlic"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "garlic is cut into smaller more separated pieces on the cutting board"
+ },
+ {
+  "t0": 140.01,
+  "t1": 147.01,
+  "action": "chopping garlic",
+  "objects": [
+   "garlic"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "garlic is minced into small pieces and a larger knife is now lying on the cutting board"
+ },
+ {
+  "t0": 144.01,
+  "t1": 151.02,
+  "action": "chopping and mincing with hands",
+  "objects": [
+   "small light-colored ingredient",
+   "cutting board"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "ingredient is finely chopped and gathered in center of board with knife laid flat and both hands pressed together over it"
+ },
+ {
+  "t0": 148.01,
+  "t1": 155.02,
+  "action": "peeling garlic",
+  "objects": [
+   "garlic"
+  ],
+  "tools": [
+   "cutting board",
+   "knife"
+  ],
+  "amount": null,
+  "after": "small pieces of peeled garlic left on the cutting board and hands withdrawn"
+ },
+ {
+  "t0": 152.02,
+  "t1": 159.03,
+  "action": "peeling garlic",
+  "objects": [
+   "garlic"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "peeled garlic pieces left on cutting board and lower cabinet drawer opened"
+ },
+ {
+  "t0": 156.02,
+  "t1": 163.03,
+  "action": "chopping garlic and retrieving onions",
+  "objects": [
+   "garlic",
+   "red onions"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "chopped garlic is on the cutting board and the lower cabinet is open with a hand grasping a bag of red onions"
+ },
+ {
+  "t0": 160.03,
+  "t1": 167.0,
+  "action": "none",
+  "objects": [
+   "red onion"
+  ],
+  "tools": [],
+  "amount": "one red onion",
+  "after": "a red onion has been taken from the bag in the under-counter cabinet and is now held in the hand by the stove with cutting board and knife visible"
+ },
+ {
+  "t0": 164.03,
+  "t1": 171.0,
+  "action": "peels onion",
+  "objects": [
+   "red onion"
+  ],
+  "tools": [],
+  "amount": "one red onion",
+  "after": "red onion removed from cabinet and outer skin being peeled off over trash bin"
+ },
+ {
+  "t0": 168.0,
+  "t1": 175.01,
+  "action": "peeling an onion",
+  "objects": [
+   "red onion"
+  ],
+  "tools": [],
+  "amount": "1 onion",
+  "after": "outer skin peeled from onion and held separately in hand over trash bin"
+ },
+ {
+  "t0": 172.01,
+  "t1": 179.01,
+  "action": "peeling a red onion",
+  "objects": [
+   "red onion"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "outer skin partially peeled off and dropped into trash bin, onion is more exposed"
+ },
+ {
+  "t0": 176.01,
+  "t1": 183.02,
+  "action": "peeling an onion",
+  "objects": [
+   "red onion"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the outer skin of the red onion is partially peeled back and separated from the bulb"
+ },
+ {
+  "t0": 180.01,
+  "t1": 187.02,
+  "action": "peeling an onion",
+  "objects": [
+   "red onion"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the outer papery skin of the red onion is pulled back and partially peeled away over the trash bin"
+ },
+ {
+  "t0": 184.02,
+  "t1": 191.02,
+  "action": "peeling an onion",
+  "objects": [
+   "red onion"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a small flap of the outer papery skin is pulled away from the onion"
+ },
+ {
+  "t0": 188.02,
+  "t1": 195.03,
+  "action": "peeling a red onion",
+  "objects": [
+   "red onion"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the outer papery skin of the onion is pulled back and partially peeled away over the trash can"
+ },
+ {
+  "t0": 192.03,
+  "t1": 199.03,
+  "action": "peeling an onion",
+  "objects": [
+   "red onion"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "outer papery skin of the onion is partially peeled back and detached"
+ },
+ {
+  "t0": 196.03,
+  "t1": 203.0,
+  "action": "peeling a red onion",
+  "objects": [
+   "red onion"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the outer papery skin is partially peeled back from the onion"
+ },
+ {
+  "t0": 200.03,
+  "t1": 207.01,
+  "action": "peeling an onion",
+  "objects": [
+   "red onion"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "outer papery skin is partially peeled away from the onion"
+ },
+ {
+  "t0": 204.0,
+  "t1": 211.01,
+  "action": "peeling an onion",
+  "objects": [
+   "red onion"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "outer skin of the onion is peeled off"
+ },
+ {
+  "t0": 208.01,
+  "t1": 215.01,
+  "action": "peels an onion",
+  "objects": [
+   "red onion"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": "one onion",
+  "after": "onion is peeled and moved from over the trash bin to the cutting board where it is being sliced with peel scraps left on the board"
+ },
+ {
+  "t0": 212.01,
+  "t1": 219.02,
+  "action": "peels and slices onion",
+  "objects": [
+   "red onion"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "a round slice has been cut from the onion and lies on the cutting board"
+ },
+ {
+  "t0": 216.02,
+  "t1": 223.02,
+  "action": "slicing an onion into rings",
+  "objects": [
+   "red onion"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": "4 slices",
+  "after": "the whole red onion is cut into several round slices lying on the cutting board"
+ },
+ {
+  "t0": 220.02,
+  "t1": 227.03,
+  "action": "slicing onion",
+  "objects": [
+   "red onion"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": "1 half cut into 2 pieces",
+  "after": "the single red onion half held at the start is cut into two separate halves lying on the cutting board"
+ },
+ {
+  "t0": 224.02,
+  "t1": 231.03,
+  "action": "slicing onion",
+  "objects": [
+   "red onion"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": "1 onion",
+  "after": "whole onion is cut into halves and smaller pieces scattered on the cutting board"
+ },
+ {
+  "t0": 228.03,
+  "t1": 235.0,
+  "action": "slicing onion",
+  "objects": [
+   "red onion"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "the piece of red onion held in the hand is sliced into thin rings on the cutting board"
+ },
+ {
+  "t0": 232.03,
+  "t1": 239.01,
+  "action": "slicing red onion",
+  "objects": [
+   "red onion"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "a piece of red onion has been cut into several smaller slices on the cutting board"
+ },
+ {
+  "t0": 236.0,
+  "t1": 243.01,
+  "action": "slicing onion",
+  "objects": [
+   "red onion"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "a wedge of red onion is cut into several smaller pieces on the cutting board"
+ },
+ {
+  "t0": 240.01,
+  "t1": 247.01,
+  "action": "slicing onion",
+  "objects": [
+   "red onion"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "the piece of red onion is cut into more smaller slices and the knife is set down on the cutting board"
+ },
+ {
+  "t0": 244.01,
+  "t1": 251.02,
+  "action": "chopping red onion",
+  "objects": [
+   "red onion"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "red onion is cut into smaller pieces and knife is set down on cutting board while hands gather the chopped pieces"
+ },
+ {
+  "t0": 248.01,
+  "t1": 255.02,
+  "action": "chopping onion and peeling garlic",
+  "objects": [
+   "red onion",
+   "garlic"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "knife is left on the cutting board with chopped onion and garlic on it as the person steps away from the counter toward the sink"
+ },
+ {
+  "t0": 252.02,
+  "t1": 259.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "person moved from stove cutting board to sink area and opened upper cabinet with hand reaching for a bowl, leaving halved red onion and knife on board"
+ },
+ {
+  "t0": 256.02,
+  "t1": 263.03,
+  "action": "opens cabinet and takes bowl",
+  "objects": [
+   "bowl",
+   "cabinet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "cabinet door is open and dark blue bowl is lifted out of cabinet into hand"
+ },
+ {
+  "t0": 260.03,
+  "t1": 267.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "dark blue bowl removed from upper cabinet and now held in hand over sink and stove area"
+ },
+ {
+  "t0": 264.03,
+  "t1": 271.0,
+  "action": "transferring chopped onion and garlic into bowl",
+  "objects": [
+   "red onion",
+   "garlic"
+  ],
+  "tools": [
+   "knife",
+   "bowl",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "bowl moved from sink to cutting board by stove and is being filled with chopped onion and garlic"
+ },
+ {
+  "t0": 268.0,
+  "t1": 275.01,
+  "action": "transferring sliced onion into bowl",
+  "objects": [
+   "red onion slices",
+   "bowl"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "sliced red onion moved from the white cutting board into the dark blue bowl which now contains the onion slices"
+ },
+ {
+  "t0": 272.01,
+  "t1": 279.01,
+  "action": "separating sliced onions by hand",
+  "objects": [
+   "red onion slices"
+  ],
+  "tools": [
+   "knife",
+   "bowl",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "onion slices in the bowl are loosened and separated and the knife is laid down on the cutting board"
+ },
+ {
+  "t0": 276.01,
+  "t1": 283.02,
+  "action": "separating chopped onions by hand",
+  "objects": [
+   "chopped red onion"
+  ],
+  "tools": [
+   "knife",
+   "cutting board",
+   "bowl"
+  ],
+  "amount": null,
+  "after": "knife is placed down on the cutting board and both hands are in the bowl separating the onion slices"
+ },
+ {
+  "t0": 280.01,
+  "t1": 287.02,
+  "action": "crumble dry noodles into bowl",
+  "objects": [
+   "instant noodles",
+   "chopped red onion"
+  ],
+  "tools": [],
+  "amount": "one block of instant noodles",
+  "after": "the dry noodle block is broken and added to the bowl of chopped onion, emptying the cutting board"
+ },
+ {
+  "t0": 284.02,
+  "t1": 291.02,
+  "action": "break instant noodles into bowl",
+  "objects": [
+   "instant noodle block",
+   "chopped red onion"
+  ],
+  "tools": [
+   "bowl"
+  ],
+  "amount": "1 block",
+  "after": "noodle block moved from cutting board into black bowl with onions and broken into pieces"
+ },
+ {
+  "t0": 288.02,
+  "t1": 295.03,
+  "action": "crumbles ramen noodles by hand after scrolling tablet",
+  "objects": [
+   "instant ramen noodles"
+  ],
+  "tools": [
+   "bowl"
+  ],
+  "amount": null,
+  "after": "whole ramen block in black bowl is broken into crumbled pieces and hands are rubbing over the bowl"
+ },
+ {
+  "t0": 292.03,
+  "t1": 299.03,
+  "action": "crushing noodles by hand",
+  "objects": [
+   "instant noodles"
+  ],
+  "tools": [
+   "bowl"
+  ],
+  "amount": "one block",
+  "after": "intact noodle block is broken into smaller crushed pieces in the bowl"
+ },
+ {
+  "t0": 296.03,
+  "t1": 303.0,
+  "action": "press noodles in bowl and carry bowl across kitchen",
+  "objects": [
+   "bowl of instant noodles"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "bowl moved from cutting board by stove to sink area, noodles slightly pressed"
+ },
+ {
+  "t0": 300.03,
+  "t1": 307.01,
+  "action": "filling bowl with water",
+  "objects": [
+   "bowl of instant noodles"
+  ],
+  "tools": [
+   "sink faucet"
+  ],
+  "amount": null,
+  "after": "bowl that was dry now contains water with noodles soaking in it"
+ },
+ {
+  "t0": 304.0,
+  "t1": 311.01,
+  "action": "filling bowl with water to soak noodles",
+  "objects": [
+   "bowl",
+   "instant noodles"
+  ],
+  "tools": [
+   "kitchen faucet"
+  ],
+  "amount": null,
+  "after": "water has filled the bowl and the dry noodle block is soaked and wet"
+ },
+ {
+  "t0": 308.01,
+  "t1": 315.01,
+  "action": "rinsing instant noodles under running water",
+  "objects": [
+   "bowl",
+   "instant noodles"
+  ],
+  "tools": [
+   "kitchen sink faucet"
+  ],
+  "amount": null,
+  "after": "noodles are wet and bowl moved from under running faucet in sink to countertop with faucet turned off"
+ },
+ {
+  "t0": 312.01,
+  "t1": 319.02,
+  "action": "placing bowl of noodles into microwave",
+  "objects": [
+   "bowl of dry instant noodles"
+  ],
+  "tools": [
+   "microwave"
+  ],
+  "amount": null,
+  "after": "bowl of noodles moved from being held over the sink to sitting inside the open microwave on the counter"
+ },
+ {
+  "t0": 316.02,
+  "t1": 323.02,
+  "action": "place bowl of rice in microwave and open dishwasher",
+  "objects": [
+   "bowl of rice"
+  ],
+  "tools": [
+   "microwave",
+   "dishwasher"
+  ],
+  "amount": null,
+  "after": "bowl of rice is inside the microwave and dishwasher door is open"
+ },
+ {
+  "t0": 320.02,
+  "t1": 327.03,
+  "action": "puts bowl and plate in microwave",
+  "objects": [
+   "bowl",
+   "plate",
+   "microwave",
+   "dishwasher"
+  ],
+  "tools": [
+   "microwave",
+   "dishwasher"
+  ],
+  "amount": null,
+  "after": "bowl is inside microwave covered by a plate taken from the dishwasher and microwave door is open again"
+ },
+ {
+  "t0": 324.02,
+  "t1": 331.03,
+  "action": "put plate in microwave",
+  "objects": [
+   "plate"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "plate moved from dishwasher rack to inside closed microwave"
+ },
+ {
+  "t0": 328.03,
+  "t1": 335.0,
+  "action": "places bowl in microwave and starts it",
+  "objects": [
+   "bowl"
+  ],
+  "tools": [
+   "microwave"
+  ],
+  "amount": null,
+  "after": "bowl is inside microwave with door closed"
+ },
+ {
+  "t0": 332.03,
+  "t1": 339.01,
+  "action": "programs microwave",
+  "objects": [
+   "microwave"
+  ],
+  "tools": [],
+  "amount": "40:00",
+  "after": "microwave display is illuminated showing 40:00 and right hand has lifted off the control panel"
+ },
+ {
+  "t0": 336.0,
+  "t1": 343.01,
+  "action": "program microwave",
+  "objects": [
+   "microwave"
+  ],
+  "tools": [],
+  "amount": "40:00",
+  "after": "microwave timer set to 40:00 and view moved from microwave to stove with a cutting board holding a partially chopped red onion and a knife"
+ },
+ {
+  "t0": 340.01,
+  "t1": 347.01,
+  "action": "handle onion",
+  "objects": [
+   "red onion"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": "one red onion",
+  "after": "moved from sink to stove, knife is down on board and hands are clasped and rubbed together over the board"
+ },
+ {
+  "t0": 344.01,
+  "t1": 351.02,
+  "action": "rubbing hands together",
+  "objects": [
+   "hands"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "knife moved from hand to resting on cutting board and hands are clasped together rubbing"
+ },
+ {
+  "t0": 348.01,
+  "t1": 355.02,
+  "action": "rubbing hands together",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "hands move from clasped and rubbing together above the cutting board to separated and resting on opposite edges of the cutting board, onion and knife remain untouched"
+ },
+ {
+  "t0": 352.02,
+  "t1": 359.03,
+  "action": "none",
+  "objects": [
+   "red onion"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "hands move from clasped together above the board to gripping the edges of the cutting board, onion and knife remain untouched in the same position"
+ },
+ {
+  "t0": 356.02,
+  "t1": 363.03,
+  "action": "taps and scrolls tablet",
+  "objects": [
+   "tablet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "left hand moved from cutting board to tablet and tablet screen content scrolled"
+ },
+ {
+  "t0": 360.03,
+  "t1": 367.03,
+  "action": "tap tablet then peel onion",
+  "objects": [
+   "tablet",
+   "red onion"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "onion skin is being peeled and camera pans away from cutting board to show stove and sink area"
+ },
+ {
+  "t0": 364.03,
+  "t1": 371.0,
+  "action": "chop onion",
+  "objects": [
+   "red onion"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "chopped onion moved from white cutting board by the stove to a paper towel on the counter by the sink"
+ },
+ {
+  "t0": 368.0,
+  "t1": 375.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "hand moves from gripping the counter edge to resting flat on the countertop, otherwise no change"
+ },
+ {
+  "t0": 372.0,
+  "t1": 379.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 376.01,
+  "t1": 383.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 380.01,
+  "t1": 387.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change - hand position and all counter items remain identical"
+ },
+ {
+  "t0": 384.02,
+  "t1": 391.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change; hands remain resting on the counter and all items stay in place"
+ },
+ {
+  "t0": 388.02,
+  "t1": 395.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change; hands remain resting on counter and all items stay in place"
+ },
+ {
+  "t0": 392.02,
+  "t1": 399.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 396.03,
+  "t1": 403.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change; hands remain on counter and all items stay in same position"
+ },
+ {
+  "t0": 400.03,
+  "t1": 407.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 404.0,
+  "t1": 411.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "hands move from flat on the counter to lifted and clasped together in front of it with a slight shift in camera angle, no change to objects on counter"
+ },
+ {
+  "t0": 408.01,
+  "t1": 415.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "hands move from apart over the counter to clasped together in front of the counter; all countertop items remain unchanged"
+ },
+ {
+  "t0": 412.01,
+  "t1": 419.02,
+  "action": "rubbing hands together",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "hands move from gripping the edge of the counter to being flat on the countertop with fingertips touching the surface"
+ },
+ {
+  "t0": 416.02,
+  "t1": 423.02,
+  "action": "pressing and rolling dough on countertop",
+  "objects": [
+   "dough"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hands moved from holding the dough up in the air to flat on the counter pressing it"
+ },
+ {
+  "t0": 420.02,
+  "t1": 427.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change - hands remain resting on the countertop in the same position and items on the counter are unchanged"
+ },
+ {
+  "t0": 424.02,
+  "t1": 431.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change - hands remain in same position on countertop"
+ },
+ {
+  "t0": 428.03,
+  "t1": 435.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change, hands remain resting on the counter in the same position"
+ },
+ {
+  "t0": 432.03,
+  "t1": 439.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "hands remain resting on the counter edge with only slight finger movements; no work is done on the onion or other items, and the camera framing widens slightly at the end to show more of the sink and background, but the workspace itself is unchanged"
+ },
+ {
+  "t0": 436.0,
+  "t1": 443.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "hands stay resting on counter with slight finger fidgeting, no work on food or tools; camera tilts slightly up revealing more of microwave and knife block"
+ },
+ {
+  "t0": 440.01,
+  "t1": 447.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change - hands remain resting on the counter and all items stay in the same position"
+ },
+ {
+  "t0": 444.01,
+  "t1": 451.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change; hands remain resting on counter edge and items on counter are unmoved"
+ },
+ {
+  "t0": 448.01,
+  "t1": 455.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 452.02,
+  "t1": 459.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change; all items on the counter remain in the same positions"
+ },
+ {
+  "t0": 456.02,
+  "t1": 463.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "camera pans left revealing the double sink and the left hand lifts from the counter to reach toward the plastic bag by the knife block"
+ },
+ {
+  "t0": 460.03,
+  "t1": 467.03,
+  "action": "moves plastic bag",
+  "objects": [
+   "plastic bag"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "plastic bag shifted to left side of counter near blue cups and scissors are visible beside knife block"
+ },
+ {
+  "t0": 464.03,
+  "t1": 471.0,
+  "action": "peeling onion",
+  "objects": [
+   "red onion"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a small red onion was taken from the plastic bag on the counter and is now held in both hands being peeled, with purple skins accumulating on the paper towel"
+ },
+ {
+  "t0": 468.0,
+  "t1": 475.01,
+  "action": "peeling by hand",
+  "objects": [
+   "small purple produce"
+  ],
+  "tools": [],
+  "amount": "2 items on paper towel",
+  "after": "hands move from apart to clasped together holding and manipulating a small item, otherwise the kitchen counter scene is essentially unchanged"
+ },
+ {
+  "t0": 472.0,
+  "t1": 479.01,
+  "action": "holding and peeling onion",
+  "objects": [
+   "onion"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change - hands and countertop items remain in same position"
+ },
+ {
+  "t0": 476.01,
+  "t1": 483.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change - hands remain holding small object at sink edge and all counter items including two onion slices on paper towel stay in same position"
+ },
+ {
+  "t0": 480.01,
+  "t1": 487.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible task progress in these seconds; hands remain clasped at bottom holding small object and countertop items including two purple onion pieces on paper towel are unchanged, only slight leftward camera drift reveals more of the left sink basin at the end"
+ },
+ {
+  "t0": 484.02,
+  "t1": 491.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no countertop objects are moved or used; hands remain clasped at bottom edge, only a slight camera shift reveals more of the left sink basin and a white cup inside it that was cropped at the start"
+ },
+ {
+  "t0": 488.02,
+  "t1": 495.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 492.02,
+  "t1": 499.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change, counter and sink remain the same"
+ },
+ {
+  "t0": 496.03,
+  "t1": 503.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 500.03,
+  "t1": 507.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 504.0,
+  "t1": 511.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 508.01,
+  "t1": 515.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 512.01,
+  "t1": 519.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 516.02,
+  "t1": 523.02,
+  "action": "handling small food by hand",
+  "objects": [
+   "small purple fruits"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hands rise from bottom edge and are brought together in front of the sink, with slightly more of the sink visible"
+ },
+ {
+  "t0": 520.02,
+  "t1": 527.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "hands move from out of frame at the bottom into view and are clasped together over the counter by the sink"
+ },
+ {
+  "t0": 524.02,
+  "t1": 531.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "hands move from clasped together to apart and resting near the counter edge; a white mug becomes visible in the left sink basin, otherwise no change to countertop items"
+ },
+ {
+  "t0": 528.03,
+  "t1": 535.0,
+  "action": "peel onion",
+  "objects": [
+   "onion"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "person moved from sink to stove and is now holding a paper towel"
+ },
+ {
+  "t0": 532.03,
+  "t1": 539.01,
+  "action": "peel onion",
+  "objects": [
+   "red onion"
+  ],
+  "tools": [],
+  "amount": "1 red onion",
+  "after": "person moved from sink to stove cutting board and is peeling and separating the onion"
+ },
+ {
+  "t0": 536.0,
+  "t1": 543.01,
+  "action": "peels red onion and transfers peel to paper towel",
+  "objects": [
+   "red onion"
+  ],
+  "tools": [
+   "paper towel"
+  ],
+  "amount": "one red onion halved",
+  "after": "onion halves and peel lifted off cutting board and peel placed on paper towel on counter by sink, person moved from stove to sink area"
+ },
+ {
+  "t0": 540.01,
+  "t1": 547.01,
+  "action": "wipes an onion on a paper towel",
+  "objects": [
+   "red onion"
+  ],
+  "tools": [
+   "paper towel"
+  ],
+  "amount": null,
+  "after": "the onion has been moved from the hands near the stove to the counter on a paper towel and a small piece of peel is in the hand"
+ },
+ {
+  "t0": 544.01,
+  "t1": 551.02,
+  "action": "wipes onion with paper towel and moves to cutting board",
+  "objects": [
+   "red onion slices",
+   "paper towel",
+   "cutting board"
+  ],
+  "tools": [
+   "paper towel",
+   "knife"
+  ],
+  "amount": null,
+  "after": "person moved from sink counter to stove counter and is now holding a knife over sliced red onion on a white cutting board"
+ },
+ {
+  "t0": 548.01,
+  "t1": 555.02,
+  "action": "chop onion",
+  "objects": [
+   "red onion"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": "one small onion",
+  "after": "onion is sliced on the cutting board and the person is holding peel and knife over the trash bin"
+ },
+ {
+  "t0": 552.02,
+  "t1": 559.03,
+  "action": "peels onion and discards peel in trash",
+  "objects": [
+   "onion"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "onion peel is in trash bin and knife is resting on cutting board with hands over onion"
+ },
+ {
+  "t0": 556.02,
+  "t1": 563.03,
+  "action": "rubbing hands together over cutting board",
+  "objects": [
+   "small ingredient on cutting board"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "knife moved from hand to cutting board and one hand is now touching the tablet screen"
+ },
+ {
+  "t0": 560.03,
+  "t1": 567.03,
+  "action": "peel garlic and scroll on tablet",
+  "objects": [
+   "garlic"
+  ],
+  "tools": [
+   "cutting board",
+   "knife",
+   "tablet"
+  ],
+  "amount": null,
+  "after": "hands move away from cutting board and camera pans left to show stove and far counter, leaving cutting board and knife behind"
+ },
+ {
+  "t0": 564.03,
+  "t1": 571.0,
+  "action": "peel garlic",
+  "objects": [
+   "garlic"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "garlic is peeled into a small bowl on the counter and the overhead cabinet is open revealing spices"
+ },
+ {
+  "t0": 568.0,
+  "t1": 575.01,
+  "action": "open cabinet and take a spice jar",
+  "objects": [
+   "kitchen cabinet",
+   "spice jar"
+  ],
+  "tools": [],
+  "amount": "one spice jar",
+  "after": "cabinet is closed again and a spice jar has been removed and is held in the hand"
+ },
+ {
+  "t0": 572.0,
+  "t1": 579.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "spice jar returned to left cabinet and that cabinet closed, right cabinet above the tablet opened with hand reaching for a white mug"
+ },
+ {
+  "t0": 576.01,
+  "t1": 583.02,
+  "action": "sprinkle seasoning into pan",
+  "objects": [
+   "pan on stove"
+  ],
+  "tools": [
+   "spice jar"
+  ],
+  "amount": null,
+  "after": "cabinet above stove was opened, seasoning was added to the pan, and the person moved from the stove to the sink area"
+ },
+ {
+  "t0": 580.01,
+  "t1": 587.02,
+  "action": "places spice jar and opens microwave",
+  "objects": [
+   "spice jar",
+   "microwave"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "spice jar moved from hand to countertop and microwave door is open revealing plate inside"
+ },
+ {
+  "t0": 584.02,
+  "t1": 591.02,
+  "action": "opens microwave and reaches inside",
+  "objects": [
+   "microwave",
+   "bowl"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "microwave door is open and hand is inside touching the bowl"
+ },
+ {
+  "t0": 588.02,
+  "t1": 595.03,
+  "action": "remove plate from microwave",
+  "objects": [
+   "plate"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "white plate moved from inside microwave covering bowl to countertop, leaving dark bowl uncovered inside open microwave"
+ },
+ {
+  "t0": 592.02,
+  "t1": 599.03,
+  "action": "put down plate",
+  "objects": [
+   "plate"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "plate is now sitting on the counter and the hand has withdrawn to rest on the counter edge, with slightly wider view of the sink visible"
+ },
+ {
+  "t0": 596.03,
+  "t1": 603.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "camera view pans from sink counter with microwave and plate to stove area with four pans on burners; no hands-on work or change to items is visible"
+ },
+ {
+  "t0": 600.03,
+  "t1": 607.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no hands-on work visible; camera pans away from stove with pans and right counter to focus on left counter and wall panel, where a paper towel roll, plate, grater and chopped onion on paper become clearly visible"
+ },
+ {
+  "t0": 604.0,
+  "t1": 611.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "camera pans from rear wall with electrical panel to sink counter, no objects moved or changed"
+ },
+ {
+  "t0": 608.01,
+  "t1": 615.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 612.01,
+  "t1": 619.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "hand moves from counter edge to briefly touch the plate then camera pans sharply right away from sink and counter to show floor and cabinet doors"
+ },
+ {
+  "t0": 616.02,
+  "t1": 623.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "camera pans from sink counter to stove and back with no visible change to plates, chopped onions, pans or other items"
+ },
+ {
+  "t0": 620.02,
+  "t1": 627.03,
+  "action": "retrieve bowl from microwave",
+  "objects": [
+   "bowl of food"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "view has panned from stove to microwave counter and hand is grasping bowl inside the open microwave"
+ },
+ {
+  "t0": 624.02,
+  "t1": 631.03,
+  "action": "removes bowl from microwave",
+  "objects": [
+   "bowl of noodles"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "bowl moved from inside microwave to countertop held with both hands"
+ },
+ {
+  "t0": 628.03,
+  "t1": 635.0,
+  "action": "remove bowl from microwave and carry across kitchen",
+  "objects": [
+   "bowl of noodles"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "bowl taken out of microwave and moved from counter to stove area held in both hands"
+ },
+ {
+  "t0": 632.03,
+  "t1": 639.01,
+  "action": "carry and place bowl",
+  "objects": [
+   "bowl of noodles"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "bowl moved from hands near sink to cutting board by stove, hands now empty and reaching toward knife block"
+ },
+ {
+  "t0": 636.0,
+  "t1": 643.01,
+  "action": "prepare instant noodles",
+  "objects": [
+   "bowl of dry instant noodles"
+  ],
+  "tools": [
+   "microwave"
+  ],
+  "amount": null,
+  "after": "bowl moved from hands over stove to cutting board on counter and microwave operated"
+ },
+ {
+  "t0": 640.01,
+  "t1": 647.01,
+  "action": "season noodles",
+  "objects": [
+   "instant noodles"
+  ],
+  "tools": [
+   "seasoning container"
+  ],
+  "amount": null,
+  "after": "person moved from microwave to stove and is holding a seasoning container over a bowl of dry noodles on the counter"
+ },
+ {
+  "t0": 644.01,
+  "t1": 651.02,
+  "action": "adds seasoning to noodles",
+  "objects": [
+   "bowl of instant noodles",
+   "seasoning jar"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "seasoning jar picked up from left counter and now held with both hands over the bowl of noodles being opened"
+ },
+ {
+  "t0": 648.01,
+  "t1": 655.02,
+  "action": "adding seasoning",
+  "objects": [
+   "bowl of noodles"
+  ],
+  "tools": [
+   "seasoning container"
+  ],
+  "amount": null,
+  "after": "seasoning container twisted open over bowl of noodles"
+ },
+ {
+  "t0": 652.02,
+  "t1": 659.03,
+  "action": "sprinkles seasoning onto noodles",
+  "objects": [
+   "bowl of instant noodles",
+   "seasoning"
+  ],
+  "tools": [
+   "seasoning shaker"
+  ],
+  "amount": null,
+  "after": "seasoning is now visible sprinkled on top of the noodles in the bowl"
+ },
+ {
+  "t0": 656.02,
+  "t1": 663.03,
+  "action": "sprinkling seasoning on noodles",
+  "objects": [
+   "bowl of instant noodles",
+   "seasoning jar"
+  ],
+  "tools": [
+   "seasoning shaker"
+  ],
+  "amount": null,
+  "after": "seasoning has been sprinkled onto the noodles and the jar is being closed"
+ },
+ {
+  "t0": 660.03,
+  "t1": 667.03,
+  "action": "season noodles and return spice jar to cabinet",
+  "objects": [
+   "bowl of instant noodles",
+   "spice jar"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "noodles seasoned and spice jar closed and placed back on the overhead cabinet shelf"
+ },
+ {
+  "t0": 664.03,
+  "t1": 671.0,
+  "action": "return spice jar to cabinet and handle noodles",
+  "objects": [
+   "spice jar",
+   "cabinet",
+   "dry noodles",
+   "pan"
+  ],
+  "tools": [
+   "pan"
+  ],
+  "amount": null,
+  "after": "spice jar is stored in overhead cabinet and cabinet door is closed, hand is touching dry noodles in a small pan on the counter next to the stove"
+ },
+ {
+  "t0": 668.0,
+  "t1": 675.01,
+  "action": "closes cabinet and crumbles noodles by hand",
+  "objects": [
+   "instant noodles"
+  ],
+  "tools": [
+   "bowl"
+  ],
+  "amount": null,
+  "after": "cabinet door is closed and the noodle block is broken into smaller pieces in the bowl"
+ },
+ {
+  "t0": 672.0,
+  "t1": 679.01,
+  "action": "sprinkle seasoning onto noodles",
+  "objects": [
+   "bowl of instant noodles"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "noodles are covered with sprinkled seasoning"
+ },
+ {
+  "t0": 676.01,
+  "t1": 683.02,
+  "action": "arrange noodles in bowl and open refrigerator",
+  "objects": [
+   "bowl of instant noodles",
+   "refrigerator"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "noodles are crumbled and arranged in bowl on cutting board and refrigerator door is open"
+ },
+ {
+  "t0": 680.01,
+  "t1": 687.02,
+  "action": "prepare noodle bowl",
+  "objects": [
+   "bowl of instant noodles",
+   "seasoning packet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "bowl placed on cutting board, refrigerator opened and small packet taken from door shelf into hands"
+ },
+ {
+  "t0": 684.02,
+  "t1": 691.02,
+  "action": "pulling cilantro sprigs from bag",
+  "objects": [
+   "cilantro",
+   "plastic bag"
+  ],
+  "tools": [],
+  "amount": "a small handful of sprigs",
+  "after": "cilantro bag opened and returned to fridge door, a few sprigs now held in both hands"
+ },
+ {
+  "t0": 688.02,
+  "t1": 695.03,
+  "action": "transfers cilantro from fridge to cutting board",
+  "objects": [
+   "cilantro",
+   "plastic bag"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "cilantro is removed from its bag and placed on the cutting board next to a bowl of noodles with a knife picked up"
+ },
+ {
+  "t0": 692.02,
+  "t1": 699.03,
+  "action": "chopping cilantro",
+  "objects": [
+   "cilantro sprigs"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "cilantro moved from hand in front of open refrigerator to white cutting board and is being chopped next to a bowl of dry noodles, refrigerator door is now closed"
+ },
+ {
+  "t0": 696.03,
+  "t1": 703.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change to the chopped green onions, noodles, or hand position; the camera framing becomes slightly tighter/zoomed in on the cutting board"
+ },
+ {
+  "t0": 700.03,
+  "t1": 707.01,
+  "action": "chopping green onions",
+  "objects": [
+   "green onions"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "a larger pile of chopped green onion pieces has accumulated on the cutting board"
+ },
+ {
+  "t0": 704.0,
+  "t1": 711.01,
+  "action": "points at and gathers chopped green onions",
+  "objects": [
+   "chopped green onions"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "knife is briefly picked up and set back down and the pile of green onions is slightly repositioned"
+ },
+ {
+  "t0": 708.01,
+  "t1": 715.01,
+  "action": "chopping herbs",
+  "objects": [
+   "herbs"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "herbs are cut into smaller pieces and scattered on the board"
+ },
+ {
+  "t0": 712.01,
+  "t1": 719.02,
+  "action": "chops herbs and sprinkles over noodles",
+  "objects": [
+   "green herbs",
+   "instant noodles"
+  ],
+  "tools": [
+   "knife",
+   "cutting board",
+   "bowl"
+  ],
+  "amount": null,
+  "after": "herbs are finely chopped and transferred from cutting board to top of noodles in bowl"
+ },
+ {
+  "t0": 716.02,
+  "t1": 723.02,
+  "action": "chop green onions and sprinkle onto noodles",
+  "objects": [
+   "instant noodles",
+   "green onions",
+   "seasoning"
+  ],
+  "tools": [
+   "knife",
+   "cutting board",
+   "bowl"
+  ],
+  "amount": null,
+  "after": "chopped green onions and crumbled seasoning are now on top of noodles in bowl and cutting board is mostly cleared"
+ },
+ {
+  "t0": 720.02,
+  "t1": 727.03,
+  "action": "crumble garnish into bowl and open seasoning packet",
+  "objects": [
+   "bowl of instant noodles",
+   "chopped green garnish",
+   "seasoning packet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "bowl is topped with green garnish and seasoning packet is torn open in hands"
+ },
+ {
+  "t0": 724.02,
+  "t1": 731.03,
+  "action": "tears open seasoning packet and sprinkles it onto noodles",
+  "objects": [
+   "seasoning packet",
+   "bowl of noodles"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "seasoning packet is torn open and held over the bowl as seasoning is added to the noodles"
+ },
+ {
+  "t0": 728.03,
+  "t1": 735.0,
+  "action": "opens and sprinkles seasoning packet onto noodles",
+  "objects": [
+   "seasoning packet",
+   "bowl of noodles"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the small seasoning packet is torn open and its contents are sprinkled over the noodles in the bowl"
+ },
+ {
+  "t0": 732.03,
+  "t1": 739.0,
+  "action": "seasoning instant noodles in a bowl",
+  "objects": [
+   "bowl of instant noodles",
+   "seasoning packet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "seasoning packet is torn open on the cutting board and the noodles in the bowl are topped with green seasoning, hand has moved from the bowl toward the stove"
+ },
+ {
+  "t0": 736.0,
+  "t1": 743.01,
+  "action": "seasons noodles and retrieves a fork",
+  "objects": [
+   "bowl of instant noodles",
+   "seasoning packet"
+  ],
+  "tools": [
+   "fork",
+   "tablet"
+  ],
+  "amount": null,
+  "after": "seasoning is added to the bowl and a fork is now held in both hands instead of hands being empty at the cutting board"
+ },
+ {
+  "t0": 740.01,
+  "t1": 747.01,
+  "action": "stirs noodles with fork",
+  "objects": [
+   "bowl of noodles"
+  ],
+  "tools": [
+   "fork"
+  ],
+  "amount": null,
+  "after": "fork is taken from holder by sink and is stirring noodles in bowl by stove"
+ },
+ {
+  "t0": 744.01,
+  "t1": 751.02,
+  "action": "sprinkling seasoning onto noodles",
+  "objects": [
+   "bowl of instant noodles"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "more green seasoning is scattered over the noodles in the bowl"
+ },
+ {
+  "t0": 748.01,
+  "t1": 755.02,
+  "action": "sprinkling seasoning over noodles",
+  "objects": [
+   "bowl of instant noodles"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "seasoning and toppings are more evenly distributed over the noodles in the bowl"
+ },
+ {
+  "t0": 752.02,
+  "t1": 759.02,
+  "action": "stirring noodles",
+  "objects": [
+   "bowl of instant noodles"
+  ],
+  "tools": [
+   "fork"
+  ],
+  "amount": null,
+  "after": "noodles and broth are more evenly mixed and distributed in the bowl"
+ },
+ {
+  "t0": 756.02,
+  "t1": 763.03,
+  "action": "sprinkling seasoning",
+  "objects": [
+   "bowl of instant noodles"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "seasoning powder is spread over the noodles in the bowl"
+ },
+ {
+  "t0": 760.03,
+  "t1": 767.03,
+  "action": "stirring noodles in a pot",
+  "objects": [
+   "pot of instant noodles"
+  ],
+  "tools": [
+   "fork"
+  ],
+  "amount": null,
+  "after": "the pot is no longer held and the fork is left resting across the rim with noodles lifted"
+ },
+ {
+  "t0": 764.03,
+  "t1": 771.0,
+  "action": "stir noodles then scroll tablet",
+  "objects": [
+   "bowl of instant noodles"
+  ],
+  "tools": [
+   "fork",
+   "tablet"
+  ],
+  "amount": null,
+  "after": "fork left resting in bowl and left hand moved from bowl to tablet screen"
+ },
+ {
+  "t0": 767.03,
+  "t1": 774.01,
+  "action": "stir noodles then scroll tablet",
+  "objects": [
+   "ramen noodles",
+   "tablet"
+  ],
+  "tools": [
+   "fork",
+   "pan",
+   "tablet"
+  ],
+  "amount": null,
+  "after": "left hand moves from pan to tablet and tablet screen scrolls up"
+ }
+]

@@ -1,0 +1,3096 @@
+[
+ {
+  "t0": 0.0,
+  "t1": 7.01,
+  "action": "taps tablet and opens refrigerator",
+  "objects": [
+   "tablet",
+   "refrigerator door"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "refrigerator door is open and viewpoint has moved from the stove counter to the refrigerator side of the kitchen"
+ },
+ {
+  "t0": 4.0,
+  "t1": 11.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "refrigerator door is open with person's hand reaching inside for food"
+ },
+ {
+  "t0": 8.01,
+  "t1": 15.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "a Family Pack carton of 18 large eggs has been removed from the refrigerator shelf and placed on the countertop next to the sink"
+ },
+ {
+  "t0": 12.01,
+  "t1": 19.02,
+  "action": "put away groceries",
+  "objects": [
+   "egg carton",
+   "cherry tomatoes"
+  ],
+  "tools": [],
+  "amount": "18 large eggs Family Pack",
+  "after": "egg carton moved from inside refrigerator to countertop and tomato container placed inside refrigerator after picking item up from floor"
+ },
+ {
+  "t0": 16.02,
+  "t1": 23.02,
+  "action": "pick up tomatoes from floor and put in fridge then handle egg carton",
+  "objects": [
+   "container of cherry tomatoes",
+   "egg carton"
+  ],
+  "tools": [],
+  "amount": "1 container of cherry tomatoes, 18 eggs Family Pack",
+  "after": "tomatoes moved from floor into fridge door shelf and person is now at sink counter with both hands on closed egg carton"
+ },
+ {
+  "t0": 20.02,
+  "t1": 27.03,
+  "action": "opens egg carton",
+  "objects": [
+   "egg carton",
+   "eggs"
+  ],
+  "tools": [],
+  "amount": "18 large eggs",
+  "after": "egg carton is open on the counter exposing white eggs"
+ },
+ {
+  "t0": 24.02,
+  "t1": 31.03,
+  "action": "opens carton and picks up an egg",
+  "objects": [
+   "egg carton",
+   "egg"
+  ],
+  "tools": [],
+  "amount": "1 egg from 18 LARGE carton",
+  "after": "carton was opened then closed again with one egg removed and held near the stove"
+ },
+ {
+  "t0": 28.03,
+  "t1": 35.0,
+  "action": "none",
+  "objects": [
+   "egg"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "one egg has been taken from the carton on the counter and is now held in the hand over a metal bowl"
+ },
+ {
+  "t0": 32.03,
+  "t1": 39.01,
+  "action": "tightens blender jar lid",
+  "objects": [
+   "blender jar"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "camera moves from stove to sink counter and blender lid is secured closed"
+ },
+ {
+  "t0": 36.0,
+  "t1": 43.01,
+  "action": "screws lid onto travel mug",
+  "objects": [
+   "stainless steel tumbler",
+   "black lid",
+   "clear plastic cup"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "silver tumbler is now sealed with black lid and clear plastic cup is lifted off the back of the counter"
+ },
+ {
+  "t0": 40.01,
+  "t1": 47.01,
+  "action": "none",
+  "objects": [
+   "glass",
+   "egg"
+  ],
+  "tools": [],
+  "amount": "1 egg",
+  "after": "clear glass retrieved from under the cabinet on the left and placed on the counter beside the stove next to the tablet, person now holding a white egg with both hands over the stove"
+ },
+ {
+  "t0": 44.01,
+  "t1": 51.02,
+  "action": "prepares to crack egg",
+  "objects": [
+   "egg",
+   "glass"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": "1 egg",
+  "after": "glass moved from hand at sink to countertop by stove and person now holds egg in one hand and a retrieved kitchen knife in the other over the stovetop"
+ },
+ {
+  "t0": 48.01,
+  "t1": 55.02,
+  "action": "crack an egg with a knife",
+  "objects": [
+   "egg",
+   "glass"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": "1 egg",
+  "after": "knife pulled from block and egg held over glass ready to be cracked"
+ },
+ {
+  "t0": 52.02,
+  "t1": 59.03,
+  "action": "cracks an egg into a glass",
+  "objects": [
+   "egg",
+   "glass"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": "1 egg",
+  "after": "egg is cracked open over the glass and knife is set down on the stovetop"
+ },
+ {
+  "t0": 56.02,
+  "t1": 63.03,
+  "action": "crack an egg into a glass",
+  "objects": [
+   "egg",
+   "glass"
+  ],
+  "tools": [],
+  "amount": "1 egg",
+  "after": "the whole egg is cracked open with yolk and white in the glass and the empty shell held in hands"
+ },
+ {
+  "t0": 60.03,
+  "t1": 67.0,
+  "action": "cracks egg into glass",
+  "objects": [
+   "egg",
+   "eggshell"
+  ],
+  "tools": [],
+  "amount": "1 egg",
+  "after": "egg is cracked into glass on counter and empty shell is held away from stove toward trash"
+ },
+ {
+  "t0": 64.03,
+  "t1": 71.0,
+  "action": "cracks egg into glass and discards shell",
+  "objects": [
+   "egg"
+  ],
+  "tools": [],
+  "amount": "1 egg",
+  "after": "egg is cracked into glass on counter and shell is thrown in trash, hands are empty and rubbed together"
+ },
+ {
+  "t0": 68.0,
+  "t1": 75.01,
+  "action": "peel a banana",
+  "objects": [
+   "banana"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "trash discarded into bin and banana held in hands partially peeled"
+ },
+ {
+  "t0": 72.01,
+  "t1": 79.01,
+  "action": "picks up and peels a banana",
+  "objects": [
+   "banana"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "banana is picked up from the counter and peeled in both hands"
+ },
+ {
+  "t0": 76.01,
+  "t1": 83.02,
+  "action": "peeling a banana",
+  "objects": [
+   "banana"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "banana peel is pulled back and fruit is exposed"
+ },
+ {
+  "t0": 80.01,
+  "t1": 87.02,
+  "action": "peeling a banana",
+  "objects": [
+   "banana"
+  ],
+  "tools": [],
+  "amount": "1 banana",
+  "after": "banana peel is fully opened and pulled back"
+ },
+ {
+  "t0": 84.02,
+  "t1": 91.02,
+  "action": "peels and breaks a banana",
+  "objects": [
+   "banana"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "banana is fully peeled open and a piece is broken off, peel held in right hand and banana piece in left hand"
+ },
+ {
+  "t0": 88.02,
+  "t1": 95.03,
+  "action": "peels and breaks banana into glass",
+  "objects": [
+   "banana",
+   "glass"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "banana is peeled and broken into pieces inside the glass"
+ },
+ {
+  "t0": 92.03,
+  "t1": 99.03,
+  "action": "tears banana into pieces into glass",
+  "objects": [
+   "banana",
+   "glass"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "banana is torn apart and pieces are now inside the glass on the counter"
+ },
+ {
+  "t0": 96.03,
+  "t1": 103.0,
+  "action": "tears banana peel into glass and discards peel in trash",
+  "objects": [
+   "banana peel",
+   "glass"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "person moved from stove counter to trash can, peel is discarded and glass on counter contains torn pieces"
+ },
+ {
+  "t0": 100.03,
+  "t1": 107.01,
+  "action": "discard banana peel and wash hands",
+  "objects": [
+   "banana peel"
+  ],
+  "tools": [
+   "trash can",
+   "sink faucet"
+  ],
+  "amount": null,
+  "after": "banana peel is in the trash and hands are being washed under running water at the sink"
+ },
+ {
+  "t0": 104.0,
+  "t1": 111.01,
+  "action": "washing hands and tearing paper towel",
+  "objects": [
+   "hands"
+  ],
+  "tools": [
+   "sink faucet",
+   "paper towel roll"
+  ],
+  "amount": null,
+  "after": "hands are rinsed clean and a sheet of paper towel is torn from the roll and held away from the sink"
+ },
+ {
+  "t0": 108.01,
+  "t1": 115.01,
+  "action": "dries hands",
+  "objects": [
+   "hands"
+  ],
+  "tools": [
+   "paper towel"
+  ],
+  "amount": null,
+  "after": "a sheet is torn from the paper towel roll and hands are wiped dry, the towel is crumpled in hand"
+ },
+ {
+  "t0": 112.01,
+  "t1": 119.02,
+  "action": "wipes hands and retrieves scoop from drawer",
+  "objects": [
+   "paper towel",
+   "kitchen drawer"
+  ],
+  "tools": [
+   "paper towel",
+   "black scoop"
+  ],
+  "amount": null,
+  "after": "drawer is now open and person is holding a black scoop up; hands are no longer being wiped"
+ },
+ {
+  "t0": 116.02,
+  "t1": 123.02,
+  "action": "picks up a spoon from drawer and opens a bottle",
+  "objects": [
+   "blue bottle"
+  ],
+  "tools": [
+   "black measuring spoon"
+  ],
+  "amount": null,
+  "after": "black spoon is removed from the drawer and held over the stovetop while the left hand twists the cap of the blue bottle"
+ },
+ {
+  "t0": 120.02,
+  "t1": 127.03,
+  "action": "opens sugar bag",
+  "objects": [
+   "sugar bag",
+   "glass"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "spoon is placed on the stovetop and the blue sugar bag is opened, drawer is no longer open in view"
+ },
+ {
+  "t0": 124.02,
+  "t1": 131.03,
+  "action": "opens bag and scoops flour",
+  "objects": [
+   "bag of all-purpose flour"
+  ],
+  "tools": [
+   "measuring spoon"
+  ],
+  "amount": null,
+  "after": "flour bag is open and measuring spoon is filled with white flour"
+ },
+ {
+  "t0": 128.03,
+  "t1": 135.0,
+  "action": "scoops white powder from bag into glass",
+  "objects": [
+   "bag of white powder",
+   "glass with liquid"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "bag is open with spoon holding powder over it and glass contains the added powder"
+ },
+ {
+  "t0": 132.03,
+  "t1": 139.01,
+  "action": "scoops flour into glass",
+  "objects": [
+   "all-purpose flour",
+   "glass of liquid"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "flour bag is open on counter and a spoonful of flour is held over the glass which is now lifted in the other hand"
+ },
+ {
+  "t0": 136.0,
+  "t1": 143.01,
+  "action": "scoops flour and adds it to glass",
+  "objects": [
+   "all-purpose flour",
+   "glass of liquid"
+  ],
+  "tools": [
+   "spoon",
+   "glass"
+  ],
+  "amount": "one spoonful",
+  "after": "a spoonful of flour has been moved from the bag into the glass and the spoon is now inside the glass"
+ },
+ {
+  "t0": 140.01,
+  "t1": 147.01,
+  "action": "spoons flour into glass",
+  "objects": [
+   "flour",
+   "glass"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "glass now contains flour on the counter and spoon is set down on the stovetop"
+ },
+ {
+  "t0": 144.01,
+  "t1": 151.02,
+  "action": "stir liquid, put spoon down and open drawer",
+  "objects": [
+   "measuring cup with liquid"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "spoon is resting on the counter and the kitchen drawer is pulled open"
+ },
+ {
+  "t0": 148.01,
+  "t1": 155.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "kitchen drawer is open revealing utensils inside, whereas it was closed at the start"
+ },
+ {
+  "t0": 152.02,
+  "t1": 159.03,
+  "action": "none",
+  "objects": [],
+  "tools": [
+   "measuring spoons"
+  ],
+  "amount": null,
+  "after": "a set of measuring spoons has been retrieved from the open drawer and is now held in the hand"
+ },
+ {
+  "t0": 156.02,
+  "t1": 163.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "drawer closed and upper cabinet opened, person now holding a set of measuring spoons and a spice jar"
+ },
+ {
+  "t0": 160.03,
+  "t1": 167.0,
+  "action": "open a can from the cabinet",
+  "objects": [
+   "can",
+   "cabinet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the cabinet is open and the can is opened with its lid peeled back over the stovetop"
+ },
+ {
+  "t0": 164.03,
+  "t1": 171.0,
+  "action": "opens can",
+  "objects": [
+   "can",
+   "can lid"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "can taken from cabinet and held with both hands over stovetop with lid peeled open"
+ },
+ {
+  "t0": 168.0,
+  "t1": 175.01,
+  "action": "scooping powder from a can with a spoon",
+  "objects": [
+   "white powder in small can",
+   "measuring cup"
+  ],
+  "tools": [
+   "spoon",
+   "small can"
+  ],
+  "amount": null,
+  "after": "spoon is now in hand filled with white powder and moved toward the measuring cup, no longer on the counter"
+ },
+ {
+  "t0": 172.01,
+  "t1": 179.01,
+  "action": "scoops powder and adds it to water",
+  "objects": [
+   "white powder",
+   "water in glass"
+  ],
+  "tools": [
+   "spoon",
+   "small container",
+   "glass measuring cup"
+  ],
+  "amount": "one spoonful",
+  "after": "powder is in the glass of water and the spoon and small container have been set down on the counter and stove"
+ },
+ {
+  "t0": 176.01,
+  "t1": 183.02,
+  "action": "stir liquid and handle ingredients",
+  "objects": [
+   "liquid in measuring cup",
+   "flour bag",
+   "small glass bowl",
+   "can"
+  ],
+  "tools": [
+   "spoon",
+   "measuring cup",
+   "small glass bowl"
+  ],
+  "amount": null,
+  "after": "spoon moved from measuring cup to stovetop, small bowl picked up with both hands, upper cabinet opened and a can retrieved and held in hand"
+ },
+ {
+  "t0": 180.01,
+  "t1": 187.02,
+  "action": "scoops flour into measuring cup",
+  "objects": [
+   "all-purpose flour bag",
+   "measuring cup",
+   "baking powder can"
+  ],
+  "tools": [
+   "measuring cup",
+   "small glass"
+  ],
+  "amount": null,
+  "after": "white powder is now in the large measuring cup and the person has moved away from the counter to the right side of the stove after opening and closing the overhead cabinet"
+ },
+ {
+  "t0": 184.02,
+  "t1": 191.02,
+  "action": "scoops white powder into glass and carries it to sink",
+  "objects": [
+   "glass",
+   "white powder"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "glass with white powder moved from stove counter to sink counter and placed down next to packaged food"
+ },
+ {
+  "t0": 188.02,
+  "t1": 195.03,
+  "action": "put egg carton into refrigerator",
+  "objects": [
+   "egg carton",
+   "glass jar"
+  ],
+  "tools": [],
+  "amount": "30 large eggs Family Pack",
+  "after": "glass jar set down on counter and egg carton lifted to open refrigerator door which is now open"
+ },
+ {
+  "t0": 192.03,
+  "t1": 199.03,
+  "action": "puts egg carton in refrigerator and takes strawberries out",
+  "objects": [
+   "egg carton",
+   "strawberries",
+   "refrigerator"
+  ],
+  "tools": [],
+  "amount": "18 large eggs Family Pack",
+  "after": "refrigerator door is open, egg carton is placed on door shelf, strawberries are removed and held in hand"
+ },
+ {
+  "t0": 196.03,
+  "t1": 203.0,
+  "action": "put eggs in fridge and take strawberries out",
+  "objects": [
+   "egg carton",
+   "strawberry package"
+  ],
+  "tools": [],
+  "amount": "18 eggs Family Pack",
+  "after": "egg carton is now stored on the fridge door shelf and the fridge door is closed with the strawberry package removed from the fridge"
+ },
+ {
+  "t0": 200.03,
+  "t1": 207.01,
+  "action": "retrieves milk from fridge and repositions blender pitcher",
+  "objects": [
+   "milk",
+   "blender pitcher"
+  ],
+  "tools": [
+   "blender",
+   "glass"
+  ],
+  "amount": null,
+  "after": "fridge is closed, a glass of milk is on the counter by the sink and the blender pitcher has been shifted on the counter"
+ },
+ {
+  "t0": 204.0,
+  "t1": 211.01,
+  "action": "pours and repositions blender jar",
+  "objects": [
+   "blender jar",
+   "glass with white liquid"
+  ],
+  "tools": [
+   "blender jar and blade lid"
+  ],
+  "amount": null,
+  "after": "blender jar moved from right side to center of counter and glass lifted from counter to over the sink while handling the blade lid"
+ },
+ {
+  "t0": 208.01,
+  "t1": 215.01,
+  "action": "screws blender blade base onto jar",
+  "objects": [
+   "blender jar",
+   "blender blade base"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the clear jar and black blade base that were separate on the counter are now joined and placed by the sink, hands have moved to handle a second larger blender jar in the center"
+ },
+ {
+  "t0": 212.01,
+  "t1": 219.02,
+  "action": "tightens blender lid",
+  "objects": [
+   "blender jar",
+   "blade assembly"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "blade assembly set down on sink edge while both hands twisted and secured the blender lid, then picked up again in hands"
+ },
+ {
+  "t0": 216.02,
+  "t1": 223.02,
+  "action": "assemble blender jar and press microwave buttons",
+  "objects": [
+   "blender jar",
+   "blender blade assembly",
+   "microwave"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "blender blade assembly screwed onto jar and microwave keypad being pressed"
+ },
+ {
+  "t0": 220.02,
+  "t1": 227.03,
+  "action": "shakes a bottle and presses microwave buttons",
+  "objects": [
+   "shaker bottle with beverage"
+  ],
+  "tools": [
+   "shaker bottle",
+   "microwave"
+  ],
+  "amount": null,
+  "after": "bottle has been picked up and shaken and microwave has been programmed, camera view moved from sink counter to stove"
+ },
+ {
+  "t0": 224.02,
+  "t1": 231.03,
+  "action": "press buttons on microwave",
+  "objects": [
+   "microwave"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hand leaves microwave and camera pulls back to show wider view of stove, countertop, laptop and floor with person out of frame"
+ },
+ {
+  "t0": 228.03,
+  "t1": 235.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change to counter or stove items; camera briefly pulls back to show wider kitchen view then returns to original framing"
+ },
+ {
+  "t0": 232.03,
+  "t1": 239.01,
+  "action": "place blender jar onto blender base",
+  "objects": [
+   "blender jar with ingredients"
+  ],
+  "tools": [
+   "blender"
+  ],
+  "amount": null,
+  "after": "camera pans from stove to sink and a hand appears holding a blender jar and seats it on the blender base"
+ },
+ {
+  "t0": 236.0,
+  "t1": 243.01,
+  "action": "secure blender cup onto base",
+  "objects": [
+   "blender cup with ingredients"
+  ],
+  "tools": [
+   "blender base"
+  ],
+  "amount": null,
+  "after": "blender cup is now mounted and locked onto blender base on sink counter, view shifted from stove to sink"
+ },
+ {
+  "t0": 240.01,
+  "t1": 247.01,
+  "action": "blends ingredients in blender",
+  "objects": [
+   "blender jar",
+   "ingredients"
+  ],
+  "tools": [
+   "blender"
+  ],
+  "amount": null,
+  "after": "blender jar is seated and locked onto base and blending has started"
+ },
+ {
+  "t0": 244.01,
+  "t1": 251.02,
+  "action": "blending",
+  "objects": [
+   "ingredients in blender"
+  ],
+  "tools": [
+   "blender"
+  ],
+  "amount": null,
+  "after": "contents in blender appear slightly more uniformly mixed with no other major change"
+ },
+ {
+  "t0": 248.01,
+  "t1": 255.02,
+  "action": "operating blender",
+  "objects": [
+   "food in blender jar"
+  ],
+  "tools": [
+   "blender"
+  ],
+  "amount": null,
+  "after": "both hands are gripping the blender jar instead of one hand pressing the button and the contents appear more blended"
+ },
+ {
+  "t0": 252.02,
+  "t1": 259.03,
+  "action": "operating blender",
+  "objects": [
+   "ingredients in blender jar"
+  ],
+  "tools": [
+   "blender"
+  ],
+  "amount": null,
+  "after": "no visible change - ingredients remain chunky in jar and jar remains on blender base"
+ },
+ {
+  "t0": 256.02,
+  "t1": 263.03,
+  "action": "operating blender and lifting jar",
+  "objects": [
+   "ingredients in blender jar"
+  ],
+  "tools": [
+   "blender",
+   "blender jar"
+  ],
+  "amount": null,
+  "after": "blender jar is lifted off the base and held tilted while the other hand reaches to the wall outlet behind the counter"
+ },
+ {
+  "t0": 260.03,
+  "t1": 267.0,
+  "action": "plug in blender and seat jar on base",
+  "objects": [
+   "blender jar with ingredients"
+  ],
+  "tools": [
+   "blender base"
+  ],
+  "amount": null,
+  "after": "jar moves from being held above the base with both hands to being seated and locked onto the base while the other hand plugs the power cord into the wall outlet"
+ },
+ {
+  "t0": 264.03,
+  "t1": 271.0,
+  "action": "pouring into blender",
+  "objects": [
+   "blender jar"
+  ],
+  "tools": [
+   "plastic bottle"
+  ],
+  "amount": null,
+  "after": "right hand moves from pouring position to cabinet knob and cabinet door closes slightly"
+ },
+ {
+  "t0": 268.0,
+  "t1": 275.01,
+  "action": "preparing a drink",
+  "objects": [
+   "mug",
+   "electric kettle"
+  ],
+  "tools": [
+   "plastic water jug"
+  ],
+  "amount": null,
+  "after": "both hands are pushed further back under the cabinet, otherwise mug with powder and kettle remain in same place with no clearly visible change"
+ },
+ {
+  "t0": 272.01,
+  "t1": 279.01,
+  "action": "assembles blender",
+  "objects": [
+   "blender jar"
+  ],
+  "tools": [
+   "blender base",
+   "blender lid"
+  ],
+  "amount": null,
+  "after": "blender jar moved from lying on its side off the base to upright seated on the base with lid held in hand and camera view shifts to show counter and sink"
+ },
+ {
+  "t0": 276.01,
+  "t1": 283.02,
+  "action": "operate blender",
+  "objects": [
+   "blender jar with ingredients"
+  ],
+  "tools": [
+   "blender"
+  ],
+  "amount": null,
+  "after": "blender jar is placed on base and blending with hand holding lid, view changes from under-cabinet to frontal countertop and sink view"
+ },
+ {
+  "t0": 280.01,
+  "t1": 287.02,
+  "action": "blends ingredients in blender",
+  "objects": [
+   "ingredients"
+  ],
+  "tools": [
+   "blender"
+  ],
+  "amount": null,
+  "after": "blender is running and ingredients inside jar are being mixed"
+ },
+ {
+  "t0": 284.02,
+  "t1": 291.02,
+  "action": "operating blender",
+  "objects": [
+   "ingredients in blender jar"
+  ],
+  "tools": [
+   "blender"
+  ],
+  "amount": null,
+  "after": "hands are off the blender jar and the contents inside are blended while the blender remains on"
+ },
+ {
+  "t0": 288.02,
+  "t1": 295.03,
+  "action": "operating blender then microwave and stove",
+  "objects": [
+   "mixture in blender"
+  ],
+  "tools": [
+   "blender",
+   "microwave",
+   "electric stove"
+  ],
+  "amount": null,
+  "after": "blender contents are mixed and view shifts from sink counter with blender to stove area with hand over burner"
+ },
+ {
+  "t0": 292.03,
+  "t1": 299.03,
+  "action": "blending",
+  "objects": [
+   "ingredients in blender"
+  ],
+  "tools": [
+   "blender"
+  ],
+  "amount": null,
+  "after": "contents in blender change from chunky to smooth and uniformly mixed"
+ },
+ {
+  "t0": 296.03,
+  "t1": 303.0,
+  "action": "operating blender",
+  "objects": [
+   "light-colored mixture"
+  ],
+  "tools": [
+   "blender"
+  ],
+  "amount": null,
+  "after": "view shifts from stove to sink counter and blender is turned on with hand on button blending the mixture"
+ },
+ {
+  "t0": 300.03,
+  "t1": 307.01,
+  "action": "blending",
+  "objects": [
+   "mixture in blender jar"
+  ],
+  "tools": [
+   "blender"
+  ],
+  "amount": null,
+  "after": "mixture inside blender appears more uniformly mixed and smooth, camera briefly pans to stove area then returns to original view"
+ },
+ {
+  "t0": 304.0,
+  "t1": 311.01,
+  "action": "blending",
+  "objects": [
+   "smoothie mixture in blender jar"
+  ],
+  "tools": [
+   "blender"
+  ],
+  "amount": null,
+  "after": "mixture in blender jar is more uniformly blended and smooth"
+ },
+ {
+  "t0": 308.01,
+  "t1": 315.01,
+  "action": "operating blender",
+  "objects": [
+   "mixture in blender"
+  ],
+  "tools": [
+   "blender"
+  ],
+  "amount": null,
+  "after": "no visible change to mixture or kitchen; camera pans from blender to stove and back to starting view"
+ },
+ {
+  "t0": 312.01,
+  "t1": 319.02,
+  "action": "operate blender and lift jar",
+  "objects": [
+   "blender jar with light-colored liquid"
+  ],
+  "tools": [
+   "blender"
+  ],
+  "amount": null,
+  "after": "blender jar is lifted off its base and held tilted in hand"
+ },
+ {
+  "t0": 316.02,
+  "t1": 323.02,
+  "action": "blends drink and removes blender cup",
+  "objects": [
+   "blender cup with beige liquid"
+  ],
+  "tools": [
+   "blender"
+  ],
+  "amount": null,
+  "after": "blender cup is lifted off the base and held in both hands near the stove while reaching for a spoon"
+ },
+ {
+  "t0": 320.02,
+  "t1": 327.03,
+  "action": "secure blender jar and operate microwave",
+  "objects": [
+   "blender jar with light batter"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "person moved from sink to stove area, secured the jar lid and is pressing microwave buttons"
+ },
+ {
+  "t0": 324.02,
+  "t1": 331.03,
+  "action": "places pressure cooker lid on counter and programs microwave while checking tablet",
+  "objects": [
+   "pressure cooker lid",
+   "tablet",
+   "microwave"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "pressure cooker lid moved from hands to countertop next to tablet, spoon set down, and microwave is being operated"
+ },
+ {
+  "t0": 328.03,
+  "t1": 335.0,
+  "action": "operate tablet then open dishwasher",
+  "objects": [
+   "tablet",
+   "dishwasher"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "dishwasher door is open revealing dishes inside, camera view moved from stove counter to sink area"
+ },
+ {
+  "t0": 332.03,
+  "t1": 339.01,
+  "action": "takes pan from dishwasher",
+  "objects": [
+   "pan",
+   "dishwasher"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "dishwasher door is open and pan is removed from inside and held over the stove"
+ },
+ {
+  "t0": 336.0,
+  "t1": 343.01,
+  "action": "transfers frying pan from dishwasher to stove",
+  "objects": [
+   "frying pan",
+   "dishwasher"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "frying pan is now on the stove burner instead of inside the dishwasher rack"
+ },
+ {
+  "t0": 340.01,
+  "t1": 347.01,
+  "action": "pours batter from blender and pries burner coil with knife",
+  "objects": [
+   "frying pan",
+   "electric burner coil",
+   "batter"
+  ],
+  "tools": [
+   "knife",
+   "blender jar"
+  ],
+  "amount": null,
+  "after": "blender jar is lying on its side on the stovetop and the front-left burner coil is lifted up with the knife now on the counter"
+ },
+ {
+  "t0": 344.01,
+  "t1": 351.02,
+  "action": "heats knife over burner then opens cabinet",
+  "objects": [
+   "knife",
+   "electric stove burner",
+   "wall cabinet"
+  ],
+  "tools": [
+   "kitchen knife",
+   "electric stove"
+  ],
+  "amount": null,
+  "after": "knife is placed on counter and upper cabinet is open revealing bowls and containers"
+ },
+ {
+  "t0": 348.01,
+  "t1": 355.02,
+  "action": "spreads butter on plate",
+  "objects": [
+   "butter",
+   "plate"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "cabinet is open and a plate with butter and knife is held over the stove with butter being spread"
+ },
+ {
+  "t0": 352.02,
+  "t1": 359.03,
+  "action": "scrapes butter into frying pan",
+  "objects": [
+   "butter",
+   "plate",
+   "frying pan"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "butter moved from plate into the frying pan on the stove"
+ },
+ {
+  "t0": 356.02,
+  "t1": 363.03,
+  "action": "adds butter to frying pan",
+  "objects": [
+   "butter",
+   "frying pan",
+   "plate"
+  ],
+  "tools": [
+   "butter knife"
+  ],
+  "amount": null,
+  "after": "a piece of butter is now in the pan and the plate has been moved from the person's hands to the countertop"
+ },
+ {
+  "t0": 360.03,
+  "t1": 367.03,
+  "action": "add butter to frying pan",
+  "objects": [
+   "butter",
+   "frying pan"
+  ],
+  "tools": [
+   "knife",
+   "plate"
+  ],
+  "amount": "a small pat of butter",
+  "after": "butter is now in the pan on the stove and the plate with the knife has been placed on the counter"
+ },
+ {
+  "t0": 364.03,
+  "t1": 371.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "hand moves from the counter by the plate up toward the cabinet and then under the microwave; the pan with a pat of butter remains on the front burner and the plate with knife remains on the counter with no visible change to food"
+ },
+ {
+  "t0": 368.0,
+  "t1": 375.01,
+  "action": "turns on burner to heat pan",
+  "objects": [
+   "frying pan with butter",
+   "stove burner"
+  ],
+  "tools": [
+   "frying pan"
+  ],
+  "amount": null,
+  "after": "right hand moves from plate to gripping pan handle after reaching under microwave to turn on heat, butter remains in pan on burner"
+ },
+ {
+  "t0": 372.0,
+  "t1": 379.01,
+  "action": "swirl pan to melt butter",
+  "objects": [
+   "butter",
+   "frying pan"
+  ],
+  "tools": [
+   "frying pan",
+   "stovetop burner"
+  ],
+  "amount": null,
+  "after": "hand moves from under microwave to pan handle and pan is tilted and swirled over burner as butter begins to melt"
+ },
+ {
+  "t0": 376.01,
+  "t1": 383.02,
+  "action": "swirling butter in pan",
+  "objects": [
+   "butter"
+  ],
+  "tools": [
+   "frying pan"
+  ],
+  "amount": null,
+  "after": "hand released the pan handle and the camera panned left to reveal a tablet on the counter, butter still in pan"
+ },
+ {
+  "t0": 380.01,
+  "t1": 387.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no hands-on interaction occurs, camera pans from left counter toward center-right showing more of the right countertop and knife block while butter remains in pan on stove"
+ },
+ {
+  "t0": 384.02,
+  "t1": 391.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "camera pans from left counter to right counter and pat of butter in frying pan on front burner begins to soften"
+ },
+ {
+  "t0": 388.02,
+  "t1": 395.03,
+  "action": "heating butter",
+  "objects": [
+   "butter"
+  ],
+  "tools": [
+   "frying pan",
+   "stovetop"
+  ],
+  "amount": null,
+  "after": "butter pat in the pan on the front burner softens and begins to melt"
+ },
+ {
+  "t0": 392.02,
+  "t1": 399.03,
+  "action": "swirl butter in heated pan",
+  "objects": [
+   "butter"
+  ],
+  "tools": [
+   "frying pan",
+   "electric stovetop burner"
+  ],
+  "amount": null,
+  "after": "a hand is now gripping and tilting the pan over the front-right burner which is glowing orange-hot as the pat of butter begins to melt"
+ },
+ {
+  "t0": 396.03,
+  "t1": 403.0,
+  "action": "swirling pan to melt butter",
+  "objects": [
+   "butter"
+  ],
+  "tools": [
+   "frying pan",
+   "electric stovetop"
+  ],
+  "amount": null,
+  "after": "butter is slightly melted and spread across the bottom of the pan"
+ },
+ {
+  "t0": 400.03,
+  "t1": 407.01,
+  "action": "melt butter in pan on stove",
+  "objects": [
+   "butter",
+   "frying pan"
+  ],
+  "tools": [
+   "frying pan",
+   "electric stovetop"
+  ],
+  "amount": "one small pat of butter",
+  "after": "butter is now in the pan melting on the burner and the person has moved away from the stove to the sink reaching for a paper towel roll"
+ },
+ {
+  "t0": 404.0,
+  "t1": 411.01,
+  "action": "spread butter in pan",
+  "objects": [
+   "frying pan",
+   "butter"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "butter pat is spread across the bottom of the pan"
+ },
+ {
+  "t0": 408.01,
+  "t1": 415.01,
+  "action": "spreads butter in frying pan",
+  "objects": [
+   "butter",
+   "frying pan"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "a pat of butter is smeared across the bottom of the pan"
+ },
+ {
+  "t0": 412.01,
+  "t1": 419.02,
+  "action": "spreading butter in pan",
+  "objects": [
+   "frying pan",
+   "butter"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "butter is now in the pan in two small pats instead of on the knife"
+ },
+ {
+  "t0": 416.02,
+  "t1": 423.02,
+  "action": "spreading butter in a pan",
+  "objects": [
+   "frying pan",
+   "butter"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "butter is moved and spread around the bottom of the pan and the person's left hand enters the frame over the pan"
+ },
+ {
+  "t0": 420.02,
+  "t1": 427.03,
+  "action": "spread butter in pan",
+  "objects": [
+   "frying pan",
+   "butter"
+  ],
+  "tools": [
+   "fork"
+  ],
+  "amount": null,
+  "after": "butter is lifted from the pan and held with both hands on the fork"
+ },
+ {
+  "t0": 424.02,
+  "t1": 431.03,
+  "action": "places butter in pan",
+  "objects": [
+   "butter",
+   "frying pan"
+  ],
+  "tools": [
+   "fork"
+  ],
+  "amount": "2 pats of butter",
+  "after": "there are two pats of butter in the pan instead of one"
+ },
+ {
+  "t0": 428.03,
+  "t1": 435.0,
+  "action": "pushing butter with fork",
+  "objects": [
+   "butter",
+   "frying pan"
+  ],
+  "tools": [
+   "fork"
+  ],
+  "amount": "one pat of butter",
+  "after": "butter moved from the edge toward the center of the pan"
+ },
+ {
+  "t0": 432.03,
+  "t1": 439.01,
+  "action": "spreading butter in pan with fork",
+  "objects": [
+   "butter",
+   "frying pan"
+  ],
+  "tools": [
+   "fork"
+  ],
+  "amount": null,
+  "after": "butter is slightly melted and has shifted position in the pan"
+ },
+ {
+  "t0": 436.0,
+  "t1": 443.01,
+  "action": "spreading butter in pan with fork",
+  "objects": [
+   "butter",
+   "frying pan"
+  ],
+  "tools": [
+   "fork",
+   "frying pan"
+  ],
+  "amount": null,
+  "after": "butter begins to melt and spread across pan and camera pans left from stove to reveal tablet and countertop"
+ },
+ {
+  "t0": 440.01,
+  "t1": 447.01,
+  "action": "spreading butter in pan with fork",
+  "objects": [
+   "butter",
+   "frying pan"
+  ],
+  "tools": [
+   "fork"
+  ],
+  "amount": null,
+  "after": "butter begins to melt in pan and fork moves from pan to plate on counter"
+ },
+ {
+  "t0": 444.01,
+  "t1": 451.02,
+  "action": "spread butter in pan and twist open spice container",
+  "objects": [
+   "frying pan",
+   "butter pat",
+   "spice container"
+  ],
+  "tools": [
+   "fork"
+  ],
+  "amount": null,
+  "after": "butter is melting in pan, fork moved from pan to small plate on counter, spice container lifted off stove burner and held in both hands being twisted open"
+ },
+ {
+  "t0": 448.01,
+  "t1": 455.02,
+  "action": "opens a jar",
+  "objects": [
+   "jar",
+   "lid"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "jar is open and its lid is placed on the stovetop between burners"
+ },
+ {
+  "t0": 452.02,
+  "t1": 459.03,
+  "action": "pour batter into ramekin",
+  "objects": [
+   "batter",
+   "ramekin"
+  ],
+  "tools": [
+   "pitcher"
+  ],
+  "amount": null,
+  "after": "ramekin filled with batter sits on the stovetop, pitcher lies on the stove and the kitchen drawer is open"
+ },
+ {
+  "t0": 456.02,
+  "t1": 463.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "drawer under counter is now open and hand is rummaging through utensils inside"
+ },
+ {
+  "t0": 460.03,
+  "t1": 467.03,
+  "action": "rummages through drawer",
+  "objects": [
+   "kitchen drawer",
+   "kitchen utensils"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "left hand moved from edge to top-left inside drawer, utensils slightly shifted"
+ },
+ {
+  "t0": 464.03,
+  "t1": 471.0,
+  "action": "picks up a measuring spoon from drawer",
+  "objects": [
+   "measuring spoon"
+  ],
+  "tools": [
+   "measuring spoon"
+  ],
+  "amount": null,
+  "after": "a metal measuring spoon has been removed from the cluttered drawer and is held in the person's right hand"
+ },
+ {
+  "t0": 468.0,
+  "t1": 475.01,
+  "action": "retrieves measuring spoon and lifts pitcher to pour",
+  "objects": [
+   "batter in pitcher",
+   "frying pan on stove"
+  ],
+  "tools": [
+   "measuring spoon",
+   "pitcher"
+  ],
+  "amount": null,
+  "after": "drawer is closed and pitcher is held tilted over the frying pan on the stove"
+ },
+ {
+  "t0": 472.0,
+  "t1": 479.01,
+  "action": "pours batter into frying pan and swirls to coat",
+  "objects": [
+   "batter",
+   "frying pan"
+  ],
+  "tools": [
+   "frying pan",
+   "pitcher",
+   "spoon"
+  ],
+  "amount": null,
+  "after": "batter is poured from the pitcher and spread to coat the bottom of the frying pan"
+ },
+ {
+  "t0": 476.01,
+  "t1": 483.02,
+  "action": "pouring batter and swirling pan",
+  "objects": [
+   "batter",
+   "frying pan"
+  ],
+  "tools": [
+   "frying pan",
+   "measuring cup"
+  ],
+  "amount": null,
+  "after": "batter poured from the cup now coats the bottom of the frying pan"
+ },
+ {
+  "t0": 480.01,
+  "t1": 487.02,
+  "action": "pours batter into frying pan",
+  "objects": [
+   "batter",
+   "pancake"
+  ],
+  "tools": [
+   "frying pan",
+   "plastic container",
+   "spoon"
+  ],
+  "amount": null,
+  "after": "batter is now spread in the pan on the burner and the container is emptier"
+ },
+ {
+  "t0": 484.02,
+  "t1": 491.02,
+  "action": "pours batter into frying pan",
+  "objects": [
+   "batter",
+   "frying pan"
+  ],
+  "tools": [
+   "jar",
+   "spoon"
+  ],
+  "amount": null,
+  "after": "a dollop of batter is now in the empty frying pan on the stove"
+ },
+ {
+  "t0": 488.02,
+  "t1": 495.03,
+  "action": "spooning batter into pan",
+  "objects": [
+   "batter",
+   "frying pan"
+  ],
+  "tools": [
+   "container",
+   "spoon"
+  ],
+  "amount": "one dollop",
+  "after": "a round dollop of light batter is now sitting in the frying pan that was empty at the start"
+ },
+ {
+  "t0": 492.02,
+  "t1": 499.03,
+  "action": "pouring batter to make pancakes",
+  "objects": [
+   "pancake batter",
+   "frying pan"
+  ],
+  "tools": [
+   "glass container",
+   "spoon",
+   "frying pan"
+  ],
+  "amount": "2 dollops of batter in pan",
+  "after": "a second pancake batter is poured into the pan so there are two pancakes cooking instead of one at the start"
+ },
+ {
+  "t0": 496.03,
+  "t1": 503.0,
+  "action": "pours batter into skillet",
+  "objects": [
+   "pancake batter"
+  ],
+  "tools": [
+   "pitcher",
+   "spoon",
+   "frying pan"
+  ],
+  "amount": "3 dollops of batter in pan",
+  "after": "a third dollop of batter has been added to the pan so there are three pancakes cooking instead of two"
+ },
+ {
+  "t0": 500.03,
+  "t1": 507.01,
+  "action": "pouring batter into frying pan",
+  "objects": [
+   "pancake batter",
+   "pancakes"
+  ],
+  "tools": [
+   "glass pitcher",
+   "spoon",
+   "frying pan"
+  ],
+  "amount": "3 pancakes in pan",
+  "after": "pitcher moved from hands to stovetop and pan now contains three pancakes instead of two"
+ },
+ {
+  "t0": 504.0,
+  "t1": 511.01,
+  "action": "pouring batter and scooping oil for pancakes",
+  "objects": [
+   "pancake batter",
+   "pancakes"
+  ],
+  "tools": [
+   "spoon",
+   "frying pan",
+   "glass"
+  ],
+  "amount": "3 pancakes in pan",
+  "after": "pan goes from two small dollops of batter to three larger pancakes and the batter glass is moved from hand to stovetop while spoon moves from pan to oil bowl to plate"
+ },
+ {
+  "t0": 508.01,
+  "t1": 515.01,
+  "action": "spoon batter and cook pancakes",
+  "objects": [
+   "pancake batter",
+   "pancakes"
+  ],
+  "tools": [
+   "spoon",
+   "frying pan"
+  ],
+  "amount": "3 pancakes in pan",
+  "after": "spoon moved from small bowl on stove to plate on counter, three pancakes left cooking in pan, hands empty and away from stove"
+ },
+ {
+  "t0": 512.01,
+  "t1": 519.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "hand moves from plate with fork to clasped in front of stove, camera pans left to center tablet on counter, three tortillas remain in pan on stove"
+ },
+ {
+  "t0": 516.02,
+  "t1": 523.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "three pieces of dough remain cooking in the frying pan on the stove with no handling, camera pans slightly right to show more of the countertop"
+ },
+ {
+  "t0": 520.02,
+  "t1": 527.03,
+  "action": "pan-fries flatbreads",
+  "objects": [
+   "flatbread dough"
+  ],
+  "tools": [
+   "frying pan",
+   "electric stovetop"
+  ],
+  "amount": "3 pieces in pan",
+  "after": "the three dough rounds puff up slightly as they cook and the person's hand moves from holding the oven towel to pointing at one flatbread"
+ },
+ {
+  "t0": 524.02,
+  "t1": 531.03,
+  "action": "points at flatbreads and shakes pan",
+  "objects": [
+   "flatbreads"
+  ],
+  "tools": [
+   "frying pan"
+  ],
+  "amount": "3 flatbreads",
+  "after": "flatbreads shifted in pan and camera tilts to reveal tablet on counter"
+ },
+ {
+  "t0": 528.03,
+  "t1": 535.0,
+  "action": "frying pancakes",
+  "objects": [
+   "pancakes"
+  ],
+  "tools": [
+   "frying pan",
+   "electric stove"
+  ],
+  "amount": "3 pancakes",
+  "after": "hand releases pan handle and camera pans left to show tablet on counter, pan left on burner"
+ },
+ {
+  "t0": 532.03,
+  "t1": 539.01,
+  "action": "none",
+  "objects": [
+   "tortillas"
+  ],
+  "tools": [
+   "frying pan",
+   "stove"
+  ],
+  "amount": "3 tortillas in pan",
+  "after": "view shifts to opposite side of stove, a hand rests on the oven handle, and the tortillas remain in the pan with no significant visible change"
+ },
+ {
+  "t0": 536.0,
+  "t1": 543.01,
+  "action": "checking pancakes with a fork",
+  "objects": [
+   "pancakes"
+  ],
+  "tools": [
+   "frying pan",
+   "fork"
+  ],
+  "amount": "3 pancakes",
+  "after": "hand moved from oven handle to holding a fork over the pan touching a pancake"
+ },
+ {
+  "t0": 540.01,
+  "t1": 547.01,
+  "action": "checks pancakes with fork",
+  "objects": [
+   "pancakes"
+  ],
+  "tools": [
+   "fork",
+   "frying pan"
+  ],
+  "amount": "3 pancakes",
+  "after": "fork picked up from plate and pancakes nudged in pan, camera pans left to reveal tablet on counter"
+ },
+ {
+  "t0": 544.01,
+  "t1": 551.02,
+  "action": "cooking pancakes on stovetop",
+  "objects": [
+   "pancakes",
+   "frying pan",
+   "oil bottle"
+  ],
+  "tools": [
+   "frying pan",
+   "fork",
+   "stove"
+  ],
+  "amount": "3 pancakes in pan",
+  "after": "pancakes remain in pan continuing to cook and the hand moves from the pan handle to stowing the oil bottle in the back corner under the microwave"
+ },
+ {
+  "t0": 548.01,
+  "t1": 555.02,
+  "action": "handles squeeze bottle over counter",
+  "objects": [
+   "pancake batter"
+  ],
+  "tools": [
+   "squeeze bottle"
+  ],
+  "amount": null,
+  "after": "bottle is set on the counter and three pancakes are cooking in the pan on the stove"
+ },
+ {
+  "t0": 552.02,
+  "t1": 559.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "hand withdraws from countertop and drops to bottom of frame; three pieces of dough remain unchanged in pan on front-right burner"
+ },
+ {
+  "t0": 556.02,
+  "t1": 563.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 560.03,
+  "t1": 567.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 564.03,
+  "t1": 571.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 568.0,
+  "t1": 575.01,
+  "action": "none",
+  "objects": [
+   "pancakes"
+  ],
+  "tools": [],
+  "amount": "3 pancakes in pan",
+  "after": "camera pans left revealing tablet on left counter and more of kitchen; pancakes remain in pan on stove with no flip, stir or removal"
+ },
+ {
+  "t0": 572.0,
+  "t1": 579.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change to the three pieces cooking in the pan, camera viewpoint pans slightly"
+ },
+ {
+  "t0": 576.01,
+  "t1": 583.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change - three pieces of dough remain cooking in the pan on the stove"
+ },
+ {
+  "t0": 580.01,
+  "t1": 587.02,
+  "action": "none",
+  "objects": [
+   "pancakes"
+  ],
+  "tools": [],
+  "amount": "3 pancakes",
+  "after": "no visible change, pancakes remain cooking in pan on stove"
+ },
+ {
+  "t0": 584.02,
+  "t1": 591.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change - three pieces remain in pan on front right burner"
+ },
+ {
+  "t0": 588.02,
+  "t1": 595.03,
+  "action": "none",
+  "objects": [
+   "pancakes"
+  ],
+  "tools": [
+   "fork"
+  ],
+  "amount": "3 pancakes in pan",
+  "after": "person brings both hands into view holding a fork in front of the stove, pancakes continue cooking unchanged"
+ },
+ {
+  "t0": 592.02,
+  "t1": 599.03,
+  "action": "prods pancakes with fork",
+  "objects": [
+   "pancakes"
+  ],
+  "tools": [
+   "fork",
+   "frying pan"
+  ],
+  "amount": "3 pancakes",
+  "after": "a fork is now held in the pan touching a pancake and the pancakes are slightly repositioned"
+ },
+ {
+  "t0": 596.03,
+  "t1": 603.0,
+  "action": "prodding pancakes with a fork",
+  "objects": [
+   "pancakes"
+  ],
+  "tools": [
+   "fork",
+   "frying pan"
+  ],
+  "amount": "3 pancakes",
+  "after": "fork is lifted out of the pan and the camera pans left to reveal a laptop on the counter, pancakes remain in the pan"
+ },
+ {
+  "t0": 600.03,
+  "t1": 607.01,
+  "action": "cooking pancakes",
+  "objects": [
+   "pancakes",
+   "frying pan"
+  ],
+  "tools": [
+   "fork"
+  ],
+  "amount": "3 pancakes",
+  "after": "fork held over pan at start is no longer in hand and fingers touch a pancake at end, camera view shifts up to show microwave above stove"
+ },
+ {
+  "t0": 604.0,
+  "t1": 611.01,
+  "action": "cook tortillas and press microwave buttons",
+  "objects": [
+   "tortillas",
+   "microwave"
+  ],
+  "tools": [
+   "pan",
+   "stove"
+  ],
+  "amount": "3 tortillas",
+  "after": "camera view shifts from side to front and a hand appears pressing the microwave keypad while three tortillas remain heating in the pan"
+ },
+ {
+  "t0": 608.01,
+  "t1": 615.01,
+  "action": "press buttons on microwave",
+  "objects": [
+   "microwave"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hand moves off microwave keypad and camera tilts down to reveal a frying pan with three round dough pieces cooking on the front burner of the stove"
+ },
+ {
+  "t0": 612.01,
+  "t1": 619.02,
+  "action": "none",
+  "objects": [
+   "tortillas"
+  ],
+  "tools": [],
+  "amount": "3 pieces in pan",
+  "after": "no visible change to food - three pieces remain unflipped in pan on stove; camera pans left from microwave to reveal tablet on counter"
+ },
+ {
+  "t0": 616.02,
+  "t1": 623.02,
+  "action": "frying pancakes by hand",
+  "objects": [
+   "pancakes"
+  ],
+  "tools": [
+   "frying pan"
+  ],
+  "amount": "3 pancakes in pan",
+  "after": "camera pans left to show tablet then back and a hand enters to touch and adjust a pancake in the pan"
+ },
+ {
+  "t0": 620.02,
+  "t1": 627.03,
+  "action": "press and adjust pancakes by hand",
+  "objects": [
+   "pancakes",
+   "batter"
+  ],
+  "tools": [
+   "frying pan",
+   "stovetop"
+  ],
+  "amount": "3 pancakes",
+  "after": "pancakes remain in pan on front-right burner continuing to cook with no flip, camera has panned right from laptop to center on stove and right countertop"
+ },
+ {
+  "t0": 624.02,
+  "t1": 631.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": "4 pancakes in pan",
+  "after": "person's leg is no longer up on the counter by the microwave and both hands are now visible below the stove holding a blue spatula, pancakes remain in pan on burner"
+ },
+ {
+  "t0": 628.03,
+  "t1": 635.0,
+  "action": "slicing butter",
+  "objects": [
+   "butter"
+  ],
+  "tools": [
+   "knife",
+   "spatula"
+  ],
+  "amount": "3 pancakes in pan",
+  "after": "knife was picked up and repositioned on the plate, hand moved from below the stove to the counter"
+ },
+ {
+  "t0": 632.03,
+  "t1": 639.01,
+  "action": "cut food on plate",
+  "objects": [
+   "food on plate",
+   "pancakes in pan"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": "3 pancakes in pan",
+  "after": "food on plate is cut into pieces and view pans from stove to sink and dish rack"
+ },
+ {
+  "t0": 636.0,
+  "t1": 643.01,
+  "action": "none",
+  "objects": [
+   "pancakes"
+  ],
+  "tools": [
+   "spatula"
+  ],
+  "amount": "3 pancakes in pan",
+  "after": "spatula taken from drying rack over sink and now held in hand over pan on stove"
+ },
+ {
+  "t0": 640.01,
+  "t1": 647.01,
+  "action": "retrieves spatula and presses pancakes",
+  "objects": [
+   "pancakes",
+   "frying pan"
+  ],
+  "tools": [
+   "spatula"
+  ],
+  "amount": "3 pancakes",
+  "after": "spatula moved from dish rack above sink to stovetop and is pressing down on pancakes in pan"
+ },
+ {
+  "t0": 644.01,
+  "t1": 651.02,
+  "action": "pressing pancakes in pan",
+  "objects": [
+   "pancakes"
+  ],
+  "tools": [
+   "spatula",
+   "frying pan"
+  ],
+  "amount": "3 pancakes",
+  "after": "spatula moved from held away below pan to inside pan pressing on pancakes and pancakes shifted slightly"
+ },
+ {
+  "t0": 648.01,
+  "t1": 655.02,
+  "action": "lifts and handles pancakes with spatula and hands",
+  "objects": [
+   "pancakes"
+  ],
+  "tools": [
+   "spatula"
+  ],
+  "amount": "3 pancakes in pan",
+  "after": "one pancake is lifted from the pan and held by hand"
+ },
+ {
+  "t0": 652.02,
+  "t1": 659.03,
+  "action": "flipping pancakes",
+  "objects": [
+   "pancakes"
+  ],
+  "tools": [
+   "spatula",
+   "fork",
+   "frying pan"
+  ],
+  "amount": "3 pancakes",
+  "after": "pancakes are flipped and repositioned in the pan, spatula lifted away from pan"
+ },
+ {
+  "t0": 656.02,
+  "t1": 663.03,
+  "action": "separating and cooking pancakes",
+  "objects": [
+   "pancakes"
+  ],
+  "tools": [
+   "spatula",
+   "fork",
+   "frying pan"
+  ],
+  "amount": "3 pancakes",
+  "after": "batter separated into three distinct pancakes cooking in the pan"
+ },
+ {
+  "t0": 660.03,
+  "t1": 667.03,
+  "action": "tends pancakes in pan",
+  "objects": [
+   "pancakes",
+   "frying pan"
+  ],
+  "tools": [
+   "spatula",
+   "fork"
+  ],
+  "amount": "3 pancakes",
+  "after": "fork moved from hand to plate on counter, pan is jiggled and spatula is lifted with both hands, camera tilts up to show microwave"
+ },
+ {
+  "t0": 664.03,
+  "t1": 671.0,
+  "action": "cooking pancakes",
+  "objects": [
+   "pancakes"
+  ],
+  "tools": [
+   "spatula",
+   "frying pan"
+  ],
+  "amount": "3 pancakes in pan",
+  "after": "hands leave frame and camera tilts up to show microwave above stove, pan shifts to bottom edge of view"
+ },
+ {
+  "t0": 668.0,
+  "t1": 675.01,
+  "action": "fry pancakes",
+  "objects": [
+   "pancakes"
+  ],
+  "tools": [
+   "frying pan",
+   "spatula",
+   "microwave",
+   "stovetop"
+  ],
+  "amount": "3 pancakes",
+  "after": "a frying pan with three pancakes appears on the front burner and is being lifted with a spatula, after a button was pressed on the microwave"
+ },
+ {
+  "t0": 672.0,
+  "t1": 679.01,
+  "action": "cooking pancakes on stovetop",
+  "objects": [
+   "pancakes"
+  ],
+  "tools": [
+   "spatula",
+   "frying pan"
+  ],
+  "amount": "3 pancakes",
+  "after": "hand moves from pressing microwave keypad to holding spatula and pressing pancakes in frying pan on stove"
+ },
+ {
+  "t0": 676.01,
+  "t1": 683.02,
+  "action": "pressing eggs in pan",
+  "objects": [
+   "eggs"
+  ],
+  "tools": [
+   "spatula",
+   "frying pan"
+  ],
+  "amount": "2 eggs",
+  "after": "spatula moves from right egg to left egg as eggs continue to cook, no flip occurs"
+ },
+ {
+  "t0": 680.01,
+  "t1": 687.02,
+  "action": "flipping pancakes in pan",
+  "objects": [
+   "pancakes"
+  ],
+  "tools": [
+   "spatula",
+   "frying pan"
+  ],
+  "amount": "3 pieces",
+  "after": "one piece is lifted and flipped over in the pan"
+ },
+ {
+  "t0": 684.02,
+  "t1": 691.02,
+  "action": "flips and repositions pancakes in pan",
+  "objects": [
+   "pancakes"
+  ],
+  "tools": [
+   "spatula",
+   "frying pan"
+  ],
+  "amount": "3 pancakes",
+  "after": "one pancake is flipped over and the three pancakes are separated and spread apart in the pan"
+ },
+ {
+  "t0": 688.02,
+  "t1": 695.03,
+  "action": "flipping dough in pan",
+  "objects": [
+   "dough"
+  ],
+  "tools": [
+   "spatula",
+   "frying pan"
+  ],
+  "amount": "3 pieces",
+  "after": "one piece of dough is lifted and turned over with the spatula"
+ },
+ {
+  "t0": 692.02,
+  "t1": 699.03,
+  "action": "flipping dough in pan",
+  "objects": [
+   "dough pieces"
+  ],
+  "tools": [
+   "spatula",
+   "frying pan"
+  ],
+  "amount": "3 pieces",
+  "after": "one dough piece on the right side flipped over and moved to the center of the pan overlapping another piece"
+ },
+ {
+  "t0": 696.03,
+  "t1": 703.0,
+  "action": "pressing and breaking dough in pan",
+  "objects": [
+   "dough pieces"
+  ],
+  "tools": [
+   "spatula",
+   "frying pan"
+  ],
+  "amount": "3 pieces",
+  "after": "one dough piece is flattened and split into smaller fragments"
+ },
+ {
+  "t0": 700.03,
+  "t1": 707.01,
+  "action": "pressing and breaking dough",
+  "objects": [
+   "dough"
+  ],
+  "tools": [
+   "spatula",
+   "frying pan"
+  ],
+  "amount": "3 pieces",
+  "after": "middle piece of dough is broken apart and spatula has moved to the bottom piece"
+ },
+ {
+  "t0": 704.0,
+  "t1": 711.01,
+  "action": "pressing and separating dough",
+  "objects": [
+   "dough"
+  ],
+  "tools": [
+   "spatula",
+   "frying pan"
+  ],
+  "amount": "3 pieces",
+  "after": "dough in pan is separated from a clump into three distinct flattened pieces"
+ },
+ {
+  "t0": 708.01,
+  "t1": 715.01,
+  "action": "flipping and pressing dumplings in pan",
+  "objects": [
+   "dumplings"
+  ],
+  "tools": [
+   "spatula",
+   "frying pan"
+  ],
+  "amount": "3 dumplings",
+  "after": "the three dumplings are flipped and repositioned in the pan"
+ },
+ {
+  "t0": 712.01,
+  "t1": 719.02,
+  "action": "press dough in pan with spatula",
+  "objects": [
+   "dough"
+  ],
+  "tools": [
+   "spatula",
+   "frying pan"
+  ],
+  "amount": "3 pieces",
+  "after": "spatula left resting in pan and person stops handling food as camera pans left to show tablet on counter"
+ },
+ {
+  "t0": 716.02,
+  "t1": 723.02,
+  "action": "fry food and operate tablet",
+  "objects": [
+   "food in pan",
+   "tablet"
+  ],
+  "tools": [
+   "spatula"
+  ],
+  "amount": "3 pieces in pan",
+  "after": "hand is now on the tablet and the tablet screen has changed from the start"
+ },
+ {
+  "t0": 720.02,
+  "t1": 727.03,
+  "action": "frying dough while checking recipe on tablet",
+  "objects": [
+   "dough pieces in pan"
+  ],
+  "tools": [
+   "spatula",
+   "frying pan on stovetop",
+   "tablet"
+  ],
+  "amount": "3 pieces frying in pan",
+  "after": "hand moved from pan to scroll tablet and back to pan, dough slightly more cooked but still 3 pieces in pan"
+ },
+ {
+  "t0": 724.02,
+  "t1": 731.03,
+  "action": "pan-fry and flip food",
+  "objects": [
+   "dough pieces"
+  ],
+  "tools": [
+   "frying pan",
+   "spatula",
+   "stove"
+  ],
+  "amount": "3 pieces",
+  "after": "food flipped over in pan on stove and refrigerator door opened to reveal contents"
+ },
+ {
+  "t0": 728.03,
+  "t1": 735.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "refrigerator door is now open and person's hand is reaching inside to grab a container, view has shifted from stove to refrigerator"
+ },
+ {
+  "t0": 732.03,
+  "t1": 739.0,
+  "action": "removes and opens a container of strawberries from the refrigerator",
+  "objects": [
+   "plastic clamshell container of strawberries"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the container of strawberries is out of the fridge and open in the person's hands with the strawberries exposed"
+ },
+ {
+  "t0": 736.0,
+  "t1": 743.01,
+  "action": "opens container and takes a strawberry",
+  "objects": [
+   "strawberries",
+   "plastic clamshell container"
+  ],
+  "tools": [],
+  "amount": "1 strawberry",
+  "after": "container was opened and closed again with one strawberry removed from it"
+ },
+ {
+  "t0": 740.01,
+  "t1": 747.01,
+  "action": "return strawberry to refrigerator",
+  "objects": [
+   "strawberry",
+   "container of strawberries"
+  ],
+  "tools": [],
+  "amount": "1 strawberry",
+  "after": "strawberry placed into bag inside fridge, container closed on floor, camera pans away from fridge to kitchen counter and sink"
+ },
+ {
+  "t0": 744.01,
+  "t1": 751.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "camera moves from close-up inside open refrigerator to sink and stove area; a frying pan with three slices appears on the stove while refrigerator door stays open"
+ },
+ {
+  "t0": 748.01,
+  "t1": 755.02,
+  "action": "none",
+  "objects": [],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "wooden cutting board fetched from propped against wall by sink and now held in hand in front of stove, pan with 3 pieces still on burner"
+ },
+ {
+  "t0": 752.02,
+  "t1": 759.02,
+  "action": "move cutting board to stove and handle ingredient",
+  "objects": [
+   "dough",
+   "small red ingredient",
+   "cutting board"
+  ],
+  "tools": [
+   "cutting board",
+   "frying pan",
+   "stove"
+  ],
+  "amount": "3 pieces of dough frying in pan",
+  "after": "cutting board moved from beside the sink to on top of the stove and person is holding and manipulating a small red ingredient over it while dough fries"
+ },
+ {
+  "t0": 756.02,
+  "t1": 763.03,
+  "action": "places tomato on cutting board and picks up knife",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [
+   "cutting board",
+   "knife"
+  ],
+  "amount": "1 tomato",
+  "after": "a red tomato is now on the cutting board and a knife is held in the hand, pan with three pieces still frying"
+ },
+ {
+  "t0": 760.03,
+  "t1": 767.03,
+  "action": "stems tomato and picks up knife to slice",
+  "objects": [
+   "small red tomato"
+  ],
+  "tools": [
+   "cutting board",
+   "chef's knife"
+  ],
+  "amount": "one tomato",
+  "after": "stem removed and left on cutting board, tomato placed on board and person holding large chef's knife ready to cut"
+ },
+ {
+  "t0": 764.03,
+  "t1": 771.0,
+  "action": "slicing tomato",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": "1 tomato cut into 2 pieces",
+  "after": "whole tomato on cutting board is now sliced in half while food continues frying in pan"
+ },
+ {
+  "t0": 768.0,
+  "t1": 775.01,
+  "action": "slice and rinse strawberry",
+  "objects": [
+   "strawberry"
+  ],
+  "tools": [
+   "knife",
+   "cutting board",
+   "faucet"
+  ],
+  "amount": "1 strawberry cut into 2 pieces",
+  "after": "strawberry is sliced in half and moved from cutting board on stove to sink where it is held under running water"
+ },
+ {
+  "t0": 772.0,
+  "t1": 779.01,
+  "action": "wash and slice tomato",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "tomato is rinsed under faucet and being sliced on the cutting board over the stove"
+ },
+ {
+  "t0": 776.01,
+  "t1": 783.02,
+  "action": "wash and slice",
+  "objects": [
+   "small red produce (cherry tomato/strawberry)"
+  ],
+  "tools": [
+   "sink faucet",
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "produce washed under faucet at sink then carried to cutting board on stove and partially sliced while batter fries in pan"
+ },
+ {
+  "t0": 780.01,
+  "t1": 787.02,
+  "action": "slices tomato",
+  "objects": [
+   "tomato"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "whole tomato is cut into several slices on the cutting board"
+ },
+ {
+  "t0": 784.02,
+  "t1": 791.02,
+  "action": "slicing",
+  "objects": [
+   "red pepper"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "the whole red pepper is cut into several small slices on the cutting board"
+ },
+ {
+  "t0": 788.02,
+  "t1": 795.03,
+  "action": "slicing strawberry",
+  "objects": [
+   "strawberry"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": "1 strawberry cut into about 5-6 slices",
+  "after": "the whole strawberry on the cutting board is now cut into several small slices"
+ },
+ {
+  "t0": 792.02,
+  "t1": 799.03,
+  "action": "slicing meat",
+  "objects": [
+   "meat"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "the red meat on the cutting board is cut into more, smaller slices"
+ },
+ {
+  "t0": 796.03,
+  "t1": 803.0,
+  "action": "slicing strawberries",
+  "objects": [
+   "strawberries"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "the strawberries on the cutting board are cut into smaller and more numerous pieces"
+ },
+ {
+  "t0": 800.03,
+  "t1": 807.01,
+  "action": "chopping red pepper",
+  "objects": [
+   "red pepper"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "red pepper is diced into small pieces and knife is laid on the cutting board as hand moves toward the frying pan"
+ },
+ {
+  "t0": 804.0,
+  "t1": 811.01,
+  "action": "chops peppers and flips dough in pan",
+  "objects": [
+   "red peppers",
+   "dough"
+  ],
+  "tools": [
+   "knife",
+   "cutting board",
+   "frying pan",
+   "spatula"
+  ],
+  "amount": "3 pieces of dough in pan",
+  "after": "peppers are chopped on the board and spatula is pressing flipping dough in the pan"
+ },
+ {
+  "t0": 808.01,
+  "t1": 815.01,
+  "action": "pressing and repositioning dumplings in pan",
+  "objects": [
+   "dumplings"
+  ],
+  "tools": [
+   "spatula",
+   "frying pan"
+  ],
+  "amount": "3 pieces",
+  "after": "spatula picked up from counter and held over pan, dumplings shifted and pressed in pan"
+ },
+ {
+  "t0": 812.01,
+  "t1": 819.02,
+  "action": "press dumplings with spatula then adjust by hand",
+  "objects": [
+   "dumplings in frying pan"
+  ],
+  "tools": [
+   "spatula",
+   "frying pan"
+  ],
+  "amount": "3 pieces",
+  "after": "spatula moved from pan to countertop and dumplings slightly repositioned and spread apart in pan"
+ },
+ {
+  "t0": 816.02,
+  "t1": 823.02,
+  "action": "pressing dough in pan and checking recipe",
+  "objects": [
+   "dough in frying pan"
+  ],
+  "tools": [
+   "spatula",
+   "frying pan"
+  ],
+  "amount": "3 pieces",
+  "after": "spatula placed on counter, hand removed from pan, camera pans left to show tablet on counter"
+ },
+ {
+  "t0": 820.02,
+  "t1": 827.03,
+  "action": "press microwave buttons",
+  "objects": [
+   "microwave"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hand moves from floor to microwave keypad and camera pans right and up from left stovetop and tablet to show microwave and right side of stove with oil bottles and utensils"
+ },
+ {
+  "t0": 824.02,
+  "t1": 831.03,
+  "action": "pressing microwave buttons",
+  "objects": [
+   "microwave"
+  ],
+  "tools": [],
+  "amount": "1:00",
+  "after": "microwave display is lit and three flatbreads are frying in the pan on the stove"
+ },
+ {
+  "t0": 828.03,
+  "t1": 835.0,
+  "action": "pressing buttons on microwave",
+  "objects": [
+   "microwave"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "no clear visible change; hand is still on the microwave keypad and kitchen scene looks the same as at the start"
+ },
+ {
+  "t0": 832.03,
+  "t1": 839.0,
+  "action": "pressing buttons on microwave",
+  "objects": [
+   "microwave"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "orange-lidded container shifted slightly and small red-lidded jar now visible on counter beside it"
+ },
+ {
+  "t0": 836.0,
+  "t1": 843.01,
+  "action": "programs microwave",
+  "objects": [
+   "microwave"
+  ],
+  "tools": [],
+  "amount": "30 seconds",
+  "after": "microwave display illuminates and camera tilts down from microwave to stovetop revealing a frying pan with food and a cutting board with chopped peppers"
+ },
+ {
+  "t0": 840.01,
+  "t1": 847.01,
+  "action": "press microwave buttons",
+  "objects": [
+   "microwave"
+  ],
+  "tools": [
+   "microwave"
+  ],
+  "amount": null,
+  "after": "microwave display lit and hand withdrawn, view shifts to stovetop showing pan with three items frying, cutting board with knife and chopped red peppers, and tablet on counter"
+ },
+ {
+  "t0": 844.01,
+  "t1": 851.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change to the food; three pieces remain frying in the pan and chopped ingredients remain on the cutting board, camera pans left to show tablet then returns to start position"
+ },
+ {
+  "t0": 848.01,
+  "t1": 855.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "view shifts from stove to sink, pan on stove now has three pieces instead of two and a hand is reaching for a white plate on the dish rack"
+ },
+ {
+  "t0": 852.02,
+  "t1": 859.02,
+  "action": "takes a plate from the drying rack and brings it to the stove to plate food",
+  "objects": [
+   "white plate",
+   "three pieces of food frying in skillet"
+  ],
+  "tools": [
+   "spatula"
+  ],
+  "amount": "3 pieces in pan",
+  "after": "plate removed from rack and held at stove with hand now grasping spatula over counter"
+ },
+ {
+  "t0": 856.02,
+  "t1": 863.03,
+  "action": "transfers food onto plate",
+  "objects": [
+   "food"
+  ],
+  "tools": [
+   "plate",
+   "spatula"
+  ],
+  "amount": "3 items in frying pan",
+  "after": "white plate is now on the counter next to the stove with food on it"
+ },
+ {
+  "t0": 860.03,
+  "t1": 867.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "person moves away and camera pans left, plate and spatula are no longer held in view and a cutting board with chopped red peppers and a tablet on the counter become visible while three pieces remain cooking in the pan on the stove"
+ },
+ {
+  "t0": 864.03,
+  "t1": 871.0,
+  "action": "press microwave buttons while frying",
+  "objects": [
+   "dough patties"
+  ],
+  "tools": [
+   "microwave",
+   "frying pan"
+  ],
+  "amount": "3 pieces in pan",
+  "after": "person's hand appears pressing microwave then moving to stove and upper cabinet area; the three pieces remain frying in the pan with no major visible change from start"
+ },
+ {
+  "t0": 868.0,
+  "t1": 875.01,
+  "action": "fry and flip dough in pan",
+  "objects": [
+   "dough"
+  ],
+  "tools": [
+   "frying pan",
+   "spatula",
+   "stovetop",
+   "microwave"
+  ],
+  "amount": "3 pieces",
+  "after": "pan lifted off burner and dough pieces flipped and repositioned"
+ },
+ {
+  "t0": 872.0,
+  "t1": 879.01,
+  "action": "transferring food from pan to plate",
+  "objects": [
+   "dumplings"
+  ],
+  "tools": [
+   "frying pan",
+   "spatula"
+  ],
+  "amount": "3 pieces",
+  "after": "one piece moved from the pan to the previously empty white plate, pan now holds two pieces"
+ },
+ {
+  "t0": 876.01,
+  "t1": 883.02,
+  "action": "transferring cooked food from pan to plate",
+  "objects": [
+   "cooked food",
+   "plate"
+  ],
+  "tools": [
+   "frying pan",
+   "spatula"
+  ],
+  "amount": "2 pieces transferred, 1 piece remains in pan",
+  "after": "food moved from frying pan to white plate, plate now holds two pieces of cooked food and pan is nearly empty"
+ },
+ {
+  "t0": 880.01,
+  "t1": 887.02,
+  "action": "transfer omelette from pan to plate",
+  "objects": [
+   "omelette",
+   "plate"
+  ],
+  "tools": [
+   "frying pan",
+   "spatula"
+  ],
+  "amount": null,
+  "after": "pan is empty and plate now holds two portions of omelette"
+ },
+ {
+  "t0": 884.02,
+  "t1": 891.02,
+  "action": "transfers food from pan to plate",
+  "objects": [
+   "cooked food"
+  ],
+  "tools": [
+   "frying pan",
+   "spatula"
+  ],
+  "amount": "2 pieces",
+  "after": "pan is empty on the burner and plate now holds two pieces of cooked food"
+ },
+ {
+  "t0": 888.02,
+  "t1": 895.03,
+  "action": "plate food from pan onto plate",
+  "objects": [
+   "cooked food",
+   "plate"
+  ],
+  "tools": [
+   "frying pan",
+   "spatula"
+  ],
+  "amount": "2 pieces",
+  "after": "food is fully transferred onto plate in two pieces, pan is set back on stove, and view shifts left to show cutting board with chopped tomatoes and tablet"
+ },
+ {
+  "t0": 892.02,
+  "t1": 899.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "hands are now holding the cutting board with chopped red peppers and the knife on the stove and two plates of cooked food are visible on the right counter"
+ },
+ {
+  "t0": 896.03,
+  "t1": 903.0,
+  "action": "slices strawberries on cutting board",
+  "objects": [
+   "strawberries"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "cutting board lifted from stovetop and held over counter with strawberries more finely chopped"
+ },
+ {
+  "t0": 900.03,
+  "t1": 907.01,
+  "action": "transferring sliced strawberries onto plate",
+  "objects": [
+   "strawberries"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "sliced strawberries moved from cutting board onto the plate on the counter, cutting board is nearly empty"
+ },
+ {
+  "t0": 904.0,
+  "t1": 911.01,
+  "action": "chops strawberries and transfers them onto plate",
+  "objects": [
+   "strawberries",
+   "pancakes"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "chopped strawberries moved from cutting board to plate, leaving cutting board empty and food on plate topped with strawberries"
+ },
+ {
+  "t0": 908.01,
+  "t1": 915.01,
+  "action": "scrape food from cutting board onto plate",
+  "objects": [
+   "food",
+   "plate"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "food is transferred from the cutting board to the plate and the empty cutting board is placed on the stove"
+ },
+ {
+  "t0": 912.01,
+  "t1": 919.02,
+  "action": "repositions cutting board, checks tablet, and seasons food",
+  "objects": [
+   "cutting board with herbs",
+   "plated food"
+  ],
+  "tools": [
+   "knife",
+   "tablet",
+   "seasoning bottle"
+  ],
+  "amount": null,
+  "after": "cutting board moved from held over pan to resting on stovetop with knife on it then knife moved near plate, tablet screen touched, hand reaches for seasoning jar by knife block"
+ },
+ {
+  "t0": 916.02,
+  "t1": 923.02,
+  "action": "tap tablet and season food",
+  "objects": [
+   "plated food",
+   "tablet"
+  ],
+  "tools": [
+   "spice jar"
+  ],
+  "amount": null,
+  "after": "tablet was tapped and spice jar is now open in both hands over the plate with seasoning added to the food"
+ },
+ {
+  "t0": 920.02,
+  "t1": 927.03,
+  "action": "opens bottle and pours sauce onto food",
+  "objects": [
+   "sauce bottle",
+   "plated food"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "bottle is opened and sauce is poured over the food on the plate"
+ },
+ {
+  "t0": 924.02,
+  "t1": 931.03,
+  "action": "pouring sauce onto food",
+  "objects": [
+   "food on plate",
+   "sauce bottle"
+  ],
+  "tools": [
+   "sauce bottle"
+  ],
+  "amount": null,
+  "after": "sauce has been added on top of the food on the plate and the bottle is open and tilted over the plate"
+ },
+ {
+  "t0": 928.03,
+  "t1": 935.0,
+  "action": "shakes sauce onto food",
+  "objects": [
+   "plate of food"
+  ],
+  "tools": [
+   "sauce bottle"
+  ],
+  "amount": null,
+  "after": "sauce has been drizzled onto the food and the bottle is now held in one hand instead of two"
+ },
+ {
+  "t0": 932.03,
+  "t1": 939.0,
+  "action": "pours syrup onto food and caps bottle",
+  "objects": [
+   "plate of food",
+   "syrup bottle"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "syrup drizzled over food and bottle is upright and capped held in both hands over plate"
+ },
+ {
+  "t0": 936.0,
+  "t1": 943.01,
+  "action": "caps and puts down bottle",
+  "objects": [
+   "syrup bottle"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "bottle is capped and placed on its side on the counter by the knife block, hands are empty and camera has panned to the opposite side of the stove showing tablet and cutting board"
+ },
+ {
+  "t0": 939.0,
+  "t1": 946.01,
+  "action": "pours syrup on food then taps tablet",
+  "objects": [
+   "plate of food",
+   "tablet"
+  ],
+  "tools": [
+   "syrup bottle"
+  ],
+  "amount": null,
+  "after": "syrup added to food on plate, bottle set down on counter, person moved from stove to counter and is touching tablet screen"
+ }
+]

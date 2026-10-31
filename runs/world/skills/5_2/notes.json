@@ -1,0 +1,2350 @@
+[
+ {
+  "t0": 0.0,
+  "t1": 7.01,
+  "action": "touching dishes and cutting board",
+  "objects": [
+   "cutting board",
+   "dishes in dish rack"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "camera panned from desk area to sink and hand is now on cutting board behind faucet"
+ },
+ {
+  "t0": 4.0,
+  "t1": 11.01,
+  "action": "spraying water in sink",
+  "objects": [
+   "sink"
+  ],
+  "tools": [
+   "faucet sprayer"
+  ],
+  "amount": null,
+  "after": "water is running from the faucet into the sink basin and a hand is holding the faucet head, camera view shifted to center over sink"
+ },
+ {
+  "t0": 8.01,
+  "t1": 15.02,
+  "action": "rinsing item under running water",
+  "objects": [
+   "small dish in sink"
+  ],
+  "tools": [
+   "kitchen faucet sprayer"
+  ],
+  "amount": null,
+  "after": "water stops flowing, sink basin empties and drain becomes visible and camera shifts slightly right"
+ },
+ {
+  "t0": 12.01,
+  "t1": 19.02,
+  "action": "rinsing cutting board then tapping tablet",
+  "objects": [
+   "cutting board",
+   "tablet"
+  ],
+  "tools": [
+   "kitchen faucet"
+  ],
+  "amount": null,
+  "after": "faucet water is turned off and camera pans from close-up of sink to wider counter view with hand touching tablet screen"
+ },
+ {
+  "t0": 16.02,
+  "t1": 23.02,
+  "action": "scrolling on tablet touchscreen",
+  "objects": [
+   "tablet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "tablet screen content scrolled and camera view panned from sink counter to stove and microwave area"
+ },
+ {
+  "t0": 20.02,
+  "t1": 27.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "camera moved from tablet on counter to stove area, cabinet to the right of the microwave is now open and hand is reaching for a white mug on the middle shelf"
+ },
+ {
+  "t0": 24.02,
+  "t1": 31.03,
+  "action": "picks up a mug from cabinet",
+  "objects": [
+   "mug",
+   "cabinet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "cabinet door is open and a white mug is held in hand in front of the microwave"
+ },
+ {
+  "t0": 28.03,
+  "t1": 35.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "white mug taken from middle shelf of cabinet and carried to sink area"
+ },
+ {
+  "t0": 32.03,
+  "t1": 39.01,
+  "action": "positioning mug and picking up filter",
+  "objects": [
+   "white mug",
+   "metal coffee filter"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "white mug moved from hand to countertop next to the kettle and a small metal filter is now held in both hands over the sink"
+ },
+ {
+  "t0": 36.0,
+  "t1": 43.01,
+  "action": "placing a metal filter on the counter",
+  "objects": [
+   "metal coffee filter",
+   "mug"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "metal filter moved from dish rack to counter beside kettle and camera pans left to show tablet on counter"
+ },
+ {
+  "t0": 40.01,
+  "t1": 47.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "camera pans from close-up of sink with hand on counter to wider view showing tablet on counter and living area in background, hand no longer visible"
+ },
+ {
+  "t0": 44.01,
+  "t1": 51.02,
+  "action": "open overhead cabinet",
+  "objects": [
+   "kitchen cabinet above microwave"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "camera moves from cluttered living area counter to stove and the cabinet above the microwave is opened revealing a pot and colander inside"
+ },
+ {
+  "t0": 48.01,
+  "t1": 55.02,
+  "action": "open cabinet and pull tray forward",
+  "objects": [
+   "overhead cabinet door",
+   "tray",
+   "metal pot"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "cabinet above microwave was opened and then closed again, tray inside pulled slightly forward, view is now close-up on microwave with hand on microwave door"
+ },
+ {
+  "t0": 52.02,
+  "t1": 59.03,
+  "action": "pulls out kitchen scale tray and closes cabinet",
+  "objects": [
+   "overhead cabinet door",
+   "pull-out kitchen scale tray",
+   "microwave"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "cabinet door closed and view panned down from upper cabinet to countertop with rice cooker and stovetop"
+ },
+ {
+  "t0": 56.02,
+  "t1": 63.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "right cabinet door is now open and a white bowl has been removed from the stack and is held in the hand over the counter"
+ },
+ {
+  "t0": 60.03,
+  "t1": 67.0,
+  "action": "take bowl from cabinet and place on scale",
+  "objects": [
+   "white bowl"
+  ],
+  "tools": [
+   "digital kitchen scale"
+  ],
+  "amount": null,
+  "after": "cabinet door open and white bowl sitting on scale on counter next to rice cooker"
+ },
+ {
+  "t0": 64.03,
+  "t1": 71.0,
+  "action": "placing bowl on scale",
+  "objects": [
+   "white bowl"
+  ],
+  "tools": [
+   "digital kitchen scale"
+  ],
+  "amount": null,
+  "after": "a white bowl is now sitting on the digital scale on the counter next to the rice cooker"
+ },
+ {
+  "t0": 68.0,
+  "t1": 75.01,
+  "action": "pressing button on scale",
+  "objects": [
+   "bowl"
+  ],
+  "tools": [
+   "digital kitchen scale"
+  ],
+  "amount": "16",
+  "after": "scale display changes to 16"
+ },
+ {
+  "t0": 72.01,
+  "t1": 79.01,
+  "action": "pressing button on digital scale",
+  "objects": [
+   "bowl"
+  ],
+  "tools": [
+   "digital kitchen scale"
+  ],
+  "amount": null,
+  "after": "hand moves off scale and onto white lidded container on the left"
+ },
+ {
+  "t0": 76.01,
+  "t1": 83.02,
+  "action": "adding powder to bowl on scale",
+  "objects": [
+   "bowl",
+   "powder"
+  ],
+  "tools": [
+   "digital scale",
+   "container"
+  ],
+  "amount": null,
+  "after": "white bowl on scale now contains dark powder and white lid removed from red container"
+ },
+ {
+  "t0": 80.01,
+  "t1": 87.02,
+  "action": "weighing and tilting beans in cup",
+  "objects": [
+   "beans"
+  ],
+  "tools": [
+   "cup",
+   "digital kitchen scale"
+  ],
+  "amount": null,
+  "after": "white cup on scale is now filled with dark beans and hand is holding it"
+ },
+ {
+  "t0": 84.02,
+  "t1": 91.02,
+  "action": "pouring coffee beans into a bowl on a scale",
+  "objects": [
+   "coffee beans"
+  ],
+  "tools": [
+   "cup",
+   "bowl",
+   "digital kitchen scale"
+  ],
+  "amount": null,
+  "after": "more coffee beans in the bowl on the scale than at the start"
+ },
+ {
+  "t0": 88.02,
+  "t1": 95.03,
+  "action": "pouring coffee beans into bowl",
+  "objects": [
+   "coffee beans",
+   "bowl"
+  ],
+  "tools": [
+   "cup",
+   "digital scale"
+  ],
+  "amount": null,
+  "after": "beans transferred from cup to bowl on scale and empty cup set down beside it"
+ },
+ {
+  "t0": 92.03,
+  "t1": 99.03,
+  "action": "weighing and portioning coffee beans",
+  "objects": [
+   "coffee beans"
+  ],
+  "tools": [
+   "kitchen scale",
+   "cup",
+   "bowls"
+  ],
+  "amount": null,
+  "after": "coffee beans poured from cup and divided into two small bowls, one remaining on the scale"
+ },
+ {
+  "t0": 96.03,
+  "t1": 103.0,
+  "action": "weighing and portioning coffee beans",
+  "objects": [
+   "coffee beans",
+   "cups"
+  ],
+  "tools": [
+   "digital kitchen scale"
+  ],
+  "amount": null,
+  "after": "hand moved from inside the right cup on the scale to holding a small white lid over the left cup, with beans now in both cups"
+ },
+ {
+  "t0": 100.03,
+  "t1": 107.01,
+  "action": "weighing and splitting coffee beans into grinder",
+  "objects": [
+   "coffee beans",
+   "white cups"
+  ],
+  "tools": [
+   "digital kitchen scale",
+   "red manual coffee grinder"
+  ],
+  "amount": null,
+  "after": "beans divided from one cup on the scale into two cups, with one lidded cup now sitting on the red grinder and one cup remaining on the scale"
+ },
+ {
+  "t0": 104.0,
+  "t1": 111.01,
+  "action": "closes container",
+  "objects": [
+   "container",
+   "coffee beans"
+  ],
+  "tools": [
+   "scale",
+   "bowl"
+  ],
+  "amount": null,
+  "after": "white lid is secured on red container and camera has panned right from counter to stove and adjacent cluttered room"
+ },
+ {
+  "t0": 108.01,
+  "t1": 115.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "camera pans right from the left counter to the stove and a tablet displaying text is now held in both hands in the center of the frame"
+ },
+ {
+  "t0": 112.01,
+  "t1": 119.02,
+  "action": "none",
+  "objects": [],
+  "tools": [
+   "tablet"
+  ],
+  "amount": null,
+  "after": "camera pans from side angle to centered over stove/microwave, person now stands directly in front of stove holding tablet with both hands and scrolling screen, bowl of beans remains on scale on left counter"
+ },
+ {
+  "t0": 116.02,
+  "t1": 123.02,
+  "action": "operates tablet then handles pressure cooker area",
+  "objects": [
+   "pressure cooker",
+   "bowl of beans"
+  ],
+  "tools": [
+   "tablet",
+   "digital kitchen scale"
+  ],
+  "amount": null,
+  "after": "tablet is placed down on the stovetop and hands move from holding it over the burners to the counter beside the pressure cooker handling a small cup"
+ },
+ {
+  "t0": 120.02,
+  "t1": 127.03,
+  "action": "handle power cord and reposition bowl and cup",
+  "objects": [
+   "small white bowl with brown beans",
+   "metal cup",
+   "black power cord and plug"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "bowl and metal cup slightly shifted on counter next to rice cooker and grinder, power cord handled, hands withdrawn"
+ },
+ {
+  "t0": 124.02,
+  "t1": 131.03,
+  "action": "stores metal tray in overhead cabinet",
+  "objects": [
+   "metal tray",
+   "cabinet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "left cabinet door above microwave is open and metal tray is held up to the shelf, tablet is now visible on the stovetop"
+ },
+ {
+  "t0": 128.03,
+  "t1": 135.0,
+  "action": "store tray in cabinet",
+  "objects": [
+   "metal tray",
+   "upper cabinet",
+   "microwave door"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "metal tray is now inside the upper cabinet above the microwave and the microwave door is closed"
+ },
+ {
+  "t0": 132.03,
+  "t1": 139.01,
+  "action": "retrieves pan from cabinet and places it on stove while reaching behind rice cooker",
+  "objects": [
+   "pan",
+   "rice cooker",
+   "bowl of beans"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "pan moved from inside upper cabinet to stovetop burner and cabinet door is closed"
+ },
+ {
+  "t0": 136.0,
+  "t1": 143.01,
+  "action": "preparing coffee",
+  "objects": [
+   "coffee beans"
+  ],
+  "tools": [
+   "cup"
+  ],
+  "amount": null,
+  "after": "arm is withdrawn from under the cabinet and both hands are in the foreground holding a cup of coffee beans/grounds"
+ },
+ {
+  "t0": 140.01,
+  "t1": 147.01,
+  "action": "fill and cap coffee grinder",
+  "objects": [
+   "coffee beans"
+  ],
+  "tools": [
+   "grinder cup",
+   "lid"
+  ],
+  "amount": null,
+  "after": "a small bowl of coffee beans and the capped grinder cup with its white lid are on the counter where hands were empty at start"
+ },
+ {
+  "t0": 144.01,
+  "t1": 151.02,
+  "action": "opens container",
+  "objects": [
+   "container of coffee beans",
+   "lid"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "closed container held in hands at start is now open on the counter with beans visible and white lid set aside to the right, hands hold a small dark object over the counter"
+ },
+ {
+  "t0": 148.01,
+  "t1": 155.02,
+  "action": "closes jar",
+  "objects": [
+   "small jar with dark contents"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "open jar is now sealed with lid"
+ },
+ {
+  "t0": 152.02,
+  "t1": 159.03,
+  "action": "screws lid onto container",
+  "objects": [
+   "small metal container"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "lid is secured and container is closed"
+ },
+ {
+  "t0": 156.02,
+  "t1": 163.03,
+  "action": "unscrewing a jar lid",
+  "objects": [
+   "jar"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change; jar remains held in both hands with lid still on and kitchen background unchanged"
+ },
+ {
+  "t0": 160.03,
+  "t1": 167.0,
+  "action": "tries to open container",
+  "objects": [
+   "small jar"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change, jar remains closed in hands"
+ },
+ {
+  "t0": 164.03,
+  "t1": 171.0,
+  "action": "holding a small container",
+  "objects": [
+   "small container"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change - hands and container remain in same position, container remains closed"
+ },
+ {
+  "t0": 168.0,
+  "t1": 175.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 172.01,
+  "t1": 179.01,
+  "action": "twisting jar lid",
+  "objects": [
+   "jar"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change, jar still held in both hands with white lid still on counter"
+ },
+ {
+  "t0": 176.01,
+  "t1": 183.02,
+  "action": "opens jar",
+  "objects": [
+   "jar",
+   "lid"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "jar is open with lid removed and both placed on counter"
+ },
+ {
+  "t0": 180.01,
+  "t1": 187.02,
+  "action": "pours coffee into mug",
+  "objects": [
+   "mug",
+   "coffee"
+  ],
+  "tools": [
+   "jar"
+  ],
+  "amount": null,
+  "after": "mug is filled with dark liquid and open jar and lid are left on the counter as camera pans to the stove"
+ },
+ {
+  "t0": 184.02,
+  "t1": 191.02,
+  "action": "sets down mug and taps tablet",
+  "objects": [
+   "mug",
+   "tablet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "mug is left on the counter beside the rice cooker and a hand is tapping the tablet screen on the stovetop"
+ },
+ {
+  "t0": 188.02,
+  "t1": 195.03,
+  "action": "tapping tablet",
+  "objects": [
+   "tablet"
+  ],
+  "tools": [
+   "tablet"
+  ],
+  "amount": null,
+  "after": "hand is withdrawn from tablet and tablet screen has scrolled"
+ },
+ {
+  "t0": 192.03,
+  "t1": 199.03,
+  "action": "taps tablet then opens drawer",
+  "objects": [
+   "tablet",
+   "kitchen drawer"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "tablet screen has changed and the bottom drawer is now open revealing yellow snack bags"
+ },
+ {
+  "t0": 196.03,
+  "t1": 203.0,
+  "action": "open drawer and handle instant noodles",
+  "objects": [
+   "instant noodle packets",
+   "kitchen drawer"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "bottom drawer is open and noodle packets are exposed and being held and rearranged by hands"
+ },
+ {
+  "t0": 200.03,
+  "t1": 207.01,
+  "action": "opens a plastic bag",
+  "objects": [
+   "plastic bag",
+   "flatbread",
+   "snack packages"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a clear plastic bag in the open drawer is opened and a piece of flatbread is held in one hand while a red package is lifted"
+ },
+ {
+  "t0": 204.0,
+  "t1": 211.01,
+  "action": "places package in drawer and closes it",
+  "objects": [
+   "snack package",
+   "kitchen drawer"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "red package is inside drawer, drawer is closed and camera has panned away to show sink and door area"
+ },
+ {
+  "t0": 208.01,
+  "t1": 215.01,
+  "action": "close drawer and pick up cutting board",
+  "objects": [
+   "kitchen drawer",
+   "cutting board"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "drawer that was open with instant noodle packets is now closed and white cutting board is lifted from the sink area"
+ },
+ {
+  "t0": 212.01,
+  "t1": 219.02,
+  "action": "move cutting board and shape dough",
+  "objects": [
+   "dough"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "cutting board moved from propped behind sink to flat in front of sink with a round of dough on it being crimped by hand"
+ },
+ {
+  "t0": 216.02,
+  "t1": 223.02,
+  "action": "crimping a dumpling",
+  "objects": [
+   "dough"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": "one dumpling",
+  "after": "hands appear over the white cutting board pressing and sealing the pleated edge of a half-moon dumpling that was not visible at the start"
+ },
+ {
+  "t0": 220.02,
+  "t1": 227.03,
+  "action": "folding and sealing dough",
+  "objects": [
+   "dumpling dough"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "the open crimped dumpling is folded over and pressed sealed shut"
+ },
+ {
+  "t0": 224.02,
+  "t1": 231.03,
+  "action": "fold dough",
+  "objects": [
+   "dough"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "dough is pressed flat on cutting board over sink and camera pans away from sink to stove with tablet and pans"
+ },
+ {
+  "t0": 228.03,
+  "t1": 235.0,
+  "action": "tapping and scrolling on tablet",
+  "objects": [
+   "tablet"
+  ],
+  "tools": [
+   "tablet"
+  ],
+  "amount": null,
+  "after": "camera stabilizes into a close overhead view of the stove with a hand resting on the tablet and the tablet screen scrolled"
+ },
+ {
+  "t0": 232.03,
+  "t1": 239.01,
+  "action": "tap tablet then touch dough",
+  "objects": [
+   "dough"
+  ],
+  "tools": [
+   "tablet",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "camera panned from stove/microwave to sink and hand moved from tablet on stove to dough on cutting board by sink"
+ },
+ {
+  "t0": 236.0,
+  "t1": 243.01,
+  "action": "pick up dough wrappers and position strainer over stove",
+  "objects": [
+   "dough wrappers"
+  ],
+  "tools": [
+   "cutting board",
+   "small mesh strainer"
+  ],
+  "amount": null,
+  "after": "wrappers removed from cutting board by sink and strainer held over stovetop burner"
+ },
+ {
+  "t0": 240.01,
+  "t1": 247.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "view shifts from sink with cutting board and red bowl to stove-top with tablet on burner; hand briefly holds a wrapper then a small metal strainer and then is empty and still"
+ },
+ {
+  "t0": 244.01,
+  "t1": 251.02,
+  "action": "stirring",
+  "objects": [
+   "metal cup",
+   "mug"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "a hand has entered from the bottom left and is stirring inside the small metal cup on the counter next to the stove, which was idle at the start"
+ },
+ {
+  "t0": 248.01,
+  "t1": 255.02,
+  "action": "emptying packet into cup",
+  "objects": [
+   "packet",
+   "metal cup"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "packet is empty and lifted away from the cup which now holds the powder"
+ },
+ {
+  "t0": 252.02,
+  "t1": 259.03,
+  "action": "fits paper filter into glass",
+  "objects": [
+   "paper coffee filter",
+   "glass"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "paper filter is seated upright in the glass on the left and the hand has left the frame"
+ },
+ {
+  "t0": 256.02,
+  "t1": 263.03,
+  "action": "handling a mug",
+  "objects": [
+   "mug"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hand is withdrawn leaving the mug on the counter and the camera pans right to reveal the sink and floor area"
+ },
+ {
+  "t0": 260.03,
+  "t1": 267.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "camera moves from a close-up of the stove with tablet and pans to the sink area and back to a wider view of the kitchen; no objects on the stove or counters have been moved or changed"
+ },
+ {
+  "t0": 264.03,
+  "t1": 271.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "camera moves from sink and dish rack area to stove top with tablet on burner; no visible change to dishes, pans or ingredients"
+ },
+ {
+  "t0": 268.0,
+  "t1": 275.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "camera view pans away from the stove with tablet, pans and microwave to the sink area, now showing the double sink with dishes, cutting board and cluttered countertop"
+ },
+ {
+  "t0": 272.01,
+  "t1": 279.01,
+  "action": "picking up sink strainer",
+  "objects": [
+   "sink strainer"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "view panned from stove with tablet to sink and strainer is now held in hands"
+ },
+ {
+  "t0": 276.01,
+  "t1": 283.02,
+  "action": "attaching and detaching filter basket to cup",
+  "objects": [
+   "filter basket",
+   "clear cup"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "filter basket was briefly joined to the clear cup over the black mat then separated again; at the end the cup is back on the mat and the filter is held over the sink as at the start with no lasting arrangement change"
+ },
+ {
+  "t0": 280.01,
+  "t1": 287.02,
+  "action": "rinsing and assembling blender",
+  "objects": [
+   "blender jar",
+   "blender blade assembly",
+   "blender lid"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "blender blade assembly is set down on the counter by the sink and the blender jar on its black base is capped with the tan lid"
+ },
+ {
+  "t0": 284.02,
+  "t1": 291.02,
+  "action": "caps blender jar",
+  "objects": [
+   "blender jar"
+  ],
+  "tools": [
+   "lid"
+  ],
+  "amount": null,
+  "after": "blender jar is lidded and camera pans from sink to stove"
+ },
+ {
+  "t0": 288.02,
+  "t1": 295.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "camera pans from close-up of sink dish rack to centered overhead view of stovetop with tablet, frying pan, saucepan and pressure cooker"
+ },
+ {
+  "t0": 292.03,
+  "t1": 299.03,
+  "action": "adjusting coffee filter in mug",
+  "objects": [
+   "coffee filter",
+   "mug"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "camera has panned left and hands are now visible handling the filter inside the mug on the left counter"
+ },
+ {
+  "t0": 296.03,
+  "t1": 303.0,
+  "action": "kneading dough",
+  "objects": [
+   "dough"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "dough is compacted and lifted from the small bowl"
+ },
+ {
+  "t0": 300.03,
+  "t1": 307.01,
+  "action": "folding a cloth filter into bowl",
+  "objects": [
+   "cloth filter",
+   "small white bowl"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "light-colored cloth filter is unfolded and positioned inside the small white bowl, hands remain over bowl"
+ },
+ {
+  "t0": 304.0,
+  "t1": 311.01,
+  "action": "stirs powder mixture and taps tablet",
+  "objects": [
+   "powder mixture in cup",
+   "tablet on stove"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "camera pans right from counter to stovetop, tablet becomes centered in view and finger touches its screen while the mixed cup stays on the counter"
+ },
+ {
+  "t0": 308.01,
+  "t1": 315.01,
+  "action": "scrolls tablet screen",
+  "objects": [
+   "tablet"
+  ],
+  "tools": [
+   "tablet"
+  ],
+  "amount": null,
+  "after": "tablet is now centered on stovetop with scrolled display and hand is withdrawn from the counter"
+ },
+ {
+  "t0": 312.01,
+  "t1": 319.02,
+  "action": "scrolling on tablet",
+  "objects": [
+   "tablet"
+  ],
+  "tools": [
+   "tablet"
+  ],
+  "amount": null,
+  "after": "drawer is open and hand is holding a red-handled tool, tablet left on stovetop"
+ },
+ {
+  "t0": 316.02,
+  "t1": 323.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "drawer under the counter is now open and a red-handled utensil has been removed from it, camera has panned right to center on the stovetop and tablet"
+ },
+ {
+  "t0": 320.02,
+  "t1": 327.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "the open utensil drawer with silverware visible at the start is closed/out of view and the camera view shifts to center over the stove and microwave"
+ },
+ {
+  "t0": 324.02,
+  "t1": 331.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change - pans, pressure cooker, mugs and tablet on the stove remain in the same positions throughout the 8 seconds"
+ },
+ {
+  "t0": 328.03,
+  "t1": 335.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "camera pans from stovetop/microwave view to floor, door and sink area; no items on stove or counters are visibly moved or altered"
+ },
+ {
+  "t0": 332.03,
+  "t1": 339.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no objects moved; camera pans around kitchen and returns to stove view"
+ },
+ {
+  "t0": 336.0,
+  "t1": 343.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "camera pans from sink/door area to stovetop area; no items are moved or changed, stove with tablet, pans and counter items now centered in view"
+ },
+ {
+  "t0": 340.01,
+  "t1": 347.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "camera pans away from stove-top close-up to reveal refrigerator, sink, door and floor clutter; stove is no longer centered in view"
+ },
+ {
+  "t0": 344.01,
+  "t1": 351.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "view shifts from stove with pans, rice cooker and tablet to sink with dish rack and counter; stove is no longer visible and sink area is now centered with a hand reaching toward the counter"
+ },
+ {
+  "t0": 348.01,
+  "t1": 355.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "camera is closer/zoomed in on the sink and counter; the floor pack and lower door/curtain visible at the start are cropped out and a hand briefly touches the counter edge then disappears"
+ },
+ {
+  "t0": 352.02,
+  "t1": 359.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "hand visible in first frame is no longer visible, otherwise no visible change to sink, dish rack, kettle and counter"
+ },
+ {
+  "t0": 356.02,
+  "t1": 363.03,
+  "action": "places strainer on dish rack",
+  "objects": [
+   "strainer"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "white mesh strainer moved from countertop to standing on the dish drying rack"
+ },
+ {
+  "t0": 360.03,
+  "t1": 367.03,
+  "action": "places strainer on drying rack",
+  "objects": [
+   "small strainer"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "small strainer moved from hand to dish rack and hand is out of view, camera panned right toward wall"
+ },
+ {
+  "t0": 364.03,
+  "t1": 371.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change to the kitchen scene; dish rack, counter items and hanging towels remain in place, only camera framing shifts slightly right after the first frame"
+ },
+ {
+  "t0": 368.0,
+  "t1": 375.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 372.0,
+  "t1": 379.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 376.01,
+  "t1": 383.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 380.01,
+  "t1": 387.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 384.02,
+  "t1": 391.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 388.02,
+  "t1": 395.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no hands-on work visible; camera pans slightly right and down revealing a multi-pack of cans/bottles on the floor by the doorway that was cropped out at the start"
+ },
+ {
+  "t0": 392.02,
+  "t1": 399.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "a foot with red-painted toenails appears at the bottom of the frame, otherwise the kitchen scene is unchanged"
+ },
+ {
+  "t0": 396.03,
+  "t1": 403.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 400.03,
+  "t1": 407.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 404.0,
+  "t1": 411.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no change to items on counter or wall; camera pans right and tilts down slightly revealing more of the white door on the right and the floor mat"
+ },
+ {
+  "t0": 408.01,
+  "t1": 415.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "No visible work done; camera shifts slightly down and a striped sandal/foot becomes visible at the bottom, hand remains resting by the counter"
+ },
+ {
+  "t0": 412.01,
+  "t1": 419.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "image goes from blurry to sharp and stable, a foot in a striped sandal becomes visible on the floor and the hand remains resting near the counter edge with little movement"
+ },
+ {
+  "t0": 416.02,
+  "t1": 423.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 420.02,
+  "t1": 427.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 424.02,
+  "t1": 431.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 428.03,
+  "t1": 435.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 432.03,
+  "t1": 439.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 436.0,
+  "t1": 443.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 440.01,
+  "t1": 447.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change between start and end"
+ },
+ {
+  "t0": 444.01,
+  "t1": 451.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 448.01,
+  "t1": 455.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "camera pans left revealing bottles above sink and hand moves from counter edge to black kettle on side table"
+ },
+ {
+  "t0": 452.02,
+  "t1": 459.03,
+  "action": "picks up kettle",
+  "objects": [
+   "kettle"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "kettle is lifted off its black base on the counter and carried toward the door"
+ },
+ {
+  "t0": 456.02,
+  "t1": 463.03,
+  "action": "none",
+  "objects": [
+   "kettle"
+  ],
+  "tools": [
+   "kettle"
+  ],
+  "amount": null,
+  "after": "kettle carried from counter by sink to counter by stove and camera view pans from sink area to stove/microwave area"
+ },
+ {
+  "t0": 460.03,
+  "t1": 467.03,
+  "action": "pick up kettle from floor and handle lid on counter",
+  "objects": [
+   "kettle"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "kettle moved from floor to right countertop and hand is on its lid"
+ },
+ {
+  "t0": 464.03,
+  "t1": 471.0,
+  "action": "opens kettle and cuts packet",
+  "objects": [
+   "kettle",
+   "packet"
+  ],
+  "tools": [
+   "scissors"
+  ],
+  "amount": null,
+  "after": "kettle lid removed and kettle left open on counter, person holding red packet and scissors at stove, camera shifted left"
+ },
+ {
+  "t0": 468.0,
+  "t1": 475.01,
+  "action": "cutting open packet",
+  "objects": [
+   "red packet"
+  ],
+  "tools": [
+   "scissors"
+  ],
+  "amount": null,
+  "after": "red packet is cut open and held in hand over the stove"
+ },
+ {
+  "t0": 472.0,
+  "t1": 479.01,
+  "action": "opens a can",
+  "objects": [
+   "can"
+  ],
+  "tools": [
+   "manual can opener"
+  ],
+  "amount": null,
+  "after": "hand moves from over the stovetop to the right counter and is actively turning the opener on the can as the view pans right to the cluttered sink area"
+ },
+ {
+  "t0": 476.01,
+  "t1": 483.02,
+  "action": "opening a can",
+  "objects": [
+   "can"
+  ],
+  "tools": [
+   "can opener"
+  ],
+  "amount": null,
+  "after": "both hands are now gripping the red can opener engaged on the rim of the can"
+ },
+ {
+  "t0": 480.01,
+  "t1": 487.02,
+  "action": "inserting a probe thermometer into a pitcher",
+  "objects": [
+   "metal pitcher with liquid"
+  ],
+  "tools": [
+   "red digital probe thermometer"
+  ],
+  "amount": null,
+  "after": "probe is left in the pitcher and both hands have moved out of frame"
+ },
+ {
+  "t0": 484.02,
+  "t1": 491.02,
+  "action": "straining liquid through a sieve",
+  "objects": [
+   "black mug",
+   "liquid"
+  ],
+  "tools": [
+   "red-handled small strainer"
+  ],
+  "amount": null,
+  "after": "strainer lifted off the mug and lowered to the counter beside the stove as the camera pans left to reveal more of the stovetop and left counter with rice cooker and mugs"
+ },
+ {
+  "t0": 488.02,
+  "t1": 495.03,
+  "action": "stirring a drink",
+  "objects": [
+   "mug",
+   "beverage"
+  ],
+  "tools": [
+   "red-handled frother"
+  ],
+  "amount": null,
+  "after": "a hand appears on the right counter stirring inside a mug with the red tool and the camera has panned slightly right"
+ },
+ {
+  "t0": 492.02,
+  "t1": 499.03,
+  "action": "measuring temperature in a mug",
+  "objects": [
+   "liquid in black mug"
+  ],
+  "tools": [
+   "red digital probe thermometer"
+  ],
+  "amount": null,
+  "after": "a hand holding a red probe thermometer appears on the right counter, dips the probe into the black mug and then withdraws it extended over the stove"
+ },
+ {
+  "t0": 496.03,
+  "t1": 503.0,
+  "action": "checks temperature with probe thermometer",
+  "objects": [
+   "liquid in black mug"
+  ],
+  "tools": [
+   "red digital probe thermometer"
+  ],
+  "amount": null,
+  "after": "probe is lifted from mug and held over the electric burner then returned to the mug, ending in the same position as at the start with no lasting change to the kitchen setup"
+ },
+ {
+  "t0": 500.03,
+  "t1": 507.01,
+  "action": "measuring temperature with probe thermometer",
+  "objects": [
+   "liquid in small metal cup"
+  ],
+  "tools": [
+   "probe thermometer"
+  ],
+  "amount": null,
+  "after": "probe of thermometer is now inserted into the small cup on the counter beside the stove"
+ },
+ {
+  "t0": 504.0,
+  "t1": 511.01,
+  "action": "holding a probe inside a pot",
+  "objects": [
+   "small black kettle/pot"
+  ],
+  "tools": [
+   "red digital probe/multimeter"
+  ],
+  "amount": null,
+  "after": "hand and red probe are pulled slightly back and away from the pot opening, revealing more of the tool's body and display"
+ },
+ {
+  "t0": 508.01,
+  "t1": 515.01,
+  "action": "checking temperature with thermometer",
+  "objects": [
+   "water in gooseneck kettle"
+  ],
+  "tools": [
+   "red digital instant-read thermometer"
+  ],
+  "amount": null,
+  "after": "thermometer lifted from kettle to read display then reinserted, camera briefly pans left to show left counter then returns to original overhead view"
+ },
+ {
+  "t0": 512.01,
+  "t1": 519.02,
+  "action": "pouring packet into kettle",
+  "objects": [
+   "kettle"
+  ],
+  "tools": [
+   "packet"
+  ],
+  "amount": null,
+  "after": "a hand appears holding a red packet over the open black kettle on the right counter and pouring its contents in"
+ },
+ {
+  "t0": 516.02,
+  "t1": 523.02,
+  "action": "holding pliers inside a small appliance",
+  "objects": [
+   "black countertop grinder"
+  ],
+  "tools": [
+   "red-handled pliers"
+  ],
+  "amount": null,
+  "after": "hand withdraws pliers from the appliance and camera pans left to reveal the refrigerator and left counter with rice cooker and mugs"
+ },
+ {
+  "t0": 520.02,
+  "t1": 527.03,
+  "action": "none",
+  "objects": [],
+  "tools": [
+   "red-handled scissors"
+  ],
+  "amount": null,
+  "after": "person moved from stove to left counter and opened the drawer, camera panned left to show refrigerator and rice cooker"
+ },
+ {
+  "t0": 524.02,
+  "t1": 531.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "drawer pulled open and view pans from fridge counter to stove where a tablet is now visible on the cooktop"
+ },
+ {
+  "t0": 528.03,
+  "t1": 535.0,
+  "action": "secures lid on travel mug",
+  "objects": [
+   "black travel mug",
+   "lid"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "drawer that was open at start is now closed and the black mug on the right counter is capped"
+ },
+ {
+  "t0": 532.03,
+  "t1": 539.01,
+  "action": "taps tablet and picks up mug",
+  "objects": [
+   "mug",
+   "tablet",
+   "kettle"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "black kettle is left lying on its side on the right counter and the hand lifts the dark mug from the left counter next to the rice cooker"
+ },
+ {
+  "t0": 536.0,
+  "t1": 543.01,
+  "action": "plugs in pressure cooker",
+  "objects": [
+   "electric pressure cooker",
+   "mug"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "pressure cooker is plugged in and mug is picked up from the counter"
+ },
+ {
+  "t0": 540.01,
+  "t1": 547.01,
+  "action": "plug in rice cooker and pour liquid",
+  "objects": [
+   "rice cooker",
+   "power cord",
+   "mug",
+   "bowl"
+  ],
+  "tools": [
+   "mug"
+  ],
+  "amount": null,
+  "after": "power cord retrieved from behind rice cooker and dark liquid from mug being poured into light bowl"
+ },
+ {
+  "t0": 544.01,
+  "t1": 551.02,
+  "action": "pouring liquid from one mug to another",
+  "objects": [
+   "beverage"
+  ],
+  "tools": [
+   "mug",
+   "cup"
+  ],
+  "amount": null,
+  "after": "the dark mug is held inverted over the light cup on the counter as its contents are poured into it"
+ },
+ {
+  "t0": 548.01,
+  "t1": 555.02,
+  "action": "grinding into a bowl",
+  "objects": [
+   "coffee or spices"
+  ],
+  "tools": [
+   "manual grinder",
+   "bowl"
+  ],
+  "amount": null,
+  "after": "the grinder is lifted off the bowl revealing dark ground powder inside and a second hand appears holding the grinder lid"
+ },
+ {
+  "t0": 552.02,
+  "t1": 559.03,
+  "action": "assembles pour-over coffee brewer",
+  "objects": [
+   "coffee grounds",
+   "filter holder",
+   "glass carafe"
+  ],
+  "tools": [
+   "kettle"
+  ],
+  "amount": null,
+  "after": "filter holder with coffee grounds is fitted and secured onto the glass carafe and the black pouring kettle is picked up"
+ },
+ {
+  "t0": 556.02,
+  "t1": 563.03,
+  "action": "pouring water over coffee grounds",
+  "objects": [
+   "coffee grounds",
+   "paper filter"
+  ],
+  "tools": [
+   "gooseneck kettle"
+  ],
+  "amount": null,
+  "after": "a paper filter containing wet coffee grounds is now on the counter where there was none at the start"
+ },
+ {
+  "t0": 560.03,
+  "t1": 567.03,
+  "action": "adds ground coffee to filter",
+  "objects": [
+   "ground coffee",
+   "filter"
+  ],
+  "tools": [
+   "coffee container",
+   "manual grinder",
+   "glass jar"
+  ],
+  "amount": null,
+  "after": "the paper filter now contains ground coffee and the containers on the counter have been repositioned"
+ },
+ {
+  "t0": 564.03,
+  "t1": 571.0,
+  "action": "pouring water into coffee filter",
+  "objects": [
+   "coffee grounds",
+   "water"
+  ],
+  "tools": [
+   "water bottle",
+   "pour-over dripper"
+  ],
+  "amount": null,
+  "after": "camera pans right from counter to stovetop revealing tablet and pans, hand moves away from dripper and out of close view"
+ },
+ {
+  "t0": 568.0,
+  "t1": 575.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "hand visible near the coffee dripper at the start is no longer in frame; otherwise no visible change to the coffee filter with grounds, rice cooker, pans and tablet on the stove"
+ },
+ {
+  "t0": 572.0,
+  "t1": 579.01,
+  "action": "pour water from kettle into mug",
+  "objects": [
+   "mug",
+   "instant coffee"
+  ],
+  "tools": [
+   "kettle"
+  ],
+  "amount": null,
+  "after": "kettle moved from right side of stove to bottom left and out of view and mug changes from dry powder to dark liquid"
+ },
+ {
+  "t0": 576.01,
+  "t1": 583.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no items on counter or stove are moved or changed; camera pans left and down revealing more of the refrigerator side and a black lidded container at the bottom edge while the tablet on the stove becomes partially cropped"
+ },
+ {
+  "t0": 580.01,
+  "t1": 587.02,
+  "action": "pouring water over coffee grounds",
+  "objects": [
+   "ground coffee"
+  ],
+  "tools": [
+   "kettle",
+   "mug"
+  ],
+  "amount": null,
+  "after": "kettle is now visible in foreground and coffee grounds in mug are saturated with water"
+ },
+ {
+  "t0": 584.02,
+  "t1": 591.02,
+  "action": "pouring water into mug",
+  "objects": [
+   "mug",
+   "coffee grounds"
+  ],
+  "tools": [
+   "kettle"
+  ],
+  "amount": null,
+  "after": "mug now contains liquid with wet coffee grounds and kettle is held lower away from the counter"
+ },
+ {
+  "t0": 588.02,
+  "t1": 595.03,
+  "action": "pouring water",
+  "objects": [
+   "mug of coffee grounds"
+  ],
+  "tools": [
+   "gooseneck kettle"
+  ],
+  "amount": null,
+  "after": "coffee grounds in the mug are saturated with water and blooming, liquid level in mug is higher than at start"
+ },
+ {
+  "t0": 592.02,
+  "t1": 599.03,
+  "action": "pouring water over coffee grounds",
+  "objects": [
+   "coffee grounds",
+   "filter"
+  ],
+  "tools": [
+   "kettle"
+  ],
+  "amount": null,
+  "after": "kettle is lifted and tilted over the filter and water wets the grounds which appear darker and saturated compared to dry at start"
+ },
+ {
+  "t0": 596.03,
+  "t1": 603.0,
+  "action": "pouring water",
+  "objects": [
+   "coffee grounds",
+   "mug"
+  ],
+  "tools": [
+   "kettle"
+  ],
+  "amount": null,
+  "after": "kettle is upright and water stream has stopped, dripper mug contains more liquid than at start"
+ },
+ {
+  "t0": 600.03,
+  "t1": 607.01,
+  "action": "pouring water into mug",
+  "objects": [
+   "mug",
+   "coffee grounds"
+  ],
+  "tools": [
+   "kettle"
+  ],
+  "amount": null,
+  "after": "dry grounds in mug become wet liquid as water is added and mug fills"
+ },
+ {
+  "t0": 604.0,
+  "t1": 611.01,
+  "action": "pouring water into mug",
+  "objects": [
+   "mug with coffee grounds"
+  ],
+  "tools": [
+   "gooseneck kettle"
+  ],
+  "amount": null,
+  "after": "kettle is lifted from the counter and held over the mug with water added to the coffee grounds"
+ },
+ {
+  "t0": 608.01,
+  "t1": 615.01,
+  "action": "pouring water",
+  "objects": [
+   "coffee grounds"
+  ],
+  "tools": [
+   "kettle"
+  ],
+  "amount": null,
+  "after": "filter cup fills with water and coffee grounds become saturated and bloom"
+ },
+ {
+  "t0": 612.01,
+  "t1": 619.02,
+  "action": "pouring water over coffee grounds",
+  "objects": [
+   "coffee grounds in a cup"
+  ],
+  "tools": [
+   "gooseneck kettle"
+  ],
+  "amount": null,
+  "after": "cup fills with water and coffee grounds bloom and foam up"
+ },
+ {
+  "t0": 616.02,
+  "t1": 623.02,
+  "action": "pouring water",
+  "objects": [
+   "mug",
+   "coffee"
+  ],
+  "tools": [
+   "gooseneck kettle"
+  ],
+  "amount": null,
+  "after": "mug contains slightly more liquid as water is poured from kettle"
+ },
+ {
+  "t0": 620.02,
+  "t1": 627.03,
+  "action": "pouring water into mug",
+  "objects": [
+   "mug"
+  ],
+  "tools": [
+   "gooseneck kettle"
+  ],
+  "amount": null,
+  "after": "liquid level in mug is visibly higher and mug is fuller than at start"
+ },
+ {
+  "t0": 624.02,
+  "t1": 631.03,
+  "action": "pouring water into mug",
+  "objects": [
+   "mug"
+  ],
+  "tools": [
+   "kettle"
+  ],
+  "amount": null,
+  "after": "mug contains more liquid and foam than at start"
+ },
+ {
+  "t0": 628.03,
+  "t1": 635.0,
+  "action": "pouring water into mug",
+  "objects": [
+   "mug"
+  ],
+  "tools": [
+   "gooseneck kettle"
+  ],
+  "amount": null,
+  "after": "liquid level in mug has risen as water is added"
+ },
+ {
+  "t0": 632.03,
+  "t1": 639.01,
+  "action": "pouring water",
+  "objects": [
+   "mug",
+   "coffee"
+  ],
+  "tools": [
+   "kettle"
+  ],
+  "amount": null,
+  "after": "liquid level in mug is slightly higher and mug is fuller"
+ },
+ {
+  "t0": 636.0,
+  "t1": 643.01,
+  "action": "pouring water into a mug",
+  "objects": [
+   "mug"
+  ],
+  "tools": [
+   "kettle"
+  ],
+  "amount": null,
+  "after": "the liquid level in the mug is higher and the kettle is lowered from the pouring position to the counter"
+ },
+ {
+  "t0": 640.01,
+  "t1": 647.01,
+  "action": "pouring water into mug",
+  "objects": [
+   "mug"
+  ],
+  "tools": [
+   "gooseneck kettle"
+  ],
+  "amount": null,
+  "after": "kettle is set down on the lower edge and the liquid level in the mug is higher with more foam"
+ },
+ {
+  "t0": 644.01,
+  "t1": 651.02,
+  "action": "pour water into mug",
+  "objects": [
+   "mug of coffee"
+  ],
+  "tools": [
+   "gooseneck kettle",
+   "tablet"
+  ],
+  "amount": null,
+  "after": "tablet was tapped and gooseneck kettle was lifted from the floor and tilted to pour into the mug"
+ },
+ {
+  "t0": 648.01,
+  "t1": 655.02,
+  "action": "pouring water into mug",
+  "objects": [
+   "mug",
+   "coffee"
+  ],
+  "tools": [
+   "gooseneck kettle"
+  ],
+  "amount": null,
+  "after": "kettle is lifted from the counter and held tilted over the mug and the hand is no longer touching the tablet"
+ },
+ {
+  "t0": 652.02,
+  "t1": 659.03,
+  "action": "pouring water into mug",
+  "objects": [
+   "mug",
+   "coffee"
+  ],
+  "tools": [
+   "gooseneck kettle"
+  ],
+  "amount": null,
+  "after": "kettle moved from over the counter to sitting on the stovetop burner and the mug is filled"
+ },
+ {
+  "t0": 656.02,
+  "t1": 663.03,
+  "action": "holding kettle over stove",
+  "objects": [
+   "kettle"
+  ],
+  "tools": [
+   "kettle"
+  ],
+  "amount": null,
+  "after": "kettle held over front burner for several seconds then moved out of frame to the right while camera pans left, tablet becomes partially cropped and countertop with coffee mug and pressure cooker is centered"
+ },
+ {
+  "t0": 660.03,
+  "t1": 667.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "a black kettle briefly enters in a hand on the right and then leaves and the camera tilts slightly up, otherwise the cup of brown liquid, pans, pressure cooker and tablet on the stove look the same"
+ },
+ {
+  "t0": 664.03,
+  "t1": 671.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no change to items on counter; camera shifts slightly and a foot then a hand briefly appear at the bottom edge"
+ },
+ {
+  "t0": 668.0,
+  "t1": 675.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no hands-on work occurs; a hand becomes visible at the lower right near the tablet/stove and the overhead view shifts slightly, otherwise the counter with rice cooker, cups and bowl of brown liquid is unchanged"
+ },
+ {
+  "t0": 672.0,
+  "t1": 679.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change to the countertop, stove or dishes; only slight camera/foot jitter, person remains out of frame"
+ },
+ {
+  "t0": 676.01,
+  "t1": 683.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change - all items remain in same position"
+ },
+ {
+  "t0": 680.01,
+  "t1": 687.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "a hand appears at the bottom right grasping the mug of coffee on the counter"
+ },
+ {
+  "t0": 684.02,
+  "t1": 691.02,
+  "action": "grasps mug",
+  "objects": [
+   "mug of coffee"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hand briefly grasps mug handle then withdraws, mug remains on counter in nearly same position"
+ },
+ {
+  "t0": 688.02,
+  "t1": 695.03,
+  "action": "holds and releases mug",
+  "objects": [
+   "mug"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hand releases mug and leaves frame, mug with coffee remains alone on counter"
+ },
+ {
+  "t0": 692.02,
+  "t1": 699.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change between first and last frame"
+ },
+ {
+  "t0": 696.03,
+  "t1": 703.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "a foot becomes visible at the bottom edge and the camera viewpoint shifts slightly, with no visible change to the mug, cooker, or other items on the counter"
+ },
+ {
+  "t0": 700.03,
+  "t1": 707.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no change to objects on counter and stove; camera stabilizes from initial motion blur and a foot becomes visible at the bottom edge"
+ },
+ {
+  "t0": 704.0,
+  "t1": 711.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change to objects on counter; scene remains virtually identical with only slight camera shift/jitter in the final frame"
+ },
+ {
+  "t0": 708.01,
+  "t1": 715.01,
+  "action": "hold mug",
+  "objects": [
+   "mug"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a hand is now grasping the mug on the counter"
+ },
+ {
+  "t0": 712.01,
+  "t1": 719.02,
+  "action": "holding mug",
+  "objects": [
+   "mug",
+   "coffee"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a hand that was absent at the start is now holding the mug on the counter"
+ },
+ {
+  "t0": 716.02,
+  "t1": 723.02,
+  "action": "stirring",
+  "objects": [
+   "mug of coffee"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "hand is now holding a spoon inside the mug stirring the drink"
+ },
+ {
+  "t0": 720.02,
+  "t1": 727.03,
+  "action": "holding mug",
+  "objects": [
+   "mug of coffee"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hand released the mug and moved out of frame, person stepped back from counter"
+ },
+ {
+  "t0": 724.02,
+  "t1": 731.03,
+  "action": "holds mug",
+  "objects": [
+   "mug"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "right hand is now visible in frame grasping the mug on the counter"
+ },
+ {
+  "t0": 728.03,
+  "t1": 735.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "hand releases the cup and rests as a fist on the counter edge, cup left undisturbed"
+ },
+ {
+  "t0": 732.03,
+  "t1": 739.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change - hand remains resting by stove, cup, pressure cooker and pan unchanged"
+ },
+ {
+  "t0": 736.0,
+  "t1": 743.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 740.01,
+  "t1": 747.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 744.01,
+  "t1": 751.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change, hand remains near stove and all items stay in place"
+ },
+ {
+  "t0": 748.01,
+  "t1": 755.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 752.02,
+  "t1": 759.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no task is performed; the view tilts down slightly and a sandaled foot appears at the bottom edge while the counter with pressure cooker, mug and pan stays the same"
+ },
+ {
+  "t0": 756.02,
+  "t1": 763.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "person's hand leaves the frame and a striped-sock foot appears at the bottom, camera stabilizes slightly; no visible change to the cups, pressure cooker or other items on the counter"
+ },
+ {
+  "t0": 760.03,
+  "t1": 767.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change"
+ },
+ {
+  "t0": 764.03,
+  "t1": 771.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no change to items on counter; person's striped foot visible at bottom at start disappears and hand enters from bottom reaching toward counter at end"
+ },
+ {
+  "t0": 768.0,
+  "t1": 775.01,
+  "action": "holds mug",
+  "objects": [
+   "mug"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "both hands are now grasping the mug on the counter, hands were not visible at the start"
+ },
+ {
+  "t0": 772.0,
+  "t1": 779.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "both hands holding mug at start, right hand released and mug held with left hand only at end, mug and liquid otherwise unchanged"
+ },
+ {
+  "t0": 776.01,
+  "t1": 783.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change, hands remain holding the mug in the same position on the counter"
+ },
+ {
+  "t0": 780.01,
+  "t1": 787.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change; hands remain in same position near cup and all counter items unchanged"
+ },
+ {
+  "t0": 784.02,
+  "t1": 791.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "hands remain idle by mug then move away to stove edge as viewpoint pans right from counter and pressure cooker to stovetop with tablet and pans, mug shifts to left edge with no visible change to its contents"
+ },
+ {
+  "t0": 788.02,
+  "t1": 795.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "camera pans right to center stovetop and tablet, left hand moves from hovering near mug to gripping mug handle, tablet becomes fully visible"
+ },
+ {
+  "t0": 792.02,
+  "t1": 799.03,
+  "action": "pours coffee between cups",
+  "objects": [
+   "coffee",
+   "coffee cup",
+   "small white cup"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the small white dish that was empty at the start is now filled with dark coffee and the larger frothy coffee cup has been lifted and repositioned, hand now reaching for the small cup"
+ },
+ {
+  "t0": 796.03,
+  "t1": 803.0,
+  "action": "prepares coffee",
+  "objects": [
+   "coffee mugs"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a second small white mug of black coffee now sits on the counter next to the original glass mug and both mugs have been repositioned"
+ },
+ {
+  "t0": 800.03,
+  "t1": 807.01,
+  "action": "mixing coffee between cups",
+  "objects": [
+   "mugs",
+   "coffee"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "both mugs are lifted from the counter and the liquid in the mugs is combined and stirred"
+ },
+ {
+  "t0": 804.0,
+  "t1": 811.01,
+  "action": "knocks used coffee puck out of portafilter",
+  "objects": [
+   "portafilter",
+   "used coffee grounds"
+  ],
+  "tools": [
+   "portafilter"
+  ],
+  "amount": null,
+  "after": "portafilter is empty and the spent coffee puck is in the trash bin"
+ },
+ {
+  "t0": 808.01,
+  "t1": 815.01,
+  "action": "empty portafilter",
+  "objects": [
+   "coffee grounds"
+  ],
+  "tools": [
+   "portafilter"
+  ],
+  "amount": null,
+  "after": "portafilter is empty on the counter and spent grounds are in the trash bin"
+ },
+ {
+  "t0": 812.01,
+  "t1": 819.02,
+  "action": "place coffee filter on counter",
+  "objects": [
+   "coffee mug"
+  ],
+  "tools": [
+   "coffee filter"
+  ],
+  "amount": null,
+  "after": "filter moved from hand over stove to resting on counter next to mug and hand withdrawn"
+ }
+]

@@ -1,0 +1,3572 @@
+[
+ {
+  "t0": 0.0,
+  "t1": 7.01,
+  "action": "opens refrigerator and retrieves item from freezer",
+  "objects": [
+   "refrigerator",
+   "frozen food package"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "refrigerator door is open and person's hand is inside the top freezer compartment holding a package, laptop remains on counter by the sink"
+ },
+ {
+  "t0": 4.0,
+  "t1": 11.01,
+  "action": "retrieving a bag from freezer",
+  "objects": [
+   "plastic freezer bag",
+   "frozen food"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "both hands are now inside the freezer compartment grasping a plastic bag, whereas at the start one hand was outside the freezer"
+ },
+ {
+  "t0": 8.01,
+  "t1": 15.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "a long green cucumber has been taken out of the refrigerator drawer and the person's hands are no longer in the fridge"
+ },
+ {
+  "t0": 12.01,
+  "t1": 19.02,
+  "action": "none",
+  "objects": [
+   "zucchini"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "zucchini removed from refrigerator and held with both hands over sink, refrigerator door closed"
+ },
+ {
+  "t0": 16.02,
+  "t1": 23.02,
+  "action": "washing a zucchini under running water",
+  "objects": [
+   "zucchini"
+  ],
+  "tools": [
+   "sink",
+   "faucet"
+  ],
+  "amount": null,
+  "after": "the refrigerator door is closed and the zucchini is being rinsed under running water in the sink"
+ },
+ {
+  "t0": 20.02,
+  "t1": 27.03,
+  "action": "washing a cucumber under running water",
+  "objects": [
+   "cucumber"
+  ],
+  "tools": [
+   "faucet"
+  ],
+  "amount": null,
+  "after": "the faucet is turned on with water flowing and the cucumber is being scrubbed with both hands under the stream"
+ },
+ {
+  "t0": 24.02,
+  "t1": 31.03,
+  "action": "rinsing a bottle under running water",
+  "objects": [
+   "green bottle"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "faucet is turned off, water stops and an additional small white cup appears in the right sink basin"
+ },
+ {
+  "t0": 28.03,
+  "t1": 35.0,
+  "action": "rinsing a bottle",
+  "objects": [
+   "green bottle"
+  ],
+  "tools": [
+   "faucet"
+  ],
+  "amount": null,
+  "after": "faucet is turned off and person has left the sink holding the bottle"
+ },
+ {
+  "t0": 32.03,
+  "t1": 39.01,
+  "action": "spraying cleaner onto paper towel",
+  "objects": [
+   "paper towel"
+  ],
+  "tools": [
+   "spray bottle",
+   "paper towel roll"
+  ],
+  "amount": null,
+  "after": "person moved from the sink full of dishes to the stove counter and is holding a torn sheet of paper towel sprayed with cleaner"
+ },
+ {
+  "t0": 36.0,
+  "t1": 43.01,
+  "action": "tearing paper towel and drying cucumber",
+  "objects": [
+   "cucumber"
+  ],
+  "tools": [
+   "paper towel"
+  ],
+  "amount": null,
+  "after": "a sheet is torn from the paper towel roll and wrapped around the cucumber to dry it"
+ },
+ {
+  "t0": 40.01,
+  "t1": 47.01,
+  "action": "drying cucumber with paper towel",
+  "objects": [
+   "cucumber"
+  ],
+  "tools": [
+   "paper towel"
+  ],
+  "amount": null,
+  "after": "paper towel sheet is torn from roll and cucumber is wiped dry"
+ },
+ {
+  "t0": 44.01,
+  "t1": 51.02,
+  "action": "wiping zucchini",
+  "objects": [
+   "zucchini"
+  ],
+  "tools": [
+   "paper towel"
+  ],
+  "amount": null,
+  "after": "the zucchini has been wiped dry and the person has moved from the stove to the sink counter"
+ },
+ {
+  "t0": 48.01,
+  "t1": 55.02,
+  "action": "picks up and positions slicer",
+  "objects": [
+   "cucumber"
+  ],
+  "tools": [
+   "vegetable slicer"
+  ],
+  "amount": null,
+  "after": "white slicer top is picked up from the left counter and placed onto the metal plate on the right counter while still holding the cucumber"
+ },
+ {
+  "t0": 52.02,
+  "t1": 59.03,
+  "action": "places container on counter and opens dishwasher",
+  "objects": [
+   "white lidded container",
+   "cucumber",
+   "dishwasher"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "white container is now on the counter and the dishwasher door is open"
+ },
+ {
+  "t0": 56.02,
+  "t1": 63.03,
+  "action": "opens dishwasher",
+  "objects": [
+   "dishwasher",
+   "cucumber"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "dishwasher door is open and cucumber is on the floor"
+ },
+ {
+  "t0": 60.03,
+  "t1": 67.0,
+  "action": "remove plate from dishwasher",
+  "objects": [
+   "plate",
+   "cucumber",
+   "dishwasher"
+  ],
+  "tools": [],
+  "amount": "1 plate and 1 cucumber",
+  "after": "a floral plate has been taken out of the open dishwasher and is now held in one hand with a cucumber in the other hand, with a laptop visible on the countertop"
+ },
+ {
+  "t0": 64.03,
+  "t1": 71.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "plate and cucumber retrieved from dishwasher and carried across kitchen to stove area, person moved from dishwasher to stove side"
+ },
+ {
+  "t0": 68.0,
+  "t1": 75.01,
+  "action": "places plate on counter",
+  "objects": [
+   "plate",
+   "cucumber"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "plate moved from hand near sink to countertop beside stove next to paper towels, person moved from sink/laptop area to stove area"
+ },
+ {
+  "t0": 72.01,
+  "t1": 79.01,
+  "action": "wipe cucumber with paper towel",
+  "objects": [
+   "cucumber",
+   "plate"
+  ],
+  "tools": [
+   "paper towel"
+  ],
+  "amount": null,
+  "after": "plate moved from hand to countertop and cucumber is being wiped with paper towel"
+ },
+ {
+  "t0": 76.01,
+  "t1": 83.02,
+  "action": "salt cucumber",
+  "objects": [
+   "cucumber"
+  ],
+  "tools": [
+   "salt shaker"
+  ],
+  "amount": null,
+  "after": "cucumber is salted and stovetop burner is turned on with butter melting in pan"
+ },
+ {
+  "t0": 80.01,
+  "t1": 87.02,
+  "action": "inserting zucchini into handheld spiralizer",
+  "objects": [
+   "zucchini"
+  ],
+  "tools": [
+   "handheld spiralizer"
+  ],
+  "amount": null,
+  "after": "spiralizer closed with zucchini inserted and held over plate on opposite side of stove"
+ },
+ {
+  "t0": 84.02,
+  "t1": 91.02,
+  "action": "pushing a cucumber into a peeler",
+  "objects": [
+   "cucumber"
+  ],
+  "tools": [
+   "handheld peeler"
+  ],
+  "amount": null,
+  "after": "the cucumber is inserted into the peeler held over the plate"
+ },
+ {
+  "t0": 88.02,
+  "t1": 95.03,
+  "action": "peeling a cucumber",
+  "objects": [
+   "cucumber"
+  ],
+  "tools": [
+   "vegetable peeler"
+  ],
+  "amount": null,
+  "after": "more peel shavings accumulate on the plate as the cucumber is peeled"
+ },
+ {
+  "t0": 92.03,
+  "t1": 99.03,
+  "action": "slicing cucumber",
+  "objects": [
+   "cucumber"
+  ],
+  "tools": [
+   "knife",
+   "plate"
+  ],
+  "amount": null,
+  "after": "a few sliced pieces of cucumber accumulate on the plate"
+ },
+ {
+  "t0": 96.03,
+  "t1": 103.0,
+  "action": "peeling a cucumber",
+  "objects": [
+   "cucumber"
+  ],
+  "tools": [
+   "peeler"
+  ],
+  "amount": null,
+  "after": "more peel strips on the plate and more of the cucumber peeled"
+ },
+ {
+  "t0": 100.03,
+  "t1": 107.01,
+  "action": "peeling a cucumber",
+  "objects": [
+   "cucumber"
+  ],
+  "tools": [
+   "vegetable peeler"
+  ],
+  "amount": null,
+  "after": "more peel shavings accumulate on the plate as more skin is removed from the cucumber"
+ },
+ {
+  "t0": 104.0,
+  "t1": 111.01,
+  "action": "grating zucchini",
+  "objects": [
+   "zucchini"
+  ],
+  "tools": [
+   "hand grater"
+  ],
+  "amount": null,
+  "after": "more shredded zucchini has accumulated on the plate"
+ },
+ {
+  "t0": 108.01,
+  "t1": 115.01,
+  "action": "grating a zucchini",
+  "objects": [
+   "zucchini",
+   "plate"
+  ],
+  "tools": [
+   "hand grater"
+  ],
+  "amount": null,
+  "after": "more grated zucchini shreds have accumulated on the plate"
+ },
+ {
+  "t0": 112.01,
+  "t1": 119.02,
+  "action": "peeling zucchini",
+  "objects": [
+   "zucchini"
+  ],
+  "tools": [
+   "peeler"
+  ],
+  "amount": null,
+  "after": "more shredded zucchini strips accumulate on the plate"
+ },
+ {
+  "t0": 116.02,
+  "t1": 123.02,
+  "action": "breaks cucumber into pieces by hand",
+  "objects": [
+   "cucumber"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "more broken cucumber pieces accumulate on the plate and the held cucumber becomes shorter"
+ },
+ {
+  "t0": 120.02,
+  "t1": 127.03,
+  "action": "slicing cucumber",
+  "objects": [
+   "cucumber"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "more sliced cucumber accumulates on the plate and the whole cucumber becomes shorter"
+ },
+ {
+  "t0": 124.02,
+  "t1": 131.03,
+  "action": "peeling a cucumber",
+  "objects": [
+   "cucumber"
+  ],
+  "tools": [
+   "vegetable peeler"
+  ],
+  "amount": null,
+  "after": "more peel shavings accumulate on the plate as more skin is removed from the cucumber"
+ },
+ {
+  "t0": 128.03,
+  "t1": 135.0,
+  "action": "peeling cucumber",
+  "objects": [
+   "cucumber"
+  ],
+  "tools": [
+   "vegetable peeler"
+  ],
+  "amount": null,
+  "after": "more thin cucumber slices accumulated on the plate"
+ },
+ {
+  "t0": 132.03,
+  "t1": 139.01,
+  "action": "slicing cucumber",
+  "objects": [
+   "cucumber"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "more thin ribbon slices accumulate on the plate"
+ },
+ {
+  "t0": 136.0,
+  "t1": 143.01,
+  "action": "grating zucchini",
+  "objects": [
+   "zucchini"
+  ],
+  "tools": [
+   "hand peeler"
+  ],
+  "amount": null,
+  "after": "more shredded zucchini piled on plate and zucchini held up from plate"
+ },
+ {
+  "t0": 140.01,
+  "t1": 147.01,
+  "action": "grate and season zucchini",
+  "objects": [
+   "zucchini",
+   "plate"
+  ],
+  "tools": [
+   "box grater",
+   "salt shaker"
+  ],
+  "amount": null,
+  "after": "plate has a larger pile of grated zucchini and the person is now holding a white shaker over it instead of grating with both hands"
+ },
+ {
+  "t0": 144.01,
+  "t1": 151.02,
+  "action": "sprinkles salt over lime into salad",
+  "objects": [
+   "plate of chopped greens",
+   "lime"
+  ],
+  "tools": [
+   "salt shaker",
+   "citrus squeezer"
+  ],
+  "amount": null,
+  "after": "salt shaker picked up from counter and held inverted over lime in squeezer above the plate"
+ },
+ {
+  "t0": 148.01,
+  "t1": 155.02,
+  "action": "spiralizing a cucumber",
+  "objects": [
+   "cucumber"
+  ],
+  "tools": [
+   "handheld spiralizer"
+  ],
+  "amount": null,
+  "after": "plate holds a larger pile of shredded cucumber"
+ },
+ {
+  "t0": 152.02,
+  "t1": 159.03,
+  "action": "shreds cucumber into thin strips",
+  "objects": [
+   "cucumber"
+  ],
+  "tools": [
+   "handheld julienne peeler"
+  ],
+  "amount": null,
+  "after": "pile of shredded green strips on plate grows larger as more of the cucumber is processed"
+ },
+ {
+  "t0": 156.02,
+  "t1": 163.03,
+  "action": "sprinkling seasoning onto cucumber slices",
+  "objects": [
+   "cucumber slices",
+   "plate"
+  ],
+  "tools": [
+   "seasoning shaker bottle"
+  ],
+  "amount": null,
+  "after": "seasoning has been shaken onto the cucumber slices on the plate"
+ },
+ {
+  "t0": 160.03,
+  "t1": 167.0,
+  "action": "slicing cucumber",
+  "objects": [
+   "cucumber"
+  ],
+  "tools": [
+   "handheld vegetable slicer"
+  ],
+  "amount": null,
+  "after": "a pile of thin cucumber slices accumulates on the plate and the held cucumber piece becomes shorter"
+ },
+ {
+  "t0": 164.03,
+  "t1": 171.0,
+  "action": "slicing cucumber",
+  "objects": [
+   "cucumber"
+  ],
+  "tools": [
+   "handheld slicer",
+   "plate"
+  ],
+  "amount": null,
+  "after": "several thin cucumber slices are now on the plate"
+ },
+ {
+  "t0": 168.0,
+  "t1": 175.01,
+  "action": "slicing cucumber",
+  "objects": [
+   "cucumber"
+  ],
+  "tools": [
+   "handheld slicer"
+  ],
+  "amount": null,
+  "after": "more cucumber slices on the plate"
+ },
+ {
+  "t0": 172.01,
+  "t1": 179.01,
+  "action": "sprinkles seasoning onto plate",
+  "objects": [
+   "plate with food",
+   "green seasoning"
+  ],
+  "tools": [
+   "seasoning bottle",
+   "cap"
+  ],
+  "amount": null,
+  "after": "cap is brought to the bottle opening and seasoning is visible on the plate"
+ },
+ {
+  "t0": 176.01,
+  "t1": 183.02,
+  "action": "shaking seasoning onto food",
+  "objects": [
+   "plate of sliced vegetables"
+  ],
+  "tools": [
+   "seasoning shaker bottle"
+  ],
+  "amount": null,
+  "after": "bottle cap removed and seasoning sprinkled over the vegetables on the plate"
+ },
+ {
+  "t0": 180.01,
+  "t1": 187.02,
+  "action": "grating",
+  "objects": [
+   "cheese"
+  ],
+  "tools": [
+   "small hand grater"
+  ],
+  "amount": null,
+  "after": "pile of grated white cheese on plate has grown"
+ },
+ {
+  "t0": 184.02,
+  "t1": 191.02,
+  "action": "slicing onion",
+  "objects": [
+   "onion"
+  ],
+  "tools": [
+   "handheld mandoline slicer"
+  ],
+  "amount": null,
+  "after": "a few more thin onion slices have accumulated on the plate"
+ },
+ {
+  "t0": 188.02,
+  "t1": 195.03,
+  "action": "grating zucchini",
+  "objects": [
+   "zucchini"
+  ],
+  "tools": [
+   "hand grater"
+  ],
+  "amount": null,
+  "after": "plate goes from a few shreds to a large pile of shredded green zucchini"
+ },
+ {
+  "t0": 192.03,
+  "t1": 199.03,
+  "action": "grating vegetable",
+  "objects": [
+   "vegetable",
+   "plate"
+  ],
+  "tools": [
+   "hand grater"
+  ],
+  "amount": null,
+  "after": "pile of shredded green vegetable on plate grows larger"
+ },
+ {
+  "t0": 196.03,
+  "t1": 203.0,
+  "action": "grating zucchini",
+  "objects": [
+   "zucchini"
+  ],
+  "tools": [
+   "box grater",
+   "plate"
+  ],
+  "amount": null,
+  "after": "more grated shreds accumulated on the plate and the held piece is smaller"
+ },
+ {
+  "t0": 200.03,
+  "t1": 207.01,
+  "action": "grating",
+  "objects": [
+   "cheese"
+  ],
+  "tools": [
+   "small hand grater"
+  ],
+  "amount": null,
+  "after": "shredded pieces accumulate on the plate over the green food"
+ },
+ {
+  "t0": 204.0,
+  "t1": 211.01,
+  "action": "spiralizing zucchini",
+  "objects": [
+   "zucchini"
+  ],
+  "tools": [
+   "handheld spiralizer"
+  ],
+  "amount": null,
+  "after": "a pile of spiralized zucchini noodles is on the plate and the spiralizer holds the remaining stub"
+ },
+ {
+  "t0": 208.01,
+  "t1": 215.01,
+  "action": "spiralizing zucchini into noodles",
+  "objects": [
+   "zucchini"
+  ],
+  "tools": [
+   "handheld spiralizer"
+  ],
+  "amount": null,
+  "after": "a pile of spiralized zucchini noodles has accumulated on the plate compared to a small amount at the start"
+ },
+ {
+  "t0": 212.01,
+  "t1": 219.02,
+  "action": "packing shredded zucchini into spiralizer",
+  "objects": [
+   "zucchini",
+   "shredded zucchini noodles"
+  ],
+  "tools": [
+   "handheld spiralizer"
+  ],
+  "amount": null,
+  "after": "spiralizer is fuller with packed noodles and a zucchini end piece, plate has fewer loose noodles"
+ },
+ {
+  "t0": 216.02,
+  "t1": 223.02,
+  "action": "filling a small cup with shredded greens",
+  "objects": [
+   "small cup",
+   "shredded green vegetable",
+   "plate"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the small cup held in the left hand contains noticeably more shredded greens at the end than at the start"
+ },
+ {
+  "t0": 220.02,
+  "t1": 227.03,
+  "action": "adds shredded zucchini to a cup with avocado",
+  "objects": [
+   "small cup with avocado slices",
+   "shredded zucchini on plate"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "shredded zucchini has been transferred from the plate by the stove into the cup and the person has moved with the cup to the counter by the sink"
+ },
+ {
+  "t0": 224.02,
+  "t1": 231.03,
+  "action": "carries avocado cup and tears paper towel",
+  "objects": [
+   "cup of diced avocado",
+   "paper towel",
+   "plate of zucchini noodles"
+  ],
+  "tools": [
+   "paper towel roll"
+  ],
+  "amount": null,
+  "after": "avocado cup moved from hand to sink counter next to yogurt tub and a fresh sheet is being torn from the paper towel roll over the plate of zucchini noodles by the stove"
+ },
+ {
+  "t0": 228.03,
+  "t1": 235.0,
+  "action": "tear paper towel and dry hands",
+  "objects": [
+   "hands"
+  ],
+  "tools": [
+   "paper towel"
+  ],
+  "amount": null,
+  "after": "a sheet is torn from the paper towel roll and is being used to wipe/dry hands near the laptop on the counter"
+ },
+ {
+  "t0": 232.03,
+  "t1": 239.01,
+  "action": "wipe hands with paper towel",
+  "objects": [
+   "hands"
+  ],
+  "tools": [
+   "paper towel"
+  ],
+  "amount": null,
+  "after": "hands are wiped and a fresh sheet is being torn from the paper towel roll on the counter"
+ },
+ {
+  "t0": 236.0,
+  "t1": 243.01,
+  "action": "tears a sheet of paper towel",
+  "objects": [
+   "paper towel"
+  ],
+  "tools": [],
+  "amount": "one sheet",
+  "after": "a fresh sheet is torn from the roll and held unfolded in both hands, replacing the crumpled piece held at the start"
+ },
+ {
+  "t0": 240.01,
+  "t1": 247.01,
+  "action": "tear off and lay out paper towel",
+  "objects": [
+   "paper towel"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a sheet of paper towel is torn from the roll and laid flat on the counter by the sink"
+ },
+ {
+  "t0": 244.01,
+  "t1": 251.02,
+  "action": "throw away paper towel",
+  "objects": [
+   "paper towel"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "paper towel gone from counter, cabinet door open with hand inside trash bag"
+ },
+ {
+  "t0": 248.01,
+  "t1": 255.02,
+  "action": "adjusting trash bag in cabinet",
+  "objects": [
+   "trash bag",
+   "cabinet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "cabinet door is fully open and hand is inside trash bag adjusting it"
+ },
+ {
+  "t0": 252.02,
+  "t1": 259.03,
+  "action": "adjusting trash bag in cabinet",
+  "objects": [
+   "trash bag",
+   "cabinet"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "trash bag is pulled forward and repositioned and cabinet door is swung further open toward camera"
+ },
+ {
+  "t0": 256.02,
+  "t1": 263.03,
+  "action": "none",
+  "objects": [
+   "garlic"
+  ],
+  "tools": [],
+  "amount": "1 bulb",
+  "after": "hand is out of the cabinet holding a garlic bulb in both hands, cabinet door still open"
+ },
+ {
+  "t0": 260.03,
+  "t1": 267.0,
+  "action": "retrieve and handle garlic",
+  "objects": [
+   "garlic bulb"
+  ],
+  "tools": [],
+  "amount": "one bulb",
+  "after": "garlic bulb removed from plastic bag in open under-sink cabinet and held in hands by the stove"
+ },
+ {
+  "t0": 264.03,
+  "t1": 271.0,
+  "action": "drops egg on floor, picks it up and cracks it",
+  "objects": [
+   "egg"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "egg goes from intact in one hand by the stove to being held in both hands over the left counter while being cracked"
+ },
+ {
+  "t0": 268.0,
+  "t1": 275.01,
+  "action": "kneading and pressing dough",
+  "objects": [
+   "dough"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "dough moved from being held in both hands to being placed on the counter and flattened under both hands"
+ },
+ {
+  "t0": 272.01,
+  "t1": 279.01,
+  "action": "knead and roll dough into a ball",
+  "objects": [
+   "dough"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "dough goes from flattened on the counter to a small smooth round ball held in both hands"
+ },
+ {
+  "t0": 276.01,
+  "t1": 283.02,
+  "action": "peeling an egg",
+  "objects": [
+   "egg"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "egg lifted from counter and held in both hands while shell is picked off"
+ },
+ {
+  "t0": 280.01,
+  "t1": 287.02,
+  "action": "peeling an egg",
+  "objects": [
+   "egg"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "eggshell is partially peeled with small fragments removed"
+ },
+ {
+  "t0": 284.02,
+  "t1": 291.02,
+  "action": "peeling an egg",
+  "objects": [
+   "egg"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "person has moved from the stove counter to the sink counter and small white shell fragments are on the paper towel with the egg partially peeled"
+ },
+ {
+  "t0": 288.02,
+  "t1": 295.03,
+  "action": "peeling an egg",
+  "objects": [
+   "egg"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the person has moved to the counter and the peeled egg is placed on a paper towel with shell fragments beside it"
+ },
+ {
+  "t0": 292.03,
+  "t1": 299.03,
+  "action": "peeling garlic",
+  "objects": [
+   "garlic cloves"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "more peeled skins and cloves accumulate on the paper towel"
+ },
+ {
+  "t0": 296.03,
+  "t1": 303.0,
+  "action": "peeling shrimp",
+  "objects": [
+   "shrimp"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a small piece of shrimp shell has been separated and left on the paper towel"
+ },
+ {
+  "t0": 300.03,
+  "t1": 307.01,
+  "action": "peeling shrimp",
+  "objects": [
+   "shrimp"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "a piece of shell has been removed from the shrimp and placed on the paper towel on the counter"
+ },
+ {
+  "t0": 304.0,
+  "t1": 311.01,
+  "action": "peeling shrimp",
+  "objects": [
+   "shrimp"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "right hand moves from the counter to join the left hand and both hands peel the shrimp together in the center"
+ },
+ {
+  "t0": 308.01,
+  "t1": 315.01,
+  "action": "peeling shrimp",
+  "objects": [
+   "shrimp"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the shell is removed from the shrimp and the peeled shrimp is held up in the right hand"
+ },
+ {
+  "t0": 312.01,
+  "t1": 319.02,
+  "action": "peeling a garlic clove",
+  "objects": [
+   "garlic clove"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "the papery skin is separated from the garlic clove and the clove is peeled"
+ },
+ {
+  "t0": 316.02,
+  "t1": 323.02,
+  "action": "peeling garlic",
+  "objects": [
+   "garlic clove"
+  ],
+  "tools": [],
+  "amount": "one clove",
+  "after": "garlic skin is removed and hands rub together"
+ },
+ {
+  "t0": 320.02,
+  "t1": 327.03,
+  "action": "peel garlic",
+  "objects": [
+   "garlic"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "garlic is peeled and person moves from sink counter to stove and reaches for cutting board"
+ },
+ {
+  "t0": 324.02,
+  "t1": 331.03,
+  "action": "operate laptop",
+  "objects": [
+   "laptop"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "camera view shifts from stove and counter with shredded vegetables to sink area with hand resting on laptop keyboard"
+ },
+ {
+  "t0": 328.03,
+  "t1": 335.0,
+  "action": "arranges food on plate then uses laptop then grasps pan",
+  "objects": [
+   "plate of shredded zucchini",
+   "laptop",
+   "frying pan on stove"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hand moves from plate to laptop touchpad scrolling the pink recipe screen and ends gripping the frying pan handle"
+ },
+ {
+  "t0": 332.03,
+  "t1": 339.01,
+  "action": "heats oil in pan and prepares ingredients",
+  "objects": [
+   "frying pan with oil",
+   "shredded zucchini on plate",
+   "bowl of beaten egg"
+  ],
+  "tools": [
+   "frying pan",
+   "electric stovetop"
+  ],
+  "amount": null,
+  "after": "person moved from laptop on sink counter to stove; pan with oil is now on front burner being swirled and hand has reached into bowl of beaten egg beside plate of zucchini noodles"
+ },
+ {
+  "t0": 336.0,
+  "t1": 343.01,
+  "action": "places pan on burner and sprinkles seasoning into it",
+  "objects": [
+   "frying pan",
+   "seasoning"
+  ],
+  "tools": [
+   "frying pan"
+  ],
+  "amount": null,
+  "after": "pan moved from being held in hand to sitting on front-right burner heating, hands withdrawn from stove"
+ },
+ {
+  "t0": 340.01,
+  "t1": 347.01,
+  "action": "adjust pot and open drawer",
+  "objects": [
+   "pot",
+   "plate with butter",
+   "shredded zucchini"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "drawer under left counter is pulled open, camera pans left, pot handle slightly repositioned and hand moves from stove to drawer"
+ },
+ {
+  "t0": 344.01,
+  "t1": 351.02,
+  "action": "none",
+  "objects": [],
+  "tools": [
+   "pan",
+   "green measuring spoon"
+  ],
+  "amount": null,
+  "after": "drawer is now open and person is holding a green measuring spoon, pan remains on the stove burner"
+ },
+ {
+  "t0": 348.01,
+  "t1": 355.02,
+  "action": "none",
+  "objects": [],
+  "tools": [
+   "green measuring spoon",
+   "knife"
+  ],
+  "amount": null,
+  "after": "drawer is closed and person is now holding a green measuring spoon in left hand and a knife in right hand over a plate of butter on the counter next to the stove"
+ },
+ {
+  "t0": 352.02,
+  "t1": 359.03,
+  "action": "slice butter",
+  "objects": [
+   "butter",
+   "plate"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "plate moved from stovetop to countertop and block of butter cut into smaller pieces"
+ },
+ {
+  "t0": 356.02,
+  "t1": 363.03,
+  "action": "scooping butter into measuring spoon",
+  "objects": [
+   "butter"
+  ],
+  "tools": [
+   "knife",
+   "measuring spoon"
+  ],
+  "amount": null,
+  "after": "butter is transferred from the plate onto the green measuring spoon"
+ },
+ {
+  "t0": 360.03,
+  "t1": 367.03,
+  "action": "slicing cabbage",
+  "objects": [
+   "cabbage"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "cabbage wedge is cut into thin shredded strips accumulating on the plate"
+ },
+ {
+  "t0": 364.03,
+  "t1": 371.0,
+  "action": "slicing onion",
+  "objects": [
+   "onion"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "a round slice is cut off and held up separated from the rest on the plate"
+ },
+ {
+  "t0": 368.0,
+  "t1": 375.01,
+  "action": "slicing butter",
+  "objects": [
+   "butter"
+  ],
+  "tools": [
+   "knife",
+   "fork"
+  ],
+  "amount": null,
+  "after": "the stick of butter on the plate is cut into several round slices with one slice held up on the fork"
+ },
+ {
+  "t0": 372.0,
+  "t1": 379.01,
+  "action": "slicing banana",
+  "objects": [
+   "banana"
+  ],
+  "tools": [
+   "knife",
+   "fork"
+  ],
+  "amount": "2 slices",
+  "after": "banana cut into round slices lying on the plate"
+ },
+ {
+  "t0": 376.01,
+  "t1": 383.02,
+  "action": "slicing banana",
+  "objects": [
+   "banana"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "more banana slices on the plate and the piece held in the hand is smaller"
+ },
+ {
+  "t0": 380.01,
+  "t1": 387.02,
+  "action": "slicing onion",
+  "objects": [
+   "onion"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "onion is cut from a single piece into several slices on the plate"
+ },
+ {
+  "t0": 384.02,
+  "t1": 391.02,
+  "action": "slicing onion",
+  "objects": [
+   "onion"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "onion cut into several more round slices on the plate"
+ },
+ {
+  "t0": 388.02,
+  "t1": 395.03,
+  "action": "spread butter on celery",
+  "objects": [
+   "celery",
+   "butter"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "butter is spread onto the celery stalk held over the plate"
+ },
+ {
+  "t0": 392.02,
+  "t1": 399.03,
+  "action": "slice onion",
+  "objects": [
+   "onion"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "hands stop cutting and view shifts from stovetop plate to sink counter where an open laptop is displayed and the person stands idle"
+ },
+ {
+  "t0": 396.03,
+  "t1": 403.0,
+  "action": "add ingredient to pan on stove",
+  "objects": [
+   "frying pan on stove",
+   "plate of shredded zucchini"
+  ],
+  "tools": [
+   "spoon",
+   "tongs"
+  ],
+  "amount": null,
+  "after": "view shifts from laptop on counter by sink to stove where person adds spoonful of ingredient to pan"
+ },
+ {
+  "t0": 400.03,
+  "t1": 407.01,
+  "action": "slices onion over pan",
+  "objects": [
+   "onion"
+  ],
+  "tools": [
+   "knife",
+   "fork"
+  ],
+  "amount": null,
+  "after": "person moved from sink counter with laptop to stove and is cutting an onion slice held on a fork into a frying pan"
+ },
+ {
+  "t0": 404.0,
+  "t1": 411.01,
+  "action": "scraping zucchini noodles into pan",
+  "objects": [
+   "zucchini",
+   "zucchini noodles"
+  ],
+  "tools": [
+   "knife",
+   "frying pan"
+  ],
+  "amount": null,
+  "after": "a small pile of shredded zucchini is now in the previously empty black frying pan"
+ },
+ {
+  "t0": 408.01,
+  "t1": 415.01,
+  "action": "scrapes ingredient into pan",
+  "objects": [
+   "chopped food"
+  ],
+  "tools": [
+   "spoon",
+   "knife"
+  ],
+  "amount": null,
+  "after": "small white pieces are now in the pan"
+ },
+ {
+  "t0": 412.01,
+  "t1": 419.02,
+  "action": "scrapes garlic into pan",
+  "objects": [
+   "garlic",
+   "pan"
+  ],
+  "tools": [
+   "spoon",
+   "knife"
+  ],
+  "amount": null,
+  "after": "garlic transferred from spoon into pan"
+ },
+ {
+  "t0": 416.02,
+  "t1": 423.02,
+  "action": "cutting food off spatula into pan",
+  "objects": [
+   "food",
+   "zucchini noodles"
+  ],
+  "tools": [
+   "spatula",
+   "knife",
+   "frying pan"
+  ],
+  "amount": null,
+  "after": "food remains held on spatula over pan with no significant visible change"
+ },
+ {
+  "t0": 420.02,
+  "t1": 427.03,
+  "action": "scraping zucchini flesh into pan",
+  "objects": [
+   "zucchini"
+  ],
+  "tools": [
+   "knife",
+   "frying pan"
+  ],
+  "amount": null,
+  "after": "more scraped zucchini flesh accumulates in the frying pan"
+ },
+ {
+  "t0": 424.02,
+  "t1": 431.03,
+  "action": "slicing zucchini into pan",
+  "objects": [
+   "zucchini"
+  ],
+  "tools": [
+   "knife",
+   "pan"
+  ],
+  "amount": null,
+  "after": "a few more slices of zucchini are cut into the pan on the stove"
+ },
+ {
+  "t0": 428.03,
+  "t1": 435.0,
+  "action": "scraping zucchini off peeler into pan",
+  "objects": [
+   "zucchini"
+  ],
+  "tools": [
+   "vegetable peeler",
+   "knife",
+   "frying pan"
+  ],
+  "amount": null,
+  "after": "peeler with zucchini lifted slightly higher over pan and knife pulled back, no visible accumulation of zucchini in pan and plate of zucchini noodles unchanged"
+ },
+ {
+  "t0": 432.03,
+  "t1": 439.01,
+  "action": "twirls zucchini noodles onto spoon in pan",
+  "objects": [
+   "zucchini noodles"
+  ],
+  "tools": [
+   "saucepan",
+   "spoon"
+  ],
+  "amount": null,
+  "after": "a bundle of zucchini noodles is wound around the spoon and the left hand moves to grip the pan handle"
+ },
+ {
+  "t0": 436.0,
+  "t1": 443.01,
+  "action": "scoops a spoonful of green sauce from saucepan and moves to counter",
+  "objects": [
+   "saucepan with dark liquid",
+   "green paste/sauce in measuring spoon",
+   "butter on plate"
+  ],
+  "tools": [
+   "gold-handled saucepan",
+   "green measuring spoon",
+   "metal spoon/knife"
+  ],
+  "amount": "one measuring spoonful",
+  "after": "spoon with green paste is lifted clear out of the pot and person has moved from the right burner to the left counter over the butter plate, pot left on the burner"
+ },
+ {
+  "t0": 440.01,
+  "t1": 447.01,
+  "action": "cut butter and tend saucepan",
+  "objects": [
+   "butter on plate",
+   "dark sauce in saucepan"
+  ],
+  "tools": [
+   "green measuring spoon",
+   "knife",
+   "gold-handled saucepan"
+  ],
+  "amount": null,
+  "after": "butter is cut into pieces on the counter plate and the person's hand is on the stove knob with the saucepan still on the burner"
+ },
+ {
+  "t0": 444.01,
+  "t1": 451.02,
+  "action": "moves plate to stove and picks up cutting board",
+  "objects": [
+   "plate with butter",
+   "cutting board",
+   "stovetop"
+  ],
+  "tools": [
+   "knife"
+  ],
+  "amount": null,
+  "after": "plate has been relocated from the countertop to the stovetop and the wooden cutting board is now lifted in both hands"
+ },
+ {
+  "t0": 448.01,
+  "t1": 455.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "plate with butter is now on the stove burner and wooden cutting board is now flat on the counter instead of leaning against the wall"
+ },
+ {
+  "t0": 452.02,
+  "t1": 459.03,
+  "action": "prepares onion on cutting board",
+  "objects": [
+   "cutting board",
+   "onion slice"
+  ],
+  "tools": [
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "cutting board is placed flat on counter with an onion slice on it and the utensil drawer is open"
+ },
+ {
+  "t0": 456.02,
+  "t1": 463.03,
+  "action": "slicing garlic",
+  "objects": [
+   "garlic clove"
+  ],
+  "tools": [
+   "green knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "a green knife has been retrieved from the drawer and a garlic clove is on the wooden cutting board being sliced"
+ },
+ {
+  "t0": 460.03,
+  "t1": 467.03,
+  "action": "slicing garlic",
+  "objects": [
+   "garlic"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": "one clove",
+  "after": "green knife taken from open drawer and garlic is sliced into pieces on the cutting board with the drawer now closed"
+ },
+ {
+  "t0": 464.03,
+  "t1": 471.0,
+  "action": "slicing garlic",
+  "objects": [
+   "garlic"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "garlic cut into several thin slices piled on the cutting board"
+ },
+ {
+  "t0": 468.0,
+  "t1": 475.01,
+  "action": "slicing",
+  "objects": [
+   "garlic"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "more slices are cut and piled on the cutting board with the hand moved to the top of the board"
+ },
+ {
+  "t0": 472.0,
+  "t1": 479.01,
+  "action": "chopping garlic",
+  "objects": [
+   "garlic"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "garlic is cut into smaller more finely chopped pieces"
+ },
+ {
+  "t0": 476.01,
+  "t1": 483.02,
+  "action": "chopping",
+  "objects": [
+   "garlic"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "a slightly larger pile of finely chopped pieces is visible on the cutting board"
+ },
+ {
+  "t0": 480.01,
+  "t1": 487.02,
+  "action": "chopping garlic",
+  "objects": [
+   "garlic"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "garlic is more finely chopped and the pile of small pieces on the board has grown slightly"
+ },
+ {
+  "t0": 484.02,
+  "t1": 491.02,
+  "action": "chopping garlic",
+  "objects": [
+   "garlic"
+  ],
+  "tools": [
+   "green knife",
+   "wooden cutting board"
+  ],
+  "amount": null,
+  "after": "garlic is finely minced into a small pile on the cutting board and the person's hands lift away from the pile and knife"
+ },
+ {
+  "t0": 488.02,
+  "t1": 495.03,
+  "action": "chopping garlic",
+  "objects": [
+   "garlic"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "garlic is finely chopped into a small minced pile on the cutting board"
+ },
+ {
+  "t0": 492.02,
+  "t1": 499.03,
+  "action": "minces garlic then checks laptop",
+  "objects": [
+   "garlic"
+  ],
+  "tools": [
+   "green knife",
+   "cutting board",
+   "laptop"
+  ],
+  "amount": null,
+  "after": "garlic is finely minced on the cutting board and the person has moved from the stove to the sink counter pointing at the laptop screen"
+ },
+ {
+  "t0": 496.03,
+  "t1": 503.0,
+  "action": "chop garlic and check recipe on laptop",
+  "objects": [
+   "garlic",
+   "laptop screen",
+   "chopped greens"
+  ],
+  "tools": [
+   "green knife",
+   "wooden cutting board",
+   "laptop"
+  ],
+  "amount": null,
+  "after": "person stops chopping at the cutting board, interacts with the laptop on the counter, and ends with the view centered on the stovetop with a pot and a plate of shredded greens"
+ },
+ {
+  "t0": 500.03,
+  "t1": 507.01,
+  "action": "gather minced garlic after checking recipe",
+  "objects": [
+   "minced garlic"
+  ],
+  "tools": [
+   "laptop",
+   "cutting board",
+   "knife"
+  ],
+  "amount": null,
+  "after": "person moved from pointing at laptop by the sink to the stove-side counter and is picking up the pile of minced garlic from the cutting board"
+ },
+ {
+  "t0": 504.0,
+  "t1": 511.01,
+  "action": "scoops chopped garlic onto knife blade",
+  "objects": [
+   "chopped garlic"
+  ],
+  "tools": [
+   "green knife",
+   "wooden cutting board"
+  ],
+  "amount": null,
+  "after": "small pile of chopped garlic moved from cutting board onto the blade of the knife"
+ },
+ {
+  "t0": 508.01,
+  "t1": 515.01,
+  "action": "handling chopped garlic on knife blade",
+  "objects": [
+   "chopped garlic"
+  ],
+  "tools": [
+   "knife",
+   "cutting board"
+  ],
+  "amount": null,
+  "after": "garlic pieces slightly repositioned and rearranged on the knife blade"
+ },
+ {
+  "t0": 512.01,
+  "t1": 519.02,
+  "action": "picks chopped garlic off knife and adds to pot",
+  "objects": [
+   "chopped garlic"
+  ],
+  "tools": [
+   "green knife"
+  ],
+  "amount": null,
+  "after": "garlic removed from knife and dropped into black pot on stove; person moved from cutting board to stove"
+ },
+ {
+  "t0": 516.02,
+  "t1": 523.02,
+  "action": "sprinkles minced garlic into pot",
+  "objects": [
+   "minced garlic"
+  ],
+  "tools": [
+   "green knife",
+   "saucepan on stove"
+  ],
+  "amount": null,
+  "after": "garlic transferred from knife into dark liquid in pot on stove; view shifted from cutting board to stovetop with plate of spiralized zucchini beside pot"
+ },
+ {
+  "t0": 520.02,
+  "t1": 527.03,
+  "action": "adding chopped pieces into saucepan",
+  "objects": [
+   "chopped garlic",
+   "liquid in saucepan"
+  ],
+  "tools": [
+   "green knife",
+   "saucepan"
+  ],
+  "amount": null,
+  "after": "chopped pieces transferred from cutting board into the dark liquid in the saucepan"
+ },
+ {
+  "t0": 524.02,
+  "t1": 531.03,
+  "action": "adds chopped garlic to hot pan and shakes to saut\u00e9",
+  "objects": [
+   "chopped garlic",
+   "oil"
+  ],
+  "tools": [
+   "knife",
+   "saucepan",
+   "stovetop"
+  ],
+  "amount": null,
+  "after": "chopped garlic is now sizzling and frying in oil in the pan"
+ },
+ {
+  "t0": 528.03,
+  "t1": 535.0,
+  "action": "shakes pan to toss ingredients",
+  "objects": [
+   "chopped garlic in oil"
+  ],
+  "tools": [
+   "frying pan"
+  ],
+  "amount": null,
+  "after": "garlic has shifted and gathered on one side of the pan"
+ },
+ {
+  "t0": 532.03,
+  "t1": 539.01,
+  "action": "sprinkling minced garlic into pan",
+  "objects": [
+   "minced garlic",
+   "oil"
+  ],
+  "tools": [
+   "frying pan"
+  ],
+  "amount": null,
+  "after": "more minced garlic has been added to the hot oil and is sizzling in the pan"
+ },
+ {
+  "t0": 536.0,
+  "t1": 543.01,
+  "action": "shakes and swirls pan on burner",
+  "objects": [
+   "food in pan"
+  ],
+  "tools": [
+   "frying pan",
+   "electric stovetop"
+  ],
+  "amount": null,
+  "after": "pan contents sizzle and spread, view shifts from stove to laptop on counter by sink"
+ },
+ {
+  "t0": 540.01,
+  "t1": 547.01,
+  "action": "shake pan on stove then operate laptop",
+  "objects": [
+   "food in pan",
+   "laptop"
+  ],
+  "tools": [
+   "saucepan",
+   "electric stove",
+   "laptop computer"
+  ],
+  "amount": null,
+  "after": "pan left on burner and person moved from stove to sink counter with finger on laptop trackpad"
+ },
+ {
+  "t0": 544.01,
+  "t1": 551.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "view pans from laptop on counter by sink to stove with a saucepan on burner and a plate of shredded zucchini; hand is no longer on laptop"
+ },
+ {
+  "t0": 548.01,
+  "t1": 555.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "hand leaves laptop on sink counter and view moves to stove where a saucepan of water is boiling next to a plate of spiralized zucchini"
+ },
+ {
+  "t0": 552.02,
+  "t1": 559.03,
+  "action": "grasps and tilts saucepan",
+  "objects": [
+   "saucepan with boiling liquid"
+  ],
+  "tools": [
+   "saucepan"
+  ],
+  "amount": null,
+  "after": "left hand is now gripping the saucepan handle and tilting the pan on the burner, contents visibly bubbling"
+ },
+ {
+  "t0": 556.02,
+  "t1": 563.03,
+  "action": "shakes saucepan",
+  "objects": [
+   "butter"
+  ],
+  "tools": [
+   "saucepan"
+  ],
+  "amount": null,
+  "after": "butter continues to melt and bubble and spreads more evenly in pan"
+ },
+ {
+  "t0": 560.03,
+  "t1": 567.03,
+  "action": "shakes pan to saut\u00e9 garlic then handles seasoning with both hands",
+  "objects": [
+   "garlic in oil in saucepan",
+   "zucchini noodles on plate"
+  ],
+  "tools": [
+   "small saucepan",
+   "electric stovetop"
+  ],
+  "amount": null,
+  "after": "saucepan left on burner with garlic sizzling and view pans away from stove to laptop on counter"
+ },
+ {
+  "t0": 564.03,
+  "t1": 571.0,
+  "action": "add seasoning to saucepan and scroll laptop",
+  "objects": [
+   "saucepan on stove",
+   "laptop"
+  ],
+  "tools": [
+   "saucepan",
+   "laptop"
+  ],
+  "amount": null,
+  "after": "white seasoning now visible in oil in saucepan and person moved from stove to counter scrolling laptop"
+ },
+ {
+  "t0": 568.0,
+  "t1": 575.01,
+  "action": "taps laptop touchscreen",
+  "objects": [
+   "laptop"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hand is withdrawn from the screen and no change to the laptop or kitchen is visible"
+ },
+ {
+  "t0": 572.0,
+  "t1": 579.01,
+  "action": "tap laptop screen",
+  "objects": [
+   "laptop"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "right hand moves from resting below the counter to touching the laptop screen"
+ },
+ {
+  "t0": 576.01,
+  "t1": 583.02,
+  "action": "taps laptop touchscreen",
+  "objects": [
+   "laptop"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hand moves from hanging below counter to touching the laptop screen and then the keyboard area"
+ },
+ {
+  "t0": 580.01,
+  "t1": 587.02,
+  "action": "checks recipe on laptop then handles pan on stove",
+  "objects": [
+   "laptop",
+   "frying pan with oil",
+   "plate of shredded vegetables"
+  ],
+  "tools": [
+   "frying pan",
+   "electric stovetop"
+  ],
+  "amount": null,
+  "after": "person has moved away from laptop on the counter to the stove and is now holding the handle of the pan with heating oil"
+ },
+ {
+  "t0": 584.02,
+  "t1": 591.02,
+  "action": "holding and shaking a pan over heat",
+  "objects": [
+   "oil or butter in pan"
+  ],
+  "tools": [
+   "frying pan",
+   "electric stovetop"
+  ],
+  "amount": null,
+  "after": "person has moved from the laptop by the sink to the stove and is holding the pan over the burner as its contents bubble"
+ },
+ {
+  "t0": 588.02,
+  "t1": 595.03,
+  "action": "swirls pan to melt butter",
+  "objects": [
+   "butter"
+  ],
+  "tools": [
+   "frying pan",
+   "stove"
+  ],
+  "amount": null,
+  "after": "butter is melted, bubbling and spread across the pan"
+ },
+ {
+  "t0": 592.02,
+  "t1": 599.03,
+  "action": "swirls pan to saut\u00e9",
+  "objects": [
+   "oil and garlic in pan"
+  ],
+  "tools": [
+   "small saucepan with gold handle",
+   "electric stovetop burner"
+  ],
+  "amount": null,
+  "after": "oil continues bubbling and garlic shifts around pan with no major change, still cooking"
+ },
+ {
+  "t0": 596.03,
+  "t1": 603.0,
+  "action": "swirling pan to saut\u00e9 garlic",
+  "objects": [
+   "garlic in oil"
+  ],
+  "tools": [
+   "pan",
+   "stove"
+  ],
+  "amount": null,
+  "after": "garlic and oil shift from one side to center and bubble more evenly across the pan"
+ },
+ {
+  "t0": 600.03,
+  "t1": 607.01,
+  "action": "shakes and swirls pan",
+  "objects": [
+   "oil and garlic in pan"
+  ],
+  "tools": [
+   "saucepan"
+  ],
+  "amount": null,
+  "after": "pan is set back down on the burner and the hand releases the handle"
+ },
+ {
+  "t0": 604.0,
+  "t1": 611.01,
+  "action": "saut\u00e9 garlic in oil",
+  "objects": [
+   "garlic",
+   "oil"
+  ],
+  "tools": [
+   "frying pan",
+   "stovetop"
+  ],
+  "amount": null,
+  "after": "pan is left resting on the burner with hands released and person stepped back while oil continues to bubble"
+ },
+ {
+  "t0": 608.01,
+  "t1": 615.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "person's hands move from at sides to clasped together in front, pot continues boiling with no other change to plate or stove"
+ },
+ {
+  "t0": 612.01,
+  "t1": 619.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "a container of yellow liquid appears on the counter beside the stove while the oil in the saucepan continues to bubble, otherwise the stove, plate of shredded zucchini and person's clasped hands are unchanged"
+ },
+ {
+  "t0": 616.02,
+  "t1": 623.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change - person remains standing idle in front of stove while oil continues to bubble in pan and plate of zucchini noodles sits untouched on counter"
+ },
+ {
+  "t0": 620.02,
+  "t1": 627.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "butter in saucepan has melted further and camera is zoomed in closer to the pan"
+ },
+ {
+  "t0": 624.02,
+  "t1": 631.03,
+  "action": "none",
+  "objects": [
+   "butter"
+  ],
+  "tools": [
+   "saucepan",
+   "stovetop"
+  ],
+  "amount": null,
+  "after": "butter in the saucepan melts further and bubbles while the camera zooms in then pulls back to show more of the stove and kitchen"
+ },
+ {
+  "t0": 628.03,
+  "t1": 635.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": "1:14 on microwave display",
+  "after": "butter/oil continues to bubble in pan on burner with no food added, camera pulls back from close-up of pan to wider overhead view showing stove, plate of zucchini noodles, butter dish and counter"
+ },
+ {
+  "t0": 632.03,
+  "t1": 639.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "camera pans left from stove to counter and the utensil drawer is pulled open"
+ },
+ {
+  "t0": 636.0,
+  "t1": 643.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "drawer beside stove is pulled open and hand is rummaging through utensils inside"
+ },
+ {
+  "t0": 640.01,
+  "t1": 647.01,
+  "action": "rummages through drawer",
+  "objects": [
+   "kitchen utensils"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hand moves from above drawer to inside drawer resting on utensils"
+ },
+ {
+  "t0": 644.01,
+  "t1": 651.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "hand stops rummaging in the utensil drawer and the camera pans away to reveal the stovetop with a pan and a plate of chopped greens"
+ },
+ {
+  "t0": 648.01,
+  "t1": 655.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "utensil drawer is now closed and dishwasher door is open, view has moved from stove area to sink/dishwasher area"
+ },
+ {
+  "t0": 652.02,
+  "t1": 659.03,
+  "action": "open dishwasher and cabinet",
+  "objects": [
+   "dishwasher door",
+   "cabinet door"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "dishwasher door is folded down open and cabinet door is open revealing containers inside"
+ },
+ {
+  "t0": 656.02,
+  "t1": 663.03,
+  "action": "opening cabinet and handling packets inside",
+  "objects": [
+   "kitchen cabinet",
+   "packets and containers"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "cabinet door is open and hand is holding a packet inside"
+ },
+ {
+  "t0": 660.03,
+  "t1": 667.03,
+  "action": "rummages through drawer",
+  "objects": [
+   "kitchen utensils and containers"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "items in drawer slightly shifted and repositioned"
+ },
+ {
+  "t0": 664.03,
+  "t1": 671.0,
+  "action": "rearranging cookware in cabinet",
+  "objects": [
+   "pans",
+   "food containers"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "pans slightly shifted and camera pulls back to reveal laptop on countertop"
+ },
+ {
+  "t0": 668.0,
+  "t1": 675.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "hand pulls a pan from the lower cabinet and camera pans away; view changes from inside the cabinet to the sink and stovetop where two pans now sit on the stove next to a plate of chopped food"
+ },
+ {
+  "t0": 672.0,
+  "t1": 679.01,
+  "action": "shake pan and arrange plated food",
+  "objects": [
+   "zucchini noodles on plate",
+   "food in frying pan"
+  ],
+  "tools": [
+   "frying pan",
+   "stove",
+   "plate"
+  ],
+  "amount": null,
+  "after": "person moved from sink counter with laptop to stove, now holding pan handle and touching noodles on plate"
+ },
+ {
+  "t0": 676.01,
+  "t1": 683.02,
+  "action": "swirls skillet and gathers zucchini noodles to add to pan",
+  "objects": [
+   "zucchini noodles",
+   "garlic and oil in skillet"
+  ],
+  "tools": [
+   "skillet",
+   "plate",
+   "electric stovetop"
+  ],
+  "amount": null,
+  "after": "skillet oil and garlic has been swirled and the plate has been lifted over the stove with a handful of spiralized zucchini noodles gathered in the hand ready to add to the skillet"
+ },
+ {
+  "t0": 680.01,
+  "t1": 687.02,
+  "action": "adding zucchini noodles to frying pan",
+  "objects": [
+   "zucchini noodles"
+  ],
+  "tools": [
+   "frying pan",
+   "plate"
+  ],
+  "amount": null,
+  "after": "plate lifted from counter and held over stove with fewer noodles as a handful of zucchini noodles is now in the pan"
+ },
+ {
+  "t0": 684.02,
+  "t1": 691.02,
+  "action": "transferring zucchini noodles into a pan",
+  "objects": [
+   "zucchini noodles"
+  ],
+  "tools": [
+   "plate",
+   "pan"
+  ],
+  "amount": null,
+  "after": "plate is nearly empty and the pan is filled with zucchini noodles"
+ },
+ {
+  "t0": 688.02,
+  "t1": 695.03,
+  "action": "transferring sliced vegetables from plate to pan",
+  "objects": [
+   "green vegetable strips",
+   "plate",
+   "pan"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "plate is nearly empty and the pan is filled with the vegetable strips"
+ },
+ {
+  "t0": 692.02,
+  "t1": 699.03,
+  "action": "scrapes zucchini noodles from plate into pan",
+  "objects": [
+   "zucchini noodles",
+   "plate"
+  ],
+  "tools": [
+   "frying pan"
+  ],
+  "amount": null,
+  "after": "plate is empty and set on counter beside stove, pan is filled with noodles"
+ },
+ {
+  "t0": 696.03,
+  "t1": 703.0,
+  "action": "put down plate and open dishwasher",
+  "objects": [
+   "plate",
+   "dishwasher"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "plate is on the counter and dishwasher door is open"
+ },
+ {
+  "t0": 700.03,
+  "t1": 707.01,
+  "action": "opens dishwasher and picks up spatula",
+  "objects": [
+   "dishwasher door",
+   "black spatula",
+   "sink"
+  ],
+  "tools": [
+   "black spatula"
+  ],
+  "amount": null,
+  "after": "dishwasher door is open and person is holding a black spatula over the sink"
+ },
+ {
+  "t0": 704.0,
+  "t1": 711.01,
+  "action": "picks up spatula and stirs food in pan",
+  "objects": [
+   "pan of green noodles"
+  ],
+  "tools": [
+   "black spatula"
+  ],
+  "amount": null,
+  "after": "spatula moved from counter by sink to stove and is stirring the food in the pan"
+ },
+ {
+  "t0": 708.01,
+  "t1": 715.01,
+  "action": "stirring noodles in pan",
+  "objects": [
+   "green zucchini noodles"
+  ],
+  "tools": [
+   "spatula",
+   "frying pan"
+  ],
+  "amount": null,
+  "after": "noodles are being stirred and tossed in pan on stove, spatula moved from away from stove into pan"
+ },
+ {
+  "t0": 712.01,
+  "t1": 719.02,
+  "action": "stirring noodles in pan",
+  "objects": [
+   "zucchini noodles"
+  ],
+  "tools": [
+   "pan",
+   "spatula"
+  ],
+  "amount": null,
+  "after": "noodles are stirred and pushed to one side of the pan leaving empty space on the other side"
+ },
+ {
+  "t0": 716.02,
+  "t1": 723.02,
+  "action": "stirring noodles in pan",
+  "objects": [
+   "green zucchini noodles"
+  ],
+  "tools": [
+   "small frying pan",
+   "black spatula"
+  ],
+  "amount": null,
+  "after": "noodles are more evenly spread, separated and fluffed across the pan compared to clumped at the start"
+ },
+ {
+  "t0": 720.02,
+  "t1": 727.03,
+  "action": "stirring noodles",
+  "objects": [
+   "zucchini noodles"
+  ],
+  "tools": [
+   "saucepan",
+   "spatula"
+  ],
+  "amount": null,
+  "after": "noodles are spread more evenly across the pan"
+ },
+ {
+  "t0": 724.02,
+  "t1": 731.03,
+  "action": "stir noodles then touch laptop screen",
+  "objects": [
+   "green noodles",
+   "laptop"
+  ],
+  "tools": [
+   "frying pan",
+   "spatula"
+  ],
+  "amount": null,
+  "after": "spatula lifted from pan toward plate and person moved from stove to counter touching laptop by sink"
+ },
+ {
+  "t0": 728.03,
+  "t1": 735.0,
+  "action": "tap laptop screen",
+  "objects": [
+   "laptop"
+  ],
+  "tools": [
+   "spatula"
+  ],
+  "amount": null,
+  "after": "person left the stove with pan of green noodles and plate, touched the laptop on the sink counter, then returned to the stove and cutting board area with empty hands"
+ },
+ {
+  "t0": 732.03,
+  "t1": 739.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "person moved from the sink counter with the laptop to the stove area, opened a drawer and is now holding a blue measuring cup"
+ },
+ {
+  "t0": 736.0,
+  "t1": 743.01,
+  "action": "picks up and puts back measuring cup",
+  "objects": [
+   "kitchen drawer"
+  ],
+  "tools": [
+   "blue measuring cup"
+  ],
+  "amount": null,
+  "after": "blue measuring cup is back in the drawer and the drawer is being pushed closed"
+ },
+ {
+  "t0": 740.01,
+  "t1": 747.01,
+  "action": "opening drawer and scooping with measuring cup",
+  "objects": [
+   "kitchen drawer",
+   "white powder"
+  ],
+  "tools": [
+   "blue measuring cup"
+  ],
+  "amount": null,
+  "after": "drawer is pulled fully open and the blue measuring cup is now filled with white powder whereas at the start the drawer was only slightly open and the cup was empty"
+ },
+ {
+  "t0": 744.01,
+  "t1": 751.02,
+  "action": "rummaging drawer and inspecting measuring cups",
+  "objects": [
+   "kitchen drawer",
+   "measuring cups"
+  ],
+  "tools": [
+   "blue measuring cup",
+   "red measuring cups"
+  ],
+  "amount": null,
+  "after": "red measuring cups lifted out and left repositioned on top of drawer contents while blue measuring cup remains in hand and drawer is slightly pushed in"
+ },
+ {
+  "t0": 748.01,
+  "t1": 755.02,
+  "action": "putting away measuring cups",
+  "objects": [
+   "measuring cups",
+   "kitchen drawer",
+   "pantry cabinet"
+  ],
+  "tools": [
+   "red measuring cup",
+   "blue measuring cup"
+  ],
+  "amount": "1:14 on microwave display",
+  "after": "red measuring cup returned to drawer and drawer closed, blue measuring cup still in hand while pantry cabinet is now open"
+ },
+ {
+  "t0": 752.02,
+  "t1": 759.02,
+  "action": "adds seasoning to pot",
+  "objects": [
+   "food in saucepan"
+  ],
+  "tools": [
+   "seasoning container with green lid",
+   "blue cap"
+  ],
+  "amount": null,
+  "after": "cabinet above stove is open and large seasoning container has been removed and is being poured over the pot on the stove"
+ },
+ {
+  "t0": 756.02,
+  "t1": 763.03,
+  "action": "opens jar and scoops seasoning",
+  "objects": [
+   "seasoning powder",
+   "pan of shredded zucchini"
+  ],
+  "tools": [
+   "jar",
+   "measuring spoon"
+  ],
+  "amount": "one spoonful",
+  "after": "cabinet is open and jar is open with a blue spoonful of light powder held over the stove next to a pan of shredded greens on the burner"
+ },
+ {
+  "t0": 760.03,
+  "t1": 767.03,
+  "action": "scoops seasoning into measuring spoon over pan",
+  "objects": [
+   "seasoning powder",
+   "shredded zucchini"
+  ],
+  "tools": [
+   "seasoning jar with green lid",
+   "blue measuring spoon"
+  ],
+  "amount": null,
+  "after": "jar lid is open and blue spoon filled with light powder is held over the pan of zucchini"
+ },
+ {
+  "t0": 764.03,
+  "t1": 771.0,
+  "action": "pouring seasoning",
+  "objects": [
+   "noodles in saucepan"
+  ],
+  "tools": [
+   "seasoning jar",
+   "measuring cap"
+  ],
+  "amount": null,
+  "after": "seasoning accumulates in the blue cap held over the pan of noodles"
+ },
+ {
+  "t0": 768.0,
+  "t1": 775.01,
+  "action": "pours seasoning into measuring spoon",
+  "objects": [
+   "seasoning powder",
+   "pasta in saucepan"
+  ],
+  "tools": [
+   "seasoning bottle with green cap",
+   "blue measuring spoon"
+  ],
+  "amount": "one spoonful",
+  "after": "measuring spoon is filled with light powder and bottle is tilted upright above the pot"
+ },
+ {
+  "t0": 772.0,
+  "t1": 779.01,
+  "action": "shakes seasoning into measuring spoon over noodles",
+  "objects": [
+   "seasoning",
+   "noodles"
+  ],
+  "tools": [
+   "seasoning bottle",
+   "measuring spoon",
+   "saucepan"
+  ],
+  "amount": null,
+  "after": "measuring spoon holds light-colored seasoning over pot of green noodles"
+ },
+ {
+  "t0": 776.01,
+  "t1": 783.02,
+  "action": "pouring sauce into a measuring spoon over pasta",
+  "objects": [
+   "sauce",
+   "pasta"
+  ],
+  "tools": [
+   "jar",
+   "measuring spoon",
+   "saucepan"
+  ],
+  "amount": null,
+  "after": "the blue measuring spoon is now filled with creamy sauce held over the saucepan of green pasta"
+ },
+ {
+  "t0": 780.01,
+  "t1": 787.02,
+  "action": "measures grated cheese over pasta",
+  "objects": [
+   "green pasta in pot",
+   "grated cheese"
+  ],
+  "tools": [
+   "jar with green lid",
+   "blue measuring cup",
+   "saucepan"
+  ],
+  "amount": null,
+  "after": "blue measuring cup now filled with a scoop of grated cheese and held over the pot of green pasta ready to add"
+ },
+ {
+  "t0": 784.02,
+  "t1": 791.02,
+  "action": "sprinkles seasoning onto pasta",
+  "objects": [
+   "pasta"
+  ],
+  "tools": [
+   "seasoning jar",
+   "measuring scoop",
+   "pot"
+  ],
+  "amount": null,
+  "after": "scoop with seasoning still held poised over pot of green pasta with no visible change"
+ },
+ {
+  "t0": 788.02,
+  "t1": 795.03,
+  "action": "sprinkles seasoning onto pasta",
+  "objects": [
+   "pasta in pan"
+  ],
+  "tools": [
+   "seasoning jar",
+   "blue measuring scoop"
+  ],
+  "amount": "one scoop",
+  "after": "pasta in pan is topped with light-colored powder and jar is moved toward counter"
+ },
+ {
+  "t0": 792.02,
+  "t1": 799.03,
+  "action": "add seasoning and stir food",
+  "objects": [
+   "food in saucepan"
+  ],
+  "tools": [
+   "jar",
+   "scoop",
+   "saucepan",
+   "spoon"
+  ],
+  "amount": null,
+  "after": "seasoning is added to the pan, jar and scoop are set down on the counter and the food is being stirred"
+ },
+ {
+  "t0": 796.03,
+  "t1": 803.0,
+  "action": "stirs food in saucepan",
+  "objects": [
+   "zucchini noodles"
+  ],
+  "tools": [
+   "saucepan",
+   "spoon"
+  ],
+  "amount": null,
+  "after": "noodles in pan are mixed and stirred and spoon is now in pan instead of on plate"
+ },
+ {
+  "t0": 800.03,
+  "t1": 807.01,
+  "action": "stirring noodles in a pan",
+  "objects": [
+   "green noodles"
+  ],
+  "tools": [
+   "saucepan",
+   "spatula"
+  ],
+  "amount": null,
+  "after": "noodles are loosened and more evenly spread in the pan"
+ },
+ {
+  "t0": 804.0,
+  "t1": 811.01,
+  "action": "stirring",
+  "objects": [
+   "green noodles"
+  ],
+  "tools": [
+   "pan",
+   "spatula"
+  ],
+  "amount": null,
+  "after": "noodles are stirred and repositioned in the pan"
+ },
+ {
+  "t0": 808.01,
+  "t1": 815.01,
+  "action": "stirring noodles in a pan",
+  "objects": [
+   "green noodles"
+  ],
+  "tools": [
+   "frying pan",
+   "spatula"
+  ],
+  "amount": null,
+  "after": "noodles are stirred and more evenly spread in the pan"
+ },
+ {
+  "t0": 812.01,
+  "t1": 819.02,
+  "action": "stirring noodles in a pan",
+  "objects": [
+   "green noodles"
+  ],
+  "tools": [
+   "pan",
+   "spatula"
+  ],
+  "amount": null,
+  "after": "spatula is no longer in the pan but resting on the plate beside the stove and the camera view has panned left away from the stove"
+ },
+ {
+  "t0": 816.02,
+  "t1": 823.02,
+  "action": "stirs noodles and adds seasoning",
+  "objects": [
+   "green noodles in saucepan"
+  ],
+  "tools": [
+   "saucepan",
+   "spatula"
+  ],
+  "amount": null,
+  "after": "spatula moved from pan to plate, upper cabinet opened and pinch of seasoning held in hand"
+ },
+ {
+  "t0": 820.02,
+  "t1": 827.03,
+  "action": "sprinkle seasoning",
+  "objects": [
+   "spice jars"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "cabinet doors are open and a pinch of spice is held over the counter instead of closed cabinets"
+ },
+ {
+  "t0": 824.02,
+  "t1": 831.03,
+  "action": "putting away spice jar",
+  "objects": [
+   "spice jar",
+   "lid"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hand is no longer on cabinet door and is over counter with green-lidded jar upright on cutting board"
+ },
+ {
+  "t0": 828.03,
+  "t1": 835.0,
+  "action": "season food in pan",
+  "objects": [
+   "green vegetables"
+  ],
+  "tools": [
+   "spice jar",
+   "saucepan"
+  ],
+  "amount": null,
+  "after": "spice has been sprinkled onto green vegetables cooking in saucepan on stove"
+ },
+ {
+  "t0": 832.03,
+  "t1": 839.0,
+  "action": "sprinkles seasoning",
+  "objects": [
+   "noodles"
+  ],
+  "tools": [
+   "seasoning shaker"
+  ],
+  "amount": null,
+  "after": "seasoning shaker moved over pan and seasoning sprinkled onto noodles"
+ },
+ {
+  "t0": 836.0,
+  "t1": 843.01,
+  "action": "sprinkling seasoning into pan",
+  "objects": [
+   "green noodles in saucepan"
+  ],
+  "tools": [
+   "seasoning shaker"
+  ],
+  "amount": null,
+  "after": "shaker is moved from over the pan to the cluttered countertop and the camera pans left away from the stove"
+ },
+ {
+  "t0": 840.01,
+  "t1": 847.01,
+  "action": "handling spice containers to season food",
+  "objects": [
+   "spice jars",
+   "plate of food on stove"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hand moves from holding a container over the lower counter to inside the upper spice cabinet and several seasoning containers have been picked up and repositioned"
+ },
+ {
+  "t0": 844.01,
+  "t1": 851.02,
+  "action": "seasoning food",
+  "objects": [
+   "plate of food"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "oil bottle moved from upright on counter to lying on cutting board and spice jar taken from cabinet to sprinkle onto plate"
+ },
+ {
+  "t0": 848.01,
+  "t1": 855.02,
+  "action": "retrieves and opens spice jar",
+  "objects": [
+   "spice jar"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "spice jar moved from cabinet shelf to cutting board on counter and is held open in both hands"
+ },
+ {
+  "t0": 852.02,
+  "t1": 859.02,
+  "action": "sprinkles salt into skillet",
+  "objects": [
+   "salt",
+   "zucchini noodles in skillet"
+  ],
+  "tools": [
+   "salt canister"
+  ],
+  "amount": null,
+  "after": "salt canister is open and held over the skillet on the stove, person has moved from the counter to the stove"
+ },
+ {
+  "t0": 856.02,
+  "t1": 863.03,
+  "action": "sprinkling seasoning",
+  "objects": [
+   "green noodles in saucepan"
+  ],
+  "tools": [
+   "seasoning shaker"
+  ],
+  "amount": null,
+  "after": "no visible difference - seasoning is being shaken over the noodles with no discernible change in appearance"
+ },
+ {
+  "t0": 860.03,
+  "t1": 867.03,
+  "action": "shaking seasoning onto pasta",
+  "objects": [
+   "green pasta in saucepan"
+  ],
+  "tools": [
+   "blue shaker can"
+  ],
+  "amount": null,
+  "after": "white seasoning is dusted over the pasta and the camera pans left to reveal the countertop"
+ },
+ {
+  "t0": 864.03,
+  "t1": 871.0,
+  "action": "sprinkle seasoning into pan",
+  "objects": [
+   "pasta"
+  ],
+  "tools": [
+   "seasoning can",
+   "pan"
+  ],
+  "amount": "1:48 on microwave",
+  "after": "seasoning added to pasta in pan, can moved from over stove to counter and cabinet doors opened then closed"
+ },
+ {
+  "t0": 868.0,
+  "t1": 875.01,
+  "action": "put away spice jar",
+  "objects": [
+   "green-lidded spice jar"
+  ],
+  "tools": [
+   "spatula"
+  ],
+  "amount": "1:48 on microwave display",
+  "after": "jar moved from cluttered countertop into upper cabinet and person moved to stove and picked up spatula next to pan of green food"
+ },
+ {
+  "t0": 872.0,
+  "t1": 879.01,
+  "action": "put away jar and stir noodles while checking laptop",
+  "objects": [
+   "jar with green lid",
+   "pan of green noodles",
+   "laptop"
+  ],
+  "tools": [
+   "spoon",
+   "pan on stove"
+  ],
+  "amount": "11:48 on microwave clock",
+  "after": "jar is stored in cabinet, spoon moved from plate into pan and noodles are being stirred"
+ },
+ {
+  "t0": 876.01,
+  "t1": 883.02,
+  "action": "stir noodles in pan",
+  "objects": [
+   "noodles"
+  ],
+  "tools": [
+   "pan",
+   "spatula"
+  ],
+  "amount": null,
+  "after": "hand moved from laptop to stove and noodles are gathered and turned in pan"
+ },
+ {
+  "t0": 880.01,
+  "t1": 887.02,
+  "action": "stirring noodles in pan",
+  "objects": [
+   "green noodles"
+  ],
+  "tools": [
+   "frying pan",
+   "spatula"
+  ],
+  "amount": null,
+  "after": "noodles are lifted, mixed and gathered to one side of the pan"
+ },
+ {
+  "t0": 884.02,
+  "t1": 891.02,
+  "action": "stirring",
+  "objects": [
+   "noodles"
+  ],
+  "tools": [
+   "pan",
+   "spatula"
+  ],
+  "amount": null,
+  "after": "noodles are spread evenly and mixed across the pan"
+ },
+ {
+  "t0": 888.02,
+  "t1": 895.03,
+  "action": "stirs noodles in pan",
+  "objects": [
+   "green noodles"
+  ],
+  "tools": [
+   "frying pan",
+   "spatula"
+  ],
+  "amount": null,
+  "after": "noodles are loosened, flipped and redistributed within the pan"
+ },
+ {
+  "t0": 892.02,
+  "t1": 899.03,
+  "action": "stirring",
+  "objects": [
+   "green noodles"
+  ],
+  "tools": [
+   "pan",
+   "spatula"
+  ],
+  "amount": null,
+  "after": "noodles are lifted, separated and more evenly spread in the pan"
+ },
+ {
+  "t0": 896.03,
+  "t1": 903.0,
+  "action": "stirring pasta in pan",
+  "objects": [
+   "green pasta"
+  ],
+  "tools": [
+   "frying pan",
+   "spatula"
+  ],
+  "amount": null,
+  "after": "pasta is gathered and clumped to one side of the pan exposing the dark pan bottom on the other side"
+ },
+ {
+  "t0": 900.03,
+  "t1": 907.01,
+  "action": "stirring food in pan",
+  "objects": [
+   "green food in pan"
+  ],
+  "tools": [
+   "pan",
+   "spatula"
+  ],
+  "amount": "12:00 on microwave display",
+  "after": "green food is more mixed and pushed to one side of the pan"
+ },
+ {
+  "t0": 904.0,
+  "t1": 911.01,
+  "action": "stirring food in pan",
+  "objects": [
+   "green food in frying pan"
+  ],
+  "tools": [
+   "spatula",
+   "frying pan"
+  ],
+  "amount": "12:00 on microwave display",
+  "after": "left hand releases pan handle and pan remains on burner with food slightly more settled"
+ },
+ {
+  "t0": 908.01,
+  "t1": 915.01,
+  "action": "stirring",
+  "objects": [
+   "green food in pan"
+  ],
+  "tools": [
+   "spatula"
+  ],
+  "amount": null,
+  "after": "green food is more evenly mixed and spread across the pan"
+ },
+ {
+  "t0": 912.01,
+  "t1": 919.02,
+  "action": "stirs noodles in saucepan",
+  "objects": [
+   "green noodles"
+  ],
+  "tools": [
+   "spatula"
+  ],
+  "amount": null,
+  "after": "stirring stops and the spatula is left resting on the floral plate beside the stove"
+ },
+ {
+  "t0": 916.02,
+  "t1": 923.02,
+  "action": "stir food in pan then place spatula on plate",
+  "objects": [
+   "green food in frying pan"
+  ],
+  "tools": [
+   "black spatula",
+   "frying pan"
+  ],
+  "amount": null,
+  "after": "spatula moved from over the pan to resting on the floral plate beside the stove, food settled in the pan, and person stepped back from the stove with hands together at waist"
+ },
+ {
+  "t0": 920.02,
+  "t1": 927.03,
+  "action": "twist and handle a small container with both hands",
+  "objects": [
+   "small dark spice container"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "no visible change to the food in the pan or stove; camera shifts slightly left to reveal more of the left countertop and the person's hands remain clasped together around the container"
+ },
+ {
+  "t0": 924.02,
+  "t1": 931.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": "1:46",
+  "after": "camera tilts up revealing the microwave showing 1:46 and upper cabinets, view shifts from close top-down of stove to wider kitchen view"
+ },
+ {
+  "t0": 928.03,
+  "t1": 935.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": "1:46 microwave timer visible mid-sequence",
+  "after": "no visible change to food or dishes - green mixture remains in pan on stove, plate with spatula undisturbed, hands stay clasped"
+ },
+ {
+  "t0": 932.03,
+  "t1": 939.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "camera pans away from the stove with the pan of green food and plate to the sink counter with an open laptop, stove is no longer in view and food is untouched"
+ },
+ {
+  "t0": 936.0,
+  "t1": 943.01,
+  "action": "use laptop",
+  "objects": [
+   "laptop"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "view is now at the sink counter with the laptop instead of the stove; the person's hand has tapped the laptop trackpad"
+ },
+ {
+  "t0": 940.01,
+  "t1": 947.01,
+  "action": "operate laptop",
+  "objects": [
+   "laptop"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "hand lifted off laptop after briefly stepping away from counter"
+ },
+ {
+  "t0": 944.01,
+  "t1": 951.02,
+  "action": "checking laptop then adjusting stove",
+  "objects": [
+   "pan of green shredded food"
+  ],
+  "tools": [
+   "laptop",
+   "frying pan",
+   "stove"
+  ],
+  "amount": null,
+  "after": "person moves from sink counter with laptop to stove and puts hand on stove knob, pan of food remains on burner"
+ },
+ {
+  "t0": 948.01,
+  "t1": 955.02,
+  "action": "adjusts stove knob and prods food in pan with spatula",
+  "objects": [
+   "shredded green food in frying pan"
+  ],
+  "tools": [
+   "spatula",
+   "frying pan"
+  ],
+  "amount": null,
+  "after": "spatula moved from resting on plate to being held in hand and pressed into the green food in the pan"
+ },
+ {
+  "t0": 952.02,
+  "t1": 959.02,
+  "action": "picks up spatula and lifts and folds food in pan",
+  "objects": [
+   "green omelette in pan"
+  ],
+  "tools": [
+   "spatula"
+  ],
+  "amount": null,
+  "after": "the spatula is now under the edge of the food and the green omelette is lifted and partially folded over in the center of the pan"
+ },
+ {
+  "t0": 956.02,
+  "t1": 963.03,
+  "action": "stirring and folding food in pan",
+  "objects": [
+   "green food in saucepan"
+  ],
+  "tools": [
+   "saucepan",
+   "spatula"
+  ],
+  "amount": null,
+  "after": "green food is stirred, folded and settles more evenly spread in the pan"
+ },
+ {
+  "t0": 960.03,
+  "t1": 967.03,
+  "action": "stirring",
+  "objects": [
+   "green food in saucepan"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": "7:40",
+  "after": "green mixture is more evenly stirred and spread in the pan"
+ },
+ {
+  "t0": 964.03,
+  "t1": 971.0,
+  "action": "stirring",
+  "objects": [
+   "green food in saucepan"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": "7:40 on microwave clock",
+  "after": "green food is more evenly mixed and spread across the pan"
+ },
+ {
+  "t0": 968.0,
+  "t1": 975.01,
+  "action": "stirring",
+  "objects": [
+   "green mixture in saucepan"
+  ],
+  "tools": [
+   "spatula"
+  ],
+  "amount": null,
+  "after": "green mixture is more evenly spread and mixed across the pan compared to clumped at the start"
+ },
+ {
+  "t0": 972.0,
+  "t1": 979.01,
+  "action": "stir food in pan and place spatula on plate",
+  "objects": [
+   "green noodles in saucepan"
+  ],
+  "tools": [
+   "spatula",
+   "saucepan"
+  ],
+  "amount": null,
+  "after": "spatula is no longer in the pan but resting on the floral plate beside the stove and the camera view widens to show more of the stovetop and counter"
+ },
+ {
+  "t0": 976.01,
+  "t1": 983.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "spatula moved from being held over the pan to resting on the plate and the person moved from the stove to the left counter with hand on seasoning containers"
+ },
+ {
+  "t0": 980.01,
+  "t1": 987.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "hand briefly touches containers on the counter then withdraws and camera pans right to center the stove pan with green food and reveal a floral plate with a black spatula on the right counter"
+ },
+ {
+  "t0": 984.02,
+  "t1": 991.02,
+  "action": "sharpening a knife",
+  "objects": [
+   "knife"
+  ],
+  "tools": [
+   "sharpening steel"
+  ],
+  "amount": null,
+  "after": "camera has panned right to center a pan of chopped green food on the right burner and the person's hands holding a knife are now visible at the bottom center"
+ },
+ {
+  "t0": 988.02,
+  "t1": 995.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": "1:03",
+  "after": "camera tilts up from floor-level stove view to reveal microwave and upper cabinets above stove"
+ },
+ {
+  "t0": 992.02,
+  "t1": 999.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": "1:02 on microwave clock",
+  "after": "no visible change to food in pot or dishes; camera briefly tilts up to show microwave then returns to stove"
+ },
+ {
+  "t0": 996.03,
+  "t1": 1003.0,
+  "action": "stirring food in saucepan",
+  "objects": [
+   "green shredded food"
+  ],
+  "tools": [
+   "spatula",
+   "saucepan"
+  ],
+  "amount": null,
+  "after": "spatula moved from plate to inside saucepan and food is being stirred"
+ },
+ {
+  "t0": 1000.03,
+  "t1": 1007.01,
+  "action": "stirring food in pan",
+  "objects": [
+   "green shredded food"
+  ],
+  "tools": [
+   "spatula",
+   "saucepan"
+  ],
+  "amount": null,
+  "after": "spatula moves from over the plate into the pan and the green food is stirred and spread in the pan"
+ },
+ {
+  "t0": 1004.0,
+  "t1": 1011.01,
+  "action": "stirring and scraping",
+  "objects": [
+   "green mixture in saucepan"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "green mixture is gathered from a spread layer into two separated clumps in the pan"
+ },
+ {
+  "t0": 1008.01,
+  "t1": 1015.01,
+  "action": "stirring",
+  "objects": [
+   "green mixture in saucepan"
+  ],
+  "tools": [
+   "spoon"
+  ],
+  "amount": null,
+  "after": "green mixture is broken apart and more spread around the pan"
+ },
+ {
+  "t0": 1012.01,
+  "t1": 1019.02,
+  "action": "stirring",
+  "objects": [
+   "green mixture in saucepan"
+  ],
+  "tools": [
+   "spatula"
+  ],
+  "amount": null,
+  "after": "green mixture is continuously stirred and folded, ending more evenly spread and repositioned in the center of the pan"
+ },
+ {
+  "t0": 1016.01,
+  "t1": 1023.02,
+  "action": "stirring",
+  "objects": [
+   "green batter in saucepan"
+  ],
+  "tools": [
+   "small spatula"
+  ],
+  "amount": null,
+  "after": "green batter is more evenly mixed and gathered toward the center of the pan"
+ },
+ {
+  "t0": 1020.02,
+  "t1": 1027.03,
+  "action": "stirs green food in pan then places spatula on plate",
+  "objects": [
+   "green food in saucepan"
+  ],
+  "tools": [
+   "small saucepan",
+   "black spatula"
+  ],
+  "amount": null,
+  "after": "spatula moved from inside the pan to resting on the floral plate and stirring has stopped, with the camera pulled back to show the microwave and more of the countertop"
+ },
+ {
+  "t0": 1024.02,
+  "t1": 1031.03,
+  "action": "stirs green food and places spatula down",
+  "objects": [
+   "green food in frying pan"
+  ],
+  "tools": [
+   "spatula",
+   "frying pan",
+   "stovetop"
+  ],
+  "amount": "1:20 on microwave display",
+  "after": "spatula moved from inside pan to resting on plate and person steps back from stove with wider view of microwave and countertop visible"
+ },
+ {
+  "t0": 1028.03,
+  "t1": 1035.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": "1:20",
+  "after": "no visible change to food or dishes, microwave timer counts down a few seconds"
+ },
+ {
+  "t0": 1032.03,
+  "t1": 1039.0,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "no hands-on work occurs; camera/viewpoint tilts down so microwave is cropped at top and floor and feet become visible, stovetop pan with green food, plate and counter items otherwise unchanged"
+ },
+ {
+  "t0": 1036.0,
+  "t1": 1043.01,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": "11:54",
+  "after": "a hand enters from the bottom right and grasps the black spatula on the plate"
+ },
+ {
+  "t0": 1040.01,
+  "t1": 1047.01,
+  "action": "moves pot to another burner and adjusts heat",
+  "objects": [
+   "pot of green food",
+   "stovetop"
+  ],
+  "tools": [],
+  "amount": "11:54 on microwave display",
+  "after": "pot moved from right front burner to left front burner"
+ },
+ {
+  "t0": 1044.01,
+  "t1": 1051.02,
+  "action": "reposition pan on stove and operate laptop",
+  "objects": [
+   "pan with green food",
+   "stove",
+   "laptop"
+  ],
+  "tools": [
+   "pan",
+   "stove knobs",
+   "laptop"
+  ],
+  "amount": null,
+  "after": "pan moved from right front burner to left front burner and view shifted from stove top to laptop on sink counter then to blurry floor and closet doors"
+ },
+ {
+  "t0": 1048.01,
+  "t1": 1055.02,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": "1:38 on microwave display",
+  "after": "cabinet above the stove is now open and the person's hand is reaching for a bag on the top shelf"
+ },
+ {
+  "t0": 1052.02,
+  "t1": 1059.02,
+  "action": "opens jar",
+  "objects": [
+   "jar with green lid"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "cabinet door is open and jar lid is removed and on the floor"
+ },
+ {
+  "t0": 1056.02,
+  "t1": 1063.03,
+  "action": "unscrew jar and retrieve measuring cups",
+  "objects": [
+   "green-lidded jar"
+  ],
+  "tools": [
+   "red measuring cups"
+  ],
+  "amount": null,
+  "after": "jar is open in hand and kitchen drawer is open with red measuring cups held"
+ },
+ {
+  "t0": 1060.03,
+  "t1": 1067.03,
+  "action": "rummages through drawer",
+  "objects": [
+   "kitchen drawer",
+   "kitchen utensils"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "utensils inside the open drawer are shifted and rearranged with hand now grasping a small measuring spoon"
+ },
+ {
+  "t0": 1064.03,
+  "t1": 1071.0,
+  "action": "retrieves measuring spoon from drawer to scoop powder",
+  "objects": [
+   "powder container"
+  ],
+  "tools": [
+   "blue measuring spoon"
+  ],
+  "amount": null,
+  "after": "blue measuring spoon taken from drawer and placed on countertop, container held with both hands with lid being opened"
+ },
+ {
+  "t0": 1068.0,
+  "t1": 1075.01,
+  "action": "scoops seasoning into pot",
+  "objects": [
+   "seasoning powder in jar",
+   "pot of shredded greens"
+  ],
+  "tools": [
+   "blue measuring spoon",
+   "clear jar with green flip lid"
+  ],
+  "amount": "one spoonful",
+  "after": "blue spoon filled with light powder is held over the pot instead of hand rummaging in drawer"
+ },
+ {
+  "t0": 1072.0,
+  "t1": 1079.01,
+  "action": "adds seasoning to pan",
+  "objects": [
+   "shredded green food in skillet",
+   "light-colored powder seasoning"
+  ],
+  "tools": [
+   "clear spice jar with green lid",
+   "small blue measuring spoon"
+  ],
+  "amount": "one spoonful",
+  "after": "a spoonful of light powder is held over and then rests on top of the green food in the black skillet on the stove"
+ },
+ {
+  "t0": 1076.01,
+  "t1": 1083.02,
+  "action": "adds seasoning to pan with spoon",
+  "objects": [
+   "pan of shredded greens"
+  ],
+  "tools": [
+   "blue spoon",
+   "jar with green lid"
+  ],
+  "amount": null,
+  "after": "white powder is now visible on the greens and the jar lid is being closed"
+ },
+ {
+  "t0": 1080.01,
+  "t1": 1087.02,
+  "action": "scooping and sprinkling seasoning",
+  "objects": [
+   "food in skillet",
+   "seasoning jar"
+  ],
+  "tools": [
+   "small blue spoon",
+   "skillet"
+  ],
+  "amount": null,
+  "after": "a spoonful of light seasoning has been scooped from the jar and sprinkled onto the shredded food in the pan"
+ },
+ {
+  "t0": 1084.02,
+  "t1": 1091.02,
+  "action": "adds seasoning to pan",
+  "objects": [
+   "food in pan"
+  ],
+  "tools": [
+   "measuring spoon",
+   "spice jar"
+  ],
+  "amount": null,
+  "after": "seasoning added to food in pan and blue measuring spoon moved from jar to cutting board"
+ },
+ {
+  "t0": 1088.02,
+  "t1": 1095.03,
+  "action": "adds seasoning to pot",
+  "objects": [
+   "pot of shredded cabbage"
+  ],
+  "tools": [
+   "blue measuring spoon",
+   "spice jar with green lid"
+  ],
+  "amount": null,
+  "after": "measuring spoon is left on cutting board, spice jar is closed and kitchen drawer is being closed"
+ },
+ {
+  "t0": 1092.02,
+  "t1": 1099.03,
+  "action": "none",
+  "objects": [],
+  "tools": [],
+  "amount": null,
+  "after": "person still holding green-lidded jar but moved from stove/cutting board area to microwave/pantry area, drawer remains open"
+ },
+ {
+  "t0": 1096.03,
+  "t1": 1103.0,
+  "action": "put jar in cabinet",
+  "objects": [
+   "jar with green lid"
+  ],
+  "tools": [],
+  "amount": "11:02",
+  "after": "jar moved from hand into upper cabinet, drawer closed and camera panned from stove to sink and laptop area"
+ },
+ {
+  "t0": 1100.03,
+  "t1": 1107.01,
+  "action": "taps laptop touchscreen",
+  "objects": [
+   "laptop"
+  ],
+  "tools": [],
+  "amount": null,
+  "after": "person moved from the microwave cabinet to the sink counter and is touching the laptop screen"
+ }
+]
