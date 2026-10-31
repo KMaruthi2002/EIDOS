@@ -40,7 +40,8 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 from eidos import live                                  # noqa: E402
 from eidos.world import frames as F, learn as L, run as R   # noqa: E402
-from eidos.world.calibrate import calibrate               # noqa: E402
+from eidos.world.calibrate import calibrate, calibrate_v3  # noqa: E402
+from eidos.world import track as T                        # noqa: E402
 from eidos.world.learn import _json                      # noqa: E402
 
 DATA = Path(os.environ.get("EIDOS_DATA", ROOT.parent / "data"))
@@ -54,6 +55,10 @@ SPLITS = {
     # chosen by rule before any test run: the eight next-shortest recipes by average recording length
     "test": ["Microwave Egg Sandwich", "Pinwheels", "Breakfast Burritos", "Microwave French Toast",
              "Microwave Mug Pizza", "Cheese Pimiento", "Cucumber Raita", "Butter Corn Cup"],
+    # round 2, fixed by the same rule before version 3 was tuned: the next six shortest recipes
+    # by average recording length, none of them ever looked at
+    "test2": ["Herb Omelet with Fried Tomatoes", "Ramen", "Blender Banana Pancakes", "Zoodles", "Coffee",
+              "Caprese Bruschetta"],
 }
 
 
@@ -86,11 +91,14 @@ def calib_of(recs: list[dict]) -> dict:
 # version 1: learn from one correct recording, calibrate on the next (round 1 was run with this)
 # version 2: calibrate on the next two, sighting rule on, failed checks are notes, not alarms
 VERSION = {"v": 1}
+# version 3: ranked 20-second looks and the evidence tracker (eidos/world/track.py), calibrated on
+# one extra demonstration; visual checks are notes, not alarms. Thresholds are set on development data.
+PARAMS = {"seen_at": 0.9, "absent": 0.35}
 
 
 def calibs_of(recs: list[dict]) -> list[dict]:
     clean = [r for r in recs if not r["is_error"]]
-    return clean[1:2] if VERSION["v"] == 1 else clean[1:3]
+    return clean[1:3] if VERSION["v"] == 2 else clean[1:2]
 
 
 def held_out(recs: list[dict]) -> list[dict]:
@@ -107,10 +115,11 @@ def skills_dir() -> Path:
 
 
 def looks_cache(demo: str, rid: str, prog: dict) -> Path:
-    """Looks depend only on the step list shown to the model, so they are cached by it."""
+    """Looks depend only on the step list shown to the model (and the kind of look), so they are cached by it."""
     import hashlib
     h = hashlib.sha1(R.step_list(prog).encode()).hexdigest()[:10]
-    return OUT / "looks" / f"{demo}__{rid}__{h}.json"
+    kind = "__ranked20" if VERSION["v"] >= 3 else ""
+    return OUT / "looks" / f"{demo}__{rid}__{h}{kind}.json"
 
 
 def frames_dir(rid: str) -> Path:
@@ -198,10 +207,11 @@ async def do_learn(split: str):
         for i, cal in enumerate(calibs_of(recs)):
             prep_one(cal["rid"], keep_video=False)
             cache = looks_cache(demo["rid"], cal["rid"], prog)
-            prog, res = await calibrate(prog, R.load_refs(sk, prog), load_frames(cal["rid"]),
-                                        source=f"{['second', 'third'][i]} demonstration ({cal['rid']})",
-                                        looks=json.loads(cache.read_text()) if cache.exists() else None)
-            changes += prog["calibration"]["changes"]
+            cal_fn = calibrate_v3 if VERSION["v"] >= 3 else calibrate
+            prog, res = await cal_fn(prog, R.load_refs(sk, prog), load_frames(cal["rid"]),
+                                     source=f"{['second', 'third'][i]} demonstration ({cal['rid']})",
+                                     looks=json.loads(cache.read_text()) if cache.exists() else None)
+            changes += res["changes"] if VERSION["v"] >= 3 else prog["calibration"]["changes"]
             cache.parent.mkdir(parents=True, exist_ok=True)
             cache.write_text(json.dumps(res["looks"]))
         prog["calibration"] = {"source": ", ".join(c["rid"] for c in calibs_of(recs)), "changes": changes}
@@ -233,9 +243,13 @@ async def do_run(split: str, concurrency: int, only: str | None = None, sighting
             n0 = len(live.LOG)
             t0 = time.monotonic()
             cache = looks_cache(demo["rid"], r["rid"], prog)
-            res = await R.replay(prog, refs, fr, concurrency=concurrency, sightings=sightings or v2,
-                                 contract_alarms=not v2,
-                                 looks=json.loads(cache.read_text()) if cache.exists() else None)
+            cached = json.loads(cache.read_text()) if cache.exists() else None
+            if VERSION["v"] >= 3:
+                res = await T.replay(prog, refs, fr, concurrency=concurrency, looks=cached, contracts=False,
+                                     seen_at=PARAMS["seen_at"], absent=PARAMS["absent"])
+            else:
+                res = await R.replay(prog, refs, fr, concurrency=concurrency, sightings=sightings or v2,
+                                     contract_alarms=not v2, looks=cached)
             cache.parent.mkdir(parents=True, exist_ok=True)
             cache.write_text(json.dumps(res["looks"]))
             calls = live.LOG[n0:]
@@ -442,10 +456,13 @@ def main():
     ap.add_argument("--split", default="dev")
     ap.add_argument("--concurrency", type=int, default=12)
     ap.add_argument("--only")
-    ap.add_argument("--version", type=int, default=1, help="1: as round 1 was run; 2: two calibration demos, sighting rule, checks as notes")
+    ap.add_argument("--version", type=int, default=1, help="1: as round 1 was run; 2: two calibration demos, sighting rule, checks as notes; 3: ranked looks and evidence tracker")
+    ap.add_argument("--seen-at", type=float, default=0.9)
+    ap.add_argument("--absent", type=float, default=0.35)
     ap.add_argument("--sightings", action="store_true", help="the tracker rule added after the test run (separate results)")
     a = ap.parse_args()
     VERSION["v"] = a.version
+    PARAMS.update({"seen_at": a.seen_at, "absent": a.absent})
     if a.stage == "prep":
         for recipe in SPLITS[a.split]:
             recs = recordings(recipe)

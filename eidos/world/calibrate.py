@@ -46,3 +46,29 @@ async def calibrate(program: dict, refs: dict, frames: list, source: str = "seco
                             "why": f"it failed on the {source}, which was done correctly: {c['why']}"})
     program["calibration"] = {"source": source, "changes": changes}
     return program, res
+
+
+async def calibrate_v3(program: dict, refs: dict, frames: list, source: str = "second demonstration",
+                       concurrency: int = 8, looks: list | None = None, seen_at: float = 0.9) -> tuple[dict, dict]:
+    """The same calibration with the version 3 tracker (ranked looks, evidence)."""
+    from . import track as T
+    res = await T.replay(program, refs, frames, concurrency=concurrency, looks=looks, contracts=False, verify=False,
+                         seen_at=seen_at)
+    ev, started = res["evidence"], res["started"]
+    changes = []
+    by_id = {s["id"]: s for s in program["steps"]}
+    for s in program["steps"]:
+        if not s.get("optional") and ev.get(s["id"], 0) < seen_at:
+            s["optional"] = True
+            s["why_optional"] = f"not seen in the {source}"
+            changes.append({"step": s["id"], "change": "optional", "why": s["why_optional"]})
+    for s in program["steps"]:
+        keep = []
+        for n in s.get("needs", []):
+            if s["id"] in started and n in started and started[n] > started[s["id"]] + 6 and not by_id[n].get("optional"):
+                changes.append({"step": s["id"], "change": f"no longer needs step {n}", "why": f"the {source} did step {s['id']} first"})
+                continue
+            keep.append(n)
+        s["needs"] = keep
+    program.setdefault("calibration", {"source": "", "changes": []})
+    return program, {**res, "changes": changes}
