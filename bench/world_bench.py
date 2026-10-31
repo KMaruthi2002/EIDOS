@@ -261,6 +261,11 @@ async def do_run(split: str, concurrency: int, only: str | None = None, sighting
             else:
                 res = await R.replay(prog, refs, fr, concurrency=concurrency, sightings=sightings or v2,
                                      contract_alarms=not v2, looks=cached)
+            failed = sum(1 for lk in res["looks"] if lk.get("failed"))
+            if failed > 0.05 * max(1, len(res["looks"])):
+                # the model API stopped answering (out of credits, an outage): a run made of failed
+                # looks would report every step as skipped, so nothing is saved and the run stops
+                raise SystemExit(f"{r['rid']}: {failed} of {len(res['looks'])} looks failed; stopping without saving")
             cache.parent.mkdir(parents=True, exist_ok=True)
             cache.write_text(json.dumps(res["looks"]))
             calls = live.LOG[n0:]
