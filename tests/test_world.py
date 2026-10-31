@@ -155,7 +155,7 @@ def test_live_session_feeds_looks_in_time_order(monkeypatch, tmp_path):
     monkeypatch.setattr(R, "check", ok)
 
     async def go():
-        s = S.LiveSession("t", tmp_path, PROGRAM)
+        s = S.LiveSession("t", tmp_path, PROGRAM, mode="v1")
         q = asyncio.Queue()
         s.listeners.append(q)
         jpeg = cv2.imencode(".jpg", np.zeros((252, 448, 3), np.uint8))[1].tobytes()
@@ -188,3 +188,59 @@ def test_the_sighting_rule_can_be_switched_off():
     tr = R.Tracker(PROGRAM, confirm_sightings=False)
     feed(tr, [2, 2, 3, 5, 5])
     assert 3 not in tr.started
+
+
+def test_evidence_tracker_confirms_on_evidence_and_checks_order():
+    from eidos.world import track as T
+    tr = T.EvidenceTracker(PROGRAM)
+    looks = [{"dist": {"2": 0.6, "0": 0.4}}, {"dist": {"3": 0.5, "5": 0.3}}, {"dist": {"3": 0.6}}, {"dist": {"5": 0.9}}, {"dist": {"5": 0.9}}]
+    for i, lk in enumerate(looks):
+        tr.feed(6 + 3 * i, lk)
+    assert 3 in tr.confirmed and 5 in tr.confirmed
+    # step 3 was confirmed with no evidence at all for step 1 (power off): out of order
+    assert [("order", 3)] == [(e["type"], e["step"]) for e in tr.events if e["kind"] == "alert"][:1]
+    tr.finish(30)
+    assert ("missing", 1) in [(e["type"], e["step"]) for e in tr.events if e["kind"] == "alert"]
+
+
+def test_evidence_tracker_partial_looks_add_up():
+    from eidos.world import track as T
+    tr = T.EvidenceTracker(PROGRAM)
+    for i, p in enumerate([0.4, 0.3, 0.3]):
+        tr.feed(6 + 3 * i, {"dist": {"1": p}})
+    assert 1 in tr.confirmed
+
+
+def test_live_session_v3_alert_and_notes(monkeypatch, tmp_path):
+    from eidos.world import track as T
+    seq = {6: {"2": 0.9}, 9: {"3": 0.9}, 12: {"3": 0.9}, 15: {"5": 0.9}, 18: {"5": 0.9}}
+
+    async def look(program, window, inputs=None, which="spark"):
+        t = int(window[-1][0])
+        d = seq.get(t, {"0": 1.0})
+        return {"doing": int(max(d, key=d.get)), "dist": d, "what": "scripted"}
+    monkeypatch.setattr(T, "look_ranked", look)
+
+    async def nope(*a, **k):
+        return {"ok": False, "why": "looks wrong"}
+    monkeypatch.setattr(R, "check", nope)
+
+    async def unsure(*a, **k):
+        return {"done": None, "why": "cannot tell"}
+    monkeypatch.setattr(R, "search", unsure)
+
+    async def go():
+        s = S.LiveSession("v3", tmp_path, PROGRAM)
+        jpeg = cv2.imencode(".jpg", np.zeros((252, 448, 3), np.uint8))[1].tobytes()
+        for t in range(0, 22):
+            s.add_frame(float(t), jpeg)
+        await asyncio.sleep(0.3)
+        out = await s.finish()
+        notes = [e for e in s.log if e["kind"] == "note"]
+        return out, notes
+
+    out, notes = run(go())
+    kinds = [(a["type"], a["step"]) for a in out["alerts"]]
+    assert ("order", 3) in kinds                    # removed the part with no sign of the power going off
+    assert all(a["type"] != "contract" for a in out["alerts"])
+    assert notes                                    # failed checks became notes

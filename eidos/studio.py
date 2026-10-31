@@ -45,6 +45,44 @@ DATASETS = {
 app = FastAPI(title="EIDOS Studio")
 app.mount("/apps", StaticFiles(directory=str(ROOT / "apps")), name="apps")
 app.include_router(world_router)
+
+
+# ------------------------------------------------------------------ access
+# Set EIDOS_TOKEN to require a token: open the Studio once as /?token=<token> (it is kept in a
+# cookie), or send "Authorization: Bearer <token>". Requests from this machine itself (the
+# Studio's own browser agent fetching the bundled apps) are always allowed.
+import hmac as _hmac
+import os as _os
+from fastapi.responses import RedirectResponse as _Redirect
+
+
+@app.middleware("http")
+async def _access(request: Request, call_next):
+    token = _os.environ.get("EIDOS_TOKEN", "")
+    path = request.url.path
+    if not token or path == "/healthz" or (request.client and request.client.host in ("127.0.0.1", "::1")):
+        return await call_next(request)
+    given = request.query_params.get("token") or request.cookies.get("eidos_token") or \
+        request.headers.get("authorization", "").removeprefix("Bearer ").strip()
+    if not _hmac.compare_digest(given.encode(), token.encode()):
+        return HTMLResponse("<h1>EIDOS Studio</h1><p>This Studio needs an access token. Open the link you were given "
+                            "(it ends in <code>?token=...</code>).</p>", status_code=401)
+    if request.query_params.get("token"):
+        resp = _Redirect(path)
+        resp.set_cookie("eidos_token", token, httponly=True, samesite="lax", secure=request.url.scheme == "https")
+        return resp
+    return await call_next(request)
+
+
+@app.get("/healthz")
+def healthz():
+    return {"ok": True}
+
+
+@app.get("/api/usage")
+def usage():
+    from . import live as L
+    return L.usage()
 RUN_LOCK = asyncio.Lock()
 PORT = {"value": 8000}
 
@@ -517,7 +555,10 @@ def preview_target(app_: str = "A", data: str = "sales", dark: bool = False, sid
 
 
 def main(port: int = 8000):
+    import os
     import uvicorn
     PORT["value"] = port
-    print(f"EIDOS Studio: open http://localhost:{port}")
-    uvicorn.run(app, host="127.0.0.1", port=port, log_level="warning")
+    host = os.environ.get("EIDOS_HOST", "127.0.0.1")
+    tok = "?token=..." if os.environ.get("EIDOS_TOKEN") else ""
+    print(f"EIDOS Studio: open http://localhost:{port}/{tok}")
+    uvicorn.run(app, host=host, port=port, log_level="warning")

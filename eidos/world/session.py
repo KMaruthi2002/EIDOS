@@ -18,22 +18,27 @@ import cv2
 import numpy as np
 
 from . import run as R
+from . import track as T
 from .learn import bind
 
 import os
 DEBUG_DIR = os.environ.get("EIDOS_DEBUG_FRAMES")
-MAX_SESSIONS = 4
+MAX_SESSIONS = int(os.environ.get("EIDOS_MAX_LIVE", "4"))
 IDLE_LIMIT = 20 * 60
 
 
 class LiveSession:
-    def __init__(self, sid: str, skill_dir: Path, program: dict, inputs: dict | None = None, reader: str = "spark"):
+    def __init__(self, sid: str, skill_dir: Path, program: dict, inputs: dict | None = None, reader: str = "spark",
+                 mode: str = "v3"):
         self.id = sid
+        # v3 (default): ranked 20-second looks and the evidence tracker; failed checks are notes.
+        # v1: single answers over 6 seconds and votes, as in the benchmark's round 1.
+        self.v3 = mode == "v3"
         self.reader = reader if reader in ("spark", "open") else "spark"
         self.program = program
         self.inputs = {**program.get("inputs", {}), **(inputs or {})}
         self.refs = R.load_refs(skill_dir, program)
-        self.tracker = R.Tracker(program)
+        self.tracker = T.EvidenceTracker(program) if self.v3 else R.Tracker(program)
         self.frames: deque = deque(maxlen=60)            # (t, image), about a minute
         self.history: list = []                          # (t, small image) every 2 s, for searching back
         self.confirming: set = set()
@@ -61,8 +66,11 @@ class LiveSession:
         for s in self.program["steps"]:
             sid = s["id"]
             st = "waiting"
-            if sid in tr.started:
-                st = "doing" if tr.current == sid else "done"
+            done = sid in (tr.confirmed if self.v3 else tr.started)
+            if tr.current == sid:
+                st = "doing"
+            elif done:
+                st = "done"
             c = self.checks.get(sid)
             steps.append({"id": sid, "do": bind(s["do"], self.inputs), "state": st,
                           "optional": bool(s.get("optional")), "check": c})
@@ -86,9 +94,11 @@ class LiveSession:
         if not self.history or t - self.history[-1][0] >= 2:
             self.history.append((t, cv2.resize(img, (320, int(img.shape[0] * 320 / img.shape[1])))))
         while t >= self.next_look:
-            win = [(ti, f) for ti, f in self.frames if self.next_look - R.LOOK < ti <= self.next_look]
+            span = T.SPAN if self.v3 else R.LOOK
+            win = [(ti, f) for ti, f in self.frames if self.next_look - span < ti <= self.next_look]
             if len(win) >= 2:
-                task = asyncio.create_task(R.look(self.program, win, self.inputs, self.reader))
+                fn = T.look_ranked if self.v3 else R.look
+                task = asyncio.create_task(fn(self.program, win, self.inputs, self.reader))
                 self.pending.append((self.next_look, win, task))
             self.next_look += R.EVERY
         if self._feeder is None or self._feeder.done():
@@ -102,7 +112,7 @@ class LiveSession:
             self.emit("look", {"t": t, **lk})
             if lk["doing"]:
                 self.seen_at.append((t, lk["doing"]))
-            for ev in self.tracker.feed(t, lk["doing"]):
+            for ev in self.tracker.feed(t, lk if self.v3 else lk["doing"]):
                 self._on_event(ev)
 
     def _on_event(self, ev: dict):
@@ -129,6 +139,9 @@ class LiveSession:
             for f in found:
                 if f["done"] and f["step"] not in self.tracker.started:
                     self.tracker.started[f["step"]] = ev["t"]
+                if f["done"] and self.v3:
+                    self.tracker.confirmed.setdefault(f["step"], ev["t"])
+                    self.tracker.evidence[f["step"]] = max(self.tracker.evidence.get(f["step"], 0), self.tracker.seen_at)
             self.emit("dismissed", {"t": ev["t"], "text": ev["text"], "why": "; ".join(f["why"] for f in found)})
         self.emit("state", self.state())
 
@@ -156,10 +169,16 @@ class LiveSession:
         self.checks[step_id] = res
         self.emit("check", {"t": t, "step": step_id, **res})
         if res["ok"] is False and not res.get("failed"):
-            alert = {"t": self.frames[-1][0] if self.frames else t, "kind": "alert", "type": "contract", "step": step_id,
-                     "text": f"Check failed on step {step_id} ({step['do']}): {res['why']}"}
-            self.tracker.events.append(alert)
-            self.emit("event", alert)
+            if self.v3:     # a note asking the person to look, not an alarm
+                note = {"t": self.frames[-1][0] if self.frames else t, "kind": "note", "type": "contract", "step": step_id,
+                        "text": f"Please look at step {step_id} ({step['do']}): {res['why']}"}
+                self.tracker.events.append(note)
+                self.emit("note", note)
+            else:
+                alert = {"t": self.frames[-1][0] if self.frames else t, "kind": "alert", "type": "contract", "step": step_id,
+                         "text": f"Check failed on step {step_id} ({step['do']}): {res['why']}"}
+                self.tracker.events.append(alert)
+                self.emit("event", alert)
         self.emit("state", self.state())
 
     async def finish(self) -> dict:

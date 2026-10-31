@@ -41,6 +41,28 @@ MODELS = {
     "open": os.environ.get("MUSE_OPEN_MODEL", "meta-models/muse-spark-open-1026"),   # the hackathon key works only with this model
 }
 LOG: list[dict] = []          # every live call made in this process: model, purpose, seconds, ok
+DAILY_LIMIT = int(os.environ.get("EIDOS_DAILY_CALL_LIMIT", "0") or 0)   # 0 means no limit
+_DAY = {"day": "", "calls": 0}
+
+
+class LimitReached(RuntimeError):
+    pass
+
+
+def _count_call():
+    """Count model calls per day (UTC) and stop at EIDOS_DAILY_CALL_LIMIT, so a deployed Studio
+    can't run up an unbounded bill."""
+    day = time.strftime("%Y-%m-%d", time.gmtime())
+    if _DAY["day"] != day:
+        _DAY.update({"day": day, "calls": 0})
+    if DAILY_LIMIT and _DAY["calls"] >= DAILY_LIMIT:
+        raise LimitReached(f"daily model call limit reached ({DAILY_LIMIT}); it resets at midnight UTC")
+    _DAY["calls"] += 1
+
+
+def usage() -> dict:
+    return {"day": _DAY["day"], "calls_today": _DAY["calls"], "daily_limit": DAILY_LIMIT or None,
+            "calls_this_process": len(LOG), "failed_this_process": sum(1 for x in LOG if not x["ok"])}
 
 
 def meta_live() -> bool:
@@ -90,6 +112,7 @@ def _record(model, purpose, t0, ok, err=None):
 
 
 async def meta_responses(model: str, content: list, purpose: str, **extra) -> dict:
+    _count_call()
     t0 = time.monotonic()
     try:
         async with httpx.AsyncClient(timeout=120, headers={"Authorization": f"Bearer {META_KEY}"}) as c:
@@ -105,6 +128,7 @@ async def meta_responses(model: str, content: list, purpose: str, **extra) -> di
 
 
 async def baseten_chat(content: list, purpose: str, **extra) -> str:
+    _count_call()
     t0 = time.monotonic()
     try:
         async with httpx.AsyncClient(timeout=120, headers={"Authorization": f"Bearer {BASETEN_KEY}"}) as c:

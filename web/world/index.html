@@ -113,6 +113,7 @@ button.tag:hover { border-color: var(--contract); color: var(--ink); }
 .alerts { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
 .alerts li { border-radius: 12px; padding: 10px 12px; background: var(--fail-soft); border-left: 4px solid var(--fail); animation: slidein .5s var(--ease); }
 .alerts li.ok { background: var(--pass-soft); border-left-color: var(--pass); }
+.alerts li.note { background: var(--warn-soft); border-left-color: var(--warn); }
 .alerts li .t { font-family: var(--mono); font-size: .8rem; color: var(--muted); margin-right: 8px; }
 @keyframes slidein { from { transform: translateY(-6px); opacity: 0; } }
 .verdict { border-radius: 14px; padding: 14px 16px; font-weight: 700; }
@@ -286,6 +287,8 @@ async function start() {
   es.addEventListener("state", e => { state = JSON.parse(e.data); drawSteps(state); nowStep(); });
   es.addEventListener("look", e => { const d = JSON.parse(e.data); $("#seen-pill").hidden = false; $("#seen-pill").textContent = d.what ? `Sees: ${d.what}` : "Watching"; });
   es.addEventListener("alert", e => alert_(JSON.parse(e.data)));
+  es.addEventListener("note", e => { const d = JSON.parse(e.data); const ul = $("#alerts"); if (ul.querySelector(".ok:only-child")) ul.innerHTML = "";
+    ul.insertAdjacentHTML("afterbegin", `<li class="note"><span class="t">${fmt(d.t)}</span>${esc(bind(d.text))}</li>`); });
   es.addEventListener("dismissed", e => { const d = JSON.parse(e.data); const ul = $("#alerts"); if (ul.querySelector(".ok:only-child")) ul.innerHTML = "";
     ul.insertAdjacentHTML("afterbegin", `<li class="ok"><span class="t">${fmt(d.t)}</span>Looked back before raising an alert, and it was done after all: ${esc(d.why)}</li>`); });
   es.addEventListener("check", e => { const d = JSON.parse(e.data); if (d.ok) okNote(d); });
