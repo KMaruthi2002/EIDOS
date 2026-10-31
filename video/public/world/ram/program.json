@@ -1,0 +1,137 @@
+{
+ "title": "Install RAM in a desktop computer",
+ "domain": "computer hardware",
+ "inputs": {
+  "ram_sticks": "1 stick"
+ },
+ "steps": [
+  {
+   "id": 1,
+   "do": "Remove the side panel from the desktop computer case",
+   "verb": "remove",
+   "objects": [
+    "side panel",
+    "desktop computer case"
+   ],
+   "tools": [],
+   "start": 20.0,
+   "end": 31.0,
+   "focus": "side panel",
+   "done_when": "The side panel is detached from the case and the motherboard inside the case is exposed",
+   "needs": [],
+   "optional": true,
+   "evidence": {
+    "start": "step1_start.jpg",
+    "end": "step1_end.jpg"
+   }
+  },
+  {
+   "id": 2,
+   "do": "Remove the old RAM sticks from the motherboard memory slots",
+   "verb": "remove",
+   "objects": [
+    "RAM sticks",
+    "motherboard memory slots"
+   ],
+   "tools": [],
+   "start": 36.0,
+   "end": 59.0,
+   "focus": "RAM sticks",
+   "done_when": "The motherboard memory slots are empty and the removed RAM sticks are outside the computer case",
+   "needs": [
+    1
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step2_start.jpg",
+    "end": "step2_end.jpg"
+   }
+  },
+  {
+   "id": 3,
+   "do": "Seat {ram_sticks} in a memory slot on the motherboard",
+   "verb": "seat",
+   "objects": [
+    "RAM stick",
+    "motherboard memory slot"
+   ],
+   "tools": [],
+   "start": 60.0,
+   "end": 95.0,
+   "focus": "RAM stick",
+   "done_when": "The RAM stick lies flat and fully seated in the motherboard memory slot with no gap at its contacts",
+   "needs": [],
+   "optional": false,
+   "evidence": {
+    "start": "step3_start.jpg",
+    "end": "step3_end.jpg"
+   },
+   "check": false
+  },
+  {
+   "id": 4,
+   "do": "Replace the side panel on the desktop computer case",
+   "verb": "replace",
+   "objects": [
+    "side panel",
+    "desktop computer case"
+   ],
+   "tools": [],
+   "start": 92.0,
+   "end": 107.0,
+   "focus": "side panel",
+   "done_when": "The side panel covers the opening of the computer case and the internal components are no longer visible",
+   "needs": [],
+   "optional": true,
+   "evidence": {
+    "start": "step4_start.jpg",
+    "end": "step4_end.jpg"
+   }
+  },
+  {
+   "id": 5,
+   "do": "Plug the cables into the back of the desktop computer",
+   "verb": "plug",
+   "objects": [
+    "power cable",
+    "desktop computer"
+   ],
+   "tools": [],
+   "start": 108.0,
+   "end": 121.0,
+   "focus": "power cable",
+   "done_when": "The power cable connector is fully inserted into the socket on the back of the closed computer case",
+   "needs": [
+    4
+   ],
+   "optional": true,
+   "evidence": {
+    "start": "step5_start.jpg",
+    "end": "step5_end.jpg"
+   }
+  }
+ ],
+ "compiled_by": "muse-wonder-1.0",
+ "learned_from": "R181-12Oct-RAM.mp4",
+ "video_seconds": 121.02,
+ "calibration": {
+  "source": "second demonstration (R185)",
+  "changes": [
+   {
+    "step": 3,
+    "change": "no longer needs step 2",
+    "why": "the second demonstration (R185) did step 3 first"
+   },
+   {
+    "step": 4,
+    "change": "no longer needs step 3",
+    "why": "the second demonstration (R185) did step 4 first"
+   },
+   {
+    "step": 3,
+    "change": "contract not checked",
+    "why": "it failed on the second demonstration (R185), which was done correctly: The memory slot is empty with all RAM sticks lying outside on the mat."
+   }
+  ]
+ }
+}

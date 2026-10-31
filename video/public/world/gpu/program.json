@@ -1,0 +1,185 @@
+{
+ "title": "Install a graphics card",
+ "domain": "computer hardware",
+ "inputs": {},
+ "steps": [
+  {
+   "id": 1,
+   "do": "Remove the side panel from the computer tower to open the case",
+   "verb": "remove",
+   "objects": [
+    "computer tower",
+    "side panel"
+   ],
+   "tools": [],
+   "start": 20.0,
+   "end": 31.0,
+   "focus": "side panel",
+   "done_when": "The side panel is off the computer tower and the motherboard and internal components are exposed",
+   "needs": [],
+   "optional": true,
+   "evidence": {
+    "start": "step1_start.jpg",
+    "end": "step1_end.jpg",
+    "boxes": [
+     [
+      0.7,
+      0.2389,
+      0.7969,
+      0.9861
+     ]
+    ],
+    "outlined": "side panel"
+   },
+   "why_optional": "not seen in the second demonstration (R197)"
+  },
+  {
+   "id": 2,
+   "do": "Remove the expansion slot cover from the rear of the case for the slot the graphics card will use",
+   "verb": "remove",
+   "objects": [
+    "desktop computer",
+    "expansion slot cover"
+   ],
+   "tools": [],
+   "start": 44.0,
+   "end": 51.0,
+   "focus": "expansion slot cover",
+   "done_when": "The expansion slot cover is detached from the rear of the case and the slot opening is empty",
+   "needs": [
+    1
+   ],
+   "optional": true,
+   "evidence": {
+    "start": "step2_start.jpg",
+    "end": "step2_end.jpg"
+   },
+   "why_optional": "not seen in the second demonstration (R197)"
+  },
+  {
+   "id": 3,
+   "do": "Remove the existing graphics card from the motherboard",
+   "verb": "remove",
+   "objects": [
+    "graphics card",
+    "desktop computer"
+   ],
+   "tools": [],
+   "start": 60.0,
+   "end": 79.0,
+   "focus": "graphics card",
+   "done_when": "The existing graphics card is out of the motherboard and placed beside the case, leaving the slot empty",
+   "needs": [
+    1
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step3_start.jpg",
+    "end": "step3_end.jpg"
+   }
+  },
+  {
+   "id": 4,
+   "do": "Install the graphics card into the PCIe slot on the motherboard and seat it fully",
+   "verb": "install",
+   "objects": [
+    "graphics card",
+    "motherboard",
+    "desktop computer"
+   ],
+   "tools": [
+    "screwdriver"
+   ],
+   "start": 76.0,
+   "end": 107.0,
+   "focus": "graphics card",
+   "done_when": "The graphics card is seated in the PCIe slot on the motherboard with its rear bracket aligned against the back of the case",
+   "needs": [
+    1,
+    2
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step4_start.jpg",
+    "end": "step4_end.jpg",
+    "boxes": [
+     [
+      0.1594,
+      0.425,
+      0.5188,
+      0.9972
+     ]
+    ],
+    "outlined": "motherboard"
+   }
+  },
+  {
+   "id": 5,
+   "do": "Replace the side panel to close the computer case",
+   "verb": "replace",
+   "objects": [
+    "desktop computer",
+    "side panel"
+   ],
+   "tools": [],
+   "start": 108.0,
+   "end": 115.0,
+   "focus": "side panel",
+   "done_when": "The side panel is closed over the computer case and the internal components are covered",
+   "needs": [
+    4
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step5_start.jpg",
+    "end": "step5_end.jpg"
+   }
+  },
+  {
+   "id": 6,
+   "do": "Plug the cables and the power cable into the rear ports of the computer",
+   "verb": "plug",
+   "objects": [
+    "desktop computer",
+    "cables",
+    "power cable"
+   ],
+   "tools": [],
+   "start": 124.0,
+   "end": 139.0,
+   "focus": "power cable",
+   "done_when": "The cables and the power cable are connected to the back of the computer",
+   "needs": [
+    5
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step6_start.jpg",
+    "end": "step6_end.jpg"
+   }
+  }
+ ],
+ "compiled_by": "muse-wonder-1.0",
+ "learned_from": "R196-25Oct-GraphicsCard.mp4",
+ "video_seconds": 139.01,
+ "calibration": {
+  "source": "second demonstration (R197)",
+  "changes": [
+   {
+    "step": 1,
+    "change": "optional",
+    "why": "not seen in the second demonstration (R197)"
+   },
+   {
+    "step": 2,
+    "change": "optional",
+    "why": "not seen in the second demonstration (R197)"
+   },
+   {
+    "step": 4,
+    "change": "no longer needs step 3",
+    "why": "the second demonstration (R197) did step 4 first"
+   }
+  ]
+ }
+}

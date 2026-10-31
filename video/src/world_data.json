@@ -1,0 +1,799 @@
+{
+ "notes": [
+  {
+   "t": 0.0,
+   "a": "scroll on tablet",
+   "amt": null
+  },
+  {
+   "t": 4.0,
+   "a": "open refrigerator",
+   "amt": null
+  },
+  {
+   "t": 8.01,
+   "a": "retrieves meat from drawer",
+   "amt": null
+  },
+  {
+   "t": 12.01,
+   "a": "picks up a tomato",
+   "amt": null
+  },
+  {
+   "t": 16.02,
+   "a": "pick up then put back a tomato",
+   "amt": null
+  },
+  {
+   "t": 20.02,
+   "a": "takes tomato from fridge",
+   "amt": null
+  },
+  {
+   "t": 24.02,
+   "a": "washing a tomato",
+   "amt": null
+  },
+  {
+   "t": 28.03,
+   "a": "washing tomato",
+   "amt": null
+  },
+  {
+   "t": 32.03,
+   "a": "wash tomato and set down cutting board",
+   "amt": null
+  },
+  {
+   "t": 36.0,
+   "a": "cut tomato",
+   "amt": null
+  },
+  {
+   "t": 40.01,
+   "a": "dry hands",
+   "amt": null
+  },
+  {
+   "t": 44.01,
+   "a": "fold a towel",
+   "amt": null
+  },
+  {
+   "t": 48.01,
+   "a": "wipe tomato",
+   "amt": null
+  },
+  {
+   "t": 52.02,
+   "a": "dry tomato",
+   "amt": null
+  },
+  {
+   "t": 56.02,
+   "a": "drying tomato",
+   "amt": null
+  },
+  {
+   "t": 60.03,
+   "a": "pull stem from tomato",
+   "amt": null
+  },
+  {
+   "t": 64.03,
+   "a": "remove stem from tomato",
+   "amt": null
+  },
+  {
+   "t": 68.0,
+   "a": "drying a tomato",
+   "amt": null
+  },
+  {
+   "t": 72.01,
+   "a": "dry tomato",
+   "amt": null
+  },
+  {
+   "t": 76.01,
+   "a": "dry hands then hold tomato",
+   "amt": null
+  },
+  {
+   "t": 80.01,
+   "a": "move cutting board with tomato and take a knife",
+   "amt": null
+  },
+  {
+   "t": 84.02,
+   "a": "slicing tomato",
+   "amt": null
+  },
+  {
+   "t": 88.02,
+   "a": "slicing tomato",
+   "amt": null
+  },
+  {
+   "t": 92.03,
+   "a": "slicing tomato",
+   "amt": "1 slice"
+  },
+  {
+   "t": 96.03,
+   "a": "slice tomato",
+   "amt": null
+  },
+  {
+   "t": 100.03,
+   "a": "slice tomato",
+   "amt": null
+  },
+  {
+   "t": 104.0,
+   "a": "slicing tomato",
+   "amt": null
+  },
+  {
+   "t": 108.01,
+   "a": "slice tomato",
+   "amt": null
+  },
+  {
+   "t": 112.01,
+   "a": "slicing tomato",
+   "amt": null
+  },
+  {
+   "t": 116.02,
+   "a": "slicing tomato",
+   "amt": null
+  },
+  {
+   "t": 120.02,
+   "a": "slicing tomato",
+   "amt": null
+  },
+  {
+   "t": 124.02,
+   "a": "slicing a tomato",
+   "amt": null
+  },
+  {
+   "t": 128.03,
+   "a": "slice tomato",
+   "amt": null
+  },
+  {
+   "t": 132.03,
+   "a": "slice tomato",
+   "amt": "6 slices"
+  },
+  {
+   "t": 136.0,
+   "a": "slice tomatoes and grab plate",
+   "amt": null
+  },
+  {
+   "t": 140.01,
+   "a": "placing tomatoes on plate",
+   "amt": null
+  },
+  {
+   "t": 144.01,
+   "a": "placing tomato slices on plate",
+   "amt": "3 slices"
+  },
+  {
+   "t": 148.01,
+   "a": "placing tomato slices on plate",
+   "amt": "5 slices"
+  },
+  {
+   "t": 152.02,
+   "a": "placing tomato slices on plate",
+   "amt": null
+  },
+  {
+   "t": 156.02,
+   "a": "arranging tomato slices",
+   "amt": "6 slices"
+  },
+  {
+   "t": 160.03,
+   "a": "scroll on tablet",
+   "amt": null
+  },
+  {
+   "t": 164.03,
+   "a": "scrolling on tablet",
+   "amt": null
+  },
+  {
+   "t": 168.0,
+   "a": "taps tablet",
+   "amt": null
+  },
+  {
+   "t": 172.01,
+   "a": "opens refrigerator",
+   "amt": null
+  },
+  {
+   "t": 176.01,
+   "a": "takes a bag out of freezer",
+   "amt": null
+  },
+  {
+   "t": 180.01,
+   "a": "retrieves bag from freezer",
+   "amt": null
+  },
+  {
+   "t": 184.02,
+   "a": "takes mozzarella from freezer",
+   "amt": null
+  },
+  {
+   "t": 188.02,
+   "a": "open bag",
+   "amt": null
+  },
+  {
+   "t": 192.03,
+   "a": "opening a bag",
+   "amt": null
+  },
+  {
+   "t": 196.03,
+   "a": "holding a bag of shredded cheese",
+   "amt": null
+  },
+  {
+   "t": 200.03,
+   "a": "sprinkling cheese onto tomato slices",
+   "amt": null
+  },
+  {
+   "t": 204.0,
+   "a": "sprinkling cheese",
+   "amt": null
+  },
+  {
+   "t": 208.01,
+   "a": "sprinkle cheese on tomatoes",
+   "amt": null
+  },
+  {
+   "t": 212.01,
+   "a": "sprinkling shredded cheese",
+   "amt": null
+  },
+  {
+   "t": 216.02,
+   "a": "sprinkling topping onto tomato slices",
+   "amt": null
+  },
+  {
+   "t": 220.02,
+   "a": "sprinkle cheese on tomatoes then touch laptop",
+   "amt": null
+  },
+  {
+   "t": 224.02,
+   "a": "checks tablet then opens cabinet",
+   "amt": null
+  },
+  {
+   "t": 228.03,
+   "a": "retrieve salt from cabinet",
+   "amt": null
+  },
+  {
+   "t": 232.03,
+   "a": "open salt canister",
+   "amt": null
+  },
+  {
+   "t": 236.0,
+   "a": "open container and drawer",
+   "amt": null
+  },
+  {
+   "t": 240.01,
+   "a": "open salt and take spoon",
+   "amt": null
+  },
+  {
+   "t": 244.01,
+   "a": "pours salt into measuring spoon",
+   "amt": null
+  },
+  {
+   "t": 248.01,
+   "a": "sprinkle salt on tomatoes",
+   "amt": null
+  },
+  {
+   "t": 252.02,
+   "a": "sprinkle salt",
+   "amt": null
+  },
+  {
+   "t": 256.02,
+   "a": "sprinkle salt on",
+   "amt": null
+  },
+  {
+   "t": 264.03,
+   "a": "rummaging through drawer",
+   "amt": null
+  },
+  {
+   "t": 268.0,
+   "a": "pick up a knife",
+   "amt": null
+  },
+  {
+   "t": 272.01,
+   "a": "picks up a thermometer from drawer",
+   "amt": null
+  },
+  {
+   "t": 280.01,
+   "a": "open a can",
+   "amt": null
+  },
+  {
+   "t": 284.02,
+   "a": "opens a box",
+   "amt": null
+  },
+  {
+   "t": 288.02,
+   "a": "opening package",
+   "amt": null
+  },
+  {
+   "t": 292.03,
+   "a": "cutting open a packet",
+   "amt": null
+  },
+  {
+   "t": 296.03,
+   "a": "slice tomatoes",
+   "amt": null
+  },
+  {
+   "t": 300.03,
+   "a": "sprinkles seasoning",
+   "amt": null
+  },
+  {
+   "t": 304.0,
+   "a": "seasoning tomato slices",
+   "amt": null
+  },
+  {
+   "t": 308.01,
+   "a": "salt tomatoes and store salt",
+   "amt": null
+  },
+  {
+   "t": 312.01,
+   "a": "season sliced tomatoes",
+   "amt": null
+  },
+  {
+   "t": 324.02,
+   "a": "season sliced tomatoes",
+   "amt": null
+  },
+  {
+   "t": 328.03,
+   "a": "sprinkling seasoning",
+   "amt": null
+  },
+  {
+   "t": 332.03,
+   "a": "sprinkling seasoning",
+   "amt": null
+  },
+  {
+   "t": 336.0,
+   "a": "sprinkling seasoning",
+   "amt": null
+  },
+  {
+   "t": 340.01,
+   "a": "sprinkling seasoning",
+   "amt": null
+  },
+  {
+   "t": 344.01,
+   "a": "sprinkles seasoning",
+   "amt": null
+  },
+  {
+   "t": 348.01,
+   "a": "sprinkling seasoning",
+   "amt": null
+  },
+  {
+   "t": 352.02,
+   "a": "sprinkle seasoning",
+   "amt": null
+  },
+  {
+   "t": 356.02,
+   "a": "closes and stores spice jar in cabinet",
+   "amt": null
+  },
+  {
+   "t": 360.03,
+   "a": "storing and sprinkling spices",
+   "amt": null
+  },
+  {
+   "t": 364.03,
+   "a": "sprinkling seasoning with fingers",
+   "amt": null
+  },
+  {
+   "t": 368.0,
+   "a": "picks up bottle",
+   "amt": null
+  },
+  {
+   "t": 372.0,
+   "a": "picks up and inspects bottle",
+   "amt": null
+  },
+  {
+   "t": 376.01,
+   "a": "opening a bottle",
+   "amt": null
+  },
+  {
+   "t": 380.01,
+   "a": "opens bottle and opens drawer",
+   "amt": null
+  },
+  {
+   "t": 384.02,
+   "a": "takes a spoon from drawer",
+   "amt": null
+  },
+  {
+   "t": 388.02,
+   "a": "pour oil into spoon",
+   "amt": null
+  },
+  {
+   "t": 392.02,
+   "a": "pour oil onto spoon",
+   "amt": null
+  },
+  {
+   "t": 396.03,
+   "a": "brushing sliced tomatoes",
+   "amt": null
+  },
+  {
+   "t": 400.03,
+   "a": "sprinkling seasoning",
+   "amt": null
+  },
+  {
+   "t": 404.0,
+   "a": "open a bottle",
+   "amt": null
+  },
+  {
+   "t": 408.01,
+   "a": "opens and closes bottle then scrolls tablet",
+   "amt": null
+  },
+  {
+   "t": 412.01,
+   "a": "checks tablet",
+   "amt": null
+  },
+  {
+   "t": 416.02,
+   "a": "places plate on stove",
+   "amt": null
+  },
+  {
+   "t": 420.02,
+   "a": "places plate and scrolls tablet",
+   "amt": null
+  },
+  {
+   "t": 421.02,
+   "a": "places plate and scrolls tablet",
+   "amt": null
+  }
+ ],
+ "steps": [
+  {
+   "id": 1,
+   "do": "Wash {tomato_count} tomato under running water",
+   "needs": [],
+   "t": 24.0,
+   "opt": false,
+   "focus": null
+  },
+  {
+   "id": 2,
+   "do": "Dry the tomato with a towel",
+   "needs": [
+    1
+   ],
+   "t": 48.0,
+   "opt": false,
+   "focus": null
+  },
+  {
+   "id": 3,
+   "do": "Remove the stem from the tomato",
+   "needs": [
+    2
+   ],
+   "t": 60.0,
+   "opt": false,
+   "focus": null
+  },
+  {
+   "id": 4,
+   "do": "Slice the tomato into {slice_count} slices on the cutting board",
+   "needs": [
+    3
+   ],
+   "t": 84.0,
+   "opt": false,
+   "focus": null
+  },
+  {
+   "id": 5,
+   "do": "Arrange the tomato slices on a plate",
+   "needs": [
+    4
+   ],
+   "t": 140.0,
+   "opt": false,
+   "focus": null
+  },
+  {
+   "id": 6,
+   "do": "Sprinkle shredded mozzarella cheese over the tomato slices",
+   "needs": [
+    5
+   ],
+   "t": 200.0,
+   "opt": false,
+   "focus": null
+  },
+  {
+   "id": 7,
+   "do": "Sprinkle salt over the tomato slices using a measuring spoon",
+   "needs": [
+    5
+   ],
+   "t": 248.0,
+   "opt": false,
+   "focus": null
+  },
+  {
+   "id": 8,
+   "do": "Sprinkle seasoning over the tomato slices",
+   "needs": [
+    5
+   ],
+   "t": 300.0,
+   "opt": false,
+   "focus": null
+  },
+  {
+   "id": 9,
+   "do": "Pour oil over the tomato slices using a measuring spoon",
+   "needs": [
+    5
+   ],
+   "t": 388.0,
+   "opt": false,
+   "focus": null
+  },
+  {
+   "id": 10,
+   "do": "Place the plate of prepared tomato slices on the stovetop",
+   "needs": [
+    6,
+    7,
+    8,
+    9
+   ],
+   "t": 416.0,
+   "opt": true,
+   "focus": null
+  }
+ ],
+ "cal": [
+  {
+   "id": 1,
+   "opt": false,
+   "needs": [],
+   "chk": true
+  },
+  {
+   "id": 2,
+   "opt": false,
+   "needs": [
+    1
+   ],
+   "chk": true
+  },
+  {
+   "id": 3,
+   "opt": true,
+   "needs": [
+    2
+   ],
+   "chk": true
+  },
+  {
+   "id": 4,
+   "opt": false,
+   "needs": [
+    3
+   ],
+   "chk": true
+  },
+  {
+   "id": 5,
+   "opt": false,
+   "needs": [
+    4
+   ],
+   "chk": true
+  },
+  {
+   "id": 6,
+   "opt": false,
+   "needs": [
+    5
+   ],
+   "chk": true
+  },
+  {
+   "id": 7,
+   "opt": false,
+   "needs": [
+    5
+   ],
+   "chk": true
+  },
+  {
+   "id": 8,
+   "opt": false,
+   "needs": [
+    5
+   ],
+   "chk": true
+  },
+  {
+   "id": 9,
+   "opt": false,
+   "needs": [
+    5
+   ],
+   "chk": true
+  },
+  {
+   "id": 10,
+   "opt": true,
+   "needs": [
+    6,
+    7,
+    8,
+    9
+   ],
+   "chk": true
+  }
+ ],
+ "changes": [
+  {
+   "step": 3,
+   "change": "optional",
+   "why": "not seen in the second demonstration (12_5)"
+  }
+ ],
+ "inputs": {
+  "tomato_count": "1",
+  "slice_count": "6"
+ },
+ "title": "Cheese-topped seasoned tomato slices",
+ "boxes4": [
+  [
+   0.5609,
+   0.4694,
+   0.6062,
+   0.5472
+  ],
+  [
+   0.6312,
+   0.4111,
+   0.6719,
+   0.475
+  ],
+  [
+   0.6344,
+   0.4833,
+   0.6766,
+   0.5444
+  ]
+ ],
+ "results": {
+  "head": "Held-out recipes, run live, once",
+  "beats": [
+   {
+    "at": 0.2,
+    "text": "Real cooks.",
+    "line": "CaptainCook4D: people cooking, mistakes labelled step by step",
+    "pills": [
+     [
+      "106 recordings EIDOS never saw",
+      "plain"
+     ]
+    ]
+   },
+   {
+    "at": 5.2,
+    "n": 22,
+    "d": 54,
+    "line": "skipped steps named, live, as they happened",
+    "pills": [
+     [
+      "Learned from one video, no labels",
+      "brand"
+     ]
+    ]
+   },
+   {
+    "at": 11.8,
+    "text": "0.7 vs 2.8",
+    "line": "times per correct cook a step was wrongly called skipped",
+    "pills": [
+     [
+      "EIDOS, live: 0.7",
+      "brand"
+     ],
+     [
+      "Muse Spark, whole video: 2.8",
+      "plain"
+     ]
+    ]
+   },
+   {
+    "at": 20.0,
+    "text": "Next.",
+    "line": "Telling a flawless run from a flawed one: not solved yet",
+    "pills": [
+     [
+      "Accuracy 67%, same as always saying \u201cmistake\u201d",
+      "plain"
+     ]
+    ]
+   }
+  ]
+ },
+ "live": {
+  "cabFrom": 47,
+  "cabRate": 1.0,
+  "cabZoom": 5.6,
+  "tomFrom": 372,
+  "tomRate": 4,
+  "tomZoom": 6.4
+ }
+}

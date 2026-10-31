@@ -1,0 +1,62 @@
+[
+  {
+    "id": "hook",
+    "text": "Every day, people film themselves showing how things are done. Cooking. Fixing. Building. Clicking through software. Billions of hours of it. Yet AI still can't watch one of those videos, and come away with a skill it can check.",
+    "seconds": 14.725
+  },
+  {
+    "id": "name",
+    "text": "This is Eye-doss. Show it a task once, and it compiles the video into a program that checks the work.",
+    "seconds": 6.4
+  },
+  {
+    "id": "learn",
+    "text": "It watches eight seconds at a time with Muse Spark. Muse Wonder compiles what it saw into steps, the order they really need, amounts you can change, and a visual contract for every step. SAM 3.1 outlines what each contract is about.",
+    "seconds": 16
+  },
+  {
+    "id": "again",
+    "text": "Show it a second time, and it learns what's essential. One person's habits become optional. Orders that don't matter are dropped.",
+    "seconds": 8.1
+  },
+  {
+    "id": "live",
+    "text": "Then it watches live. Through a camera, it knows which step you're on, tells you what comes next, and checks each step against the video.",
+    "seconds": 7.9
+  },
+  {
+    "id": "cabinet",
+    "text": "Here, a technician opens an electrical cabinet without switching off the power. Eye-doss flags it while it's happening.",
+    "seconds": 7.625
+  },
+  {
+    "id": "kitchen",
+    "text": "Here, a cook forgets the olive oil. Before it raises an alert, Eye-doss looks back, the way a person would. Then it names the step that was skipped.",
+    "seconds": 9.45
+  },
+  {
+    "id": "anything",
+    "text": "The same goes for a graphics card, a stick of RAM, or anything you can film. One video in. A checkable skill out.",
+    "seconds": 8.075
+  },
+  {
+    "id": "results",
+    "text": "We tested it on CaptainCook4D: real people cooking, with their mistakes labelled. On recipes it had never seen, running live, Eye-doss named twenty-two of fifty-four skipped steps. And it falsely accused correct cooks of skipping a step almost four times less often than Muse Spark looking over the whole video. Telling a flawless run from a flawed one is still hard. That's what's next.",
+    "seconds": 25.15
+  },
+  {
+    "id": "screens",
+    "text": "And the same compiler works on screens. Sixty of sixty everyday tasks on redesigned apps. Thirty-two of thirty-two with every control renamed. And on a robot arm, that notices when its work gets knocked over.",
+    "seconds": 14.075
+  },
+  {
+    "id": "meta",
+    "text": "Built on Meta's models. Muse Spark watches. Muse Wonder compiles. SAM 3.1 outlines. Muse Image draws each skill. And Muse Spark Open can watch on open weights.",
+    "seconds": 13.025
+  },
+  {
+    "id": "close",
+    "text": "Prompting is how we talk to AI. Showing is how we'll teach it. This is Eye-doss.",
+    "seconds": 5.575
+  }
+]
