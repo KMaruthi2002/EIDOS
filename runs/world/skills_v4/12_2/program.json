@@ -1,0 +1,249 @@
+{
+ "title": "Cheese-topped seasoned tomato slices",
+ "domain": "cooking",
+ "inputs": {
+  "tomato_count": "1",
+  "slice_count": "6"
+ },
+ "steps": [
+  {
+   "id": 1,
+   "do": "Wash {tomato_count} tomato under running water",
+   "verb": "wash",
+   "objects": [
+    "tomato"
+   ],
+   "tools": [
+    "sink faucet"
+   ],
+   "start": 24.0,
+   "end": 35.0,
+   "done_when": "The tomato is wet and clean, held or resting by the sink with water droplets visible on its skin",
+   "needs": [],
+   "optional": false,
+   "evidence": {
+    "start": "step1_start.jpg",
+    "end": "step1_end.jpg"
+   }
+  },
+  {
+   "id": 2,
+   "do": "Dry the tomato with a towel",
+   "verb": "dry",
+   "objects": [
+    "tomato"
+   ],
+   "tools": [
+    "towel"
+   ],
+   "start": 48.0,
+   "end": 63.0,
+   "done_when": "The tomato rests on the towel on the cutting board with no visible water droplets on its skin",
+   "needs": [
+    1
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step2_start.jpg",
+    "end": "step2_end.jpg"
+   }
+  },
+  {
+   "id": 3,
+   "do": "Remove the stem from the tomato",
+   "verb": "remove",
+   "objects": [
+    "tomato stem",
+    "tomato"
+   ],
+   "tools": [],
+   "start": 60.0,
+   "end": 71.0,
+   "done_when": "The tomato on the cutting board has no stem, and the removed stem lies separately on the board",
+   "needs": [],
+   "optional": false,
+   "evidence": {
+    "start": "step3_start.jpg",
+    "end": "step3_end.jpg"
+   }
+  },
+  {
+   "id": 4,
+   "do": "Slice the tomato into {slice_count} slices on the cutting board",
+   "verb": "slice",
+   "objects": [
+    "tomato"
+   ],
+   "tools": [
+    "knife",
+    "cutting board"
+   ],
+   "start": 84.0,
+   "end": 139.0,
+   "done_when": "The tomato is fully cut into separate slices lying on the cutting board, with no uncut tomato remaining",
+   "needs": [
+    3
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step4_start.jpg",
+    "end": "step4_end.jpg"
+   }
+  },
+  {
+   "id": 5,
+   "do": "Arrange the tomato slices on a plate",
+   "verb": "arrange",
+   "objects": [
+    "tomato slices",
+    "plate"
+   ],
+   "tools": [],
+   "start": 140.0,
+   "end": 163.0,
+   "done_when": "All tomato slices lie arranged on the plate and the cutting board is empty",
+   "needs": [
+    4
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step5_start.jpg",
+    "end": "step5_end.jpg"
+   }
+  },
+  {
+   "id": 6,
+   "do": "Sprinkle shredded mozzarella cheese over the tomato slices",
+   "verb": "sprinkle",
+   "objects": [
+    "shredded mozzarella cheese",
+    "tomato slices",
+    "plate"
+   ],
+   "tools": [],
+   "start": 200.0,
+   "end": 223.0,
+   "done_when": "Shredded mozzarella cheese visibly covers the top of the tomato slices on the plate",
+   "needs": [
+    5
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step6_start.jpg",
+    "end": "step6_end.jpg"
+   }
+  },
+  {
+   "id": 7,
+   "do": "Sprinkle salt over the tomato slices using a measuring spoon",
+   "verb": "sprinkle",
+   "objects": [
+    "salt",
+    "tomato slices",
+    "plate"
+   ],
+   "tools": [
+    "measuring spoon"
+   ],
+   "start": 248.0,
+   "end": 259.0,
+   "done_when": "Fine white salt grains are visible scattered over the cheese-topped tomato slices on the plate",
+   "needs": [
+    5
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step7_start.jpg",
+    "end": "step7_end.jpg"
+   }
+  },
+  {
+   "id": 8,
+   "do": "Sprinkle seasoning over the tomato slices",
+   "verb": "sprinkle",
+   "objects": [
+    "seasoning",
+    "tomato slices",
+    "plate"
+   ],
+   "tools": [
+    "seasoning shaker"
+   ],
+   "start": 300.0,
+   "end": 359.0,
+   "done_when": "Dark seasoning specks are visible distributed over the tomato slices on the plate",
+   "needs": [
+    5
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step8_start.jpg",
+    "end": "step8_end.jpg"
+   }
+  },
+  {
+   "id": 9,
+   "do": "Pour oil over the tomato slices using a measuring spoon",
+   "verb": "pour",
+   "objects": [
+    "oil",
+    "tomato slices",
+    "plate"
+   ],
+   "tools": [
+    "measuring spoon",
+    "oil bottle"
+   ],
+   "start": 388.0,
+   "end": 399.0,
+   "done_when": "The tomato slices on the plate have a visible glossy coating of oil on their surfaces",
+   "needs": [
+    5
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step9_start.jpg",
+    "end": "step9_end.jpg"
+   }
+  },
+  {
+   "id": 10,
+   "do": "Place the plate of prepared tomato slices on the stovetop",
+   "verb": "place",
+   "objects": [
+    "plate",
+    "tomato slices"
+   ],
+   "tools": [],
+   "start": 416.0,
+   "end": 428.0,
+   "done_when": "The plate of cheese-topped, seasoned tomato slices rests on the stovetop",
+   "needs": [
+    6,
+    7,
+    8,
+    9
+   ],
+   "optional": true,
+   "evidence": {
+    "start": "step10_start.jpg",
+    "end": "step10_end.jpg"
+   }
+  }
+ ],
+ "compiled_by": "muse-wonder-1.0",
+ "learned_from": "12_2.mp4",
+ "video_seconds": 428.03,
+ "recipe": "Tomato Mozzarella Salad",
+ "learn_seconds": 77.4,
+ "calibration": {
+  "source": "12_5",
+  "changes": [
+   {
+    "step": 3,
+    "change": "no longer needs step 2",
+    "why": "the second demonstration (12_5) did step 3 first"
+   }
+  ]
+ }
+}
