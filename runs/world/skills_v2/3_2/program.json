@@ -1,0 +1,302 @@
+{
+ "title": "Make a microwave mug snack",
+ "domain": "cooking",
+ "inputs": {
+  "powder": "1 spoonful",
+  "sugar": "2 spoonfuls",
+  "microwave_time": "22 seconds"
+ },
+ "steps": [
+  {
+   "id": 1,
+   "do": "Open the baking soda box",
+   "verb": "open",
+   "objects": [
+    "baking soda box"
+   ],
+   "tools": [],
+   "start": 56.0,
+   "end": 87.0,
+   "focus": "baking soda box",
+   "done_when": "The baking soda box top flaps are open and the inside is accessible",
+   "needs": [],
+   "optional": true,
+   "evidence": {
+    "start": "step1_start.jpg",
+    "end": "step1_end.jpg"
+   }
+  },
+  {
+   "id": 2,
+   "do": "Cut open the powder packet",
+   "verb": "cut",
+   "objects": [
+    "powder packet"
+   ],
+   "tools": [
+    "scissors"
+   ],
+   "start": 88.0,
+   "end": 103.0,
+   "focus": "powder packet",
+   "done_when": "The powder packet is cut open and the powder inside is accessible",
+   "needs": [],
+   "optional": true,
+   "evidence": {
+    "start": "step2_start.jpg",
+    "end": "step2_end.jpg"
+   },
+   "why_optional": "not seen in the second demonstration (3_5)"
+  },
+  {
+   "id": 3,
+   "do": "Spoon {powder} of powder from the packet and box into the mug",
+   "verb": "spoon",
+   "objects": [
+    "powder",
+    "mug"
+   ],
+   "tools": [
+    "spoon"
+   ],
+   "start": 96.0,
+   "end": 131.0,
+   "focus": "mug",
+   "done_when": "White powder is visible inside the mug and no powder remains on the spoon",
+   "needs": [
+    1,
+    2
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step3_start.jpg",
+    "end": "step3_end.jpg"
+   },
+   "check": false
+  },
+  {
+   "id": 4,
+   "do": "Spoon {sugar} of sugar into the mug",
+   "verb": "spoon",
+   "objects": [
+    "sugar",
+    "mug"
+   ],
+   "tools": [
+    "spoon"
+   ],
+   "start": 184.0,
+   "end": 203.0,
+   "focus": "mug",
+   "done_when": "White sugar is visible on top of the powder in the mug",
+   "needs": [
+    3
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step4_start.jpg",
+    "end": "step4_end.jpg"
+   }
+  },
+  {
+   "id": 5,
+   "do": "Pour milk into the mug",
+   "verb": "pour",
+   "objects": [
+    "milk",
+    "mug"
+   ],
+   "tools": [
+    "milk bottle",
+    "spoon"
+   ],
+   "start": 232.0,
+   "end": 255.0,
+   "focus": "mug",
+   "done_when": "White liquid covers the dry ingredients in the mug",
+   "needs": [
+    4
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step5_start.jpg",
+    "end": "step5_end.jpg"
+   }
+  },
+  {
+   "id": 6,
+   "do": "Pour cooking oil over a spoon into the mug",
+   "verb": "pour",
+   "objects": [
+    "cooking oil",
+    "mug"
+   ],
+   "tools": [
+    "oil bottle",
+    "spoon"
+   ],
+   "start": 280.0,
+   "end": 295.0,
+   "focus": "mug",
+   "done_when": "Oil is visible on the surface of the liquid in the mug",
+   "needs": [
+    5
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step6_start.jpg",
+    "end": "step6_end.jpg",
+    "boxes": [
+     [
+      0.3484,
+      0.0,
+      0.4625,
+      0.1444
+     ]
+    ],
+    "outlined": "mug"
+   }
+  },
+  {
+   "id": 7,
+   "do": "Stir the mixture in the mug until blended",
+   "verb": "stir",
+   "objects": [
+    "mixture",
+    "mug"
+   ],
+   "tools": [
+    "spoon"
+   ],
+   "start": 336.0,
+   "end": 355.0,
+   "focus": "mixture",
+   "done_when": "The mug contains a smooth, blended mixture with no separate dry powder visible",
+   "needs": [],
+   "optional": false,
+   "evidence": {
+    "start": "step7_start.jpg",
+    "end": "step7_end.jpg"
+   }
+  },
+  {
+   "id": 8,
+   "do": "Spoon red paste from the jar into the mug",
+   "verb": "spoon",
+   "objects": [
+    "red paste",
+    "jar",
+    "mug"
+   ],
+   "tools": [
+    "spoon"
+   ],
+   "start": 424.0,
+   "end": 435.0,
+   "focus": "mug",
+   "done_when": "Red paste is visible on top of the mixture in the mug",
+   "needs": [
+    7
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step8_start.jpg",
+    "end": "step8_end.jpg"
+   }
+  },
+  {
+   "id": 9,
+   "do": "Add shredded cheese to the mug",
+   "verb": "add",
+   "objects": [
+    "shredded cheese",
+    "mug"
+   ],
+   "tools": [
+    "fork"
+   ],
+   "start": 464.0,
+   "end": 479.0,
+   "focus": "cheese",
+   "done_when": "Shredded cheese is visible on top of the paste and mixture in the mug",
+   "needs": [
+    8
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step9_start.jpg",
+    "end": "step9_end.jpg"
+   }
+  },
+  {
+   "id": 10,
+   "do": "Place the mug in the microwave and heat it for {microwave_time}",
+   "verb": "heat",
+   "objects": [
+    "mug"
+   ],
+   "tools": [
+    "microwave"
+   ],
+   "start": 504.0,
+   "end": 523.0,
+   "focus": "microwave",
+   "done_when": "The mug is inside the closed microwave and the display shows the set heating time counting down",
+   "needs": [
+    9
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step10_start.jpg",
+    "end": "step10_end.jpg"
+   }
+  },
+  {
+   "id": 11,
+   "do": "Remove the mug from the microwave",
+   "verb": "remove",
+   "objects": [
+    "mug",
+    "microwave"
+   ],
+   "tools": [],
+   "start": 640.0,
+   "end": 651.0,
+   "focus": "mug",
+   "done_when": "The cooked mug is outside the open microwave and the microwave is empty",
+   "needs": [
+    10
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step11_start.jpg",
+    "end": "step11_end.jpg"
+   }
+  }
+ ],
+ "compiled_by": "muse-wonder-1.0",
+ "learned_from": "3_2.mp4",
+ "video_seconds": 657.02,
+ "recipe": "Microwave Mug Pizza",
+ "learn_seconds": 122.3,
+ "calibration": {
+  "source": "3_5, 3_11",
+  "changes": [
+   {
+    "step": 2,
+    "change": "optional",
+    "why": "not seen in the second demonstration (3_5)"
+   },
+   {
+    "step": 7,
+    "change": "no longer needs step 6",
+    "why": "the second demonstration (3_5) did step 7 first"
+   },
+   {
+    "step": 3,
+    "change": "contract not checked",
+    "why": "it failed on the second demonstration (3_5), which was done correctly: The spoon still holds white powder instead of being empty after adding to mug."
+   }
+  ]
+ }
+}
