@@ -1,0 +1,2533 @@
+{
+ "split": "test",
+ "recipes": [
+  "Microwave Egg Sandwich",
+  "Pinwheels",
+  "Breakfast Burritos",
+  "Microwave French Toast",
+  "Microwave Mug Pizza",
+  "Cheese Pimiento",
+  "Cucumber Raita",
+  "Butter Corn Cup"
+ ],
+ "recordings": 106,
+ "with_mistakes": 70,
+ "without_mistakes": 36,
+ "eidos": {
+  "n": 106,
+  "tp": 68,
+  "fp": 33,
+  "fn": 2,
+  "tn": 3,
+  "precision": 0.673,
+  "recall": 0.971,
+  "f1": 0.795,
+  "accuracy": 0.67
+ },
+ "eidos_no_contracts": {
+  "n": 106,
+  "tp": 66,
+  "fp": 28,
+  "fn": 4,
+  "tn": 8,
+  "precision": 0.702,
+  "recall": 0.943,
+  "f1": 0.805,
+  "accuracy": 0.698
+ },
+ "eidos_no_search_back": {
+  "n": 106,
+  "tp": 68,
+  "fp": 34,
+  "fn": 2,
+  "tn": 2,
+  "precision": 0.667,
+  "recall": 0.971,
+  "f1": 0.791,
+  "accuracy": 0.66
+ },
+ "baseline_ask_muse_spark": {
+  "n": 106,
+  "tp": 70,
+  "fp": 36,
+  "fn": 0,
+  "tn": 0,
+  "precision": 0.66,
+  "recall": 1.0,
+  "f1": 0.795,
+  "accuracy": 0.66
+ },
+ "recall_by_mistake_type": {
+  "Missing Step": {
+   "n": 44,
+   "eidos": 43,
+   "baseline": 44
+  },
+  "Measurement Error": {
+   "n": 46,
+   "eidos": 45,
+   "baseline": 46
+  },
+  "Timing Error": {
+   "n": 37,
+   "eidos": 37,
+   "baseline": 37
+  },
+  "Preparation Error": {
+   "n": 57,
+   "eidos": 55,
+   "baseline": 57
+  },
+  "Technique Error": {
+   "n": 51,
+   "eidos": 50,
+   "baseline": 51
+  },
+  "Order Error": {
+   "n": 36,
+   "eidos": 36,
+   "baseline": 36
+  },
+  "Other": {
+   "n": 3,
+   "eidos": 2,
+   "baseline": 3
+  },
+  "Temperature Error": {
+   "n": 12,
+   "eidos": 12,
+   "baseline": 12
+  }
+ },
+ "missing_step_named_correctly": {
+  "n": 54,
+  "hit": 28
+ },
+ "skipped_steps": {
+  "eidos": {
+   "labelled": 54,
+   "named": 22,
+   "claims_on_correct_recordings": 26,
+   "correct_recordings": 36,
+   "claims_total": 125,
+   "claims_matching_a_label": 22
+  },
+  "baseline": {
+   "labelled": 54,
+   "named": 31,
+   "claims_on_correct_recordings": 99,
+   "correct_recordings": 36,
+   "claims_total": 304,
+   "claims_matching_a_label": 33
+  }
+ },
+ "step_tracking": {
+  "looks": 15963,
+  "correct": 6785,
+  "accuracy": 0.425
+ },
+ "look_latency_median_s": 2.74,
+ "rows": [
+  {
+   "rid": "1_10",
+   "recipe": "Microwave Egg Sandwich",
+   "truth": true,
+   "tags": [
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "contract"
+   ]
+  },
+  {
+   "rid": "1_19",
+   "recipe": "Microwave Egg Sandwich",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "contract",
+    "order",
+    "contract"
+   ]
+  },
+  {
+   "rid": "1_20",
+   "recipe": "Microwave Egg Sandwich",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order"
+   ]
+  },
+  {
+   "rid": "1_25",
+   "recipe": "Microwave Egg Sandwich",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": false,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "contract",
+    "contract"
+   ]
+  },
+  {
+   "rid": "1_28",
+   "recipe": "Microwave Egg Sandwich",
+   "truth": true,
+   "tags": [
+    "Preparation Error",
+    "Preparation Error",
+    "Technique Error",
+    "Timing Error",
+    "Measurement Error",
+    "Timing Error",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "order",
+    "contract",
+    "missing",
+    "contract"
+   ]
+  },
+  {
+   "rid": "1_30",
+   "recipe": "Microwave Egg Sandwich",
+   "truth": true,
+   "tags": [
+    "Preparation Error",
+    "Timing Error",
+    "Measurement Error",
+    "Technique Error",
+    "Timing Error",
+    "Technique Error",
+    "Missing Step",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "contract",
+    "missing",
+    "contract"
+   ]
+  },
+  {
+   "rid": "1_32",
+   "recipe": "Microwave Egg Sandwich",
+   "truth": true,
+   "tags": [
+    "Measurement Error",
+    "Preparation Error",
+    "Preparation Error",
+    "Timing Error",
+    "Technique Error",
+    "Measurement Error",
+    "Order Error",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "missing",
+    "missing"
+   ]
+  },
+  {
+   "rid": "1_33",
+   "recipe": "Microwave Egg Sandwich",
+   "truth": true,
+   "tags": [
+    "Preparation Error",
+    "Technique Error",
+    "Measurement Error",
+    "Technique Error",
+    "Measurement Error",
+    "Other",
+    "Missing Step"
+   ],
+   "eidos": false,
+   "eidos_nocontract": false,
+   "eidos_nosearch": false,
+   "baseline": true,
+   "alerts": []
+  },
+  {
+   "rid": "1_34",
+   "recipe": "Microwave Egg Sandwich",
+   "truth": true,
+   "tags": [
+    "Technique Error",
+    "Preparation Error",
+    "Technique Error",
+    "Measurement Error",
+    "Timing Error",
+    "Technique Error",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "missing",
+    "missing",
+    "missing",
+    "missing",
+    "missing",
+    "missing"
+   ]
+  },
+  {
+   "rid": "1_36",
+   "recipe": "Microwave Egg Sandwich",
+   "truth": true,
+   "tags": [
+    "Preparation Error",
+    "Measurement Error",
+    "Measurement Error",
+    "Order Error",
+    "Technique Error",
+    "Timing Error",
+    "Order Error",
+    "Measurement Error",
+    "Order Error",
+    "Timing Error",
+    "Preparation Error",
+    "Preparation Error",
+    "Missing Step",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "order",
+    "missing"
+   ]
+  },
+  {
+   "rid": "1_37",
+   "recipe": "Microwave Egg Sandwich",
+   "truth": true,
+   "tags": [
+    "Preparation Error",
+    "Order Error",
+    "Timing Error",
+    "Temperature Error",
+    "Measurement Error",
+    "Order Error",
+    "Order Error",
+    "Timing Error",
+    "Order Error",
+    "Timing Error"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "missing"
+   ]
+  },
+  {
+   "rid": "1_42",
+   "recipe": "Microwave Egg Sandwich",
+   "truth": true,
+   "tags": [
+    "Preparation Error",
+    "Order Error",
+    "Timing Error",
+    "Temperature Error",
+    "Order Error",
+    "Order Error",
+    "Preparation Error",
+    "Order Error",
+    "Preparation Error",
+    "Order Error",
+    "Order Error",
+    "Technique Error",
+    "Measurement Error",
+    "Order Error"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "contract",
+    "order",
+    "contract",
+    "missing",
+    "missing"
+   ]
+  },
+  {
+   "rid": "1_43",
+   "recipe": "Microwave Egg Sandwich",
+   "truth": true,
+   "tags": [
+    "Missing Step",
+    "Measurement Error",
+    "Temperature Error",
+    "Order Error",
+    "Preparation Error",
+    "Measurement Error",
+    "Order Error",
+    "Timing Error",
+    "Order Error",
+    "Measurement Error",
+    "Order Error"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "contract",
+    "order",
+    "missing",
+    "missing"
+   ]
+  },
+  {
+   "rid": "1_49",
+   "recipe": "Microwave Egg Sandwich",
+   "truth": true,
+   "tags": [
+    "Preparation Error",
+    "Preparation Error",
+    "Order Error",
+    "Order Error",
+    "Preparation Error",
+    "Order Error",
+    "Temperature Error",
+    "Timing Error",
+    "Order Error",
+    "Order Error",
+    "Measurement Error",
+    "Order Error",
+    "Measurement Error",
+    "Order Error"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "order",
+    "order",
+    "missing"
+   ]
+  },
+  {
+   "rid": "1_136",
+   "recipe": "Microwave Egg Sandwich",
+   "truth": true,
+   "tags": [
+    "Measurement Error",
+    "Measurement Error",
+    "Measurement Error",
+    "Order Error",
+    "Technique Error",
+    "Timing Error",
+    "Order Error",
+    "Measurement Error",
+    "Order Error",
+    "Timing Error",
+    "Order Error",
+    "Preparation Error",
+    "Missing Step",
+    "Missing Step",
+    "Missing Step",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "order",
+    "order",
+    "missing",
+    "missing"
+   ]
+  },
+  {
+   "rid": "1_143",
+   "recipe": "Microwave Egg Sandwich",
+   "truth": true,
+   "tags": [
+    "Missing Step",
+    "Measurement Error",
+    "Order Error",
+    "Temperature Error",
+    "Technique Error",
+    "Measurement Error",
+    "Measurement Error",
+    "Technique Error",
+    "Timing Error",
+    "Preparation Error",
+    "Timing Error",
+    "Preparation Error",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "contract",
+    "contract",
+    "contract",
+    "missing"
+   ]
+  },
+  {
+   "rid": "10_7",
+   "recipe": "Pinwheels",
+   "truth": true,
+   "tags": [
+    "Technique Error"
+   ],
+   "eidos": true,
+   "eidos_nocontract": false,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "contract"
+   ]
+  },
+  {
+   "rid": "10_18",
+   "recipe": "Pinwheels",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": false,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "contract"
+   ]
+  },
+  {
+   "rid": "10_24",
+   "recipe": "Pinwheels",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "contract"
+   ]
+  },
+  {
+   "rid": "10_26",
+   "recipe": "Pinwheels",
+   "truth": true,
+   "tags": [
+    "Preparation Error",
+    "Preparation Error",
+    "Preparation Error",
+    "Technique Error",
+    "Measurement Error",
+    "Preparation Error",
+    "Preparation Error",
+    "Preparation Error",
+    "Preparation Error",
+    "Preparation Error",
+    "Missing Step",
+    "Missing Step",
+    "Missing Step",
+    "Missing Step",
+    "Missing Step",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "contract",
+    "contract",
+    "missing"
+   ]
+  },
+  {
+   "rid": "10_31",
+   "recipe": "Pinwheels",
+   "truth": true,
+   "tags": [
+    "Preparation Error",
+    "Preparation Error",
+    "Preparation Error",
+    "Preparation Error",
+    "Preparation Error",
+    "Preparation Error",
+    "Preparation Error",
+    "Technique Error",
+    "Measurement Error",
+    "Preparation Error",
+    "Missing Step",
+    "Missing Step",
+    "Missing Step",
+    "Preparation Error",
+    "Preparation Error",
+    "Preparation Error",
+    "Preparation Error"
+   ],
+   "eidos": true,
+   "eidos_nocontract": false,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "contract"
+   ]
+  },
+  {
+   "rid": "10_42",
+   "recipe": "Pinwheels",
+   "truth": true,
+   "tags": [
+    "Preparation Error",
+    "Preparation Error",
+    "Technique Error",
+    "Technique Error",
+    "Measurement Error",
+    "Missing Step",
+    "Preparation Error",
+    "Technique Error",
+    "Preparation Error",
+    "Preparation Error",
+    "Preparation Error",
+    "Preparation Error"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order"
+   ]
+  },
+  {
+   "rid": "10_46",
+   "recipe": "Pinwheels",
+   "truth": true,
+   "tags": [
+    "Order Error",
+    "Preparation Error",
+    "Order Error",
+    "Technique Error",
+    "Technique Error",
+    "Preparation Error",
+    "Order Error",
+    "Technique Error",
+    "Preparation Error",
+    "Technique Error",
+    "Order Error",
+    "Measurement Error",
+    "Preparation Error",
+    "Order Error",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "order",
+    "contract"
+   ]
+  },
+  {
+   "rid": "10_47",
+   "recipe": "Pinwheels",
+   "truth": true,
+   "tags": [
+    "Preparation Error",
+    "Order Error",
+    "Technique Error",
+    "Order Error",
+    "Order Error",
+    "Preparation Error",
+    "Order Error",
+    "Technique Error",
+    "Order Error",
+    "Technique Error",
+    "Order Error",
+    "Order Error",
+    "Order Error",
+    "Preparation Error",
+    "Order Error",
+    "Order Error",
+    "Order Error",
+    "Preparation Error"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "contract",
+    "contract",
+    "missing"
+   ]
+  },
+  {
+   "rid": "10_48",
+   "recipe": "Pinwheels",
+   "truth": true,
+   "tags": [
+    "Preparation Error",
+    "Technique Error",
+    "Order Error",
+    "Technique Error",
+    "Order Error",
+    "Preparation Error",
+    "Order Error",
+    "Measurement Error",
+    "Order Error",
+    "Technique Error",
+    "Measurement Error",
+    "Measurement Error",
+    "Technique Error",
+    "Order Error",
+    "Order Error",
+    "Order Error",
+    "Preparation Error",
+    "Order Error",
+    "Missing Step",
+    "Missing Step",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "contract",
+    "order"
+   ]
+  },
+  {
+   "rid": "10_50",
+   "recipe": "Pinwheels",
+   "truth": true,
+   "tags": [
+    "Preparation Error",
+    "Technique Error",
+    "Preparation Error",
+    "Measurement Error",
+    "Measurement Error",
+    "Measurement Error",
+    "Missing Step",
+    "Missing Step",
+    "Missing Step",
+    "Preparation Error",
+    "Technique Error",
+    "Preparation Error",
+    "Missing Step",
+    "Missing Step",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "contract",
+    "missing",
+    "missing"
+   ]
+  },
+  {
+   "rid": "7_3",
+   "recipe": "Breakfast Burritos",
+   "truth": false,
+   "tags": [],
+   "eidos": false,
+   "eidos_nocontract": false,
+   "eidos_nosearch": false,
+   "baseline": true,
+   "alerts": []
+  },
+  {
+   "rid": "7_5",
+   "recipe": "Breakfast Burritos",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "order",
+    "missing"
+   ]
+  },
+  {
+   "rid": "7_18",
+   "recipe": "Breakfast Burritos",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "order",
+    "order",
+    "missing"
+   ]
+  },
+  {
+   "rid": "7_19",
+   "recipe": "Breakfast Burritos",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": false,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "contract"
+   ]
+  },
+  {
+   "rid": "7_24",
+   "recipe": "Breakfast Burritos",
+   "truth": true,
+   "tags": [
+    "Preparation Error"
+   ],
+   "eidos": false,
+   "eidos_nocontract": false,
+   "eidos_nosearch": false,
+   "baseline": true,
+   "alerts": []
+  },
+  {
+   "rid": "7_26",
+   "recipe": "Breakfast Burritos",
+   "truth": true,
+   "tags": [
+    "Preparation Error",
+    "Timing Error",
+    "Technique Error",
+    "Measurement Error",
+    "Measurement Error",
+    "Preparation Error",
+    "Technique Error",
+    "Missing Step",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "order",
+    "order",
+    "order",
+    "order",
+    "missing",
+    "missing"
+   ]
+  },
+  {
+   "rid": "7_30",
+   "recipe": "Breakfast Burritos",
+   "truth": true,
+   "tags": [
+    "Timing Error",
+    "Preparation Error",
+    "Measurement Error",
+    "Missing Step",
+    "Missing Step",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "missing",
+    "missing",
+    "missing",
+    "missing",
+    "missing",
+    "missing"
+   ]
+  },
+  {
+   "rid": "7_32",
+   "recipe": "Breakfast Burritos",
+   "truth": true,
+   "tags": [
+    "Technique Error",
+    "Preparation Error",
+    "Timing Error",
+    "Measurement Error",
+    "Missing Step",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "order",
+    "order",
+    "missing",
+    "missing",
+    "contract"
+   ]
+  },
+  {
+   "rid": "7_35",
+   "recipe": "Breakfast Burritos",
+   "truth": true,
+   "tags": [
+    "Technique Error",
+    "Missing Step",
+    "Measurement Error",
+    "Order Error",
+    "Order Error",
+    "Timing Error",
+    "Order Error",
+    "Preparation Error",
+    "Preparation Error",
+    "Preparation Error",
+    "Technique Error"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "order",
+    "order",
+    "contract",
+    "order",
+    "missing"
+   ]
+  },
+  {
+   "rid": "7_38",
+   "recipe": "Breakfast Burritos",
+   "truth": true,
+   "tags": [
+    "Timing Error",
+    "Preparation Error",
+    "Order Error",
+    "Preparation Error",
+    "Preparation Error",
+    "Measurement Error",
+    "Order Error",
+    "Preparation Error",
+    "Order Error",
+    "Order Error",
+    "Technique Error",
+    "Preparation Error",
+    "Order Error",
+    "Order Error"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "missing",
+    "missing"
+   ]
+  },
+  {
+   "rid": "7_44",
+   "recipe": "Breakfast Burritos",
+   "truth": true,
+   "tags": [
+    "Preparation Error",
+    "Preparation Error",
+    "Preparation Error",
+    "Timing Error",
+    "Preparation Error",
+    "Measurement Error",
+    "Preparation Error",
+    "Preparation Error",
+    "Preparation Error",
+    "Preparation Error",
+    "Preparation Error",
+    "Preparation Error"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "order",
+    "order",
+    "missing"
+   ]
+  },
+  {
+   "rid": "7_48",
+   "recipe": "Breakfast Burritos",
+   "truth": true,
+   "tags": [
+    "Order Error",
+    "Timing Error",
+    "Preparation Error",
+    "Order Error",
+    "Order Error",
+    "Order Error",
+    "Preparation Error",
+    "Measurement Error",
+    "Preparation Error"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "order",
+    "contract",
+    "order",
+    "contract"
+   ]
+  },
+  {
+   "rid": "7_50",
+   "recipe": "Breakfast Burritos",
+   "truth": true,
+   "tags": [
+    "Technique Error",
+    "Technique Error",
+    "Timing Error",
+    "Order Error",
+    "Measurement Error",
+    "Order Error",
+    "Measurement Error",
+    "Order Error",
+    "Technique Error",
+    "Order Error",
+    "Technique Error",
+    "Order Error",
+    "Technique Error",
+    "Order Error",
+    "Measurement Error",
+    "Order Error"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "missing"
+   ]
+  },
+  {
+   "rid": "7_135",
+   "recipe": "Breakfast Burritos",
+   "truth": true,
+   "tags": [
+    "Technique Error",
+    "Measurement Error",
+    "Order Error",
+    "Order Error",
+    "Timing Error",
+    "Order Error",
+    "Preparation Error",
+    "Preparation Error",
+    "Preparation Error",
+    "Technique Error",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "order",
+    "contract"
+   ]
+  },
+  {
+   "rid": "9_8",
+   "recipe": "Microwave French Toast",
+   "truth": true,
+   "tags": [
+    "Preparation Error",
+    "Preparation Error"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "contract",
+    "order",
+    "contract",
+    "order"
+   ]
+  },
+  {
+   "rid": "9_12",
+   "recipe": "Microwave French Toast",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "order",
+    "missing"
+   ]
+  },
+  {
+   "rid": "9_13",
+   "recipe": "Microwave French Toast",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "contract",
+    "order",
+    "contract"
+   ]
+  },
+  {
+   "rid": "9_15",
+   "recipe": "Microwave French Toast",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "contract",
+    "order",
+    "contract"
+   ]
+  },
+  {
+   "rid": "9_19",
+   "recipe": "Microwave French Toast",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": false,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "contract"
+   ]
+  },
+  {
+   "rid": "9_22",
+   "recipe": "Microwave French Toast",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "order",
+    "order",
+    "missing",
+    "missing"
+   ]
+  },
+  {
+   "rid": "9_24",
+   "recipe": "Microwave French Toast",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": false,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "contract"
+   ]
+  },
+  {
+   "rid": "9_25",
+   "recipe": "Microwave French Toast",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "contract"
+   ]
+  },
+  {
+   "rid": "9_36",
+   "recipe": "Microwave French Toast",
+   "truth": true,
+   "tags": [
+    "Preparation Error",
+    "Measurement Error",
+    "Measurement Error",
+    "Missing Step",
+    "Timing Error",
+    "Temperature Error",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "contract",
+    "order",
+    "contract",
+    "missing"
+   ]
+  },
+  {
+   "rid": "9_45",
+   "recipe": "Microwave French Toast",
+   "truth": true,
+   "tags": [
+    "Order Error",
+    "Measurement Error",
+    "Timing Error",
+    "Order Error",
+    "Technique Error",
+    "Order Error",
+    "Technique Error",
+    "Preparation Error",
+    "Order Error",
+    "Timing Error",
+    "Temperature Error",
+    "Order Error",
+    "Measurement Error",
+    "Technique Error",
+    "Order Error",
+    "Order Error",
+    "Order Error",
+    "Order Error"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "order",
+    "missing",
+    "missing",
+    "missing",
+    "missing"
+   ]
+  },
+  {
+   "rid": "9_47",
+   "recipe": "Microwave French Toast",
+   "truth": true,
+   "tags": [
+    "Measurement Error",
+    "Timing Error",
+    "Technique Error",
+    "Preparation Error",
+    "Measurement Error",
+    "Timing Error",
+    "Temperature Error",
+    "Missing Step",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "order",
+    "missing",
+    "missing"
+   ]
+  },
+  {
+   "rid": "9_108",
+   "recipe": "Microwave French Toast",
+   "truth": true,
+   "tags": [
+    "Preparation Error",
+    "Preparation Error"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "order",
+    "contract"
+   ]
+  },
+  {
+   "rid": "3_11",
+   "recipe": "Microwave Mug Pizza",
+   "truth": false,
+   "tags": [],
+   "eidos": false,
+   "eidos_nocontract": false,
+   "eidos_nosearch": false,
+   "baseline": true,
+   "alerts": []
+  },
+  {
+   "rid": "3_12",
+   "recipe": "Microwave Mug Pizza",
+   "truth": true,
+   "tags": [
+    "Other"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "contract",
+    "missing"
+   ]
+  },
+  {
+   "rid": "3_13",
+   "recipe": "Microwave Mug Pizza",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "missing"
+   ]
+  },
+  {
+   "rid": "3_14",
+   "recipe": "Microwave Mug Pizza",
+   "truth": true,
+   "tags": [
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "contract",
+    "contract",
+    "missing",
+    "missing"
+   ]
+  },
+  {
+   "rid": "3_18",
+   "recipe": "Microwave Mug Pizza",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "missing"
+   ]
+  },
+  {
+   "rid": "3_22",
+   "recipe": "Microwave Mug Pizza",
+   "truth": true,
+   "tags": [
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order"
+   ]
+  },
+  {
+   "rid": "3_34",
+   "recipe": "Microwave Mug Pizza",
+   "truth": true,
+   "tags": [
+    "Order Error",
+    "Order Error",
+    "Order Error",
+    "Order Error",
+    "Order Error",
+    "Order Error",
+    "Missing Step",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "contract",
+    "contract",
+    "order"
+   ]
+  },
+  {
+   "rid": "3_36",
+   "recipe": "Microwave Mug Pizza",
+   "truth": true,
+   "tags": [
+    "Preparation Error",
+    "Order Error",
+    "Measurement Error",
+    "Order Error",
+    "Preparation Error",
+    "Order Error",
+    "Technique Error",
+    "Order Error",
+    "Measurement Error",
+    "Order Error",
+    "Order Error",
+    "Order Error",
+    "Order Error",
+    "Measurement Error",
+    "Measurement Error",
+    "Timing Error"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order"
+   ]
+  },
+  {
+   "rid": "3_46",
+   "recipe": "Microwave Mug Pizza",
+   "truth": true,
+   "tags": [
+    "Preparation Error",
+    "Measurement Error",
+    "Measurement Error",
+    "Technique Error",
+    "Measurement Error",
+    "Preparation Error",
+    "Technique Error",
+    "Order Error",
+    "Technique Error",
+    "Order Error",
+    "Order Error",
+    "Timing Error"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "contract"
+   ]
+  },
+  {
+   "rid": "3_49",
+   "recipe": "Microwave Mug Pizza",
+   "truth": true,
+   "tags": [
+    "Preparation Error",
+    "Measurement Error",
+    "Measurement Error",
+    "Measurement Error",
+    "Preparation Error",
+    "Order Error",
+    "Preparation Error",
+    "Technique Error",
+    "Order Error",
+    "Order Error",
+    "Order Error",
+    "Timing Error"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "order",
+    "missing"
+   ]
+  },
+  {
+   "rid": "3_50",
+   "recipe": "Microwave Mug Pizza",
+   "truth": true,
+   "tags": [
+    "Preparation Error",
+    "Preparation Error",
+    "Preparation Error",
+    "Preparation Error",
+    "Order Error",
+    "Preparation Error",
+    "Order Error",
+    "Order Error",
+    "Order Error",
+    "Order Error",
+    "Order Error",
+    "Preparation Error",
+    "Order Error",
+    "Order Error",
+    "Order Error",
+    "Timing Error"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "order",
+    "missing",
+    "missing",
+    "missing"
+   ]
+  },
+  {
+   "rid": "27_3",
+   "recipe": "Cheese Pimiento",
+   "truth": true,
+   "tags": [
+    "Preparation Error"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "contract",
+    "contract",
+    "contract",
+    "order",
+    "missing",
+    "missing",
+    "missing"
+   ]
+  },
+  {
+   "rid": "27_13",
+   "recipe": "Cheese Pimiento",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "contract",
+    "contract",
+    "contract",
+    "contract",
+    "missing"
+   ]
+  },
+  {
+   "rid": "27_15",
+   "recipe": "Cheese Pimiento",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "contract",
+    "order",
+    "contract",
+    "order",
+    "missing",
+    "missing",
+    "missing"
+   ]
+  },
+  {
+   "rid": "27_17",
+   "recipe": "Cheese Pimiento",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "missing"
+   ]
+  },
+  {
+   "rid": "27_18",
+   "recipe": "Cheese Pimiento",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "contract"
+   ]
+  },
+  {
+   "rid": "27_26",
+   "recipe": "Cheese Pimiento",
+   "truth": true,
+   "tags": [
+    "Technique Error",
+    "Technique Error",
+    "Timing Error",
+    "Technique Error",
+    "Preparation Error",
+    "Technique Error",
+    "Technique Error",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "contract",
+    "order",
+    "missing"
+   ]
+  },
+  {
+   "rid": "27_29",
+   "recipe": "Cheese Pimiento",
+   "truth": true,
+   "tags": [
+    "Technique Error",
+    "Measurement Error",
+    "Timing Error",
+    "Technique Error",
+    "Timing Error",
+    "Measurement Error",
+    "Measurement Error",
+    "Measurement Error",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "missing"
+   ]
+  },
+  {
+   "rid": "27_31",
+   "recipe": "Cheese Pimiento",
+   "truth": true,
+   "tags": [
+    "Technique Error",
+    "Technique Error",
+    "Preparation Error",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "contract",
+    "order",
+    "contract",
+    "missing"
+   ]
+  },
+  {
+   "rid": "27_34",
+   "recipe": "Cheese Pimiento",
+   "truth": true,
+   "tags": [
+    "Measurement Error",
+    "Technique Error",
+    "Preparation Error",
+    "Timing Error",
+    "Timing Error",
+    "Measurement Error",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "missing",
+    "missing",
+    "missing",
+    "missing"
+   ]
+  },
+  {
+   "rid": "27_37",
+   "recipe": "Cheese Pimiento",
+   "truth": true,
+   "tags": [
+    "Measurement Error",
+    "Order Error",
+    "Technique Error",
+    "Technique Error",
+    "Timing Error",
+    "Order Error",
+    "Technique Error",
+    "Order Error",
+    "Preparation Error",
+    "Timing Error",
+    "Preparation Error",
+    "Order Error"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "contract",
+    "order",
+    "order",
+    "missing"
+   ]
+  },
+  {
+   "rid": "27_38",
+   "recipe": "Cheese Pimiento",
+   "truth": true,
+   "tags": [
+    "Preparation Error",
+    "Preparation Error",
+    "Preparation Error",
+    "Timing Error",
+    "Order Error",
+    "Order Error",
+    "Preparation Error",
+    "Measurement Error",
+    "Technique Error",
+    "Missing Step",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "contract",
+    "missing"
+   ]
+  },
+  {
+   "rid": "27_45",
+   "recipe": "Cheese Pimiento",
+   "truth": true,
+   "tags": [
+    "Measurement Error",
+    "Preparation Error",
+    "Preparation Error",
+    "Temperature Error",
+    "Order Error",
+    "Preparation Error",
+    "Order Error",
+    "Measurement Error",
+    "Preparation Error",
+    "Order Error",
+    "Measurement Error",
+    "Order Error",
+    "Order Error",
+    "Measurement Error",
+    "Order Error",
+    "Preparation Error",
+    "Order Error"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "missing",
+    "missing"
+   ]
+  },
+  {
+   "rid": "27_49",
+   "recipe": "Cheese Pimiento",
+   "truth": true,
+   "tags": [
+    "Technique Error",
+    "Technique Error",
+    "Preparation Error",
+    "Order Error",
+    "Preparation Error"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "missing",
+    "missing"
+   ]
+  },
+  {
+   "rid": "17_8",
+   "recipe": "Cucumber Raita",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "missing"
+   ]
+  },
+  {
+   "rid": "17_10",
+   "recipe": "Cucumber Raita",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "contract",
+    "order",
+    "contract",
+    "missing"
+   ]
+  },
+  {
+   "rid": "17_11",
+   "recipe": "Cucumber Raita",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "contract",
+    "contract",
+    "missing",
+    "missing",
+    "missing"
+   ]
+  },
+  {
+   "rid": "17_14",
+   "recipe": "Cucumber Raita",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "missing",
+    "missing"
+   ]
+  },
+  {
+   "rid": "17_15",
+   "recipe": "Cucumber Raita",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "contract",
+    "order",
+    "missing"
+   ]
+  },
+  {
+   "rid": "17_16",
+   "recipe": "Cucumber Raita",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "missing"
+   ]
+  },
+  {
+   "rid": "17_19",
+   "recipe": "Cucumber Raita",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "contract",
+    "contract",
+    "missing"
+   ]
+  },
+  {
+   "rid": "17_20",
+   "recipe": "Cucumber Raita",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "contract",
+    "contract",
+    "missing",
+    "missing"
+   ]
+  },
+  {
+   "rid": "17_21",
+   "recipe": "Cucumber Raita",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "contract",
+    "contract",
+    "missing"
+   ]
+  },
+  {
+   "rid": "17_23",
+   "recipe": "Cucumber Raita",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "order",
+    "contract"
+   ]
+  },
+  {
+   "rid": "17_28",
+   "recipe": "Cucumber Raita",
+   "truth": true,
+   "tags": [
+    "Missing Step",
+    "Missing Step",
+    "Technique Error",
+    "Technique Error",
+    "Preparation Error",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "missing",
+    "missing",
+    "missing"
+   ]
+  },
+  {
+   "rid": "17_29",
+   "recipe": "Cucumber Raita",
+   "truth": true,
+   "tags": [
+    "Preparation Error",
+    "Technique Error",
+    "Preparation Error",
+    "Technique Error",
+    "Technique Error",
+    "Technique Error",
+    "Preparation Error",
+    "Preparation Error",
+    "Preparation Error",
+    "Technique Error",
+    "Preparation Error",
+    "Technique Error",
+    "Technique Error",
+    "Preparation Error",
+    "Technique Error",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "contract",
+    "contract",
+    "missing",
+    "missing",
+    "missing"
+   ]
+  },
+  {
+   "rid": "17_36",
+   "recipe": "Cucumber Raita",
+   "truth": true,
+   "tags": [
+    "Measurement Error",
+    "Order Error",
+    "Measurement Error",
+    "Technique Error",
+    "Order Error",
+    "Measurement Error",
+    "Preparation Error",
+    "Order Error",
+    "Preparation Error",
+    "Technique Error",
+    "Measurement Error",
+    "Preparation Error",
+    "Preparation Error",
+    "Missing Step",
+    "Missing Step",
+    "Missing Step",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "order",
+    "order",
+    "missing",
+    "missing",
+    "missing",
+    "missing"
+   ]
+  },
+  {
+   "rid": "17_37",
+   "recipe": "Cucumber Raita",
+   "truth": true,
+   "tags": [
+    "Order Error",
+    "Measurement Error",
+    "Order Error",
+    "Measurement Error",
+    "Preparation Error",
+    "Order Error",
+    "Preparation Error",
+    "Technique Error",
+    "Measurement Error",
+    "Preparation Error",
+    "Preparation Error",
+    "Measurement Error",
+    "Preparation Error",
+    "Order Error",
+    "Missing Step",
+    "Preparation Error"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "order",
+    "order",
+    "missing",
+    "missing"
+   ]
+  },
+  {
+   "rid": "17_40",
+   "recipe": "Cucumber Raita",
+   "truth": true,
+   "tags": [
+    "Technique Error",
+    "Order Error",
+    "Preparation Error",
+    "Order Error",
+    "Preparation Error",
+    "Order Error",
+    "Order Error",
+    "Measurement Error",
+    "Preparation Error",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "contract",
+    "order",
+    "order",
+    "order",
+    "missing"
+   ]
+  },
+  {
+   "rid": "17_43",
+   "recipe": "Cucumber Raita",
+   "truth": true,
+   "tags": [
+    "Technique Error",
+    "Order Error",
+    "Preparation Error",
+    "Order Error",
+    "Order Error",
+    "Preparation Error",
+    "Order Error",
+    "Preparation Error",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "order",
+    "missing",
+    "missing",
+    "missing"
+   ]
+  },
+  {
+   "rid": "17_45",
+   "recipe": "Cucumber Raita",
+   "truth": true,
+   "tags": [
+    "Measurement Error",
+    "Order Error",
+    "Technique Error",
+    "Order Error",
+    "Technique Error",
+    "Order Error",
+    "Order Error",
+    "Technique Error",
+    "Order Error",
+    "Technique Error",
+    "Order Error",
+    "Preparation Error",
+    "Order Error",
+    "Technique Error"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "order",
+    "order",
+    "missing",
+    "missing",
+    "missing"
+   ]
+  },
+  {
+   "rid": "17_49",
+   "recipe": "Cucumber Raita",
+   "truth": true,
+   "tags": [
+    "Measurement Error",
+    "Order Error",
+    "Preparation Error",
+    "Order Error",
+    "Technique Error",
+    "Order Error",
+    "Measurement Error",
+    "Order Error",
+    "Order Error",
+    "Technique Error",
+    "Order Error",
+    "Order Error",
+    "Technique Error",
+    "Order Error",
+    "Order Error"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "order",
+    "order",
+    "contract",
+    "contract"
+   ]
+  },
+  {
+   "rid": "13_12",
+   "recipe": "Butter Corn Cup",
+   "truth": true,
+   "tags": [
+    "Technique Error",
+    "Missing Step",
+    "Missing Step",
+    "Missing Step",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "contract",
+    "contract",
+    "missing",
+    "missing",
+    "missing"
+   ]
+  },
+  {
+   "rid": "13_14",
+   "recipe": "Butter Corn Cup",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "contract",
+    "contract",
+    "order",
+    "missing"
+   ]
+  },
+  {
+   "rid": "13_18",
+   "recipe": "Butter Corn Cup",
+   "truth": false,
+   "tags": [],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "contract",
+    "contract"
+   ]
+  },
+  {
+   "rid": "13_20",
+   "recipe": "Butter Corn Cup",
+   "truth": false,
+   "tags": [],
+   "eidos": false,
+   "eidos_nocontract": false,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": []
+  },
+  {
+   "rid": "13_24",
+   "recipe": "Butter Corn Cup",
+   "truth": true,
+   "tags": [
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "order",
+    "contract",
+    "contract",
+    "missing",
+    "missing"
+   ]
+  },
+  {
+   "rid": "13_31",
+   "recipe": "Butter Corn Cup",
+   "truth": true,
+   "tags": [
+    "Measurement Error",
+    "Temperature Error",
+    "Timing Error",
+    "Technique Error",
+    "Technique Error",
+    "Timing Error",
+    "Technique Error",
+    "Missing Step",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "contract",
+    "order",
+    "contract",
+    "missing"
+   ]
+  },
+  {
+   "rid": "13_32",
+   "recipe": "Butter Corn Cup",
+   "truth": true,
+   "tags": [
+    "Technique Error",
+    "Technique Error",
+    "Preparation Error",
+    "Preparation Error",
+    "Technique Error",
+    "Technique Error",
+    "Technique Error",
+    "Technique Error",
+    "Missing Step",
+    "Missing Step",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "contract"
+   ]
+  },
+  {
+   "rid": "13_36",
+   "recipe": "Butter Corn Cup",
+   "truth": true,
+   "tags": [
+    "Technique Error",
+    "Preparation Error",
+    "Technique Error",
+    "Timing Error",
+    "Preparation Error",
+    "Preparation Error",
+    "Preparation Error",
+    "Preparation Error",
+    "Technique Error",
+    "Missing Step",
+    "Missing Step",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "order",
+    "contract",
+    "missing",
+    "missing",
+    "missing"
+   ]
+  },
+  {
+   "rid": "13_38",
+   "recipe": "Butter Corn Cup",
+   "truth": true,
+   "tags": [
+    "Measurement Error",
+    "Technique Error",
+    "Order Error",
+    "Timing Error",
+    "Temperature Error",
+    "Order Error",
+    "Preparation Error",
+    "Missing Step",
+    "Missing Step",
+    "Missing Step"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "order",
+    "order",
+    "missing"
+   ]
+  },
+  {
+   "rid": "13_41",
+   "recipe": "Butter Corn Cup",
+   "truth": true,
+   "tags": [
+    "Technique Error",
+    "Other",
+    "Order Error",
+    "Other",
+    "Order Error",
+    "Order Error",
+    "Order Error",
+    "Order Error",
+    "Technique Error"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "order",
+    "order",
+    "contract"
+   ]
+  },
+  {
+   "rid": "13_44",
+   "recipe": "Butter Corn Cup",
+   "truth": true,
+   "tags": [
+    "Technique Error",
+    "Technique Error",
+    "Order Error",
+    "Technique Error",
+    "Missing Step",
+    "Technique Error",
+    "Preparation Error",
+    "Order Error",
+    "Preparation Error",
+    "Order Error",
+    "Timing Error",
+    "Order Error"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "contract",
+    "order",
+    "contract",
+    "order",
+    "missing"
+   ]
+  },
+  {
+   "rid": "13_45",
+   "recipe": "Butter Corn Cup",
+   "truth": true,
+   "tags": [
+    "Measurement Error",
+    "Temperature Error",
+    "Technique Error",
+    "Timing Error",
+    "Measurement Error",
+    "Order Error",
+    "Order Error",
+    "Technique Error",
+    "Order Error",
+    "Order Error",
+    "Technique Error",
+    "Order Error"
+   ],
+   "eidos": true,
+   "eidos_nocontract": true,
+   "eidos_nosearch": true,
+   "baseline": true,
+   "alerts": [
+    "order",
+    "contract"
+   ]
+  }
+ ]
+}

@@ -57,15 +57,15 @@
    "eidos": 11,
    "baseline": 11
   },
-  "Measurement Error": {
-   "n": 12,
-   "eidos": 11,
-   "baseline": 12
-  },
   "Technique Error": {
    "n": 14,
    "eidos": 14,
    "baseline": 14
+  },
+  "Measurement Error": {
+   "n": 12,
+   "eidos": 11,
+   "baseline": 12
   },
   "Preparation Error": {
    "n": 12,
@@ -91,6 +91,24 @@
  "missing_step_named_correctly": {
   "n": 15,
   "hit": 11
+ },
+ "skipped_steps": {
+  "eidos": {
+   "labelled": 15,
+   "named": 10,
+   "claims_on_correct_recordings": 6,
+   "correct_recordings": 13,
+   "claims_total": 24,
+   "claims_matching_a_label": 10
+  },
+  "baseline": {
+   "labelled": 15,
+   "named": 11,
+   "claims_on_correct_recordings": 21,
+   "correct_recordings": 13,
+   "claims_total": 61,
+   "claims_matching_a_label": 11
+  }
  },
  "step_tracking": {
   "looks": 2321,

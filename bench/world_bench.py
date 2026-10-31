@@ -230,6 +230,49 @@ Did the person make any mistake: skip a step, do steps in the wrong order, use a
 Reply only with JSON: {{"mistake": true or false, "what": "one short sentence"}}"""
 
 
+BASELINE_STEPS = """A person was asked to do this task: {title}.
+The steps:
+{steps}
+
+These {n} frames are spread evenly over their whole recording, oldest first.
+Which of these steps did the person skip entirely? List only steps you are confident were never done.
+Reply only with JSON: {{"skipped": [step numbers], "why": "one short sentence"}}"""
+
+
+async def do_baseline_steps(split: str, n: int = 24, concurrency: int = 6):
+    """Muse Spark asked directly which steps were skipped (to compare with EIDOS naming skipped steps)."""
+    sem = asyncio.Semaphore(concurrency)
+
+    async def one(prog, r):
+        dst = OUT / split / "baseline_steps" / f"{r['rid']}.json"
+        if dst.exists():
+            return
+        async with sem:
+            files = sorted(frames_dir(r["rid"]).glob("*.jpg"))
+            idx = [round(i * (len(files) - 1) / (n - 1)) for i in range(n)]
+            content = [{"type": "input_image", "image_url": live.data_url(cv2.imread(str(files[i])), 70)} for i in idx]
+            content.append({"type": "input_text", "text": BASELINE_STEPS.format(title=prog["title"], steps=R.step_list(prog), n=n)})
+            for attempt in range(3):
+                try:
+                    resp = await live.meta_responses(live.MODELS["spark"], content, "baseline steps", reasoning={"effort": "low"})
+                    j = _json(live.output_text(resp))
+                    if isinstance(j, dict) and "skipped" in j:
+                        sk = [int(x) for x in j["skipped"] if str(x).isdigit()]
+                        dst.parent.mkdir(parents=True, exist_ok=True)
+                        dst.write_text(json.dumps({"rid": r["rid"], "skipped": sk, "why": j.get("why", "")}))
+                        return
+                except Exception:
+                    await asyncio.sleep(3 + 3 * attempt)
+
+    jobs = []
+    for recipe in SPLITS[split]:
+        recs = recordings(recipe)
+        demo = demo_of(recs)
+        prog = json.loads((OUT / "skills" / demo["rid"] / "program.json").read_text())
+        jobs += [one(prog, r) for r in held_out(recs)]
+    await asyncio.gather(*jobs)
+
+
 async def do_baseline(split: str, n: int = 24, concurrency: int = 6):
     sem = asyncio.Semaphore(concurrency)
 
@@ -239,11 +282,13 @@ async def do_baseline(split: str, n: int = 24, concurrency: int = 6):
             return
         if not prep_one(r["rid"], keep_video=False):
             return
-        fr = load_frames(r["rid"])
-        idx = [round(i * (len(fr) - 1) / (n - 1)) for i in range(n)]
-        content = [{"type": "input_image", "image_url": live.data_url(fr[i][1], 70)} for i in idx]
-        content.append({"type": "input_text", "text": BASELINE.format(title=prog["title"], steps=R.step_list(prog), n=n)})
         async with sem:
+            # only the frames the question uses, loaded when its turn comes (all recordings at
+            # once would not fit in memory)
+            files = sorted(frames_dir(r["rid"]).glob("*.jpg"))
+            idx = [round(i * (len(files) - 1) / (n - 1)) for i in range(n)]
+            content = [{"type": "input_image", "image_url": live.data_url(cv2.imread(str(files[i])), 70)} for i in idx]
+            content.append({"type": "input_text", "text": BASELINE.format(title=prog["title"], steps=R.step_list(prog), n=n)})
             for attempt in range(3):
                 try:
                     resp = await live.meta_responses(live.MODELS["spark"], content, "baseline", reasoning={"effort": "low"})
@@ -279,6 +324,7 @@ def prf(pred: list[bool], truth: list[bool]) -> dict:
 
 def do_score(split: str, variant: str = "") -> dict:
     rows, track_hit, track_n, lat = [], 0, 0, []
+    skip_stats = {}
     miss_hit = miss_n = 0
     for recipe in SPLITS[split]:
         recs = recordings(recipe)
@@ -308,6 +354,26 @@ def do_score(split: str, variant: str = "") -> dict:
                         track_n += 1
                         track_hit += lk["doing"] in inv[a["step_id"]]
                         break
+            # skipped steps: how many steps each system says were skipped (EIDOS: only "missing"
+            # alerts, i.e. never seen by the end; the baseline: its list)
+            bs = OUT / (split) / "baseline_steps" / f"{r['rid']}.json"
+            base_sk = set(json.loads(bs.read_text())["skipped"]) if bs.exists() else None
+            eid_sk = {a["step"] for a in res["alerts"] if a["type"] == "missing"}
+            labelled = {s_["step_id"] for s_ in r["err_steps"] if any(e["tag"] == "Missing Step" for e in s_.get("errors", []))}
+            for sysname, claimed in (("eidos", eid_sk), ("baseline", base_sk)):
+                if claimed is None:
+                    continue
+                d = skip_stats.setdefault(sysname, {"labelled": 0, "named": 0, "claims_on_correct_recordings": 0, "correct_recordings": 0,
+                                                     "claims_total": 0, "claims_matching_a_label": 0})
+                for a in labelled:
+                    if a in inv:
+                        d["labelled"] += 1
+                        d["named"] += bool(inv[a] & claimed)
+                d["claims_total"] += len(claimed)
+                d["claims_matching_a_label"] += sum(1 for c in claimed if pmap.get(c) in labelled)
+                if not r["is_error"]:
+                    d["correct_recordings"] += 1
+                    d["claims_on_correct_recordings"] += len(claimed)
             # missing steps: was the right step reported missing?
             missing_alerts = {a["step"] for a in res["alerts"] if a["type"] in ("missing", "order")}
             for s in r["err_steps"]:
@@ -333,6 +399,7 @@ def do_score(split: str, variant: str = "") -> dict:
         "baseline_ask_muse_spark": prf([x["baseline"] for x in with_base], [x["truth"] for x in with_base]) if with_base else None,
         "recall_by_mistake_type": by_tag,
         "missing_step_named_correctly": {"n": miss_n, "hit": miss_hit},
+        "skipped_steps": skip_stats,
         "step_tracking": {"looks": track_n, "correct": track_hit, "accuracy": round(track_hit / track_n, 3) if track_n else None},
         "look_latency_median_s": lat[len(lat) // 2] if lat else None,
         "rows": rows,
@@ -343,7 +410,7 @@ def do_score(split: str, variant: str = "") -> dict:
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("stage", choices=["prep", "learn", "run", "baseline", "score"])
+    ap.add_argument("stage", choices=["prep", "learn", "run", "baseline", "baseline_steps", "score"])
     ap.add_argument("--split", default="dev")
     ap.add_argument("--concurrency", type=int, default=12)
     ap.add_argument("--only")
@@ -362,6 +429,8 @@ def main():
         asyncio.run(do_run(a.split, a.concurrency, a.only, a.sightings))
     elif a.stage == "baseline":
         asyncio.run(do_baseline(a.split))
+    elif a.stage == "baseline_steps":
+        asyncio.run(do_baseline_steps(a.split))
     else:
         s = do_score(a.split, "_sightings" if a.sightings else "")
         print(json.dumps({k: v for k, v in s.items() if k != "rows"}, indent=1))
