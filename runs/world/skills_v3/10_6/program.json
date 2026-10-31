@@ -1,0 +1,236 @@
+{
+ "title": "Peanut Butter Tortilla Wrap Slices",
+ "domain": "cooking",
+ "inputs": {
+  "tortilla_count": "1",
+  "pieces_count": "6 pieces"
+ },
+ "steps": [
+  {
+   "id": 1,
+   "do": "Place the cutting board flat on the counter",
+   "verb": "place",
+   "objects": [
+    "cutting board"
+   ],
+   "tools": [],
+   "start": 0.0,
+   "end": 7.0,
+   "focus": "cutting board",
+   "done_when": "The cutting board lies flat and empty on the counter",
+   "needs": [],
+   "optional": true,
+   "evidence": {
+    "start": "step1_start.jpg",
+    "end": "step1_end.jpg"
+   }
+  },
+  {
+   "id": 2,
+   "do": "Place {tortilla_count} tortilla flat on the cutting board",
+   "verb": "place",
+   "objects": [
+    "tortilla",
+    "cutting board"
+   ],
+   "tools": [],
+   "start": 8.0,
+   "end": 15.0,
+   "focus": "tortilla",
+   "done_when": "A flat, unfolded tortilla lies entirely on the cutting board",
+   "needs": [
+    1
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step2_start.jpg",
+    "end": "step2_end.jpg",
+    "boxes": [
+     [
+      0.6797,
+      0.7472,
+      0.9062,
+      0.9972
+     ]
+    ],
+    "outlined": "tortilla"
+   }
+  },
+  {
+   "id": 3,
+   "do": "Spread peanut butter evenly across the tortilla",
+   "verb": "spread",
+   "objects": [
+    "peanut butter",
+    "tortilla"
+   ],
+   "tools": [
+    "knife"
+   ],
+   "start": 16.0,
+   "end": 123.0,
+   "focus": "peanut butter",
+   "done_when": "The upper surface of the tortilla is evenly coated with peanut butter, with no large plain areas visible",
+   "needs": [
+    2
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step3_start.jpg",
+    "end": "step3_end.jpg"
+   }
+  },
+  {
+   "id": 4,
+   "do": "Roll the coated tortilla tightly into a closed wrap",
+   "verb": "roll",
+   "objects": [
+    "tortilla",
+    "peanut butter"
+   ],
+   "tools": [],
+   "start": 128.0,
+   "end": 143.0,
+   "focus": "rolled wrap",
+   "done_when": "The tortilla forms a closed cylindrical roll on the cutting board instead of lying flat",
+   "needs": [
+    3
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step4_start.jpg",
+    "end": "step4_end.jpg"
+   }
+  },
+  {
+   "id": 5,
+   "do": "Sprinkle seasoning over the outside of the rolled wrap",
+   "verb": "sprinkle",
+   "objects": [
+    "seasoning",
+    "rolled wrap"
+   ],
+   "tools": [
+    "seasoning shaker"
+   ],
+   "start": 144.0,
+   "end": 175.0,
+   "focus": "seasoning",
+   "done_when": "Visible seasoning specks cover the outside surface of the rolled wrap",
+   "needs": [
+    4
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step5_start.jpg",
+    "end": "step5_end.jpg"
+   }
+  },
+  {
+   "id": 6,
+   "do": "Slice the rolled wrap into {pieces_count}",
+   "verb": "slice",
+   "objects": [
+    "rolled wrap"
+   ],
+   "tools": [
+    "knife",
+    "cutting board"
+   ],
+   "start": 180.0,
+   "end": 259.0,
+   "focus": "wrap pieces",
+   "done_when": "The cutting board holds separate short wrap pieces with the peanut butter filling visible at their cut ends, and no long uncut roll remains",
+   "needs": [
+    4
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step6_start.jpg",
+    "end": "step6_end.jpg"
+   }
+  },
+  {
+   "id": 7,
+   "do": "Transfer the wrap pieces onto a plate",
+   "verb": "transfer",
+   "objects": [
+    "wrap pieces",
+    "plate"
+   ],
+   "tools": [],
+   "start": 292.0,
+   "end": 307.0,
+   "focus": "plate",
+   "done_when": "The plate holds the wrap pieces and the cutting board no longer holds them",
+   "needs": [
+    6
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step7_start.jpg",
+    "end": "step7_end.jpg",
+    "boxes": [
+     [
+      0.2844,
+      0.8056,
+      0.5203,
+      0.9972
+     ],
+     [
+      0.5047,
+      0.1861,
+      0.6453,
+      0.375
+     ]
+    ],
+    "outlined": "plate"
+   }
+  },
+  {
+   "id": 8,
+   "do": "Wipe the cutting board clean",
+   "verb": "wipe",
+   "objects": [
+    "cutting board"
+   ],
+   "tools": [
+    "paper towel"
+   ],
+   "start": 304.0,
+   "end": 315.0,
+   "focus": "cutting board",
+   "done_when": "The empty cutting board is visibly clean, with no peanut butter, seasoning, or food pieces remaining on it",
+   "needs": [],
+   "optional": true,
+   "evidence": {
+    "start": "step8_start.jpg",
+    "end": "step8_end.jpg",
+    "boxes": [
+     [
+      0.35,
+      0.5611,
+      0.6594,
+      0.9972
+     ]
+    ],
+    "outlined": "cutting board"
+   }
+  }
+ ],
+ "compiled_by": "muse-wonder-1.0",
+ "learned_from": "10_6.mp4",
+ "video_seconds": 328.03,
+ "recipe": "Pinwheels",
+ "learn_seconds": 86.2,
+ "calibration": {
+  "source": "10_16",
+  "changes": [
+   {
+    "step": 8,
+    "change": "no longer needs step 7",
+    "why": "the second demonstration (10_16) did step 8 first"
+   }
+  ]
+ }
+}
