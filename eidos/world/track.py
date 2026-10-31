@@ -74,6 +74,7 @@ class EvidenceTracker:
     program: dict
     seen_at: float = 0.9          # evidence that confirms a step was done
     absent: float = 0.35          # below this, a needed step has essentially not been seen
+    min_p: float = 0.0            # a look's likelihood for a step counts as evidence only from this up
     evidence: dict = field(default_factory=dict)
     started: dict = field(default_factory=dict)     # step -> time of its first real sign (p >= 0.3)
     confirmed: dict = field(default_factory=dict)   # step -> time its evidence passed seen_at
@@ -98,7 +99,8 @@ class EvidenceTracker:
         for s, p in dist.items():
             if not s:
                 continue
-            self.evidence[s] = self.evidence.get(s, 0.0) + p
+            if p >= self.min_p:
+                self.evidence[s] = self.evidence.get(s, 0.0) + p
             if p >= 0.3:
                 self.started.setdefault(s, t)
         # current step: the most likely one in this look, if it is likely enough
