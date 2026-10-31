@@ -1,0 +1,188 @@
+{
+ "title": "Make a Hot Spiced Milk Drink",
+ "domain": "cooking",
+ "inputs": {
+  "milk": "1 mugful",
+  "ground_cinnamon": "1 spoonful",
+  "sugar": "1 measuring spoonful",
+  "second_microwave_time": "00:01"
+ },
+ "steps": [
+  {
+   "id": 1,
+   "do": "Rinse the mug under running water and empty it",
+   "verb": "rinse",
+   "objects": [
+    "mug"
+   ],
+   "tools": [
+    "sink faucet"
+   ],
+   "start": 4.0,
+   "end": 27.0,
+   "done_when": "The empty mug is on the counter beside the sink and no water is running into it",
+   "needs": [],
+   "optional": false,
+   "evidence": {
+    "start": "step1_start.jpg",
+    "end": "step1_end.jpg"
+   }
+  },
+  {
+   "id": 2,
+   "do": "Pour {milk} of milk into the mug and cap the milk bottle",
+   "verb": "pour",
+   "objects": [
+    "milk",
+    "mug",
+    "milk bottle"
+   ],
+   "tools": [],
+   "start": 40.0,
+   "end": 59.0,
+   "done_when": "The mug on the counter is filled with white milk and the milk bottle beside it is capped",
+   "needs": [
+    1
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step2_start.jpg",
+    "end": "step2_end.jpg"
+   }
+  },
+  {
+   "id": 3,
+   "do": "Heat the mug of milk in the microwave, then remove the mug",
+   "verb": "heat",
+   "objects": [
+    "mug",
+    "milk"
+   ],
+   "tools": [
+    "microwave"
+   ],
+   "start": 60.0,
+   "end": 143.0,
+   "done_when": "The mug of milk is on the counter beside the closed microwave",
+   "needs": [
+    2
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step3_start.jpg",
+    "end": "step3_end.jpg"
+   }
+  },
+  {
+   "id": 4,
+   "do": "Add {ground_cinnamon} of ground cinnamon to the mug",
+   "verb": "add",
+   "objects": [
+    "ground cinnamon",
+    "mug",
+    "milk"
+   ],
+   "tools": [
+    "spoon"
+   ],
+   "start": 212.0,
+   "end": 223.0,
+   "done_when": "Brown cinnamon powder is visible in the milk in the mug",
+   "needs": [
+    3
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step4_start.jpg",
+    "end": "step4_end.jpg"
+   }
+  },
+  {
+   "id": 5,
+   "do": "Add {sugar} of sugar to the mug",
+   "verb": "add",
+   "objects": [
+    "sugar",
+    "mug"
+   ],
+   "tools": [
+    "measuring spoon"
+   ],
+   "start": 264.0,
+   "end": 279.0,
+   "done_when": "White sugar is visible on the surface of the drink in the mug and the measuring spoon is on the counter",
+   "needs": [
+    3
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step5_start.jpg",
+    "end": "step5_end.jpg"
+   }
+  },
+  {
+   "id": 6,
+   "do": "Stir the drink until the cinnamon and sugar are mixed in",
+   "verb": "stir",
+   "objects": [
+    "mug",
+    "drink"
+   ],
+   "tools": [
+    "spoon"
+   ],
+   "start": 300.0,
+   "end": 331.0,
+   "done_when": "The drink in the mug is evenly mixed and frothy with no dry powder visible on its surface",
+   "needs": [],
+   "optional": false,
+   "evidence": {
+    "start": "step6_start.jpg",
+    "end": "step6_end.jpg"
+   }
+  },
+  {
+   "id": 7,
+   "do": "Heat the drink in the microwave for {second_microwave_time}, then remove the mug",
+   "verb": "heat",
+   "objects": [
+    "mug",
+    "drink"
+   ],
+   "tools": [
+    "microwave"
+   ],
+   "start": 328.0,
+   "end": 415.0,
+   "done_when": "The mug of drink is on the counter by the stove and the microwave door is closed with no mug inside",
+   "needs": [
+    6
+   ],
+   "optional": false,
+   "evidence": {
+    "start": "step7_start.jpg",
+    "end": "step7_end.jpg"
+   }
+  }
+ ],
+ "compiled_by": "muse-wonder-1.0",
+ "learned_from": "8_3.mp4",
+ "video_seconds": 421.02,
+ "recipe": "Spiced Hot Chocolate",
+ "learn_seconds": 84.0,
+ "calibration": {
+  "source": "8_15",
+  "changes": [
+   {
+    "step": 6,
+    "change": "no longer needs step 4",
+    "why": "the second demonstration (8_15) did step 6 first"
+   },
+   {
+    "step": 6,
+    "change": "no longer needs step 5",
+    "why": "the second demonstration (8_15) did step 6 first"
+   }
+  ]
+ }
+}
