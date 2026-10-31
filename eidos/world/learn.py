@@ -77,14 +77,12 @@ def _json(text: str):
     return j
 
 
-async def describe(window: list[tuple[float, object]], hint: str, sem: asyncio.Semaphore) -> dict:
-    content = [{"type": "input_image", "image_url": live.data_url(f, 70)} for _, f in window]
-    content.append({"type": "input_text", "text": DESCRIBE.format(n=len(window), hint=hint)})
+async def describe(window: list[tuple[float, object]], hint: str, sem: asyncio.Semaphore, which: str = "spark") -> dict:
+    prompt = DESCRIBE.format(n=min(len(window), live.OPEN_MAX_IMAGES) if which == "open" else len(window), hint=hint)
     async with sem:
         for attempt in range(3):
             try:
-                r = await live.meta_responses(live.MODELS["spark"], content, "watch window", **FAST)
-                j = _json(live.output_text(r))
+                j = _json(await live.ask([f for _, f in window], prompt, "watch window", which, effort="minimal"))
                 if isinstance(j, dict):
                     return {"t0": window[0][0], "t1": window[-1][0], **j}
             except Exception:
@@ -120,8 +118,18 @@ def notes_text(notes: list[dict]) -> str:
     return "\n".join(lines)
 
 
-async def compile_program(notes: list[dict], title: str) -> dict:
+async def compile_program(notes: list[dict], title: str, which: str = "spark") -> dict:
     prompt = COMPILE.format(title=title or "(none)", notes=notes_text(notes))
+    if which == "open":            # no Meta key: Muse Spark Open compiles
+        for attempt in range(3):
+            try:
+                j = _json(await live.baseten_chat([{"type": "text", "text": prompt}], "compile program", temperature=0))
+                if isinstance(j, dict) and j.get("steps"):
+                    j["compiled_by"] = live.MODELS["open"]
+                    return j
+            except Exception:
+                await asyncio.sleep(3 + 3 * attempt)
+        raise RuntimeError("could not compile a program from the notes")
     for model, extra in ((live.MODELS["wonder"], {"reasoning": {"effort": "medium"}}),
                          (live.MODELS["spark"], {"reasoning": {"effort": "medium"}})):
         try:
@@ -196,7 +204,8 @@ async def outline(program: dict, out: Path) -> None:
     await asyncio.gather(*(one(s) for s in program["steps"]))
 
 
-async def learn(video: str, out: Path, title: str = "", concurrency: int = 8, progress=None) -> dict:
+async def learn(video: str, out: Path, title: str = "", concurrency: int = 8, progress=None, which: str | None = None) -> dict:
+    which = which or live.world_reader()
     out = Path(out)
     out.mkdir(parents=True, exist_ok=True)
     fr = F.sample(video, 1.0)
@@ -205,7 +214,7 @@ async def learn(video: str, out: Path, title: str = "", concurrency: int = 8, pr
     sem = asyncio.Semaphore(concurrency)
     hint = f" ({title})" if title else ""
     wins = windows(fr)
-    tasks = [describe(w, hint, sem) for w in wins]
+    tasks = [describe(w, hint, sem, which) for w in wins]
     notes = []
     for coro in asyncio.as_completed(tasks):
         n = await coro
@@ -216,12 +225,13 @@ async def learn(video: str, out: Path, title: str = "", concurrency: int = 8, pr
     (out / "notes.json").write_text(json.dumps(notes, indent=1))
     if progress:
         await progress({"stage": "compile"})
-    program = tidy(await compile_program(notes, title))
+    program = tidy(await compile_program(notes, title, which))
     program["learned_from"] = Path(video).name
     program["video_seconds"] = fr[-1][0] if fr else 0
     save_evidence(video, program, out / "evidence")
     if progress:
         await progress({"stage": "outline"})
-    await outline(program, out)
+    if which == "spark":           # SAM 3.1 needs the Meta key
+        await outline(program, out)
     (out / "program.json").write_text(json.dumps(program, indent=1))
     return program

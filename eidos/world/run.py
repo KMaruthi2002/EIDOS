@@ -80,19 +80,14 @@ async def look(program: dict, window: list[tuple[float, object]], inputs=None, w
     return {"doing": 0, "what": "", "failed": True}
 
 
-async def check(program: dict, step: dict, ref_img, live_frames: list, inputs=None) -> dict:
+async def check(program: dict, step: dict, ref_img, live_frames: list, inputs=None, which: str = "spark") -> dict:
     inputs = {**program.get("inputs", {}), **(inputs or {})}
     prompt = CHECK_PROMPT.format(title=program.get("title", "task"), do=bind(step["do"], inputs),
                                  done_when=bind(step["done_when"], inputs))
-    content = []
-    if ref_img is not None:
-        content.append({"type": "input_image", "image_url": live.data_url(ref_img, 75)})
-    content += [{"type": "input_image", "image_url": live.data_url(f, 75)} for f in live_frames]
-    content.append({"type": "input_text", "text": prompt})
+    imgs = ([ref_img] if ref_img is not None else []) + list(live_frames)[:7]
     for attempt in range(3):
         try:
-            r = await live.meta_responses(live.MODELS["spark"], content, "check contract", reasoning={"effort": "low"})
-            j = _json(live.output_text(r))
+            j = _json(await live.ask(imgs, prompt, "check contract", which, effort="low", quality=75))
             if isinstance(j, dict) and "ok" in j:
                 v = j["ok"]
                 ok = v if isinstance(v, bool) or v is None else {"true": True, "false": False}.get(str(v).lower())
@@ -109,11 +104,11 @@ It counts if you can see it being done, or see its result ({done_when}) appear.
 Reply only with JSON: {{"done": true, false, or null if you cannot tell, "why": "one short sentence"}}"""
 
 
-async def search(program: dict, step: dict, frames: list, inputs=None) -> dict:
+async def search(program: dict, step: dict, frames: list, inputs=None, which: str = "spark") -> dict:
     """Before saying a step was skipped, look back over everything so far for it, the way a
     person would rewind before accusing someone. Only a clear "yes, it was done" dismisses the alert."""
     inputs = {**program.get("inputs", {}), **(inputs or {})}
-    fr = pick(frames, 16)
+    fr = pick(frames, 16 if which == "spark" else live.OPEN_MAX_IMAGES)
     if not fr:
         return {"done": None, "why": "no frames"}
     span = (frames[-1][0] - frames[0][0]) if isinstance(frames[0], tuple) else 0
@@ -121,12 +116,9 @@ async def search(program: dict, step: dict, frames: list, inputs=None) -> dict:
     mins = f"{max(1, round(span / 60))} minute{'s' if round(span / 60) > 1 else ''}" if span else "few minutes"
     prompt = SEARCH_PROMPT.format(title=program.get("title", "task"), n=len(imgs), mins=mins,
                                   do=bind(step["do"], inputs), done_when=bind(step["done_when"], inputs))
-    content = [{"type": "input_image", "image_url": live.data_url(f, 65)} for f in imgs]
-    content.append({"type": "input_text", "text": prompt})
     for attempt in range(3):
         try:
-            r = await live.meta_responses(live.MODELS["spark"], content, "search back", reasoning={"effort": "low"})
-            j = _json(live.output_text(r))
+            j = _json(await live.ask(imgs, prompt, "search back", which, effort="low", quality=65))
             if isinstance(j, dict) and "done" in j:
                 v = j["done"]
                 done = v if isinstance(v, bool) or v is None else {"true": True, "false": False}.get(str(v).lower())
@@ -136,14 +128,14 @@ async def search(program: dict, step: dict, frames: list, inputs=None) -> dict:
     return {"done": None, "why": "search unavailable", "failed": True}
 
 
-async def confirm(program: dict, alert: dict, frames: list, inputs=None) -> tuple[bool, list]:
+async def confirm(program: dict, alert: dict, frames: list, inputs=None, which: str = "spark") -> tuple[bool, list]:
     """True if the alert stands after searching back. Order alerts are checked per missing step."""
     by_id = {s["id"]: s for s in program["steps"]}
     upto = [x for x in frames if x[0] <= alert["t"]]
     targets = alert["before"] if alert["type"] == "order" else [alert["step"]]
     found = []
     for n in targets:
-        r = await search(program, by_id[n], upto, inputs)
+        r = await search(program, by_id[n], upto, inputs, which)
         found.append({"step": n, **r})
     # the alert stands unless the search clearly finds every missing step was done after all;
     # "cannot tell" does not dismiss it (on the dev recipes that only ever hid real mistakes)
@@ -250,7 +242,7 @@ def pick(fr: list, n: int) -> list:
     return [fr[round(i * (len(fr) - 1) / (n - 1))] for i in range(n)]
 
 
-async def verdict(program: dict, step: dict, ref, frames_between, t_end: float, t_view: float, inputs=None) -> dict:
+async def verdict(program: dict, step: dict, ref, frames_between, t_end: float, t_view: float, inputs=None, which: str = "spark") -> dict:
     """Check a finished step's contract, the way a careful person would.
 
     First look: the last moment the step was in view plus the few seconds after it ended.
@@ -258,13 +250,13 @@ async def verdict(program: dict, step: dict, ref, frames_between, t_end: float, 
     settled and the hands have moved away) fails too. If either look cannot see enough,
     nothing is reported."""
     first = pick(frames_between(t_view - 1, t_view) + frames_between(t_end, t_end + 3), 4)
-    r1 = await check(program, step, ref, first, inputs)
+    r1 = await check(program, step, ref, first, inputs, which)
     if r1["ok"] is not False:
         return {**r1, "t_alert": t_end + 3, "looks": 1}
     second = pick(frames_between(t_end + 6, t_end + 12), 3)
     if not second:
         return {**r1, "ok": None, "why": "not confirmed: " + r1["why"], "t_alert": t_end + 3, "looks": 1}
-    r2 = await check(program, step, ref, second, inputs)
+    r2 = await check(program, step, ref, second, inputs, which)
     if r2["ok"] is False:
         return {**r2, "t_alert": t_end + 12, "looks": 2, "first": r1["why"]}
     return {**r2, "t_alert": t_end + 12, "looks": 2, "first": r1["why"]}

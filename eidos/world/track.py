@@ -28,13 +28,19 @@ RANKED_PROMPT = """A person is doing this task live: {title}.
 The steps:
 {steps}
 
-These {n} frames are the last {n} seconds from the live camera, oldest first.
+These {n} frames span the last {secs} seconds from the live camera, oldest first.
 Which step is the person working on right now? Give your best three guesses with how likely each is, most likely first. Use 0 for "none of these steps" (moving around, fetching things, idle, something else).
 Reply only with JSON: {{"guesses": [{{"step": number, "p": 0.0 to 1.0}}, ...], "what": "what they are doing, in a few words"}}"""
 
 
+OPEN_MAX_IMAGES = 8      # Muse Spark Open on Baseten takes at most 8 images per request
+
+
 async def look_ranked(program: dict, window: list, inputs=None, which: str = "spark") -> dict:
-    prompt = RANKED_PROMPT.format(title=program.get("title", "task"), steps=R.step_list(program, inputs), n=len(window))
+    if which == "open" and len(window) > OPEN_MAX_IMAGES:      # same span, fewer frames
+        window = R.pick(window, OPEN_MAX_IMAGES)
+    span = round(window[-1][0] - window[0][0]) + 1 if window else 0
+    prompt = RANKED_PROMPT.format(title=program.get("title", "task"), steps=R.step_list(program, inputs), n=len(window), secs=span)
     ids = {s["id"] for s in program["steps"]}
     for attempt in range(3):
         try:
@@ -144,7 +150,7 @@ class EvidenceTracker:
 
 async def replay(program: dict, refs: dict, frames: list, concurrency: int = 10, inputs=None, which: str = "spark",
                  looks: list | None = None, contracts: bool = True, verify: bool = True,
-                 seen_at: float = 0.9, absent: float = 0.35) -> dict:
+                 seen_at: float = 0.9, absent: float = 0.35, min_p: float = 0.0, every: float = EVERY) -> dict:
     """Run on a recording as if live, with ranked looks and the evidence tracker. Failed visual
     checks are notes, not alarms (in round 1 they fired as often on correct recordings)."""
     sem = asyncio.Semaphore(concurrency)
@@ -155,13 +161,13 @@ async def replay(program: dict, refs: dict, frames: list, concurrency: int = 10,
             win = [(ti, f) for ti, f in frames if t - SPAN < ti <= t]
             if len(win) >= 2:
                 jobs.append((t, win))
-            t += EVERY
+            t += every
 
         async def one(t, win):
             async with sem:
                 return {"t": t, **(await look_ranked(program, win, inputs, which))}
         looks = sorted(await asyncio.gather(*(one(t, w) for t, w in jobs)), key=lambda x: x["t"])
-    tr = EvidenceTracker(program, seen_at=seen_at, absent=absent)
+    tr = EvidenceTracker(program, seen_at=seen_at, absent=absent, min_p=min_p)
     for lk in looks:
         tr.feed(lk["t"], lk)
     tr.finish(times[-1] if times else 0)
@@ -171,7 +177,7 @@ async def replay(program: dict, refs: dict, frames: list, concurrency: int = 10,
 
         async def conf(e):
             async with sem:
-                return e, await R.confirm(program, e, frames, inputs)
+                return e, await R.confirm(program, e, frames, inputs, which)
         for e, (stands, found) in await asyncio.gather(*(conf(e) for e in cands)):
             e["searched"] = found
             if not stands:
@@ -193,7 +199,7 @@ async def replay(program: dict, refs: dict, frames: list, concurrency: int = 10,
         async def chk(ev):
             sid = ev["step"]
             async with sem:
-                res = await R.verdict(program, tr.by_id[sid], refs.get(sid), at, ev["t"], last_seen.get(sid, ev["t"]), inputs)
+                res = await R.verdict(program, tr.by_id[sid], refs.get(sid), at, ev["t"], last_seen.get(sid, ev["t"]), inputs, which)
             return {"t": ev["t"], "step": sid, **res}
         checks = await asyncio.gather(*(chk(e) for e in ends))
         for c in checks:

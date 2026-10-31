@@ -84,6 +84,12 @@ Reply only with JSON: {{"guesses": [{{"step": number, "p": 0.0 to 1.0}}, ...], "
 async def look_variant(variant: str, prog: dict, rid: str, t: float) -> dict:
     title = prog.get("title", "task")
     steps = R.step_list(prog)
+    if variant == "open20":                             # version 3's look on Muse Spark Open (Baseten)
+        from eidos.world import track as T
+        win = frames_upto(rid, t, 20)
+        out = await T.look_ranked(prog, win, which="open")
+        ranked = sorted(((int(k), v) for k, v in out.get("dist", {}).items()), key=lambda x: -x[1])
+        return {"top": out["doing"], "ranked": [k for k, _ in ranked][:3], "failed": out.get("failed", False)}
     if variant == "base":                               # what round 1 used
         win = frames_upto(rid, t, 6)
         out = await R.look(prog, win)
@@ -126,8 +132,8 @@ async def look_variant(variant: str, prog: dict, rid: str, t: float) -> dict:
     return {"top": 0, "ranked": [], "failed": True}
 
 
-async def run(variant: str, concurrency: int = 12):
-    moments = json.loads((OUT / "moments.json").read_text())
+async def run(variant: str, concurrency: int = 12, limit: int | None = None):
+    moments = json.loads((OUT / "moments.json").read_text())[:limit]
     progs = {m["demo"]: json.loads((W.OUT / "skills" / m["demo"] / "program.json").read_text()) for m in moments}
     sem = asyncio.Semaphore(concurrency)
 
@@ -158,6 +164,6 @@ if __name__ == "__main__":
     if cmd == "sample":
         sample()
     elif cmd == "run":
-        asyncio.run(run(sys.argv[2]))
+        asyncio.run(run(sys.argv[2], limit=int(sys.argv[3]) if len(sys.argv) > 3 else None))
     else:
         report()

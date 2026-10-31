@@ -55,6 +55,8 @@ SPLITS = {
     # chosen by rule before any test run: the eight next-shortest recipes by average recording length
     "test": ["Microwave Egg Sandwich", "Pinwheels", "Breakfast Burritos", "Microwave French Toast",
              "Microwave Mug Pizza", "Cheese Pimiento", "Cucumber Raita", "Butter Corn Cup"],
+    # extra development data for version 4 (from round 1's recipes, now development data): the first three
+    "dev4": ["Microwave Egg Sandwich", "Pinwheels", "Breakfast Burritos"],
     # round 2, fixed by the same rule before version 3 was tuned: the next six shortest recipes
     # by average recording length, none of them ever looked at
     "test2": ["Herb Omelet with Fried Tomatoes", "Ramen", "Blender Banana Pancakes", "Zoodles", "Coffee",
@@ -93,7 +95,14 @@ def calib_of(recs: list[dict]) -> dict:
 VERSION = {"v": 1}
 # version 3: ranked 20-second looks and the evidence tracker (eidos/world/track.py), calibrated on
 # one extra demonstration; visual checks are notes, not alarms. Thresholds are set on development data.
-PARAMS = {"seen_at": 0.9, "absent": 0.35}
+PARAMS = {"seen_at": 0.9, "absent": 0.35, "min_p": 0.0}
+# version 4: version 3's method on Muse Spark Open (Baseten), used once the Meta API credits ran out:
+# 8 frames spread over each 20-second look (its limit), a look every 6 seconds (its throughput).
+OPEN = {"which": "open", "every": 6.0}
+
+
+def v4() -> bool:
+    return VERSION["v"] >= 4
 
 
 def calibs_of(recs: list[dict]) -> list[dict]:
@@ -118,7 +127,7 @@ def looks_cache(demo: str, rid: str, prog: dict) -> Path:
     """Looks depend only on the step list shown to the model (and the kind of look), so they are cached by it."""
     import hashlib
     h = hashlib.sha1(R.step_list(prog).encode()).hexdigest()[:10]
-    kind = "__ranked20" if VERSION["v"] >= 3 else ""
+    kind = "__open8_6s" if VERSION["v"] >= 4 else "__ranked20" if VERSION["v"] >= 3 else ""
     return OUT / "looks" / f"{demo}__{rid}__{h}{kind}.json"
 
 
@@ -187,7 +196,7 @@ async def do_learn(split: str):
             continue
         prep_one(demo["rid"], keep_video=True)
         t0 = time.monotonic()
-        prog = await L.learn(str(video_path(demo["rid"])), sk)
+        prog = await L.learn(str(video_path(demo["rid"])), sk, which="open" if v4() else None)
         prog["recipe"] = recipe
         prog["learn_seconds"] = round(time.monotonic() - t0, 1)
         (sk / "program_raw.json").write_text(json.dumps(prog, indent=1))
@@ -208,9 +217,10 @@ async def do_learn(split: str):
             prep_one(cal["rid"], keep_video=False)
             cache = looks_cache(demo["rid"], cal["rid"], prog)
             cal_fn = calibrate_v3 if VERSION["v"] >= 3 else calibrate
+            extra = {**OPEN, "seen_at": PARAMS["seen_at"], "min_p": PARAMS["min_p"]} if v4() else {}
             prog, res = await cal_fn(prog, R.load_refs(sk, prog), load_frames(cal["rid"]),
                                      source=f"{['second', 'third'][i]} demonstration ({cal['rid']})",
-                                     looks=json.loads(cache.read_text()) if cache.exists() else None)
+                                     looks=json.loads(cache.read_text()) if cache.exists() else None, **extra)
             changes += res["changes"] if VERSION["v"] >= 3 else prog["calibration"]["changes"]
             cache.parent.mkdir(parents=True, exist_ok=True)
             cache.write_text(json.dumps(res["looks"]))
@@ -246,7 +256,8 @@ async def do_run(split: str, concurrency: int, only: str | None = None, sighting
             cached = json.loads(cache.read_text()) if cache.exists() else None
             if VERSION["v"] >= 3:
                 res = await T.replay(prog, refs, fr, concurrency=concurrency, looks=cached, contracts=False,
-                                     seen_at=PARAMS["seen_at"], absent=PARAMS["absent"])
+                                     seen_at=PARAMS["seen_at"], absent=PARAMS["absent"], min_p=PARAMS["min_p"],
+                                     **(OPEN if v4() else {}))
             else:
                 res = await R.replay(prog, refs, fr, concurrency=concurrency, sightings=sightings or v2,
                                      contract_alarms=not v2, looks=cached)
@@ -281,23 +292,24 @@ Which of these steps did the person skip entirely? List only steps you are confi
 Reply only with JSON: {{"skipped": [step numbers], "why": "one short sentence"}}"""
 
 
-async def do_baseline_steps(split: str, n: int = 24, concurrency: int = 6):
+async def do_baseline_steps(split: str, n: int = 24, concurrency: int = 6, which: str = "spark"):
     """Muse Spark asked directly which steps were skipped (to compare with EIDOS naming skipped steps)."""
     sem = asyncio.Semaphore(concurrency)
+    sub = "baseline_steps" + ("_open" if which == "open" else "")
+    n = live.OPEN_MAX_IMAGES if which == "open" else n
 
     async def one(prog, r):
-        dst = OUT / split / "baseline_steps" / f"{r['rid']}.json"
+        dst = OUT / split / sub / f"{r['rid']}.json"
         if dst.exists():
             return
         async with sem:
             files = sorted(frames_dir(r["rid"]).glob("*.jpg"))
             idx = [round(i * (len(files) - 1) / (n - 1)) for i in range(n)]
-            content = [{"type": "input_image", "image_url": live.data_url(cv2.imread(str(files[i])), 70)} for i in idx]
-            content.append({"type": "input_text", "text": BASELINE_STEPS.format(title=prog["title"], steps=R.step_list(prog), n=n)})
+            imgs = [cv2.imread(str(files[i])) for i in idx]
+            prompt = BASELINE_STEPS.format(title=prog["title"], steps=R.step_list(prog), n=n)
             for attempt in range(3):
                 try:
-                    resp = await live.meta_responses(live.MODELS["spark"], content, "baseline steps", reasoning={"effort": "low"})
-                    j = _json(live.output_text(resp))
+                    j = _json(await live.ask(imgs, prompt, "baseline steps", which, effort="low"))
                     if isinstance(j, dict) and "skipped" in j:
                         sk = [int(x) for x in j["skipped"] if str(x).isdigit()]
                         dst.parent.mkdir(parents=True, exist_ok=True)
@@ -315,11 +327,13 @@ async def do_baseline_steps(split: str, n: int = 24, concurrency: int = 6):
     await asyncio.gather(*jobs)
 
 
-async def do_baseline(split: str, n: int = 24, concurrency: int = 6):
+async def do_baseline(split: str, n: int = 24, concurrency: int = 6, which: str = "spark"):
     sem = asyncio.Semaphore(concurrency)
+    sub = "baseline" + ("_open" if which == "open" else "")
+    n = live.OPEN_MAX_IMAGES if which == "open" else n
 
     async def one(prog, r):
-        dst = OUT / split / "baseline" / f"{r['rid']}.json"
+        dst = OUT / split / sub / f"{r['rid']}.json"
         if dst.exists():
             return
         if not prep_one(r["rid"], keep_video=False):
@@ -329,12 +343,11 @@ async def do_baseline(split: str, n: int = 24, concurrency: int = 6):
             # once would not fit in memory)
             files = sorted(frames_dir(r["rid"]).glob("*.jpg"))
             idx = [round(i * (len(files) - 1) / (n - 1)) for i in range(n)]
-            content = [{"type": "input_image", "image_url": live.data_url(cv2.imread(str(files[i])), 70)} for i in idx]
-            content.append({"type": "input_text", "text": BASELINE.format(title=prog["title"], steps=R.step_list(prog), n=n)})
+            imgs = [cv2.imread(str(files[i])) for i in idx]
+            prompt = BASELINE.format(title=prog["title"], steps=R.step_list(prog), n=n)
             for attempt in range(3):
                 try:
-                    resp = await live.meta_responses(live.MODELS["spark"], content, "baseline", reasoning={"effort": "low"})
-                    j = _json(live.output_text(resp))
+                    j = _json(await live.ask(imgs, prompt, "baseline", which, effort="low"))
                     if isinstance(j, dict) and "mistake" in j:
                         m = j["mistake"] if isinstance(j["mistake"], bool) else str(j["mistake"]).lower() == "true"
                         dst.parent.mkdir(parents=True, exist_ok=True)
@@ -385,10 +398,12 @@ def do_score(split: str, variant: str = "") -> dict:
             types = [a["type"] for a in res["alerts"]]
             b = OUT / split / "baseline" / f"{r['rid']}.json"
             base = json.loads(b.read_text())["mistake"] if b.exists() else None
+            bo = OUT / split / "baseline_open" / f"{r['rid']}.json"
+            base_open = json.loads(bo.read_text())["mistake"] if bo.exists() else None
             rows.append({"rid": r["rid"], "recipe": recipe, "truth": r["is_error"], "tags": r["tags"],
                          "eidos": bool(types), "eidos_nocontract": any(t != "contract" for t in types),
                          "eidos_nosearch": bool(types) or bool(res.get("dismissed")),
-                         "baseline": base, "alerts": types})
+                         "baseline": base, "baseline_open": base_open, "alerts": types})
             # step tracking: looks inside an annotated step whose step EIDOS learned
             for lk in res["looks"]:
                 for a in r["steps"]:
@@ -400,9 +415,11 @@ def do_score(split: str, variant: str = "") -> dict:
             # alerts, i.e. never seen by the end; the baseline: its list)
             bs = OUT / (split) / "baseline_steps" / f"{r['rid']}.json"
             base_sk = set(json.loads(bs.read_text())["skipped"]) if bs.exists() else None
+            bso = OUT / (split) / "baseline_steps_open" / f"{r['rid']}.json"
+            base_sk_open = set(json.loads(bso.read_text())["skipped"]) if bso.exists() else None
             eid_sk = {a["step"] for a in res["alerts"] if a["type"] == "missing"}
             labelled = {s_["step_id"] for s_ in r["err_steps"] if any(e["tag"] == "Missing Step" for e in s_.get("errors", []))}
-            for sysname, claimed in (("eidos", eid_sk), ("baseline", base_sk)):
+            for sysname, claimed in (("eidos", eid_sk), ("baseline", base_sk), ("baseline_open", base_sk_open)):
                 if claimed is None:
                     continue
                 d = skip_stats.setdefault(sysname, {"labelled": 0, "named": 0, "claims_on_correct_recordings": 0, "correct_recordings": 0,
@@ -439,6 +456,8 @@ def do_score(split: str, variant: str = "") -> dict:
         "eidos_no_contracts": prf([x["eidos_nocontract"] for x in rows], truth),
         "eidos_no_search_back": prf([x["eidos_nosearch"] for x in rows], truth),
         "baseline_ask_muse_spark": prf([x["baseline"] for x in with_base], [x["truth"] for x in with_base]) if with_base else None,
+        "baseline_ask_muse_spark_open": (lambda wb: prf([x["baseline_open"] for x in wb], [x["truth"] for x in wb]) if wb else None)(
+            [x for x in rows if x.get("baseline_open") is not None]),
         "recall_by_mistake_type": by_tag,
         "missing_step_named_correctly": {"n": miss_n, "hit": miss_hit},
         "skipped_steps": skip_stats,
@@ -453,16 +472,18 @@ def do_score(split: str, variant: str = "") -> dict:
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("stage", choices=["prep", "learn", "run", "baseline", "baseline_steps", "score"])
+    ap.add_argument("--which", default="spark", help="the model asked directly in the baselines: spark or open")
     ap.add_argument("--split", default="dev")
     ap.add_argument("--concurrency", type=int, default=12)
     ap.add_argument("--only")
     ap.add_argument("--version", type=int, default=1, help="1: as round 1 was run; 2: two calibration demos, sighting rule, checks as notes; 3: ranked looks and evidence tracker")
     ap.add_argument("--seen-at", type=float, default=0.9)
     ap.add_argument("--absent", type=float, default=0.35)
+    ap.add_argument("--min-p", type=float, default=0.0)
     ap.add_argument("--sightings", action="store_true", help="the tracker rule added after the test run (separate results)")
     a = ap.parse_args()
     VERSION["v"] = a.version
-    PARAMS.update({"seen_at": a.seen_at, "absent": a.absent})
+    PARAMS.update({"seen_at": a.seen_at, "absent": a.absent, "min_p": a.min_p})
     if a.stage == "prep":
         for recipe in SPLITS[a.split]:
             recs = recordings(recipe)
@@ -475,9 +496,9 @@ def main():
     elif a.stage == "run":
         asyncio.run(do_run(a.split, a.concurrency, a.only, a.sightings))
     elif a.stage == "baseline":
-        asyncio.run(do_baseline(a.split))
+        asyncio.run(do_baseline(a.split, which=a.which))
     elif a.stage == "baseline_steps":
-        asyncio.run(do_baseline_steps(a.split))
+        asyncio.run(do_baseline_steps(a.split, which=a.which))
     else:
         s = do_score(a.split, tag() or ("_sightings" if a.sightings else ""))
         print(json.dumps({k: v for k, v in s.items() if k != "rows"}, indent=1))

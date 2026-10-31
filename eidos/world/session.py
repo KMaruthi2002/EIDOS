@@ -34,7 +34,8 @@ class LiveSession:
         # v3 (default): ranked 20-second looks and the evidence tracker; failed checks are notes.
         # v1: single answers over 6 seconds and votes, as in the benchmark's round 1.
         self.v3 = mode == "v3"
-        self.reader = reader if reader in ("spark", "open") else "spark"
+        from .. import live as _live
+        self.reader = reader if reader in ("spark", "open") else _live.world_reader()
         self.program = program
         self.inputs = {**program.get("inputs", {}), **(inputs or {})}
         self.refs = R.load_refs(skill_dir, program)
@@ -129,7 +130,7 @@ class LiveSession:
         self.emit("state", self.state())
 
     async def _confirm(self, ev: dict):
-        stands, found = await R.confirm(self.program, ev, list(self.history), self.inputs)
+        stands, found = await R.confirm(self.program, ev, list(self.history), self.inputs, self.reader)
         ev["searched"] = found
         if stands:
             ev["kind"] = "alert"
@@ -161,10 +162,10 @@ class LiveSession:
             return self._between(t0, t1)
 
         first = R.pick(await between(t_view - 1, t_view) + await between(t, t + 3), 4)
-        res = await R.check(self.program, step, self.refs.get(step_id), first, self.inputs)
+        res = await R.check(self.program, step, self.refs.get(step_id), first, self.inputs, self.reader)
         if res["ok"] is False:
             second = R.pick(await between(t + 6, t + 12), 3)
-            res = (await R.check(self.program, step, self.refs.get(step_id), second, self.inputs)) if second else \
+            res = (await R.check(self.program, step, self.refs.get(step_id), second, self.inputs, self.reader)) if second else \
                 {**res, "ok": None, "why": "not confirmed: " + res["why"]}
         self.checks[step_id] = res
         self.emit("check", {"t": t, "step": step_id, **res})

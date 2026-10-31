@@ -109,8 +109,8 @@ def delete(sid: str):
 
 @router.post("/api/world/learn")
 async def learn(file: UploadFile = File(...), title: str = Form("")):
-    if not live.meta_live():
-        raise HTTPException(400, "Learning from real-world video needs a Meta Model API key (MODEL_API_KEY in .env).")
+    if not (live.meta_live() or live.open_live()):
+        raise HTTPException(400, "Learning from real-world video needs a Meta Model API key (MODEL_API_KEY) or a Baseten key for Muse Spark Open (BASETEN_API_KEY) in .env.")
     sid = "world-" + uuid.uuid4().hex[:8]
     out = SKILLS / sid
     out.mkdir(parents=True)
@@ -157,14 +157,14 @@ async def learn(file: UploadFile = File(...), title: str = Form("")):
 @router.post("/api/world/live/start")
 async def live_start(request: Request):
     reap()
-    if not live.meta_live():
-        raise HTTPException(400, "Following live needs a Meta Model API key (MODEL_API_KEY in .env).")
+    if not (live.meta_live() or live.open_live()):
+        raise HTTPException(400, "Following live needs a Meta Model API key (MODEL_API_KEY) or a Baseten key (BASETEN_API_KEY) in .env.")
     if len(SESSIONS) >= MAX_SESSIONS:
         raise HTTPException(429, "Too many live sessions are open. Finish one first.")
     body = await request.json()
     p = _skill(body.get("skill", ""))
     prog = json.loads((p / "program.json").read_text())
-    reader = body.get("reader", "spark")
+    reader = body.get("reader") or live.world_reader()
     if reader == "open" and not live.open_live():
         raise HTTPException(400, "Muse Spark Open needs a Baseten key (BASETEN_API_KEY in .env).")
     s = LiveSession(uuid.uuid4().hex[:10], p, prog, body.get("inputs") or {}, reader)

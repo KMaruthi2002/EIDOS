@@ -121,7 +121,7 @@ def test_replay_search_back_dismisses_a_missed_step(monkeypatch):
     seq = {t: d for t, d in zip(range(6, 60, 3), [0, 0, 3, 3, 5, 5, 0])}   # step 1 never recognised
     monkeypatch.setattr(R, "look", scripted(seq))
 
-    async def found(program, step, frames, inputs=None):
+    async def found(program, step, frames, inputs=None, which="spark"):
         return {"done": True if step["id"] == 1 else False, "why": "searched"}
     monkeypatch.setattr(R, "search", found)
     res = run(R.replay(PROGRAM, {}, frames(30), contracts=False))
@@ -133,7 +133,7 @@ def test_replay_keeps_an_alert_the_search_cannot_settle(monkeypatch):
     seq = {t: d for t, d in zip(range(6, 60, 3), [0, 0, 3, 3, 5, 5, 0])}
     monkeypatch.setattr(R, "look", scripted(seq))
 
-    async def unsure(program, step, frames, inputs=None):
+    async def unsure(program, step, frames, inputs=None, which="spark"):
         return {"done": None, "why": "cannot tell"}
     monkeypatch.setattr(R, "search", unsure)
     res = run(R.replay(PROGRAM, {}, frames(30), contracts=False))
@@ -155,7 +155,7 @@ def test_live_session_feeds_looks_in_time_order(monkeypatch, tmp_path):
     monkeypatch.setattr(R, "check", ok)
 
     async def go():
-        s = S.LiveSession("t", tmp_path, PROGRAM, mode="v1")
+        s = S.LiveSession("t", tmp_path, PROGRAM, mode="v1", reader="spark")
         q = asyncio.Queue()
         s.listeners.append(q)
         jpeg = cv2.imencode(".jpg", np.zeros((252, 448, 3), np.uint8))[1].tobytes()
@@ -230,7 +230,7 @@ def test_live_session_v3_alert_and_notes(monkeypatch, tmp_path):
     monkeypatch.setattr(R, "search", unsure)
 
     async def go():
-        s = S.LiveSession("v3", tmp_path, PROGRAM)
+        s = S.LiveSession("v3", tmp_path, PROGRAM, reader="spark")
         jpeg = cv2.imencode(".jpg", np.zeros((252, 448, 3), np.uint8))[1].tobytes()
         for t in range(0, 22):
             s.add_frame(float(t), jpeg)

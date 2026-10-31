@@ -49,11 +49,12 @@ async def calibrate(program: dict, refs: dict, frames: list, source: str = "seco
 
 
 async def calibrate_v3(program: dict, refs: dict, frames: list, source: str = "second demonstration",
-                       concurrency: int = 8, looks: list | None = None, seen_at: float = 0.9) -> tuple[dict, dict]:
+                       concurrency: int = 8, looks: list | None = None, seen_at: float = 0.9, which: str = "spark",
+                       every: float = 3.0, min_p: float = 0.0) -> tuple[dict, dict]:
     """The same calibration with the version 3 tracker (ranked looks, evidence)."""
     from . import track as T
     res = await T.replay(program, refs, frames, concurrency=concurrency, looks=looks, contracts=False, verify=False,
-                         seen_at=seen_at)
+                         seen_at=seen_at, which=which, every=every, min_p=min_p)
     ev, started = res["evidence"], res["started"]
     changes = []
     by_id = {s["id"]: s for s in program["steps"]}

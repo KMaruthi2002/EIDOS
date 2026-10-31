@@ -143,6 +143,45 @@ async def baseten_chat(content: list, purpose: str, **extra) -> str:
         raise
 
 
+OPEN_MAX_IMAGES = 8      # Muse Spark Open on Baseten accepts at most 8 images per request
+
+
+def _spread(items: list, n: int) -> list:
+    if len(items) <= n:
+        return items
+    return [items[round(i * (len(items) - 1) / (n - 1))] for i in range(n)]
+
+
+async def ask(images: list, text: str, purpose: str, which: str = "spark", effort: str = "minimal", quality: int = 70) -> str:
+    """Images plus a question to Muse Spark (Meta) or Muse Spark Open (Baseten); returns the reply text.
+    For Muse Spark Open, more than 8 images are thinned evenly to 8."""
+    if which == "open":
+        imgs = _spread(images, OPEN_MAX_IMAGES)
+        content = [{"type": "image_url", "image_url": {"url": data_url(f, quality)}} for f in imgs]
+        content.append({"type": "text", "text": text})
+        return await baseten_chat(content, purpose, temperature=0)
+    content = [{"type": "input_image", "image_url": data_url(f, quality)} for f in images]
+    content.append({"type": "input_text", "text": text})
+    return output_text(await meta_responses(MODELS["spark"], content, purpose, reasoning={"effort": effort}))
+
+
+_READER = {"at": 0.0, "which": None}
+
+
+def world_reader() -> str:
+    """Which model watches in the real world: EIDOS_WORLD_READER if set; otherwise Muse Spark if its
+    key really works (a key can be present but out of credits), else Muse Spark Open. Checked at
+    most every 10 minutes."""
+    w = os.environ.get("EIDOS_WORLD_READER")
+    if w in ("spark", "open"):
+        return w
+    if _READER["which"] and time.monotonic() - _READER["at"] < 600:
+        return _READER["which"]
+    which = "spark" if meta_live() and works("spark") else ("open" if open_live() else "spark")
+    _READER.update({"at": time.monotonic(), "which": which})
+    return which
+
+
 def output_text(resp: dict) -> str:
     if resp.get("output_text"):
         return resp["output_text"]
