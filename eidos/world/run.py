@@ -283,7 +283,7 @@ def load_refs(skill_dir: Path, program: dict) -> dict:
 
 async def replay(program: dict, refs: dict, frames: list[tuple[float, object]], contracts: bool = True,
                  concurrency: int = 8, inputs=None, which: str = "spark", looks: list | None = None,
-                 verify: bool = True, sightings: bool = True) -> dict:
+                 verify: bool = True, sightings: bool = True, contract_alarms: bool = True) -> dict:
     """Run on a recording as if live: look k at time t sees only frames up to t.
 
     The looks are independent, so they are computed in parallel and then fed to the tracker
@@ -344,7 +344,9 @@ async def replay(program: dict, refs: dict, frames: list[tuple[float, object]], 
         checks = await asyncio.gather(*(chk(e) for e in ends))
         for c in checks:
             if c["ok"] is False and not c.get("failed"):
-                tr.events.append({"t": c["t_alert"], "kind": "alert", "type": "contract", "step": c["step"],
+                # with contract_alarms off, a failed check is a note asking the person to look,
+                # not an alarm (on correct recordings it fired as often as on wrong ones)
+                tr.events.append({"t": c["t_alert"], "kind": "alert" if contract_alarms else "note", "type": "contract", "step": c["step"],
                                   "text": f"Check failed on step {c['step']} ({tr.by_id[c['step']]['do']}): {c['why']}"})
     tr.events.sort(key=lambda e: e["t"])
     return {"looks": [{"t": t, **lk} for t, lk in looks], "events": tr.events, "checks": checks,

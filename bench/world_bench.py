@@ -83,9 +83,27 @@ def calib_of(recs: list[dict]) -> dict:
     return [r for r in recs if not r["is_error"]][1]
 
 
+# version 1: learn from one correct recording, calibrate on the next (round 1 was run with this)
+# version 2: calibrate on the next two, sighting rule on, failed checks are notes, not alarms
+VERSION = {"v": 1}
+
+
+def calibs_of(recs: list[dict]) -> list[dict]:
+    clean = [r for r in recs if not r["is_error"]]
+    return clean[1:2] if VERSION["v"] == 1 else clean[1:3]
+
+
 def held_out(recs: list[dict]) -> list[dict]:
-    used = {demo_of(recs)["rid"], calib_of(recs)["rid"]}
+    used = {demo_of(recs)["rid"]} | {c["rid"] for c in calibs_of(recs)}
     return [r for r in recs if r["rid"] not in used]
+
+
+def tag() -> str:
+    return "" if VERSION["v"] == 1 else f"_v{VERSION['v']}"
+
+
+def skills_dir() -> Path:
+    return OUT / ("skills" + tag())
 
 
 def looks_cache(demo: str, rid: str, prog: dict) -> Path:
@@ -167,20 +185,28 @@ async def do_learn(split: str):
         print(f"learned {recipe} from {demo['rid']}: {len(prog['steps'])} steps in {prog['learn_seconds']}s", flush=True)
     for recipe in SPLITS[split]:
         recs = recordings(recipe)
-        demo, cal = demo_of(recs), calib_of(recs)
-        sk = OUT / "skills" / demo["rid"]
+        demo = demo_of(recs)
+        raw_dir = OUT / "skills" / demo["rid"]
+        sk = skills_dir() / demo["rid"]
         if (sk / "program.json").exists() and "calibration" in json.loads((sk / "program.json").read_text()):
             continue
-        prog = json.loads((sk / "program_raw.json").read_text())
-        prep_one(cal["rid"], keep_video=False)
-        cache = looks_cache(demo["rid"], cal["rid"], prog)
-        prog, res = await calibrate(prog, R.load_refs(sk, prog), load_frames(cal["rid"]),
-                                    source=f"second demonstration ({cal['rid']})",
-                                    looks=json.loads(cache.read_text()) if cache.exists() else None)
-        cache.parent.mkdir(parents=True, exist_ok=True)
-        cache.write_text(json.dumps(res["looks"]))
+        if sk != raw_dir:
+            sk.mkdir(parents=True, exist_ok=True)
+            shutil.copytree(raw_dir / "evidence", sk / "evidence", dirs_exist_ok=True)
+        prog = json.loads((raw_dir / "program_raw.json").read_text())
+        changes = []
+        for i, cal in enumerate(calibs_of(recs)):
+            prep_one(cal["rid"], keep_video=False)
+            cache = looks_cache(demo["rid"], cal["rid"], prog)
+            prog, res = await calibrate(prog, R.load_refs(sk, prog), load_frames(cal["rid"]),
+                                        source=f"{['second', 'third'][i]} demonstration ({cal['rid']})",
+                                        looks=json.loads(cache.read_text()) if cache.exists() else None)
+            changes += prog["calibration"]["changes"]
+            cache.parent.mkdir(parents=True, exist_ok=True)
+            cache.write_text(json.dumps(res["looks"]))
+        prog["calibration"] = {"source": ", ".join(c["rid"] for c in calibs_of(recs)), "changes": changes}
         (sk / "program.json").write_text(json.dumps(prog, indent=1))
-        print(f"calibrated {recipe} on {cal['rid']}: {len(prog['calibration']['changes'])} changes", flush=True)
+        print(f"calibrated {recipe} on {prog['calibration']['source']}: {len(changes)} changes", flush=True)
 
 
 async def do_run(split: str, concurrency: int, only: str | None = None, sightings: bool = False):
@@ -190,13 +216,14 @@ async def do_run(split: str, concurrency: int, only: str | None = None, sighting
     for recipe in SPLITS[split]:
         recs = recordings(recipe)
         demo = demo_of(recs)
-        sk = OUT / "skills" / demo["rid"]
+        sk = skills_dir() / demo["rid"]
         prog = json.loads((sk / "program.json").read_text())
         refs = R.load_refs(sk, prog)
         for r in held_out(recs):
             if only and r["rid"] != only:
                 continue
-            dst = OUT / (split + ("_sightings" if sightings else "")) / f"{r['rid']}.json"
+            v2 = VERSION["v"] >= 2
+            dst = OUT / (split + tag() + ("_sightings" if sightings and not v2 else "")) / f"{r['rid']}.json"
             if dst.exists():
                 continue
             if not prep_one(r["rid"], keep_video=False):
@@ -206,7 +233,8 @@ async def do_run(split: str, concurrency: int, only: str | None = None, sighting
             n0 = len(live.LOG)
             t0 = time.monotonic()
             cache = looks_cache(demo["rid"], r["rid"], prog)
-            res = await R.replay(prog, refs, fr, concurrency=concurrency, sightings=sightings,
+            res = await R.replay(prog, refs, fr, concurrency=concurrency, sightings=sightings or v2,
+                                 contract_alarms=not v2,
                                  looks=json.loads(cache.read_text()) if cache.exists() else None)
             cache.parent.mkdir(parents=True, exist_ok=True)
             cache.write_text(json.dumps(res["looks"]))
@@ -329,7 +357,7 @@ def do_score(split: str, variant: str = "") -> dict:
     for recipe in SPLITS[split]:
         recs = recordings(recipe)
         demo = demo_of(recs)
-        prog = json.loads((OUT / "skills" / demo["rid"] / "program.json").read_text())
+        prog = json.loads((skills_dir() / demo["rid"] / "program.json").read_text())
         pmap = step_map(prog, demo)                     # program step -> annotated step
         inv = {}
         for p, a in pmap.items():
@@ -414,8 +442,10 @@ def main():
     ap.add_argument("--split", default="dev")
     ap.add_argument("--concurrency", type=int, default=12)
     ap.add_argument("--only")
+    ap.add_argument("--version", type=int, default=1, help="1: as round 1 was run; 2: two calibration demos, sighting rule, checks as notes")
     ap.add_argument("--sightings", action="store_true", help="the tracker rule added after the test run (separate results)")
     a = ap.parse_args()
+    VERSION["v"] = a.version
     if a.stage == "prep":
         for recipe in SPLITS[a.split]:
             recs = recordings(recipe)
@@ -432,7 +462,7 @@ def main():
     elif a.stage == "baseline_steps":
         asyncio.run(do_baseline_steps(a.split))
     else:
-        s = do_score(a.split, "_sightings" if a.sightings else "")
+        s = do_score(a.split, tag() or ("_sightings" if a.sightings else ""))
         print(json.dumps({k: v for k, v in s.items() if k != "rows"}, indent=1))
 
 

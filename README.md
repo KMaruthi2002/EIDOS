@@ -49,9 +49,34 @@ Nothing uses frames from the future: each decision at time t uses frames up to t
 
 The comparison is **Muse Spark asked directly**: it gets the same compiled step list and 24 frames spread over the whole recording (so it sees the end, which a live system can't) and is asked whether the person made any mistake.
 
-⟦BENCH⟧
+**Round 1 (test recipes, run once).** 8 recipes, 106 recordings (70 with labelled mistakes, 36 without).
 
-**What the numbers mean.** On the development recipes, most of EIDOS's false alarms on correct recordings were real deviations from the demonstration that the recipe doesn't require: the demonstrator rinsed the mug first and other people didn't, so the dataset doesn't call it a mistake. EIDOS is faithful to what it was shown; marking that step optional removes the alert. The visual checks rarely fire (6 of 199 checks on the development recipes), and when they do they mostly name mistakes nothing else can see, such as "Tomato is chopped into small irregular pieces, not 6 slices".
+*Did this recording contain a mistake?*
+
+| System | Accuracy | F1 | Recordings with mistakes flagged | Correct recordings flagged (false alarms) |
+|---|---|---|---|---|
+| EIDOS, live | 67% | 0.80 | 68/70 | 33/36 |
+| EIDOS without visual checks | 70% | 0.81 | 66/70 | 28/36 |
+| EIDOS without searching back | 66% | 0.79 | 68/70 | 34/36 |
+| Muse Spark asked directly (sees the whole recording) | 66% | 0.80 | 70/70 | 36/36 |
+| Always answering "mistake" | 66% | 0.80 | 70/70 | 36/36 |
+
+On this question, neither system beats always answering "mistake": EIDOS raised an alert on nearly every recording, and Muse Spark called every recording a mistake. EIDOS did raise more alerts on recordings with mistakes than on correct ones (3.8 against 2.6 on average), but "any alert" is too loose a rule.
+
+*Which step was skipped?* For each step the dataset labels as skipped, did the system name it; and how many steps did it call skipped on recordings with no mistakes?
+
+| System | Labelled skipped steps named | Steps called skipped on correct recordings |
+|---|---|---|
+| EIDOS, live (a "Skipped" alert) | 22/54 | 26 across 36 recordings (0.7 each) |
+| Muse Spark asked directly which steps were skipped (sees the whole recording) | 31/54 | 99 across 36 recordings (2.8 each) |
+
+EIDOS makes about a quarter of the false accusations but names fewer of the skipped steps, and it decides live, from the past only.
+
+**Development recipes** (30 recordings, used for tuning): EIDOS accuracy 77% (F1 0.82), Muse Spark asked directly 57% (F1 0.72); skipped steps named 10/15 against 11/15, with 6 against 21 skipped-step claims on 13 correct recordings. The gap at the recording level did not carry over to the test recipes.
+
+**Why it over-flags.** EIDOS flags what differs from the demonstration; CaptainCook4D labels what differs from the official recipe. Other cooks skip steps the demonstrator happened to do (rinsing the mug first, moving the plate afterwards), and calibrating on one more demonstration removes only some of these. The visual checks fired about as often on correct recordings as on wrong ones (37 against 61 times on 36 and 70 recordings), so at the recording level they add false alarms, even though the ones on wrong recordings often name the real mistake (chopped instead of sliced, half a mug instead of a full one).
+
+**What EIDOS adds on this benchmark** is the step-level answer: which step, at the moment it happens, with far fewer false accusations than asking a model to look over the whole video. Telling a correct recording from a wrong one is not yet better than always answering "mistake" on these recipes, and that is the next thing to fix.
 
 **Protocol.** Two recipes were used for development (`runs/world/dev/`, earlier versions kept in `runs/world/archive/`). The eight test recipes were chosen by a rule before any test run (the next eight shortest by average recording length) and run once with the frozen code (`runs/world/test/`). Looks are cached in `runs/world/looks/`, so scores can be recomputed without a key.
 
