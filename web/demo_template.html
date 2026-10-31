@@ -570,7 +570,8 @@ if (WD) {
   $("#w-tbl").innerHTML = `<thead><tr><th>Held-out recordings</th><th>Accuracy</th><th>F1</th><th>Precision</th><th>Recall</th></tr></thead><tbody>${rows.map(([n, k]) => `<tr><td>${n}</td>${cell(T, k)}</tr>`).join("")}</tbody>`;
   if (T) {
     $("#w-lede").innerHTML = `For each recipe, EIDOS learns from one correct recording and calibrates on a second; no labels are used to learn. Each of the other ${T.recordings} recordings of ${T.recipes.length} held-out recipes (${T.with_mistakes} with labelled mistakes, ${T.without_mistakes} without), by other people in other kitchens, runs through the live runner as if it were a camera feed. The question is the dataset's: did this recording contain a mistake?`;
-    $("#w-note").innerHTML = `Test recipes were chosen by a rule before any test run and run once with frozen code. EIDOS named the right skipped step on ${T.missing_step_named_correctly.hit} of ${T.missing_step_named_correctly.n} labelled missing steps.${D ? ` Development recipes (used for tuning): EIDOS accuracy ${pct(D.eidos.accuracy)}, Muse Spark asked directly ${pct(D.baseline_ask_muse_spark.accuracy)}.` : ""}`;
+    const se = T.skipped_steps.eidos, sb = T.skipped_steps.baseline, per = (d) => (d.claims_on_correct_recordings / d.correct_recordings).toFixed(1);
+    $("#w-note").innerHTML = `<b>Which step was skipped?</b> Live, EIDOS named ${se.named} of ${se.labelled} labelled skipped steps as they happened, and wrongly called a step skipped ${per(se)} times per correct recording. Muse Spark, asked over the whole recording which steps were skipped, named ${sb.named} of ${sb.labelled} but wrongly called a step skipped ${per(sb)} times per correct recording.<br><b>Did this recording contain a mistake?</b> Not solved yet: EIDOS's accuracy (${pct(T.eidos.accuracy)}) is no better than always answering "mistake" (${pct(T.with_mistakes / T.recordings)}). It flags what differs from the demonstration, and other cooks skip steps the demonstrator happened to do. Test recipes were chosen by a rule before any test run and run once with frozen code.${D ? ` On the two development recipes, EIDOS reached ${pct(D.eidos.accuracy)} against ${pct(D.baseline_ask_muse_spark.accuracy)}; that gap did not carry over.` : ""}`;
   }
 }
 /* ================= everyday tasks ================= */
@@ -579,6 +580,8 @@ const R2 = EV.bench.test2 && EV.bench.test2.summary, WC = EV.bench.words && EV.b
 const frac = (x) => x ? `${x.success}/${x.n}` : "";
 {
   const pts = [];
+  if (DATA.world && DATA.world.test) { const se = DATA.world.test.skipped_steps.eidos, sb = DATA.world.test.skipped_steps.baseline;
+    pts.push(`Live, on held-out recordings of real people cooking, EIDOS named <b>${se.named}/${se.labelled}</b> labelled skipped steps as they happened, with ${(se.claims_on_correct_recordings / se.correct_recordings).toFixed(1)} false "skipped" claims per correct recording against ${(sb.claims_on_correct_recordings / sb.correct_recordings).toFixed(1)} for Muse Spark over the whole video.`); }
   if (R2) pts.push(`On ${R2.all.eidos.n} held-out everyday runs with redesigns, a second design and interruptions, EIDOS finished <b>${frac(R2.all.eidos)}</b>. Copying the clicks finished ${frac(R2.all.replay)}.`);
   if (WC) pts.push(`With every control renamed, offline EIDOS stopped and said so (${frac(WC.all.eidos)}); reading the screen with Muse Spark it finished <b>${frac(WC.all.eidos_live)}</b>${WO ? `, and with Meta's open-weights Muse Spark Open <b>${frac(WO.all.eidos_open)}</b>` : ""}.`);
   const ag = (R2 ? R2.agree.agree : 0) + (WC ? WC.agree.eidos_live.agree : 0) + (WO ? WO.agree.eidos_open.agree : 0) + DATA.bench.test.summary.eidos_self_report.agrees_with_oracle;
