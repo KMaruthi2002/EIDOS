@@ -281,6 +281,23 @@ python bench/showcase.py                                           # demo record
 python web/build_demo.py                                           # demo page -> web/demo/
 ```
 
+## Deploy
+
+```bash
+docker build -t eidos .
+docker run -p 8000:8000 --env-file .env -e EIDOS_TOKEN=choose-a-long-token eidos
+# open http://<host>:8000/?token=choose-a-long-token  (kept in a cookie after the first visit)
+```
+
+- `EIDOS_TOKEN`: when set, every request needs the token (`?token=` once, the cookie, or `Authorization: Bearer`); `/healthz` stays open for health checks.
+- `EIDOS_DAILY_CALL_LIMIT` (default 20000 in the image): model calls per day before the Studio stops calling, so a public deployment can't run up an unbounded bill; `/api/usage` shows the count.
+- `EIDOS_MAX_LIVE` (default 4): live sessions at once.
+- Browsers allow the camera only on `localhost` or HTTPS, so put the container behind an HTTPS proxy (any cloud load balancer, Caddy, or a tunnel) to use a phone's camera.
+- The image was built and run end to end: health check, token, the Real world skills, and an email task run by the agent on design B in dark mode, confirmed by the app's own state.
+- The tests run on every push (`.github/workflows/tests.yml`).
+
+What it still is: one process. Live sessions are kept in memory and skills in a folder, so a restart ends live sessions and it doesn't spread over several machines. Real-world tracking depends on Meta's API for every look.
+
 ## Tests
 
 ```bash
