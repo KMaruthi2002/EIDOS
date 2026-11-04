@@ -10,4 +10,10 @@ jobs:
           python-version: "3.12"
       - run: sudo apt-get update && sudo apt-get install -y tesseract-ocr ffmpeg
       - run: pip install -r requirements.txt && python -m playwright install --with-deps chromium
-      - run: python -m pytest -q -m "not slow"
+      - run: python -m pytest -q -s -p no:cacheprovider tools/debug_switch_test.py --rootdir tools -c /dev/null
+      - run: tesseract --version
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: perception-debug
+          path: debug/
