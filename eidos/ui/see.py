@@ -90,7 +90,14 @@ def lines(img) -> list[Line]:
     kept.sort(key=lambda w: w.cy)
     rows: list[list] = []
     for w in kept:
-        if rows and abs(rows[-1][-1].cy - w.cy) < max(5, 0.5 * min(rows[-1][-1].h, w.h)):
+        # Compare with the row's mean centre and median height, not its last word:
+        # chaining word-to-word lets one in-between box merge a label with the
+        # description under it (seen with tesseract 5.5.0 on dark, scaled themes).
+        if rows:
+            r = rows[-1]
+            cy = sum(v.cy for v in r) / len(r)
+            rh = float(np.median([v.h for v in r]))
+        if rows and abs(cy - w.cy) < max(5, 0.5 * min(rh, w.h)):
             rows[-1].append(w)
         else:
             rows.append([w])
