@@ -244,3 +244,26 @@ def test_live_session_v3_alert_and_notes(monkeypatch, tmp_path):
     assert ("order", 3) in kinds                    # removed the part with no sign of the power going off
     assert all(a["type"] != "contract" for a in out["alerts"])
     assert notes                                    # failed checks became notes
+
+
+def test_a_recorded_run_replays_without_a_model(tmp_path):
+    """The tomato sample's recorded run on the cook who skips the oil: replayed through the live
+    session with no model and no key, it names the skipped step; the correct cook gets no alert."""
+    import json
+    from pathlib import Path
+    root = Path(__file__).resolve().parent.parent / "samples" / "world" / "tomato"
+    prog = json.loads((root / "program.json").read_text())
+    jpeg = cv2.imencode(".jpg", np.zeros((252, 448, 3), np.uint8))[1].tobytes()
+
+    async def go(pid):
+        rep = json.loads((root / "replays" / f"{pid}.json").read_text())
+        s = S.LiveSession("r", root, prog, replay=rep)
+        end = int(rep["looks"][-1]["t"]) + 1
+        for t in range(0, end, 2):
+            s.add_frame(float(t), jpeg)
+            await asyncio.sleep(0)
+        return await s.finish()
+
+    out = run(go("skipped-oil"))
+    assert [(a["type"], a["step"]) for a in out["alerts"]] == [("missing", 9)]
+    assert run(go("clean"))["alerts"] == []

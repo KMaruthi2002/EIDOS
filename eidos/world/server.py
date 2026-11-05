@@ -70,9 +70,18 @@ def skills():
 @router.get("/api/world/skills/{sid}")
 def skill(sid: str):
     p = _skill(sid)
+    practice = json.loads((p / "practice.json").read_text()) if (p / "practice.json").exists() else []
+    for r in practice:
+        rep = _replay_file(p, r["file"])
+        if rep.exists():
+            r["replay"] = json.loads(rep.read_text()).get("about", "A recorded run")
     return {"meta": json.loads((p / "meta.json").read_text()), "program": json.loads((p / "program.json").read_text()),
             "notes": json.loads((p / "notes.json").read_text()) if (p / "notes.json").exists() else [],
-            "practice": json.loads((p / "practice.json").read_text()) if (p / "practice.json").exists() else []}
+            "practice": practice}
+
+
+def _replay_file(skill_dir: Path, practice_file: str) -> Path:
+    return skill_dir / "replays" / (Path(practice_file).stem + ".json")
 
 
 @router.get("/api/world/skills/{sid}/file/{name:path}")
@@ -157,13 +166,20 @@ async def learn(file: UploadFile = File(...), title: str = Form("")):
 @router.post("/api/world/live/start")
 async def live_start(request: Request):
     reap()
-    if not (live.meta_live() or live.open_live()):
-        raise HTTPException(400, "Following live needs a Meta Model API key (MODEL_API_KEY) or a Baseten key (BASETEN_API_KEY) in .env.")
-    if len(SESSIONS) >= MAX_SESSIONS:
-        raise HTTPException(429, "Too many live sessions are open. Finish one first.")
     body = await request.json()
     p = _skill(body.get("skill", ""))
     prog = json.loads((p / "program.json").read_text())
+    if len(SESSIONS) >= MAX_SESSIONS:
+        raise HTTPException(429, "Too many live sessions are open. Finish one first.")
+    if body.get("replay"):
+        rep = _replay_file(p, str(body["replay"]))
+        if not rep.exists():
+            raise HTTPException(404, "There is no recorded run for this recording.")
+        s = LiveSession(uuid.uuid4().hex[:10], p, prog, body.get("inputs") or {}, replay=json.loads(rep.read_text()))
+        SESSIONS[s.id] = s
+        return {"id": s.id, "state": s.state(), "replay": True}
+    if not (live.meta_live() or live.open_live()):
+        raise HTTPException(400, "Following live needs a Meta Model API key (MODEL_API_KEY) or a Baseten key (BASETEN_API_KEY) in .env. Practice recordings with a recorded run can be followed without a key.")
     reader = body.get("reader") or live.world_reader()
     if reader == "open" and not live.open_live():
         raise HTTPException(400, "Muse Spark Open needs a Baseten key (BASETEN_API_KEY in .env).")

@@ -233,6 +233,7 @@ A local web app over the same engine, with two tabs: **Screens** and **Real worl
 - **Follow along live**: choose your camera (on a phone or laptop, point it at your hands and the work), a practice recording, or any video file played in real time. The current step, what EIDOS sees, the next step, checks and alerts update as it happens; it can speak the next step and alerts.
 - Three sample skills ship with practice recordings: tomato salad (CaptainCook4D), installing RAM and replacing a part in an electrical cabinet (HoloAssist), including a recording edited so the power is never switched off.
 - Mark any step optional or required with one click before starting.
+- **Recorded runs, no key needed.** The tomato sample's two practice recordings come with a recorded run: the looks Muse Spark gave on them during the benchmark's development runs, saved with their times (`samples/world/tomato/replays/`, made by `tools/make_replays.py`). Choosing "Recorded run" replays them through the same live session at up to 8x speed, with no model call: the cook who skips the oil gets "Skipped: pour oil over the tomato slices", and the cook who follows the recipe gets no alert. Checks and searching back need a model, so a recorded run skips them.
 
 **Screens**: the four everyday apps are served by the Studio itself.
 

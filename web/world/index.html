@@ -157,7 +157,8 @@ dialog .in { padding: 22px; display: grid; gap: 14px; }
     <div class="row">
       <label>Watch:&nbsp;<select id="source" aria-label="What EIDOS watches"></select></label>
       <label class="btn" style="cursor:pointer">Play a video file as live<input type="file" id="playfile" accept="video/*" hidden></label>
-      <label>Model:&nbsp;<select id="reader" aria-label="Model that watches"><option value="spark">Muse Spark (about 4 s a look)</option><option value="open">Muse Spark Open, open weights (about 10 s a look)</option></select></label>
+      <label>Model:&nbsp;<select id="reader" aria-label="Model that watches"></select></label>
+      <label id="speed-wrap" hidden>Speed:&nbsp;<select id="speed" aria-label="Playback speed"><option value="1">Real time</option><option value="2">2x</option><option value="4">4x</option><option value="8">8x</option></select></label>
       <label class="row" style="gap:6px"><input type="checkbox" id="speak"> Speak the next step and alerts</label>
     </div>
     <p class="lede" id="source-note"></p>
@@ -195,12 +196,14 @@ dialog .in { padding: 22px; display: grid; gap: 14px; }
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const fmt = t => `${Math.floor(t / 60)}:${String(Math.floor(t % 60)).padStart(2, "0")}`;
+let hasKey = false;
 let skills = [], cur = null, session = null, timer = null, es = null, t0 = 0, stream = null, fileURL = null, state = null;
 
 async function init() {
   try {
     const live = await (await fetch("/api/live")).json();
-    $("#keynote").textContent = live.meta ? "Muse Spark is watching" : "Add a Meta Model API key to use the real world";
+    hasKey = !!(live.meta || live.open);
+    $("#keynote").textContent = hasKey ? "Muse Spark is watching" : "No model key: practice recordings play their recorded runs";
   } catch {}
   skills = await (await fetch("/api/world/skills")).json();
   $("#skill").innerHTML = skills.map(s => `<option value="${s.id}">${esc(s.title || s.name)}${s.sample ? "" : " (yours)"}</option>`).join("")
@@ -249,8 +252,20 @@ function drawSteps(st) {
   }).join("");
 }
 
+function readers() {
+  const v = $("#source").value, r = v.startsWith("p") ? cur.practice[+v.slice(1)] : null;
+  const prev = $("#reader").value;
+  const opts = [["spark", "Muse Spark (about 4 s a look)"], ["open", "Muse Spark Open, open weights (about 10 s a look)"]];
+  if (r && r.replay) opts.unshift(["replay", "Recorded run of Muse Spark (no key needed)"]);
+  $("#reader").innerHTML = opts.map(([k, l]) => `<option value="${k}">${l}</option>`).join("");
+  // a recording with a recorded run starts on it (instant, no key); the person can switch to a live model
+  $("#reader").value = r && r.replay ? "replay" : (opts.some(o => o[0] === prev) ? prev : opts[0][0]);
+  $("#speed-wrap").hidden = $("#reader").value !== "replay";
+}
+
 function showSource() {
   const v = $("#source").value, vid = $("#vid");
+  readers();
   stopCamera();
   if (v === "camera") {
     vid.removeAttribute("src"); vid.load();
@@ -279,7 +294,8 @@ async function start() {
   $("#alerts").innerHTML = ""; $("#verdict").hidden = true;
   try {
     if ($("#source").value === "camera") await startCamera();
-    const r = await fetch("/api/world/live/start", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ skill: cur.meta.id, inputs: inputs(), reader: $("#reader").value }) });
+    const r = await fetch("/api/world/live/start", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ skill: cur.meta.id, inputs: inputs(), reader: $("#reader").value,
+      replay: $("#reader").value === "replay" ? cur.practice[+$("#source").value.slice(1)].file : undefined }) });
     if (!r.ok) throw new Error((await r.json()).detail || "Could not start");
     session = (await r.json()).id;
   } catch (e) { $("#alerts").innerHTML = `<li>${esc(e.message)}</li>`; $("#go").disabled = false; return; }
@@ -294,7 +310,7 @@ async function start() {
   es.addEventListener("check", e => { const d = JSON.parse(e.data); if (d.ok) okNote(d); });
   es.addEventListener("finished", e => { const d = JSON.parse(e.data); verdict(d); es.close(); });
   t0 = performance.now();
-  if ($("#source").value !== "camera") { $("#vid").currentTime = 0; await $("#vid").play(); }
+  if ($("#source").value !== "camera") { $("#vid").currentTime = 0; $("#vid").playbackRate = $("#reader").value === "replay" ? +$("#speed").value : 1; await $("#vid").play(); }
   $("#live-pill").hidden = false; $("#stop").hidden = false; $("#go").hidden = true;
   timer = setInterval(sendFrame, 1000);
   $("#vid").onended = finish;
@@ -359,6 +375,7 @@ $("#steps").addEventListener("click", async e => {
 });
 $("#skill").addEventListener("change", pick);
 $("#source").addEventListener("change", showSource);
+$("#reader").addEventListener("change", () => { $("#speed-wrap").hidden = $("#reader").value !== "replay"; });
 $("#playfile").addEventListener("change", e => {
   const f = e.target.files[0]; if (!f) return;
   if (fileURL) URL.revokeObjectURL(fileURL); fileURL = URL.createObjectURL(f);

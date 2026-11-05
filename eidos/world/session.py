@@ -29,13 +29,19 @@ IDLE_LIMIT = 20 * 60
 
 class LiveSession:
     def __init__(self, sid: str, skill_dir: Path, program: dict, inputs: dict | None = None, reader: str = "spark",
-                 mode: str = "v3"):
+                 mode: str = "v3", replay: dict | None = None):
         self.id = sid
+        # replay: a recorded run (the looks a model gave on this recording, saved with their times).
+        # The session then behaves exactly as live, without calling any model: useful without a key,
+        # and to show what EIDOS did on a recording. Checks and searching back need a model, so they are skipped.
+        self.replay = replay
+        if replay:
+            mode = replay.get("mode", "v3")
         # v3 (default): ranked 20-second looks and the evidence tracker; failed checks are notes.
         # v1: single answers over 6 seconds and votes, as in the benchmark's round 1.
         self.v3 = mode == "v3"
         from .. import live as _live
-        self.reader = reader if reader in ("spark", "open") else _live.world_reader()
+        self.reader = "replay" if replay else (reader if reader in ("spark", "open") else _live.world_reader())
         self.program = program
         self.inputs = {**program.get("inputs", {}), **(inputs or {})}
         self.refs = R.load_refs(skill_dir, program)
@@ -98,12 +104,22 @@ class LiveSession:
             span = T.SPAN if self.v3 else R.LOOK
             win = [(ti, f) for ti, f in self.frames if self.next_look - span < ti <= self.next_look]
             if len(win) >= 2:
-                fn = T.look_ranked if self.v3 else R.look
-                task = asyncio.create_task(fn(self.program, win, self.inputs, self.reader))
+                if self.replay:
+                    task = asyncio.get_running_loop().create_future()
+                    task.set_result(self._recorded(self.next_look))
+                else:
+                    fn = T.look_ranked if self.v3 else R.look
+                    task = asyncio.create_task(fn(self.program, win, self.inputs, self.reader))
                 self.pending.append((self.next_look, win, task))
             self.next_look += R.EVERY
         if self._feeder is None or self._feeder.done():
             self._feeder = asyncio.create_task(self._feed())
+
+    def _recorded(self, t: float) -> dict:
+        best = min(self.replay["looks"], key=lambda lk: abs(lk["t"] - t), default=None)
+        if best is None or abs(best["t"] - t) > R.EVERY / 2 + 0.1:
+            return {"doing": 0, "dist": {}, "what": ""}
+        return {k: v for k, v in best.items() if k != "t"}
 
     async def _feed(self):
         while self.pending:
@@ -124,12 +140,18 @@ class LiveSession:
             task.add_done_callback(self.confirming.discard)
             return
         self.emit("event", ev)
-        if ev["kind"] == "end" and ev["step"] not in self.checks and R.checkable(self.tracker.by_id[ev["step"]]):
+        if ev["kind"] == "end" and not self.replay and ev["step"] not in self.checks and R.checkable(self.tracker.by_id[ev["step"]]):
             self.checks[ev["step"]] = {"pending": True}
             asyncio.create_task(self._check(ev["step"], ev["t"]))
         self.emit("state", self.state())
 
     async def _confirm(self, ev: dict):
+        if self.replay:          # nothing to search with: the recorded alert stands
+            ev["kind"] = "alert"
+            ev["searched"] = []
+            self.emit("event", ev)
+            self.emit("state", self.state())
+            return
         stands, found = await R.confirm(self.program, ev, list(self.history), self.inputs, self.reader)
         ev["searched"] = found
         if stands:
