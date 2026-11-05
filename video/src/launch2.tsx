@@ -15,7 +15,8 @@ import world from "./world_data.json";
 const FPS = 30;
 const INK = "#0d0f1a", SUB = "#3a3f5c", MUTE = "#6b6f86";
 const BLUE = "#3b5bff", VIOLET = "#8b5cf6", CORAL = "#ff7a59", CYAN = "#20c4ff", GREEN = "#12b886", RED = "#f03e5e";
-const GRAD = `linear-gradient(120deg, ${BLUE}, ${VIOLET} 55%, ${CORAL})`;
+const COBALT = "#1f44ff";
+const GRAD = `linear-gradient(120deg, ${COBALT}, ${COBALT})`;
 const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 
 const useT = () => useCurrentFrame() / FPS;
@@ -34,18 +35,24 @@ const PALETTES: Record<string, string[]> = {
   c: [CYAN, BLUE, "#7cf2c7", VIOLET],
   d: [CORAL, "#ffc24b", VIOLET, BLUE],
 };
-const Mesh: React.FC<{ p?: keyof typeof PALETTES }> = ({ p = "a" }) => {
+// Blueprint paper: a drafting grid, crop marks and a slow scan line (the camera, watching).
+const Mesh: React.FC<{ p?: keyof typeof PALETTES }> = () => {
   const f = useCurrentFrame();
   const t = f / FPS;
-  const spots: [number, number, number, number][] = [[18, 28, 900, 0], [78, 22, 820, 1.7], [66, 82, 780, 3.1], [14, 84, 720, 4.4]];
+  const scan = (t * 0.09) % 1;
+  const mark = (x: number, y: number, sx: number, sy: number) => (
+    <div style={{ position: "absolute", left: x, top: y, width: 46, height: 46, borderLeft: sx > 0 ? `3px solid ${COBALT}` : undefined, borderRight: sx < 0 ? `3px solid ${COBALT}` : undefined,
+      borderTop: sy > 0 ? `3px solid ${COBALT}` : undefined, borderBottom: sy < 0 ? `3px solid ${COBALT}` : undefined, opacity: 0.55 }} />
+  );
   return (
-    <AbsoluteFill style={{ background: "#f7f5ff", overflow: "hidden" }}>
-      {spots.map(([x, y, r, ph], i) => (
-        <div key={i} style={{ position: "absolute", width: r, height: r, borderRadius: "50%", background: PALETTES[p][i], filter: "blur(150px)", opacity: 0.5,
-          left: `calc(${x + Math.sin(t * 0.45 + ph) * 9}% - ${r / 2}px)`, top: `calc(${y + Math.cos(t * 0.38 + ph) * 9}% - ${r / 2}px)` }} />
-      ))}
-      <AbsoluteFill style={{ backgroundImage: "radial-gradient(rgba(20,20,60,.10) 1.4px, transparent 1.6px)", backgroundSize: "34px 34px",
-        maskImage: "radial-gradient(70% 60% at 50% 50%, transparent 40%, #000)", WebkitMaskImage: "radial-gradient(70% 60% at 50% 50%, transparent 40%, #000)" }} />
+    <AbsoluteFill style={{ background: "#e9eff8", overflow: "hidden" }}>
+      <AbsoluteFill style={{ backgroundImage: `linear-gradient(rgba(31,68,255,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(31,68,255,.07) 1px, transparent 1px),
+        linear-gradient(rgba(31,68,255,.13) 1.5px, transparent 1.5px), linear-gradient(90deg, rgba(31,68,255,.13) 1.5px, transparent 1.5px)`,
+        backgroundSize: "24px 24px, 24px 24px, 120px 120px, 120px 120px", backgroundPosition: `${-t * 6}px 0, ${-t * 6}px 0, ${-t * 6}px 0, ${-t * 6}px 0` }} />
+      <AbsoluteFill style={{ background: "radial-gradient(80% 70% at 50% 45%, rgba(255,255,255,.75), rgba(233,239,248,0) 70%)" }} />
+      <div style={{ position: "absolute", left: 0, right: 0, top: `${scan * 100}%`, height: 140, transform: "translateY(-140px)",
+        background: "linear-gradient(180deg, rgba(31,68,255,0), rgba(31,68,255,.06))", borderBottom: "1.5px solid rgba(31,68,255,.28)" }} />
+      {mark(28, 28, 1, 1)}{mark(1920 - 74, 28, -1, 1)}{mark(28, 1080 - 74, 1, -1)}{mark(1920 - 74, 1080 - 74, -1, -1)}
     </AbsoluteFill>
   );
 };
@@ -81,7 +88,7 @@ const Headline: React.FC<{ text: string; at?: number; size?: number; top?: numbe
 
 const Pill: React.FC<{ at: number; children: React.ReactNode; tone?: "ok" | "bad" | "plain" | "brand"; size?: number; style?: React.CSSProperties }> = ({ at, children, tone = "plain", size = 28, style }) => {
   const s = useSpring(at, { damping: 11 });
-  const bg = tone === "ok" ? `linear-gradient(135deg, ${GREEN}, #0ca678)` : tone === "bad" ? `linear-gradient(135deg, ${RED}, #d6336c)` : tone === "brand" ? `linear-gradient(135deg, ${BLUE}, ${VIOLET})` : "rgba(255,255,255,.85)";
+  const bg = tone === "ok" ? `linear-gradient(135deg, ${GREEN}, #0ca678)` : tone === "bad" ? `linear-gradient(135deg, ${RED}, #d6336c)` : tone === "brand" ? COBALT : "rgba(255,255,255,.85)";
   return (
     <div style={{ display: "inline-flex", alignItems: "center", gap: 12, fontFamily: FONT, fontSize: size, fontWeight: 760, padding: `${size * 0.45}px ${size * 0.8}px`, borderRadius: 999,
       background: bg, color: tone === "plain" ? INK : "#fff", whiteSpace: "nowrap", transform: `scale(${s})`, opacity: Math.min(1, s * 2),
@@ -630,36 +637,83 @@ const Station: React.FC<{ i: number; w: number; h: number }> = ({ i, w, h }) => 
     </div>
   );
 };
+const NODES: [number, number, string, string][] = [
+  [300, 560, "Muse Spark", "watches the video and the camera"],
+  [580, 330, "Muse Wonder", "compiles it into a program"],
+  [960, 250, "SAM 3.1", "outlines every check"],
+  [1340, 330, "Muse Image", "draws each skill"],
+  [1620, 560, "Muse Spark Open", "watches on open weights"],
+];
+const WORLDS: [string, string][] = [["w0", "Kitchen"], ["w9", "Electrical cabinet"], ["w7", "PC hardware"], ["w11", "Robot arm"]];
 const Meta: React.FC = () => {
   const t = useT();
   const fr = useCurrentFrame();
   const sec = VO("meta").seconds;
-  const w = 330, h = 240, gap = 34, left = (1920 - (5 * w + 4 * gap)) / 2;
-  const at = (i: number) => 1.6 + i * (sec - 2.2) / 5;
-  const active = STATIONS.reduce((a, _, i) => (t >= at(i) ? i : a), -1);
+  const C = { x: 960, y: 570 }, D = 176;
+  const at = (i: number) => 1.6 + i * (sec - 2.4) / 5;
+  const cs = spring({ frame: fr - 0.2 * FPS, fps: FPS, config: { damping: 13 } });
+  const wx = (i: number) => 960 + (i - 1.5) * 330;
+  const pulse = (x1: number, y1: number, x2: number, y2: number, k: number) => {
+    const u = ((t * 0.7 + k * 0.23) % 1);
+    return <circle cx={x1 + (x2 - x1) * u} cy={y1 + (y2 - y1) * u} r={6} fill={COBALT} opacity={0.9} />;
+  };
   return (
     <AbsoluteFill>
-      <Mesh p="b" />
-      <Headline text="Built on Meta's models." at={0.05} size={92} top={70} grad={["Meta's"]} />
-      {/* the line that carries a skill through the models */}
+      <Mesh />
+      <Headline text="One skill. Five Meta models. Any machine." at={0.05} size={70} top={44} grad={["Meta"]} max={1800} />
       <svg width={1920} height={1080} style={{ position: "absolute", inset: 0 }}>
-        <defs><linearGradient id="mg" x1="0" x2="1"><stop offset="0" stopColor={BLUE} /><stop offset=".5" stopColor={VIOLET} /><stop offset="1" stopColor={CORAL} /></linearGradient></defs>
-        <line x1={left + w / 2} x2={left + w / 2 + (4 * (w + gap)) * ramp(t, 1.2, sec - 0.4)} y1={450} y2={450} stroke="url(#mg)" strokeWidth={6} strokeLinecap="round" strokeDasharray="2 14" strokeDashoffset={-t * 40} />
-        <circle cx={left + w / 2 + (4 * (w + gap)) * ramp(t, 1.2, sec - 0.4)} cy={450} r={11} fill={VIOLET} style={{ filter: `drop-shadow(0 0 12px ${VIOLET})` }} />
+        {NODES.map(([x, y], i) => {
+          const d = ramp(t, at(i), at(i) + 0.7);
+          return d > 0 && <g key={i}>
+            <line x1={x} y1={y} x2={x + (C.x - x) * d} y2={y + (C.y - y) * d} stroke={COBALT} strokeWidth={3} strokeDasharray="6 10" strokeDashoffset={-t * 30} opacity={0.6} />
+            {d >= 1 && pulse(x, y, C.x, C.y, i)}
+          </g>;
+        })}
+        {WORLDS.map((_, i) => {
+          const d = ramp(t, 0.7 + i * 0.2, 1.4 + i * 0.2);
+          const x2 = wx(i), y2 = 810;
+          return <g key={i}>
+            <line x1={C.x} y1={C.y + 90} x2={C.x + (x2 - C.x) * d} y2={C.y + 90 + (y2 - C.y - 90) * d} stroke={INK} strokeWidth={2.5} strokeDasharray="3 9" opacity={0.45} />
+            {d >= 1 && pulse(C.x, C.y + 90, x2, y2, i + 5)}
+          </g>;
+        })}
       </svg>
-      {STATIONS.map(([name, job, g], i) => {
+      {/* the skill at the centre */}
+      <div style={{ position: "absolute", left: C.x - 190, top: C.y - 100, width: 380, height: 200, borderRadius: 22, background: "#fff", padding: "18px 22px",
+        boxShadow: "0 40px 80px -36px rgba(20,30,90,.55)", transform: `scale(${cs})`, display: "grid", gap: 6, alignContent: "start" }}>
+        <div style={{ position: "absolute", inset: 0 }}><Ants color={COBALT} width={4} radius={22} /></div>
+        <div style={{ fontFamily: FONT, fontSize: 26, fontWeight: 900, color: INK }}>One skill, compiled</div>
+        {world.steps.slice(0, 4).map((s) => (
+          <div key={s.id} style={{ display: "flex", gap: 10, alignItems: "center", fontFamily: FONT, fontSize: 18, fontWeight: 600, color: SUB, whiteSpace: "nowrap", overflow: "hidden" }}>
+            <span style={{ width: 22, height: 22, borderRadius: 11, background: "#e3e9ff", color: COBALT, fontWeight: 850, fontSize: 13, display: "grid", placeItems: "center", flex: "none" }}>{s.id}</span>
+            <span style={{ overflow: "hidden", textOverflow: "ellipsis" }}>{s.do.replace(/\{(\w+)\}/g, (_: string, n: string) => String((world as any).inputs?.[n] ?? n))}</span>
+          </div>
+        ))}
+      </div>
+      {NODES.map(([x, y, name, job], i) => {
         const s = spring({ frame: fr - at(i) * FPS, fps: FPS, config: { damping: 11 } });
-        const on = active === i;
+        const on = t >= at(i) && (i === 4 || t < at(i + 1));
         return (
-          <div key={name} style={{ position: "absolute", left: left + i * (w + gap), top: 330, width: w, display: "grid", gap: 16, justifyItems: "start",
-            transform: `translateY(${(1 - s) * 180}px) scale(${(0.85 + 0.15 * s) * (on ? 1.06 : 1)})`, opacity: Math.min(1, s * 1.6) }}>
-            <div style={{ position: "relative", width: w, height: h, borderRadius: 22, overflow: "hidden", background: "#fff",
-              boxShadow: on ? `0 40px 90px -30px ${g[0]}` : "0 30px 60px -36px rgba(40,20,120,.55)" }}>
-              <Station i={i} w={w} h={h} />
-              <div style={{ position: "absolute", inset: 0 }}><Ants color={g[0]} width={on ? 5 : 3} radius={22} /></div>
+          <div key={name} style={{ position: "absolute", left: x - 150, top: y - D / 2, width: 300, display: "grid", justifyItems: "center", gap: 10,
+            transform: `scale(${s * (on ? 1.08 : 1)})`, opacity: Math.min(1, s * 1.6) }}>
+            <div style={{ position: "relative", width: D, height: D, borderRadius: D / 2, overflow: "hidden", background: "#fff",
+              boxShadow: on ? `0 0 0 10px rgba(31,68,255,.12), 0 30px 60px -24px rgba(31,68,255,.7)` : "0 24px 50px -26px rgba(20,30,90,.6)" }}>
+              <Station i={i} w={D} h={D} />
             </div>
-            <div style={{ fontFamily: FONT, fontSize: 40, fontWeight: 900, letterSpacing: "-0.02em", lineHeight: 1.05, background: `linear-gradient(120deg, ${g[0]}, ${g[1]})`, WebkitBackgroundClip: "text", color: "transparent" }}>{name}</div>
-            <div style={{ fontFamily: FONT, fontSize: 27, fontWeight: 600, color: SUB, lineHeight: 1.3 }}>{job}</div>
+            <div style={{ position: "absolute", top: 0, width: D, height: D }}><Ants color={COBALT} width={on ? 5 : 3} radius={D / 2} /></div>
+            <div style={{ fontFamily: FONT, fontSize: 32, fontWeight: 900, color: on ? COBALT : INK, letterSpacing: "-0.02em", textAlign: "center", lineHeight: 1.05 }}>{name}</div>
+            <div style={{ fontFamily: FONT, fontSize: 21, fontWeight: 600, color: SUB, textAlign: "center", marginTop: -4 }}>{job}</div>
+          </div>
+        );
+      })}
+      {WORLDS.map(([img, label], i) => {
+        const s = spring({ frame: fr - (1.2 + i * 0.2) * FPS, fps: FPS, config: { damping: 13 } });
+        return (
+          <div key={label} style={{ position: "absolute", left: wx(i) - 120, top: 810, width: 240, display: "grid", gap: 8, justifyItems: "center", transform: `translateY(${(1 - s) * 80}px)`, opacity: Math.min(1, s * 1.5) }}>
+            <div style={{ width: 240, height: 120, borderRadius: 16, overflow: "hidden", boxShadow: "0 20px 40px -24px rgba(20,30,90,.6)" }}>
+              <Img src={staticFile(`thumbs/${img}.jpg`)} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+            </div>
+            <div style={{ fontFamily: FONT, fontSize: 22, fontWeight: 800, color: INK }}>{label}</div>
           </div>
         );
       })}
@@ -681,7 +735,7 @@ const Cabinet: React.FC = () => {
 const Kitchen: React.FC = () => {
   const L = (world as any).live || {};
   return <Studio src="live_tomato" from={L.tomFrom ?? 0} rate={L.tomRate ?? 12} head="It looks back, then names the skipped step." grad={["skipped"]} pal="c"
-    zoom={[L.tomZoom ?? 8, 99, 1.45, 0, 100]} pills={[[L.tomZoom ?? 8, "Skipped: pour the oil", "bad"]]} />;
+    zoom={[L.tomZoom ?? 8, 99, 1.45, 0, 100]} pills={[[L.tomZoom ?? 8, "Skipped: pour the oil", "bad"], [(L.tomZoom ?? 8) + 1.6, "Replays recorded runs, no key needed", "plain"]]} />;
 };
 
 const SCENES: { id: string; C: React.FC; min?: number; pad?: number }[] = [
