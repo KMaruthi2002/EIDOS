@@ -173,7 +173,7 @@ const Open: React.FC = () => {
 
 const Montage: React.FC = () => {
   const t = useT(); const f = useCurrentFrame();
-  const N = 12, R = 1500;
+  const PICK = [0, 7, 10, 3, 9, 5, 11, 6]; const N = PICK.length;
   const speed = 14 + 60 * ramp(t, 6.2, 8.6);
   const theta = t * speed;
   const collapse = ramp(t, 8.2, 9.3);
@@ -192,7 +192,7 @@ const Montage: React.FC = () => {
           return <div key={i} style={{ position: "absolute", width: 400, height: 248, left: -200, top: -124, borderRadius: 20, overflow: "hidden", zIndex: Math.round(depth * 100),
             transform: `translate(${x}px, ${y}px) scale(${sc}) rotateY(${-Math.sin(a) * 28}deg)`, opacity: s * (0.35 + 0.65 * depth), filter: `brightness(${0.5 + 0.5 * depth})`,
             boxShadow: "0 40px 80px -30px rgba(0,0,0,.8), 0 0 0 1px rgba(255,255,255,.15)" }}>
-            <Img src={staticFile(`thumbs/w${i}.jpg`)} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+            <Img src={staticFile(`thumbs/w${PICK[i]}.jpg`)} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
             <div style={{ position: "absolute", inset: 0, background: `linear-gradient(180deg, transparent 60%, rgba(0,0,0,.6))` }} />
           </div>;
         })}
