@@ -1,0 +1,47 @@
+[
+  {
+    "id": "open",
+    "text": "What if you could teach a computer anything, just by showing it once?",
+    "seconds": 4.2
+  },
+  {
+    "id": "montage",
+    "text": "Every day, people film themselves doing things. Cooking. Fixing. Building. Billions of hours of it.",
+    "seconds": 7.275
+  },
+  {
+    "id": "name",
+    "text": "Meet Eye-doss. Show it one video, and it learns the skill.",
+    "seconds": 3.8
+  },
+  {
+    "id": "learn",
+    "text": "It watches. Then it writes down every step, in order, like a recipe it can check.",
+    "seconds": 5.425
+  },
+  {
+    "id": "live",
+    "text": "Then it watches you. Through any camera. It knows which step you're on, and what comes next.",
+    "seconds": 5.3
+  },
+  {
+    "id": "alert",
+    "text": "Miss a step, and it tells you. Right then. Not after.",
+    "seconds": 3.75
+  },
+  {
+    "id": "robot",
+    "text": "And it's not just for people. Show a robot arm once. Knock its work over, and it notices, and fixes it.",
+    "seconds": 6.825
+  },
+  {
+    "id": "meta",
+    "text": "Built on Meta's A.I. models, for the Meta Global A.I. Hackathon.",
+    "seconds": 5.05
+  },
+  {
+    "id": "close",
+    "text": "Made by Maruthi Kunchala, Team Pulse Parallax. This is Eye-doss. Show it once.",
+    "seconds": 5.85
+  }
+]
