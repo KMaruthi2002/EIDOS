@@ -2,7 +2,8 @@
 # kick/hat/clap, pluck arps, risers and impacts on scene changes, a big drop at the name reveal.
 import json, sys, numpy as np, wave, subprocess
 SR = 44100
-V = "/home/claude/eidos-video"
+import os, pathlib
+V = os.environ.get("VIDEO_DIR", str(pathlib.Path(__file__).resolve().parent))
 starts = json.load(open(f"{V}/music_family_scenes.json"))
 T = starts["total"] + 1.0; st = starts["starts"]; drop = starts["drop"]
 n = int(T * SR); t = np.arange(n) / SR

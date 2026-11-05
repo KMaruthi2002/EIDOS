@@ -3,7 +3,8 @@
 # every cut, impacts on stamps, risers into drops, ticks on steps, a glitch burst at the alert.
 import json, numpy as np, wave, subprocess
 SR = 44100
-V = "/home/claude/eidos-video"
+import os, pathlib
+V = os.environ.get("VIDEO_DIR", str(pathlib.Path(__file__).resolve().parent))
 sc = json.load(open(f"{V}/music_v7_scenes.json")); st = sc["starts"]; T = sc["total"] + 1.0; drop = sc["drop"]
 cues = json.load(open(f"{V}/src/v7_sfx.json"))
 n = int(T * SR); t = np.arange(n) / SR
