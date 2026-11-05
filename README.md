@@ -8,7 +8,7 @@
 
 **Results, in short.** *Real world:* on 8 held-out CaptainCook4D recipes (106 recordings of people cooking, mistakes labelled by the dataset), run live and once, EIDOS named 22 of 54 labelled skipped steps as they happened, and claimed a step was skipped 0.7 times per correct recording, against 2.8 times for Muse Spark asked to look over the whole video. Telling a flawless recording from a flawed one is not solved yet: EIDOS's accuracy there (67%) is no better than always answering "mistake" (66%). Three later versions and an interrupted second test round are reported below, including what did not work. *Screens:* on held-out tests, 60/60 everyday runs and 41/44 spreadsheet runs against 4/60 and 3/44 for copying the tutorial's clicks; with every control renamed, 32/32 with Muse Spark and 32/32 with Muse Spark Open; its own verdict matched the truth on all 168 held-out screen runs. *Robots:* a simulated arm rebuilds a stack that gets knocked over, which checks-off misses.
 
-Built by Maruthi Kunchala (Team Parallax) for the Meta Global AI Hackathon 2026.
+Built by Maruthi Kunchala (Team PULSE - Parallax) for the Meta Global AI Hackathon 2026.
 
 ## The problem
 

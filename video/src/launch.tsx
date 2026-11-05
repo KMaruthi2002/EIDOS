@@ -501,7 +501,7 @@ const Close: React.FC = () => {
             <Ants color={BLUE} width={5} radius={26} />
             <div style={{ fontSize: 200, fontWeight: 900, letterSpacing: "0.06em", fontVariationSettings: '"wdth" 125', color: INK }}>EIDOS</div>
           </div>
-          <div style={{ marginTop: 36, fontSize: 34, fontWeight: 650, color: SUB, opacity: ramp(t, 3.8, 4.4) }}>Maruthi Kunchala, Team Parallax</div>
+          <div style={{ marginTop: 36, fontSize: 34, fontWeight: 650, color: SUB, opacity: ramp(t, 3.8, 4.4) }}>Maruthi Kunchala, Team PULSE - Parallax</div>
           <div style={{ marginTop: 8, fontSize: 26, fontWeight: 560, color: MUTE, opacity: ramp(t, 4.0, 4.6) }}>Meta Global AI Hackathon 2026. All app footage is real; some clips are sped up.</div>
         </AbsoluteFill>
       )}

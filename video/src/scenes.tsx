@@ -301,7 +301,7 @@ export const Close: React.FC = () => {
             <Contract x={0} y={0} w={0} h={0} fill ok={p > 0.95} />
             <div style={{ ...H1, fontSize: 130, letterSpacing: "0.12em", fontVariationSettings: '"wdth" 125', position: "relative", color: DARK.ink }}>EIDOS</div>
           </div>
-          <div style={{ fontSize: 30, color: DARK.muted, opacity: p }}>Maruthi Kunchala, Team Parallax. Meta Global AI Hackathon 2026.</div>
+          <div style={{ fontSize: 30, color: DARK.muted, opacity: p }}>Maruthi Kunchala, Team PULSE - Parallax. Meta Global AI Hackathon 2026.</div>
           <div style={{ fontSize: 20, color: DARK.muted, opacity: p * 0.8 }}>Cinematic shots generated with Higgsfield. All EIDOS footage is real.</div>
         </div>
       </Page>

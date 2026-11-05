@@ -8,7 +8,7 @@ import { slide } from "@remotion/transitions/slide";
 import { fade } from "@remotion/transitions/fade";
 import { wipe } from "@remotion/transitions/wipe";
 import { FONT, MONO, ease } from "./ui";
-import timeline from "./timeline5.json";
+import timeline from "./timeline6.json";
 import world from "./world_data.json";
 
 
@@ -365,7 +365,7 @@ const Anything: React.FC = () => {
   return (
     <AbsoluteFill style={{ perspective: 2200 }}>
       <Mesh p="a" />
-      <Headline text="One video in. A checkable skill out." at={0.05} size={76} top={52} grad={["checkable"]} />
+      <Headline text="Any task. Any camera. Any machine." at={0.05} size={84} top={52} grad={["Any"]} />
       <div style={{ position: "absolute", top: 210, left: 0, right: 0, display: "flex", justifyContent: "center", gap: 30 }}>
         {SKILLS.map(([k, name, src, ev], i) => {
           const s = spring({ frame: fr - (0.4 + i * 0.45) * FPS, fps: FPS, config: { damping: 13 } });
@@ -465,40 +465,6 @@ const Screens: React.FC = () => {
 
 /* ------------------------------------------------------------------ 11-12. meta, close */
 
-const MODELS: [string, string, string[]][] = [
-  ["Muse Spark", "Watches the video and the live camera, and checks each step", [BLUE, VIOLET]],
-  ["Muse Wonder", "Compiles what it saw into a program", [VIOLET, "#ff5fa2"]],
-  ["SAM 3.1", "Outlines what each contract is about", [CYAN, BLUE]],
-  ["Muse Image", "Draws a card for every skill", [CORAL, "#ffc24b"]],
-  ["Muse Spark Open", "Can watch live on open weights", ["#20c997", CYAN]],
-];
-const Meta: React.FC = () => {
-  const t = useT();
-  return (
-    <AbsoluteFill>
-      <Mesh p="b" />
-      <Headline text="Built on Meta's models." at={0.05} size={88} top={90} grad={["Meta's"]} />
-      <div style={{ position: "absolute", top: 300, left: 0, right: 0, display: "flex", justifyContent: "center", gap: 24 }}>
-        {MODELS.map(([name, job, g], i) => {
-          const at = 1.4 + i * VO("meta").seconds / 6.4;
-          const s = useSpring(at, { damping: 12 });
-          return (
-            <div key={name} style={{ width: 330, height: 430, borderRadius: 30, padding: 30, background: "rgba(255,255,255,.88)", boxShadow: "0 40px 80px -40px rgba(40,20,120,.6)",
-              transform: `translateY(${(1 - s) * 260}px) rotate(${(1 - s) * (i - 2) * 10}deg)`, opacity: Math.min(1, s * 1.6), display: "grid", alignContent: "start", gap: 20 }}>
-              <div style={{ width: 84, height: 84, borderRadius: 24, background: `linear-gradient(135deg, ${g[0]}, ${g[1]})`, display: "grid", placeItems: "center",
-                transform: `rotate(${Math.sin(t * 1.5 + i) * 6}deg)` }}>
-                <div style={{ width: 36, height: 36, borderRadius: i === 3 ? 18 : 8, border: "4px dashed #fff" }} />
-              </div>
-              <div style={{ fontFamily: FONT, fontSize: 36, fontWeight: 850, color: INK, letterSpacing: "-0.02em" }}>{name}</div>
-              <div style={{ fontFamily: FONT, fontSize: 25, fontWeight: 520, color: SUB, lineHeight: 1.32 }}>{job}</div>
-            </div>
-          );
-        })}
-      </div>
-    </AbsoluteFill>
-  );
-};
-
 const Close: React.FC = () => {
   const t = useT();
   const f = useCurrentFrame();
@@ -518,12 +484,185 @@ const Close: React.FC = () => {
             <Ants color={BLUE} width={5} radius={26} />
             <div style={{ fontSize: 200, fontWeight: 900, letterSpacing: "0.06em", fontVariationSettings: '"wdth" 125', color: INK }}>EIDOS</div>
           </div>
-          <div style={{ marginTop: 36, fontSize: 34, fontWeight: 650, color: SUB, opacity: ramp(t, 3.8, 4.4) }}>Maruthi Kunchala, Team Parallax</div>
+          <div style={{ marginTop: 36, fontSize: 34, fontWeight: 650, color: SUB, opacity: ramp(t, 3.8, 4.4) }}>Maruthi Kunchala, Team PULSE - Parallax</div>
           <div style={{ marginTop: 8, fontSize: 24, fontWeight: 560, color: MUTE, opacity: ramp(t, 4.0, 4.6), maxWidth: 1600, textAlign: "center" }}>
             Meta Global AI Hackathon 2026. All footage is real; some clips are sped up. Real-world recordings: CaptainCook4D (Apache 2.0) and HoloAssist (CDLA-Permissive-2.0).
           </div>
         </AbsoluteFill>
       )}
+    </AbsoluteFill>
+  );
+};
+
+
+/* ------------------------------------------------------------------ versus */
+
+const Bubble: React.FC<{ at: number; me?: boolean; children: React.ReactNode }> = ({ at, me, children }) => {
+  const s = useSpring(at, { damping: 13 });
+  return (
+    <div style={{ alignSelf: me ? "flex-end" : "flex-start", maxWidth: 520, fontFamily: FONT, fontSize: 26, fontWeight: 600, lineHeight: 1.3, padding: "14px 22px", borderRadius: 22,
+      background: me ? "#e9e7f3" : "#fff", color: INK, transform: `scale(${0.6 + 0.4 * s})`, transformOrigin: me ? "right bottom" : "left bottom", opacity: Math.min(1, s * 1.6),
+      boxShadow: "0 14px 30px -20px rgba(30,20,90,.5)" }}>{children}</div>
+  );
+};
+
+const Versus: React.FC = () => {
+  const t = useT();
+  const fr = useCurrentFrame();
+  const L = useSpring(0.3, { damping: 15 }), Rr = useSpring(4.4, { damping: 13 });
+  const alert = spring({ frame: fr - 6.2 * FPS, fps: FPS, config: { damping: 9 } });
+  const W = 850, H = 540;
+  const dim = ramp(t, 4.4, 5.2);
+  return (
+    <AbsoluteFill>
+      <Mesh p="d" />
+      <Headline text="Seeing isn't knowing." at={0.05} size={88} top={44} grad={["knowing."]} />
+      <div style={{ position: "absolute", top: 180, left: 0, right: 0, display: "flex", justifyContent: "center", gap: 60 }}>
+        <div style={{ width: W, display: "grid", gap: 18, transform: `translateX(${(1 - L) * -300}px) scale(${1 - 0.06 * dim})`, opacity: Math.min(1, L * 1.5) * (1 - 0.45 * dim), filter: `saturate(${1 - 0.8 * dim})` }}>
+          <div style={{ fontFamily: FONT, fontSize: 32, fontWeight: 800, color: MUTE }}>An AI assistant that sees</div>
+          <div style={{ position: "relative", width: W, height: H, borderRadius: 26, overflow: "hidden", boxShadow: "0 40px 80px -40px rgba(40,20,120,.6)" }}>
+            <Img src={staticFile("thumbs/w9.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover", filter: "brightness(.85)" }} />
+            <div style={{ position: "absolute", left: 24, right: 24, bottom: 24, display: "flex", flexDirection: "column", gap: 12 }}>
+              {t > 1.2 && <Bubble at={1.2} me>What am I looking at?</Bubble>}
+              {t > 2.4 && <Bubble at={2.4}>An electrical control cabinet.</Bubble>}
+            </div>
+          </div>
+          <div style={{ fontFamily: FONT, fontSize: 30, fontWeight: 700, color: SUB, textAlign: "center" }}>Answers when you ask.</div>
+        </div>
+        <div style={{ width: W, display: "grid", gap: 18, transform: `translateX(${(1 - Rr) * 300}px) scale(${0.94 + 0.08 * Rr})`, opacity: Math.min(1, Rr * 1.5) }}>
+          <div style={{ fontFamily: FONT, fontSize: 32, fontWeight: 900, background: GRAD, WebkitBackgroundClip: "text", color: "transparent" }}>EIDOS</div>
+          <div style={{ position: "relative", width: W, height: H, borderRadius: 26, overflow: "hidden", boxShadow: "0 50px 100px -40px rgba(59,91,255,.7)" }}>
+            <Img src={staticFile("thumbs/w9.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+            <div style={{ position: "absolute", inset: 0 }}><Ants color={RED} width={6} radius={26} draw={ramp(t, 6.0, 6.8)} /></div>
+            <div style={{ position: "absolute", inset: 0, background: `rgba(240,62,94,${0.18 * alert * (0.6 + 0.4 * Math.sin(t * 7))})` }} />
+            {t > 6.2 && (
+              <div style={{ position: "absolute", left: 24, right: 24, top: 24, display: "grid", gap: 10, transform: `translateY(${(1 - alert) * -60}px)`, opacity: Math.min(1, alert * 1.5) }}>
+                <div style={{ fontFamily: FONT, fontSize: 34, fontWeight: 850, color: "#fff", background: `linear-gradient(135deg, ${RED}, #d6336c)`, borderRadius: 18, padding: "16px 22px" }}>Stop. The power is still on.</div>
+                <div style={{ fontFamily: FONT, fontSize: 24, fontWeight: 700, color: INK, background: "rgba(255,255,255,.92)", borderRadius: 14, padding: "10px 18px", justifySelf: "start", opacity: ramp(t, 7.0, 7.5) }}>Next: turn the disconnect switch to OFF</div>
+              </div>
+            )}
+          </div>
+          <div style={{ fontFamily: FONT, fontSize: 30, fontWeight: 800, color: INK, textAlign: "center", opacity: ramp(t, 7.4, 8.0) }}>Speaks up before you ask.</div>
+        </div>
+      </div>
+    </AbsoluteFill>
+  );
+};
+
+/* ------------------------------------------------------------------ robots */
+
+const Robots: React.FC = () => {
+  const t = useT();
+  const fr = useCurrentFrame();
+  const side = 500, mid = 840;
+  const panels: [string, string, number, number, number, string, "ok" | "bad" | "brand", number][] = [
+    ["robot_demo", "Shown once", side, 0.4, 1.6, "The demonstration", "brand", 2.0],
+    ["robot_eidos", "EIDOS, checks on", mid, 0.8, 4.0, "Knocked over. Noticed. Rebuilt.", "ok", 14.4],
+    ["robot_nochk", "Checks off", side, 1.2, 1.6, "Says done. Stack is wrong.", "bad", 13.6],
+  ];
+  return (
+    <AbsoluteFill style={{ perspective: 2200 }}>
+      <Mesh p="c" />
+      <Headline text="Shown once. Run by a robot." at={0.05} size={84} top={48} grad={["robot."]} />
+      <div style={{ position: "absolute", top: 230, left: 0, right: 0, display: "flex", justifyContent: "center", alignItems: "center", gap: 30 }}>
+        {panels.map(([src, label, w, at, rate, pill, tone, pat], i) => {
+          const s = spring({ frame: fr - at * FPS, fps: FPS, config: { damping: 14 } });
+          const h = Math.round(w * 9 / 16);
+                    const shake = i === 1 && t > 5.8 && t < 6.8 ? Math.sin(t * 60) * 8 * (1 - ramp(t, 5.8, 6.8)) : 0;
+          return (
+            <div key={src} style={{ display: "grid", gap: 14, justifyItems: "center", transform: `translateY(${(1 - s) * 220}px) rotateY(${(1 - s) * (i - 1) * 30}deg) translateX(${shake}px)`, opacity: Math.min(1, s * 1.5) }}>
+              <div style={{ fontFamily: FONT, fontSize: i === 1 ? 32 : 26, fontWeight: 850, color: i === 2 ? MUTE : INK }}>{label}</div>
+              <div style={{ position: "relative", width: w, height: h, borderRadius: 24, overflow: "hidden", background: "#fff",
+                boxShadow: i === 1 ? "0 60px 120px -40px rgba(18,184,134,.6)" : "0 40px 80px -40px rgba(40,20,120,.5)" }}>
+                <Sequence from={Math.round(at * FPS)} layout="none"><Video src={staticFile(`clips/${src}.mp4`)} muted playbackRate={rate} style={{ width: w, height: h, display: "block", objectFit: "cover" }} /></Sequence>
+                {i === 1 && t > 5.8 && t < 9 && <div style={{ position: "absolute", left: 18, top: 18 }}><Pill at={5.8} tone="bad" size={22}>Knocked over</Pill></div>}
+                {i === 1 && <div style={{ position: "absolute", inset: 0 }}><Ants color={GREEN} width={5} radius={24} draw={ramp(t, 14.0, 14.8)} /></div>}
+              </div>
+              <div style={{ height: 70 }}>{t > pat && <Pill at={pat} tone={tone} size={i === 1 ? 28 : 24}>{pill}</Pill>}</div>
+            </div>
+          );
+        })}
+      </div>
+    </AbsoluteFill>
+  );
+};
+
+/* ------------------------------------------------------------------ meta pipeline */
+
+const STATIONS: [string, string, string[]][] = [
+  ["Muse Spark", "watches the video and the live camera", [BLUE, VIOLET]],
+  ["Muse Wonder", "compiles what it saw into a program", [VIOLET, "#ff5fa2"]],
+  ["SAM 3.1", "outlines what every check is about", [CYAN, BLUE]],
+  ["Muse Image", "draws a card for every skill", [CORAL, "#e8590c"]],
+  ["Muse Spark Open", "watches live on open weights", ["#20c997", CYAN]],
+];
+const Station: React.FC<{ i: number; w: number; h: number }> = ({ i, w, h }) => {
+  const t = useT();
+  if (i === 0) return (
+    <div style={{ position: "relative", width: w, height: h }}>
+      <Clip src="tomato_demo" w={w} h={h} rate={2} />
+      <div style={{ position: "absolute", left: 0, right: 0, top: `${((t * 40) % 100)}%`, height: 3, background: CYAN, boxShadow: `0 0 18px ${CYAN}` }} />
+    </div>
+  );
+  if (i === 1) return (
+    <div style={{ width: w, height: h, background: "#fff", padding: 14, display: "grid", gap: 7, alignContent: "start" }}>
+      {world.steps.slice(0, 5).map((s, j) => (
+        <div key={s.id} style={{ display: "flex", gap: 8, alignItems: "center", opacity: ramp(t, 3.2 + j * 0.15, 3.6 + j * 0.15) }}>
+          <span style={{ width: 22, height: 22, borderRadius: 11, background: "#eceaff", color: VIOLET, fontFamily: FONT, fontWeight: 850, fontSize: 13, display: "grid", placeItems: "center" }}>{s.id}</span>
+          <span style={{ fontFamily: FONT, fontSize: 16, fontWeight: 650, color: INK, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{s.do.replace(/\{(\w+)\}/g, "…")}</span>
+        </div>
+      ))}
+    </div>
+  );
+  if (i === 2) return (
+    <div style={{ position: "relative", width: w, height: h }}>
+      <Img src={staticFile("world/tomato/evidence/step4_end.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+      {BOXES4.map((b, j) => <div key={j} style={{ position: "absolute", left: `${b[0] * 100}%`, top: `${b[1] * 100}%`, width: `${(b[2] - b[0]) * 100}%`, height: `${(b[3] - b[1]) * 100}%` }}><Ants color={CYAN} width={3} radius={4} /></div>)}
+    </div>
+  );
+  if (i === 3) return <Img src={staticFile("meta/card.webp")} style={{ width: w, height: h, objectFit: "cover" }} />;
+  return (
+    <div style={{ position: "relative", width: w, height: h }}>
+      <Img src={staticFile("thumbs/w7.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+      <div style={{ position: "absolute", left: 12, top: 12, display: "flex", gap: 8, alignItems: "center", fontFamily: FONT, fontSize: 16, fontWeight: 800, color: "#fff", background: "rgba(13,15,26,.7)", padding: "5px 12px", borderRadius: 999 }}>
+        <span style={{ width: 10, height: 10, borderRadius: 5, background: RED, opacity: 0.5 + 0.5 * Math.sin(t * 6) }} />LIVE
+      </div>
+    </div>
+  );
+};
+const Meta: React.FC = () => {
+  const t = useT();
+  const fr = useCurrentFrame();
+  const sec = VO("meta").seconds;
+  const w = 330, h = 240, gap = 34, left = (1920 - (5 * w + 4 * gap)) / 2;
+  const at = (i: number) => 1.6 + i * (sec - 2.2) / 5;
+  const active = STATIONS.reduce((a, _, i) => (t >= at(i) ? i : a), -1);
+  return (
+    <AbsoluteFill>
+      <Mesh p="b" />
+      <Headline text="Built on Meta's models." at={0.05} size={92} top={70} grad={["Meta's"]} />
+      {/* the line that carries a skill through the models */}
+      <svg width={1920} height={1080} style={{ position: "absolute", inset: 0 }}>
+        <defs><linearGradient id="mg" x1="0" x2="1"><stop offset="0" stopColor={BLUE} /><stop offset=".5" stopColor={VIOLET} /><stop offset="1" stopColor={CORAL} /></linearGradient></defs>
+        <line x1={left + w / 2} x2={left + w / 2 + (4 * (w + gap)) * ramp(t, 1.2, sec - 0.4)} y1={450} y2={450} stroke="url(#mg)" strokeWidth={6} strokeLinecap="round" strokeDasharray="2 14" strokeDashoffset={-t * 40} />
+        <circle cx={left + w / 2 + (4 * (w + gap)) * ramp(t, 1.2, sec - 0.4)} cy={450} r={11} fill={VIOLET} style={{ filter: `drop-shadow(0 0 12px ${VIOLET})` }} />
+      </svg>
+      {STATIONS.map(([name, job, g], i) => {
+        const s = spring({ frame: fr - at(i) * FPS, fps: FPS, config: { damping: 11 } });
+        const on = active === i;
+        return (
+          <div key={name} style={{ position: "absolute", left: left + i * (w + gap), top: 330, width: w, display: "grid", gap: 16, justifyItems: "start",
+            transform: `translateY(${(1 - s) * 180}px) scale(${(0.85 + 0.15 * s) * (on ? 1.06 : 1)})`, opacity: Math.min(1, s * 1.6) }}>
+            <div style={{ position: "relative", width: w, height: h, borderRadius: 22, overflow: "hidden", background: "#fff",
+              boxShadow: on ? `0 40px 90px -30px ${g[0]}` : "0 30px 60px -36px rgba(40,20,120,.55)" }}>
+              <Station i={i} w={w} h={h} />
+              <div style={{ position: "absolute", inset: 0 }}><Ants color={g[0]} width={on ? 5 : 3} radius={22} /></div>
+            </div>
+            <div style={{ fontFamily: FONT, fontSize: 40, fontWeight: 900, letterSpacing: "-0.02em", lineHeight: 1.05, background: `linear-gradient(120deg, ${g[0]}, ${g[1]})`, WebkitBackgroundClip: "text", color: "transparent" }}>{name}</div>
+            <div style={{ fontFamily: FONT, fontSize: 27, fontWeight: 600, color: SUB, lineHeight: 1.3 }}>{job}</div>
+          </div>
+        );
+      })}
     </AbsoluteFill>
   );
 };
@@ -549,14 +688,13 @@ const SCENES: { id: string; C: React.FC; min?: number; pad?: number }[] = [
   { id: "hook", C: Hook, min: 13.4 },
   { id: "name", C: Name, pad: 1.4 },
   { id: "learn", C: Learn, min: 16 },
-  { id: "again", C: Again, pad: 1.4 },
   { id: "live", C: LiveCab, pad: 1.2 },
+  { id: "versus", C: Versus, pad: 1.6 },
   { id: "cabinet", C: Cabinet, pad: 2.0 },
   { id: "kitchen", C: Kitchen, pad: 2.0 },
   { id: "anything", C: Anything, pad: 1.4 },
-  { id: "results", C: Results, pad: 1.6 },
-  { id: "screens", C: Screens, pad: 1.2 },
-  { id: "meta", C: Meta, pad: 1.4 },
+  { id: "robots", C: Robots, pad: 1.6 },
+  { id: "meta", C: Meta, pad: 1.6 },
   { id: "close", C: Close, min: 9 },
 ];
 const TR = 14;
@@ -582,9 +720,9 @@ export const Launch2: React.FC = () => (
     </TransitionSeries>
     {SCENES.map((s, i) => (
       <Sequence key={s.id} from={starts[i] + Math.round(LEAD * FPS)} durationInFrames={Math.round(VO(s.id).seconds * FPS) + 10}>
-        <Audio src={staticFile(`vo5/${s.id}.wav`)} />
+        <Audio src={staticFile(`vo6/${s.id}.wav`)} />
       </Sequence>
     ))}
-    <Audio src={staticFile("music/bed2.mp3")} volume={0.5} />
+    <Audio src={staticFile("music/bed2.mp3")} volume={(f: number) => 0.5 * interpolate(f, [launch2Frames - 75, launch2Frames - 5], [1, 0], clamp)} />
   </AbsoluteFill>
 );
