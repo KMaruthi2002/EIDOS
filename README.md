@@ -322,6 +322,8 @@ python -m pytest -q -m slow tests/test_studio.py tests/test_teach.py tests/test_
 - `tests/test_teach.py`: teaching live end to end (a scripted person records Mail through the teach API, EIDOS learns it, and the skill runs on design B with new values), plus the teach API's guards and the success rule for taught skills.
 - `tests/test_world.py`: the live runner offline, with scripted looks: steps start only on agreement (version 1) or once evidence adds up (version 3), order alerts pass through optional steps, optional steps never alert, skipped steps are reported, calibration drops a dependency a correct demonstration didn't follow, searching back dismisses only a step it clearly finds, and a live session feeds out-of-order answers to the tracker in time order.
 - `tests/test_meta_client.py`: the Meta Model API client against a fake server (a test double); it checks the request shape and the parsing of replies, not model quality.
+- `tests/test_live_path.py`: the live path end to end against a fake Meta server (a test double): EIDOS asks the right question, uses only answers that are on screen, and still checks every step. It says nothing about how well the real models answer.
+- `tests/test_deploy.py`: the deployment guards: the `EIDOS_TOKEN` access token, the open `/healthz` check and the daily model-call cap.
 
 ## Layout
 
@@ -338,6 +340,9 @@ eidos/       world/ (the real world: learn.py video -> program, calibrate.py, ru
              client), score.py (benchmark oracle), studio.py (the app's server),
              teach.py (teaching live: the recorded browser behind "Teach it live")
 bench/       benchmark and showcase runners (world_bench.py, run_everyday.py, run_bench.py)
+physical/    physical skills in simulation: skill.py (learn from video, run), sim.py (simulated arm),
+             perceive.py, showcase.py, setup.sh (see "Robots" above)
+runs/        recorded benchmark results, logs and learned skills (bench_*, showcase*, ui_skill_*)
 samples/     world/: the Studio's sample real-world skills with practice recordings
 tools/       make_world_samples.py
 web/         demo page template and builder; studio/ and world/ (the EIDOS Studio front end)
