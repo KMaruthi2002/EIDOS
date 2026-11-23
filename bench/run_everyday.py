@@ -1,6 +1,6 @@
 """Everyday-task benchmark: four tasks, five conditions, three systems.
 
-    python bench/run_everyday.py BASE_URL SPLIT     (SPLIT = dev | test)
+    python bench/run_everyday.py BASE_URL SPLIT     (SPLIT = dev | test | test2 | words | words_open, or a numeric seed)
 
 dev uses seed 7 (used while fixing bugs). test uses seed 31337 and is run once.
 For each task: same app and data as the tutorial; new data; random redesigns of

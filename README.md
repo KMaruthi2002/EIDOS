@@ -264,7 +264,9 @@ python bench/world_bench.py run   --split dev                      # every other
 python bench/world_bench.py baseline --split dev                   # Muse Spark asked directly
 python bench/world_bench.py score --split dev                      # (the same for --split test)
 python bench/world_bench.py run --split dev4 --version 4         # versions 2 to 4 (--version 3 needs MODEL_API_KEY, 4 needs BASETEN_API_KEY)
-python bench/look_lab.py                                           # how often a single look names the right step
+python bench/look_lab.py sample                                    # draw the moments for the look experiment
+python bench/look_lab.py run VARIANT [LIMIT]                        # run one variant of the look on them
+python bench/look_lab.py report                                     # how often a single look names the right step
 python tools/make_world_samples.py                                 # rebuild the Studio's sample skills
 
 # Everyday tasks (the Studio also serves the everyday apps)
