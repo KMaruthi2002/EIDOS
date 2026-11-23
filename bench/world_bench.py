@@ -481,7 +481,7 @@ def main():
     ap.add_argument("--split", default="dev")
     ap.add_argument("--concurrency", type=int, default=12)
     ap.add_argument("--only")
-    ap.add_argument("--version", type=int, default=1, help="1: as round 1 was run; 2: two calibration demos, sighting rule, checks as notes; 3: ranked looks and evidence tracker")
+    ap.add_argument("--version", type=int, default=1, help="1: as round 1 was run; 2: two calibration demos, sighting rule, checks as notes; 3: ranked looks and evidence tracker; 4: version 3 on Muse Spark Open (needs BASETEN_API_KEY)")
     ap.add_argument("--seen-at", type=float, default=0.9)
     ap.add_argument("--absent", type=float, default=0.35)
     ap.add_argument("--min-p", type=float, default=0.0)
